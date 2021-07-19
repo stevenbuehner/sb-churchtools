@@ -1,0 +1,20 @@
+# SyncLog
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **float** |  | 
+**date** | [**\DateTime**](\DateTime.md) |  | 
+**job** | [**\StevenBuehner\ChurchTools\Model\SyncLogJob**](SyncLogJob.md) |  | 
+**type** | **string** |  | 
+**level** | **string** |  | 
+**message_i18n** | **string** |  | [optional] 
+**message_args** | **object** |  | [optional] 
+**is_dry_run** | **bool** |  | 
+**domain_type** | **string** |  | 
+**domain_id** | **string** |  | 
+**source_entity_id** | **string** |  | 
+**system** | **string** |  | 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

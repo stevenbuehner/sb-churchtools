@@ -1,0 +1,7 @@
+{
+  "packagePath" : "churchtools",
+  "invokerPackage" : "StevenBuehner\\ChurchTools",
+  "composerVendorName" : "stevenbuehner",
+  "composerProjectName" : "churchtools-api"
+
+}

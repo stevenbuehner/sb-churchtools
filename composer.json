@@ -1,0 +1,22 @@
+{
+  "name": "stevenbuehner/sb-churchtools-api",
+  "description": "ChurchTools Api Wrapper",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Steven Buehner",
+      "email": "buehner@me.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "guzzlehttp/guzzle": "^7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "StevenBuehner\\ChurchTools\\": "src/churchtools/lib",
+      "StevenBuehner\\ChurchToolsApi\\": "src/ChurchToolsApi"
+    }
+  }
+}
