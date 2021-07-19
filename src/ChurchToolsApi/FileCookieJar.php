@@ -7,6 +7,7 @@ use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\Cookie\SetCookie;
 use Illuminate\Support\Facades\Storage;
 
+// For Laravel usage only
 class FileCookieJar extends \GuzzleHttp\Cookie\CookieJar {
 
 	/** @var string filename */
