@@ -7,7 +7,7 @@ use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 
-class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client {
+class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client implements ChurchToolsClientInterface {
 
 	protected $loginToken;
 	protected $cookiJar;
@@ -45,6 +45,10 @@ class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client {
 
 	}
 
+
+	public function login() {
+
+	}
 
 	public function logout() {
 

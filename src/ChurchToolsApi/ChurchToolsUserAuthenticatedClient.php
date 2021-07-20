@@ -6,7 +6,7 @@ namespace StevenBuehner\ChurchToolsApi;
 use GuzzleHttp\Cookie\CookieJar;
 use StevenBuehner\ChurchTools\Configuration;
 
-class ChurchToolsUserAuthenticatedClient extends \GuzzleHttp\Client {
+class ChurchToolsUserAuthenticatedClient extends \GuzzleHttp\Client implements ChurchToolsClientInterface {
 
 	/**
 	 * @var Configuration
@@ -29,6 +29,10 @@ class ChurchToolsUserAuthenticatedClient extends \GuzzleHttp\Client {
 		$this->config   = $config;
 	}
 
+	/**
+	 * @return bool
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 */
 	public function login() {
 
 		$response = $this->request('POST',
