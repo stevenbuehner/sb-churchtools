@@ -11,8 +11,9 @@ class ChurchToolsUserAuthenticatedClient extends \GuzzleHttp\Client implements C
 	/**
 	 * @var Configuration
 	 */
-	private   $config;
+	protected $config;
 	protected $cookiJar;
+	protected $isLoggedIn;
 
 	/**
 	 * ChurchToolsTokenAuthenticatedClient constructor.
@@ -25,8 +26,9 @@ class ChurchToolsUserAuthenticatedClient extends \GuzzleHttp\Client implements C
 			'cookies' => $cookieJar
 		]);
 
-		$this->cookiJar = $cookieJar;
-		$this->config   = $config;
+		$this->cookiJar   = $cookieJar;
+		$this->config     = $config;
+		$this->isLoggedIn = FALSE;
 	}
 
 	/**
@@ -34,6 +36,10 @@ class ChurchToolsUserAuthenticatedClient extends \GuzzleHttp\Client implements C
 	 * @throws \GuzzleHttp\Exception\GuzzleException
 	 */
 	public function login() {
+
+		if ($this->isLoggedIn === TRUE) {
+			return TRUE;
+		}
 
 		$response = $this->request('POST',
 			$this->config->getHost() . '/login',
@@ -45,7 +51,13 @@ class ChurchToolsUserAuthenticatedClient extends \GuzzleHttp\Client implements C
 			]
 		);
 
-		return $response->getStatusCode() === 200;
+		$result = $response->getStatusCode() === 200;
+
+		if ($result) {
+			$this->isLoggedIn = TRUE;
+		}
+
+		return $result;
 
 	}
 
