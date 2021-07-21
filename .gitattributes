@@ -1,4 +1,13 @@
 material/ export-ignore
 src/.openapi-generator/ export-ignore
-src/churchtools/docs/ export-ignore
-src/churchtools/test/ export-ignore
+src/docs/ export-ignore
+src/test/ export-ignore
+
+src/.gitignore export-ignore
+src/.openapi-generator-ignore export-ignore
+src/.php_cs export-ignore
+src/churchtools/.travis.yml export-ignore
+src/churchtools/composer.json export-ignore
+src/churchtools/git_push.sh export-ignore
+src/churchtools/phpunit.xml.dist export-ignore
+src/churchtools/README.md export-ignore

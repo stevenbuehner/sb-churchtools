@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "StevenBuehner\\ChurchTools\\": "src/churchtools/lib",
+      "StevenBuehner\\ChurchTools\\": "src/lib",
       "StevenBuehner\\ChurchToolsApi\\": "src/ChurchToolsApi"
     }
   }
