@@ -1,11 +1,4 @@
 material/ export-ignore
-src/.swagger-codegen/ export-ignore
+src/.openapi-generator/ export-ignore
 src/churchtools/docs/ export-ignore
 src/churchtools/test/ export-ignore
-src/churchtools/.php_cs export-ignore
-src/churchtools/.travis.yml export-ignore
-src/churchtools/composer.json export-ignore
-src/churchtools/git_push.sh export-ignore
-src/churchtools/phpunit.xml.dist export-ignore
-src/churchtools/README.md export-ignore
-src/.swagger-codegen-ignore export-ignore
