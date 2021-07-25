@@ -74,7 +74,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://teambb.church.tools/api*
+All URIs are relative to *http://localhost/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -407,6 +407,7 @@ Class | Method | HTTP request | Description
 - [GroupMemberField](docs/Model/GroupMemberField.md)
 - [GroupMemberPersonField](docs/Model/GroupMemberPersonField.md)
 - [GroupMemberShort](docs/Model/GroupMemberShort.md)
+- [Groups](docs/Model/Groups.md)
 - [GroupsForPerson](docs/Model/GroupsForPerson.md)
 - [InlineObject](docs/Model/InlineObject.md)
 - [InlineObject1](docs/Model/InlineObject1.md)

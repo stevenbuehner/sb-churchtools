@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse20093
+ * Groups
  *
  * PHP version 7.2
  *
@@ -32,9 +32,10 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * InlineResponse20093 Class Doc Comment
+ * Groups Class Doc Comment
  *
  * @category Class
+ * @description The group model structures all information in different objects: &#x60;information&#x60;, &#x60;settings&#x60;, &#x60;followUp&#x60;, and &#x60;roles&#x60;. Custom group fields are added to the root level of this model.
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -42,7 +43,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializable
+class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_93';
+    protected static $openAPIModelName = 'Groups';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +60,14 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Groups[]',
-        'ref' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
+        'id' => 'int',
+        'guid' => 'string',
+        'name' => 'string',
+        'security_level_for_group' => 'int',
+        'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation',
+        'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings',
+        'follow_up' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp',
+        'roles' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]'
     ];
 
     /**
@@ -71,8 +78,14 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'ref' => null
+        'id' => null,
+        'guid' => null,
+        'name' => null,
+        'security_level_for_group' => null,
+        'information' => null,
+        'settings' => null,
+        'follow_up' => null,
+        'roles' => null
     ];
 
     /**
@@ -102,8 +115,14 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'ref' => 'ref'
+        'id' => 'id',
+        'guid' => 'guid',
+        'name' => 'name',
+        'security_level_for_group' => 'securityLevelForGroup',
+        'information' => 'information',
+        'settings' => 'settings',
+        'follow_up' => 'followUp',
+        'roles' => 'roles'
     ];
 
     /**
@@ -112,8 +131,14 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'ref' => 'setRef'
+        'id' => 'setId',
+        'guid' => 'setGuid',
+        'name' => 'setName',
+        'security_level_for_group' => 'setSecurityLevelForGroup',
+        'information' => 'setInformation',
+        'settings' => 'setSettings',
+        'follow_up' => 'setFollowUp',
+        'roles' => 'setRoles'
     ];
 
     /**
@@ -122,8 +147,14 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'ref' => 'getRef'
+        'id' => 'getId',
+        'guid' => 'getGuid',
+        'name' => 'getName',
+        'security_level_for_group' => 'getSecurityLevelForGroup',
+        'information' => 'getInformation',
+        'settings' => 'getSettings',
+        'follow_up' => 'getFollowUp',
+        'roles' => 'getRoles'
     ];
 
     /**
@@ -183,8 +214,14 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['ref'] = $data['ref'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['guid'] = $data['guid'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['security_level_for_group'] = $data['security_level_for_group'] ?? null;
+        $this->container['information'] = $data['information'] ?? null;
+        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['follow_up'] = $data['follow_up'] ?? null;
+        $this->container['roles'] = $data['roles'] ?? null;
     }
 
     /**
@@ -212,49 +249,193 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets data
+     * Gets id
      *
-     * @return \StevenBuehner\ChurchTools\Model\Groups[]|null
+     * @return int|null
      */
-    public function getData()
+    public function getId()
     {
-        return $this->container['data'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets data
+     * Sets id
      *
-     * @param \StevenBuehner\ChurchTools\Model\Groups[]|null $data data
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setData($data)
+    public function setId($id)
     {
-        $this->container['data'] = $data;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets ref
+     * Gets guid
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     * @return string|null
      */
-    public function getRef()
+    public function getGuid()
     {
-        return $this->container['ref'];
+        return $this->container['guid'];
     }
 
     /**
-     * Sets ref
+     * Sets guid
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $ref ref
+     * @param string|null $guid guid
      *
      * @return self
      */
-    public function setRef($ref)
+    public function setGuid($guid)
     {
-        $this->container['ref'] = $ref;
+        $this->container['guid'] = $guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets security_level_for_group
+     *
+     * @return int|null
+     */
+    public function getSecurityLevelForGroup()
+    {
+        return $this->container['security_level_for_group'];
+    }
+
+    /**
+     * Sets security_level_for_group
+     *
+     * @param int|null $security_level_for_group You can see group fields up to this security level.
+     *
+     * @return self
+     */
+    public function setSecurityLevelForGroup($security_level_for_group)
+    {
+        $this->container['security_level_for_group'] = $security_level_for_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets information
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation|null
+     */
+    public function getInformation()
+    {
+        return $this->container['information'];
+    }
+
+    /**
+     * Sets information
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation|null $information information
+     *
+     * @return self
+     */
+    public function setInformation($information)
+    {
+        $this->container['information'] = $information;
+
+        return $this;
+    }
+
+    /**
+     * Gets settings
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null
+     */
+    public function getSettings()
+    {
+        return $this->container['settings'];
+    }
+
+    /**
+     * Sets settings
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null $settings settings
+     *
+     * @return self
+     */
+    public function setSettings($settings)
+    {
+        $this->container['settings'] = $settings;
+
+        return $this;
+    }
+
+    /**
+     * Gets follow_up
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp|null
+     */
+    public function getFollowUp()
+    {
+        return $this->container['follow_up'];
+    }
+
+    /**
+     * Sets follow_up
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp|null $follow_up follow_up
+     *
+     * @return self
+     */
+    public function setFollowUp($follow_up)
+    {
+        $this->container['follow_up'] = $follow_up;
+
+        return $this;
+    }
+
+    /**
+     * Gets roles
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]|null
+     */
+    public function getRoles()
+    {
+        return $this->container['roles'];
+    }
+
+    /**
+     * Sets roles
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]|null $roles roles
+     *
+     * @return self
+     */
+    public function setRoles($roles)
+    {
+        $this->container['roles'] = $roles;
 
         return $this;
     }

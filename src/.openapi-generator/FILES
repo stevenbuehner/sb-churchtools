@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php_cs
 .travis.yml
 README.md
@@ -102,6 +101,7 @@ docs/Model/GroupMember.md
 docs/Model/GroupMemberField.md
 docs/Model/GroupMemberPersonField.md
 docs/Model/GroupMemberShort.md
+docs/Model/Groups.md
 docs/Model/GroupsForPerson.md
 docs/Model/InlineObject.md
 docs/Model/InlineObject1.md
@@ -589,6 +589,7 @@ lib/Model/GroupMember.php
 lib/Model/GroupMemberField.php
 lib/Model/GroupMemberPersonField.php
 lib/Model/GroupMemberShort.php
+lib/Model/Groups.php
 lib/Model/GroupsForPerson.php
 lib/Model/InlineObject.php
 lib/Model/InlineObject1.php
@@ -977,3 +978,4 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/GroupsTest.php
