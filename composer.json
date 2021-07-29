@@ -18,5 +18,18 @@
       "StevenBuehner\\ChurchTools\\": "src/lib",
       "StevenBuehner\\ChurchToolsApi\\": "src/ChurchToolsApi"
     }
+  },
+  "archive": {
+    "exclude": [
+      "/material/*",
+      "/src/docs",
+      "/src/test",
+      "/src/.travis.yml",
+      "/src/.openapi-generator",
+      "/src/.php_cs",
+      "/src/git_push.sh",
+      "/src/phpunit.xml.dist",
+      "/src/README.md"
+    ]
   }
 }
