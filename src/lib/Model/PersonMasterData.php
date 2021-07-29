@@ -68,7 +68,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
         'departments' => '\StevenBuehner\ChurchTools\Model\InlineResponse20029Data[]',
         'statuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]',
         'campuses' => '\StevenBuehner\ChurchTools\Model\Campus1[]',
-        'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]'
+        'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel1[]'
     ];
 
     /**
@@ -478,7 +478,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets contact_labels
      *
-     * @return \StevenBuehner\ChurchTools\Model\ContactLabel[]|null
+     * @return \StevenBuehner\ChurchTools\Model\ContactLabel1[]|null
      */
     public function getContactLabels()
     {
@@ -488,7 +488,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contact_labels
      *
-     * @param \StevenBuehner\ChurchTools\Model\ContactLabel[]|null $contact_labels contact_labels
+     * @param \StevenBuehner\ChurchTools\Model\ContactLabel1[]|null $contact_labels contact_labels
      *
      * @return self
      */

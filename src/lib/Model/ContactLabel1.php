@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse200104
+ * ContactLabel1
  *
  * PHP version 7.2
  *
@@ -32,9 +32,10 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * InlineResponse200104 Class Doc Comment
+ * ContactLabel1 Class Doc Comment
  *
  * @category Class
+ * @description Master Data for Contact Labels. Used to label E-Mail Adresses.
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -42,7 +43,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ContactLabel1 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_104';
+    protected static $openAPIModelName = 'Contact_Label_1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +60,11 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\ContactLabel1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'id' => 'float',
+        'name' => 'string',
+        'name_translated' => 'string',
+        'sort_key' => 'float',
+        'is_default' => 'bool'
     ];
 
     /**
@@ -71,8 +75,11 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'meta' => null
+        'id' => null,
+        'name' => null,
+        'name_translated' => null,
+        'sort_key' => null,
+        'is_default' => null
     ];
 
     /**
@@ -102,8 +109,11 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'meta' => 'meta'
+        'id' => 'id',
+        'name' => 'name',
+        'name_translated' => 'nameTranslated',
+        'sort_key' => 'sortKey',
+        'is_default' => 'isDefault'
     ];
 
     /**
@@ -112,8 +122,11 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'meta' => 'setMeta'
+        'id' => 'setId',
+        'name' => 'setName',
+        'name_translated' => 'setNameTranslated',
+        'sort_key' => 'setSortKey',
+        'is_default' => 'setIsDefault'
     ];
 
     /**
@@ -122,8 +135,11 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'meta' => 'getMeta'
+        'id' => 'getId',
+        'name' => 'getName',
+        'name_translated' => 'getNameTranslated',
+        'sort_key' => 'getSortKey',
+        'is_default' => 'getIsDefault'
     ];
 
     /**
@@ -167,6 +183,21 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
+    const IS_DEFAULT_TRUE = 'true';
+    const IS_DEFAULT_FALSE = 'false';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getIsDefaultAllowableValues()
+    {
+        return [
+            self::IS_DEFAULT_TRUE,
+            self::IS_DEFAULT_FALSE,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -183,8 +214,11 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['name_translated'] = $data['name_translated'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['is_default'] = $data['is_default'] ?? null;
     }
 
     /**
@@ -195,6 +229,30 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['name_translated'] === null) {
+            $invalidProperties[] = "'name_translated' can't be null";
+        }
+        if ($this->container['sort_key'] === null) {
+            $invalidProperties[] = "'sort_key' can't be null";
+        }
+        if ($this->container['is_default'] === null) {
+            $invalidProperties[] = "'is_default' can't be null";
+        }
+        $allowedValues = $this->getIsDefaultAllowableValues();
+        if (!is_null($this->container['is_default']) && !in_array($this->container['is_default'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'is_default', must be one of '%s'",
+                $this->container['is_default'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -212,49 +270,131 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets data
+     * Gets id
      *
-     * @return \StevenBuehner\ChurchTools\Model\ContactLabel1[]|null
+     * @return float
      */
-    public function getData()
+    public function getId()
     {
-        return $this->container['data'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets data
+     * Sets id
      *
-     * @param \StevenBuehner\ChurchTools\Model\ContactLabel1[]|null $data data
+     * @param float $id ID of Record
      *
      * @return self
      */
-    public function setData($data)
+    public function setId($id)
     {
-        $this->container['data'] = $data;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets name
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return string
      */
-    public function getMeta()
+    public function getName()
     {
-        return $this->container['meta'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets meta
+     * Sets name
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param string $name Name of Label
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setName($name)
     {
-        $this->container['meta'] = $meta;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_translated
+     *
+     * @return string
+     */
+    public function getNameTranslated()
+    {
+        return $this->container['name_translated'];
+    }
+
+    /**
+     * Sets name_translated
+     *
+     * @param string $name_translated Translated Name of Label
+     *
+     * @return self
+     */
+    public function setNameTranslated($name_translated)
+    {
+        $this->container['name_translated'] = $name_translated;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return float
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param float $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_default
+     *
+     * @return bool
+     */
+    public function getIsDefault()
+    {
+        return $this->container['is_default'];
+    }
+
+    /**
+     * Sets is_default
+     *
+     * @param bool $is_default Indicator if label is the default. Used for new person emails
+     *
+     * @return self
+     */
+    public function setIsDefault($is_default)
+    {
+        $allowedValues = $this->getIsDefaultAllowableValues();
+        if (!in_array($is_default, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'is_default', must be one of '%s'",
+                    $is_default,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['is_default'] = $is_default;
 
         return $this;
     }
