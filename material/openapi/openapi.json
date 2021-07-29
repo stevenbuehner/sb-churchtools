@@ -30172,7 +30172,7 @@
         "description": "This endpoint returns an array with all groups the user can see. This includes groups the user\n    is a member of as well as subordinate groups the user is allowed to see.",
         "parameters": [
           {
-            "name": "ids",
+            "name": "ids[]",
             "schema": {
               "type": "array",
               "items": {
@@ -30181,10 +30181,11 @@
             },
             "in": "query",
             "style": "deepObject",
+            "explode":  true,
             "description": "Array of group ids"
           },
           {
-            "name": "campus_ids",
+            "name": "campus_ids[]",
             "in": "query",
             "description": "Array of campus ids to filter the groups",
             "schema": {
@@ -30193,10 +30194,11 @@
                 "type": "integer"
               }
             },
-            "style": "deepObject"
+            "style": "form",
+            "explode":  true
           },
           {
-            "name": "agegroup_ids",
+            "name": "agegroup_ids[]",
             "in": "query",
             "description": "Array of age group ids to filter the groups",
             "schema": {
@@ -30205,10 +30207,11 @@
                 "type": "integer"
               }
             },
-            "style": "deepObject"
+            "style": "deepObject",
+            "explode":  true
           },
           {
-            "name": "group_status_ids",
+            "name": "group_status_ids[]",
             "in": "query",
             "description": "Array of group status ids to filter the groups",
             "schema": {
@@ -30217,10 +30220,11 @@
                 "type": "integer"
               }
             },
-            "style": "deepObject"
+            "style": "deepObject",
+            "explode":  true
           },
           {
-            "name": "group_category_ids",
+            "name": "group_category_ids[]",
             "in": "query",
             "description": "Array of group category ids to filter the groups",
             "schema": {
@@ -30229,10 +30233,11 @@
                 "type": "integer"
               }
             },
-            "style": "deepObject"
+            "style": "deepObject",
+            "explode":  true
           },
           {
-            "name": "target_group_ids",
+            "name": "target_group_ids[]",
             "in": "query",
             "description": "Array of target group ids to filter the groups",
             "schema": {
@@ -30241,7 +30246,8 @@
                 "type": "integer"
               }
             },
-            "style": "deepObject"
+            "style": "deepObject",
+            "explode":  true
           },
           {
             "name": "weekdays",

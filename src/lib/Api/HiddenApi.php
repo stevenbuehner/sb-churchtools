@@ -1,7 +1,7 @@
 <?php
 /**
  * HiddenApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -2079,6 +2079,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($es_ids)){
+            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -2089,6 +2092,9 @@ class HiddenApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($job_ids)){
+            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -2101,6 +2107,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($start_date)){
+            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -2111,6 +2120,9 @@ class HiddenApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($end_date)){
+            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -2123,6 +2135,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($statuses)){
+            	$queryParams['statuses'] = $statuses ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['statuses'] = $statuses;
             }
@@ -2133,6 +2148,9 @@ class HiddenApi
                 foreach($page as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($page)){
+            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['page'] = $page;
@@ -2145,6 +2163,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($limit)){
+            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['limit'] = $limit;
             }
@@ -2155,6 +2176,9 @@ class HiddenApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($is_dry_run)){
+            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;
@@ -4298,6 +4322,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($external_system_ids)){
+            	$queryParams['external_system_ids'] = $external_system_ids ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['external_system_ids'] = $external_system_ids;
             }
@@ -4621,6 +4648,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($page)){
+            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -4631,6 +4661,9 @@ class HiddenApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($limit)){
+            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -4643,6 +4676,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($es_ids)){
+            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -4653,6 +4689,9 @@ class HiddenApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($job_ids)){
+            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -4665,6 +4704,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($start_date)){
+            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -4675,6 +4717,9 @@ class HiddenApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($end_date)){
+            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -4687,6 +4732,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($types)){
+            	$queryParams['types'] = $types ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['types'] = $types;
             }
@@ -4697,6 +4745,9 @@ class HiddenApi
                 foreach($query as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($query)){
+            	$queryParams['query'] = $query ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['query'] = $query;
@@ -4709,6 +4760,9 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($levels)){
+            	$queryParams['levels'] = $levels ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['levels'] = $levels;
             }
@@ -4719,6 +4773,9 @@ class HiddenApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($is_dry_run)){
+            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;

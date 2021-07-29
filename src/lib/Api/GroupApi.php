@@ -1,7 +1,7 @@
 <?php
 /**
  * GroupApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -1785,6 +1785,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($page)){
+            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -1795,6 +1798,9 @@ class GroupApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($limit)){
+            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -1813,6 +1819,9 @@ class GroupApi
                 foreach($allowed_chat_users_only as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($allowed_chat_users_only)){
+            	$queryParams['allowed_chat_users_only'] = $allowed_chat_users_only ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['allowed_chat_users_only'] = $allowed_chat_users_only;
@@ -2104,6 +2113,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($show_overdue_groups)){
+            	$queryParams['show_overdue_groups'] = $show_overdue_groups ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['show_overdue_groups'] = $show_overdue_groups;
             }
@@ -2114,6 +2126,9 @@ class GroupApi
                 foreach($show_inactive_groups as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($show_inactive_groups)){
+            	$queryParams['show_inactive_groups'] = $show_inactive_groups ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['show_inactive_groups'] = $show_inactive_groups;
@@ -3278,46 +3293,88 @@ class GroupApi
         $multipart = false;
 
         // query params
-        if (is_array($ids)) {
-            $ids = ObjectSerializer::serializeCollection($ids, 'deepObject', true);
-        }
         if ($ids !== null) {
-            $queryParams['ids'] = $ids;
+            if('form' === 'deepObject' && is_array($ids)) {
+                foreach($ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($ids)){
+            	$queryParams['ids[]'] = $ids ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['ids[]'] = $ids;
+            }
         }
         // query params
-        if (is_array($campus_ids)) {
-            $campus_ids = ObjectSerializer::serializeCollection($campus_ids, 'deepObject', true);
-        }
         if ($campus_ids !== null) {
-            $queryParams['campus_ids'] = $campus_ids;
+            if('form' === 'form' && is_array($campus_ids)) {
+                foreach($campus_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($campus_ids)){
+            	$queryParams['campus_ids[]'] = $campus_ids ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['campus_ids[]'] = $campus_ids;
+            }
         }
         // query params
-        if (is_array($agegroup_ids)) {
-            $agegroup_ids = ObjectSerializer::serializeCollection($agegroup_ids, 'deepObject', true);
-        }
         if ($agegroup_ids !== null) {
-            $queryParams['agegroup_ids'] = $agegroup_ids;
+            if('form' === 'deepObject' && is_array($agegroup_ids)) {
+                foreach($agegroup_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($agegroup_ids)){
+            	$queryParams['agegroup_ids[]'] = $agegroup_ids ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['agegroup_ids[]'] = $agegroup_ids;
+            }
         }
         // query params
-        if (is_array($group_status_ids)) {
-            $group_status_ids = ObjectSerializer::serializeCollection($group_status_ids, 'deepObject', true);
-        }
         if ($group_status_ids !== null) {
-            $queryParams['group_status_ids'] = $group_status_ids;
+            if('form' === 'deepObject' && is_array($group_status_ids)) {
+                foreach($group_status_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($group_status_ids)){
+            	$queryParams['group_status_ids[]'] = $group_status_ids ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['group_status_ids[]'] = $group_status_ids;
+            }
         }
         // query params
-        if (is_array($group_category_ids)) {
-            $group_category_ids = ObjectSerializer::serializeCollection($group_category_ids, 'deepObject', true);
-        }
         if ($group_category_ids !== null) {
-            $queryParams['group_category_ids'] = $group_category_ids;
+            if('form' === 'deepObject' && is_array($group_category_ids)) {
+                foreach($group_category_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($group_category_ids)){
+            	$queryParams['group_category_ids[]'] = $group_category_ids ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['group_category_ids[]'] = $group_category_ids;
+            }
         }
         // query params
-        if (is_array($target_group_ids)) {
-            $target_group_ids = ObjectSerializer::serializeCollection($target_group_ids, 'deepObject', true);
-        }
         if ($target_group_ids !== null) {
-            $queryParams['target_group_ids'] = $target_group_ids;
+            if('form' === 'deepObject' && is_array($target_group_ids)) {
+                foreach($target_group_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($target_group_ids)){
+            	$queryParams['target_group_ids[]'] = $target_group_ids ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['target_group_ids[]'] = $target_group_ids;
+            }
         }
         // query params
         if (is_array($weekdays)) {
@@ -3340,6 +3397,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($is_open_for_members)){
+            	$queryParams['is_open_for_members'] = $is_open_for_members ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['is_open_for_members'] = $is_open_for_members;
             }
@@ -3350,6 +3410,9 @@ class GroupApi
                 foreach($is_public as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($is_public)){
+            	$queryParams['is_public'] = $is_public ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_public'] = $is_public;
@@ -3362,6 +3425,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($show_overdue_groups)){
+            	$queryParams['show_overdue_groups'] = $show_overdue_groups ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['show_overdue_groups'] = $show_overdue_groups;
             }
@@ -3372,6 +3438,9 @@ class GroupApi
                 foreach($show_inactive_groups as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($show_inactive_groups)){
+            	$queryParams['show_inactive_groups'] = $show_inactive_groups ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['show_inactive_groups'] = $show_inactive_groups;
@@ -3384,6 +3453,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($without_my_groups)){
+            	$queryParams['without_my_groups'] = $without_my_groups ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['without_my_groups'] = $without_my_groups;
             }
@@ -3394,6 +3466,9 @@ class GroupApi
                 foreach($query as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($query)){
+            	$queryParams['query'] = $query ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['query'] = $query;
@@ -3406,6 +3481,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($page)){
+            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -3416,6 +3494,9 @@ class GroupApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($limit)){
+            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -4077,6 +4158,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($is_open_for_members)){
+            	$queryParams['is_open_for_members'] = $is_open_for_members ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['is_open_for_members'] = $is_open_for_members;
             }
@@ -4087,6 +4171,9 @@ class GroupApi
                 foreach($is_public as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($is_public)){
+            	$queryParams['is_public'] = $is_public ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_public'] = $is_public;
@@ -4099,6 +4186,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($show_overdue_groups)){
+            	$queryParams['show_overdue_groups'] = $show_overdue_groups ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['show_overdue_groups'] = $show_overdue_groups;
             }
@@ -4109,6 +4199,9 @@ class GroupApi
                 foreach($show_inactive_groups as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($show_inactive_groups)){
+            	$queryParams['show_inactive_groups'] = $show_inactive_groups ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['show_inactive_groups'] = $show_inactive_groups;
@@ -4121,6 +4214,9 @@ class GroupApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($without_my_groups)){
+            	$queryParams['without_my_groups'] = $without_my_groups ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['without_my_groups'] = $without_my_groups;
             }
@@ -4131,6 +4227,9 @@ class GroupApi
                 foreach($query as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($query)){
+            	$queryParams['query'] = $query ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['query'] = $query;
@@ -4409,6 +4508,9 @@ class GroupApi
                 foreach($with_deleted as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($with_deleted)){
+            	$queryParams['with_deleted'] = $with_deleted ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['with_deleted'] = $with_deleted;
@@ -4692,6 +4794,9 @@ class GroupApi
                 foreach($token as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($token)){
+            	$queryParams['token'] = $token ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['token'] = $token;

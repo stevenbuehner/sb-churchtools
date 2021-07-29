@@ -482,6 +482,9 @@ use {{invokerPackage}}\ObjectSerializer;
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool(${{paramName}})){
+            	$queryParams['{{baseName}}'] = ${{paramName}} ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['{{baseName}}'] = ${{paramName}};
             }

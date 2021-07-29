@@ -1,7 +1,7 @@
 <?php
 /**
  * PersonApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -346,6 +346,9 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($force)){
+            	$queryParams['force'] = $force ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['force'] = $force;
             }
@@ -356,6 +359,9 @@ class PersonApi
                 foreach($without_privacy_policy_agreement as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($without_privacy_policy_agreement)){
+            	$queryParams['without_privacy_policy_agreement'] = $without_privacy_policy_agreement ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['without_privacy_policy_agreement'] = $without_privacy_policy_agreement;
@@ -613,6 +619,9 @@ class PersonApi
                 foreach($comment as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($comment)){
+            	$queryParams['comment'] = $comment ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['comment'] = $comment;
@@ -1649,6 +1658,9 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($show_overdue_groups)){
+            	$queryParams['show_overdue_groups'] = $show_overdue_groups ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['show_overdue_groups'] = $show_overdue_groups;
             }
@@ -1659,6 +1671,9 @@ class PersonApi
                 foreach($show_inactive_groups as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($show_inactive_groups)){
+            	$queryParams['show_inactive_groups'] = $show_inactive_groups ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['show_inactive_groups'] = $show_inactive_groups;
@@ -2279,6 +2294,9 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($birthday_before)){
+            	$queryParams['birthday_before'] = $birthday_before ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['birthday_before'] = $birthday_before;
             }
@@ -2289,6 +2307,9 @@ class PersonApi
                 foreach($birthday_after as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($birthday_after)){
+            	$queryParams['birthday_after'] = $birthday_after ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['birthday_after'] = $birthday_after;
@@ -2301,6 +2322,9 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($is_archived)){
+            	$queryParams['is_archived'] = $is_archived ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['is_archived'] = $is_archived;
             }
@@ -2312,6 +2336,9 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($page)){
+            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -2322,6 +2349,9 @@ class PersonApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($limit)){
+            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -3734,6 +3764,9 @@ class PersonApi
                 foreach($from as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($from)){
+            	$queryParams['from'] = $from ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['from'] = $from;
@@ -5448,6 +5481,9 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($start_date)){
+            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -5458,6 +5494,9 @@ class PersonApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($end_date)){
+            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;

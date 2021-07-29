@@ -1,7 +1,7 @@
 <?php
 /**
  * AbsenceApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -857,6 +857,9 @@ class AbsenceApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($from_date)){
+            	$queryParams['from_date'] = $from_date ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['from_date'] = $from_date;
             }
@@ -867,6 +870,9 @@ class AbsenceApi
                 foreach($to_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($to_date)){
+            	$queryParams['to_date'] = $to_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['to_date'] = $to_date;

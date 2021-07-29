@@ -1,7 +1,7 @@
 <?php
 /**
  * EventApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -609,6 +609,9 @@ class EventApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($from)){
+            	$queryParams['from'] = $from ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['from'] = $from;
             }
@@ -620,6 +623,9 @@ class EventApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($to)){
+            	$queryParams['to'] = $to ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['to'] = $to;
             }
@@ -630,6 +636,9 @@ class EventApi
                 foreach($canceled as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($canceled)){
+            	$queryParams['canceled'] = $canceled ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['canceled'] = $canceled;
@@ -1466,6 +1475,9 @@ class EventApi
                 foreach($from as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($from)){
+            	$queryParams['from'] = $from ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['from'] = $from;

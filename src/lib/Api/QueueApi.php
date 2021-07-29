@@ -1,7 +1,7 @@
 <?php
 /**
  * QueueApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -320,6 +320,9 @@ class QueueApi
                 foreach($job_groups as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($job_groups)){
+            	$queryParams['job_groups'] = $job_groups ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_groups'] = $job_groups;
