@@ -64,7 +64,7 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'name_translated' => 'string',
         'sort_key' => 'float',
-        'is_default' => 'mixed'
+        'is_default' => 'bool'
     ];
 
     /**
@@ -344,7 +344,7 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_default
      *
-     * @return mixed
+     * @return bool
      */
     public function getIsDefault()
     {
@@ -354,7 +354,7 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_default
      *
-     * @param mixed $is_default Indicator if label is the default. Used for new person emails
+     * @param bool $is_default Indicator if label is the default. Used for new person emails
      *
      * @return self
      */

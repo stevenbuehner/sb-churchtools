@@ -370,7 +370,6 @@ Class | Method | HTTP request | Description
 - [CheckinPersonsGroup](docs/Model/CheckinPersonsGroup.md)
 - [Client](docs/Model/Client.md)
 - [ContactLabel](docs/Model/ContactLabel.md)
-- [ContactLabel1](docs/Model/ContactLabel1.md)
 - [CostCenter](docs/Model/CostCenter.md)
 - [DbField](docs/Model/DbField.md)
 - [DbField1](docs/Model/DbField1.md)

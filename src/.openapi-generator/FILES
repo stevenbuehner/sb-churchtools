@@ -64,7 +64,6 @@ docs/Model/Checkin.md
 docs/Model/CheckinPersonsGroup.md
 docs/Model/Client.md
 docs/Model/ContactLabel.md
-docs/Model/ContactLabel1.md
 docs/Model/CostCenter.md
 docs/Model/DbField.md
 docs/Model/DbField1.md
@@ -553,7 +552,6 @@ lib/Model/Checkin.php
 lib/Model/CheckinPersonsGroup.php
 lib/Model/Client.php
 lib/Model/ContactLabel.php
-lib/Model/ContactLabel1.php
 lib/Model/CostCenter.php
 lib/Model/DbField.php
 lib/Model/DbField1.php
@@ -980,4 +978,3 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/ContactLabel1Test.php
