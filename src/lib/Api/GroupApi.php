@@ -3388,7 +3388,7 @@ class GroupApi
             $group_type_ids = ObjectSerializer::serializeCollection($group_type_ids, 'deepObject', true);
         }
         if ($group_type_ids !== null) {
-            $queryParams['group_type_ids'] = $group_type_ids;
+            $queryParams['group_type_ids[]'] = $group_type_ids;
         }
         // query params
         if ($is_open_for_members !== null) {

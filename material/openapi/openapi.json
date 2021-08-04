@@ -30258,7 +30258,7 @@
             "style": "deepObject"
           },
           {
-            "name": "group_type_ids",
+            "name": "group_type_ids[]",
             "in": "query",
             "description": "Array of group type ids to filter the groups",
             "schema": {
