@@ -1,6 +1,6 @@
 <?php
 /**
- * FileApi
+ * DefaultApi
  * PHP version 7.3
  *
  * @category Class
@@ -39,14 +39,14 @@ use StevenBuehner\ChurchTools\HeaderSelector;
 use StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * FileApi Class Doc Comment
+ * DefaultApi Class Doc Comment
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class FileApi
+class DefaultApi
 {
     /**
      * @var ClientInterface
@@ -115,37 +115,31 @@ class FileApi
     }
 
     /**
-     * Operation deleteFiles
+     * Operation deleteFilesId
      *
-     * Delete files that are matching the domainType and domainIdentifier
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $id file id (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFiles($domain_type, $domain_identifier)
+    public function deleteFilesId($id)
     {
-        $this->deleteFilesWithHttpInfo($domain_type, $domain_identifier);
+        $this->deleteFilesIdWithHttpInfo($id);
     }
 
     /**
-     * Operation deleteFilesWithHttpInfo
+     * Operation deleteFilesIdWithHttpInfo
      *
-     * Delete files that are matching the domainType and domainIdentifier
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $id file id (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFilesWithHttpInfo($domain_type, $domain_identifier)
+    public function deleteFilesIdWithHttpInfo($id)
     {
-        $request = $this->deleteFilesRequest($domain_type, $domain_identifier);
+        $request = $this->deleteFilesIdRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,33 +173,22 @@ class FileApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'string',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
     }
 
     /**
-     * Operation deleteFilesAsync
+     * Operation deleteFilesIdAsync
      *
-     * Delete files that are matching the domainType and domainIdentifier
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $id file id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFilesAsync($domain_type, $domain_identifier)
+    public function deleteFilesIdAsync($id)
     {
-        return $this->deleteFilesAsyncWithHttpInfo($domain_type, $domain_identifier)
+        return $this->deleteFilesIdAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -214,20 +197,17 @@ class FileApi
     }
 
     /**
-     * Operation deleteFilesAsyncWithHttpInfo
+     * Operation deleteFilesIdAsyncWithHttpInfo
      *
-     * Delete files that are matching the domainType and domainIdentifier
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $id file id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFilesAsyncWithHttpInfo($domain_type, $domain_identifier)
+    public function deleteFilesIdAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteFilesRequest($domain_type, $domain_identifier);
+        $request = $this->deleteFilesIdRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -253,30 +233,23 @@ class FileApi
     }
 
     /**
-     * Create request for operation 'deleteFiles'
+     * Create request for operation 'deleteFilesId'
      *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $id file id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteFilesRequest($domain_type, $domain_identifier)
+    public function deleteFilesIdRequest($id)
     {
-        // verify the required parameter 'domain_type' is set
-        if ($domain_type === null || (is_array($domain_type) && count($domain_type) === 0)) {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $domain_type when calling deleteFiles'
-            );
-        }
-        // verify the required parameter 'domain_identifier' is set
-        if ($domain_identifier === null || (is_array($domain_identifier) && count($domain_identifier) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $domain_identifier when calling deleteFiles'
+                'Missing the required parameter $id when calling deleteFilesId'
             );
         }
 
-        $resourcePath = '/files/{domainType}/{domainIdentifier}';
+        $resourcePath = '/files/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -286,18 +259,10 @@ class FileApi
 
 
         // path params
-        if ($domain_type !== null) {
+        if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domainType' . '}',
-                ObjectSerializer::toPathValue($domain_type),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($domain_identifier !== null) {
-            $resourcePath = str_replace(
-                '{' . 'domainIdentifier' . '}',
-                ObjectSerializer::toPathValue($domain_identifier),
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }
@@ -305,11 +270,11 @@ class FileApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['text/plain']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['text/plain'],
+                [],
                 []
             );
         }
@@ -366,40 +331,32 @@ class FileApi
     }
 
     /**
-     * Operation uploadFiles
+     * Operation patchFilesId
      *
-     * Upload files
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
-     * @param  \SplFileObject[] $files files (optional)
+     * @param  int $id file id (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20030|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse204
      */
-    public function uploadFiles($domain_type, $domain_identifier, $files = null)
+    public function patchFilesId($id)
     {
-        list($response) = $this->uploadFilesWithHttpInfo($domain_type, $domain_identifier, $files);
+        list($response) = $this->patchFilesIdWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation uploadFilesWithHttpInfo
+     * Operation patchFilesIdWithHttpInfo
      *
-     * Upload files
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
-     * @param  \SplFileObject[] $files (optional)
+     * @param  int $id file id (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20030|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse204, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadFilesWithHttpInfo($domain_type, $domain_identifier, $files = null)
+    public function patchFilesIdWithHttpInfo($id)
     {
-        $request = $this->uploadFilesRequest($domain_type, $domain_identifier, $files);
+        $request = $this->patchFilesIdRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -430,33 +387,21 @@ class FileApi
             }
 
             switch($statusCode) {
-                case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20030' === '\SplFileObject') {
+                case 204:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse204' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20030', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('string' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'string', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse204', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse204';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -471,18 +416,10 @@ class FileApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 204:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20030',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'string',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse204',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -493,20 +430,16 @@ class FileApi
     }
 
     /**
-     * Operation uploadFilesAsync
+     * Operation patchFilesIdAsync
      *
-     * Upload files
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
-     * @param  \SplFileObject[] $files (optional)
+     * @param  int $id file id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFilesAsync($domain_type, $domain_identifier, $files = null)
+    public function patchFilesIdAsync($id)
     {
-        return $this->uploadFilesAsyncWithHttpInfo($domain_type, $domain_identifier, $files)
+        return $this->patchFilesIdAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -515,21 +448,17 @@ class FileApi
     }
 
     /**
-     * Operation uploadFilesAsyncWithHttpInfo
+     * Operation patchFilesIdAsyncWithHttpInfo
      *
-     * Upload files
-     *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
-     * @param  \SplFileObject[] $files (optional)
+     * @param  int $id file id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFilesAsyncWithHttpInfo($domain_type, $domain_identifier, $files = null)
+    public function patchFilesIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030';
-        $request = $this->uploadFilesRequest($domain_type, $domain_identifier, $files);
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse204';
+        $request = $this->patchFilesIdRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -565,31 +494,23 @@ class FileApi
     }
 
     /**
-     * Create request for operation 'uploadFiles'
+     * Create request for operation 'patchFilesId'
      *
-     * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
-     * @param  \SplFileObject[] $files (optional)
+     * @param  int $id file id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function uploadFilesRequest($domain_type, $domain_identifier, $files = null)
+    public function patchFilesIdRequest($id)
     {
-        // verify the required parameter 'domain_type' is set
-        if ($domain_type === null || (is_array($domain_type) && count($domain_type) === 0)) {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $domain_type when calling uploadFiles'
-            );
-        }
-        // verify the required parameter 'domain_identifier' is set
-        if ($domain_identifier === null || (is_array($domain_identifier) && count($domain_identifier) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $domain_identifier when calling uploadFiles'
+                'Missing the required parameter $id when calling patchFilesId'
             );
         }
 
-        $resourcePath = '/files/{domainType}/{domainIdentifier}';
+        $resourcePath = '/files/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -599,43 +520,23 @@ class FileApi
 
 
         // path params
-        if ($domain_type !== null) {
+        if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domainType' . '}',
-                ObjectSerializer::toPathValue($domain_type),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($domain_identifier !== null) {
-            $resourcePath = str_replace(
-                '{' . 'domainIdentifier' . '}',
-                ObjectSerializer::toPathValue($domain_identifier),
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }
 
-        // form params
-        if ($files !== null) {
-            $multipart = true;
-            $formParams['files'] = [];
-            $paramFiles = is_array($files) ? $files : [$files];
-            foreach ($paramFiles as $paramFile) {
-                $formParams['files'][] = \GuzzleHttp\Psr7\try_fopen(
-                    ObjectSerializer::toFormValue($paramFile),
-                    'rb'
-                );
-            }
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'text/plain']
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'text/plain'],
-                ['multipart/form-data']
+                ['application/json'],
+                []
             );
         }
 
@@ -683,7 +584,7 @@ class FileApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'PATCH',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

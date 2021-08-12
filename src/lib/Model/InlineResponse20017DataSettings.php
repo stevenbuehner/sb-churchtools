@@ -61,10 +61,17 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     protected static $openAPITypes = [
         'is_hidden' => 'bool',
         'is_open_for_members' => 'bool',
+        'allow_spouse_registration' => 'bool',
+        'allow_child_registration' => 'bool',
+        'allow_same_email_registration' => 'bool',
+        'allow_other_registration' => 'bool',
         'auto_accept' => 'bool',
+        'allow_waitinglist' => 'bool',
+        'automatic_move_up' => 'bool',
         'is_public' => 'bool',
         'in_statistic' => 'bool',
         'group_meeting' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsGroupMeeting',
+        'qr_code_checkin' => 'bool',
         'inform_leader' => 'bool',
         'new_member' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsNewMember'
     ];
@@ -79,10 +86,17 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     protected static $openAPIFormats = [
         'is_hidden' => null,
         'is_open_for_members' => null,
+        'allow_spouse_registration' => null,
+        'allow_child_registration' => null,
+        'allow_same_email_registration' => null,
+        'allow_other_registration' => null,
         'auto_accept' => null,
+        'allow_waitinglist' => null,
+        'automatic_move_up' => null,
         'is_public' => null,
         'in_statistic' => null,
         'group_meeting' => null,
+        'qr_code_checkin' => null,
         'inform_leader' => null,
         'new_member' => null
     ];
@@ -116,10 +130,17 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     protected static $attributeMap = [
         'is_hidden' => 'isHidden',
         'is_open_for_members' => 'isOpenForMembers',
+        'allow_spouse_registration' => 'allowSpouseRegistration',
+        'allow_child_registration' => 'allowChildRegistration',
+        'allow_same_email_registration' => 'allowSameEmailRegistration',
+        'allow_other_registration' => 'allowOtherRegistration',
         'auto_accept' => 'autoAccept',
+        'allow_waitinglist' => 'allowWaitinglist',
+        'automatic_move_up' => 'automaticMoveUp',
         'is_public' => 'isPublic',
         'in_statistic' => 'inStatistic',
         'group_meeting' => 'groupMeeting',
+        'qr_code_checkin' => 'qrCodeCheckin',
         'inform_leader' => 'informLeader',
         'new_member' => 'newMember'
     ];
@@ -132,10 +153,17 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     protected static $setters = [
         'is_hidden' => 'setIsHidden',
         'is_open_for_members' => 'setIsOpenForMembers',
+        'allow_spouse_registration' => 'setAllowSpouseRegistration',
+        'allow_child_registration' => 'setAllowChildRegistration',
+        'allow_same_email_registration' => 'setAllowSameEmailRegistration',
+        'allow_other_registration' => 'setAllowOtherRegistration',
         'auto_accept' => 'setAutoAccept',
+        'allow_waitinglist' => 'setAllowWaitinglist',
+        'automatic_move_up' => 'setAutomaticMoveUp',
         'is_public' => 'setIsPublic',
         'in_statistic' => 'setInStatistic',
         'group_meeting' => 'setGroupMeeting',
+        'qr_code_checkin' => 'setQrCodeCheckin',
         'inform_leader' => 'setInformLeader',
         'new_member' => 'setNewMember'
     ];
@@ -148,10 +176,17 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     protected static $getters = [
         'is_hidden' => 'getIsHidden',
         'is_open_for_members' => 'getIsOpenForMembers',
+        'allow_spouse_registration' => 'getAllowSpouseRegistration',
+        'allow_child_registration' => 'getAllowChildRegistration',
+        'allow_same_email_registration' => 'getAllowSameEmailRegistration',
+        'allow_other_registration' => 'getAllowOtherRegistration',
         'auto_accept' => 'getAutoAccept',
+        'allow_waitinglist' => 'getAllowWaitinglist',
+        'automatic_move_up' => 'getAutomaticMoveUp',
         'is_public' => 'getIsPublic',
         'in_statistic' => 'getInStatistic',
         'group_meeting' => 'getGroupMeeting',
+        'qr_code_checkin' => 'getQrCodeCheckin',
         'inform_leader' => 'getInformLeader',
         'new_member' => 'getNewMember'
     ];
@@ -215,10 +250,17 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     {
         $this->container['is_hidden'] = $data['is_hidden'] ?? null;
         $this->container['is_open_for_members'] = $data['is_open_for_members'] ?? null;
+        $this->container['allow_spouse_registration'] = $data['allow_spouse_registration'] ?? null;
+        $this->container['allow_child_registration'] = $data['allow_child_registration'] ?? null;
+        $this->container['allow_same_email_registration'] = $data['allow_same_email_registration'] ?? null;
+        $this->container['allow_other_registration'] = $data['allow_other_registration'] ?? null;
         $this->container['auto_accept'] = $data['auto_accept'] ?? null;
+        $this->container['allow_waitinglist'] = $data['allow_waitinglist'] ?? null;
+        $this->container['automatic_move_up'] = $data['automatic_move_up'] ?? null;
         $this->container['is_public'] = $data['is_public'] ?? null;
         $this->container['in_statistic'] = $data['in_statistic'] ?? null;
         $this->container['group_meeting'] = $data['group_meeting'] ?? null;
+        $this->container['qr_code_checkin'] = $data['qr_code_checkin'] ?? null;
         $this->container['inform_leader'] = $data['inform_leader'] ?? null;
         $this->container['new_member'] = $data['new_member'] ?? null;
     }
@@ -296,6 +338,102 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Gets allow_spouse_registration
+     *
+     * @return bool|null
+     */
+    public function getAllowSpouseRegistration()
+    {
+        return $this->container['allow_spouse_registration'];
+    }
+
+    /**
+     * Sets allow_spouse_registration
+     *
+     * @param bool|null $allow_spouse_registration Spous is listed as option during group sign up.
+     *
+     * @return self
+     */
+    public function setAllowSpouseRegistration($allow_spouse_registration)
+    {
+        $this->container['allow_spouse_registration'] = $allow_spouse_registration;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_child_registration
+     *
+     * @return bool|null
+     */
+    public function getAllowChildRegistration()
+    {
+        return $this->container['allow_child_registration'];
+    }
+
+    /**
+     * Sets allow_child_registration
+     *
+     * @param bool|null $allow_child_registration Own children are listed as option during group sign up.
+     *
+     * @return self
+     */
+    public function setAllowChildRegistration($allow_child_registration)
+    {
+        $this->container['allow_child_registration'] = $allow_child_registration;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_same_email_registration
+     *
+     * @return bool|null
+     */
+    public function getAllowSameEmailRegistration()
+    {
+        return $this->container['allow_same_email_registration'];
+    }
+
+    /**
+     * Sets allow_same_email_registration
+     *
+     * @param bool|null $allow_same_email_registration People with same eMail address are listed as option during group sign up.
+     *
+     * @return self
+     */
+    public function setAllowSameEmailRegistration($allow_same_email_registration)
+    {
+        $this->container['allow_same_email_registration'] = $allow_same_email_registration;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_other_registration
+     *
+     * @return bool|null
+     */
+    public function getAllowOtherRegistration()
+    {
+        return $this->container['allow_other_registration'];
+    }
+
+    /**
+     * Sets allow_other_registration
+     *
+     * @param bool|null $allow_other_registration It is allowed to sign up other people uring group sign up.
+     *
+     * @return self
+     */
+    public function setAllowOtherRegistration($allow_other_registration)
+    {
+        $this->container['allow_other_registration'] = $allow_other_registration;
+
+        return $this;
+    }
+
+    /**
      * Gets auto_accept
      *
      * @return bool|null
@@ -315,6 +453,54 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     public function setAutoAccept($auto_accept)
     {
         $this->container['auto_accept'] = $auto_accept;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_waitinglist
+     *
+     * @return bool|null
+     */
+    public function getAllowWaitinglist()
+    {
+        return $this->container['allow_waitinglist'];
+    }
+
+    /**
+     * Sets allow_waitinglist
+     *
+     * @param bool|null $allow_waitinglist Waiting list is in-/active for this group.
+     *
+     * @return self
+     */
+    public function setAllowWaitinglist($allow_waitinglist)
+    {
+        $this->container['allow_waitinglist'] = $allow_waitinglist;
+
+        return $this;
+    }
+
+    /**
+     * Gets automatic_move_up
+     *
+     * @return bool|null
+     */
+    public function getAutomaticMoveUp()
+    {
+        return $this->container['automatic_move_up'];
+    }
+
+    /**
+     * Sets automatic_move_up
+     *
+     * @param bool|null $automatic_move_up In combination with waiting list: People automatically move up in waiting list.
+     *
+     * @return self
+     */
+    public function setAutomaticMoveUp($automatic_move_up)
+    {
+        $this->container['automatic_move_up'] = $automatic_move_up;
 
         return $this;
     }
@@ -387,6 +573,30 @@ class InlineResponse20017DataSettings implements ModelInterface, ArrayAccess, \J
     public function setGroupMeeting($group_meeting)
     {
         $this->container['group_meeting'] = $group_meeting;
+
+        return $this;
+    }
+
+    /**
+     * Gets qr_code_checkin
+     *
+     * @return bool|null
+     */
+    public function getQrCodeCheckin()
+    {
+        return $this->container['qr_code_checkin'];
+    }
+
+    /**
+     * Sets qr_code_checkin
+     *
+     * @param bool|null $qr_code_checkin QR Codes are sent to participants, which can be used during check-in
+     *
+     * @return self
+     */
+    public function setQrCodeCheckin($qr_code_checkin)
+    {
+        $this->container['qr_code_checkin'] = $qr_code_checkin;
 
         return $this;
     }

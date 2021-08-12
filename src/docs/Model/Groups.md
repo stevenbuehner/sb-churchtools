@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional]
 **security_level_for_group** | **int** | You can see group fields up to this security level. | [optional]
 **information** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation**](InlineResponse20017DataInformation.md) |  | [optional]
-**settings** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings**](InlineResponse20017DataSettings.md) |  | [optional]
+**settings** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20093Settings**](InlineResponse20093Settings.md) |  | [optional]
 **follow_up** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp**](InlineResponse20017DataFollowUp.md) |  | [optional]
 **roles** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]**](InlineResponse20017DataRoles.md) |  | [optional]
 

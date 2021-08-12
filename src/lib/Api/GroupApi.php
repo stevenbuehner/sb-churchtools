@@ -1051,6 +1051,222 @@ class GroupApi
     }
 
     /**
+     * Operation deleteGroup
+     *
+     * @param  bool $dry_run dry_run (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteGroup($dry_run = null)
+    {
+        $this->deleteGroupWithHttpInfo($dry_run);
+    }
+
+    /**
+     * Operation deleteGroupWithHttpInfo
+     *
+     * @param  bool $dry_run (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteGroupWithHttpInfo($dry_run = null)
+    {
+        $request = $this->deleteGroupRequest($dry_run);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteGroupAsync
+     *
+     * @param  bool $dry_run (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteGroupAsync($dry_run = null)
+    {
+        return $this->deleteGroupAsyncWithHttpInfo($dry_run)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteGroupAsyncWithHttpInfo
+     *
+     * @param  bool $dry_run (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteGroupAsyncWithHttpInfo($dry_run = null)
+    {
+        $returnType = '';
+        $request = $this->deleteGroupRequest($dry_run);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteGroup'
+     *
+     * @param  bool $dry_run (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteGroupRequest($dry_run = null)
+    {
+
+        $resourcePath = '/groups/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($dry_run !== null) {
+            if('form' === 'form' && is_array($dry_run)) {
+                foreach($dry_run as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($dry_run)){
+            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['dry_run'] = $dry_run;
+            }
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId
      *
      * Revoke checkin
@@ -3308,7 +3524,7 @@ class GroupApi
         }
         // query params
         if ($campus_ids !== null) {
-            if('form' === 'form' && is_array($campus_ids)) {
+            if('form' === 'deepObject' && is_array($campus_ids)) {
                 foreach($campus_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
@@ -3377,18 +3593,32 @@ class GroupApi
             }
         }
         // query params
-        if (is_array($weekdays)) {
-            $weekdays = ObjectSerializer::serializeCollection($weekdays, 'deepObject', true);
-        }
         if ($weekdays !== null) {
-            $queryParams['weekdays'] = $weekdays;
+            if('form' === 'deepObject' && is_array($weekdays)) {
+                foreach($weekdays as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($weekdays)){
+            	$queryParams['weekdays[]'] = $weekdays ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['weekdays[]'] = $weekdays;
+            }
         }
         // query params
-        if (is_array($group_type_ids)) {
-            $group_type_ids = ObjectSerializer::serializeCollection($group_type_ids, 'deepObject', true);
-        }
         if ($group_type_ids !== null) {
-            $queryParams['group_type_ids[]'] = $group_type_ids;
+            if('form' === 'deepObject' && is_array($group_type_ids)) {
+                foreach($group_type_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else if (is_bool($group_type_ids)){
+            	$queryParams['group_type_ids[]'] = $group_type_ids ? 'TRUE' : 'FALSE';
+            }
+            else {
+                $queryParams['group_type_ids[]'] = $group_type_ids;
+            }
         }
         // query params
         if ($is_open_for_members !== null) {
@@ -4149,7 +4379,7 @@ class GroupApi
             $group_type_ids = ObjectSerializer::serializeCollection($group_type_ids, 'deepObject', true);
         }
         if ($group_type_ids !== null) {
-            $queryParams['group_type_ids'] = $group_type_ids;
+            $queryParams['group_type_ids[]'] = $group_type_ids;
         }
         // query params
         if ($is_open_for_members !== null) {

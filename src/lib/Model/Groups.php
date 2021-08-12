@@ -65,7 +65,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'security_level_for_group' => 'int',
         'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation',
-        'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings',
+        'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20093Settings',
         'follow_up' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp',
         'roles' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]'
     ];
@@ -371,7 +371,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets settings
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20093Settings|null
      */
     public function getSettings()
     {
@@ -381,7 +381,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets settings
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null $settings settings
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20093Settings|null $settings settings
      *
      * @return self
      */

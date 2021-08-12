@@ -109,6 +109,8 @@ Class | Method | HTTP request | Description
 *ContactLabelApi* | [**getContactlabels**](docs/Api/ContactLabelApi.md#getcontactlabels) | **GET** /contactlabels | Get All Contact Labels
 *ContactLabelApi* | [**postContactlabels**](docs/Api/ContactLabelApi.md#postcontactlabels) | **POST** /contactlabels | Create new Contact Label
 *ContactLabelApi* | [**putContactlabel**](docs/Api/ContactLabelApi.md#putcontactlabel) | **PUT** /contactlabels/{id} | Update Contact Label
+*DefaultApi* | [**deleteFilesId**](docs/Api/DefaultApi.md#deletefilesid) | **DELETE** /files/{id} | 
+*DefaultApi* | [**patchFilesId**](docs/Api/DefaultApi.md#patchfilesid) | **PATCH** /files/{id} | 
 *DepartmentApi* | [**getAllDepartments**](docs/Api/DepartmentApi.md#getalldepartments) | **GET** /departments | Get all departments
 *EventApi* | [**getAgendaForEvent**](docs/Api/EventApi.md#getagendaforevent) | **GET** /events/{eventId}/agenda | Get agenda for event
 *EventApi* | [**getAllEvents**](docs/Api/EventApi.md#getallevents) | **GET** /events | Get all events
@@ -120,7 +122,6 @@ Class | Method | HTTP request | Description
 *EventApi* | [**sendEventEmail**](docs/Api/EventApi.md#sendeventemail) | **POST** /events/send | Send Mail to Event Participants
 *EventApi* | [**startStopChat**](docs/Api/EventApi.md#startstopchat) | **POST** /events/{eventId}/chat | Start or stop an event chat
 *FieldApi* | [**getAllFields**](docs/Api/FieldApi.md#getallfields) | **GET** /fields | Get all fields
-*FileApi* | [**deleteFileById**](docs/Api/FileApi.md#deletefilebyid) | **DELETE** /files/{id} | Delete file by id
 *FileApi* | [**deleteFiles**](docs/Api/FileApi.md#deletefiles) | **DELETE** /files/{domainType}/{domainIdentifier} | Delete files that are matching the domainType and domainIdentifier
 *FileApi* | [**uploadFiles**](docs/Api/FileApi.md#uploadfiles) | **POST** /files/{domainType}/{domainIdentifier} | Upload files
 *FinanceApi* | [**applyFinanceTemplate**](docs/Api/FinanceApi.md#applyfinancetemplate) | **POST** /finance/templates/{id} | Apply finance template
@@ -197,6 +198,7 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**checkin**](docs/Api/GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin/{personId} | Checkin a person to a group
 *GroupApi* | [**createMeeting**](docs/Api/GroupApi.md#createmeeting) | **POST** /groups/{id}/meetings | Create a group meeting
 *GroupApi* | [**createOrUpdateMember**](docs/Api/GroupApi.md#createorupdatemember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
+*GroupApi* | [**deleteGroup**](docs/Api/GroupApi.md#deletegroup) | **DELETE** /groups/{id} | 
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingidmembersmemberid) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
 *GroupApi* | [**deleteMember**](docs/Api/GroupApi.md#deletemember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
 *GroupApi* | [**getAllGroupMembers**](docs/Api/GroupApi.md#getallgroupmembers) | **GET** /groups/{id}/members | Get all group members
@@ -528,6 +530,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse20017Data](docs/Model/InlineResponse20017Data.md)
 - [InlineResponse20017DataFollowUp](docs/Model/InlineResponse20017DataFollowUp.md)
 - [InlineResponse20017DataInformation](docs/Model/InlineResponse20017DataInformation.md)
+- [InlineResponse20017DataPermissions](docs/Model/InlineResponse20017DataPermissions.md)
 - [InlineResponse20017DataRoles](docs/Model/InlineResponse20017DataRoles.md)
 - [InlineResponse20017DataSettings](docs/Model/InlineResponse20017DataSettings.md)
 - [InlineResponse20017DataSettingsGroupMeeting](docs/Model/InlineResponse20017DataSettingsGroupMeeting.md)
@@ -703,6 +706,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse20092](docs/Model/InlineResponse20092.md)
 - [InlineResponse20092Data](docs/Model/InlineResponse20092Data.md)
 - [InlineResponse20093](docs/Model/InlineResponse20093.md)
+- [InlineResponse20093Settings](docs/Model/InlineResponse20093Settings.md)
 - [InlineResponse20094](docs/Model/InlineResponse20094.md)
 - [InlineResponse20095](docs/Model/InlineResponse20095.md)
 - [InlineResponse20096](docs/Model/InlineResponse20096.md)
@@ -722,6 +726,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse2016](docs/Model/InlineResponse2016.md)
 - [InlineResponse2017](docs/Model/InlineResponse2017.md)
 - [InlineResponse2017Data](docs/Model/InlineResponse2017Data.md)
+- [InlineResponse204](docs/Model/InlineResponse204.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse4001](docs/Model/InlineResponse4001.md)
 - [InlineResponse4002](docs/Model/InlineResponse4002.md)

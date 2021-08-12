@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **guid** | **string** |  | [optional]
 **name** | **string** |  | [optional]
 **security_level_for_group** | **int** | You can see group fields up to this security level. | [optional]
+**permissions** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions**](InlineResponse20017DataPermissions.md) |  | [optional]
 **information** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation**](InlineResponse20017DataInformation.md) |  | [optional]
 **settings** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings**](InlineResponse20017DataSettings.md) |  | [optional]
 **follow_up** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp**](InlineResponse20017DataFollowUp.md) |  | [optional]

@@ -1,6 +1,6 @@
 <?php
 /**
- * Group
+ * InlineResponse20093Settings
  *
  * PHP version 7.2
  *
@@ -32,10 +32,9 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * Group Class Doc Comment
+ * InlineResponse20093Settings Class Doc Comment
  *
  * @category Class
- * @description The group model structures all information in different objects: &#x60;information&#x60;, &#x60;settings&#x60;, &#x60;followUp&#x60;, and &#x60;roles&#x60;. Custom group fields are added to the root level of this model.
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +42,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Group implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse20093Settings implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Group';
+    protected static $openAPIModelName = 'inline_response_200_93_settings';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,15 +59,14 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'guid' => 'string',
-        'name' => 'string',
-        'security_level_for_group' => 'int',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions',
-        'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation',
-        'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings',
-        'follow_up' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp',
-        'roles' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]'
+        'is_hidden' => 'bool',
+        'is_open_for_members' => 'bool',
+        'auto_accept' => 'bool',
+        'is_public' => 'bool',
+        'in_statistic' => 'bool',
+        'group_meeting' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsGroupMeeting',
+        'inform_leader' => 'bool',
+        'new_member' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsNewMember'
     ];
 
     /**
@@ -79,15 +77,14 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'guid' => null,
-        'name' => null,
-        'security_level_for_group' => null,
-        'permissions' => null,
-        'information' => null,
-        'settings' => null,
-        'follow_up' => null,
-        'roles' => null
+        'is_hidden' => null,
+        'is_open_for_members' => null,
+        'auto_accept' => null,
+        'is_public' => null,
+        'in_statistic' => null,
+        'group_meeting' => null,
+        'inform_leader' => null,
+        'new_member' => null
     ];
 
     /**
@@ -117,15 +114,14 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'guid' => 'guid',
-        'name' => 'name',
-        'security_level_for_group' => 'securityLevelForGroup',
-        'permissions' => 'permissions',
-        'information' => 'information',
-        'settings' => 'settings',
-        'follow_up' => 'followUp',
-        'roles' => 'roles'
+        'is_hidden' => 'isHidden',
+        'is_open_for_members' => 'isOpenForMembers',
+        'auto_accept' => 'autoAccept',
+        'is_public' => 'isPublic',
+        'in_statistic' => 'inStatistic',
+        'group_meeting' => 'groupMeeting',
+        'inform_leader' => 'informLeader',
+        'new_member' => 'newMember'
     ];
 
     /**
@@ -134,15 +130,14 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'guid' => 'setGuid',
-        'name' => 'setName',
-        'security_level_for_group' => 'setSecurityLevelForGroup',
-        'permissions' => 'setPermissions',
-        'information' => 'setInformation',
-        'settings' => 'setSettings',
-        'follow_up' => 'setFollowUp',
-        'roles' => 'setRoles'
+        'is_hidden' => 'setIsHidden',
+        'is_open_for_members' => 'setIsOpenForMembers',
+        'auto_accept' => 'setAutoAccept',
+        'is_public' => 'setIsPublic',
+        'in_statistic' => 'setInStatistic',
+        'group_meeting' => 'setGroupMeeting',
+        'inform_leader' => 'setInformLeader',
+        'new_member' => 'setNewMember'
     ];
 
     /**
@@ -151,15 +146,14 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'guid' => 'getGuid',
-        'name' => 'getName',
-        'security_level_for_group' => 'getSecurityLevelForGroup',
-        'permissions' => 'getPermissions',
-        'information' => 'getInformation',
-        'settings' => 'getSettings',
-        'follow_up' => 'getFollowUp',
-        'roles' => 'getRoles'
+        'is_hidden' => 'getIsHidden',
+        'is_open_for_members' => 'getIsOpenForMembers',
+        'auto_accept' => 'getAutoAccept',
+        'is_public' => 'getIsPublic',
+        'in_statistic' => 'getInStatistic',
+        'group_meeting' => 'getGroupMeeting',
+        'inform_leader' => 'getInformLeader',
+        'new_member' => 'getNewMember'
     ];
 
     /**
@@ -219,15 +213,14 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['guid'] = $data['guid'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['security_level_for_group'] = $data['security_level_for_group'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
-        $this->container['information'] = $data['information'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
-        $this->container['follow_up'] = $data['follow_up'] ?? null;
-        $this->container['roles'] = $data['roles'] ?? null;
+        $this->container['is_hidden'] = $data['is_hidden'] ?? null;
+        $this->container['is_open_for_members'] = $data['is_open_for_members'] ?? null;
+        $this->container['auto_accept'] = $data['auto_accept'] ?? null;
+        $this->container['is_public'] = $data['is_public'] ?? null;
+        $this->container['in_statistic'] = $data['in_statistic'] ?? null;
+        $this->container['group_meeting'] = $data['group_meeting'] ?? null;
+        $this->container['inform_leader'] = $data['inform_leader'] ?? null;
+        $this->container['new_member'] = $data['new_member'] ?? null;
     }
 
     /**
@@ -255,217 +248,193 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets is_hidden
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getId()
+    public function getIsHidden()
     {
-        return $this->container['id'];
+        return $this->container['is_hidden'];
     }
 
     /**
-     * Sets id
+     * Sets is_hidden
      *
-     * @param int|null $id id
+     * @param bool|null $is_hidden is_hidden
      *
      * @return self
      */
-    public function setId($id)
+    public function setIsHidden($is_hidden)
     {
-        $this->container['id'] = $id;
+        $this->container['is_hidden'] = $is_hidden;
 
         return $this;
     }
 
     /**
-     * Gets guid
+     * Gets is_open_for_members
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getGuid()
+    public function getIsOpenForMembers()
     {
-        return $this->container['guid'];
+        return $this->container['is_open_for_members'];
     }
 
     /**
-     * Sets guid
+     * Sets is_open_for_members
      *
-     * @param string|null $guid guid
+     * @param bool|null $is_open_for_members Indicator if people can apply for participation.
      *
      * @return self
      */
-    public function setGuid($guid)
+    public function setIsOpenForMembers($is_open_for_members)
     {
-        $this->container['guid'] = $guid;
+        $this->container['is_open_for_members'] = $is_open_for_members;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets auto_accept
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getName()
+    public function getAutoAccept()
     {
-        return $this->container['name'];
+        return $this->container['auto_accept'];
     }
 
     /**
-     * Sets name
+     * Sets auto_accept
      *
-     * @param string|null $name name
+     * @param bool|null $auto_accept Indicator if applications are accepted automatically.
      *
      * @return self
      */
-    public function setName($name)
+    public function setAutoAccept($auto_accept)
     {
-        $this->container['name'] = $name;
+        $this->container['auto_accept'] = $auto_accept;
 
         return $this;
     }
 
     /**
-     * Gets security_level_for_group
+     * Gets is_public
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getSecurityLevelForGroup()
+    public function getIsPublic()
     {
-        return $this->container['security_level_for_group'];
+        return $this->container['is_public'];
     }
 
     /**
-     * Sets security_level_for_group
+     * Sets is_public
      *
-     * @param int|null $security_level_for_group You can see group fields up to this security level.
+     * @param bool|null $is_public is_public
      *
      * @return self
      */
-    public function setSecurityLevelForGroup($security_level_for_group)
+    public function setIsPublic($is_public)
     {
-        $this->container['security_level_for_group'] = $security_level_for_group;
+        $this->container['is_public'] = $is_public;
 
         return $this;
     }
 
     /**
-     * Gets permissions
+     * Gets in_statistic
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null
+     * @return bool|null
      */
-    public function getPermissions()
+    public function getInStatistic()
     {
-        return $this->container['permissions'];
+        return $this->container['in_statistic'];
     }
 
     /**
-     * Sets permissions
+     * Sets in_statistic
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null $permissions permissions
+     * @param bool|null $in_statistic Show in statistics.
      *
      * @return self
      */
-    public function setPermissions($permissions)
+    public function setInStatistic($in_statistic)
     {
-        $this->container['permissions'] = $permissions;
+        $this->container['in_statistic'] = $in_statistic;
 
         return $this;
     }
 
     /**
-     * Gets information
+     * Gets group_meeting
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsGroupMeeting|null
      */
-    public function getInformation()
+    public function getGroupMeeting()
     {
-        return $this->container['information'];
+        return $this->container['group_meeting'];
     }
 
     /**
-     * Sets information
+     * Sets group_meeting
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation|null $information information
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsGroupMeeting|null $group_meeting group_meeting
      *
      * @return self
      */
-    public function setInformation($information)
+    public function setGroupMeeting($group_meeting)
     {
-        $this->container['information'] = $information;
+        $this->container['group_meeting'] = $group_meeting;
 
         return $this;
     }
 
     /**
-     * Gets settings
+     * Gets inform_leader
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null
+     * @return bool|null
      */
-    public function getSettings()
+    public function getInformLeader()
     {
-        return $this->container['settings'];
+        return $this->container['inform_leader'];
     }
 
     /**
-     * Sets settings
+     * Sets inform_leader
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null $settings settings
+     * @param bool|null $inform_leader Inform leader via e-mail about changes.
      *
      * @return self
      */
-    public function setSettings($settings)
+    public function setInformLeader($inform_leader)
     {
-        $this->container['settings'] = $settings;
+        $this->container['inform_leader'] = $inform_leader;
 
         return $this;
     }
 
     /**
-     * Gets follow_up
+     * Gets new_member
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsNewMember|null
      */
-    public function getFollowUp()
+    public function getNewMember()
     {
-        return $this->container['follow_up'];
+        return $this->container['new_member'];
     }
 
     /**
-     * Sets follow_up
+     * Sets new_member
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp|null $follow_up follow_up
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettingsNewMember|null $new_member new_member
      *
      * @return self
      */
-    public function setFollowUp($follow_up)
+    public function setNewMember($new_member)
     {
-        $this->container['follow_up'] = $follow_up;
-
-        return $this;
-    }
-
-    /**
-     * Gets roles
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]|null
-     */
-    public function getRoles()
-    {
-        return $this->container['roles'];
-    }
-
-    /**
-     * Sets roles
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]|null $roles roles
-     *
-     * @return self
-     */
-    public function setRoles($roles)
-    {
-        $this->container['roles'] = $roles;
+        $this->container['new_member'] = $new_member;
 
         return $this;
     }

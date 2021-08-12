@@ -1,6 +1,6 @@
 <?php
 /**
- * Group
+ * InlineResponse204
  *
  * PHP version 7.2
  *
@@ -32,10 +32,9 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * Group Class Doc Comment
+ * InlineResponse204 Class Doc Comment
  *
  * @category Class
- * @description The group model structures all information in different objects: &#x60;information&#x60;, &#x60;settings&#x60;, &#x60;followUp&#x60;, and &#x60;roles&#x60;. Custom group fields are added to the root level of this model.
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +42,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Group implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse204 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Group';
+    protected static $openAPIModelName = 'inline_response_204';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,15 +59,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'guid' => 'string',
-        'name' => 'string',
-        'security_level_for_group' => 'int',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions',
-        'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation',
-        'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings',
-        'follow_up' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp',
-        'roles' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]'
+        'name' => 'string'
     ];
 
     /**
@@ -79,15 +70,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'guid' => null,
-        'name' => null,
-        'security_level_for_group' => null,
-        'permissions' => null,
-        'information' => null,
-        'settings' => null,
-        'follow_up' => null,
-        'roles' => null
+        'name' => null
     ];
 
     /**
@@ -117,15 +100,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'guid' => 'guid',
-        'name' => 'name',
-        'security_level_for_group' => 'securityLevelForGroup',
-        'permissions' => 'permissions',
-        'information' => 'information',
-        'settings' => 'settings',
-        'follow_up' => 'followUp',
-        'roles' => 'roles'
+        'name' => 'name'
     ];
 
     /**
@@ -134,15 +109,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'guid' => 'setGuid',
-        'name' => 'setName',
-        'security_level_for_group' => 'setSecurityLevelForGroup',
-        'permissions' => 'setPermissions',
-        'information' => 'setInformation',
-        'settings' => 'setSettings',
-        'follow_up' => 'setFollowUp',
-        'roles' => 'setRoles'
+        'name' => 'setName'
     ];
 
     /**
@@ -151,15 +118,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'guid' => 'getGuid',
-        'name' => 'getName',
-        'security_level_for_group' => 'getSecurityLevelForGroup',
-        'permissions' => 'getPermissions',
-        'information' => 'getInformation',
-        'settings' => 'getSettings',
-        'follow_up' => 'getFollowUp',
-        'roles' => 'getRoles'
+        'name' => 'getName'
     ];
 
     /**
@@ -219,15 +178,7 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['guid'] = $data['guid'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['security_level_for_group'] = $data['security_level_for_group'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
-        $this->container['information'] = $data['information'] ?? null;
-        $this->container['settings'] = $data['settings'] ?? null;
-        $this->container['follow_up'] = $data['follow_up'] ?? null;
-        $this->container['roles'] = $data['roles'] ?? null;
     }
 
     /**
@@ -239,6 +190,9 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -255,57 +209,9 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets guid
-     *
-     * @return string|null
-     */
-    public function getGuid()
-    {
-        return $this->container['guid'];
-    }
-
-    /**
-     * Sets guid
-     *
-     * @param string|null $guid guid
-     *
-     * @return self
-     */
-    public function setGuid($guid)
-    {
-        $this->container['guid'] = $guid;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -315,157 +221,13 @@ class Group implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name name
+     * @param string $name name
      *
      * @return self
      */
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets security_level_for_group
-     *
-     * @return int|null
-     */
-    public function getSecurityLevelForGroup()
-    {
-        return $this->container['security_level_for_group'];
-    }
-
-    /**
-     * Sets security_level_for_group
-     *
-     * @param int|null $security_level_for_group You can see group fields up to this security level.
-     *
-     * @return self
-     */
-    public function setSecurityLevelForGroup($security_level_for_group)
-    {
-        $this->container['security_level_for_group'] = $security_level_for_group;
-
-        return $this;
-    }
-
-    /**
-     * Gets permissions
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null
-     */
-    public function getPermissions()
-    {
-        return $this->container['permissions'];
-    }
-
-    /**
-     * Sets permissions
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null $permissions permissions
-     *
-     * @return self
-     */
-    public function setPermissions($permissions)
-    {
-        $this->container['permissions'] = $permissions;
-
-        return $this;
-    }
-
-    /**
-     * Gets information
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation|null
-     */
-    public function getInformation()
-    {
-        return $this->container['information'];
-    }
-
-    /**
-     * Sets information
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation|null $information information
-     *
-     * @return self
-     */
-    public function setInformation($information)
-    {
-        $this->container['information'] = $information;
-
-        return $this;
-    }
-
-    /**
-     * Gets settings
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null
-     */
-    public function getSettings()
-    {
-        return $this->container['settings'];
-    }
-
-    /**
-     * Sets settings
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null $settings settings
-     *
-     * @return self
-     */
-    public function setSettings($settings)
-    {
-        $this->container['settings'] = $settings;
-
-        return $this;
-    }
-
-    /**
-     * Gets follow_up
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp|null
-     */
-    public function getFollowUp()
-    {
-        return $this->container['follow_up'];
-    }
-
-    /**
-     * Sets follow_up
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp|null $follow_up follow_up
-     *
-     * @return self
-     */
-    public function setFollowUp($follow_up)
-    {
-        $this->container['follow_up'] = $follow_up;
-
-        return $this;
-    }
-
-    /**
-     * Gets roles
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]|null
-     */
-    public function getRoles()
-    {
-        return $this->container['roles'];
-    }
-
-    /**
-     * Sets roles
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]|null $roles roles
-     *
-     * @return self
-     */
-    public function setRoles($roles)
-    {
-        $this->container['roles'] = $roles;
 
         return $this;
     }

@@ -64,6 +64,7 @@ class InlineResponse20017Data implements ModelInterface, ArrayAccess, \JsonSeria
         'guid' => 'string',
         'name' => 'string',
         'security_level_for_group' => 'int',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions',
         'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation',
         'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings',
         'follow_up' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp',
@@ -82,6 +83,7 @@ class InlineResponse20017Data implements ModelInterface, ArrayAccess, \JsonSeria
         'guid' => null,
         'name' => null,
         'security_level_for_group' => null,
+        'permissions' => null,
         'information' => null,
         'settings' => null,
         'follow_up' => null,
@@ -119,6 +121,7 @@ class InlineResponse20017Data implements ModelInterface, ArrayAccess, \JsonSeria
         'guid' => 'guid',
         'name' => 'name',
         'security_level_for_group' => 'securityLevelForGroup',
+        'permissions' => 'permissions',
         'information' => 'information',
         'settings' => 'settings',
         'follow_up' => 'followUp',
@@ -135,6 +138,7 @@ class InlineResponse20017Data implements ModelInterface, ArrayAccess, \JsonSeria
         'guid' => 'setGuid',
         'name' => 'setName',
         'security_level_for_group' => 'setSecurityLevelForGroup',
+        'permissions' => 'setPermissions',
         'information' => 'setInformation',
         'settings' => 'setSettings',
         'follow_up' => 'setFollowUp',
@@ -151,6 +155,7 @@ class InlineResponse20017Data implements ModelInterface, ArrayAccess, \JsonSeria
         'guid' => 'getGuid',
         'name' => 'getName',
         'security_level_for_group' => 'getSecurityLevelForGroup',
+        'permissions' => 'getPermissions',
         'information' => 'getInformation',
         'settings' => 'getSettings',
         'follow_up' => 'getFollowUp',
@@ -218,6 +223,7 @@ class InlineResponse20017Data implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['guid'] = $data['guid'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['security_level_for_group'] = $data['security_level_for_group'] ?? null;
+        $this->container['permissions'] = $data['permissions'] ?? null;
         $this->container['information'] = $data['information'] ?? null;
         $this->container['settings'] = $data['settings'] ?? null;
         $this->container['follow_up'] = $data['follow_up'] ?? null;
@@ -340,6 +346,30 @@ class InlineResponse20017Data implements ModelInterface, ArrayAccess, \JsonSeria
     public function setSecurityLevelForGroup($security_level_for_group)
     {
         $this->container['security_level_for_group'] = $security_level_for_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets permissions
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null
+     */
+    public function getPermissions()
+    {
+        return $this->container['permissions'];
+    }
+
+    /**
+     * Sets permissions
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null $permissions permissions
+     *
+     * @return self
+     */
+    public function setPermissions($permissions)
+    {
+        $this->container['permissions'] = $permissions;
 
         return $this;
     }

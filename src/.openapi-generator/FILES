@@ -10,6 +10,7 @@ docs/Api/CampusApi.md
 docs/Api/ChatApi.md
 docs/Api/CheckinApi.md
 docs/Api/ContactLabelApi.md
+docs/Api/DefaultApi.md
 docs/Api/DepartmentApi.md
 docs/Api/EventApi.md
 docs/Api/FieldApi.md
@@ -222,6 +223,7 @@ docs/Model/InlineResponse20017.md
 docs/Model/InlineResponse20017Data.md
 docs/Model/InlineResponse20017DataFollowUp.md
 docs/Model/InlineResponse20017DataInformation.md
+docs/Model/InlineResponse20017DataPermissions.md
 docs/Model/InlineResponse20017DataRoles.md
 docs/Model/InlineResponse20017DataSettings.md
 docs/Model/InlineResponse20017DataSettingsGroupMeeting.md
@@ -397,6 +399,7 @@ docs/Model/InlineResponse20091.md
 docs/Model/InlineResponse20092.md
 docs/Model/InlineResponse20092Data.md
 docs/Model/InlineResponse20093.md
+docs/Model/InlineResponse20093Settings.md
 docs/Model/InlineResponse20094.md
 docs/Model/InlineResponse20095.md
 docs/Model/InlineResponse20096.md
@@ -416,6 +419,7 @@ docs/Model/InlineResponse2015.md
 docs/Model/InlineResponse2016.md
 docs/Model/InlineResponse2017.md
 docs/Model/InlineResponse2017Data.md
+docs/Model/InlineResponse204.md
 docs/Model/InlineResponse400.md
 docs/Model/InlineResponse4001.md
 docs/Model/InlineResponse4002.md
@@ -496,6 +500,7 @@ lib/Api/CampusApi.php
 lib/Api/ChatApi.php
 lib/Api/CheckinApi.php
 lib/Api/ContactLabelApi.php
+lib/Api/DefaultApi.php
 lib/Api/DepartmentApi.php
 lib/Api/EventApi.php
 lib/Api/FieldApi.php
@@ -711,6 +716,7 @@ lib/Model/InlineResponse20017.php
 lib/Model/InlineResponse20017Data.php
 lib/Model/InlineResponse20017DataFollowUp.php
 lib/Model/InlineResponse20017DataInformation.php
+lib/Model/InlineResponse20017DataPermissions.php
 lib/Model/InlineResponse20017DataRoles.php
 lib/Model/InlineResponse20017DataSettings.php
 lib/Model/InlineResponse20017DataSettingsGroupMeeting.php
@@ -886,6 +892,7 @@ lib/Model/InlineResponse20091.php
 lib/Model/InlineResponse20092.php
 lib/Model/InlineResponse20092Data.php
 lib/Model/InlineResponse20093.php
+lib/Model/InlineResponse20093Settings.php
 lib/Model/InlineResponse20094.php
 lib/Model/InlineResponse20095.php
 lib/Model/InlineResponse20096.php
@@ -905,6 +912,7 @@ lib/Model/InlineResponse2015.php
 lib/Model/InlineResponse2016.php
 lib/Model/InlineResponse2017.php
 lib/Model/InlineResponse2017Data.php
+lib/Model/InlineResponse204.php
 lib/Model/InlineResponse400.php
 lib/Model/InlineResponse4001.php
 lib/Model/InlineResponse4002.php
@@ -980,4 +988,3 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/InlineResponse20044DataGroupTest.php

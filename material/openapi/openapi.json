@@ -7530,6 +7530,19 @@
                           "description": "You can see group fields up to this security level.",
                           "example": 3
                         },
+                        "permissions": {
+                          "type": "object",
+                          "properties": {
+                            "useChat": {
+                              "type": "boolean",
+                              "description": "Current user can use the chat."
+                            },
+                            "startChat": {
+                              "type": "boolean",
+                              "description": "Current user can start chat."
+                            }
+                          }
+                        },
                         "information": {
                           "type": "object",
                           "properties": {
@@ -7609,9 +7622,33 @@
                               "description": "Indicator if people can apply for participation.",
                               "type": "boolean"
                             },
+                            "allowSpouseRegistration": {
+                              "type": "boolean",
+                              "description": "Spous is listed as option during group sign up."
+                            },
+                            "allowChildRegistration": {
+                              "type": "boolean",
+                              "description": "Own children are listed as option during group sign up."
+                            },
+                            "allowSameEmailRegistration": {
+                              "type": "boolean",
+                              "description": "People with same eMail address are listed as option during group sign up."
+                            },
+                            "allowOtherRegistration": {
+                              "type": "boolean",
+                              "description": "It is allowed to sign up other people uring group sign up."
+                            },
                             "autoAccept": {
                               "description": "Indicator if applications are accepted automatically.",
                               "type": "boolean"
+                            },
+                            "allowWaitinglist": {
+                              "type": "boolean",
+                              "description": "Waiting list is in-/active for this group."
+                            },
+                            "automaticMoveUp": {
+                              "type": "boolean",
+                              "description": "In combination with waiting list: People automatically move up in waiting list."
                             },
                             "isPublic": {
                               "type": "boolean"
@@ -7633,6 +7670,10 @@
                                   "nullable": true
                                 }
                               }
+                            },
+                            "qrCodeCheckin": {
+                              "type": "boolean",
+                              "description": "QR Codes are sent to participants, which can be used during check-in"
                             },
                             "informLeader": {
                               "description": "Inform leader via e-mail about changes.",
@@ -7837,6 +7878,43 @@
           {
             "login_token": []
           }
+        ]
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-group",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict. Used if group cannot be deleted or dry_run is used."
+          }
+        },
+        "description": "Delete a group. This will remove all people from this group.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "boolean"
+            },
+            "in": "query",
+            "name": "dry_run"
+          }
+        ],
+        "tags": [
+          "Group"
         ]
       }
     },
@@ -9108,6 +9186,9 @@
                               "groupIsActive",
                               "groupIsOpenForMembers",
                               "groupIsNotFull",
+                              "groupHasSpaceForRequests",
+                              "groupAllowsWaitinglist",
+                              "groupHasSpaceOnWaitinglist",
                               "groupHasLeader",
                               "endDateNotPassed",
                               "rolesSetInGroup",
@@ -9653,48 +9734,55 @@
       }
     },
     "/files/{id}": {
-      "delete": {
-        "summary": "Delete file by id",
-        "operationId": "deleteFileById",
-        "tags": [
-          "File"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of file",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "example": 1
-            }
-          }
-        ],
+      "patch": {
+        "summary": "",
+        "operationId": "patch-files-id",
         "responses": {
           "204": {
-            "description": "Successful deleted"
-          },
-          "401": {
-            "description": "Unauthorized",
+            "description": "No Content",
             "content": {
-              "text/plain": {
+              "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "Session expired!"
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "screenshot.jpeg"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                },
+                "examples": {
+                  "example-1": {}
                 }
               }
             }
-          },
-          "403": {
-            "description": "Forbidden to see, create, update, or delete resource"
           }
         },
-        "security": [
-          {
-            "login_token": []
+        "description": "rename name of a file by id"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "integer"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "file id"
+        }
+      ],
+      "delete": {
+        "summary": "",
+        "operationId": "delete-files-id",
+        "responses": {
+          "204": {
+            "description": "No Content"
           }
-        ]
+        },
+        "description": "delete file by id"
       }
     },
     "/files/{domainType}/{domainIdentifier}": {
@@ -24496,6 +24584,9 @@
                         "groupIsActive",
                         "groupIsOpenForMembers",
                         "groupIsNotFull",
+                        "groupHasSpaceForRequests",
+                        "groupAllowsWaitinglist",
+                        "groupHasSpaceOnWaitinglist",
                         "groupHasLeader",
                         "endDateNotPassed",
                         "rolesSetInGroup",
@@ -24927,6 +25018,9 @@
                             "groupIsActive",
                             "groupIsOpenForMembers",
                             "groupIsNotFull",
+                            "groupHasSpaceForRequests",
+                            "groupAllowsWaitinglist",
+                            "groupHasSpaceOnWaitinglist",
                             "groupHasLeader",
                             "endDateNotPassed",
                             "rolesSetInGroup",
@@ -29659,7 +29753,7 @@
             "style": "deepObject"
           },
           {
-            "name": "group_type_ids",
+            "name": "group_type_ids[]",
             "in": "query",
             "description": "Array of group type ids to filter the groups",
             "schema": {
@@ -29807,9 +29901,11 @@
                     "data": {
                       "type": "array",
                       "items": {
-                        "title" : "Groups",
+                        "title": "Groups",
                         "type": "object",
-                        "x-tags" : ["Group"],
+                        "x-tags": [
+                          "Group"
+                        ],
                         "description": "The group model structures all information in different objects: `information`, `settings`, `followUp`, and `roles`. Custom group fields are added to the root level of this model.",
                         "properties": {
                           "id": {
@@ -30177,7 +30273,7 @@
             },
             "in": "query",
             "style": "deepObject",
-            "explode":  true,
+            "explode": true,
             "description": "Array of group ids"
           },
           {
@@ -30190,8 +30286,8 @@
                 "type": "integer"
               }
             },
-            "style": "form",
-            "explode":  true
+            "style": "deepObject",
+            "explode": true
           },
           {
             "name": "agegroup_ids[]",
@@ -30204,7 +30300,7 @@
               }
             },
             "style": "deepObject",
-            "explode":  true
+            "explode": true
           },
           {
             "name": "group_status_ids[]",
@@ -30217,7 +30313,7 @@
               }
             },
             "style": "deepObject",
-            "explode":  true
+            "explode": true
           },
           {
             "name": "group_category_ids[]",
@@ -30230,7 +30326,7 @@
               }
             },
             "style": "deepObject",
-            "explode":  true
+            "explode": true
           },
           {
             "name": "target_group_ids[]",
@@ -30243,10 +30339,10 @@
               }
             },
             "style": "deepObject",
-            "explode":  true
+            "explode": true
           },
           {
-            "name": "weekdays",
+            "name": "weekdays[]",
             "in": "query",
             "description": "Array of weekdays to filter the groups. Sunday = 0, Monday = 1 ...",
             "schema": {
@@ -30255,7 +30351,8 @@
                 "type": "integer"
               }
             },
-            "style": "deepObject"
+            "style": "deepObject",
+            "explode": true
           },
           {
             "name": "group_type_ids[]",
@@ -30267,7 +30364,8 @@
                 "type": "integer"
               }
             },
-            "style": "deepObject"
+            "style": "deepObject",
+            "explode": true
           },
           {
             "name": "is_open_for_members",
@@ -37483,6 +37581,19 @@
             "description": "You can see group fields up to this security level.",
             "example": 3
           },
+          "permissions": {
+            "type": "object",
+            "properties": {
+              "useChat": {
+                "type": "boolean",
+                "description": "Current user can use the chat."
+              },
+              "startChat": {
+                "type": "boolean",
+                "description": "Current user can start chat."
+              }
+            }
+          },
           "information": {
             "type": "object",
             "properties": {
@@ -37562,9 +37673,33 @@
                 "description": "Indicator if people can apply for participation.",
                 "type": "boolean"
               },
+              "allowSpouseRegistration": {
+                "type": "boolean",
+                "description": "Spous is listed as option during group sign up."
+              },
+              "allowChildRegistration": {
+                "type": "boolean",
+                "description": "Own children are listed as option during group sign up."
+              },
+              "allowSameEmailRegistration": {
+                "type": "boolean",
+                "description": "People with same eMail address are listed as option during group sign up."
+              },
+              "allowOtherRegistration": {
+                "type": "boolean",
+                "description": "It is allowed to sign up other people uring group sign up."
+              },
               "autoAccept": {
                 "description": "Indicator if applications are accepted automatically.",
                 "type": "boolean"
+              },
+              "allowWaitinglist": {
+                "type": "boolean",
+                "description": "Waiting list is in-/active for this group."
+              },
+              "automaticMoveUp": {
+                "type": "boolean",
+                "description": "In combination with waiting list: People automatically move up in waiting list."
               },
               "isPublic": {
                 "type": "boolean"
@@ -37586,6 +37721,10 @@
                     "nullable": true
                   }
                 }
+              },
+              "qrCodeCheckin": {
+                "type": "boolean",
+                "description": "QR Codes are sent to participants, which can be used during check-in"
               },
               "informLeader": {
                 "description": "Inform leader via e-mail about changes.",

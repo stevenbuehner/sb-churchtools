@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**checkin()**](GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin/{personId} | Checkin a person to a group
 [**createMeeting()**](GroupApi.md#createMeeting) | **POST** /groups/{id}/meetings | Create a group meeting
 [**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
+[**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /groups/{id} | 
 [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
 [**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
 [**getAllGroupMembers()**](GroupApi.md#getAllGroupMembers) | **GET** /groups/{id}/members | Get all group members
@@ -215,6 +216,67 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroup()`
+
+```php
+deleteGroup($dry_run)
+```
+
+
+
+Delete a group. This will remove all people from this group.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$dry_run = True; // bool
+
+try {
+    $apiInstance->deleteGroup($dry_run);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroup: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dry_run** | **bool**|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
