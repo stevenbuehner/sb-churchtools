@@ -59,7 +59,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'titel' => 'string',
+        'title' => 'string',
         'domain_type' => 'string',
         'domain_identifier' => 'string',
         'api_url' => 'string',
@@ -76,7 +76,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'titel' => null,
+        'title' => null,
         'domain_type' => null,
         'domain_identifier' => null,
         'api_url' => null,
@@ -112,7 +112,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'titel' => 'titel',
+        'title' => 'title',
         'domain_type' => 'domainType',
         'domain_identifier' => 'domainIdentifier',
         'api_url' => 'apiUrl',
@@ -127,7 +127,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'titel' => 'setTitel',
+        'title' => 'setTitle',
         'domain_type' => 'setDomainType',
         'domain_identifier' => 'setDomainIdentifier',
         'api_url' => 'setApiUrl',
@@ -142,7 +142,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'titel' => 'getTitel',
+        'title' => 'getTitle',
         'domain_type' => 'getDomainType',
         'domain_identifier' => 'getDomainIdentifier',
         'api_url' => 'getApiUrl',
@@ -221,7 +221,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['titel'] = $data['titel'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
         $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
         $this->container['api_url'] = $data['api_url'] ?? null;
@@ -264,25 +264,25 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets titel
+     * Gets title
      *
      * @return string|null
      */
-    public function getTitel()
+    public function getTitle()
     {
-        return $this->container['titel'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets titel
+     * Sets title
      *
-     * @param string|null $titel titel
+     * @param string|null $title title
      *
      * @return self
      */
-    public function setTitel($titel)
+    public function setTitle($title)
     {
-        $this->container['titel'] = $titel;
+        $this->container['title'] = $title;
 
         return $this;
     }

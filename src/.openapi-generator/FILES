@@ -292,6 +292,7 @@ docs/Model/InlineResponse20044DataAccounts.md
 docs/Model/InlineResponse20044DataCashDiscounts.md
 docs/Model/InlineResponse20044DataClients.md
 docs/Model/InlineResponse20044DataCostCenters.md
+docs/Model/InlineResponse20044DataGroup.md
 docs/Model/InlineResponse20044DataPermissions.md
 docs/Model/InlineResponse20044DataPermissions1.md
 docs/Model/InlineResponse20044DataTaxRates.md
@@ -780,6 +781,7 @@ lib/Model/InlineResponse20044DataAccounts.php
 lib/Model/InlineResponse20044DataCashDiscounts.php
 lib/Model/InlineResponse20044DataClients.php
 lib/Model/InlineResponse20044DataCostCenters.php
+lib/Model/InlineResponse20044DataGroup.php
 lib/Model/InlineResponse20044DataPermissions.php
 lib/Model/InlineResponse20044DataPermissions1.php
 lib/Model/InlineResponse20044DataTaxRates.php
@@ -978,3 +980,4 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/InlineResponse20044DataGroupTest.php

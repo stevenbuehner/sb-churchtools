@@ -1,6 +1,6 @@
 <?php
 /**
- * CostCenter
+ * InlineResponse20044DataGroup
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * CostCenter Class Doc Comment
+ * InlineResponse20044DataGroup Class Doc Comment
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -42,7 +42,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse20044DataGroup implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CostCenter';
+    protected static $openAPIModelName = 'inline_response_200_44_data_group';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,16 +59,13 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'number' => 'string',
-        'name' => 'string',
-        'budget' => 'float',
-        'budget_balance' => 'float',
-        'budget_spent' => 'float',
-        'budget_last_period' => 'float',
-        'accounting_period_id' => 'int',
-        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'titel' => 'string',
+        'domain_type' => 'string',
+        'domain_identifier' => 'string',
+        'api_url' => 'string',
+        'frontend_url' => 'string',
+        'image_url' => 'string',
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes'
     ];
 
     /**
@@ -79,16 +76,13 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'number' => null,
-        'name' => null,
-        'budget' => 'integer',
-        'budget_balance' => 'integer',
-        'budget_spent' => 'integer',
-        'budget_last_period' => 'integer',
-        'accounting_period_id' => null,
-        'group' => null,
-        'meta' => null
+        'titel' => null,
+        'domain_type' => null,
+        'domain_identifier' => null,
+        'api_url' => null,
+        'frontend_url' => null,
+        'image_url' => null,
+        'domain_attributes' => null
     ];
 
     /**
@@ -118,16 +112,13 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'number' => 'number',
-        'name' => 'name',
-        'budget' => 'budget',
-        'budget_balance' => 'budgetBalance',
-        'budget_spent' => 'budgetSpent',
-        'budget_last_period' => 'budgetLastPeriod',
-        'accounting_period_id' => 'accountingPeriodId',
-        'group' => 'group',
-        'meta' => 'meta'
+        'titel' => 'titel',
+        'domain_type' => 'domainType',
+        'domain_identifier' => 'domainIdentifier',
+        'api_url' => 'apiUrl',
+        'frontend_url' => 'frontendUrl',
+        'image_url' => 'imageUrl',
+        'domain_attributes' => 'domainAttributes'
     ];
 
     /**
@@ -136,16 +127,13 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'number' => 'setNumber',
-        'name' => 'setName',
-        'budget' => 'setBudget',
-        'budget_balance' => 'setBudgetBalance',
-        'budget_spent' => 'setBudgetSpent',
-        'budget_last_period' => 'setBudgetLastPeriod',
-        'accounting_period_id' => 'setAccountingPeriodId',
-        'group' => 'setGroup',
-        'meta' => 'setMeta'
+        'titel' => 'setTitel',
+        'domain_type' => 'setDomainType',
+        'domain_identifier' => 'setDomainIdentifier',
+        'api_url' => 'setApiUrl',
+        'frontend_url' => 'setFrontendUrl',
+        'image_url' => 'setImageUrl',
+        'domain_attributes' => 'setDomainAttributes'
     ];
 
     /**
@@ -154,16 +142,13 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'number' => 'getNumber',
-        'name' => 'getName',
-        'budget' => 'getBudget',
-        'budget_balance' => 'getBudgetBalance',
-        'budget_spent' => 'getBudgetSpent',
-        'budget_last_period' => 'getBudgetLastPeriod',
-        'accounting_period_id' => 'getAccountingPeriodId',
-        'group' => 'getGroup',
-        'meta' => 'getMeta'
+        'titel' => 'getTitel',
+        'domain_type' => 'getDomainType',
+        'domain_identifier' => 'getDomainIdentifier',
+        'api_url' => 'getApiUrl',
+        'frontend_url' => 'getFrontendUrl',
+        'image_url' => 'getImageUrl',
+        'domain_attributes' => 'getDomainAttributes'
     ];
 
     /**
@@ -207,6 +192,19 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const DOMAIN_TYPE_GROUP = 'group';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDomainTypeAllowableValues()
+    {
+        return [
+            self::DOMAIN_TYPE_GROUP,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -223,16 +221,13 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['budget'] = $data['budget'] ?? null;
-        $this->container['budget_balance'] = $data['budget_balance'] ?? null;
-        $this->container['budget_spent'] = $data['budget_spent'] ?? null;
-        $this->container['budget_last_period'] = $data['budget_last_period'] ?? null;
-        $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['titel'] = $data['titel'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
+        $this->container['api_url'] = $data['api_url'] ?? null;
+        $this->container['frontend_url'] = $data['frontend_url'] ?? null;
+        $this->container['image_url'] = $data['image_url'] ?? null;
+        $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
     }
 
     /**
@@ -243,6 +238,15 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getDomainTypeAllowableValues();
+        if (!is_null($this->container['domain_type']) && !in_array($this->container['domain_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'domain_type', must be one of '%s'",
+                $this->container['domain_type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -260,241 +264,179 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets number
+     * Gets titel
      *
      * @return string|null
      */
-    public function getNumber()
+    public function getTitel()
     {
-        return $this->container['number'];
+        return $this->container['titel'];
     }
 
     /**
-     * Sets number
+     * Sets titel
      *
-     * @param string|null $number number
+     * @param string|null $titel titel
      *
      * @return self
      */
-    public function setNumber($number)
+    public function setTitel($titel)
     {
-        $this->container['number'] = $number;
+        $this->container['titel'] = $titel;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets domain_type
      *
      * @return string|null
      */
-    public function getName()
+    public function getDomainType()
     {
-        return $this->container['name'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets name
+     * Sets domain_type
      *
-     * @param string|null $name name
+     * @param string|null $domain_type domain_type
      *
      * @return self
      */
-    public function setName($name)
+    public function setDomainType($domain_type)
     {
-        $this->container['name'] = $name;
+        $allowedValues = $this->getDomainTypeAllowableValues();
+        if (!is_null($domain_type) && !in_array($domain_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'domain_type', must be one of '%s'",
+                    $domain_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['domain_type'] = $domain_type;
 
         return $this;
     }
 
     /**
-     * Gets budget
+     * Gets domain_identifier
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getBudget()
+    public function getDomainIdentifier()
     {
-        return $this->container['budget'];
+        return $this->container['domain_identifier'];
     }
 
     /**
-     * Sets budget
+     * Sets domain_identifier
      *
-     * @param float|null $budget Budget is in cent.
+     * @param string|null $domain_identifier domain_identifier
      *
      * @return self
      */
-    public function setBudget($budget)
+    public function setDomainIdentifier($domain_identifier)
     {
-        $this->container['budget'] = $budget;
+        $this->container['domain_identifier'] = $domain_identifier;
 
         return $this;
     }
 
     /**
-     * Gets budget_balance
+     * Gets api_url
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getBudgetBalance()
+    public function getApiUrl()
     {
-        return $this->container['budget_balance'];
+        return $this->container['api_url'];
     }
 
     /**
-     * Sets budget_balance
+     * Sets api_url
      *
-     * @param float|null $budget_balance Remaining amount. (Budget - Cost Center Expenses). Budget balance is in cent.
+     * @param string|null $api_url api_url
      *
      * @return self
      */
-    public function setBudgetBalance($budget_balance)
+    public function setApiUrl($api_url)
     {
-        $this->container['budget_balance'] = $budget_balance;
+        $this->container['api_url'] = $api_url;
 
         return $this;
     }
 
     /**
-     * Gets budget_spent
+     * Gets frontend_url
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getBudgetSpent()
+    public function getFrontendUrl()
     {
-        return $this->container['budget_spent'];
+        return $this->container['frontend_url'];
     }
 
     /**
-     * Sets budget_spent
+     * Sets frontend_url
      *
-     * @param float|null $budget_spent Cost Center Expences. (Outcome - Income). In cent
+     * @param string|null $frontend_url frontend_url
      *
      * @return self
      */
-    public function setBudgetSpent($budget_spent)
+    public function setFrontendUrl($frontend_url)
     {
-        $this->container['budget_spent'] = $budget_spent;
+        $this->container['frontend_url'] = $frontend_url;
 
         return $this;
     }
 
     /**
-     * Gets budget_last_period
+     * Gets image_url
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getBudgetLastPeriod()
+    public function getImageUrl()
     {
-        return $this->container['budget_last_period'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets budget_last_period
+     * Sets image_url
      *
-     * @param float|null $budget_last_period Budget for the cost center with the same number in the previous accounting period.
+     * @param string|null $image_url image_url
      *
      * @return self
      */
-    public function setBudgetLastPeriod($budget_last_period)
+    public function setImageUrl($image_url)
     {
-        $this->container['budget_last_period'] = $budget_last_period;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }
 
     /**
-     * Gets accounting_period_id
+     * Gets domain_attributes
      *
-     * @return int|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes|null
      */
-    public function getAccountingPeriodId()
+    public function getDomainAttributes()
     {
-        return $this->container['accounting_period_id'];
+        return $this->container['domain_attributes'];
     }
 
     /**
-     * Sets accounting_period_id
+     * Sets domain_attributes
      *
-     * @param int|null $accounting_period_id accounting_period_id
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes|null $domain_attributes domain_attributes
      *
      * @return self
      */
-    public function setAccountingPeriodId($accounting_period_id)
+    public function setDomainAttributes($domain_attributes)
     {
-        $this->container['accounting_period_id'] = $accounting_period_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['domain_attributes'] = $domain_attributes;
 
         return $this;
     }

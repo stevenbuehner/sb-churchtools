@@ -598,6 +598,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse20044DataCashDiscounts](docs/Model/InlineResponse20044DataCashDiscounts.md)
 - [InlineResponse20044DataClients](docs/Model/InlineResponse20044DataClients.md)
 - [InlineResponse20044DataCostCenters](docs/Model/InlineResponse20044DataCostCenters.md)
+- [InlineResponse20044DataGroup](docs/Model/InlineResponse20044DataGroup.md)
 - [InlineResponse20044DataPermissions](docs/Model/InlineResponse20044DataPermissions.md)
 - [InlineResponse20044DataPermissions1](docs/Model/InlineResponse20044DataPermissions1.md)
 - [InlineResponse20044DataTaxRates](docs/Model/InlineResponse20044DataTaxRates.md)
