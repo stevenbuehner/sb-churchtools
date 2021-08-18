@@ -59,8 +59,12 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'property_mappings_master_to_es' => 'object[]',
-        'property_mappings_esto_master' => 'object[]'
+        'name' => 'string',
+        'group_type_id' => 'float',
+        'group_status_id' => 'float',
+        'superior_group_id' => 'float',
+        'campus_id' => 'float',
+        'force' => 'bool'
     ];
 
     /**
@@ -71,8 +75,12 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'property_mappings_master_to_es' => null,
-        'property_mappings_esto_master' => null
+        'name' => null,
+        'group_type_id' => null,
+        'group_status_id' => null,
+        'superior_group_id' => null,
+        'campus_id' => null,
+        'force' => null
     ];
 
     /**
@@ -102,8 +110,12 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'property_mappings_master_to_es' => 'propertyMappingsMasterToES',
-        'property_mappings_esto_master' => 'propertyMappingsESToMaster'
+        'name' => 'name',
+        'group_type_id' => 'groupTypeId',
+        'group_status_id' => 'groupStatusId',
+        'superior_group_id' => 'superiorGroupId',
+        'campus_id' => 'campusId',
+        'force' => 'force'
     ];
 
     /**
@@ -112,8 +124,12 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster'
+        'name' => 'setName',
+        'group_type_id' => 'setGroupTypeId',
+        'group_status_id' => 'setGroupStatusId',
+        'superior_group_id' => 'setSuperiorGroupId',
+        'campus_id' => 'setCampusId',
+        'force' => 'setForce'
     ];
 
     /**
@@ -122,8 +138,12 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster'
+        'name' => 'getName',
+        'group_type_id' => 'getGroupTypeId',
+        'group_status_id' => 'getGroupStatusId',
+        'superior_group_id' => 'getSuperiorGroupId',
+        'campus_id' => 'getCampusId',
+        'force' => 'getForce'
     ];
 
     /**
@@ -183,8 +203,12 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
-        $this->container['property_mappings_esto_master'] = $data['property_mappings_esto_master'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['group_type_id'] = $data['group_type_id'] ?? null;
+        $this->container['group_status_id'] = $data['group_status_id'] ?? null;
+        $this->container['superior_group_id'] = $data['superior_group_id'] ?? null;
+        $this->container['campus_id'] = $data['campus_id'] ?? null;
+        $this->container['force'] = $data['force'] ?? null;
     }
 
     /**
@@ -196,20 +220,19 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['property_mappings_master_to_es'] === null) {
-            $invalidProperties[] = "'property_mappings_master_to_es' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ((count($this->container['property_mappings_master_to_es']) < 1)) {
-            $invalidProperties[] = "invalid value for 'property_mappings_master_to_es', number of items must be greater than or equal to 1.";
-        }
-
-        if ($this->container['property_mappings_esto_master'] === null) {
-            $invalidProperties[] = "'property_mappings_esto_master' can't be null";
-        }
-        if ((count($this->container['property_mappings_esto_master']) < 1)) {
-            $invalidProperties[] = "invalid value for 'property_mappings_esto_master', number of items must be greater than or equal to 1.";
+        if ((mb_strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['group_type_id'] === null) {
+            $invalidProperties[] = "'group_type_id' can't be null";
+        }
+        if ($this->container['group_status_id'] === null) {
+            $invalidProperties[] = "'group_status_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -226,59 +249,150 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets property_mappings_master_to_es
+     * Gets name
      *
-     * @return object[]
+     * @return string
      */
-    public function getPropertyMappingsMasterToEs()
+    public function getName()
     {
-        return $this->container['property_mappings_master_to_es'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets property_mappings_master_to_es
+     * Sets name
      *
-     * @param object[] $property_mappings_master_to_es property_mappings_master_to_es
+     * @param string $name Group name
      *
      * @return self
      */
-    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
+    public function setName($name)
     {
 
-
-        if ((count($property_mappings_master_to_es) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $property_mappings_master_to_es when calling InlineObject55., number of items must be greater than or equal to 1.');
+        if ((mb_strlen($name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling InlineObject55., must be bigger than or equal to 1.');
         }
-        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
+
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets property_mappings_esto_master
+     * Gets group_type_id
      *
-     * @return object[]
+     * @return float
      */
-    public function getPropertyMappingsEstoMaster()
+    public function getGroupTypeId()
     {
-        return $this->container['property_mappings_esto_master'];
+        return $this->container['group_type_id'];
     }
 
     /**
-     * Sets property_mappings_esto_master
+     * Sets group_type_id
      *
-     * @param object[] $property_mappings_esto_master property_mappings_esto_master
+     * @param float $group_type_id Id of group type
      *
      * @return self
      */
-    public function setPropertyMappingsEstoMaster($property_mappings_esto_master)
+    public function setGroupTypeId($group_type_id)
     {
+        $this->container['group_type_id'] = $group_type_id;
 
+        return $this;
+    }
 
-        if ((count($property_mappings_esto_master) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $property_mappings_esto_master when calling InlineObject55., number of items must be greater than or equal to 1.');
-        }
-        $this->container['property_mappings_esto_master'] = $property_mappings_esto_master;
+    /**
+     * Gets group_status_id
+     *
+     * @return float
+     */
+    public function getGroupStatusId()
+    {
+        return $this->container['group_status_id'];
+    }
+
+    /**
+     * Sets group_status_id
+     *
+     * @param float $group_status_id ID of group status
+     *
+     * @return self
+     */
+    public function setGroupStatusId($group_status_id)
+    {
+        $this->container['group_status_id'] = $group_status_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets superior_group_id
+     *
+     * @return float|null
+     */
+    public function getSuperiorGroupId()
+    {
+        return $this->container['superior_group_id'];
+    }
+
+    /**
+     * Sets superior_group_id
+     *
+     * @param float|null $superior_group_id Group ID of superior group
+     *
+     * @return self
+     */
+    public function setSuperiorGroupId($superior_group_id)
+    {
+        $this->container['superior_group_id'] = $superior_group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets campus_id
+     *
+     * @return float|null
+     */
+    public function getCampusId()
+    {
+        return $this->container['campus_id'];
+    }
+
+    /**
+     * Sets campus_id
+     *
+     * @param float|null $campus_id Campus Id if group is connected to a campus
+     *
+     * @return self
+     */
+    public function setCampusId($campus_id)
+    {
+        $this->container['campus_id'] = $campus_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets force
+     *
+     * @return bool|null
+     */
+    public function getForce()
+    {
+        return $this->container['force'];
+    }
+
+    /**
+     * Sets force
+     *
+     * @param bool|null $force Need to be true, if another group with that name already exists
+     *
+     * @return self
+     */
+    public function setForce($force)
+    {
+        $this->container['force'] = $force;
 
         return $this;
     }

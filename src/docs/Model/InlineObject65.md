@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**person** | **object** | See &#x60;POST /persons&#x60; |
+**person_id** | **float** |  |
 **group** | [**\StevenBuehner\ChurchTools\Model\CheckinPersonsGroup**](CheckinPersonsGroup.md) |  |
 **tag_id** | **float** |  |
 

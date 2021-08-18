@@ -167,6 +167,7 @@ docs/Model/InlineObject63.md
 docs/Model/InlineObject64.md
 docs/Model/InlineObject65.md
 docs/Model/InlineObject66.md
+docs/Model/InlineObject67.md
 docs/Model/InlineObject7.md
 docs/Model/InlineObject8.md
 docs/Model/InlineObject9.md
@@ -399,7 +400,6 @@ docs/Model/InlineResponse20091.md
 docs/Model/InlineResponse20092.md
 docs/Model/InlineResponse20092Data.md
 docs/Model/InlineResponse20093.md
-docs/Model/InlineResponse20093Settings.md
 docs/Model/InlineResponse20094.md
 docs/Model/InlineResponse20095.md
 docs/Model/InlineResponse20096.md
@@ -660,6 +660,7 @@ lib/Model/InlineObject63.php
 lib/Model/InlineObject64.php
 lib/Model/InlineObject65.php
 lib/Model/InlineObject66.php
+lib/Model/InlineObject67.php
 lib/Model/InlineObject7.php
 lib/Model/InlineObject8.php
 lib/Model/InlineObject9.php
@@ -892,7 +893,6 @@ lib/Model/InlineResponse20091.php
 lib/Model/InlineResponse20092.php
 lib/Model/InlineResponse20092Data.php
 lib/Model/InlineResponse20093.php
-lib/Model/InlineResponse20093Settings.php
 lib/Model/InlineResponse20094.php
 lib/Model/InlineResponse20095.php
 lib/Model/InlineResponse20096.php
@@ -988,3 +988,4 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/InlineObject67Test.php

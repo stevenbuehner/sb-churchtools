@@ -196,7 +196,7 @@ This endpoint does not need any parameter.
 ## `postContactlabels()`
 
 ```php
-postContactlabels($inline_object58): \StevenBuehner\ChurchTools\Model\InlineResponse2015
+postContactlabels($inline_object59): \StevenBuehner\ChurchTools\Model\InlineResponse2015
 ```
 
 Create new Contact Label
@@ -222,10 +222,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ContactLabelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object58 = new \StevenBuehner\ChurchTools\Model\InlineObject58(); // \StevenBuehner\ChurchTools\Model\InlineObject58
+$inline_object59 = new \StevenBuehner\ChurchTools\Model\InlineObject59(); // \StevenBuehner\ChurchTools\Model\InlineObject59
 
 try {
-    $result = $apiInstance->postContactlabels($inline_object58);
+    $result = $apiInstance->postContactlabels($inline_object59);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactLabelApi->postContactlabels: ', $e->getMessage(), PHP_EOL;
@@ -236,7 +236,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object58** | [**\StevenBuehner\ChurchTools\Model\InlineObject58**](../Model/InlineObject58.md)|  | [optional]
+ **inline_object59** | [**\StevenBuehner\ChurchTools\Model\InlineObject59**](../Model/InlineObject59.md)|  | [optional]
 
 ### Return type
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ## `putContactlabel()`
 
 ```php
-putContactlabel($id, $inline_object59): \StevenBuehner\ChurchTools\Model\InlineResponse200105
+putContactlabel($id, $inline_object60): \StevenBuehner\ChurchTools\Model\InlineResponse200105
 ```
 
 Update Contact Label
@@ -285,10 +285,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ContactLabelApi(
     $config
 );
 $id = 'id_example'; // string | Contact Label ID
-$inline_object59 = new \StevenBuehner\ChurchTools\Model\InlineObject59(); // \StevenBuehner\ChurchTools\Model\InlineObject59
+$inline_object60 = new \StevenBuehner\ChurchTools\Model\InlineObject60(); // \StevenBuehner\ChurchTools\Model\InlineObject60
 
 try {
-    $result = $apiInstance->putContactlabel($id, $inline_object59);
+    $result = $apiInstance->putContactlabel($id, $inline_object60);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactLabelApi->putContactlabel: ', $e->getMessage(), PHP_EOL;
@@ -300,7 +300,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Contact Label ID |
- **inline_object59** | [**\StevenBuehner\ChurchTools\Model\InlineObject59**](../Model/InlineObject59.md)|  | [optional]
+ **inline_object60** | [**\StevenBuehner\ChurchTools\Model\InlineObject60**](../Model/InlineObject60.md)|  | [optional]
 
 ### Return type
 

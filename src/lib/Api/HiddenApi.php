@@ -5140,15 +5140,15 @@ class HiddenApi
      *
      * @param  string $external_system_id external_system_id (required)
      * @param  string $job_id job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 inline_object64 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object63 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64 = null)
     {
-        $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object63);
+        $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object64);
     }
 
     /**
@@ -5158,15 +5158,15 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object63 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object64 = null)
     {
-        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object63);
+        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5212,14 +5212,14 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsync($external_system_id, $job_id, $inline_object63 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsync($external_system_id, $job_id, $inline_object64 = null)
     {
-        return $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object63)
+        return $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object64)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5234,15 +5234,15 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object63 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object64 = null)
     {
         $returnType = '';
-        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object63);
+        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5272,12 +5272,12 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object63 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64 = null)
     {
         // verify the required parameter 'external_system_id' is set
         if ($external_system_id === null || (is_array($external_system_id) && count($external_system_id) === 0)) {
@@ -5331,11 +5331,11 @@ class HiddenApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object63)) {
+        if (isset($inline_object64)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object63));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object64));
             } else {
-                $httpBody = $inline_object63;
+                $httpBody = $inline_object64;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5624,15 +5624,15 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 inline_object62 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 inline_object63 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2017
      */
-    public function postSyncLogs($inline_object62 = null)
+    public function postSyncLogs($inline_object63 = null)
     {
-        list($response) = $this->postSyncLogsWithHttpInfo($inline_object62);
+        list($response) = $this->postSyncLogsWithHttpInfo($inline_object63);
         return $response;
     }
 
@@ -5641,15 +5641,15 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2017, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSyncLogsWithHttpInfo($inline_object62 = null)
+    public function postSyncLogsWithHttpInfo($inline_object63 = null)
     {
-        $request = $this->postSyncLogsRequest($inline_object62);
+        $request = $this->postSyncLogsRequest($inline_object63);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5727,14 +5727,14 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncLogsAsync($inline_object62 = null)
+    public function postSyncLogsAsync($inline_object63 = null)
     {
-        return $this->postSyncLogsAsyncWithHttpInfo($inline_object62)
+        return $this->postSyncLogsAsyncWithHttpInfo($inline_object63)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5747,15 +5747,15 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncLogsAsyncWithHttpInfo($inline_object62 = null)
+    public function postSyncLogsAsyncWithHttpInfo($inline_object63 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2017';
-        $request = $this->postSyncLogsRequest($inline_object62);
+        $request = $this->postSyncLogsRequest($inline_object63);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5793,12 +5793,12 @@ class HiddenApi
     /**
      * Create request for operation 'postSyncLogs'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postSyncLogsRequest($inline_object62 = null)
+    public function postSyncLogsRequest($inline_object63 = null)
     {
 
         $resourcePath = '/sync/logs';
@@ -5824,11 +5824,11 @@ class HiddenApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object62)) {
+        if (isset($inline_object63)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object62));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object63));
             } else {
-                $httpBody = $inline_object62;
+                $httpBody = $inline_object63;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6186,15 +6186,15 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 inline_object56 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject57 $inline_object57 inline_object57 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse200101
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object56 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object57 = null)
     {
-        list($response) = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterWithHttpInfo($external_system_id, $job_id, $inline_object56);
+        list($response) = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterWithHttpInfo($external_system_id, $job_id, $inline_object57);
         return $response;
     }
 
@@ -6205,15 +6205,15 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject57 $inline_object57 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200101, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterWithHttpInfo($external_system_id, $job_id, $inline_object56 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterWithHttpInfo($external_system_id, $job_id, $inline_object57 = null)
     {
-        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest($external_system_id, $job_id, $inline_object56);
+        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest($external_system_id, $job_id, $inline_object57);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6293,14 +6293,14 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject57 $inline_object57 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterAsync($external_system_id, $job_id, $inline_object56 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterAsync($external_system_id, $job_id, $inline_object57 = null)
     {
-        return $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterAsyncWithHttpInfo($external_system_id, $job_id, $inline_object56)
+        return $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterAsyncWithHttpInfo($external_system_id, $job_id, $inline_object57)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6315,15 +6315,15 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject57 $inline_object57 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterAsyncWithHttpInfo($external_system_id, $job_id, $inline_object56 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterAsyncWithHttpInfo($external_system_id, $job_id, $inline_object57 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200101';
-        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest($external_system_id, $job_id, $inline_object56);
+        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest($external_system_id, $job_id, $inline_object57);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6363,12 +6363,12 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject57 $inline_object57 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest($external_system_id, $job_id, $inline_object56 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest($external_system_id, $job_id, $inline_object57 = null)
     {
         // verify the required parameter 'external_system_id' is set
         if ($external_system_id === null || (is_array($external_system_id) && count($external_system_id) === 0)) {
@@ -6422,11 +6422,11 @@ class HiddenApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object56)) {
+        if (isset($inline_object57)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object56));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object57));
             } else {
-                $httpBody = $inline_object56;
+                $httpBody = $inline_object57;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6485,15 +6485,15 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 inline_object55 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 inline_object56 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse20099
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object55 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object56 = null)
     {
-        list($response) = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesWithHttpInfo($external_system_id, $job_id, $inline_object55);
+        list($response) = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesWithHttpInfo($external_system_id, $job_id, $inline_object56);
         return $response;
     }
 
@@ -6504,15 +6504,15 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20099, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesWithHttpInfo($external_system_id, $job_id, $inline_object55 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesWithHttpInfo($external_system_id, $job_id, $inline_object56 = null)
     {
-        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest($external_system_id, $job_id, $inline_object55);
+        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest($external_system_id, $job_id, $inline_object56);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6592,14 +6592,14 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesAsync($external_system_id, $job_id, $inline_object55 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesAsync($external_system_id, $job_id, $inline_object56 = null)
     {
-        return $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesAsyncWithHttpInfo($external_system_id, $job_id, $inline_object55)
+        return $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesAsyncWithHttpInfo($external_system_id, $job_id, $inline_object56)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6614,15 +6614,15 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesAsyncWithHttpInfo($external_system_id, $job_id, $inline_object55 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesAsyncWithHttpInfo($external_system_id, $job_id, $inline_object56 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20099';
-        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest($external_system_id, $job_id, $inline_object55);
+        $request = $this->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest($external_system_id, $job_id, $inline_object56);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6662,12 +6662,12 @@ class HiddenApi
      *
      * @param  string $external_system_id External System ID (required)
      * @param  string $job_id Job Configuration ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject56 $inline_object56 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest($external_system_id, $job_id, $inline_object55 = null)
+    public function putSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest($external_system_id, $job_id, $inline_object56 = null)
     {
         // verify the required parameter 'external_system_id' is set
         if ($external_system_id === null || (is_array($external_system_id) && count($external_system_id) === 0)) {
@@ -6721,11 +6721,11 @@ class HiddenApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object55)) {
+        if (isset($inline_object56)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object55));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object56));
             } else {
-                $httpBody = $inline_object55;
+                $httpBody = $inline_object56;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

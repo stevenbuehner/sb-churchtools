@@ -1009,7 +1009,7 @@ void (empty response body)
 ## `postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()`
 
 ```php
-postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object63)
+postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64)
 ```
 
 Start Execution
@@ -1037,10 +1037,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string
 $job_id = 'job_id_example'; // string
-$inline_object63 = new \StevenBuehner\ChurchTools\Model\InlineObject63(); // \StevenBuehner\ChurchTools\Model\InlineObject63
+$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
 
 try {
-    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object63);
+    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart: ', $e->getMessage(), PHP_EOL;
 }
@@ -1052,7 +1052,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**|  |
  **job_id** | **string**|  |
- **inline_object63** | [**\StevenBuehner\ChurchTools\Model\InlineObject63**](../Model/InlineObject63.md)|  | [optional]
+ **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
 
 ### Return type
 
@@ -1074,7 +1074,7 @@ void (empty response body)
 ## `postSyncLogs()`
 
 ```php
-postSyncLogs($inline_object62): \StevenBuehner\ChurchTools\Model\InlineResponse2017
+postSyncLogs($inline_object63): \StevenBuehner\ChurchTools\Model\InlineResponse2017
 ```
 
 Save Sync Logs
@@ -1100,10 +1100,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object62 = new \StevenBuehner\ChurchTools\Model\InlineObject62(); // \StevenBuehner\ChurchTools\Model\InlineObject62
+$inline_object63 = new \StevenBuehner\ChurchTools\Model\InlineObject63(); // \StevenBuehner\ChurchTools\Model\InlineObject63
 
 try {
-    $result = $apiInstance->postSyncLogs($inline_object62);
+    $result = $apiInstance->postSyncLogs($inline_object63);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncLogs: ', $e->getMessage(), PHP_EOL;
@@ -1114,7 +1114,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object62** | [**\StevenBuehner\ChurchTools\Model\InlineObject62**](../Model/InlineObject62.md)|  | [optional]
+ **inline_object63** | [**\StevenBuehner\ChurchTools\Model\InlineObject63**](../Model/InlineObject63.md)|  | [optional]
 
 ### Return type
 
@@ -1136,7 +1136,7 @@ Name | Type | Description  | Notes
 ## `putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()`
 
 ```php
-putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object56): \StevenBuehner\ChurchTools\Model\InlineResponse200101
+putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object57): \StevenBuehner\ChurchTools\Model\InlineResponse200101
 ```
 
 Save entity filters
@@ -1164,10 +1164,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
-$inline_object56 = new \StevenBuehner\ChurchTools\Model\InlineObject56(); // \StevenBuehner\ChurchTools\Model\InlineObject56
+$inline_object57 = new \StevenBuehner\ChurchTools\Model\InlineObject57(); // \StevenBuehner\ChurchTools\Model\InlineObject57
 
 try {
-    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object56);
+    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object57);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter: ', $e->getMessage(), PHP_EOL;
@@ -1180,7 +1180,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**| External System ID |
  **job_id** | **string**| Job Configuration ID |
- **inline_object56** | [**\StevenBuehner\ChurchTools\Model\InlineObject56**](../Model/InlineObject56.md)|  | [optional]
+ **inline_object57** | [**\StevenBuehner\ChurchTools\Model\InlineObject57**](../Model/InlineObject57.md)|  | [optional]
 
 ### Return type
 
@@ -1202,7 +1202,7 @@ Name | Type | Description  | Notes
 ## `putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()`
 
 ```php
-putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object55): \StevenBuehner\ChurchTools\Model\InlineResponse20099
+putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object56): \StevenBuehner\ChurchTools\Model\InlineResponse20099
 ```
 
 Save Properties, Which Should Be Synced
@@ -1230,10 +1230,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
-$inline_object55 = new \StevenBuehner\ChurchTools\Model\InlineObject55(); // \StevenBuehner\ChurchTools\Model\InlineObject55
+$inline_object56 = new \StevenBuehner\ChurchTools\Model\InlineObject56(); // \StevenBuehner\ChurchTools\Model\InlineObject56
 
 try {
-    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object55);
+    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object56);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties: ', $e->getMessage(), PHP_EOL;
@@ -1246,7 +1246,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**| External System ID |
  **job_id** | **string**| Job Configuration ID |
- **inline_object55** | [**\StevenBuehner\ChurchTools\Model\InlineObject55**](../Model/InlineObject55.md)|  | [optional]
+ **inline_object56** | [**\StevenBuehner\ChurchTools\Model\InlineObject56**](../Model/InlineObject56.md)|  | [optional]
 
 ### Return type
 
@@ -1268,7 +1268,7 @@ Name | Type | Description  | Notes
 ## `putSyncFieldMappings()`
 
 ```php
-putSyncFieldMappings($id, $domain_type, $inline_object57): \StevenBuehner\ChurchTools\Model\InlineResponse200103
+putSyncFieldMappings($id, $domain_type, $inline_object58): \StevenBuehner\ChurchTools\Model\InlineResponse200103
 ```
 
 Save Mapping for Domain Type
@@ -1296,10 +1296,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $id = 'id_example'; // string | ID of External System
 $domain_type = 'domain_type_example'; // string | Domatin Type
-$inline_object57 = new \StevenBuehner\ChurchTools\Model\InlineObject57(); // \StevenBuehner\ChurchTools\Model\InlineObject57
+$inline_object58 = new \StevenBuehner\ChurchTools\Model\InlineObject58(); // \StevenBuehner\ChurchTools\Model\InlineObject58
 
 try {
-    $result = $apiInstance->putSyncFieldMappings($id, $domain_type, $inline_object57);
+    $result = $apiInstance->putSyncFieldMappings($id, $domain_type, $inline_object58);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncFieldMappings: ', $e->getMessage(), PHP_EOL;
@@ -1312,7 +1312,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of External System |
  **domain_type** | **string**| Domatin Type |
- **inline_object57** | [**\StevenBuehner\ChurchTools\Model\InlineObject57**](../Model/InlineObject57.md)|  | [optional]
+ **inline_object58** | [**\StevenBuehner\ChurchTools\Model\InlineObject58**](../Model/InlineObject58.md)|  | [optional]
 
 ### Return type
 

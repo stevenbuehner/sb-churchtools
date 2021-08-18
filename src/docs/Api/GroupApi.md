@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**groupsIdGet()**](GroupApi.md#groupsIdGet) | **GET** /groups/{id} | Get a group
 [**issueSignUpToken()**](GroupApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
 [**optIns()**](GroupApi.md#optIns) | **GET** /groups/{id}/optins | Get Opt In status of group members
+[**postGroups()**](GroupApi.md#postGroups) | **POST** /groups | Create Group
 [**postPublicgroupsGroupIdMailToLeaders()**](GroupApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
 [**postPublicgroupsGroupIdSignup()**](GroupApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
 [**startStopChat()**](GroupApi.md#startStopChat) | **POST** /groups/{id}/chat | Start or stop an event chat
@@ -1321,6 +1322,68 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postGroups()`
+
+```php
+postGroups($inline_object55): \StevenBuehner\ChurchTools\Model\InlineResponse20017
+```
+
+Create Group
+
+Create new group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$inline_object55 = new \StevenBuehner\ChurchTools\Model\InlineObject55(); // \StevenBuehner\ChurchTools\Model\InlineObject55
+
+try {
+    $result = $apiInstance->postGroups($inline_object55);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroups: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object55** | [**\StevenBuehner\ChurchTools\Model\InlineObject55**](../Model/InlineObject55.md)|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

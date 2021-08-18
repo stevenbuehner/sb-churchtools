@@ -60,11 +60,11 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'comment' => 'string',
-        'absence_reason_id' => 'float',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'start_time' => '\DateTime',
-        'end_time' => '\DateTime'
+        'end_time' => '\DateTime',
+        'absence_reason_id' => 'int'
     ];
 
     /**
@@ -76,11 +76,11 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'comment' => null,
-        'absence_reason_id' => null,
         'start_date' => 'date',
         'end_date' => 'date',
         'start_time' => 'date-time',
-        'end_time' => 'date-time'
+        'end_time' => 'date-time',
+        'absence_reason_id' => null
     ];
 
     /**
@@ -111,11 +111,11 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'comment' => 'comment',
-        'absence_reason_id' => 'absenceReasonId',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
         'start_time' => 'startTime',
-        'end_time' => 'endTime'
+        'end_time' => 'endTime',
+        'absence_reason_id' => 'absenceReasonId'
     ];
 
     /**
@@ -125,11 +125,11 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'comment' => 'setComment',
-        'absence_reason_id' => 'setAbsenceReasonId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'start_time' => 'setStartTime',
-        'end_time' => 'setEndTime'
+        'end_time' => 'setEndTime',
+        'absence_reason_id' => 'setAbsenceReasonId'
     ];
 
     /**
@@ -139,11 +139,11 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'comment' => 'getComment',
-        'absence_reason_id' => 'getAbsenceReasonId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'start_time' => 'getStartTime',
-        'end_time' => 'getEndTime'
+        'end_time' => 'getEndTime',
+        'absence_reason_id' => 'getAbsenceReasonId'
     ];
 
     /**
@@ -204,11 +204,11 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['absence_reason_id'] = $data['absence_reason_id'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['start_time'] = $data['start_time'] ?? null;
         $this->container['end_time'] = $data['end_time'] ?? null;
+        $this->container['absence_reason_id'] = $data['absence_reason_id'] ?? null;
     }
 
     /**
@@ -266,30 +266,6 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets absence_reason_id
-     *
-     * @return float
-     */
-    public function getAbsenceReasonId()
-    {
-        return $this->container['absence_reason_id'];
-    }
-
-    /**
-     * Sets absence_reason_id
-     *
-     * @param float $absence_reason_id absence_reason_id
-     *
-     * @return self
-     */
-    public function setAbsenceReasonId($absence_reason_id)
-    {
-        $this->container['absence_reason_id'] = $absence_reason_id;
-
-        return $this;
-    }
-
-    /**
      * Gets start_date
      *
      * @return \DateTime|null
@@ -302,7 +278,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date If startTime is present, startDate is ignored.
+     * @param \DateTime|null $start_date Date used for all-day absences. If startTime is present, startDate is ignored.
      *
      * @return self
      */
@@ -326,7 +302,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date If endTime is present, endDate is ignored.
+     * @param \DateTime|null $end_date Date used for all-day absences. If endTime is present, endDate is ignored.
      *
      * @return self
      */
@@ -381,6 +357,30 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEndTime($end_time)
     {
         $this->container['end_time'] = $end_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets absence_reason_id
+     *
+     * @return int
+     */
+    public function getAbsenceReasonId()
+    {
+        return $this->container['absence_reason_id'];
+    }
+
+    /**
+     * Sets absence_reason_id
+     *
+     * @param int $absence_reason_id ID of absence reason.
+     *
+     * @return self
+     */
+    public function setAbsenceReasonId($absence_reason_id)
+    {
+        $this->container['absence_reason_id'] = $absence_reason_id;
 
         return $this;
     }

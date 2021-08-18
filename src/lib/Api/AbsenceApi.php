@@ -958,15 +958,15 @@ class AbsenceApi
      * Create new absence for person
      *
      * @param  string $person_id person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 inline_object61 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2016
      */
-    public function postPersonsAbsences($person_id, $inline_object60 = null)
+    public function postPersonsAbsences($person_id, $inline_object61 = null)
     {
-        list($response) = $this->postPersonsAbsencesWithHttpInfo($person_id, $inline_object60);
+        list($response) = $this->postPersonsAbsencesWithHttpInfo($person_id, $inline_object61);
         return $response;
     }
 
@@ -976,15 +976,15 @@ class AbsenceApi
      * Create new absence for person
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2016, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postPersonsAbsencesWithHttpInfo($person_id, $inline_object60 = null)
+    public function postPersonsAbsencesWithHttpInfo($person_id, $inline_object61 = null)
     {
-        $request = $this->postPersonsAbsencesRequest($person_id, $inline_object60);
+        $request = $this->postPersonsAbsencesRequest($person_id, $inline_object61);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1063,14 +1063,14 @@ class AbsenceApi
      * Create new absence for person
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsAbsencesAsync($person_id, $inline_object60 = null)
+    public function postPersonsAbsencesAsync($person_id, $inline_object61 = null)
     {
-        return $this->postPersonsAbsencesAsyncWithHttpInfo($person_id, $inline_object60)
+        return $this->postPersonsAbsencesAsyncWithHttpInfo($person_id, $inline_object61)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1084,15 +1084,15 @@ class AbsenceApi
      * Create new absence for person
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsAbsencesAsyncWithHttpInfo($person_id, $inline_object60 = null)
+    public function postPersonsAbsencesAsyncWithHttpInfo($person_id, $inline_object61 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2016';
-        $request = $this->postPersonsAbsencesRequest($person_id, $inline_object60);
+        $request = $this->postPersonsAbsencesRequest($person_id, $inline_object61);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1131,12 +1131,12 @@ class AbsenceApi
      * Create request for operation 'postPersonsAbsences'
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postPersonsAbsencesRequest($person_id, $inline_object60 = null)
+    public function postPersonsAbsencesRequest($person_id, $inline_object61 = null)
     {
         // verify the required parameter 'person_id' is set
         if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
@@ -1176,11 +1176,11 @@ class AbsenceApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object60)) {
+        if (isset($inline_object61)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object60));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object61));
             } else {
-                $httpBody = $inline_object60;
+                $httpBody = $inline_object61;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1239,15 +1239,15 @@ class AbsenceApi
      *
      * @param  string $person_id person_id (required)
      * @param  string $id id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 inline_object61 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 inline_object62 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2016
      */
-    public function putPersonsAbsence($person_id, $id, $inline_object61 = null)
+    public function putPersonsAbsence($person_id, $id, $inline_object62 = null)
     {
-        list($response) = $this->putPersonsAbsenceWithHttpInfo($person_id, $id, $inline_object61);
+        list($response) = $this->putPersonsAbsenceWithHttpInfo($person_id, $id, $inline_object62);
         return $response;
     }
 
@@ -1258,15 +1258,15 @@ class AbsenceApi
      *
      * @param  string $person_id (required)
      * @param  string $id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2016, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putPersonsAbsenceWithHttpInfo($person_id, $id, $inline_object61 = null)
+    public function putPersonsAbsenceWithHttpInfo($person_id, $id, $inline_object62 = null)
     {
-        $request = $this->putPersonsAbsenceRequest($person_id, $id, $inline_object61);
+        $request = $this->putPersonsAbsenceRequest($person_id, $id, $inline_object62);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1346,14 +1346,14 @@ class AbsenceApi
      *
      * @param  string $person_id (required)
      * @param  string $id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putPersonsAbsenceAsync($person_id, $id, $inline_object61 = null)
+    public function putPersonsAbsenceAsync($person_id, $id, $inline_object62 = null)
     {
-        return $this->putPersonsAbsenceAsyncWithHttpInfo($person_id, $id, $inline_object61)
+        return $this->putPersonsAbsenceAsyncWithHttpInfo($person_id, $id, $inline_object62)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1368,15 +1368,15 @@ class AbsenceApi
      *
      * @param  string $person_id (required)
      * @param  string $id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putPersonsAbsenceAsyncWithHttpInfo($person_id, $id, $inline_object61 = null)
+    public function putPersonsAbsenceAsyncWithHttpInfo($person_id, $id, $inline_object62 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2016';
-        $request = $this->putPersonsAbsenceRequest($person_id, $id, $inline_object61);
+        $request = $this->putPersonsAbsenceRequest($person_id, $id, $inline_object62);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1416,12 +1416,12 @@ class AbsenceApi
      *
      * @param  string $person_id (required)
      * @param  string $id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject62 $inline_object62 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putPersonsAbsenceRequest($person_id, $id, $inline_object61 = null)
+    public function putPersonsAbsenceRequest($person_id, $id, $inline_object62 = null)
     {
         // verify the required parameter 'person_id' is set
         if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
@@ -1475,11 +1475,11 @@ class AbsenceApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object61)) {
+        if (isset($inline_object62)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object61));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object62));
             } else {
-                $httpBody = $inline_object61;
+                $httpBody = $inline_object62;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

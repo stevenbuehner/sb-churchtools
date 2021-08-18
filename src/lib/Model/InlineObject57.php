@@ -59,8 +59,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]',
-        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]'
+        'master' => 'object[]',
+        'es' => 'object[]'
     ];
 
     /**
@@ -71,8 +71,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'property_mappings_master_to_es' => null,
-        'property_mappings_esto_master' => null
+        'master' => null,
+        'es' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'property_mappings_master_to_es' => 'propertyMappingsMasterToES',
-        'property_mappings_esto_master' => 'propertyMappingsESToMaster'
+        'master' => 'master',
+        'es' => 'es'
     ];
 
     /**
@@ -112,8 +112,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster'
+        'master' => 'setMaster',
+        'es' => 'setEs'
     ];
 
     /**
@@ -122,8 +122,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster'
+        'master' => 'getMaster',
+        'es' => 'getEs'
     ];
 
     /**
@@ -183,8 +183,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
-        $this->container['property_mappings_esto_master'] = $data['property_mappings_esto_master'] ?? null;
+        $this->container['master'] = $data['master'] ?? null;
+        $this->container['es'] = $data['es'] ?? null;
     }
 
     /**
@@ -196,6 +196,12 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['master'] === null) {
+            $invalidProperties[] = "'master' can't be null";
+        }
+        if ($this->container['es'] === null) {
+            $invalidProperties[] = "'es' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -212,49 +218,53 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets property_mappings_master_to_es
+     * Gets master
      *
-     * @return \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null
+     * @return object[]
      */
-    public function getPropertyMappingsMasterToEs()
+    public function getMaster()
     {
-        return $this->container['property_mappings_master_to_es'];
+        return $this->container['master'];
     }
 
     /**
-     * Sets property_mappings_master_to_es
+     * Sets master
      *
-     * @param \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null $property_mappings_master_to_es property_mappings_master_to_es
+     * @param object[] $master master
      *
      * @return self
      */
-    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
+    public function setMaster($master)
     {
-        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
+
+
+        $this->container['master'] = $master;
 
         return $this;
     }
 
     /**
-     * Gets property_mappings_esto_master
+     * Gets es
      *
-     * @return \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null
+     * @return object[]
      */
-    public function getPropertyMappingsEstoMaster()
+    public function getEs()
     {
-        return $this->container['property_mappings_esto_master'];
+        return $this->container['es'];
     }
 
     /**
-     * Sets property_mappings_esto_master
+     * Sets es
      *
-     * @param \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null $property_mappings_esto_master property_mappings_esto_master
+     * @param object[] $es es
      *
      * @return self
      */
-    public function setPropertyMappingsEstoMaster($property_mappings_esto_master)
+    public function setEs($es)
     {
-        $this->container['property_mappings_esto_master'] = $property_mappings_esto_master;
+
+
+        $this->container['es'] = $es;
 
         return $this;
     }

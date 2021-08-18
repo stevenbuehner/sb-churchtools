@@ -6679,30 +6679,30 @@ class PersonApi
      * Operation postPersonsPersonIdArchive
      *
      * @param  string $person_id person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 inline_object67 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function postPersonsPersonIdArchive($person_id, $inline_object66 = null)
+    public function postPersonsPersonIdArchive($person_id, $inline_object67 = null)
     {
-        $this->postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object66);
+        $this->postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object67);
     }
 
     /**
      * Operation postPersonsPersonIdArchiveWithHttpInfo
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object66 = null)
+    public function postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object67 = null)
     {
-        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object66);
+        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object67);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6745,14 +6745,14 @@ class PersonApi
      * Operation postPersonsPersonIdArchiveAsync
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsPersonIdArchiveAsync($person_id, $inline_object66 = null)
+    public function postPersonsPersonIdArchiveAsync($person_id, $inline_object67 = null)
     {
-        return $this->postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object66)
+        return $this->postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object67)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6764,15 +6764,15 @@ class PersonApi
      * Operation postPersonsPersonIdArchiveAsyncWithHttpInfo
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object66 = null)
+    public function postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object67 = null)
     {
         $returnType = '';
-        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object66);
+        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object67);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6801,12 +6801,12 @@ class PersonApi
      * Create request for operation 'postPersonsPersonIdArchive'
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postPersonsPersonIdArchiveRequest($person_id, $inline_object66 = null)
+    public function postPersonsPersonIdArchiveRequest($person_id, $inline_object67 = null)
     {
         // verify the required parameter 'person_id' is set
         if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
@@ -6846,11 +6846,11 @@ class PersonApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object66)) {
+        if (isset($inline_object67)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object66));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object67));
             } else {
-                $httpBody = $inline_object66;
+                $httpBody = $inline_object67;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

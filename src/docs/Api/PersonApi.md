@@ -1500,7 +1500,7 @@ Name | Type | Description  | Notes
 ## `postPersonsPersonIdArchive()`
 
 ```php
-postPersonsPersonIdArchive($person_id, $inline_object66)
+postPersonsPersonIdArchive($person_id, $inline_object67)
 ```
 
 
@@ -1527,10 +1527,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $person_id = 'person_id_example'; // string
-$inline_object66 = new \StevenBuehner\ChurchTools\Model\InlineObject66(); // \StevenBuehner\ChurchTools\Model\InlineObject66
+$inline_object67 = new \StevenBuehner\ChurchTools\Model\InlineObject67(); // \StevenBuehner\ChurchTools\Model\InlineObject67
 
 try {
-    $apiInstance->postPersonsPersonIdArchive($person_id, $inline_object66);
+    $apiInstance->postPersonsPersonIdArchive($person_id, $inline_object67);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->postPersonsPersonIdArchive: ', $e->getMessage(), PHP_EOL;
 }
@@ -1541,7 +1541,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
- **inline_object66** | [**\StevenBuehner\ChurchTools\Model\InlineObject66**](../Model/InlineObject66.md)|  | [optional]
+ **inline_object67** | [**\StevenBuehner\ChurchTools\Model\InlineObject67**](../Model/InlineObject67.md)|  | [optional]
 
 ### Return type
 

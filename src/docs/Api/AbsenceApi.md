@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ## `postPersonsAbsences()`
 
 ```php
-postPersonsAbsences($person_id, $inline_object60): \StevenBuehner\ChurchTools\Model\InlineResponse2016
+postPersonsAbsences($person_id, $inline_object61): \StevenBuehner\ChurchTools\Model\InlineResponse2016
 ```
 
 Create new absence for person
@@ -234,10 +234,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     $config
 );
 $person_id = 'person_id_example'; // string
-$inline_object60 = new \StevenBuehner\ChurchTools\Model\InlineObject60(); // \StevenBuehner\ChurchTools\Model\InlineObject60
+$inline_object61 = new \StevenBuehner\ChurchTools\Model\InlineObject61(); // \StevenBuehner\ChurchTools\Model\InlineObject61
 
 try {
-    $result = $apiInstance->postPersonsAbsences($person_id, $inline_object60);
+    $result = $apiInstance->postPersonsAbsences($person_id, $inline_object61);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AbsenceApi->postPersonsAbsences: ', $e->getMessage(), PHP_EOL;
@@ -249,7 +249,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
- **inline_object60** | [**\StevenBuehner\ChurchTools\Model\InlineObject60**](../Model/InlineObject60.md)|  | [optional]
+ **inline_object61** | [**\StevenBuehner\ChurchTools\Model\InlineObject61**](../Model/InlineObject61.md)|  | [optional]
 
 ### Return type
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 ## `putPersonsAbsence()`
 
 ```php
-putPersonsAbsence($person_id, $id, $inline_object61): \StevenBuehner\ChurchTools\Model\InlineResponse2016
+putPersonsAbsence($person_id, $id, $inline_object62): \StevenBuehner\ChurchTools\Model\InlineResponse2016
 ```
 
 Update absence
@@ -299,10 +299,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
 );
 $person_id = 'person_id_example'; // string
 $id = 'id_example'; // string
-$inline_object61 = new \StevenBuehner\ChurchTools\Model\InlineObject61(); // \StevenBuehner\ChurchTools\Model\InlineObject61
+$inline_object62 = new \StevenBuehner\ChurchTools\Model\InlineObject62(); // \StevenBuehner\ChurchTools\Model\InlineObject62
 
 try {
-    $result = $apiInstance->putPersonsAbsence($person_id, $id, $inline_object61);
+    $result = $apiInstance->putPersonsAbsence($person_id, $id, $inline_object62);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AbsenceApi->putPersonsAbsence: ', $e->getMessage(), PHP_EOL;
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
  **id** | **string**|  |
- **inline_object61** | [**\StevenBuehner\ChurchTools\Model\InlineObject61**](../Model/InlineObject61.md)|  | [optional]
+ **inline_object62** | [**\StevenBuehner\ChurchTools\Model\InlineObject62**](../Model/InlineObject62.md)|  | [optional]
 
 ### Return type
 

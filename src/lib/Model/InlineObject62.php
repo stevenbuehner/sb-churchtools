@@ -59,7 +59,12 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'logs' => '\StevenBuehner\ChurchTools\Model\SyncLogsLogs[]'
+        'comment' => 'string',
+        'absence_reason_id' => 'float',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime',
+        'start_time' => '\DateTime',
+        'end_time' => '\DateTime'
     ];
 
     /**
@@ -70,7 +75,12 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'logs' => null
+        'comment' => null,
+        'absence_reason_id' => null,
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'start_time' => 'date-time',
+        'end_time' => 'date-time'
     ];
 
     /**
@@ -100,7 +110,12 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'logs' => 'logs'
+        'comment' => 'comment',
+        'absence_reason_id' => 'absenceReasonId',
+        'start_date' => 'startDate',
+        'end_date' => 'endDate',
+        'start_time' => 'startTime',
+        'end_time' => 'endTime'
     ];
 
     /**
@@ -109,7 +124,12 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'logs' => 'setLogs'
+        'comment' => 'setComment',
+        'absence_reason_id' => 'setAbsenceReasonId',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'start_time' => 'setStartTime',
+        'end_time' => 'setEndTime'
     ];
 
     /**
@@ -118,7 +138,12 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'logs' => 'getLogs'
+        'comment' => 'getComment',
+        'absence_reason_id' => 'getAbsenceReasonId',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'start_time' => 'getStartTime',
+        'end_time' => 'getEndTime'
     ];
 
     /**
@@ -178,7 +203,12 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['logs'] = $data['logs'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
+        $this->container['absence_reason_id'] = $data['absence_reason_id'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['start_time'] = $data['start_time'] ?? null;
+        $this->container['end_time'] = $data['end_time'] ?? null;
     }
 
     /**
@@ -190,13 +220,12 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['logs'] === null) {
-            $invalidProperties[] = "'logs' can't be null";
+        if ($this->container['comment'] === null) {
+            $invalidProperties[] = "'comment' can't be null";
         }
-        if ((count($this->container['logs']) < 1)) {
-            $invalidProperties[] = "invalid value for 'logs', number of items must be greater than or equal to 1.";
+        if ($this->container['absence_reason_id'] === null) {
+            $invalidProperties[] = "'absence_reason_id' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -213,30 +242,145 @@ class InlineObject62 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets logs
+     * Gets comment
      *
-     * @return \StevenBuehner\ChurchTools\Model\SyncLogsLogs[]
+     * @return string
      */
-    public function getLogs()
+    public function getComment()
     {
-        return $this->container['logs'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets logs
+     * Sets comment
      *
-     * @param \StevenBuehner\ChurchTools\Model\SyncLogsLogs[] $logs logs
+     * @param string $comment comment
      *
      * @return self
      */
-    public function setLogs($logs)
+    public function setComment($comment)
     {
+        $this->container['comment'] = $comment;
 
+        return $this;
+    }
 
-        if ((count($logs) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $logs when calling InlineObject62., number of items must be greater than or equal to 1.');
-        }
-        $this->container['logs'] = $logs;
+    /**
+     * Gets absence_reason_id
+     *
+     * @return float
+     */
+    public function getAbsenceReasonId()
+    {
+        return $this->container['absence_reason_id'];
+    }
+
+    /**
+     * Sets absence_reason_id
+     *
+     * @param float $absence_reason_id absence_reason_id
+     *
+     * @return self
+     */
+    public function setAbsenceReasonId($absence_reason_id)
+    {
+        $this->container['absence_reason_id'] = $absence_reason_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime|null $start_date If startTime is present, startDate is ignored.
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return \DateTime|null
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param \DateTime|null $end_date If endTime is present, endDate is ignored.
+     *
+     * @return self
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_time
+     *
+     * @return \DateTime|null
+     */
+    public function getStartTime()
+    {
+        return $this->container['start_time'];
+    }
+
+    /**
+     * Sets start_time
+     *
+     * @param \DateTime|null $start_time start_time
+     *
+     * @return self
+     */
+    public function setStartTime($start_time)
+    {
+        $this->container['start_time'] = $start_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_time
+     *
+     * @return \DateTime|null
+     */
+    public function getEndTime()
+    {
+        return $this->container['end_time'];
+    }
+
+    /**
+     * Sets end_time
+     *
+     * @param \DateTime|null $end_time end_time
+     *
+     * @return self
+     */
+    public function setEndTime($end_time)
+    {
+        $this->container['end_time'] = $end_time;
 
         return $this;
     }

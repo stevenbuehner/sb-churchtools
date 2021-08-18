@@ -64,8 +64,9 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
         'guid' => 'string',
         'name' => 'string',
         'security_level_for_group' => 'int',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions',
         'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation',
-        'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20093Settings',
+        'settings' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings',
         'follow_up' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataFollowUp',
         'roles' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017DataRoles[]'
     ];
@@ -82,6 +83,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
         'guid' => null,
         'name' => null,
         'security_level_for_group' => null,
+        'permissions' => null,
         'information' => null,
         'settings' => null,
         'follow_up' => null,
@@ -119,6 +121,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
         'guid' => 'guid',
         'name' => 'name',
         'security_level_for_group' => 'securityLevelForGroup',
+        'permissions' => 'permissions',
         'information' => 'information',
         'settings' => 'settings',
         'follow_up' => 'followUp',
@@ -135,6 +138,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
         'guid' => 'setGuid',
         'name' => 'setName',
         'security_level_for_group' => 'setSecurityLevelForGroup',
+        'permissions' => 'setPermissions',
         'information' => 'setInformation',
         'settings' => 'setSettings',
         'follow_up' => 'setFollowUp',
@@ -151,6 +155,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
         'guid' => 'getGuid',
         'name' => 'getName',
         'security_level_for_group' => 'getSecurityLevelForGroup',
+        'permissions' => 'getPermissions',
         'information' => 'getInformation',
         'settings' => 'getSettings',
         'follow_up' => 'getFollowUp',
@@ -218,6 +223,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['guid'] = $data['guid'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['security_level_for_group'] = $data['security_level_for_group'] ?? null;
+        $this->container['permissions'] = $data['permissions'] ?? null;
         $this->container['information'] = $data['information'] ?? null;
         $this->container['settings'] = $data['settings'] ?? null;
         $this->container['follow_up'] = $data['follow_up'] ?? null;
@@ -345,6 +351,30 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets permissions
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null
+     */
+    public function getPermissions()
+    {
+        return $this->container['permissions'];
+    }
+
+    /**
+     * Sets permissions
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataPermissions|null $permissions permissions
+     *
+     * @return self
+     */
+    public function setPermissions($permissions)
+    {
+        $this->container['permissions'] = $permissions;
+
+        return $this;
+    }
+
+    /**
      * Gets information
      *
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataInformation|null
@@ -371,7 +401,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets settings
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20093Settings|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null
      */
     public function getSettings()
     {
@@ -381,7 +411,7 @@ class Groups implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets settings
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20093Settings|null $settings settings
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017DataSettings|null $settings settings
      *
      * @return self
      */

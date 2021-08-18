@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 ## `postCheckinPersons()`
 
 ```php
-postCheckinPersons($inline_object65): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+postCheckinPersons($inline_object66): \StevenBuehner\ChurchTools\Model\InlineResponse2001
 ```
 
 Create new person and add to group
@@ -165,10 +165,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CheckinApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object65 = new \StevenBuehner\ChurchTools\Model\InlineObject65(); // \StevenBuehner\ChurchTools\Model\InlineObject65
+$inline_object66 = new \StevenBuehner\ChurchTools\Model\InlineObject66(); // \StevenBuehner\ChurchTools\Model\InlineObject66
 
 try {
-    $result = $apiInstance->postCheckinPersons($inline_object65);
+    $result = $apiInstance->postCheckinPersons($inline_object66);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckinApi->postCheckinPersons: ', $e->getMessage(), PHP_EOL;
@@ -179,7 +179,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object65** | [**\StevenBuehner\ChurchTools\Model\InlineObject65**](../Model/InlineObject65.md)|  | [optional]
+ **inline_object66** | [**\StevenBuehner\ChurchTools\Model\InlineObject66**](../Model/InlineObject66.md)|  | [optional]
 
 ### Return type
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ## `putCheckinPersons()`
 
 ```php
-putCheckinPersons($inline_object64): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+putCheckinPersons($inline_object65): \StevenBuehner\ChurchTools\Model\InlineResponse2001
 ```
 
 Put existing person into group
@@ -225,10 +225,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CheckinApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
+$inline_object65 = new \StevenBuehner\ChurchTools\Model\InlineObject65(); // \StevenBuehner\ChurchTools\Model\InlineObject65
 
 try {
-    $result = $apiInstance->putCheckinPersons($inline_object64);
+    $result = $apiInstance->putCheckinPersons($inline_object65);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckinApi->putCheckinPersons: ', $e->getMessage(), PHP_EOL;
@@ -239,7 +239,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
+ **inline_object65** | [**\StevenBuehner\ChurchTools\Model\InlineObject65**](../Model/InlineObject65.md)|  | [optional]
 
 ### Return type
 

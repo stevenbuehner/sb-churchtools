@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineObject66
+ * InlineObject67
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * InlineObject66 Class Doc Comment
+ * InlineObject67 Class Doc Comment
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -42,7 +42,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineObject67 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_object_66';
+    protected static $openAPIModelName = 'inline_object_67';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => 'object',
-        'group' => '\StevenBuehner\ChurchTools\Model\CheckinPersonsGroup',
-        'tag_id' => 'float'
+        'archived' => 'bool'
     ];
 
     /**
@@ -72,9 +70,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person' => null,
-        'group' => null,
-        'tag_id' => null
+        'archived' => null
     ];
 
     /**
@@ -104,9 +100,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'person' => 'person',
-        'group' => 'group',
-        'tag_id' => 'tagId'
+        'archived' => 'archived'
     ];
 
     /**
@@ -115,9 +109,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'person' => 'setPerson',
-        'group' => 'setGroup',
-        'tag_id' => 'setTagId'
+        'archived' => 'setArchived'
     ];
 
     /**
@@ -126,9 +118,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'person' => 'getPerson',
-        'group' => 'getGroup',
-        'tag_id' => 'getTagId'
+        'archived' => 'getArchived'
     ];
 
     /**
@@ -188,9 +178,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['person'] = $data['person'] ?? null;
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['tag_id'] = $data['tag_id'] ?? null;
+        $this->container['archived'] = $data['archived'] ?? true;
     }
 
     /**
@@ -202,15 +190,6 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['person'] === null) {
-            $invalidProperties[] = "'person' can't be null";
-        }
-        if ($this->container['group'] === null) {
-            $invalidProperties[] = "'group' can't be null";
-        }
-        if ($this->container['tag_id'] === null) {
-            $invalidProperties[] = "'tag_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -227,73 +206,25 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets person
+     * Gets archived
      *
-     * @return object
+     * @return bool|null
      */
-    public function getPerson()
+    public function getArchived()
     {
-        return $this->container['person'];
+        return $this->container['archived'];
     }
 
     /**
-     * Sets person
+     * Sets archived
      *
-     * @param object $person See `POST /persons`
+     * @param bool|null $archived if true the person is archived, if false the archive operation is undone
      *
      * @return self
      */
-    public function setPerson($person)
+    public function setArchived($archived)
     {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\CheckinPersonsGroup
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\CheckinPersonsGroup $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_id
-     *
-     * @return float
-     */
-    public function getTagId()
-    {
-        return $this->container['tag_id'];
-    }
-
-    /**
-     * Sets tag_id
-     *
-     * @param float $tag_id tag_id
-     *
-     * @return self
-     */
-    public function setTagId($tag_id)
-    {
-        $this->container['tag_id'] = $tag_id;
+        $this->container['archived'] = $archived;
 
         return $this;
     }

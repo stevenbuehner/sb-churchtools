@@ -215,6 +215,7 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**groupsIdGet**](docs/Api/GroupApi.md#groupsidget) | **GET** /groups/{id} | Get a group
 *GroupApi* | [**issueSignUpToken**](docs/Api/GroupApi.md#issuesignuptoken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
 *GroupApi* | [**optIns**](docs/Api/GroupApi.md#optins) | **GET** /groups/{id}/optins | Get Opt In status of group members
+*GroupApi* | [**postGroups**](docs/Api/GroupApi.md#postgroups) | **POST** /groups | Create Group
 *GroupApi* | [**postPublicgroupsGroupIdMailToLeaders**](docs/Api/GroupApi.md#postpublicgroupsgroupidmailtoleaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
 *GroupApi* | [**postPublicgroupsGroupIdSignup**](docs/Api/GroupApi.md#postpublicgroupsgroupidsignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
 *GroupApi* | [**startStopChat**](docs/Api/GroupApi.md#startstopchat) | **POST** /groups/{id}/chat | Start or stop an event chat
@@ -474,6 +475,7 @@ Class | Method | HTTP request | Description
 - [InlineObject64](docs/Model/InlineObject64.md)
 - [InlineObject65](docs/Model/InlineObject65.md)
 - [InlineObject66](docs/Model/InlineObject66.md)
+- [InlineObject67](docs/Model/InlineObject67.md)
 - [InlineObject7](docs/Model/InlineObject7.md)
 - [InlineObject8](docs/Model/InlineObject8.md)
 - [InlineObject9](docs/Model/InlineObject9.md)
@@ -706,7 +708,6 @@ Class | Method | HTTP request | Description
 - [InlineResponse20092](docs/Model/InlineResponse20092.md)
 - [InlineResponse20092Data](docs/Model/InlineResponse20092Data.md)
 - [InlineResponse20093](docs/Model/InlineResponse20093.md)
-- [InlineResponse20093Settings](docs/Model/InlineResponse20093Settings.md)
 - [InlineResponse20094](docs/Model/InlineResponse20094.md)
 - [InlineResponse20095](docs/Model/InlineResponse20095.md)
 - [InlineResponse20096](docs/Model/InlineResponse20096.md)
