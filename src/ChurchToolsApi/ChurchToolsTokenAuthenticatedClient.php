@@ -6,10 +6,11 @@ namespace StevenBuehner\ChurchToolsApi;
 use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
+use StevenBuehner\ChurchTools\Configuration;
 
 class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client implements ChurchToolsClientInterface {
 
-	protected $loginToken;
+	protected $config;
 	protected $cookiJar;
 
 	/**
@@ -17,10 +18,10 @@ class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client implements 
 	 * @param string $churchToolsLoginToken
 	 * @param CookieJar $cookieJar
 	 */
-	public function __construct(string $churchToolsLoginToken, CookieJar $cookieJar) {
+	public function __construct(Configuration $config, CookieJar $cookieJar) {
 
-		$this->loginToken = $churchToolsLoginToken;
-		$this->cookiJar   = $cookieJar;
+		$this->config   = $config;
+		$this->cookiJar = $cookieJar;
 
 		parent::__construct([
 			'cookies' => $cookieJar
@@ -30,12 +31,13 @@ class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client implements 
 
 	protected function addLoginData($options) {
 		if (isset($options['query']) && is_array($options['query'])) {
-			$options['query'] = $options['query'] + ['login_token' => $this->loginToken];
+			$options['query'] = $options['query'] + ['login_token' => $this->config->getAccessToken()];
 		}
 
 		return $options;
 
 	}
+
 
 	public function sendAsync(RequestInterface $request, array $options = []): PromiseInterface {
 
@@ -47,7 +49,7 @@ class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client implements 
 
 
 	public function login() {
-
+		// Do nothing
 	}
 
 	public function logout() {
