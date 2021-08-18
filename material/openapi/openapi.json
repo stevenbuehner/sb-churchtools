@@ -29925,6 +29925,19 @@
                             "description": "You can see group fields up to this security level.",
                             "example": 3
                           },
+                        "permissions": {
+                          "type": "object",
+                          "properties": {
+                            "useChat": {
+                              "type": "boolean",
+                              "description": "Current user can use the chat."
+                            },
+                            "startChat": {
+                              "type": "boolean",
+                              "description": "Current user can start chat."
+                            }
+                          }
+                        },
                           "information": {
                             "type": "object",
                             "properties": {
@@ -30004,10 +30017,34 @@
                                 "description": "Indicator if people can apply for participation.",
                                 "type": "boolean"
                               },
+                            "allowSpouseRegistration": {
+                              "type": "boolean",
+                              "description": "Spous is listed as option during group sign up."
+                            },
+                            "allowChildRegistration": {
+                              "type": "boolean",
+                              "description": "Own children are listed as option during group sign up."
+                            },
+                            "allowSameEmailRegistration": {
+                              "type": "boolean",
+                              "description": "People with same eMail address are listed as option during group sign up."
+                            },
+                            "allowOtherRegistration": {
+                              "type": "boolean",
+                              "description": "It is allowed to sign up other people uring group sign up."
+                            },
                               "autoAccept": {
                                 "description": "Indicator if applications are accepted automatically.",
                                 "type": "boolean"
                               },
+                            "allowWaitinglist": {
+                              "type": "boolean",
+                              "description": "Waiting list is in-/active for this group."
+                            },
+                            "automaticMoveUp": {
+                              "type": "boolean",
+                              "description": "In combination with waiting list: People automatically move up in waiting list."
+                            },
                               "isPublic": {
                                 "type": "boolean"
                               },
@@ -30029,6 +30066,10 @@
                                   }
                                 }
                               },
+                            "qrCodeCheckin": {
+                              "type": "boolean",
+                              "description": "QR Codes are sent to participants, which can be used during check-in"
+                            },
                               "informLeader": {
                                 "description": "Inform leader via e-mail about changes.",
                                 "type": "boolean"
@@ -30433,6 +30474,444 @@
             "name": "limit",
             "description": "Number of results per page."
           }
+        ]
+      },
+      "post": {
+        "summary": "Create Group",
+        "operationId": "post-groups",
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "description": "The group model structures all information in different objects: `information`, `settings`, `followUp`, and `roles`. Custom group fields are added to the root level of this model.",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 42
+                        },
+                        "guid": {
+                          "type": "string",
+                          "example": "681F54E3-2EB7-40A4-84F0-EFF8E8F05727"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Smallgroup West"
+                        },
+                        "securityLevelForGroup": {
+                          "type": "integer",
+                          "description": "You can see group fields up to this security level.",
+                          "example": 3
+                        },
+                        "permissions": {
+                          "type": "object",
+                          "properties": {
+                            "useChat": {
+                              "type": "boolean",
+                              "description": "Current user can use the chat."
+                            },
+                            "startChat": {
+                              "type": "boolean",
+                              "description": "Current user can start chat."
+                            }
+                          }
+                        },
+                        "information": {
+                          "type": "object",
+                          "properties": {
+                            "imageUrl": {
+                              "default": null,
+                              "nullable": true,
+                              "type": "string"
+                            },
+                            "dateOfFoundation": {
+                              "type": "string",
+                              "format": "date",
+                              "nullable": true
+                            },
+                            "endDate": {
+                              "type": "string",
+                              "format": "date",
+                              "nullable": true
+                            },
+                            "meetingTime": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "weekday": {
+                              "type": "integer",
+                              "nullable": true,
+                              "description": "The number of the weekday. Starting with 0 = Sunday, 1 = Monday, ..."
+                            },
+                            "groupCategoryId": {
+                              "nullable": true,
+                              "type": "integer"
+                            },
+                            "ageGroups": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              },
+                              "example": [
+                                1,
+                                2
+                              ]
+                            },
+                            "targetGroupId": {
+                              "nullable": true,
+                              "type": "integer"
+                            },
+                            "maxMembers": {
+                              "type": "integer",
+                              "nullable": true
+                            },
+                            "groupTypeId": {
+                              "type": "integer"
+                            },
+                            "groupStatusId": {
+                              "type": "integer"
+                            },
+                            "note": {
+                              "type": "string"
+                            },
+                            "campusId": {
+                              "nullable": true,
+                              "type": "integer"
+                            },
+                            "chatStatus": {
+                              "description": "status of group chat",
+                              "type": "string",
+                              "example": "STARTED"
+                            }
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "isHidden": {
+                              "type": "boolean"
+                            },
+                            "isOpenForMembers": {
+                              "description": "Indicator if people can apply for participation.",
+                              "type": "boolean"
+                            },
+                            "allowSpouseRegistration": {
+                              "type": "boolean",
+                              "description": "Spous is listed as option during group sign up."
+                            },
+                            "allowChildRegistration": {
+                              "type": "boolean",
+                              "description": "Own children are listed as option during group sign up."
+                            },
+                            "allowSameEmailRegistration": {
+                              "type": "boolean",
+                              "description": "People with same eMail address are listed as option during group sign up."
+                            },
+                            "allowOtherRegistration": {
+                              "type": "boolean",
+                              "description": "It is allowed to sign up other people uring group sign up."
+                            },
+                            "autoAccept": {
+                              "description": "Indicator if applications are accepted automatically.",
+                              "type": "boolean"
+                            },
+                            "allowWaitinglist": {
+                              "type": "boolean",
+                              "description": "Waiting list is in-/active for this group."
+                            },
+                            "automaticMoveUp": {
+                              "type": "boolean",
+                              "description": "In combination with waiting list: People automatically move up in waiting list."
+                            },
+                            "isPublic": {
+                              "type": "boolean"
+                            },
+                            "inStatistic": {
+                              "description": "Show in statistics.",
+                              "type": "boolean"
+                            },
+                            "groupMeeting": {
+                              "type": "object",
+                              "properties": {
+                                "autoCreate": {
+                                  "description": "Create weekly group meetings.",
+                                  "type": "boolean"
+                                },
+                                "templateId": {
+                                  "description": "Group template used for meetings.",
+                                  "type": "integer",
+                                  "nullable": true
+                                }
+                              }
+                            },
+                            "qrCodeCheckin": {
+                              "type": "boolean",
+                              "description": "QR Codes are sent to participants, which can be used during check-in"
+                            },
+                            "informLeader": {
+                              "description": "Inform leader via e-mail about changes.",
+                              "type": "boolean"
+                            },
+                            "newMember": {
+                              "description": "Campus, Status, Department for newly created persons.",
+                              "type": "object",
+                              "nullable": true,
+                              "properties": {
+                                "campusId": {
+                                  "nullable": true,
+                                  "type": "integer"
+                                },
+                                "statusId": {
+                                  "nullable": true,
+                                  "type": "integer"
+                                },
+                                "departmentId": {
+                                  "nullable": true,
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "followUp": {
+                          "type": "object",
+                          "properties": {
+                            "typeId": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "targetTypeId": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "targetObjectId": {
+                              "type": "integer",
+                              "nullable": true,
+                              "example": null
+                            },
+                            "targetGroupMemberStatusId": {
+                              "type": "integer",
+                              "nullable": true,
+                              "example": null
+                            },
+                            "sendReminderMails": {
+                              "type": "boolean",
+                              "example": true
+                            }
+                          }
+                        },
+                        "roles": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer",
+                                "description": "ID of this group role."
+                              },
+                              "groupTypeRoleId": {
+                                "type": "integer",
+                                "description": "ID of the corresponding group type role."
+                              },
+                              "groupTypeId": {
+                                "type": "integer",
+                                "description": "ID of corresponding group type."
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "Name of role."
+                              },
+                              "shorty": {
+                                "type": "string",
+                                "description": "Abbreviation of the name."
+                              },
+                              "sortKey": {
+                                "type": "integer",
+                                "description": "Number used for sorting roles."
+                              },
+                              "toDelete": {
+                                "type": "boolean",
+                                "description": "Flag, if members of this role can be deleted or removed from the group."
+                              },
+                              "hasRequested": {
+                                "type": "boolean",
+                                "description": "Flag, if group member is requesting group access."
+                              },
+                              "isLeader": {
+                                "type": "boolean",
+                                "description": "Flag, this role is a leader."
+                              },
+                              "isDefault": {
+                                "type": "boolean",
+                                "description": "Indicator of default roles."
+                              },
+                              "isHidden": {
+                                "type": "boolean",
+                                "description": "Flag, if this role is hidden in groups."
+                              },
+                              "growPathId": {
+                                "type": "integer",
+                                "nullable": true,
+                                "description": "ID of the grow path. The id is either given from the group type role. But a group can override the grow path. In this case the group role specific ID is used."
+                              },
+                              "forceTwoFactorAuth": {
+                                "type": "boolean",
+                                "description": "Flag, if members with this role have to use two factor authentication."
+                              },
+                              "isActive": {
+                                "type": "boolean",
+                                "description": "Flag, if this role is active in this group."
+                              }
+                            },
+                            "example": [
+                              {
+                                "id": 5,
+                                "groupTypeRoleId": 3,
+                                "groupTypeId": 2,
+                                "name": "Member",
+                                "shorty": "M",
+                                "sortKey": 4,
+                                "toDelete": false,
+                                "hasRequested": false,
+                                "isLeader": false,
+                                "isDefault": true,
+                                "isHidden": false,
+                                "growPathId": null,
+                                "forceTwoFactorAuth": false,
+                                "isActive": true
+                              },
+                              {
+                                "id": 6,
+                                "groupTypeRoleId": 4,
+                                "groupTypeId": 2,
+                                "name": "Leader",
+                                "shorty": "L",
+                                "sortKey": 2,
+                                "toDelete": false,
+                                "hasRequested": false,
+                                "isLeader": true,
+                                "isDefault": false,
+                                "isHidden": false,
+                                "growPathId": 2,
+                                "forceTwoFactorAuth": true,
+                                "isActive": true
+                              }
+                            ]
+                          },
+                          "example": [
+                            {
+                              "id": 5,
+                              "groupTypeRoleId": 3,
+                              "groupTypeId": 2,
+                              "name": "Member",
+                              "shorty": "M",
+                              "sortKey": 4,
+                              "toDelete": false,
+                              "hasRequested": false,
+                              "isLeader": false,
+                              "isDefault": true,
+                              "isHidden": false,
+                              "growPathId": null,
+                              "forceTwoFactorAuth": false,
+                              "isActive": true
+                            },
+                            {
+                              "id": 6,
+                              "groupTypeRoleId": 4,
+                              "groupTypeId": 2,
+                              "name": "Leader",
+                              "shorty": "L",
+                              "sortKey": 2,
+                              "toDelete": false,
+                              "hasRequested": false,
+                              "isLeader": true,
+                              "isDefault": false,
+                              "isHidden": false,
+                              "growPathId": 2,
+                              "forceTwoFactorAuth": true,
+                              "isActive": true
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "description": "Create new group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "name": "Neue Gruppe 2021-07-22",
+                    "groupTypeId": 1,
+                    "groupStatusId": 1,
+                    "superiorGroupId": 6
+                  }
+                },
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Group name"
+                  },
+                  "groupTypeId": {
+                    "type": "number",
+                    "description": "Id of group type"
+                  },
+                  "groupStatusId": {
+                    "type": "number",
+                    "description": "ID of group status"
+                  },
+                  "superiorGroupId": {
+                    "type": "number",
+                    "example": 0,
+                    "description": "Group ID of superior group"
+                  },
+                  "campusId": {
+                    "type": "number",
+                    "description": "Campus Id if group is connected to a campus"
+                  },
+                  "force": {
+                    "type": "boolean",
+                    "description": "Need to be true, if another group with that name already exists"
+                  }
+                },
+                "required": [
+                  "name",
+                  "groupTypeId",
+                  "groupStatusId"
+                ]
+              }
+            }
+          }
+        },
+        "tags": [
+          "Group"
         ]
       }
     },
