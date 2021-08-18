@@ -50,6 +50,7 @@ class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client implements 
 
 	public function login() {
 		// Do nothing
+		return TRUE;
 	}
 
 	public function logout() {
