@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\QueueApi
 
-All URIs are relative to https://teambb.church.tools/api.
+All URIs are relative to http://localhost/api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

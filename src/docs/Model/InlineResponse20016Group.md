@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**titel** | **string** |  | [optional]
+**title** | **string** |  | [optional]
 **domain_type** | **string** |  | [optional]
 **domain_identifier** | **string** |  | [optional]
 **api_url** | **string** |  | [optional]

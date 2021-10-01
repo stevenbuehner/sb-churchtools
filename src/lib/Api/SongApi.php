@@ -1,7 +1,7 @@
 <?php
 /**
  * SongApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -613,6 +613,9 @@ class SongApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($practice)){
+            	$queryParams['practice'] = $practice ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['practice'] = $practice;
             }
@@ -624,6 +627,9 @@ class SongApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($key_of_arrangement)){
+            	$queryParams['key_of_arrangement'] = $key_of_arrangement ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['key_of_arrangement'] = $key_of_arrangement;
             }
@@ -634,6 +640,9 @@ class SongApi
                 foreach($name as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($name)){
+            	$queryParams['name'] = $name ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['name'] = $name;

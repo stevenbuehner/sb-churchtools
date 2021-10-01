@@ -1,7 +1,7 @@
 <?php
 /**
  * ServiceServiceGroupsApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -294,6 +294,9 @@ class ServiceServiceGroupsApi
                 foreach($comment as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($comment)){
+            	$queryParams['comment'] = $comment ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['comment'] = $comment;

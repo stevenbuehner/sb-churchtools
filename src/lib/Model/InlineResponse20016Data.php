@@ -60,7 +60,7 @@ class InlineResponse20016Data implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20016Group',
-        'role_id' => 'int',
+        'group_type_role_id' => 'int',
         'comment' => 'string',
         'member_start_date' => '\DateTime',
         'member_end_date' => '\DateTime'
@@ -75,7 +75,7 @@ class InlineResponse20016Data implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'group' => null,
-        'role_id' => null,
+        'group_type_role_id' => null,
         'comment' => null,
         'member_start_date' => 'date',
         'member_end_date' => 'date'
@@ -109,7 +109,7 @@ class InlineResponse20016Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $attributeMap = [
         'group' => 'group',
-        'role_id' => 'roleId',
+        'group_type_role_id' => 'groupTypeRoleId',
         'comment' => 'comment',
         'member_start_date' => 'memberStartDate',
         'member_end_date' => 'memberEndDate'
@@ -122,7 +122,7 @@ class InlineResponse20016Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $setters = [
         'group' => 'setGroup',
-        'role_id' => 'setRoleId',
+        'group_type_role_id' => 'setGroupTypeRoleId',
         'comment' => 'setComment',
         'member_start_date' => 'setMemberStartDate',
         'member_end_date' => 'setMemberEndDate'
@@ -135,7 +135,7 @@ class InlineResponse20016Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'group' => 'getGroup',
-        'role_id' => 'getRoleId',
+        'group_type_role_id' => 'getGroupTypeRoleId',
         'comment' => 'getComment',
         'member_start_date' => 'getMemberStartDate',
         'member_end_date' => 'getMemberEndDate'
@@ -199,7 +199,7 @@ class InlineResponse20016Data implements ModelInterface, ArrayAccess, \JsonSeria
     public function __construct(array $data = null)
     {
         $this->container['group'] = $data['group'] ?? null;
-        $this->container['role_id'] = $data['role_id'] ?? null;
+        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
         $this->container['comment'] = $data['comment'] ?? null;
         $this->container['member_start_date'] = $data['member_start_date'] ?? null;
         $this->container['member_end_date'] = $data['member_end_date'] ?? null;
@@ -254,25 +254,25 @@ class InlineResponse20016Data implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets role_id
+     * Gets group_type_role_id
      *
      * @return int|null
      */
-    public function getRoleId()
+    public function getGroupTypeRoleId()
     {
-        return $this->container['role_id'];
+        return $this->container['group_type_role_id'];
     }
 
     /**
-     * Sets role_id
+     * Sets group_type_role_id
      *
-     * @param int|null $role_id role_id
+     * @param int|null $group_type_role_id group_type_role_id
      *
      * @return self
      */
-    public function setRoleId($role_id)
+    public function setGroupTypeRoleId($group_type_role_id)
     {
-        $this->container['role_id'] = $role_id;
+        $this->container['group_type_role_id'] = $group_type_role_id;
 
         return $this;
     }

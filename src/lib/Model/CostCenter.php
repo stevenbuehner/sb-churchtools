@@ -67,7 +67,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
         'budget_spent' => 'float',
         'budget_last_period' => 'float',
         'accounting_period_id' => 'int',
-        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20016Group',
+        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -454,7 +454,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20016Group|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null
      */
     public function getGroup()
     {
@@ -464,7 +464,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20016Group|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null $group group
      *
      * @return self
      */

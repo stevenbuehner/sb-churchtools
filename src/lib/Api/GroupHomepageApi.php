@@ -1,7 +1,7 @@
 <?php
 /**
  * GroupHomepageApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -873,6 +873,9 @@ class GroupHomepageApi
                 foreach($token as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($token)){
+            	$queryParams['token'] = $token ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['token'] = $token;

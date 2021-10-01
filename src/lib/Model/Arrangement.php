@@ -213,21 +213,6 @@ class Arrangement implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const IS_DEFAULT_TRUE = 'true';
-    const IS_DEFAULT_FALSE = 'false';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getIsDefaultAllowableValues()
-    {
-        return [
-            self::IS_DEFAULT_TRUE,
-            self::IS_DEFAULT_FALSE,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -265,15 +250,6 @@ class Arrangement implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getIsDefaultAllowableValues();
-        if (!is_null($this->container['is_default']) && !in_array($this->container['is_default'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'is_default', must be one of '%s'",
-                $this->container['is_default'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -357,16 +333,6 @@ class Arrangement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIsDefault($is_default)
     {
-        $allowedValues = $this->getIsDefaultAllowableValues();
-        if (!is_null($is_default) && !in_array($is_default, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'is_default', must be one of '%s'",
-                    $is_default,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['is_default'] = $is_default;
 
         return $this;

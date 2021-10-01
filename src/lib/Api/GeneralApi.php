@@ -1,7 +1,7 @@
 <?php
 /**
  * GeneralApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -554,6 +554,9 @@ class GeneralApi
                 foreach($only_allow_authenticated as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($only_allow_authenticated)){
+            	$queryParams['only_allow_authenticated'] = $only_allow_authenticated ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['only_allow_authenticated'] = $only_allow_authenticated;

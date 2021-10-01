@@ -1,7 +1,7 @@
 <?php
 /**
  * JobApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -345,6 +345,9 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($status)){
+            	$queryParams['status'] = $status ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['status'] = $status;
             }
@@ -355,6 +358,9 @@ class JobApi
                 foreach($identifier as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($identifier)){
+            	$queryParams['identifier'] = $identifier ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['identifier'] = $identifier;
@@ -367,6 +373,9 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($name)){
+            	$queryParams['name'] = $name ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['name'] = $name;
             }
@@ -377,6 +386,9 @@ class JobApi
                 foreach($domain_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($domain_ids)){
+            	$queryParams['domain_ids'] = $domain_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['domain_ids'] = $domain_ids;
@@ -389,6 +401,9 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($created_start_date)){
+            	$queryParams['created_start_date'] = $created_start_date ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['created_start_date'] = $created_start_date;
             }
@@ -399,6 +414,9 @@ class JobApi
                 foreach($created_end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($created_end_date)){
+            	$queryParams['created_end_date'] = $created_end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['created_end_date'] = $created_end_date;
@@ -411,6 +429,9 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
+            else if (is_bool($modified_start_date)){
+            	$queryParams['modified_start_date'] = $modified_start_date ? 'TRUE' : 'FALSE';
+            }
             else {
                 $queryParams['modified_start_date'] = $modified_start_date;
             }
@@ -421,6 +442,9 @@ class JobApi
                 foreach($modified_end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
+            }
+            else if (is_bool($modified_end_date)){
+            	$queryParams['modified_end_date'] = $modified_end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['modified_end_date'] = $modified_end_date;
