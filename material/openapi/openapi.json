@@ -4423,6 +4423,10 @@
                               },
                               "allowChat": {
                                 "type": "boolean"
+                              },
+                              "permissions": {
+                                "type": "array",
+                                "nullable": true
                               }
                             },
                             "example": {
@@ -4462,7 +4466,8 @@
                               },
                               "comment": "I\"m in",
                               "counter": 0,
-                              "allowChat": true
+                              "allowChat": true,
+                              "permissions": null
                             }
                           }
                         }
@@ -4512,7 +4517,8 @@
                             },
                             "comment": "I\"m in",
                             "counter": 0,
-                            "allowChat": true
+                            "allowChat": true,
+                            "permissions": null
                           }
                         ]
                       }
@@ -5896,7 +5902,7 @@
           }
         ]
       },
-      "post": {
+      "put": {
         "summary": "Agree to a service request for a person",
         "description": "Use this endpoint to agree to a service request. To decline a service request, use the DELETE method.",
         "operationId": "updateServiceRequestById",
@@ -11409,6 +11415,10 @@
                               },
                               "allowChat": {
                                 "type": "boolean"
+                              },
+                              "permissions": {
+                                "type": "array",
+                                "nullable": true
                               }
                             },
                             "example": {
@@ -11448,7 +11458,8 @@
                               },
                               "comment": "I\"m in",
                               "counter": 0,
-                              "allowChat": true
+                              "allowChat": true,
+                              "permissions": null
                             }
                           }
                         }
@@ -11498,7 +11509,8 @@
                             },
                             "comment": "I\"m in",
                             "counter": 0,
-                            "allowChat": true
+                            "allowChat": true,
+                            "permissions": null
                           }
                         ]
                       }
@@ -27778,7 +27790,6 @@
                           "invite persons": false,
                           "simulate persons": false,
                           "view logfile": false,
-                          "view whoisonline": false,
                           "edit translations": false
                         },
                         "churchcheckin": {
@@ -29902,29 +29913,29 @@
                       "type": "array",
                       "items": {
                         "title": "Groups",
-                        "type": "object",
+                      "type": "object",
                         "x-tags": [
                           "Group"
                         ],
-                        "description": "The group model structures all information in different objects: `information`, `settings`, `followUp`, and `roles`. Custom group fields are added to the root level of this model.",
-                        "properties": {
-                          "id": {
-                            "type": "integer",
-                            "example": 42
-                          },
-                          "guid": {
-                            "type": "string",
-                            "example": "681F54E3-2EB7-40A4-84F0-EFF8E8F05727"
-                          },
-                          "name": {
-                            "type": "string",
-                            "example": "Smallgroup West"
-                          },
-                          "securityLevelForGroup": {
-                            "type": "integer",
-                            "description": "You can see group fields up to this security level.",
-                            "example": 3
-                          },
+                      "description": "The group model structures all information in different objects: `information`, `settings`, `followUp`, and `roles`. Custom group fields are added to the root level of this model.",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 42
+                        },
+                        "guid": {
+                          "type": "string",
+                          "example": "681F54E3-2EB7-40A4-84F0-EFF8E8F05727"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Smallgroup West"
+                        },
+                        "securityLevelForGroup": {
+                          "type": "integer",
+                          "description": "You can see group fields up to this security level.",
+                          "example": 3
+                        },
                         "permissions": {
                           "type": "object",
                           "properties": {
@@ -29938,85 +29949,85 @@
                             }
                           }
                         },
-                          "information": {
-                            "type": "object",
-                            "properties": {
-                              "imageUrl": {
-                                "default": null,
-                                "nullable": true,
-                                "type": "string"
-                              },
-                              "dateOfFoundation": {
-                                "type": "string",
-                                "format": "date",
-                                "nullable": true
-                              },
-                              "endDate": {
-                                "type": "string",
-                                "format": "date",
-                                "nullable": true
-                              },
-                              "meetingTime": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "weekday": {
-                                "type": "integer",
-                                "nullable": true,
-                                "description": "The number of the weekday. Starting with 0 = Sunday, 1 = Monday, ..."
-                              },
-                              "groupCategoryId": {
-                                "nullable": true,
+                        "information": {
+                          "type": "object",
+                          "properties": {
+                            "imageUrl": {
+                              "default": null,
+                              "nullable": true,
+                              "type": "string"
+                            },
+                            "dateOfFoundation": {
+                              "type": "string",
+                              "format": "date",
+                              "nullable": true
+                            },
+                            "endDate": {
+                              "type": "string",
+                              "format": "date",
+                              "nullable": true
+                            },
+                            "meetingTime": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "weekday": {
+                              "type": "integer",
+                              "nullable": true,
+                              "description": "The number of the weekday. Starting with 0 = Sunday, 1 = Monday, ..."
+                            },
+                            "groupCategoryId": {
+                              "nullable": true,
+                              "type": "integer"
+                            },
+                            "ageGroups": {
+                              "type": "array",
+                              "items": {
                                 "type": "integer"
                               },
-                              "ageGroups": {
-                                "type": "array",
-                                "items": {
-                                  "type": "integer"
-                                },
-                                "example": [
-                                  1,
-                                  2
-                                ]
-                              },
-                              "targetGroupId": {
-                                "nullable": true,
-                                "type": "integer"
-                              },
-                              "maxMembers": {
-                                "type": "integer",
-                                "nullable": true
-                              },
-                              "groupTypeId": {
-                                "type": "integer"
-                              },
-                              "groupStatusId": {
-                                "type": "integer"
-                              },
-                              "note": {
-                                "type": "string"
-                              },
-                              "campusId": {
-                                "nullable": true,
-                                "type": "integer"
-                              },
-                              "chatStatus": {
-                                "description": "status of group chat",
-                                "type": "string",
-                                "example": "STARTED"
-                              }
+                              "example": [
+                                1,
+                                2
+                              ]
+                            },
+                            "targetGroupId": {
+                              "nullable": true,
+                              "type": "integer"
+                            },
+                            "maxMembers": {
+                              "type": "integer",
+                              "nullable": true
+                            },
+                            "groupTypeId": {
+                              "type": "integer"
+                            },
+                            "groupStatusId": {
+                              "type": "integer"
+                            },
+                            "note": {
+                              "type": "string"
+                            },
+                            "campusId": {
+                              "nullable": true,
+                              "type": "integer"
+                            },
+                            "chatStatus": {
+                              "description": "status of group chat",
+                              "type": "string",
+                              "example": "STARTED"
                             }
-                          },
-                          "settings": {
-                            "type": "object",
-                            "properties": {
-                              "isHidden": {
-                                "type": "boolean"
-                              },
-                              "isOpenForMembers": {
-                                "description": "Indicator if people can apply for participation.",
-                                "type": "boolean"
-                              },
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "isHidden": {
+                              "type": "boolean"
+                            },
+                            "isOpenForMembers": {
+                              "description": "Indicator if people can apply for participation.",
+                              "type": "boolean"
+                            },
                             "allowSpouseRegistration": {
                               "type": "boolean",
                               "description": "Spous is listed as option during group sign up."
@@ -30033,10 +30044,10 @@
                               "type": "boolean",
                               "description": "It is allowed to sign up other people uring group sign up."
                             },
-                              "autoAccept": {
-                                "description": "Indicator if applications are accepted automatically.",
-                                "type": "boolean"
-                              },
+                            "autoAccept": {
+                              "description": "Indicator if applications are accepted automatically.",
+                              "type": "boolean"
+                            },
                             "allowWaitinglist": {
                               "type": "boolean",
                               "description": "Waiting list is in-/active for this group."
@@ -30045,180 +30056,145 @@
                               "type": "boolean",
                               "description": "In combination with waiting list: People automatically move up in waiting list."
                             },
-                              "isPublic": {
-                                "type": "boolean"
-                              },
-                              "inStatistic": {
-                                "description": "Show in statistics.",
-                                "type": "boolean"
-                              },
-                              "groupMeeting": {
-                                "type": "object",
-                                "properties": {
-                                  "autoCreate": {
-                                    "description": "Create weekly group meetings.",
-                                    "type": "boolean"
-                                  },
-                                  "templateId": {
-                                    "description": "Group template used for meetings.",
-                                    "type": "integer",
-                                    "nullable": true
-                                  }
+                            "isPublic": {
+                              "type": "boolean"
+                            },
+                            "inStatistic": {
+                              "description": "Show in statistics.",
+                              "type": "boolean"
+                            },
+                            "groupMeeting": {
+                              "type": "object",
+                              "properties": {
+                                "autoCreate": {
+                                  "description": "Create weekly group meetings.",
+                                  "type": "boolean"
+                                },
+                                "templateId": {
+                                  "description": "Group template used for meetings.",
+                                  "type": "integer",
+                                  "nullable": true
                                 }
-                              },
+                              }
+                            },
                             "qrCodeCheckin": {
                               "type": "boolean",
                               "description": "QR Codes are sent to participants, which can be used during check-in"
                             },
-                              "informLeader": {
-                                "description": "Inform leader via e-mail about changes.",
-                                "type": "boolean"
-                              },
-                              "newMember": {
-                                "description": "Campus, Status, Department for newly created persons.",
-                                "type": "object",
-                                "nullable": true,
-                                "properties": {
-                                  "campusId": {
-                                    "nullable": true,
-                                    "type": "integer"
-                                  },
-                                  "statusId": {
-                                    "nullable": true,
-                                    "type": "integer"
-                                  },
-                                  "departmentId": {
-                                    "nullable": true,
-                                    "type": "integer"
-                                  }
+                            "informLeader": {
+                              "description": "Inform leader via e-mail about changes.",
+                              "type": "boolean"
+                            },
+                            "newMember": {
+                              "description": "Campus, Status, Department for newly created persons.",
+                              "type": "object",
+                              "nullable": true,
+                              "properties": {
+                                "campusId": {
+                                  "nullable": true,
+                                  "type": "integer"
+                                },
+                                "statusId": {
+                                  "nullable": true,
+                                  "type": "integer"
+                                },
+                                "departmentId": {
+                                  "nullable": true,
+                                  "type": "integer"
                                 }
                               }
                             }
-                          },
-                          "followUp": {
+                          }
+                        },
+                        "followUp": {
+                          "type": "object",
+                          "properties": {
+                            "typeId": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "targetTypeId": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "targetObjectId": {
+                              "type": "integer",
+                              "nullable": true,
+                              "example": null
+                            },
+                            "targetGroupMemberStatusId": {
+                              "type": "integer",
+                              "nullable": true,
+                              "example": null
+                            },
+                            "sendReminderMails": {
+                              "type": "boolean",
+                              "example": true
+                            }
+                          }
+                        },
+                        "roles": {
+                          "type": "array",
+                          "items": {
                             "type": "object",
                             "properties": {
-                              "typeId": {
+                              "id": {
                                 "type": "integer",
-                                "example": 1
+                                "description": "ID of this group role."
                               },
-                              "targetTypeId": {
+                              "groupTypeRoleId": {
                                 "type": "integer",
-                                "example": 0
+                                "description": "ID of the corresponding group type role."
                               },
-                              "targetObjectId": {
+                              "groupTypeId": {
                                 "type": "integer",
-                                "nullable": true,
-                                "example": null
+                                "description": "ID of corresponding group type."
                               },
-                              "targetGroupMemberStatusId": {
+                              "name": {
+                                "type": "string",
+                                "description": "Name of role."
+                              },
+                              "shorty": {
+                                "type": "string",
+                                "description": "Abbreviation of the name."
+                              },
+                              "sortKey": {
                                 "type": "integer",
-                                "nullable": true,
-                                "example": null
+                                "description": "Number used for sorting roles."
                               },
-                              "sendReminderMails": {
+                              "toDelete": {
                                 "type": "boolean",
-                                "example": true
-                              }
-                            }
-                          },
-                          "roles": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "integer",
-                                  "description": "ID of this group role."
-                                },
-                                "groupTypeRoleId": {
-                                  "type": "integer",
-                                  "description": "ID of the corresponding group type role."
-                                },
-                                "groupTypeId": {
-                                  "type": "integer",
-                                  "description": "ID of corresponding group type."
-                                },
-                                "name": {
-                                  "type": "string",
-                                  "description": "Name of role."
-                                },
-                                "shorty": {
-                                  "type": "string",
-                                  "description": "Abbreviation of the name."
-                                },
-                                "sortKey": {
-                                  "type": "integer",
-                                  "description": "Number used for sorting roles."
-                                },
-                                "toDelete": {
-                                  "type": "boolean",
-                                  "description": "Flag, if members of this role can be deleted or removed from the group."
-                                },
-                                "hasRequested": {
-                                  "type": "boolean",
-                                  "description": "Flag, if group member is requesting group access."
-                                },
-                                "isLeader": {
-                                  "type": "boolean",
-                                  "description": "Flag, this role is a leader."
-                                },
-                                "isDefault": {
-                                  "type": "boolean",
-                                  "description": "Indicator of default roles."
-                                },
-                                "isHidden": {
-                                  "type": "boolean",
-                                  "description": "Flag, if this role is hidden in groups."
-                                },
-                                "growPathId": {
-                                  "type": "integer",
-                                  "nullable": true,
-                                  "description": "ID of the grow path. The id is either given from the group type role. But a group can override the grow path. In this case the group role specific ID is used."
-                                },
-                                "forceTwoFactorAuth": {
-                                  "type": "boolean",
-                                  "description": "Flag, if members with this role have to use two factor authentication."
-                                },
-                                "isActive": {
-                                  "type": "boolean",
-                                  "description": "Flag, if this role is active in this group."
-                                }
+                                "description": "Flag, if members of this role can be deleted or removed from the group."
                               },
-                              "example": [
-                                {
-                                  "id": 5,
-                                  "groupTypeRoleId": 3,
-                                  "groupTypeId": 2,
-                                  "name": "Member",
-                                  "shorty": "M",
-                                  "sortKey": 4,
-                                  "toDelete": false,
-                                  "hasRequested": false,
-                                  "isLeader": false,
-                                  "isDefault": true,
-                                  "isHidden": false,
-                                  "growPathId": null,
-                                  "forceTwoFactorAuth": false,
-                                  "isActive": true
-                                },
-                                {
-                                  "id": 6,
-                                  "groupTypeRoleId": 4,
-                                  "groupTypeId": 2,
-                                  "name": "Leader",
-                                  "shorty": "L",
-                                  "sortKey": 2,
-                                  "toDelete": false,
-                                  "hasRequested": false,
-                                  "isLeader": true,
-                                  "isDefault": false,
-                                  "isHidden": false,
-                                  "growPathId": 2,
-                                  "forceTwoFactorAuth": true,
-                                  "isActive": true
-                                }
-                              ]
+                              "hasRequested": {
+                                "type": "boolean",
+                                "description": "Flag, if group member is requesting group access."
+                              },
+                              "isLeader": {
+                                "type": "boolean",
+                                "description": "Flag, this role is a leader."
+                              },
+                              "isDefault": {
+                                "type": "boolean",
+                                "description": "Indicator of default roles."
+                              },
+                              "isHidden": {
+                                "type": "boolean",
+                                "description": "Flag, if this role is hidden in groups."
+                              },
+                              "growPathId": {
+                                "type": "integer",
+                                "nullable": true,
+                                "description": "ID of the grow path. The id is either given from the group type role. But a group can override the grow path. In this case the group role specific ID is used."
+                              },
+                              "forceTwoFactorAuth": {
+                                "type": "boolean",
+                                "description": "Flag, if members with this role have to use two factor authentication."
+                              },
+                              "isActive": {
+                                "type": "boolean",
+                                "description": "Flag, if this role is active in this group."
+                              }
                             },
                             "example": [
                               {
@@ -30254,8 +30230,43 @@
                                 "isActive": true
                               }
                             ]
-                          }
+                          },
+                          "example": [
+                            {
+                              "id": 5,
+                              "groupTypeRoleId": 3,
+                              "groupTypeId": 2,
+                              "name": "Member",
+                              "shorty": "M",
+                              "sortKey": 4,
+                              "toDelete": false,
+                              "hasRequested": false,
+                              "isLeader": false,
+                              "isDefault": true,
+                              "isHidden": false,
+                              "growPathId": null,
+                              "forceTwoFactorAuth": false,
+                              "isActive": true
+                            },
+                            {
+                              "id": 6,
+                              "groupTypeRoleId": 4,
+                              "groupTypeId": 2,
+                              "name": "Leader",
+                              "shorty": "L",
+                              "sortKey": 2,
+                              "toDelete": false,
+                              "hasRequested": false,
+                              "isLeader": true,
+                              "isDefault": false,
+                              "isHidden": false,
+                              "growPathId": 2,
+                              "forceTwoFactorAuth": true,
+                              "isActive": true
+                            }
+                          ]
                         }
+                      }
                       }
                     },
                     "ref": {
@@ -34733,6 +34744,22 @@
                                         "type": "string",
                                         "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                                         "description": "Link to external website or link to file in ChurchTools"
+                                      },
+                                      "meta": {
+                                        "type": "object",
+                                        "properties": {
+                                          "modifiedDate": {
+                                            "type": "string"
+                                          },
+                                          "modifiedPerson": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
                                       }
                                     }
                                   }
@@ -34771,6 +34798,22 @@
                                         "type": "string",
                                         "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                                         "description": "Link to external website or link to file in ChurchTools"
+                                      },
+                                      "meta": {
+                                        "type": "object",
+                                        "properties": {
+                                          "modifiedDate": {
+                                            "type": "string"
+                                          },
+                                          "modifiedPerson": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
                                       }
                                     }
                                   }
@@ -34951,6 +34994,14 @@
             "in": "query",
             "name": "key_of_arrangement",
             "description": "Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter)"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "name",
+            "description": "Search by song title"
           }
         ]
       }
@@ -35121,6 +35172,22 @@
                                       "type": "string",
                                       "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                                       "description": "Link to external website or link to file in ChurchTools"
+                                    },
+                                    "meta": {
+                                      "type": "object",
+                                      "properties": {
+                                        "modifiedDate": {
+                                          "type": "string"
+                                        },
+                                        "modifiedPerson": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "string"
+                                            }
+                                          }
+                                        }
+                                      }
                                     }
                                   }
                                 }
@@ -35159,6 +35226,22 @@
                                       "type": "string",
                                       "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                                       "description": "Link to external website or link to file in ChurchTools"
+                                    },
+                                    "meta": {
+                                      "type": "object",
+                                      "properties": {
+                                        "modifiedDate": {
+                                          "type": "string"
+                                        },
+                                        "modifiedPerson": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "string"
+                                            }
+                                          }
+                                        }
+                                      }
                                     }
                                   }
                                 }
@@ -35435,6 +35518,22 @@
                                         "type": "string",
                                         "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                                         "description": "Link to external website or link to file in ChurchTools"
+                                      },
+                                      "meta": {
+                                        "type": "object",
+                                        "properties": {
+                                          "modifiedDate": {
+                                            "type": "string"
+                                          },
+                                          "modifiedPerson": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
                                       }
                                     }
                                   }
@@ -35473,6 +35572,22 @@
                                         "type": "string",
                                         "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                                         "description": "Link to external website or link to file in ChurchTools"
+                                      },
+                                      "meta": {
+                                        "type": "object",
+                                        "properties": {
+                                          "modifiedDate": {
+                                            "type": "string"
+                                          },
+                                          "modifiedPerson": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
                                       }
                                     }
                                   }
@@ -36303,6 +36418,13 @@
             },
             "in": "query",
             "name": "status"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "identifier"
           },
           {
             "schema": {
@@ -40312,6 +40434,10 @@
                 },
                 "allowChat": {
                   "type": "boolean"
+                },
+                "permissions": {
+                  "type": "array",
+                  "nullable": true
                 }
               },
               "example": {
@@ -40351,7 +40477,8 @@
                 },
                 "comment": "I\"m in",
                 "counter": 0,
-                "allowChat": true
+                "allowChat": true,
+                "permissions": null
               }
             }
           }
@@ -40401,7 +40528,8 @@
               },
               "comment": "I\"m in",
               "counter": 0,
-              "allowChat": true
+              "allowChat": true,
+              "permissions": null
             }
           ]
         }
@@ -44386,6 +44514,22 @@
                         "type": "string",
                         "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                         "description": "Link to external website or link to file in ChurchTools"
+                      },
+                      "meta": {
+                        "type": "object",
+                        "properties": {
+                          "modifiedDate": {
+                            "type": "string"
+                          },
+                          "modifiedPerson": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -44424,6 +44568,22 @@
                         "type": "string",
                         "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                         "description": "Link to external website or link to file in ChurchTools"
+                      },
+                      "meta": {
+                        "type": "object",
+                        "properties": {
+                          "modifiedDate": {
+                            "type": "string"
+                          },
+                          "modifiedPerson": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -44612,6 +44772,22 @@
                   "type": "string",
                   "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                   "description": "Link to external website or link to file in ChurchTools"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "modifiedDate": {
+                      "type": "string"
+                    },
+                    "modifiedPerson": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -44650,6 +44826,22 @@
                   "type": "string",
                   "example": "http://churchtools.test/?q=public/filedownload&id=116&filename=57407b0f37e8833cc7ff34f76413885e3856336ff21a263187c6bbd3acb9d385",
                   "description": "Link to external website or link to file in ChurchTools"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "modifiedDate": {
+                      "type": "string"
+                    },
+                    "modifiedPerson": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }

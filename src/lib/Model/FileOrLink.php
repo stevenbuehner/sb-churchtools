@@ -64,7 +64,8 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'domain_id' => 'string',
         'name' => 'string',
         'filename' => 'string',
-        'file_url' => 'string'
+        'file_url' => 'string',
+        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200108Meta'
     ];
 
     /**
@@ -79,7 +80,8 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'domain_id' => null,
         'name' => null,
         'filename' => null,
-        'file_url' => null
+        'file_url' => null,
+        'meta' => null
     ];
 
     /**
@@ -113,7 +115,8 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'domain_id' => 'domainId',
         'name' => 'name',
         'filename' => 'filename',
-        'file_url' => 'fileUrl'
+        'file_url' => 'fileUrl',
+        'meta' => 'meta'
     ];
 
     /**
@@ -126,7 +129,8 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'domain_id' => 'setDomainId',
         'name' => 'setName',
         'filename' => 'setFilename',
-        'file_url' => 'setFileUrl'
+        'file_url' => 'setFileUrl',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -139,7 +143,8 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'domain_id' => 'getDomainId',
         'name' => 'getName',
         'filename' => 'getFilename',
-        'file_url' => 'getFileUrl'
+        'file_url' => 'getFileUrl',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -204,6 +209,7 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['name'] = $data['name'] ?? null;
         $this->container['filename'] = $data['filename'] ?? null;
         $this->container['file_url'] = $data['file_url'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -346,6 +352,30 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFileUrl($file_url)
     {
         $this->container['file_url'] = $file_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200108Meta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200108Meta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

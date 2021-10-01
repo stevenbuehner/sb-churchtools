@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\JobApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to https://teambb.church.tools/api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getJobs()`
 
 ```php
-getJobs($status, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date): \StevenBuehner\ChurchTools\Model\InlineResponse200112
+getJobs($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date): \StevenBuehner\ChurchTools\Model\InlineResponse200112
 ```
 
 Your GET endpoint
@@ -35,6 +35,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\JobApi(
     $config
 );
 $status = new \StevenBuehner\ChurchTools\Model\array(); // array
+$identifier = 'identifier_example'; // string
 $name = 'name_example'; // string
 $domain_ids = new \StevenBuehner\ChurchTools\Model\array(); // array
 $created_start_date = 'created_start_date_example'; // string
@@ -43,7 +44,7 @@ $modified_start_date = 'modified_start_date_example'; // string
 $modified_end_date = 'modified_end_date_example'; // string
 
 try {
-    $result = $apiInstance->getJobs($status, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
+    $result = $apiInstance->getJobs($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobApi->getJobs: ', $e->getMessage(), PHP_EOL;
@@ -55,6 +56,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **status** | [**array**](../Model/.md)|  | [optional]
+ **identifier** | **string**|  | [optional]
  **name** | **string**|  | [optional]
  **domain_ids** | [**array**](../Model/.md)|  | [optional]
  **created_start_date** | **string**|  | [optional]

@@ -1,7 +1,7 @@
 <?php
 /**
  * ServiceServiceGroupsApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -294,9 +294,6 @@ class ServiceServiceGroupsApi
                 foreach($comment as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($comment)){
-            	$queryParams['comment'] = $comment ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['comment'] = $comment;
@@ -2107,7 +2104,7 @@ class ServiceServiceGroupsApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

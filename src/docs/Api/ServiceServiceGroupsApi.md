@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\ServiceServiceGroupsApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to https://teambb.church.tools/api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**getOpenServiceRequestsForPerson()**](ServiceServiceGroupsApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{id}/servicerequests | Get all service requests for a person
 [**getServiceRequestById()**](ServiceServiceGroupsApi.md#getServiceRequestById) | **GET** /persons/{id}/servicerequests/{requestId} | Get a specific service request for a person
 [**undoServiceRequestById()**](ServiceServiceGroupsApi.md#undoServiceRequestById) | **POST** /persons/{id}/servicerequests/{requestId}/undo | Undo last service request action
-[**updateServiceRequestById()**](ServiceServiceGroupsApi.md#updateServiceRequestById) | **POST** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
+[**updateServiceRequestById()**](ServiceServiceGroupsApi.md#updateServiceRequestById) | **PUT** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
 
 
 ## `declineServiceRequestById()`

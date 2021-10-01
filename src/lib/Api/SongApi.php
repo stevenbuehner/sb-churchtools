@@ -1,7 +1,7 @@
 <?php
 /**
  * SongApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -392,14 +392,15 @@ class SongApi
      * @param  int[] $ids Filter by Song IDs. (optional)
      * @param  bool $practice Filter by field &#x60;shouldPractice&#x60;. (optional)
      * @param  string $key_of_arrangement Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) (optional)
+     * @param  string $name Search by song title (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse200108
      */
-    public function getSongs($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null)
+    public function getSongs($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
-        list($response) = $this->getSongsWithHttpInfo($song_category_ids, $ids, $practice, $key_of_arrangement);
+        list($response) = $this->getSongsWithHttpInfo($song_category_ids, $ids, $practice, $key_of_arrangement, $name);
         return $response;
     }
 
@@ -412,14 +413,15 @@ class SongApi
      * @param  int[] $ids Filter by Song IDs. (optional)
      * @param  bool $practice Filter by field &#x60;shouldPractice&#x60;. (optional)
      * @param  string $key_of_arrangement Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) (optional)
+     * @param  string $name Search by song title (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200108, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSongsWithHttpInfo($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null)
+    public function getSongsWithHttpInfo($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
-        $request = $this->getSongsRequest($song_category_ids, $ids, $practice, $key_of_arrangement);
+        $request = $this->getSongsRequest($song_category_ids, $ids, $practice, $key_of_arrangement, $name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -501,13 +503,14 @@ class SongApi
      * @param  int[] $ids Filter by Song IDs. (optional)
      * @param  bool $practice Filter by field &#x60;shouldPractice&#x60;. (optional)
      * @param  string $key_of_arrangement Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) (optional)
+     * @param  string $name Search by song title (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSongsAsync($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null)
+    public function getSongsAsync($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
-        return $this->getSongsAsyncWithHttpInfo($song_category_ids, $ids, $practice, $key_of_arrangement)
+        return $this->getSongsAsyncWithHttpInfo($song_category_ids, $ids, $practice, $key_of_arrangement, $name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -524,14 +527,15 @@ class SongApi
      * @param  int[] $ids Filter by Song IDs. (optional)
      * @param  bool $practice Filter by field &#x60;shouldPractice&#x60;. (optional)
      * @param  string $key_of_arrangement Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) (optional)
+     * @param  string $name Search by song title (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSongsAsyncWithHttpInfo($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null)
+    public function getSongsAsyncWithHttpInfo($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200108';
-        $request = $this->getSongsRequest($song_category_ids, $ids, $practice, $key_of_arrangement);
+        $request = $this->getSongsRequest($song_category_ids, $ids, $practice, $key_of_arrangement, $name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -573,11 +577,12 @@ class SongApi
      * @param  int[] $ids Filter by Song IDs. (optional)
      * @param  bool $practice Filter by field &#x60;shouldPractice&#x60;. (optional)
      * @param  string $key_of_arrangement Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) (optional)
+     * @param  string $name Search by song title (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSongsRequest($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null)
+    public function getSongsRequest($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
 
         $resourcePath = '/songs';
@@ -608,9 +613,6 @@ class SongApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($practice)){
-            	$queryParams['practice'] = $practice ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['practice'] = $practice;
             }
@@ -622,11 +624,19 @@ class SongApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($key_of_arrangement)){
-            	$queryParams['key_of_arrangement'] = $key_of_arrangement ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['key_of_arrangement'] = $key_of_arrangement;
+            }
+        }
+        // query params
+        if ($name !== null) {
+            if('form' === 'form' && is_array($name)) {
+                foreach($name as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['name'] = $name;
             }
         }
 

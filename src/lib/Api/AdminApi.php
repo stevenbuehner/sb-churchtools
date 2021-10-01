@@ -1,7 +1,7 @@
 <?php
 /**
  * AdminApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -340,9 +340,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($message)){
-            	$queryParams['message'] = $message ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['message'] = $message;
             }
@@ -361,9 +358,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($before)){
-            	$queryParams['before'] = $before ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['before'] = $before;
             }
@@ -374,9 +368,6 @@ class AdminApi
                 foreach($after as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($after)){
-            	$queryParams['after'] = $after ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['after'] = $after;
@@ -389,9 +380,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($person_id)){
-            	$queryParams['person_id'] = $person_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['person_id'] = $person_id;
             }
@@ -403,9 +391,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -416,9 +401,6 @@ class AdminApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -957,9 +939,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($order_by)){
-            	$queryParams['order_by'] = $order_by ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['order_by'] = $order_by;
             }
@@ -971,9 +950,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -984,9 +960,6 @@ class AdminApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;

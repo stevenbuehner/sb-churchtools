@@ -59,7 +59,7 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup',
+        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20016Group',
         'role_id' => 'int',
         'comment' => 'string',
         'member_start_date' => '\DateTime',
@@ -232,7 +232,7 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20016Group|null
      */
     public function getGroup()
     {
@@ -242,7 +242,7 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20016Group|null $group group
      *
      * @return self
      */

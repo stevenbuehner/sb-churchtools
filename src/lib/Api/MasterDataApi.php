@@ -1,7 +1,7 @@
 <?php
 /**
  * MasterDataApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -540,9 +540,6 @@ class MasterDataApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;

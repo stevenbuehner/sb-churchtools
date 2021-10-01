@@ -1,7 +1,7 @@
 <?php
 /**
  * FinanceApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -289,9 +289,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -4194,9 +4191,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -4452,9 +4446,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -4712,9 +4703,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -4971,9 +4959,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -5229,9 +5214,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -5729,9 +5711,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -5987,9 +5966,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -6247,9 +6223,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -6505,9 +6478,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -6765,9 +6735,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -7015,9 +6982,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -7275,9 +7239,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -7520,9 +7481,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -10341,9 +10299,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -10629,9 +10584,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -11189,9 +11141,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -11504,9 +11453,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -11517,9 +11463,6 @@ class FinanceApi
                 foreach($order_by as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($order_by)){
-            	$queryParams['order_by'] = $order_by ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['order_by'] = $order_by;
@@ -11532,9 +11475,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($order_direction)){
-            	$queryParams['order_direction'] = $order_direction ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['order_direction'] = $order_direction;
             }
@@ -11546,9 +11486,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -11559,9 +11496,6 @@ class FinanceApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -12118,9 +12052,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -13019,9 +12950,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -13032,9 +12960,6 @@ class FinanceApi
                 foreach($created_pid as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($created_pid)){
-            	$queryParams['created_pid'] = $created_pid ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['created_pid'] = $created_pid;
@@ -13047,9 +12972,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($cost_center_ids)){
-            	$queryParams['cost_center_ids'] = $cost_center_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['cost_center_ids'] = $cost_center_ids;
             }
@@ -13060,9 +12982,6 @@ class FinanceApi
                 foreach($donator_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($donator_ids)){
-            	$queryParams['donator_ids'] = $donator_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['donator_ids'] = $donator_ids;
@@ -13075,9 +12994,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($account_ids)){
-            	$queryParams['account_ids'] = $account_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['account_ids'] = $account_ids;
             }
@@ -13088,9 +13004,6 @@ class FinanceApi
                 foreach($is_donation as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_donation)){
-            	$queryParams['is_donation'] = $is_donation ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_donation'] = $is_donation;
@@ -13103,9 +13016,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($is_income)){
-            	$queryParams['is_income'] = $is_income ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['is_income'] = $is_income;
             }
@@ -13116,9 +13026,6 @@ class FinanceApi
                 foreach($start_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['start_date'] = $start_date;
@@ -13131,9 +13038,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['end_date'] = $end_date;
             }
@@ -13144,9 +13048,6 @@ class FinanceApi
                 foreach($is_immutable as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_immutable)){
-            	$queryParams['is_immutable'] = $is_immutable ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_immutable'] = $is_immutable;
@@ -13159,9 +13060,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($order_by)){
-            	$queryParams['order_by'] = $order_by ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['order_by'] = $order_by;
             }
@@ -13172,9 +13070,6 @@ class FinanceApi
                 foreach($order_direction as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($order_direction)){
-            	$queryParams['order_direction'] = $order_direction ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['order_direction'] = $order_direction;
@@ -13187,9 +13082,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -13200,9 +13092,6 @@ class FinanceApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -14379,9 +14268,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -14393,9 +14279,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($donator_id)){
-            	$queryParams['donator_id'] = $donator_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['donator_id'] = $donator_id;
             }
@@ -14406,9 +14289,6 @@ class FinanceApi
                 foreach($donator_spouse_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($donator_spouse_id)){
-            	$queryParams['donator_spouse_id'] = $donator_spouse_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['donator_spouse_id'] = $donator_spouse_id;
@@ -14630,9 +14510,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;

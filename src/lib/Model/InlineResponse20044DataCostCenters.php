@@ -67,7 +67,7 @@ class InlineResponse20044DataCostCenters implements ModelInterface, ArrayAccess,
         'budget_spent' => 'float',
         'budget_last_period' => 'float',
         'accounting_period_id' => 'int',
-        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup',
+        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20016Group',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -454,7 +454,7 @@ class InlineResponse20044DataCostCenters implements ModelInterface, ArrayAccess,
     /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20016Group|null
      */
     public function getGroup()
     {
@@ -464,7 +464,7 @@ class InlineResponse20044DataCostCenters implements ModelInterface, ArrayAccess,
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20016Group|null $group group
      *
      * @return self
      */

@@ -74,7 +74,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to *https://teambb.church.tools/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -287,7 +287,7 @@ Class | Method | HTTP request | Description
 *PersonApi* | [**undoServiceRequestById**](docs/Api/PersonApi.md#undoservicerequestbyid) | **POST** /persons/{id}/servicerequests/{requestId}/undo | Undo last service request action
 *PersonApi* | [**updateDeviceForPerson**](docs/Api/PersonApi.md#updatedeviceforperson) | **PUT** /persons/{personId}/devices/{deviceId} | Create / Update new device for person
 *PersonApi* | [**updatePersonSetting**](docs/Api/PersonApi.md#updatepersonsetting) | **PUT** /persons/{id}/settings/{module}/{attribute} | Create/Update person setting
-*PersonApi* | [**updateServiceRequestById**](docs/Api/PersonApi.md#updateservicerequestbyid) | **POST** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
+*PersonApi* | [**updateServiceRequestById**](docs/Api/PersonApi.md#updateservicerequestbyid) | **PUT** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
 *QueueApi* | [**getQueueJobGroupsStatus**](docs/Api/QueueApi.md#getqueuejobgroupsstatus) | **GET** /queues/{queue}/jobgroups/status | Status Information About Job Groups in Queue
 *QueueApi* | [**startQueueWorker**](docs/Api/QueueApi.md#startqueueworker) | **POST** /queues/{queue} | Start Worker For Queue
 *ServiceServiceGroupsApi* | [**declineServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#declineservicerequestbyid) | **DELETE** /persons/{id}/servicerequests/{requestId} | Decline a service request for a person
@@ -296,7 +296,7 @@ Class | Method | HTTP request | Description
 *ServiceServiceGroupsApi* | [**getOpenServiceRequestsForPerson**](docs/Api/ServiceServiceGroupsApi.md#getopenservicerequestsforperson) | **GET** /persons/{id}/servicerequests | Get all service requests for a person
 *ServiceServiceGroupsApi* | [**getServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#getservicerequestbyid) | **GET** /persons/{id}/servicerequests/{requestId} | Get a specific service request for a person
 *ServiceServiceGroupsApi* | [**undoServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#undoservicerequestbyid) | **POST** /persons/{id}/servicerequests/{requestId}/undo | Undo last service request action
-*ServiceServiceGroupsApi* | [**updateServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#updateservicerequestbyid) | **POST** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
+*ServiceServiceGroupsApi* | [**updateServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#updateservicerequestbyid) | **PUT** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
 *SongApi* | [**getSong**](docs/Api/SongApi.md#getsong) | **GET** /songs/{songId} | Get Song
 *SongApi* | [**getSongs**](docs/Api/SongApi.md#getsongs) | **GET** /songs | Get All Songs
 *SongApi* | [**getSongsOfAgenda**](docs/Api/SongApi.md#getsongsofagenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
@@ -410,7 +410,6 @@ Class | Method | HTTP request | Description
 - [GroupMemberField](docs/Model/GroupMemberField.md)
 - [GroupMemberPersonField](docs/Model/GroupMemberPersonField.md)
 - [GroupMemberShort](docs/Model/GroupMemberShort.md)
-- [Groups](docs/Model/Groups.md)
 - [GroupsForPerson](docs/Model/GroupsForPerson.md)
 - [InlineObject](docs/Model/InlineObject.md)
 - [InlineObject1](docs/Model/InlineObject1.md)
@@ -495,6 +494,8 @@ Class | Method | HTTP request | Description
 - [InlineResponse200106Meta](docs/Model/InlineResponse200106Meta.md)
 - [InlineResponse200107](docs/Model/InlineResponse200107.md)
 - [InlineResponse200108](docs/Model/InlineResponse200108.md)
+- [InlineResponse200108Meta](docs/Model/InlineResponse200108Meta.md)
+- [InlineResponse200108MetaModifiedPerson](docs/Model/InlineResponse200108MetaModifiedPerson.md)
 - [InlineResponse200109](docs/Model/InlineResponse200109.md)
 - [InlineResponse20011](docs/Model/InlineResponse20011.md)
 - [InlineResponse200110](docs/Model/InlineResponse200110.md)
@@ -603,7 +604,6 @@ Class | Method | HTTP request | Description
 - [InlineResponse20044DataCashDiscounts](docs/Model/InlineResponse20044DataCashDiscounts.md)
 - [InlineResponse20044DataClients](docs/Model/InlineResponse20044DataClients.md)
 - [InlineResponse20044DataCostCenters](docs/Model/InlineResponse20044DataCostCenters.md)
-- [InlineResponse20044DataGroup](docs/Model/InlineResponse20044DataGroup.md)
 - [InlineResponse20044DataPermissions](docs/Model/InlineResponse20044DataPermissions.md)
 - [InlineResponse20044DataPermissions1](docs/Model/InlineResponse20044DataPermissions1.md)
 - [InlineResponse20044DataTaxRates](docs/Model/InlineResponse20044DataTaxRates.md)

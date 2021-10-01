@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\SongApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to https://teambb.church.tools/api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 ## `getSongs()`
 
 ```php
-getSongs($song_category_ids, $ids, $practice, $key_of_arrangement): \StevenBuehner\ChurchTools\Model\InlineResponse200108
+getSongs($song_category_ids, $ids, $practice, $key_of_arrangement, $name): \StevenBuehner\ChurchTools\Model\InlineResponse200108
 ```
 
 Get All Songs
@@ -104,9 +104,10 @@ $song_category_ids = array(56); // int[] | Filter response by category IDs.
 $ids = array(56); // int[] | Filter by Song IDs.
 $practice = True; // bool | Filter by field `shouldPractice`.
 $key_of_arrangement = 'key_of_arrangement_example'; // string | Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter)
+$name = 'name_example'; // string | Search by song title
 
 try {
-    $result = $apiInstance->getSongs($song_category_ids, $ids, $practice, $key_of_arrangement);
+    $result = $apiInstance->getSongs($song_category_ids, $ids, $practice, $key_of_arrangement, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SongApi->getSongs: ', $e->getMessage(), PHP_EOL;
@@ -121,6 +122,7 @@ Name | Type | Description  | Notes
  **ids** | [**int[]**](../Model/int.md)| Filter by Song IDs. | [optional]
  **practice** | **bool**| Filter by field &#x60;shouldPractice&#x60;. | [optional]
  **key_of_arrangement** | **string**| Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) | [optional]
+ **name** | **string**| Search by song title | [optional]
 
 ### Return type
 

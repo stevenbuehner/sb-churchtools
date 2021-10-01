@@ -59,7 +59,7 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Groups[]',
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20017Data',
         'ref' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
     ];
 
@@ -214,7 +214,7 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Groups[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20017Data|null
      */
     public function getData()
     {
@@ -224,7 +224,7 @@ class InlineResponse20093 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Groups[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20017Data|null $data data
      *
      * @return self
      */

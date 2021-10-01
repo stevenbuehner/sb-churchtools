@@ -1,7 +1,7 @@
 <?php
 /**
  * TranslationApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -329,9 +329,6 @@ class TranslationApi
                 foreach($updated_by_church as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($updated_by_church)){
-            	$queryParams['updated_by_church'] = $updated_by_church ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['updated_by_church'] = $updated_by_church;

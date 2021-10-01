@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **comment** | **string** |  | [optional]
 **counter** | **int** |  | [optional]
 **allow_chat** | **bool** |  | [optional]
+**permissions** | [**array**](array.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

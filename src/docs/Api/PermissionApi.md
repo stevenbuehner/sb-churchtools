@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\PermissionApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to https://teambb.church.tools/api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

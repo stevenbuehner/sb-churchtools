@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **budget_spent** | **float** | Cost Center Expences. (Outcome - Income). In cent | [optional]
 **budget_last_period** | **float** | Budget for the cost center with the same number in the previous accounting period. | [optional]
 **accounting_period_id** | **int** |  | [optional]
-**group** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup**](InlineResponse20044DataGroup.md) |  | [optional]
+**group** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20016Group**](InlineResponse20016Group.md) |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\EntityMetaData**](EntityMetaData.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\PersonApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to https://teambb.church.tools/api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ Method | HTTP request | Description
 [**undoServiceRequestById()**](PersonApi.md#undoServiceRequestById) | **POST** /persons/{id}/servicerequests/{requestId}/undo | Undo last service request action
 [**updateDeviceForPerson()**](PersonApi.md#updateDeviceForPerson) | **PUT** /persons/{personId}/devices/{deviceId} | Create / Update new device for person
 [**updatePersonSetting()**](PersonApi.md#updatePersonSetting) | **PUT** /persons/{id}/settings/{module}/{attribute} | Create/Update person setting
-[**updateServiceRequestById()**](PersonApi.md#updateServiceRequestById) | **POST** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
+[**updateServiceRequestById()**](PersonApi.md#updateServiceRequestById) | **PUT** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
 
 
 ## `createPerson()`

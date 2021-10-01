@@ -1,7 +1,7 @@
 <?php
 /**
  * JobApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -120,6 +120,7 @@ class JobApi
      * Your GET endpoint
      *
      * @param  array $status status (optional)
+     * @param  string $identifier identifier (optional)
      * @param  string $name name (optional)
      * @param  array $domain_ids domain_ids (optional)
      * @param  string $created_start_date created_start_date (optional)
@@ -131,9 +132,9 @@ class JobApi
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse200112
      */
-    public function getJobs($status = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
+    public function getJobs($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
-        list($response) = $this->getJobsWithHttpInfo($status, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
+        list($response) = $this->getJobsWithHttpInfo($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
         return $response;
     }
 
@@ -143,6 +144,7 @@ class JobApi
      * Your GET endpoint
      *
      * @param  array $status (optional)
+     * @param  string $identifier (optional)
      * @param  string $name (optional)
      * @param  array $domain_ids (optional)
      * @param  string $created_start_date (optional)
@@ -154,9 +156,9 @@ class JobApi
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200112, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getJobsWithHttpInfo($status = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
+    public function getJobsWithHttpInfo($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
-        $request = $this->getJobsRequest($status, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
+        $request = $this->getJobsRequest($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -235,6 +237,7 @@ class JobApi
      * Your GET endpoint
      *
      * @param  array $status (optional)
+     * @param  string $identifier (optional)
      * @param  string $name (optional)
      * @param  array $domain_ids (optional)
      * @param  string $created_start_date (optional)
@@ -245,9 +248,9 @@ class JobApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getJobsAsync($status = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
+    public function getJobsAsync($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
-        return $this->getJobsAsyncWithHttpInfo($status, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date)
+        return $this->getJobsAsyncWithHttpInfo($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -261,6 +264,7 @@ class JobApi
      * Your GET endpoint
      *
      * @param  array $status (optional)
+     * @param  string $identifier (optional)
      * @param  string $name (optional)
      * @param  array $domain_ids (optional)
      * @param  string $created_start_date (optional)
@@ -271,10 +275,10 @@ class JobApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getJobsAsyncWithHttpInfo($status = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
+    public function getJobsAsyncWithHttpInfo($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200112';
-        $request = $this->getJobsRequest($status, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
+        $request = $this->getJobsRequest($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -313,6 +317,7 @@ class JobApi
      * Create request for operation 'getJobs'
      *
      * @param  array $status (optional)
+     * @param  string $identifier (optional)
      * @param  string $name (optional)
      * @param  array $domain_ids (optional)
      * @param  string $created_start_date (optional)
@@ -323,7 +328,7 @@ class JobApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getJobsRequest($status = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
+    public function getJobsRequest($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
 
         $resourcePath = '/jobs';
@@ -340,11 +345,19 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($status)){
-            	$queryParams['status'] = $status ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['status'] = $status;
+            }
+        }
+        // query params
+        if ($identifier !== null) {
+            if('form' === 'form' && is_array($identifier)) {
+                foreach($identifier as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['identifier'] = $identifier;
             }
         }
         // query params
@@ -353,9 +366,6 @@ class JobApi
                 foreach($name as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($name)){
-            	$queryParams['name'] = $name ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['name'] = $name;
@@ -368,9 +378,6 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($domain_ids)){
-            	$queryParams['domain_ids'] = $domain_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['domain_ids'] = $domain_ids;
             }
@@ -381,9 +388,6 @@ class JobApi
                 foreach($created_start_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($created_start_date)){
-            	$queryParams['created_start_date'] = $created_start_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['created_start_date'] = $created_start_date;
@@ -396,9 +400,6 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($created_end_date)){
-            	$queryParams['created_end_date'] = $created_end_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['created_end_date'] = $created_end_date;
             }
@@ -410,9 +411,6 @@ class JobApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($modified_start_date)){
-            	$queryParams['modified_start_date'] = $modified_start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['modified_start_date'] = $modified_start_date;
             }
@@ -423,9 +421,6 @@ class JobApi
                 foreach($modified_end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($modified_end_date)){
-            	$queryParams['modified_end_date'] = $modified_end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['modified_end_date'] = $modified_end_date;

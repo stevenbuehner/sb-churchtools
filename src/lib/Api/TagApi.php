@@ -1,7 +1,7 @@
 <?php
 /**
  * TagApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -335,9 +335,6 @@ class TagApi
                 foreach($type as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($type)){
-            	$queryParams['type'] = $type ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['type'] = $type;

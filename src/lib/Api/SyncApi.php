@@ -1,7 +1,7 @@
 <?php
 /**
  * SyncApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -2365,9 +2365,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($es_ids)){
-            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -2378,9 +2375,6 @@ class SyncApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($job_ids)){
-            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -2393,9 +2387,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -2406,9 +2397,6 @@ class SyncApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -2421,9 +2409,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($statuses)){
-            	$queryParams['statuses'] = $statuses ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['statuses'] = $statuses;
             }
@@ -2434,9 +2419,6 @@ class SyncApi
                 foreach($page as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['page'] = $page;
@@ -2449,9 +2431,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['limit'] = $limit;
             }
@@ -2462,9 +2441,6 @@ class SyncApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_dry_run)){
-            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;
@@ -3653,9 +3629,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -3666,9 +3639,6 @@ class SyncApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -3681,9 +3651,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($es_ids)){
-            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -3694,9 +3661,6 @@ class SyncApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($job_ids)){
-            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -3709,9 +3673,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -3722,9 +3683,6 @@ class SyncApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -3737,9 +3695,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($types)){
-            	$queryParams['types'] = $types ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['types'] = $types;
             }
@@ -3750,9 +3705,6 @@ class SyncApi
                 foreach($query as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($query)){
-            	$queryParams['query'] = $query ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['query'] = $query;
@@ -3765,9 +3717,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($levels)){
-            	$queryParams['levels'] = $levels ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['levels'] = $levels;
             }
@@ -3778,9 +3727,6 @@ class SyncApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_dry_run)){
-            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;
@@ -4064,9 +4010,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($domain_type)){
-            	$queryParams['domain_type'] = $domain_type ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['domain_type'] = $domain_type;
             }
@@ -4078,9 +4021,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($domain_id)){
-            	$queryParams['domain_id'] = $domain_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['domain_id'] = $domain_id;
             }
@@ -4091,9 +4031,6 @@ class SyncApi
                 foreach($source_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($source_id)){
-            	$queryParams['source_id'] = $source_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['source_id'] = $source_id;

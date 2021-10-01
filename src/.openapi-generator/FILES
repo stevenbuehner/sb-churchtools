@@ -102,7 +102,6 @@ docs/Model/GroupMember.md
 docs/Model/GroupMemberField.md
 docs/Model/GroupMemberPersonField.md
 docs/Model/GroupMemberShort.md
-docs/Model/Groups.md
 docs/Model/GroupsForPerson.md
 docs/Model/InlineObject.md
 docs/Model/InlineObject1.md
@@ -187,6 +186,8 @@ docs/Model/InlineResponse200106Data.md
 docs/Model/InlineResponse200106Meta.md
 docs/Model/InlineResponse200107.md
 docs/Model/InlineResponse200108.md
+docs/Model/InlineResponse200108Meta.md
+docs/Model/InlineResponse200108MetaModifiedPerson.md
 docs/Model/InlineResponse200109.md
 docs/Model/InlineResponse20011.md
 docs/Model/InlineResponse200110.md
@@ -295,7 +296,6 @@ docs/Model/InlineResponse20044DataAccounts.md
 docs/Model/InlineResponse20044DataCashDiscounts.md
 docs/Model/InlineResponse20044DataClients.md
 docs/Model/InlineResponse20044DataCostCenters.md
-docs/Model/InlineResponse20044DataGroup.md
 docs/Model/InlineResponse20044DataPermissions.md
 docs/Model/InlineResponse20044DataPermissions1.md
 docs/Model/InlineResponse20044DataTaxRates.md
@@ -595,7 +595,6 @@ lib/Model/GroupMember.php
 lib/Model/GroupMemberField.php
 lib/Model/GroupMemberPersonField.php
 lib/Model/GroupMemberShort.php
-lib/Model/Groups.php
 lib/Model/GroupsForPerson.php
 lib/Model/InlineObject.php
 lib/Model/InlineObject1.php
@@ -680,6 +679,8 @@ lib/Model/InlineResponse200106Data.php
 lib/Model/InlineResponse200106Meta.php
 lib/Model/InlineResponse200107.php
 lib/Model/InlineResponse200108.php
+lib/Model/InlineResponse200108Meta.php
+lib/Model/InlineResponse200108MetaModifiedPerson.php
 lib/Model/InlineResponse200109.php
 lib/Model/InlineResponse20011.php
 lib/Model/InlineResponse200110.php
@@ -788,7 +789,6 @@ lib/Model/InlineResponse20044DataAccounts.php
 lib/Model/InlineResponse20044DataCashDiscounts.php
 lib/Model/InlineResponse20044DataClients.php
 lib/Model/InlineResponse20044DataCostCenters.php
-lib/Model/InlineResponse20044DataGroup.php
 lib/Model/InlineResponse20044DataPermissions.php
 lib/Model/InlineResponse20044DataPermissions1.php
 lib/Model/InlineResponse20044DataTaxRates.php
@@ -988,4 +988,5 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/InlineObject67Test.php
+test/Model/InlineResponse200108MetaModifiedPersonTest.php
+test/Model/InlineResponse200108MetaTest.php

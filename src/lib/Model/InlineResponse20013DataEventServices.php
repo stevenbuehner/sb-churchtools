@@ -69,7 +69,8 @@ class InlineResponse20013DataEventServices implements ModelInterface, ArrayAcces
         'requester_person' => '\StevenBuehner\ChurchTools\Model\InlineResponse20013DataPerson',
         'comment' => 'string',
         'counter' => 'int',
-        'allow_chat' => 'bool'
+        'allow_chat' => 'bool',
+        'permissions' => 'array'
     ];
 
     /**
@@ -90,7 +91,8 @@ class InlineResponse20013DataEventServices implements ModelInterface, ArrayAcces
         'requester_person' => null,
         'comment' => null,
         'counter' => null,
-        'allow_chat' => null
+        'allow_chat' => null,
+        'permissions' => null
     ];
 
     /**
@@ -130,7 +132,8 @@ class InlineResponse20013DataEventServices implements ModelInterface, ArrayAcces
         'requester_person' => 'requesterPerson',
         'comment' => 'comment',
         'counter' => 'counter',
-        'allow_chat' => 'allowChat'
+        'allow_chat' => 'allowChat',
+        'permissions' => 'permissions'
     ];
 
     /**
@@ -149,7 +152,8 @@ class InlineResponse20013DataEventServices implements ModelInterface, ArrayAcces
         'requester_person' => 'setRequesterPerson',
         'comment' => 'setComment',
         'counter' => 'setCounter',
-        'allow_chat' => 'setAllowChat'
+        'allow_chat' => 'setAllowChat',
+        'permissions' => 'setPermissions'
     ];
 
     /**
@@ -168,7 +172,8 @@ class InlineResponse20013DataEventServices implements ModelInterface, ArrayAcces
         'requester_person' => 'getRequesterPerson',
         'comment' => 'getComment',
         'counter' => 'getCounter',
-        'allow_chat' => 'getAllowChat'
+        'allow_chat' => 'getAllowChat',
+        'permissions' => 'getPermissions'
     ];
 
     /**
@@ -239,6 +244,7 @@ class InlineResponse20013DataEventServices implements ModelInterface, ArrayAcces
         $this->container['comment'] = $data['comment'] ?? null;
         $this->container['counter'] = $data['counter'] ?? null;
         $this->container['allow_chat'] = $data['allow_chat'] ?? null;
+        $this->container['permissions'] = $data['permissions'] ?? null;
     }
 
     /**
@@ -525,6 +531,30 @@ class InlineResponse20013DataEventServices implements ModelInterface, ArrayAcces
     public function setAllowChat($allow_chat)
     {
         $this->container['allow_chat'] = $allow_chat;
+
+        return $this;
+    }
+
+    /**
+     * Gets permissions
+     *
+     * @return array|null
+     */
+    public function getPermissions()
+    {
+        return $this->container['permissions'];
+    }
+
+    /**
+     * Sets permissions
+     *
+     * @param array|null $permissions permissions
+     *
+     * @return self
+     */
+    public function setPermissions($permissions)
+    {
+        $this->container['permissions'] = $permissions;
 
         return $this;
     }

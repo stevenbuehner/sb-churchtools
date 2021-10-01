@@ -1,7 +1,7 @@
 <?php
 /**
  * FieldApi
- * PHP version 7.3
+ * PHP version 7.2
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
