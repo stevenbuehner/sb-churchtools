@@ -1836,6 +1836,7 @@ class EventApi
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse20038|string
+     * @deprecated
      */
     public function sendAgendaEmail($inline_object17)
     {
@@ -1853,6 +1854,7 @@ class EventApi
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20038|string, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function sendAgendaEmailWithHttpInfo($inline_object17)
     {
@@ -1958,6 +1960,7 @@ class EventApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function sendAgendaEmailAsync($inline_object17)
     {
@@ -1978,6 +1981,7 @@ class EventApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function sendAgendaEmailAsyncWithHttpInfo($inline_object17)
     {
@@ -2024,6 +2028,7 @@ class EventApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function sendAgendaEmailRequest($inline_object17)
     {

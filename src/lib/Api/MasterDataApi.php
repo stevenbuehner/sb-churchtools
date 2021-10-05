@@ -123,6 +123,7 @@ class MasterDataApi
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function fetchMasterDataPerson()
     {
@@ -138,6 +139,7 @@ class MasterDataApi
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function fetchMasterDataPersonWithHttpInfo()
     {
@@ -188,6 +190,7 @@ class MasterDataApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function fetchMasterDataPersonAsync()
     {
@@ -207,6 +210,7 @@ class MasterDataApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function fetchMasterDataPersonAsyncWithHttpInfo()
     {
@@ -242,6 +246,7 @@ class MasterDataApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function fetchMasterDataPersonRequest()
     {
