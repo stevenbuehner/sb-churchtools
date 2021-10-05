@@ -357,7 +357,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\WikiApi(
     $config
 );
 $query = 'query_example'; // string
-$wiki_category_ids = new \StevenBuehner\ChurchTools\Model\array(); // array | wiki categories that should be searched. if noone is given all categories are searched
+$wiki_category_ids = NULL; // array | wiki categories that should be searched. if noone is given all categories are searched
 
 try {
     $result = $apiInstance->getWikiCategoriesWikiCategoryIdSearch($query, $wiki_category_ids);

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **float** | The public group ID. |
 **name** | **string** | Name of the group, e.g. to be displayed as title. |
 **information** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20025Information**](InlineResponse20025Information.md) |  |
-**children** | [**array**](array.md) | Lists all (direct) child group IDs for the current group. | [optional]
+**children** | **array** | Lists all (direct) child group IDs for the current group. | [optional]
 **auto_accept** | **bool** | If true, group sign up requests will be accepted automatically. |
 **allow_waitinglist** | **bool** | If true, group sign is allowed even if group is full. |
 **max_member_count** | **float** | Maximum number of members until the group is considered as full. |

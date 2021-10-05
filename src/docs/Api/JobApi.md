@@ -34,10 +34,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\JobApi(
     new GuzzleHttp\Client(),
     $config
 );
-$status = new \StevenBuehner\ChurchTools\Model\array(); // array
+$status = NULL; // array
 $identifier = 'identifier_example'; // string
 $name = 'name_example'; // string
-$domain_ids = new \StevenBuehner\ChurchTools\Model\array(); // array
+$domain_ids = NULL; // array
 $created_start_date = 'created_start_date_example'; // string
 $created_end_date = 'created_end_date_example'; // string
 $modified_start_date = 'modified_start_date_example'; // string

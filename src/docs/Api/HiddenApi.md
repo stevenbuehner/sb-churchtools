@@ -496,11 +496,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
     new GuzzleHttp\Client(),
     $config
 );
-$es_ids = new \StevenBuehner\ChurchTools\Model\array(); // array | Filter by external system
-$job_ids = new \StevenBuehner\ChurchTools\Model\array(); // array | Filter by sync job configuration
+$es_ids = NULL; // array | Filter by external system
+$job_ids = NULL; // array | Filter by sync job configuration
 $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Return executions after that date
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Return executions before that date
-$statuses = new \StevenBuehner\ChurchTools\Model\array(); // array | Filter by status
+$statuses = NULL; // array | Filter by status
 $page = 3.4; // float | Query page
 $limit = 3.4; // float | Number of results per page
 $is_dry_run = True; // bool
@@ -1006,7 +1006,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
     new GuzzleHttp\Client(),
     $config
 );
-$external_system_ids = new \StevenBuehner\ChurchTools\Model\array(); // array
+$external_system_ids = NULL; // array
 
 try {
     $result = $apiInstance->getSyncJobconfigs($external_system_ids);
@@ -1076,7 +1076,7 @@ $start_date = Mon Feb 01 01:00:00 CET 2021; // \DateTime | Show Logs From This D
 $end_date = Sun Jan 31 01:00:00 CET 2021; // \DateTime | Show Logs Until This Date
 $types = array(56); // int[] | Filter by Types
 $query = 'query_example'; // string | Search Through Log Messages
-$levels = new \StevenBuehner\ChurchTools\Model\array(); // array | the log levels
+$levels = NULL; // array | the log levels
 $is_dry_run = True; // bool
 $body = new \stdClass; // object
 
