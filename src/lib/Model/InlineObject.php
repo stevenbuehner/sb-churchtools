@@ -190,7 +190,7 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['name'] = $data['name'] ?? null;
         $this->container['shorty'] = $data['shorty'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? 10;
+        $this->container['sort_key'] = $data['sort_key'] ?? (10 === 'null' ? null : 10);
     }
 
     /**

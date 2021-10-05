@@ -201,7 +201,7 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['is_balance_account'] = $data['is_balance_account'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? 0;
+        $this->container['sort_key'] = $data['sort_key'] ?? (0 === 'null' ? null : 0);
         $this->container['meta'] = $data['meta'] ?? null;
     }
 

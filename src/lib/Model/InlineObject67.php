@@ -178,7 +178,7 @@ class InlineObject67 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['archived'] = $data['archived'] ?? true;
+        $this->container['archived'] = $data['archived'] ?? (true === 'null' ? null : true);
     }
 
     /**

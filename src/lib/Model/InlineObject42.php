@@ -256,7 +256,7 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['tax_amount'] = $data['tax_amount'] ?? null;
         $this->container['cash_discount_id'] = $data['cash_discount_id'] ?? null;
         $this->container['cash_discount_amount'] = $data['cash_discount_amount'] ?? null;
-        $this->container['is_immutable'] = $data['is_immutable'] ?? false;
+        $this->container['is_immutable'] = $data['is_immutable'] ?? (false === 'null' ? null : false);
     }
 
     /**

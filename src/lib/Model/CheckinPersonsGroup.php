@@ -194,7 +194,7 @@ class CheckinPersonsGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['ignore_group_size'] = $data['ignore_group_size'] ?? false;
+        $this->container['ignore_group_size'] = $data['ignore_group_size'] ?? (false === 'null' ? null : false);
         $this->container['fields'] = $data['fields'] ?? null;
         $this->container['person_fields'] = $data['person_fields'] ?? null;
     }

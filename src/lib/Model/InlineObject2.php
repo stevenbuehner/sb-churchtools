@@ -206,9 +206,9 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['name'] = $data['name'] ?? null;
         $this->container['shorty'] = $data['shorty'] ?? null;
         $this->container['is_member'] = $data['is_member'] ?? null;
-        $this->container['is_searchable'] = $data['is_searchable'] ?? true;
-        $this->container['sort_key'] = $data['sort_key'] ?? 10;
-        $this->container['security_level_id'] = $data['security_level_id'] ?? 1;
+        $this->container['is_searchable'] = $data['is_searchable'] ?? (true === 'null' ? null : true);
+        $this->container['sort_key'] = $data['sort_key'] ?? (10 === 'null' ? null : 10);
+        $this->container['security_level_id'] = $data['security_level_id'] ?? (1 === 'null' ? null : 1);
     }
 
     /**

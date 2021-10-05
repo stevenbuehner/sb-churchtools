@@ -202,7 +202,7 @@ class InlineObject22 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['is_closed'] = $data['is_closed'] ?? null;
-        $this->container['copy_master_data'] = $data['copy_master_data'] ?? false;
+        $this->container['copy_master_data'] = $data['copy_master_data'] ?? (false === 'null' ? null : false);
     }
 
     /**
