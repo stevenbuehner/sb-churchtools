@@ -11526,7 +11526,7 @@
                           "group": {
                             "type": "object",
                             "properties": {
-                              "titel": {
+                              "title": {
                                 "type": "string"
                               },
                               "domainType": {
@@ -11570,11 +11570,8 @@
                               ]
                             }
                           },
-                          "roleId": {
+                          "groupTypeRoleId": {
                             "type": "integer"
-                          },
-                          "comment": {
-                            "type": "string"
                           },
                           "memberStartDate": {
                             "type": "string",
