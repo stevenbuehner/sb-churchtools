@@ -330,9 +330,6 @@ class TranslationApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($updated_by_church)){
-            	$queryParams['updated_by_church'] = $updated_by_church ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['updated_by_church'] = $updated_by_church;
             }

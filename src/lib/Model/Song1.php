@@ -208,6 +208,21 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const SHOULD_PRACTICE_TRUE = 'true';
+    const SHOULD_PRACTICE_FALSE = 'false';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getShouldPracticeAllowableValues()
+    {
+        return [
+            self::SHOULD_PRACTICE_TRUE,
+            self::SHOULD_PRACTICE_FALSE,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -244,6 +259,15 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getShouldPracticeAllowableValues();
+        if (!is_null($this->container['should_practice']) && !in_array($this->container['should_practice'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'should_practice', must be one of '%s'",
+                $this->container['should_practice'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -351,6 +375,16 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setShouldPractice($should_practice)
     {
+        $allowedValues = $this->getShouldPracticeAllowableValues();
+        if (!is_null($should_practice) && !in_array($should_practice, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'should_practice', must be one of '%s'",
+                    $should_practice,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['should_practice'] = $should_practice;
 
         return $this;

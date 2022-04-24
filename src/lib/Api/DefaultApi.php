@@ -331,6 +331,809 @@ class DefaultApi
     }
 
     /**
+     * Operation getGroupsGroupIdRolesRoleId
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id group_id (required)
+     * @param  string $role_id role_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getGroupsGroupIdRolesRoleId($group_id, $role_id)
+    {
+        $this->getGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id);
+    }
+
+    /**
+     * Operation getGroupsGroupIdRolesRoleIdWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id)
+    {
+        $request = $this->getGroupsGroupIdRolesRoleIdRequest($group_id, $role_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGroupsGroupIdRolesRoleIdAsync
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGroupsGroupIdRolesRoleIdAsync($group_id, $role_id)
+    {
+        return $this->getGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGroupsGroupIdRolesRoleIdAsyncWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id)
+    {
+        $returnType = '';
+        $request = $this->getGroupsGroupIdRolesRoleIdRequest($group_id, $role_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGroupsGroupIdRolesRoleId'
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getGroupsGroupIdRolesRoleIdRequest($group_id, $role_id)
+    {
+        // verify the required parameter 'group_id' is set
+        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $group_id when calling getGroupsGroupIdRolesRoleId'
+            );
+        }
+        // verify the required parameter 'role_id' is set
+        if ($role_id === null || (is_array($role_id) && count($role_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $role_id when calling getGroupsGroupIdRolesRoleId'
+            );
+        }
+
+        $resourcePath = '/groups/{groupId}/roles/{roleId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($group_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'groupId' . '}',
+                ObjectSerializer::toPathValue($group_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($role_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'roleId' . '}',
+                ObjectSerializer::toPathValue($role_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getGroupsGroupIdTags
+     *
+     * Fetch group tags
+     *
+     * @param  string $group_id group_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200118
+     */
+    public function getGroupsGroupIdTags($group_id)
+    {
+        list($response) = $this->getGroupsGroupIdTagsWithHttpInfo($group_id);
+        return $response;
+    }
+
+    /**
+     * Operation getGroupsGroupIdTagsWithHttpInfo
+     *
+     * Fetch group tags
+     *
+     * @param  string $group_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200118, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGroupsGroupIdTagsWithHttpInfo($group_id)
+    {
+        $request = $this->getGroupsGroupIdTagsRequest($group_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200118' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200118', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200118';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200118',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGroupsGroupIdTagsAsync
+     *
+     * Fetch group tags
+     *
+     * @param  string $group_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGroupsGroupIdTagsAsync($group_id)
+    {
+        return $this->getGroupsGroupIdTagsAsyncWithHttpInfo($group_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGroupsGroupIdTagsAsyncWithHttpInfo
+     *
+     * Fetch group tags
+     *
+     * @param  string $group_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGroupsGroupIdTagsAsyncWithHttpInfo($group_id)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200118';
+        $request = $this->getGroupsGroupIdTagsRequest($group_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGroupsGroupIdTags'
+     *
+     * @param  string $group_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getGroupsGroupIdTagsRequest($group_id)
+    {
+        // verify the required parameter 'group_id' is set
+        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $group_id when calling getGroupsGroupIdTags'
+            );
+        }
+
+        $resourcePath = '/groups/{groupId}/tags';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($group_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'groupId' . '}',
+                ObjectSerializer::toPathValue($group_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getPublicgroupsGroupIdPossiblerequesters
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id group_id (required)
+     * @param  string $token The signup token for the registration (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200117
+     */
+    public function getPublicgroupsGroupIdPossiblerequesters($group_id, $token)
+    {
+        list($response) = $this->getPublicgroupsGroupIdPossiblerequestersWithHttpInfo($group_id, $token);
+        return $response;
+    }
+
+    /**
+     * Operation getPublicgroupsGroupIdPossiblerequestersWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id (required)
+     * @param  string $token The signup token for the registration (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200117, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getPublicgroupsGroupIdPossiblerequestersWithHttpInfo($group_id, $token)
+    {
+        $request = $this->getPublicgroupsGroupIdPossiblerequestersRequest($group_id, $token);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200117' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200117', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200117';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200117',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getPublicgroupsGroupIdPossiblerequestersAsync
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id (required)
+     * @param  string $token The signup token for the registration (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPublicgroupsGroupIdPossiblerequestersAsync($group_id, $token)
+    {
+        return $this->getPublicgroupsGroupIdPossiblerequestersAsyncWithHttpInfo($group_id, $token)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getPublicgroupsGroupIdPossiblerequestersAsyncWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     * @param  string $group_id (required)
+     * @param  string $token The signup token for the registration (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPublicgroupsGroupIdPossiblerequestersAsyncWithHttpInfo($group_id, $token)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200117';
+        $request = $this->getPublicgroupsGroupIdPossiblerequestersRequest($group_id, $token);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getPublicgroupsGroupIdPossiblerequesters'
+     *
+     * @param  string $group_id (required)
+     * @param  string $token The signup token for the registration (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getPublicgroupsGroupIdPossiblerequestersRequest($group_id, $token)
+    {
+        // verify the required parameter 'group_id' is set
+        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $group_id when calling getPublicgroupsGroupIdPossiblerequesters'
+            );
+        }
+        // verify the required parameter 'token' is set
+        if ($token === null || (is_array($token) && count($token) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $token when calling getPublicgroupsGroupIdPossiblerequesters'
+            );
+        }
+
+        $resourcePath = '/publicgroups/{groupId}/possiblerequesters';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($token !== null) {
+            if('form' === 'form' && is_array($token)) {
+                foreach($token as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['token'] = $token;
+            }
+        }
+
+
+        // path params
+        if ($group_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'groupId' . '}',
+                ObjectSerializer::toPathValue($group_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation patchFilesId
      *
      * @param  int $id file id (required)
@@ -542,6 +1345,252 @@ class DefaultApi
 
         // for model (json/xml)
         if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation patchGroupsGroupIdRolesRoleId
+     *
+     * @param  string $group_id group_id (required)
+     * @param  string $role_id role_id (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 inline_object70 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function patchGroupsGroupIdRolesRoleId($group_id, $role_id, $inline_object70 = null)
+    {
+        $this->patchGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id, $inline_object70);
+    }
+
+    /**
+     * Operation patchGroupsGroupIdRolesRoleIdWithHttpInfo
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function patchGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id, $inline_object70 = null)
+    {
+        $request = $this->patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object70);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation patchGroupsGroupIdRolesRoleIdAsync
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchGroupsGroupIdRolesRoleIdAsync($group_id, $role_id, $inline_object70 = null)
+    {
+        return $this->patchGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id, $inline_object70)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation patchGroupsGroupIdRolesRoleIdAsyncWithHttpInfo
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id, $inline_object70 = null)
+    {
+        $returnType = '';
+        $request = $this->patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object70);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'patchGroupsGroupIdRolesRoleId'
+     *
+     * @param  string $group_id (required)
+     * @param  string $role_id (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object70 = null)
+    {
+        // verify the required parameter 'group_id' is set
+        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $group_id when calling patchGroupsGroupIdRolesRoleId'
+            );
+        }
+        // verify the required parameter 'role_id' is set
+        if ($role_id === null || (is_array($role_id) && count($role_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $role_id when calling patchGroupsGroupIdRolesRoleId'
+            );
+        }
+
+        $resourcePath = '/groups/{groupId}/roles/{roleId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($group_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'groupId' . '}',
+                ObjectSerializer::toPathValue($group_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($role_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'roleId' . '}',
+                ObjectSerializer::toPathValue($role_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($inline_object70)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object70));
+            } else {
+                $httpBody = $inline_object70;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

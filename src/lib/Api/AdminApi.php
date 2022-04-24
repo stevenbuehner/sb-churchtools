@@ -120,7 +120,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  int[] $levels Filter by log level (optional)
+     * @param  array $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -143,7 +143,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  int[] $levels Filter by log level (optional)
+     * @param  array $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -235,7 +235,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  int[] $levels Filter by log level (optional)
+     * @param  array $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -261,7 +261,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  int[] $levels Filter by log level (optional)
+     * @param  array $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -313,7 +313,7 @@ class AdminApi
      * Create request for operation 'getAllLogs'
      *
      * @param  string $message Filter by text (optional)
-     * @param  int[] $levels Filter by log level (optional)
+     * @param  array $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -340,19 +340,20 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($message)){
-            	$queryParams['message'] = $message ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['message'] = $message;
             }
         }
         // query params
-        if (is_array($levels)) {
-            $levels = ObjectSerializer::serializeCollection($levels, 'deepObject', true);
-        }
         if ($levels !== null) {
-            $queryParams['levels'] = $levels;
+            if('form' === 'form' && is_array($levels)) {
+                foreach($levels as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['levels[]'] = $levels;
+            }
         }
         // query params
         if ($before !== null) {
@@ -360,9 +361,6 @@ class AdminApi
                 foreach($before as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($before)){
-            	$queryParams['before'] = $before ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['before'] = $before;
@@ -375,9 +373,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($after)){
-            	$queryParams['after'] = $after ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['after'] = $after;
             }
@@ -388,9 +383,6 @@ class AdminApi
                 foreach($person_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($person_id)){
-            	$queryParams['person_id'] = $person_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['person_id'] = $person_id;
@@ -403,9 +395,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -416,9 +405,6 @@ class AdminApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -957,9 +943,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($order_by)){
-            	$queryParams['order_by'] = $order_by ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['order_by'] = $order_by;
             }
@@ -971,9 +954,6 @@ class AdminApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -984,9 +964,6 @@ class AdminApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;

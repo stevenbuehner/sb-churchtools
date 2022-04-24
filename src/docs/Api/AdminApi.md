@@ -39,7 +39,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     $config
 );
 $message = Person updated; // string | Filter by text
-$levels = array(56); // int[] | Filter by log level
+$levels = NULL; // array | Filter by log level ID
 $before = 2019-04-16T10:57:09Z; // \DateTime | Filter log messages before that date. (Use ISO-Format)
 $after = 2019-04-16T10:57:09Z; // \DateTime | Filter log messages after that date. (Use ISO-Format)
 $person_id = 56; // int | Filter by person
@@ -59,7 +59,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message** | **string**| Filter by text | [optional]
- **levels** | [**int[]**](../Model/int.md)| Filter by log level | [optional]
+ **levels** | [**array**](../Model/.md)| Filter by log level ID | [optional]
  **before** | **\DateTime**| Filter log messages before that date. (Use ISO-Format) | [optional]
  **after** | **\DateTime**| Filter log messages after that date. (Use ISO-Format) | [optional]
  **person_id** | **int**| Filter by person | [optional]

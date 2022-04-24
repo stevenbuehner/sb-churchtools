@@ -1311,6 +1311,256 @@ class HiddenApi
     }
 
     /**
+     * Operation getApiProfiles
+     *
+     * Get all profiles
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200122
+     */
+    public function getApiProfiles()
+    {
+        list($response) = $this->getApiProfilesWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getApiProfilesWithHttpInfo
+     *
+     * Get all profiles
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200122, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getApiProfilesWithHttpInfo()
+    {
+        $request = $this->getApiProfilesRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200122' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200122', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200122';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200122',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getApiProfilesAsync
+     *
+     * Get all profiles
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getApiProfilesAsync()
+    {
+        return $this->getApiProfilesAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getApiProfilesAsyncWithHttpInfo
+     *
+     * Get all profiles
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getApiProfilesAsyncWithHttpInfo()
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200122';
+        $request = $this->getApiProfilesRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getApiProfiles'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getApiProfilesRequest()
+    {
+
+        $resourcePath = '/profiles';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getGroupsGroupIdMeetingsMeetingIdMembers
      *
      * Get Group Meeting Members
@@ -1543,6 +1793,480 @@ class HiddenApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getProfilesChurch
+     *
+     * Get a profile
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2003
+     */
+    public function getProfilesChurch()
+    {
+        list($response) = $this->getProfilesChurchWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getProfilesChurchWithHttpInfo
+     *
+     * Get a profile
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getProfilesChurchWithHttpInfo()
+    {
+        $request = $this->getProfilesChurchRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse2003' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse2003', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2003';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse2003',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getProfilesChurchAsync
+     *
+     * Get a profile
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProfilesChurchAsync()
+    {
+        return $this->getProfilesChurchAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getProfilesChurchAsyncWithHttpInfo
+     *
+     * Get a profile
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProfilesChurchAsyncWithHttpInfo()
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2003';
+        $request = $this->getProfilesChurchRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getProfilesChurch'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getProfilesChurchRequest()
+    {
+
+        $resourcePath = '/profiles/church';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getSlugcheck
+     *
+     * Check if a finder slug is free
+     *
+     * @param  string $slug Slug to check (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getSlugcheck($slug)
+    {
+        $this->getSlugcheckWithHttpInfo($slug);
+    }
+
+    /**
+     * Operation getSlugcheckWithHttpInfo
+     *
+     * Check if a finder slug is free
+     *
+     * @param  string $slug Slug to check (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSlugcheckWithHttpInfo($slug)
+    {
+        $request = $this->getSlugcheckRequest($slug);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSlugcheckAsync
+     *
+     * Check if a finder slug is free
+     *
+     * @param  string $slug Slug to check (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSlugcheckAsync($slug)
+    {
+        return $this->getSlugcheckAsyncWithHttpInfo($slug)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getSlugcheckAsyncWithHttpInfo
+     *
+     * Check if a finder slug is free
+     *
+     * @param  string $slug Slug to check (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSlugcheckAsyncWithHttpInfo($slug)
+    {
+        $returnType = '';
+        $request = $this->getSlugcheckRequest($slug);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getSlugcheck'
+     *
+     * @param  string $slug Slug to check (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getSlugcheckRequest($slug)
+    {
+        // verify the required parameter 'slug' is set
+        if ($slug === null || (is_array($slug) && count($slug) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $slug when calling getSlugcheck'
+            );
+        }
+
+        $resourcePath = '/profiles/slugcheck/{slug}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($slug !== null) {
+            $resourcePath = str_replace(
+                '{' . 'slug' . '}',
+                ObjectSerializer::toPathValue($slug),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
                 []
             );
         }
@@ -2079,9 +2803,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($es_ids)){
-            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -2092,9 +2813,6 @@ class HiddenApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($job_ids)){
-            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -2107,9 +2825,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -2120,9 +2835,6 @@ class HiddenApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -2135,9 +2847,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($statuses)){
-            	$queryParams['statuses'] = $statuses ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['statuses'] = $statuses;
             }
@@ -2148,9 +2857,6 @@ class HiddenApi
                 foreach($page as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['page'] = $page;
@@ -2163,9 +2869,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['limit'] = $limit;
             }
@@ -2176,9 +2879,6 @@ class HiddenApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_dry_run)){
-            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;
@@ -4322,9 +5022,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($external_system_ids)){
-            	$queryParams['external_system_ids'] = $external_system_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['external_system_ids'] = $external_system_ids;
             }
@@ -4648,9 +5345,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -4661,9 +5355,6 @@ class HiddenApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -4676,9 +5367,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($es_ids)){
-            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -4689,9 +5377,6 @@ class HiddenApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($job_ids)){
-            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -4704,9 +5389,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -4717,9 +5399,6 @@ class HiddenApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -4732,9 +5411,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($types)){
-            	$queryParams['types'] = $types ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['types'] = $types;
             }
@@ -4745,9 +5421,6 @@ class HiddenApi
                 foreach($query as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($query)){
-            	$queryParams['query'] = $query ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['query'] = $query;
@@ -4760,9 +5433,6 @@ class HiddenApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($levels)){
-            	$queryParams['levels'] = $levels ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['levels'] = $levels;
             }
@@ -4773,9 +5443,6 @@ class HiddenApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_dry_run)){
-            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;
@@ -4847,6 +5514,267 @@ class HiddenApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postNps
+     *
+     * Save NPS score
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 inline_object69 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2018
+     */
+    public function postNps($inline_object69 = null)
+    {
+        list($response) = $this->postNpsWithHttpInfo($inline_object69);
+        return $response;
+    }
+
+    /**
+     * Operation postNpsWithHttpInfo
+     *
+     * Save NPS score
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2018, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postNpsWithHttpInfo($inline_object69 = null)
+    {
+        $request = $this->postNpsRequest($inline_object69);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 201:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse2018' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse2018', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2018';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse2018',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postNpsAsync
+     *
+     * Save NPS score
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postNpsAsync($inline_object69 = null)
+    {
+        return $this->postNpsAsyncWithHttpInfo($inline_object69)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postNpsAsyncWithHttpInfo
+     *
+     * Save NPS score
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postNpsAsyncWithHttpInfo($inline_object69 = null)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2018';
+        $request = $this->postNpsRequest($inline_object69);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postNps'
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postNpsRequest($inline_object69 = null)
+    {
+
+        $resourcePath = '/nps';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($inline_object69)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object69));
+            } else {
+                $httpBody = $inline_object69;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -5140,15 +6068,15 @@ class HiddenApi
      *
      * @param  string $external_system_id external_system_id (required)
      * @param  string $job_id job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 inline_object65 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65 = null)
     {
-        $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object64);
+        $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object65);
     }
 
     /**
@@ -5158,15 +6086,15 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object65 = null)
     {
-        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64);
+        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object65);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5212,14 +6140,14 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsync($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsync($external_system_id, $job_id, $inline_object65 = null)
     {
-        return $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object64)
+        return $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object65)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5234,15 +6162,15 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object65 = null)
     {
         $returnType = '';
-        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64);
+        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object65);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5272,12 +6200,12 @@ class HiddenApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object65 = null)
     {
         // verify the required parameter 'external_system_id' is set
         if ($external_system_id === null || (is_array($external_system_id) && count($external_system_id) === 0)) {
@@ -5331,11 +6259,11 @@ class HiddenApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object64)) {
+        if (isset($inline_object65)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object64));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object65));
             } else {
-                $httpBody = $inline_object64;
+                $httpBody = $inline_object65;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5624,15 +6552,15 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 inline_object64 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2017
      */
-    public function postSyncLogs($inline_object63 = null)
+    public function postSyncLogs($inline_object64 = null)
     {
-        list($response) = $this->postSyncLogsWithHttpInfo($inline_object63);
+        list($response) = $this->postSyncLogsWithHttpInfo($inline_object64);
         return $response;
     }
 
@@ -5641,15 +6569,15 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2017, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSyncLogsWithHttpInfo($inline_object63 = null)
+    public function postSyncLogsWithHttpInfo($inline_object64 = null)
     {
-        $request = $this->postSyncLogsRequest($inline_object63);
+        $request = $this->postSyncLogsRequest($inline_object64);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5727,14 +6655,14 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncLogsAsync($inline_object63 = null)
+    public function postSyncLogsAsync($inline_object64 = null)
     {
-        return $this->postSyncLogsAsyncWithHttpInfo($inline_object63)
+        return $this->postSyncLogsAsyncWithHttpInfo($inline_object64)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5747,15 +6675,15 @@ class HiddenApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncLogsAsyncWithHttpInfo($inline_object63 = null)
+    public function postSyncLogsAsyncWithHttpInfo($inline_object64 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2017';
-        $request = $this->postSyncLogsRequest($inline_object63);
+        $request = $this->postSyncLogsRequest($inline_object64);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5793,12 +6721,12 @@ class HiddenApi
     /**
      * Create request for operation 'postSyncLogs'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postSyncLogsRequest($inline_object63 = null)
+    public function postSyncLogsRequest($inline_object64 = null)
     {
 
         $resourcePath = '/sync/logs';
@@ -5824,11 +6752,11 @@ class HiddenApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object63)) {
+        if (isset($inline_object64)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object63));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object64));
             } else {
-                $httpBody = $inline_object63;
+                $httpBody = $inline_object64;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5874,6 +6802,259 @@ class HiddenApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation putProfilesChurch
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject75 $inline_object75 inline_object75 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2003
+     */
+    public function putProfilesChurch($inline_object75 = null)
+    {
+        list($response) = $this->putProfilesChurchWithHttpInfo($inline_object75);
+        return $response;
+    }
+
+    /**
+     * Operation putProfilesChurchWithHttpInfo
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject75 $inline_object75 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function putProfilesChurchWithHttpInfo($inline_object75 = null)
+    {
+        $request = $this->putProfilesChurchRequest($inline_object75);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse2003' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse2003', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2003';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse2003',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation putProfilesChurchAsync
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject75 $inline_object75 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putProfilesChurchAsync($inline_object75 = null)
+    {
+        return $this->putProfilesChurchAsyncWithHttpInfo($inline_object75)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation putProfilesChurchAsyncWithHttpInfo
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject75 $inline_object75 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putProfilesChurchAsyncWithHttpInfo($inline_object75 = null)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2003';
+        $request = $this->putProfilesChurchRequest($inline_object75);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'putProfilesChurch'
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject75 $inline_object75 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function putProfilesChurchRequest($inline_object75 = null)
+    {
+
+        $resourcePath = '/profiles/church';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($inline_object75)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object75));
+            } else {
+                $httpBody = $inline_object75;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -66,7 +66,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
         'account_classes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountClasses[]',
         'account_groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountGroups[]',
         'cash_discounts' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataCashDiscounts[]',
-        'cost_centers' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataCostCenters[]',
+        'cost_centers' => '\StevenBuehner\ChurchTools\Model\CostCenter[]',
         'tax_rates' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxRates[]',
         'tax_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxTypes[]',
         'transaction_purposes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTransactionPurposes[]'
@@ -436,7 +436,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets cost_centers
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataCostCenters[]|null
+     * @return \StevenBuehner\ChurchTools\Model\CostCenter[]|null
      */
     public function getCostCenters()
     {
@@ -446,7 +446,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets cost_centers
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataCostCenters[]|null $cost_centers cost_centers
+     * @param \StevenBuehner\ChurchTools\Model\CostCenter[]|null $cost_centers cost_centers
      *
      * @return self
      */

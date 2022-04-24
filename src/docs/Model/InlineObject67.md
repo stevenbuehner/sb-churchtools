@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived** | **bool** | if true the person is archived, if false the archive operation is undone | [optional] [default to true]
+**person** | **object** | See &#x60;POST /persons&#x60; |
+**group** | [**\StevenBuehner\ChurchTools\Model\CheckinPersonsGroup**](CheckinPersonsGroup.md) |  |
+**tag_id** | **float** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

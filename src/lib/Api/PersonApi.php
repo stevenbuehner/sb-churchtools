@@ -346,9 +346,6 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($force)){
-            	$queryParams['force'] = $force ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['force'] = $force;
             }
@@ -359,9 +356,6 @@ class PersonApi
                 foreach($without_privacy_policy_agreement as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($without_privacy_policy_agreement)){
-            	$queryParams['without_privacy_policy_agreement'] = $without_privacy_policy_agreement ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['without_privacy_policy_agreement'] = $without_privacy_policy_agreement;
@@ -619,9 +613,6 @@ class PersonApi
                 foreach($comment as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($comment)){
-            	$queryParams['comment'] = $comment ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['comment'] = $comment;
@@ -1658,9 +1649,6 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($show_overdue_groups)){
-            	$queryParams['show_overdue_groups'] = $show_overdue_groups ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['show_overdue_groups'] = $show_overdue_groups;
             }
@@ -1671,9 +1659,6 @@ class PersonApi
                 foreach($show_inactive_groups as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($show_inactive_groups)){
-            	$queryParams['show_inactive_groups'] = $show_inactive_groups ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['show_inactive_groups'] = $show_inactive_groups;
@@ -2267,25 +2252,37 @@ class PersonApi
         $multipart = false;
 
         // query params
-        if (is_array($ids)) {
-            $ids = ObjectSerializer::serializeCollection($ids, 'deepObject', true);
-        }
         if ($ids !== null) {
-            $queryParams['ids'] = $ids;
+            if('form' === 'form' && is_array($ids)) {
+                foreach($ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['ids[]'] = $ids;
+            }
         }
         // query params
-        if (is_array($status_ids)) {
-            $status_ids = ObjectSerializer::serializeCollection($status_ids, 'deepObject', true);
-        }
         if ($status_ids !== null) {
-            $queryParams['status_ids'] = $status_ids;
+            if('form' === 'form' && is_array($status_ids)) {
+                foreach($status_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['status_ids[]'] = $status_ids;
+            }
         }
         // query params
-        if (is_array($campus_ids)) {
-            $campus_ids = ObjectSerializer::serializeCollection($campus_ids, 'deepObject', true);
-        }
         if ($campus_ids !== null) {
-            $queryParams['campus_ids'] = $campus_ids;
+            if('form' === 'form' && is_array($campus_ids)) {
+                foreach($campus_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['campus_ids[]'] = $campus_ids;
+            }
         }
         // query params
         if ($birthday_before !== null) {
@@ -2293,9 +2290,6 @@ class PersonApi
                 foreach($birthday_before as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($birthday_before)){
-            	$queryParams['birthday_before'] = $birthday_before ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['birthday_before'] = $birthday_before;
@@ -2308,9 +2302,6 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($birthday_after)){
-            	$queryParams['birthday_after'] = $birthday_after ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['birthday_after'] = $birthday_after;
             }
@@ -2321,9 +2312,6 @@ class PersonApi
                 foreach($is_archived as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_archived)){
-            	$queryParams['is_archived'] = $is_archived ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_archived'] = $is_archived;
@@ -2336,9 +2324,6 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -2349,9 +2334,6 @@ class PersonApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -3764,9 +3746,6 @@ class PersonApi
                 foreach($from as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($from)){
-            	$queryParams['from'] = $from ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['from'] = $from;
@@ -5287,14 +5266,18 @@ class PersonApi
      *
      * @param  \DateTime $start_date Birthdays from that date on (optional)
      * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  array $campus_ids filter by campus ids (optional)
+     * @param  bool $my_groups filter by people in my groups (optional)
+     * @param  array $group_ids filter by group ids (optional)
+     * @param  object $body body (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114
      */
-    public function getPersonsBirthdays($start_date = null, $end_date = null)
+    public function getPersonsBirthdays($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
-        list($response) = $this->getPersonsBirthdaysWithHttpInfo($start_date, $end_date);
+        list($response) = $this->getPersonsBirthdaysWithHttpInfo($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body);
         return $response;
     }
 
@@ -5305,14 +5288,18 @@ class PersonApi
      *
      * @param  \DateTime $start_date Birthdays from that date on (optional)
      * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  array $campus_ids filter by campus ids (optional)
+     * @param  bool $my_groups filter by people in my groups (optional)
+     * @param  array $group_ids filter by group ids (optional)
+     * @param  object $body (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200114, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPersonsBirthdaysWithHttpInfo($start_date = null, $end_date = null)
+    public function getPersonsBirthdaysWithHttpInfo($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
-        $request = $this->getPersonsBirthdaysRequest($start_date, $end_date);
+        $request = $this->getPersonsBirthdaysRequest($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5392,13 +5379,17 @@ class PersonApi
      *
      * @param  \DateTime $start_date Birthdays from that date on (optional)
      * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  array $campus_ids filter by campus ids (optional)
+     * @param  bool $my_groups filter by people in my groups (optional)
+     * @param  array $group_ids filter by group ids (optional)
+     * @param  object $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPersonsBirthdaysAsync($start_date = null, $end_date = null)
+    public function getPersonsBirthdaysAsync($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
-        return $this->getPersonsBirthdaysAsyncWithHttpInfo($start_date, $end_date)
+        return $this->getPersonsBirthdaysAsyncWithHttpInfo($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5413,14 +5404,18 @@ class PersonApi
      *
      * @param  \DateTime $start_date Birthdays from that date on (optional)
      * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  array $campus_ids filter by campus ids (optional)
+     * @param  bool $my_groups filter by people in my groups (optional)
+     * @param  array $group_ids filter by group ids (optional)
+     * @param  object $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPersonsBirthdaysAsyncWithHttpInfo($start_date = null, $end_date = null)
+    public function getPersonsBirthdaysAsyncWithHttpInfo($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200114';
-        $request = $this->getPersonsBirthdaysRequest($start_date, $end_date);
+        $request = $this->getPersonsBirthdaysRequest($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5460,11 +5455,15 @@ class PersonApi
      *
      * @param  \DateTime $start_date Birthdays from that date on (optional)
      * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  array $campus_ids filter by campus ids (optional)
+     * @param  bool $my_groups filter by people in my groups (optional)
+     * @param  array $group_ids filter by group ids (optional)
+     * @param  object $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPersonsBirthdaysRequest($start_date = null, $end_date = null)
+    public function getPersonsBirthdaysRequest($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
 
         $resourcePath = '/persons/birthdays';
@@ -5481,9 +5480,6 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -5495,11 +5491,41 @@ class PersonApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['end_date'] = $end_date;
+            }
+        }
+        // query params
+        if ($campus_ids !== null) {
+            if('form' === 'form' && is_array($campus_ids)) {
+                foreach($campus_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['campus_ids[]'] = $campus_ids;
+            }
+        }
+        // query params
+        if ($my_groups !== null) {
+            if('form' === 'form' && is_array($my_groups)) {
+                foreach($my_groups as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['my_groups'] = $my_groups;
+            }
+        }
+        // query params
+        if ($group_ids !== null) {
+            if('form' === 'form' && is_array($group_ids)) {
+                foreach($group_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['group_ids[]'] = $group_ids;
             }
         }
 
@@ -5513,12 +5539,18 @@ class PersonApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                []
+                ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -6151,14 +6183,15 @@ class PersonApi
      * Invite Person to ChurchTools
      *
      * @param  string $person_id person_id (required)
+     * @param  string $set_password_url_template Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function invitePerson($person_id)
+    public function invitePerson($person_id, $set_password_url_template = null)
     {
-        $this->invitePersonWithHttpInfo($person_id);
+        $this->invitePersonWithHttpInfo($person_id, $set_password_url_template);
     }
 
     /**
@@ -6167,14 +6200,15 @@ class PersonApi
      * Invite Person to ChurchTools
      *
      * @param  string $person_id (required)
+     * @param  string $set_password_url_template Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function invitePersonWithHttpInfo($person_id)
+    public function invitePersonWithHttpInfo($person_id, $set_password_url_template = null)
     {
-        $request = $this->invitePersonRequest($person_id);
+        $request = $this->invitePersonRequest($person_id, $set_password_url_template);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6219,13 +6253,14 @@ class PersonApi
      * Invite Person to ChurchTools
      *
      * @param  string $person_id (required)
+     * @param  string $set_password_url_template Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function invitePersonAsync($person_id)
+    public function invitePersonAsync($person_id, $set_password_url_template = null)
     {
-        return $this->invitePersonAsyncWithHttpInfo($person_id)
+        return $this->invitePersonAsyncWithHttpInfo($person_id, $set_password_url_template)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6239,14 +6274,15 @@ class PersonApi
      * Invite Person to ChurchTools
      *
      * @param  string $person_id (required)
+     * @param  string $set_password_url_template Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function invitePersonAsyncWithHttpInfo($person_id)
+    public function invitePersonAsyncWithHttpInfo($person_id, $set_password_url_template = null)
     {
         $returnType = '';
-        $request = $this->invitePersonRequest($person_id);
+        $request = $this->invitePersonRequest($person_id, $set_password_url_template);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6275,11 +6311,12 @@ class PersonApi
      * Create request for operation 'invitePerson'
      *
      * @param  string $person_id (required)
+     * @param  string $set_password_url_template Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function invitePersonRequest($person_id)
+    public function invitePersonRequest($person_id, $set_password_url_template = null)
     {
         // verify the required parameter 'person_id' is set
         if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
@@ -6295,6 +6332,17 @@ class PersonApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($set_password_url_template !== null) {
+            if('form' === 'form' && is_array($set_password_url_template)) {
+                foreach($set_password_url_template as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['setPasswordUrlTemplate'] = $set_password_url_template;
+            }
+        }
 
 
         // path params
@@ -6679,30 +6727,30 @@ class PersonApi
      * Operation postPersonsPersonIdArchive
      *
      * @param  string $person_id person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 inline_object68 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function postPersonsPersonIdArchive($person_id, $inline_object67 = null)
+    public function postPersonsPersonIdArchive($person_id, $inline_object68 = null)
     {
-        $this->postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object67);
+        $this->postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object68);
     }
 
     /**
      * Operation postPersonsPersonIdArchiveWithHttpInfo
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object67 = null)
+    public function postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object68 = null)
     {
-        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object67);
+        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object68);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6745,14 +6793,14 @@ class PersonApi
      * Operation postPersonsPersonIdArchiveAsync
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsPersonIdArchiveAsync($person_id, $inline_object67 = null)
+    public function postPersonsPersonIdArchiveAsync($person_id, $inline_object68 = null)
     {
-        return $this->postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object67)
+        return $this->postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object68)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6764,15 +6812,15 @@ class PersonApi
      * Operation postPersonsPersonIdArchiveAsyncWithHttpInfo
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object67 = null)
+    public function postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object68 = null)
     {
         $returnType = '';
-        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object67);
+        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object68);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6801,12 +6849,12 @@ class PersonApi
      * Create request for operation 'postPersonsPersonIdArchive'
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postPersonsPersonIdArchiveRequest($person_id, $inline_object67 = null)
+    public function postPersonsPersonIdArchiveRequest($person_id, $inline_object68 = null)
     {
         // verify the required parameter 'person_id' is set
         if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
@@ -6846,11 +6894,11 @@ class PersonApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object67)) {
+        if (isset($inline_object68)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object67));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object68));
             } else {
-                $httpBody = $inline_object67;
+                $httpBody = $inline_object68;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

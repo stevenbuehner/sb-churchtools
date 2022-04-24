@@ -60,6 +60,7 @@ Method | HTTP request | Description
 [**getTaxType()**](FinanceApi.md#getTaxType) | **GET** /finance/taxtypes/{id} | Get a tax type
 [**getTransactionById()**](FinanceApi.md#getTransactionById) | **GET** /finance/transactions/{id} | Get a transaction
 [**getTransactionPurposeById()**](FinanceApi.md#getTransactionPurposeById) | **GET** /finance/transactionpurposes/{id} | Get a transaction purpose
+[**postFinanceCostcentersBulkcreate()**](FinanceApi.md#postFinanceCostcentersBulkcreate) | **POST** /finance/costcenters/bulkcreate | Import many cost centers
 [**postFinanceReports()**](FinanceApi.md#postFinanceReports) | **POST** /finance/reports/{reportType} | Issue new Finance Report
 [**updateAccount()**](FinanceApi.md#updateAccount) | **PUT** /finance/accounts/{id} | Update account
 [**updateAccountClass()**](FinanceApi.md#updateAccountClass) | **PUT** /finance/accountclasses/{id} | Update account class
@@ -2299,7 +2300,7 @@ This endpoint does not need any parameter.
 ## `getAllAccounts()`
 
 ```php
-getAllAccounts($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20048
+getAllAccounts($accounting_period_id, $calculate_balance): \StevenBuehner\ChurchTools\Model\InlineResponse20048
 ```
 
 Get all accounts ordered by accounting period and number
@@ -2324,9 +2325,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $accounting_period_id = 2; // int | Filter by accounting period
+$calculate_balance = true; // Bool | Calculate balance for accounts
 
 try {
-    $result = $apiInstance->getAllAccounts($accounting_period_id);
+    $result = $apiInstance->getAllAccounts($accounting_period_id, $calculate_balance);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->getAllAccounts: ', $e->getMessage(), PHP_EOL;
@@ -2337,7 +2339,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period |
+ **accounting_period_id** | **int**| Filter by accounting period | [optional]
+ **calculate_balance** | [**Bool**](../Model/.md)| Calculate balance for accounts | [optional]
 
 ### Return type
 
@@ -3458,6 +3461,66 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postFinanceCostcentersBulkcreate()`
+
+```php
+postFinanceCostcentersBulkcreate($inline_object76): \StevenBuehner\ChurchTools\Model\InlineResponse20058
+```
+
+Import many cost centers
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$inline_object76 = new \StevenBuehner\ChurchTools\Model\InlineObject76(); // \StevenBuehner\ChurchTools\Model\InlineObject76
+
+try {
+    $result = $apiInstance->postFinanceCostcentersBulkcreate($inline_object76);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->postFinanceCostcentersBulkcreate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object76** | [**\StevenBuehner\ChurchTools\Model\InlineObject76**](../Model/InlineObject76.md)|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

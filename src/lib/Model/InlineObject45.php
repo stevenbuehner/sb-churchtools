@@ -62,7 +62,8 @@ class InlineObject45 implements ModelInterface, ArrayAccess, \JsonSerializable
         'person_id' => 'float',
         'email' => 'string',
         'clicked' => 'mixed[]',
-        'group_homepage_hash' => 'string'
+        'group_homepage_hash' => 'string',
+        'sign_up_url_template' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class InlineObject45 implements ModelInterface, ArrayAccess, \JsonSerializable
         'person_id' => null,
         'email' => null,
         'clicked' => null,
-        'group_homepage_hash' => null
+        'group_homepage_hash' => null,
+        'sign_up_url_template' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class InlineObject45 implements ModelInterface, ArrayAccess, \JsonSerializable
         'person_id' => 'personId',
         'email' => 'email',
         'clicked' => 'clicked',
-        'group_homepage_hash' => 'groupHomepageHash'
+        'group_homepage_hash' => 'groupHomepageHash',
+        'sign_up_url_template' => 'signUpUrlTemplate'
     ];
 
     /**
@@ -121,7 +124,8 @@ class InlineObject45 implements ModelInterface, ArrayAccess, \JsonSerializable
         'person_id' => 'setPersonId',
         'email' => 'setEmail',
         'clicked' => 'setClicked',
-        'group_homepage_hash' => 'setGroupHomepageHash'
+        'group_homepage_hash' => 'setGroupHomepageHash',
+        'sign_up_url_template' => 'setSignUpUrlTemplate'
     ];
 
     /**
@@ -133,7 +137,8 @@ class InlineObject45 implements ModelInterface, ArrayAccess, \JsonSerializable
         'person_id' => 'getPersonId',
         'email' => 'getEmail',
         'clicked' => 'getClicked',
-        'group_homepage_hash' => 'getGroupHomepageHash'
+        'group_homepage_hash' => 'getGroupHomepageHash',
+        'sign_up_url_template' => 'getSignUpUrlTemplate'
     ];
 
     /**
@@ -197,6 +202,7 @@ class InlineObject45 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['email'] = $data['email'] ?? null;
         $this->container['clicked'] = $data['clicked'] ?? null;
         $this->container['group_homepage_hash'] = $data['group_homepage_hash'] ?? null;
+        $this->container['sign_up_url_template'] = $data['sign_up_url_template'] ?? null;
     }
 
     /**
@@ -315,6 +321,30 @@ class InlineObject45 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGroupHomepageHash($group_homepage_hash)
     {
         $this->container['group_homepage_hash'] = $group_homepage_hash;
+
+        return $this;
+    }
+
+    /**
+     * Gets sign_up_url_template
+     *
+     * @return string|null
+     */
+    public function getSignUpUrlTemplate()
+    {
+        return $this->container['sign_up_url_template'];
+    }
+
+    /**
+     * Sets sign_up_url_template
+     *
+     * @param string|null $sign_up_url_template Url used in the mail sent to the user.
+     *
+     * @return self
+     */
+    public function setSignUpUrlTemplate($sign_up_url_template)
+    {
+        $this->container['sign_up_url_template'] = $sign_up_url_template;
 
         return $this;
     }

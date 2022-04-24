@@ -62,6 +62,7 @@ class Role implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'group_type_id' => 'int',
         'name' => 'string',
+        'name_translated' => 'string',
         'shorty' => 'string',
         'sort_key' => 'int',
         'to_delete' => 'bool',
@@ -83,6 +84,7 @@ class Role implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'group_type_id' => null,
         'name' => null,
+        'name_translated' => null,
         'shorty' => null,
         'sort_key' => null,
         'to_delete' => null,
@@ -123,6 +125,7 @@ class Role implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'group_type_id' => 'groupTypeId',
         'name' => 'name',
+        'name_translated' => 'nameTranslated',
         'shorty' => 'shorty',
         'sort_key' => 'sortKey',
         'to_delete' => 'toDelete',
@@ -142,6 +145,7 @@ class Role implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'group_type_id' => 'setGroupTypeId',
         'name' => 'setName',
+        'name_translated' => 'setNameTranslated',
         'shorty' => 'setShorty',
         'sort_key' => 'setSortKey',
         'to_delete' => 'setToDelete',
@@ -161,6 +165,7 @@ class Role implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'group_type_id' => 'getGroupTypeId',
         'name' => 'getName',
+        'name_translated' => 'getNameTranslated',
         'shorty' => 'getShorty',
         'sort_key' => 'getSortKey',
         'to_delete' => 'getToDelete',
@@ -231,6 +236,7 @@ class Role implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['group_type_id'] = $data['group_type_id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['shorty'] = $data['shorty'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
         $this->container['to_delete'] = $data['to_delete'] ?? null;
@@ -333,6 +339,30 @@ class Role implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_translated
+     *
+     * @return string|null
+     */
+    public function getNameTranslated()
+    {
+        return $this->container['name_translated'];
+    }
+
+    /**
+     * Sets name_translated
+     *
+     * @param string|null $name_translated Trasnlated name of role.
+     *
+     * @return self
+     */
+    public function setNameTranslated($name_translated)
+    {
+        $this->container['name_translated'] = $name_translated;
 
         return $this;
     }

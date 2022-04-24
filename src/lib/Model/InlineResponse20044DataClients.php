@@ -61,6 +61,13 @@ class InlineResponse20044DataClients implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
+        'street' => 'string',
+        'postal_code' => 'string',
+        'city' => 'string',
+        'phone' => 'string',
+        'email' => 'string',
+        'treasurer_id' => 'Int',
+        'treasurer' => 'object',
         'sort_key' => 'int',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
@@ -75,6 +82,13 @@ class InlineResponse20044DataClients implements ModelInterface, ArrayAccess, \Js
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'street' => null,
+        'postal_code' => null,
+        'city' => null,
+        'phone' => null,
+        'email' => null,
+        'treasurer_id' => null,
+        'treasurer' => null,
         'sort_key' => null,
         'meta' => null
     ];
@@ -108,6 +122,13 @@ class InlineResponse20044DataClients implements ModelInterface, ArrayAccess, \Js
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'street' => 'street',
+        'postal_code' => 'postalCode',
+        'city' => 'city',
+        'phone' => 'phone',
+        'email' => 'email',
+        'treasurer_id' => 'treasurerId',
+        'treasurer' => 'treasurer',
         'sort_key' => 'sortKey',
         'meta' => 'meta'
     ];
@@ -120,6 +141,13 @@ class InlineResponse20044DataClients implements ModelInterface, ArrayAccess, \Js
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'street' => 'setStreet',
+        'postal_code' => 'setPostalCode',
+        'city' => 'setCity',
+        'phone' => 'setPhone',
+        'email' => 'setEmail',
+        'treasurer_id' => 'setTreasurerId',
+        'treasurer' => 'setTreasurer',
         'sort_key' => 'setSortKey',
         'meta' => 'setMeta'
     ];
@@ -132,6 +160,13 @@ class InlineResponse20044DataClients implements ModelInterface, ArrayAccess, \Js
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'street' => 'getStreet',
+        'postal_code' => 'getPostalCode',
+        'city' => 'getCity',
+        'phone' => 'getPhone',
+        'email' => 'getEmail',
+        'treasurer_id' => 'getTreasurerId',
+        'treasurer' => 'getTreasurer',
         'sort_key' => 'getSortKey',
         'meta' => 'getMeta'
     ];
@@ -195,6 +230,13 @@ class InlineResponse20044DataClients implements ModelInterface, ArrayAccess, \Js
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['postal_code'] = $data['postal_code'] ?? null;
+        $this->container['city'] = $data['city'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['treasurer_id'] = $data['treasurer_id'] ?? null;
+        $this->container['treasurer'] = $data['treasurer'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
     }
@@ -267,6 +309,174 @@ class InlineResponse20044DataClients implements ModelInterface, ArrayAccess, \Js
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string|null
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string|null $street street
+     *
+     * @return self
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string|null
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string|null $postal_code postal_code
+     *
+     * @return self
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string|null
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string|null $city city
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets treasurer_id
+     *
+     * @return Int|null
+     */
+    public function getTreasurerId()
+    {
+        return $this->container['treasurer_id'];
+    }
+
+    /**
+     * Sets treasurer_id
+     *
+     * @param Int|null $treasurer_id Person ID
+     *
+     * @return self
+     */
+    public function setTreasurerId($treasurer_id)
+    {
+        $this->container['treasurer_id'] = $treasurer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets treasurer
+     *
+     * @return object|null
+     */
+    public function getTreasurer()
+    {
+        return $this->container['treasurer'];
+    }
+
+    /**
+     * Sets treasurer
+     *
+     * @param object|null $treasurer PersonDomainObject
+     *
+     * @return self
+     */
+    public function setTreasurer($treasurer)
+    {
+        $this->container['treasurer'] = $treasurer;
 
         return $this;
     }

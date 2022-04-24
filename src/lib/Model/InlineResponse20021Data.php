@@ -62,7 +62,13 @@ class InlineResponse20021Data implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'int',
         'date_from' => '\DateTime',
         'date_to' => '\DateTime',
-        'is_completed' => 'bool'
+        'is_completed' => 'bool',
+        'is_canceled' => 'bool',
+        'num_guests' => 'int',
+        'comment' => 'string',
+        'poll_result' => 'object',
+        'statistics' => '\StevenBuehner\ChurchTools\Model\InlineResponse20021Statistics',
+        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
     /**
@@ -76,7 +82,13 @@ class InlineResponse20021Data implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => null,
         'date_from' => 'date-time',
         'date_to' => 'date-time',
-        'is_completed' => null
+        'is_completed' => null,
+        'is_canceled' => null,
+        'num_guests' => null,
+        'comment' => null,
+        'poll_result' => null,
+        'statistics' => null,
+        'meta' => null
     ];
 
     /**
@@ -109,7 +121,13 @@ class InlineResponse20021Data implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'id',
         'date_from' => 'dateFrom',
         'date_to' => 'dateTo',
-        'is_completed' => 'isCompleted'
+        'is_completed' => 'isCompleted',
+        'is_canceled' => 'isCanceled',
+        'num_guests' => 'numGuests',
+        'comment' => 'comment',
+        'poll_result' => 'pollResult',
+        'statistics' => 'statistics',
+        'meta' => 'meta'
     ];
 
     /**
@@ -121,7 +139,13 @@ class InlineResponse20021Data implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'setId',
         'date_from' => 'setDateFrom',
         'date_to' => 'setDateTo',
-        'is_completed' => 'setIsCompleted'
+        'is_completed' => 'setIsCompleted',
+        'is_canceled' => 'setIsCanceled',
+        'num_guests' => 'setNumGuests',
+        'comment' => 'setComment',
+        'poll_result' => 'setPollResult',
+        'statistics' => 'setStatistics',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -133,7 +157,13 @@ class InlineResponse20021Data implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'getId',
         'date_from' => 'getDateFrom',
         'date_to' => 'getDateTo',
-        'is_completed' => 'getIsCompleted'
+        'is_completed' => 'getIsCompleted',
+        'is_canceled' => 'getIsCanceled',
+        'num_guests' => 'getNumGuests',
+        'comment' => 'getComment',
+        'poll_result' => 'getPollResult',
+        'statistics' => 'getStatistics',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -197,6 +227,12 @@ class InlineResponse20021Data implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['date_from'] = $data['date_from'] ?? null;
         $this->container['date_to'] = $data['date_to'] ?? null;
         $this->container['is_completed'] = $data['is_completed'] ?? null;
+        $this->container['is_canceled'] = $data['is_canceled'] ?? null;
+        $this->container['num_guests'] = $data['num_guests'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
+        $this->container['poll_result'] = $data['poll_result'] ?? null;
+        $this->container['statistics'] = $data['statistics'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -315,6 +351,150 @@ class InlineResponse20021Data implements ModelInterface, ArrayAccess, \JsonSeria
     public function setIsCompleted($is_completed)
     {
         $this->container['is_completed'] = $is_completed;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_canceled
+     *
+     * @return bool|null
+     */
+    public function getIsCanceled()
+    {
+        return $this->container['is_canceled'];
+    }
+
+    /**
+     * Sets is_canceled
+     *
+     * @param bool|null $is_canceled is_canceled
+     *
+     * @return self
+     */
+    public function setIsCanceled($is_canceled)
+    {
+        $this->container['is_canceled'] = $is_canceled;
+
+        return $this;
+    }
+
+    /**
+     * Gets num_guests
+     *
+     * @return int|null
+     */
+    public function getNumGuests()
+    {
+        return $this->container['num_guests'];
+    }
+
+    /**
+     * Sets num_guests
+     *
+     * @param int|null $num_guests num_guests
+     *
+     * @return self
+     */
+    public function setNumGuests($num_guests)
+    {
+        $this->container['num_guests'] = $num_guests;
+
+        return $this;
+    }
+
+    /**
+     * Gets comment
+     *
+     * @return string|null
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     * @param string|null $comment comment
+     *
+     * @return self
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets poll_result
+     *
+     * @return object|null
+     */
+    public function getPollResult()
+    {
+        return $this->container['poll_result'];
+    }
+
+    /**
+     * Sets poll_result
+     *
+     * @param object|null $poll_result poll_result
+     *
+     * @return self
+     */
+    public function setPollResult($poll_result)
+    {
+        $this->container['poll_result'] = $poll_result;
+
+        return $this;
+    }
+
+    /**
+     * Gets statistics
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20021Statistics|null
+     */
+    public function getStatistics()
+    {
+        return $this->container['statistics'];
+    }
+
+    /**
+     * Sets statistics
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20021Statistics|null $statistics statistics
+     *
+     * @return self
+     */
+    public function setStatistics($statistics)
+    {
+        $this->container['statistics'] = $statistics;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

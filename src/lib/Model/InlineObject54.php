@@ -196,7 +196,7 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['accounting_perdiod_id'] = $data['accounting_perdiod_id'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['show_empty_accounts'] = $data['show_empty_accounts'] ?? (true === 'null' ? null : true);
+        $this->container['show_empty_accounts'] = $data['show_empty_accounts'] ?? true;
     }
 
     /**

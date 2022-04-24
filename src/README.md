@@ -80,6 +80,7 @@ All URIs are relative to *http://localhost/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AbsenceApi* | [**deletePersonsAbsence**](docs/Api/AbsenceApi.md#deletepersonsabsence) | **DELETE** /persons/{personId}/absences/{id} | Delete absence
+*AbsenceApi* | [**getGroupsAbsences**](docs/Api/AbsenceApi.md#getgroupsabsences) | **GET** /groups/{groupId}/absences | Fetch all absences for persons in a group
 *AbsenceApi* | [**getPersonsAbsence**](docs/Api/AbsenceApi.md#getpersonsabsence) | **GET** /persons/{personId}/absences/{id} | Fetch one absence
 *AbsenceApi* | [**getPersonsAbsences**](docs/Api/AbsenceApi.md#getpersonsabsences) | **GET** /persons/{personId}/absences | Fetch all absences for a person
 *AbsenceApi* | [**postPersonsAbsences**](docs/Api/AbsenceApi.md#postpersonsabsences) | **POST** /persons/{personId}/absences | Create new absence for person
@@ -90,6 +91,8 @@ Class | Method | HTTP request | Description
 *CalendarApi* | [**createTemplate**](docs/Api/CalendarApi.md#createtemplate) | **POST** /calendars/appointments/templates | Create new appointment template
 *CalendarApi* | [**deleteTemplate**](docs/Api/CalendarApi.md#deletetemplate) | **DELETE** /calendars/appointments/templates/{templateId} | Delete a appointment template identified by id
 *CalendarApi* | [**getAllTemplates**](docs/Api/CalendarApi.md#getalltemplates) | **GET** /calendars/appointments/templates | get all appointment templates
+*CalendarApi* | [**getCalendars**](docs/Api/CalendarApi.md#getcalendars) | **GET** /calendars | Your GET endpoint
+*CalendarApi* | [**getCalendarsAppointments**](docs/Api/CalendarApi.md#getcalendarsappointments) | **GET** /calendars/appointments | Your GET endpoint
 *CalendarApi* | [**getTemplateById**](docs/Api/CalendarApi.md#gettemplatebyid) | **GET** /calendars/appointments/templates/{templateId} | get a appointment template
 *CalendarApi* | [**updateTemplate**](docs/Api/CalendarApi.md#updatetemplate) | **PUT** /calendars/appointments/templates/{templateId} | update a appointment template identified by id
 *CampusApi* | [**createNewCampus**](docs/Api/CampusApi.md#createnewcampus) | **POST** /campuses | 
@@ -111,7 +114,11 @@ Class | Method | HTTP request | Description
 *ContactLabelApi* | [**postContactlabels**](docs/Api/ContactLabelApi.md#postcontactlabels) | **POST** /contactlabels | Create new Contact Label
 *ContactLabelApi* | [**putContactlabel**](docs/Api/ContactLabelApi.md#putcontactlabel) | **PUT** /contactlabels/{id} | Update Contact Label
 *DefaultApi* | [**deleteFilesId**](docs/Api/DefaultApi.md#deletefilesid) | **DELETE** /files/{id} | 
+*DefaultApi* | [**getGroupsGroupIdRolesRoleId**](docs/Api/DefaultApi.md#getgroupsgroupidrolesroleid) | **GET** /groups/{groupId}/roles/{roleId} | Your GET endpoint
+*DefaultApi* | [**getGroupsGroupIdTags**](docs/Api/DefaultApi.md#getgroupsgroupidtags) | **GET** /groups/{groupId}/tags | Fetch group tags
+*DefaultApi* | [**getPublicgroupsGroupIdPossiblerequesters**](docs/Api/DefaultApi.md#getpublicgroupsgroupidpossiblerequesters) | **GET** /publicgroups/{groupId}/possiblerequesters | Your GET endpoint
 *DefaultApi* | [**patchFilesId**](docs/Api/DefaultApi.md#patchfilesid) | **PATCH** /files/{id} | 
+*DefaultApi* | [**patchGroupsGroupIdRolesRoleId**](docs/Api/DefaultApi.md#patchgroupsgroupidrolesroleid) | **PATCH** /groups/{groupId}/roles/{roleId} | 
 *DepartmentApi* | [**getAllDepartments**](docs/Api/DepartmentApi.md#getalldepartments) | **GET** /departments | Get all departments
 *EventApi* | [**getAgendaForEvent**](docs/Api/EventApi.md#getagendaforevent) | **GET** /events/{eventId}/agenda | Get agenda for event
 *EventApi* | [**getAllEvents**](docs/Api/EventApi.md#getallevents) | **GET** /events | Get all events
@@ -181,6 +188,7 @@ Class | Method | HTTP request | Description
 *FinanceApi* | [**getTaxType**](docs/Api/FinanceApi.md#gettaxtype) | **GET** /finance/taxtypes/{id} | Get a tax type
 *FinanceApi* | [**getTransactionById**](docs/Api/FinanceApi.md#gettransactionbyid) | **GET** /finance/transactions/{id} | Get a transaction
 *FinanceApi* | [**getTransactionPurposeById**](docs/Api/FinanceApi.md#gettransactionpurposebyid) | **GET** /finance/transactionpurposes/{id} | Get a transaction purpose
+*FinanceApi* | [**postFinanceCostcentersBulkcreate**](docs/Api/FinanceApi.md#postfinancecostcentersbulkcreate) | **POST** /finance/costcenters/bulkcreate | Import many cost centers
 *FinanceApi* | [**postFinanceReports**](docs/Api/FinanceApi.md#postfinancereports) | **POST** /finance/reports/{reportType} | Issue new Finance Report
 *FinanceApi* | [**updateAccount**](docs/Api/FinanceApi.md#updateaccount) | **PUT** /finance/accounts/{id} | Update account
 *FinanceApi* | [**updateAccountClass**](docs/Api/FinanceApi.md#updateaccountclass) | **PUT** /finance/accountclasses/{id} | Update account class
@@ -199,16 +207,22 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**checkin**](docs/Api/GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin/{personId} | Checkin a person to a group
 *GroupApi* | [**createMeeting**](docs/Api/GroupApi.md#createmeeting) | **POST** /groups/{id}/meetings | Create a group meeting
 *GroupApi* | [**createOrUpdateMember**](docs/Api/GroupApi.md#createorupdatemember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
+*GroupApi* | [**deleteAutomaticEmail**](docs/Api/GroupApi.md#deleteautomaticemail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email
 *GroupApi* | [**deleteGroup**](docs/Api/GroupApi.md#deletegroup) | **DELETE** /groups/{id} | 
+*GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingid) | **DELETE** /groups/{groupId}/meetings/{meetingId} | 
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingidmembersmemberid) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
 *GroupApi* | [**deleteMember**](docs/Api/GroupApi.md#deletemember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
 *GroupApi* | [**getAllGroupMembers**](docs/Api/GroupApi.md#getallgroupmembers) | **GET** /groups/{id}/members | Get all group members
 *GroupApi* | [**getAllGroupsForPerson**](docs/Api/GroupApi.md#getallgroupsforperson) | **GET** /persons/{id}/groups | Get all groups a member is in
 *GroupApi* | [**getAllMeetings**](docs/Api/GroupApi.md#getallmeetings) | **GET** /groups/{id}/meetings | Get all group meetings for a specific group
+*GroupApi* | [**getAutomaticEmail**](docs/Api/GroupApi.md#getautomaticemail) | **GET** /groups/{groupId}/emails/{emailId} | Get one automatic email
+*GroupApi* | [**getAutomaticEmails**](docs/Api/GroupApi.md#getautomaticemails) | **GET** /groups/{groupId}/emails | Get all automatic emails of a group
 *GroupApi* | [**getGroupForHomepage**](docs/Api/GroupApi.md#getgroupforhomepage) | **GET** /publicgroups/{id}/{hash} | Public information of group
 *GroupApi* | [**getGroupHomepage**](docs/Api/GroupApi.md#getgrouphomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
+*GroupApi* | [**getGroupStatistics**](docs/Api/GroupApi.md#getgroupstatistics) | **GET** /groups/{groupId}/statistics | Fetch calculated facts about group
 *GroupApi* | [**getGroups**](docs/Api/GroupApi.md#getgroups) | **GET** /groups | Get all groups
 *GroupApi* | [**getGroupsGroupIdMemberfields**](docs/Api/GroupApi.md#getgroupsgroupidmemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields
+*GroupApi* | [**getGroupsGroupIdMembersStatistics**](docs/Api/GroupApi.md#getgroupsgroupidmembersstatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members
 *GroupApi* | [**getGroupsHierarchies**](docs/Api/GroupApi.md#getgroupshierarchies) | **GET** /groups/hierarchies | Get all group hierarchies
 *GroupApi* | [**getGroupsMembers**](docs/Api/GroupApi.md#getgroupsmembers) | **GET** /groups/members | Get all group members
 *GroupApi* | [**getPublicgroupsGroupIdForm**](docs/Api/GroupApi.md#getpublicgroupsgroupidform) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
@@ -216,9 +230,13 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**groupsIdGet**](docs/Api/GroupApi.md#groupsidget) | **GET** /groups/{id} | Get a group
 *GroupApi* | [**issueSignUpToken**](docs/Api/GroupApi.md#issuesignuptoken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
 *GroupApi* | [**optIns**](docs/Api/GroupApi.md#optins) | **GET** /groups/{id}/optins | Get Opt In status of group members
+*GroupApi* | [**postAutomaticEmail**](docs/Api/GroupApi.md#postautomaticemail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role
 *GroupApi* | [**postGroups**](docs/Api/GroupApi.md#postgroups) | **POST** /groups | Create Group
+*GroupApi* | [**postGroupsGroupIdMeetingsMeetingIdMembersMissing**](docs/Api/GroupApi.md#postgroupsgroupidmeetingsmeetingidmembersmissing) | **POST** /groups/{groupId}/meetings/{meetingId}/members/missing | 
 *GroupApi* | [**postPublicgroupsGroupIdMailToLeaders**](docs/Api/GroupApi.md#postpublicgroupsgroupidmailtoleaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
 *GroupApi* | [**postPublicgroupsGroupIdSignup**](docs/Api/GroupApi.md#postpublicgroupsgroupidsignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
+*GroupApi* | [**putAutomaticEmail**](docs/Api/GroupApi.md#putautomaticemail) | **PUT** /groups/{groupId}/emails/{emailId} | Update automatic email
+*GroupApi* | [**putGroupsGroupIdMeetingsMeetingId**](docs/Api/GroupApi.md#putgroupsgroupidmeetingsmeetingid) | **PUT** /groups/{groupId}/meetings/{meetingId} | 
 *GroupApi* | [**startStopChat**](docs/Api/GroupApi.md#startstopchat) | **POST** /groups/{id}/chat | Start or stop an event chat
 *GroupHomepageApi* | [**getGroupForHomepage**](docs/Api/GroupHomepageApi.md#getgroupforhomepage) | **GET** /publicgroups/{id}/{hash} | Public information of group
 *GroupHomepageApi* | [**getGroupHomepage**](docs/Api/GroupHomepageApi.md#getgrouphomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
@@ -231,7 +249,10 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties**](docs/Api/HiddenApi.md#deletesyncexternalsystemsexternalsystemidjobconfigsjobidproperties) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Delete all Properties for This Job
 *HiddenApi* | [**deleteSyncExternalsystemsId**](docs/Api/HiddenApi.md#deletesyncexternalsystemsid) | **DELETE** /sync/externalsystems/{id} | DELETE external system
 *HiddenApi* | [**deleteSyncFieldMappings**](docs/Api/HiddenApi.md#deletesyncfieldmappings) | **DELETE** /sync/externalsystems/{id}/fieldmappings/{domainType} | Delete Mapping for Domain Type
+*HiddenApi* | [**getApiProfiles**](docs/Api/HiddenApi.md#getapiprofiles) | **GET** /profiles | Get all profiles
 *HiddenApi* | [**getGroupsGroupIdMeetingsMeetingIdMembers**](docs/Api/HiddenApi.md#getgroupsgroupidmeetingsmeetingidmembers) | **GET** /groups/{groupId}/meetings/{meetingId}/members | Get Group Meeting Members
+*HiddenApi* | [**getProfilesChurch**](docs/Api/HiddenApi.md#getprofileschurch) | **GET** /profiles/church | Get a profile
+*HiddenApi* | [**getSlugcheck**](docs/Api/HiddenApi.md#getslugcheck) | **GET** /profiles/slugcheck/{slug} | Check if a finder slug is free
 *HiddenApi* | [**getSyncAdapters**](docs/Api/HiddenApi.md#getsyncadapters) | **GET** /sync/adapters | GET Sync Adapters
 *HiddenApi* | [**getSyncExecutions**](docs/Api/HiddenApi.md#getsyncexecutions) | **GET** /sync/executions | Statistical Information about Sync Executions
 *HiddenApi* | [**getSyncExternalsystems**](docs/Api/HiddenApi.md#getsyncexternalsystems) | **GET** /sync/externalsystems | GET External Systems
@@ -243,10 +264,12 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**getSyncExternalsystemsIdTest**](docs/Api/HiddenApi.md#getsyncexternalsystemsidtest) | **GET** /sync/externalsystems/{id}/test | Your GET endpoint
 *HiddenApi* | [**getSyncJobconfigs**](docs/Api/HiddenApi.md#getsyncjobconfigs) | **GET** /sync/jobconfigs | Your GET endpoint
 *HiddenApi* | [**getSyncLogs**](docs/Api/HiddenApi.md#getsynclogs) | **GET** /sync/logs | Get Sync Logs
+*HiddenApi* | [**postNps**](docs/Api/HiddenApi.md#postnps) | **POST** /nps | Save NPS score
 *HiddenApi* | [**postSyncExternalsystemsExternalSystemIdJobconfigs**](docs/Api/HiddenApi.md#postsyncexternalsystemsexternalsystemidjobconfigs) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs | Create job configuration
 *HiddenApi* | [**postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart**](docs/Api/HiddenApi.md#postsyncexternalsystemsexternalsystemidjobconfigsjobidstart) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/start | Start Execution
 *HiddenApi* | [**postSyncExternalsystemsIdTest**](docs/Api/HiddenApi.md#postsyncexternalsystemsidtest) | **POST** /sync/externalsystems/{id}/test | Test the external system
 *HiddenApi* | [**postSyncLogs**](docs/Api/HiddenApi.md#postsynclogs) | **POST** /sync/logs | Save Sync Logs
+*HiddenApi* | [**putProfilesChurch**](docs/Api/HiddenApi.md#putprofileschurch) | **PUT** /profiles/church | 
 *HiddenApi* | [**putSyncExternalsystemsExternalSystemIdJobconfigs**](docs/Api/HiddenApi.md#putsyncexternalsystemsexternalsystemidjobconfigs) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Update job configuration
 *HiddenApi* | [**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter**](docs/Api/HiddenApi.md#putsyncexternalsystemsexternalsystemidjobconfigsjobidfilter) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Save entity filters
 *HiddenApi* | [**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties**](docs/Api/HiddenApi.md#putsyncexternalsystemsexternalsystemidjobconfigsjobidproperties) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Save Properties, Which Should Be Synced
@@ -291,6 +314,8 @@ Class | Method | HTTP request | Description
 *PersonApi* | [**updateServiceRequestById**](docs/Api/PersonApi.md#updateservicerequestbyid) | **PUT** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
 *QueueApi* | [**getQueueJobGroupsStatus**](docs/Api/QueueApi.md#getqueuejobgroupsstatus) | **GET** /queues/{queue}/jobgroups/status | Status Information About Job Groups in Queue
 *QueueApi* | [**startQueueWorker**](docs/Api/QueueApi.md#startqueueworker) | **POST** /queues/{queue} | Start Worker For Queue
+*ResourceApi* | [**getBookings**](docs/Api/ResourceApi.md#getbookings) | **GET** /bookings | Your GET endpoint
+*ResourceApi* | [**getResourceMasterdata**](docs/Api/ResourceApi.md#getresourcemasterdata) | **GET** /resource/masterdata | Your GET endpoint
 *ServiceServiceGroupsApi* | [**declineServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#declineservicerequestbyid) | **DELETE** /persons/{id}/servicerequests/{requestId} | Decline a service request for a person
 *ServiceServiceGroupsApi* | [**getAllServiceGroups**](docs/Api/ServiceServiceGroupsApi.md#getallservicegroups) | **GET** /servicegroups | Get all service groups
 *ServiceServiceGroupsApi* | [**getAllServices**](docs/Api/ServiceServiceGroupsApi.md#getallservices) | **GET** /services | Get all services
@@ -365,10 +390,15 @@ Class | Method | HTTP request | Description
 - [AppointmentTemplate1](docs/Model/AppointmentTemplate1.md)
 - [Arrangement](docs/Model/Arrangement.md)
 - [Arrangement1](docs/Model/Arrangement1.md)
+- [AutomaticEmail](docs/Model/AutomaticEmail.md)
 - [CalendarDomainObject](docs/Model/CalendarDomainObject.md)
 - [CalendarDomainObjectDomainAttributes](docs/Model/CalendarDomainObjectDomainAttributes.md)
 - [Campus](docs/Model/Campus.md)
-- [Campus1](docs/Model/Campus1.md)
+- [CampusesIdAddress](docs/Model/CampusesIdAddress.md)
+- [CampusesIdPerson](docs/Model/CampusesIdPerson.md)
+- [CampusesIdServices](docs/Model/CampusesIdServices.md)
+- [CampusesIdSocialMedia](docs/Model/CampusesIdSocialMedia.md)
+- [CampusesIdTeam](docs/Model/CampusesIdTeam.md)
 - [CashDiscount](docs/Model/CashDiscount.md)
 - [Checkin](docs/Model/Checkin.md)
 - [CheckinPersonsGroup](docs/Model/CheckinPersonsGroup.md)
@@ -379,6 +409,7 @@ Class | Method | HTTP request | Description
 - [DbField1](docs/Model/DbField1.md)
 - [Department](docs/Model/Department.md)
 - [Device](docs/Model/Device.md)
+- [DomainObject](docs/Model/DomainObject.md)
 - [EntityMetaData](docs/Model/EntityMetaData.md)
 - [EntityMetaDataCreatedPerson](docs/Model/EntityMetaDataCreatedPerson.md)
 - [EntityMetaDataModifiedPerson](docs/Model/EntityMetaDataModifiedPerson.md)
@@ -398,11 +429,15 @@ Class | Method | HTTP request | Description
 - [FieldMappingEntry](docs/Model/FieldMappingEntry.md)
 - [File](docs/Model/File.md)
 - [FileOrLink](docs/Model/FileOrLink.md)
+- [FinanceCostcentersBulkcreateCostCenters](docs/Model/FinanceCostcentersBulkcreateCostCenters.md)
 - [FinanceMasterData](docs/Model/FinanceMasterData.md)
 - [FinanceTransactionsChangeset](docs/Model/FinanceTransactionsChangeset.md)
+- [FollowUp](docs/Model/FollowUp.md)
+- [FollowUpInterval](docs/Model/FollowUpInterval.md)
 - [Group](docs/Model/Group.md)
 - [GroupDomainObject](docs/Model/GroupDomainObject.md)
 - [GroupDomainObject1](docs/Model/GroupDomainObject1.md)
+- [GroupDomainObject1DomainAttributes](docs/Model/GroupDomainObject1DomainAttributes.md)
 - [GroupHierarchy](docs/Model/GroupHierarchy.md)
 - [GroupHierarchy1](docs/Model/GroupHierarchy1.md)
 - [GroupMeeting](docs/Model/GroupMeeting.md)
@@ -411,8 +446,10 @@ Class | Method | HTTP request | Description
 - [GroupMemberField](docs/Model/GroupMemberField.md)
 - [GroupMemberPersonField](docs/Model/GroupMemberPersonField.md)
 - [GroupMemberShort](docs/Model/GroupMemberShort.md)
-- [Groups](docs/Model/Groups.md)
+- [GroupStatistics](docs/Model/GroupStatistics.md)
 - [GroupsForPerson](docs/Model/GroupsForPerson.md)
+- [GroupsForPersonGroup](docs/Model/GroupsForPersonGroup.md)
+- [GrowPath](docs/Model/GrowPath.md)
 - [InlineObject](docs/Model/InlineObject.md)
 - [InlineObject1](docs/Model/InlineObject1.md)
 - [InlineObject10](docs/Model/InlineObject10.md)
@@ -477,7 +514,16 @@ Class | Method | HTTP request | Description
 - [InlineObject65](docs/Model/InlineObject65.md)
 - [InlineObject66](docs/Model/InlineObject66.md)
 - [InlineObject67](docs/Model/InlineObject67.md)
+- [InlineObject68](docs/Model/InlineObject68.md)
+- [InlineObject69](docs/Model/InlineObject69.md)
 - [InlineObject7](docs/Model/InlineObject7.md)
+- [InlineObject70](docs/Model/InlineObject70.md)
+- [InlineObject71](docs/Model/InlineObject71.md)
+- [InlineObject72](docs/Model/InlineObject72.md)
+- [InlineObject73](docs/Model/InlineObject73.md)
+- [InlineObject74](docs/Model/InlineObject74.md)
+- [InlineObject75](docs/Model/InlineObject75.md)
+- [InlineObject76](docs/Model/InlineObject76.md)
 - [InlineObject8](docs/Model/InlineObject8.md)
 - [InlineObject9](docs/Model/InlineObject9.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
@@ -517,8 +563,42 @@ Class | Method | HTTP request | Description
 - [InlineResponse200114Person](docs/Model/InlineResponse200114Person.md)
 - [InlineResponse200114PersonDomainAttributes](docs/Model/InlineResponse200114PersonDomainAttributes.md)
 - [InlineResponse200115](docs/Model/InlineResponse200115.md)
+- [InlineResponse200116](docs/Model/InlineResponse200116.md)
+- [InlineResponse200117](docs/Model/InlineResponse200117.md)
+- [InlineResponse200118](docs/Model/InlineResponse200118.md)
+- [InlineResponse200118Data](docs/Model/InlineResponse200118Data.md)
+- [InlineResponse200119](docs/Model/InlineResponse200119.md)
 - [InlineResponse20011Data](docs/Model/InlineResponse20011Data.md)
 - [InlineResponse20012](docs/Model/InlineResponse20012.md)
+- [InlineResponse200120](docs/Model/InlineResponse200120.md)
+- [InlineResponse200121](docs/Model/InlineResponse200121.md)
+- [InlineResponse200121Data](docs/Model/InlineResponse200121Data.md)
+- [InlineResponse200122](docs/Model/InlineResponse200122.md)
+- [InlineResponse200122Meta](docs/Model/InlineResponse200122Meta.md)
+- [InlineResponse200123](docs/Model/InlineResponse200123.md)
+- [InlineResponse200123Data](docs/Model/InlineResponse200123Data.md)
+- [InlineResponse200123DataResourceTypes](docs/Model/InlineResponse200123DataResourceTypes.md)
+- [InlineResponse200123DataResources](docs/Model/InlineResponse200123DataResources.md)
+- [InlineResponse200124](docs/Model/InlineResponse200124.md)
+- [InlineResponse200124Base](docs/Model/InlineResponse200124Base.md)
+- [InlineResponse200124BaseAdditionals](docs/Model/InlineResponse200124BaseAdditionals.md)
+- [InlineResponse200124BaseExceptions](docs/Model/InlineResponse200124BaseExceptions.md)
+- [InlineResponse200124BaseMeta](docs/Model/InlineResponse200124BaseMeta.md)
+- [InlineResponse200124BaseMeta1](docs/Model/InlineResponse200124BaseMeta1.md)
+- [InlineResponse200124BaseMeta1CreatedPerson](docs/Model/InlineResponse200124BaseMeta1CreatedPerson.md)
+- [InlineResponse200124Calculated](docs/Model/InlineResponse200124Calculated.md)
+- [InlineResponse200124Data](docs/Model/InlineResponse200124Data.md)
+- [InlineResponse200125](docs/Model/InlineResponse200125.md)
+- [InlineResponse200125Base](docs/Model/InlineResponse200125Base.md)
+- [InlineResponse200125BaseAdditions](docs/Model/InlineResponse200125BaseAdditions.md)
+- [InlineResponse200125BaseExceptions](docs/Model/InlineResponse200125BaseExceptions.md)
+- [InlineResponse200125BaseMeta](docs/Model/InlineResponse200125BaseMeta.md)
+- [InlineResponse200125BaseMeta1](docs/Model/InlineResponse200125BaseMeta1.md)
+- [InlineResponse200125BaseMeta2](docs/Model/InlineResponse200125BaseMeta2.md)
+- [InlineResponse200125Calculated](docs/Model/InlineResponse200125Calculated.md)
+- [InlineResponse200125Data](docs/Model/InlineResponse200125Data.md)
+- [InlineResponse200126](docs/Model/InlineResponse200126.md)
+- [InlineResponse200126Data](docs/Model/InlineResponse200126Data.md)
 - [InlineResponse20013](docs/Model/InlineResponse20013.md)
 - [InlineResponse20013Data](docs/Model/InlineResponse20013Data.md)
 - [InlineResponse20013DataEventServices](docs/Model/InlineResponse20013DataEventServices.md)
@@ -530,7 +610,6 @@ Class | Method | HTTP request | Description
 - [InlineResponse20016](docs/Model/InlineResponse20016.md)
 - [InlineResponse20016Data](docs/Model/InlineResponse20016Data.md)
 - [InlineResponse20016Group](docs/Model/InlineResponse20016Group.md)
-- [InlineResponse20016GroupDomainAttributes](docs/Model/InlineResponse20016GroupDomainAttributes.md)
 - [InlineResponse20017](docs/Model/InlineResponse20017.md)
 - [InlineResponse20017Data](docs/Model/InlineResponse20017Data.md)
 - [InlineResponse20017DataFollowUp](docs/Model/InlineResponse20017DataFollowUp.md)
@@ -550,6 +629,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse20020Data](docs/Model/InlineResponse20020Data.md)
 - [InlineResponse20021](docs/Model/InlineResponse20021.md)
 - [InlineResponse20021Data](docs/Model/InlineResponse20021Data.md)
+- [InlineResponse20021Statistics](docs/Model/InlineResponse20021Statistics.md)
 - [InlineResponse20022](docs/Model/InlineResponse20022.md)
 - [InlineResponse20023](docs/Model/InlineResponse20023.md)
 - [InlineResponse20023Data](docs/Model/InlineResponse20023Data.md)
@@ -566,7 +646,15 @@ Class | Method | HTTP request | Description
 - [InlineResponse20028](docs/Model/InlineResponse20028.md)
 - [InlineResponse20029](docs/Model/InlineResponse20029.md)
 - [InlineResponse20029Data](docs/Model/InlineResponse20029Data.md)
+- [InlineResponse2002Address](docs/Model/InlineResponse2002Address.md)
+- [InlineResponse2002Data](docs/Model/InlineResponse2002Data.md)
+- [InlineResponse2002Denomination](docs/Model/InlineResponse2002Denomination.md)
+- [InlineResponse2002Groups](docs/Model/InlineResponse2002Groups.md)
+- [InlineResponse2002Logo](docs/Model/InlineResponse2002Logo.md)
 - [InlineResponse2002Meta](docs/Model/InlineResponse2002Meta.md)
+- [InlineResponse2002Services](docs/Model/InlineResponse2002Services.md)
+- [InlineResponse2002SocialMedia](docs/Model/InlineResponse2002SocialMedia.md)
+- [InlineResponse2002Team](docs/Model/InlineResponse2002Team.md)
 - [InlineResponse2003](docs/Model/InlineResponse2003.md)
 - [InlineResponse20030](docs/Model/InlineResponse20030.md)
 - [InlineResponse20030Data](docs/Model/InlineResponse20030Data.md)
@@ -591,6 +679,8 @@ Class | Method | HTTP request | Description
 - [InlineResponse20043](docs/Model/InlineResponse20043.md)
 - [InlineResponse20043Data](docs/Model/InlineResponse20043Data.md)
 - [InlineResponse20043DataAgeGroups](docs/Model/InlineResponse20043DataAgeGroups.md)
+- [InlineResponse20043DataFollowUpIntervals](docs/Model/InlineResponse20043DataFollowUpIntervals.md)
+- [InlineResponse20043DataFollowUps](docs/Model/InlineResponse20043DataFollowUps.md)
 - [InlineResponse20043DataGroupCategories](docs/Model/InlineResponse20043DataGroupCategories.md)
 - [InlineResponse20043DataGroupStatuses](docs/Model/InlineResponse20043DataGroupStatuses.md)
 - [InlineResponse20043DataGroupTypes](docs/Model/InlineResponse20043DataGroupTypes.md)
@@ -605,8 +695,6 @@ Class | Method | HTTP request | Description
 - [InlineResponse20044DataAccounts](docs/Model/InlineResponse20044DataAccounts.md)
 - [InlineResponse20044DataCashDiscounts](docs/Model/InlineResponse20044DataCashDiscounts.md)
 - [InlineResponse20044DataClients](docs/Model/InlineResponse20044DataClients.md)
-- [InlineResponse20044DataCostCenters](docs/Model/InlineResponse20044DataCostCenters.md)
-- [InlineResponse20044DataGroup](docs/Model/InlineResponse20044DataGroup.md)
 - [InlineResponse20044DataPermissions](docs/Model/InlineResponse20044DataPermissions.md)
 - [InlineResponse20044DataPermissions1](docs/Model/InlineResponse20044DataPermissions1.md)
 - [InlineResponse20044DataTaxRates](docs/Model/InlineResponse20044DataTaxRates.md)
@@ -730,6 +818,8 @@ Class | Method | HTTP request | Description
 - [InlineResponse2016](docs/Model/InlineResponse2016.md)
 - [InlineResponse2017](docs/Model/InlineResponse2017.md)
 - [InlineResponse2017Data](docs/Model/InlineResponse2017Data.md)
+- [InlineResponse2018](docs/Model/InlineResponse2018.md)
+- [InlineResponse2019](docs/Model/InlineResponse2019.md)
 - [InlineResponse204](docs/Model/InlineResponse204.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse4001](docs/Model/InlineResponse4001.md)

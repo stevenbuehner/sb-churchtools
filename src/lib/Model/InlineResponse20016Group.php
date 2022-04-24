@@ -65,7 +65,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
         'api_url' => 'string',
         'frontend_url' => 'string',
         'image_url' => 'string',
-        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes'
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes'
     ];
 
     /**
@@ -420,7 +420,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets domain_attributes
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes|null
+     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes|null
      */
     public function getDomainAttributes()
     {
@@ -430,7 +430,7 @@ class InlineResponse20016Group implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets domain_attributes
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes|null $domain_attributes domain_attributes
+     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes|null $domain_attributes domain_attributes
      *
      * @return self
      */

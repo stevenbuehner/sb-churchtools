@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** | ID of this group type role. | [optional]
 **group_type_id** | **int** | ID of corresponding group type. | [optional]
 **name** | **string** | Name of role. | [optional]
+**name_translated** | **string** | Trasnlated name of role. | [optional]
 **shorty** | **string** | Abbreviation of the name. | [optional]
 **sort_key** | **int** | Number used for sorting roles. | [optional]
 **to_delete** | **bool** | Flag, if members of this role can be deleted or removed from the group. | [optional]

@@ -194,7 +194,7 @@ class MetaPaginationPagination implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(array $data = null)
     {
         $this->container['total'] = $data['total'] ?? null;
-        $this->container['limit'] = $data['limit'] ?? (10 === 'null' ? null : 10);
+        $this->container['limit'] = $data['limit'] ?? 10;
         $this->container['current'] = $data['current'] ?? null;
         $this->container['last_page'] = $data['last_page'] ?? null;
     }

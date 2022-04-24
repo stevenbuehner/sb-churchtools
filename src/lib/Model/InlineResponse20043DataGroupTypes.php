@@ -61,6 +61,8 @@ class InlineResponse20043DataGroupTypes implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
+        'name_translated' => 'string',
+        'shorty' => 'string',
         'is_leader_necessary' => 'bool',
         'available_for_new_person' => 'bool',
         'deep_permission' => 'int',
@@ -77,6 +79,8 @@ class InlineResponse20043DataGroupTypes implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'name_translated' => null,
+        'shorty' => null,
         'is_leader_necessary' => null,
         'available_for_new_person' => null,
         'deep_permission' => null,
@@ -112,6 +116,8 @@ class InlineResponse20043DataGroupTypes implements ModelInterface, ArrayAccess, 
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'name_translated' => 'nameTranslated',
+        'shorty' => 'shorty',
         'is_leader_necessary' => 'isLeaderNecessary',
         'available_for_new_person' => 'availableForNewPerson',
         'deep_permission' => 'deepPermission',
@@ -126,6 +132,8 @@ class InlineResponse20043DataGroupTypes implements ModelInterface, ArrayAccess, 
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'name_translated' => 'setNameTranslated',
+        'shorty' => 'setShorty',
         'is_leader_necessary' => 'setIsLeaderNecessary',
         'available_for_new_person' => 'setAvailableForNewPerson',
         'deep_permission' => 'setDeepPermission',
@@ -140,6 +148,8 @@ class InlineResponse20043DataGroupTypes implements ModelInterface, ArrayAccess, 
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'name_translated' => 'getNameTranslated',
+        'shorty' => 'getShorty',
         'is_leader_necessary' => 'getIsLeaderNecessary',
         'available_for_new_person' => 'getAvailableForNewPerson',
         'deep_permission' => 'getDeepPermission',
@@ -205,6 +215,8 @@ class InlineResponse20043DataGroupTypes implements ModelInterface, ArrayAccess, 
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['name_translated'] = $data['name_translated'] ?? null;
+        $this->container['shorty'] = $data['shorty'] ?? null;
         $this->container['is_leader_necessary'] = $data['is_leader_necessary'] ?? null;
         $this->container['available_for_new_person'] = $data['available_for_new_person'] ?? null;
         $this->container['deep_permission'] = $data['deep_permission'] ?? null;
@@ -272,13 +284,61 @@ class InlineResponse20043DataGroupTypes implements ModelInterface, ArrayAccess, 
     /**
      * Sets name
      *
-     * @param string|null $name name
+     * @param string|null $name Name of group type.
      *
      * @return self
      */
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_translated
+     *
+     * @return string|null
+     */
+    public function getNameTranslated()
+    {
+        return $this->container['name_translated'];
+    }
+
+    /**
+     * Sets name_translated
+     *
+     * @param string|null $name_translated Trasnlated name of group type.
+     *
+     * @return self
+     */
+    public function setNameTranslated($name_translated)
+    {
+        $this->container['name_translated'] = $name_translated;
+
+        return $this;
+    }
+
+    /**
+     * Gets shorty
+     *
+     * @return string|null
+     */
+    public function getShorty()
+    {
+        return $this->container['shorty'];
+    }
+
+    /**
+     * Sets shorty
+     *
+     * @param string|null $shorty Short name for the group type
+     *
+     * @return self
+     */
+    public function setShorty($shorty)
+    {
+        $this->container['shorty'] = $shorty;
 
         return $this;
     }

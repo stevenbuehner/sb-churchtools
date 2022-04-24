@@ -668,14 +668,15 @@ class GroupHomepageApi
      *
      * @param  string $group_id Group ID of the public group (required)
      * @param  string $token Sign Up Token (required)
+     * @param  string $person_id The name for which the signup should be made (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse20072
      */
-    public function getPublicgroupsGroupIdForm($group_id, $token)
+    public function getPublicgroupsGroupIdForm($group_id, $token, $person_id)
     {
-        list($response) = $this->getPublicgroupsGroupIdFormWithHttpInfo($group_id, $token);
+        list($response) = $this->getPublicgroupsGroupIdFormWithHttpInfo($group_id, $token, $person_id);
         return $response;
     }
 
@@ -686,14 +687,15 @@ class GroupHomepageApi
      *
      * @param  string $group_id Group ID of the public group (required)
      * @param  string $token Sign Up Token (required)
+     * @param  string $person_id The name for which the signup should be made (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20072, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPublicgroupsGroupIdFormWithHttpInfo($group_id, $token)
+    public function getPublicgroupsGroupIdFormWithHttpInfo($group_id, $token, $person_id)
     {
-        $request = $this->getPublicgroupsGroupIdFormRequest($group_id, $token);
+        $request = $this->getPublicgroupsGroupIdFormRequest($group_id, $token, $person_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -773,13 +775,14 @@ class GroupHomepageApi
      *
      * @param  string $group_id Group ID of the public group (required)
      * @param  string $token Sign Up Token (required)
+     * @param  string $person_id The name for which the signup should be made (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublicgroupsGroupIdFormAsync($group_id, $token)
+    public function getPublicgroupsGroupIdFormAsync($group_id, $token, $person_id)
     {
-        return $this->getPublicgroupsGroupIdFormAsyncWithHttpInfo($group_id, $token)
+        return $this->getPublicgroupsGroupIdFormAsyncWithHttpInfo($group_id, $token, $person_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -794,14 +797,15 @@ class GroupHomepageApi
      *
      * @param  string $group_id Group ID of the public group (required)
      * @param  string $token Sign Up Token (required)
+     * @param  string $person_id The name for which the signup should be made (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPublicgroupsGroupIdFormAsyncWithHttpInfo($group_id, $token)
+    public function getPublicgroupsGroupIdFormAsyncWithHttpInfo($group_id, $token, $person_id)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20072';
-        $request = $this->getPublicgroupsGroupIdFormRequest($group_id, $token);
+        $request = $this->getPublicgroupsGroupIdFormRequest($group_id, $token, $person_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -841,11 +845,12 @@ class GroupHomepageApi
      *
      * @param  string $group_id Group ID of the public group (required)
      * @param  string $token Sign Up Token (required)
+     * @param  string $person_id The name for which the signup should be made (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPublicgroupsGroupIdFormRequest($group_id, $token)
+    public function getPublicgroupsGroupIdFormRequest($group_id, $token, $person_id)
     {
         // verify the required parameter 'group_id' is set
         if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
@@ -857,6 +862,12 @@ class GroupHomepageApi
         if ($token === null || (is_array($token) && count($token) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $token when calling getPublicgroupsGroupIdForm'
+            );
+        }
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $person_id when calling getPublicgroupsGroupIdForm'
             );
         }
 
@@ -874,11 +885,19 @@ class GroupHomepageApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($token)){
-            	$queryParams['token'] = $token ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['token'] = $token;
+            }
+        }
+        // query params
+        if ($person_id !== null) {
+            if('form' === 'form' && is_array($person_id)) {
+                foreach($person_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['personId'] = $person_id;
             }
         }
 

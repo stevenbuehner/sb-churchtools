@@ -336,9 +336,6 @@ class TagApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($type)){
-            	$queryParams['type'] = $type ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['type'] = $type;
             }

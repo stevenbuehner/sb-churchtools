@@ -60,7 +60,8 @@ class InlineObject47 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'token' => 'string',
-        'forms' => '\StevenBuehner\ChurchTools\Model\PublicgroupsGroupIdSignupForms[]'
+        'forms' => '\StevenBuehner\ChurchTools\Model\PublicgroupsGroupIdSignupForms[]',
+        'sign_out_url_template' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class InlineObject47 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'token' => null,
-        'forms' => null
+        'forms' => null,
+        'sign_out_url_template' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class InlineObject47 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'token' => 'token',
-        'forms' => 'forms'
+        'forms' => 'forms',
+        'sign_out_url_template' => 'signOutUrlTemplate'
     ];
 
     /**
@@ -113,7 +116,8 @@ class InlineObject47 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'token' => 'setToken',
-        'forms' => 'setForms'
+        'forms' => 'setForms',
+        'sign_out_url_template' => 'setSignOutUrlTemplate'
     ];
 
     /**
@@ -123,7 +127,8 @@ class InlineObject47 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'token' => 'getToken',
-        'forms' => 'getForms'
+        'forms' => 'getForms',
+        'sign_out_url_template' => 'getSignOutUrlTemplate'
     ];
 
     /**
@@ -185,6 +190,7 @@ class InlineObject47 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['token'] = $data['token'] ?? null;
         $this->container['forms'] = $data['forms'] ?? null;
+        $this->container['sign_out_url_template'] = $data['sign_out_url_template'] ?? null;
     }
 
     /**
@@ -261,6 +267,30 @@ class InlineObject47 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setForms($forms)
     {
         $this->container['forms'] = $forms;
+
+        return $this;
+    }
+
+    /**
+     * Gets sign_out_url_template
+     *
+     * @return string|null
+     */
+    public function getSignOutUrlTemplate()
+    {
+        return $this->container['sign_out_url_template'];
+    }
+
+    /**
+     * Sets sign_out_url_template
+     *
+     * @param string|null $sign_out_url_template Url used in the mail sent to the user.
+     *
+     * @return self
+     */
+    public function setSignOutUrlTemplate($sign_out_url_template)
+    {
+        $this->container['sign_out_url_template'] = $sign_out_url_template;
 
         return $this;
     }

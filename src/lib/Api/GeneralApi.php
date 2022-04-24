@@ -555,9 +555,6 @@ class GeneralApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($only_allow_authenticated)){
-            	$queryParams['only_allow_authenticated'] = $only_allow_authenticated ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['only_allow_authenticated'] = $only_allow_authenticated;
             }

@@ -60,7 +60,7 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'is_balance_account' => 'bool',
+        'balance_type' => 'string',
         'sort_key' => 'int'
     ];
 
@@ -73,7 +73,7 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'is_balance_account' => null,
+        'balance_type' => null,
         'sort_key' => null
     ];
 
@@ -105,7 +105,7 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'is_balance_account' => 'isBalanceAccount',
+        'balance_type' => 'balanceType',
         'sort_key' => 'sortKey'
     ];
 
@@ -116,7 +116,7 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'is_balance_account' => 'setIsBalanceAccount',
+        'balance_type' => 'setBalanceType',
         'sort_key' => 'setSortKey'
     ];
 
@@ -127,7 +127,7 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'is_balance_account' => 'getIsBalanceAccount',
+        'balance_type' => 'getBalanceType',
         'sort_key' => 'getSortKey'
     ];
 
@@ -172,6 +172,21 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const BALANCE_TYPE_ASSETS = 'assets';
+    const BALANCE_TYPE_LIABILITIES = 'liabilities';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBalanceTypeAllowableValues()
+    {
+        return [
+            self::BALANCE_TYPE_ASSETS,
+            self::BALANCE_TYPE_LIABILITIES,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -189,8 +204,8 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['is_balance_account'] = $data['is_balance_account'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? (0 === 'null' ? null : 0);
+        $this->container['balance_type'] = $data['balance_type'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? 0;
     }
 
     /**
@@ -205,9 +220,18 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['is_balance_account'] === null) {
-            $invalidProperties[] = "'is_balance_account' can't be null";
+        if ($this->container['balance_type'] === null) {
+            $invalidProperties[] = "'balance_type' can't be null";
         }
+        $allowedValues = $this->getBalanceTypeAllowableValues();
+        if (!is_null($this->container['balance_type']) && !in_array($this->container['balance_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'balance_type', must be one of '%s'",
+                $this->container['balance_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -248,25 +272,35 @@ class InlineObject26 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_balance_account
+     * Gets balance_type
      *
-     * @return bool
+     * @return string
      */
-    public function getIsBalanceAccount()
+    public function getBalanceType()
     {
-        return $this->container['is_balance_account'];
+        return $this->container['balance_type'];
     }
 
     /**
-     * Sets is_balance_account
+     * Sets balance_type
      *
-     * @param bool $is_balance_account is_balance_account
+     * @param string $balance_type balance_type
      *
      * @return self
      */
-    public function setIsBalanceAccount($is_balance_account)
+    public function setBalanceType($balance_type)
     {
-        $this->container['is_balance_account'] = $is_balance_account;
+        $allowedValues = $this->getBalanceTypeAllowableValues();
+        if (!in_array($balance_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'balance_type', must be one of '%s'",
+                    $balance_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['balance_type'] = $balance_type;
 
         return $this;
     }

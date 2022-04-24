@@ -1009,7 +1009,7 @@ void (empty response body)
 ## `postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()`
 
 ```php
-postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64)
+postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65)
 ```
 
 Start Execution
@@ -1037,10 +1037,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string
 $job_id = 'job_id_example'; // string
-$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
+$inline_object65 = new \StevenBuehner\ChurchTools\Model\InlineObject65(); // \StevenBuehner\ChurchTools\Model\InlineObject65
 
 try {
-    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64);
+    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart: ', $e->getMessage(), PHP_EOL;
 }
@@ -1052,7 +1052,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**|  |
  **job_id** | **string**|  |
- **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
+ **inline_object65** | [**\StevenBuehner\ChurchTools\Model\InlineObject65**](../Model/InlineObject65.md)|  | [optional]
 
 ### Return type
 
@@ -1074,7 +1074,7 @@ void (empty response body)
 ## `postSyncLogs()`
 
 ```php
-postSyncLogs($inline_object63): \StevenBuehner\ChurchTools\Model\InlineResponse2017
+postSyncLogs($inline_object64): \StevenBuehner\ChurchTools\Model\InlineResponse2017
 ```
 
 Save Sync Logs
@@ -1100,10 +1100,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object63 = new \StevenBuehner\ChurchTools\Model\InlineObject63(); // \StevenBuehner\ChurchTools\Model\InlineObject63
+$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
 
 try {
-    $result = $apiInstance->postSyncLogs($inline_object63);
+    $result = $apiInstance->postSyncLogs($inline_object64);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncLogs: ', $e->getMessage(), PHP_EOL;
@@ -1114,7 +1114,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object63** | [**\StevenBuehner\ChurchTools\Model\InlineObject63**](../Model/InlineObject63.md)|  | [optional]
+ **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
 
 ### Return type
 

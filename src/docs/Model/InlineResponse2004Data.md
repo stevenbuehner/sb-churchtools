@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** | ID of field | [optional]
 **key** | **string** | The key of the field. This is the name that is also used when using the person or group api | [optional]
 **name** | **string** | Field name | [optional]
+**name_translated** | **string** | Field name translated | [optional]
 **shorty** | **string** | Abbreviation | [optional]
 **field_category_code** | **string** | The intern code of the field category the field belongs to | [optional]
 **field_type_code** | **string** | The intern code of the field type the field belongs to | [optional]

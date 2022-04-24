@@ -210,7 +210,7 @@ class InlineObject53 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['event_ids'] = $data['event_ids'] ?? null;
         $this->container['recipients'] = $data['recipients'] ?? null;
-        $this->container['send_copy_to_me'] = $data['send_copy_to_me'] ?? (false === 'null' ? null : false);
+        $this->container['send_copy_to_me'] = $data['send_copy_to_me'] ?? false;
         $this->container['subject'] = $data['subject'] ?? null;
         $this->container['body'] = $data['body'] ?? null;
         $this->container['append_agenda_button'] = $data['append_agenda_button'] ?? null;

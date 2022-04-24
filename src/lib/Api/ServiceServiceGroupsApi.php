@@ -295,9 +295,6 @@ class ServiceServiceGroupsApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($comment)){
-            	$queryParams['comment'] = $comment ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['comment'] = $comment;
             }

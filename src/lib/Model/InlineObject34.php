@@ -220,6 +220,9 @@ class InlineObject34 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
+        if ($this->container['accounting_period_id'] === null) {
+            $invalidProperties[] = "'accounting_period_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -310,7 +313,7 @@ class InlineObject34 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets accounting_period_id
      *
-     * @return int|null
+     * @return int
      */
     public function getAccountingPeriodId()
     {
@@ -320,7 +323,7 @@ class InlineObject34 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accounting_period_id
      *
-     * @param int|null $accounting_period_id accounting_period_id
+     * @param int $accounting_period_id accounting_period_id
      *
      * @return self
      */

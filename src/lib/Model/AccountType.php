@@ -61,6 +61,7 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
+        'balance_type' => 'string',
         'is_balance_account' => 'bool',
         'sort_key' => 'int',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
@@ -76,6 +77,7 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'balance_type' => null,
         'is_balance_account' => null,
         'sort_key' => null,
         'meta' => null
@@ -110,6 +112,7 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'balance_type' => 'balanceType',
         'is_balance_account' => 'isBalanceAccount',
         'sort_key' => 'sortKey',
         'meta' => 'meta'
@@ -123,6 +126,7 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'balance_type' => 'setBalanceType',
         'is_balance_account' => 'setIsBalanceAccount',
         'sort_key' => 'setSortKey',
         'meta' => 'setMeta'
@@ -136,6 +140,7 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'balance_type' => 'getBalanceType',
         'is_balance_account' => 'getIsBalanceAccount',
         'sort_key' => 'getSortKey',
         'meta' => 'getMeta'
@@ -182,6 +187,21 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const BALANCE_TYPE_ASSETS = 'assets';
+    const BALANCE_TYPE_LIABILITIES = 'liabilities';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBalanceTypeAllowableValues()
+    {
+        return [
+            self::BALANCE_TYPE_ASSETS,
+            self::BALANCE_TYPE_LIABILITIES,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -200,8 +220,9 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['balance_type'] = $data['balance_type'] ?? null;
         $this->container['is_balance_account'] = $data['is_balance_account'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? (0 === 'null' ? null : 0);
+        $this->container['sort_key'] = $data['sort_key'] ?? 0;
         $this->container['meta'] = $data['meta'] ?? null;
     }
 
@@ -213,6 +234,15 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getBalanceTypeAllowableValues();
+        if (!is_null($this->container['balance_type']) && !in_array($this->container['balance_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'balance_type', must be one of '%s'",
+                $this->container['balance_type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -278,9 +308,44 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets balance_type
+     *
+     * @return string|null
+     */
+    public function getBalanceType()
+    {
+        return $this->container['balance_type'];
+    }
+
+    /**
+     * Sets balance_type
+     *
+     * @param string|null $balance_type balance_type
+     *
+     * @return self
+     */
+    public function setBalanceType($balance_type)
+    {
+        $allowedValues = $this->getBalanceTypeAllowableValues();
+        if (!is_null($balance_type) && !in_array($balance_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'balance_type', must be one of '%s'",
+                    $balance_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['balance_type'] = $balance_type;
+
+        return $this;
+    }
+
+    /**
      * Gets is_balance_account
      *
      * @return bool|null
+     * @deprecated
      */
     public function getIsBalanceAccount()
     {
@@ -293,6 +358,7 @@ class AccountType implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param bool|null $is_balance_account is_balance_account
      *
      * @return self
+     * @deprecated
      */
     public function setIsBalanceAccount($is_balance_account)
     {

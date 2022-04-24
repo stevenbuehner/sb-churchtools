@@ -2048,25 +2048,37 @@ class SyncApi
         $multipart = false;
 
         // query params
-        if (is_array($types)) {
-            $types = ObjectSerializer::serializeCollection($types, 'deepObject', true);
-        }
         if ($types !== null) {
-            $queryParams['types'] = $types;
+            if('form' === 'form' && is_array($types)) {
+                foreach($types as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['types[]'] = $types;
+            }
         }
         // query params
-        if (is_array($domain_types)) {
-            $domain_types = ObjectSerializer::serializeCollection($domain_types, 'deepObject', true);
-        }
         if ($domain_types !== null) {
-            $queryParams['domain_types'] = $domain_types;
+            if('form' === 'form' && is_array($domain_types)) {
+                foreach($domain_types as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['domain_types[]'] = $domain_types;
+            }
         }
         // query params
-        if (is_array($source_ids)) {
-            $source_ids = ObjectSerializer::serializeCollection($source_ids, 'deepObject', true);
-        }
         if ($source_ids !== null) {
-            $queryParams['source_ids'] = $source_ids;
+            if('form' === 'form' && is_array($source_ids)) {
+                foreach($source_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['source_ids[]'] = $source_ids;
+            }
         }
 
 
@@ -2365,9 +2377,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($es_ids)){
-            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -2378,9 +2387,6 @@ class SyncApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($job_ids)){
-            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -2393,9 +2399,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -2406,9 +2409,6 @@ class SyncApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -2421,9 +2421,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($statuses)){
-            	$queryParams['statuses'] = $statuses ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['statuses'] = $statuses;
             }
@@ -2434,9 +2431,6 @@ class SyncApi
                 foreach($page as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['page'] = $page;
@@ -2449,9 +2443,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['limit'] = $limit;
             }
@@ -2462,9 +2453,6 @@ class SyncApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_dry_run)){
-            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;
@@ -3653,9 +3641,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -3666,9 +3651,6 @@ class SyncApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -3681,9 +3663,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($es_ids)){
-            	$queryParams['es_ids'] = $es_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['es_ids'] = $es_ids;
             }
@@ -3694,9 +3673,6 @@ class SyncApi
                 foreach($job_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($job_ids)){
-            	$queryParams['job_ids'] = $job_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['job_ids'] = $job_ids;
@@ -3709,9 +3685,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['start_date'] = $start_date;
             }
@@ -3722,9 +3695,6 @@ class SyncApi
                 foreach($end_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['end_date'] = $end_date;
@@ -3737,9 +3707,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($types)){
-            	$queryParams['types'] = $types ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['types'] = $types;
             }
@@ -3750,9 +3717,6 @@ class SyncApi
                 foreach($query as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($query)){
-            	$queryParams['query'] = $query ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['query'] = $query;
@@ -3765,9 +3729,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($levels)){
-            	$queryParams['levels'] = $levels ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['levels'] = $levels;
             }
@@ -3778,9 +3739,6 @@ class SyncApi
                 foreach($is_dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_dry_run)){
-            	$queryParams['is_dry_run'] = $is_dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_dry_run'] = $is_dry_run;
@@ -4064,9 +4022,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($domain_type)){
-            	$queryParams['domain_type'] = $domain_type ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['domain_type'] = $domain_type;
             }
@@ -4078,9 +4033,6 @@ class SyncApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($domain_id)){
-            	$queryParams['domain_id'] = $domain_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['domain_id'] = $domain_id;
             }
@@ -4091,9 +4043,6 @@ class SyncApi
                 foreach($source_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($source_id)){
-            	$queryParams['source_id'] = $source_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['source_id'] = $source_id;
@@ -4388,15 +4337,15 @@ class SyncApi
      *
      * @param  string $external_system_id external_system_id (required)
      * @param  string $job_id job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 inline_object65 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65 = null)
     {
-        $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object64);
+        $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object65);
     }
 
     /**
@@ -4406,15 +4355,15 @@ class SyncApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartWithHttpInfo($external_system_id, $job_id, $inline_object65 = null)
     {
-        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64);
+        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object65);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4460,14 +4409,14 @@ class SyncApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsync($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsync($external_system_id, $job_id, $inline_object65 = null)
     {
-        return $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object64)
+        return $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object65)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4482,15 +4431,15 @@ class SyncApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartAsyncWithHttpInfo($external_system_id, $job_id, $inline_object65 = null)
     {
         $returnType = '';
-        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64);
+        $request = $this->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object65);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4520,12 +4469,12 @@ class SyncApi
      *
      * @param  string $external_system_id (required)
      * @param  string $job_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject65 $inline_object65 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object64 = null)
+    public function postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest($external_system_id, $job_id, $inline_object65 = null)
     {
         // verify the required parameter 'external_system_id' is set
         if ($external_system_id === null || (is_array($external_system_id) && count($external_system_id) === 0)) {
@@ -4579,11 +4528,11 @@ class SyncApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object64)) {
+        if (isset($inline_object65)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object64));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object65));
             } else {
-                $httpBody = $inline_object64;
+                $httpBody = $inline_object65;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4640,15 +4589,15 @@ class SyncApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 inline_object64 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2017
      */
-    public function postSyncLogs($inline_object63 = null)
+    public function postSyncLogs($inline_object64 = null)
     {
-        list($response) = $this->postSyncLogsWithHttpInfo($inline_object63);
+        list($response) = $this->postSyncLogsWithHttpInfo($inline_object64);
         return $response;
     }
 
@@ -4657,15 +4606,15 @@ class SyncApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2017, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSyncLogsWithHttpInfo($inline_object63 = null)
+    public function postSyncLogsWithHttpInfo($inline_object64 = null)
     {
-        $request = $this->postSyncLogsRequest($inline_object63);
+        $request = $this->postSyncLogsRequest($inline_object64);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4743,14 +4692,14 @@ class SyncApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncLogsAsync($inline_object63 = null)
+    public function postSyncLogsAsync($inline_object64 = null)
     {
-        return $this->postSyncLogsAsyncWithHttpInfo($inline_object63)
+        return $this->postSyncLogsAsyncWithHttpInfo($inline_object64)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4763,15 +4712,15 @@ class SyncApi
      *
      * Save Sync Logs
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSyncLogsAsyncWithHttpInfo($inline_object63 = null)
+    public function postSyncLogsAsyncWithHttpInfo($inline_object64 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2017';
-        $request = $this->postSyncLogsRequest($inline_object63);
+        $request = $this->postSyncLogsRequest($inline_object64);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4809,12 +4758,12 @@ class SyncApi
     /**
      * Create request for operation 'postSyncLogs'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject63 $inline_object63 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject64 $inline_object64 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postSyncLogsRequest($inline_object63 = null)
+    public function postSyncLogsRequest($inline_object64 = null)
     {
 
         $resourcePath = '/sync/logs';
@@ -4840,11 +4789,11 @@ class SyncApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object63)) {
+        if (isset($inline_object64)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object63));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object64));
             } else {
-                $httpBody = $inline_object63;
+                $httpBody = $inline_object64;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

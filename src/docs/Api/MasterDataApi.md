@@ -20,7 +20,7 @@ fetchMasterDataPerson()
 
 Fetch all master data for the module \"People & Groups\"
 
-Endpoint depreacted. Please use `/person/masterdata`.
+Endpoint deprecated. Please use `/person/masterdata`.
 
 ### Example
 

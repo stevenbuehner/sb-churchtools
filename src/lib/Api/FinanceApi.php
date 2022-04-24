@@ -290,9 +290,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -4194,9 +4191,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -4452,9 +4446,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -4712,9 +4703,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -4971,9 +4959,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -5229,9 +5214,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -5729,9 +5711,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -5987,9 +5966,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -6247,9 +6223,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -6505,9 +6478,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -6765,9 +6735,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -7015,9 +6982,6 @@ class FinanceApi
                 foreach($dry_run as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['dry_run'] = $dry_run;
@@ -7275,9 +7239,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($dry_run)){
-            	$queryParams['dry_run'] = $dry_run ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['dry_run'] = $dry_run;
             }
@@ -7520,9 +7481,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -10124,15 +10082,16 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse20048|string
      */
-    public function getAllAccounts($accounting_period_id)
+    public function getAllAccounts($accounting_period_id = null, $calculate_balance = null)
     {
-        list($response) = $this->getAllAccountsWithHttpInfo($accounting_period_id);
+        list($response) = $this->getAllAccountsWithHttpInfo($accounting_period_id, $calculate_balance);
         return $response;
     }
 
@@ -10141,15 +10100,16 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20048|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllAccountsWithHttpInfo($accounting_period_id)
+    public function getAllAccountsWithHttpInfo($accounting_period_id = null, $calculate_balance = null)
     {
-        $request = $this->getAllAccountsRequest($accounting_period_id);
+        $request = $this->getAllAccountsRequest($accounting_period_id, $calculate_balance);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10247,14 +10207,15 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllAccountsAsync($accounting_period_id)
+    public function getAllAccountsAsync($accounting_period_id = null, $calculate_balance = null)
     {
-        return $this->getAllAccountsAsyncWithHttpInfo($accounting_period_id)
+        return $this->getAllAccountsAsyncWithHttpInfo($accounting_period_id, $calculate_balance)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10267,15 +10228,16 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllAccountsAsyncWithHttpInfo($accounting_period_id)
+    public function getAllAccountsAsyncWithHttpInfo($accounting_period_id = null, $calculate_balance = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20048';
-        $request = $this->getAllAccountsRequest($accounting_period_id);
+        $request = $this->getAllAccountsRequest($accounting_period_id, $calculate_balance);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10313,19 +10275,14 @@ class FinanceApi
     /**
      * Create request for operation 'getAllAccounts'
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllAccountsRequest($accounting_period_id)
+    public function getAllAccountsRequest($accounting_period_id = null, $calculate_balance = null)
     {
-        // verify the required parameter 'accounting_period_id' is set
-        if ($accounting_period_id === null || (is_array($accounting_period_id) && count($accounting_period_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accounting_period_id when calling getAllAccounts'
-            );
-        }
 
         $resourcePath = '/finance/accounts';
         $formParams = [];
@@ -10341,11 +10298,19 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
+            }
+        }
+        // query params
+        if ($calculate_balance !== null) {
+            if('form' === 'form' && is_array($calculate_balance)) {
+                foreach($calculate_balance as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['calculate_balance'] = $calculate_balance;
             }
         }
 
@@ -10629,9 +10594,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -11189,9 +11151,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -11504,9 +11463,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -11517,9 +11473,6 @@ class FinanceApi
                 foreach($order_by as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($order_by)){
-            	$queryParams['order_by'] = $order_by ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['order_by'] = $order_by;
@@ -11532,9 +11485,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($order_direction)){
-            	$queryParams['order_direction'] = $order_direction ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['order_direction'] = $order_direction;
             }
@@ -11546,9 +11496,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -11559,9 +11506,6 @@ class FinanceApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -12118,9 +12062,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -13019,9 +12960,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -13032,9 +12970,6 @@ class FinanceApi
                 foreach($created_pid as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($created_pid)){
-            	$queryParams['created_pid'] = $created_pid ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['created_pid'] = $created_pid;
@@ -13047,9 +12982,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($cost_center_ids)){
-            	$queryParams['cost_center_ids'] = $cost_center_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['cost_center_ids'] = $cost_center_ids;
             }
@@ -13060,9 +12992,6 @@ class FinanceApi
                 foreach($donator_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($donator_ids)){
-            	$queryParams['donator_ids'] = $donator_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['donator_ids'] = $donator_ids;
@@ -13075,9 +13004,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($account_ids)){
-            	$queryParams['account_ids'] = $account_ids ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['account_ids'] = $account_ids;
             }
@@ -13088,9 +13014,6 @@ class FinanceApi
                 foreach($is_donation as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_donation)){
-            	$queryParams['is_donation'] = $is_donation ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_donation'] = $is_donation;
@@ -13103,9 +13026,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($is_income)){
-            	$queryParams['is_income'] = $is_income ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['is_income'] = $is_income;
             }
@@ -13116,9 +13036,6 @@ class FinanceApi
                 foreach($start_date as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($start_date)){
-            	$queryParams['start_date'] = $start_date ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['start_date'] = $start_date;
@@ -13131,9 +13048,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($end_date)){
-            	$queryParams['end_date'] = $end_date ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['end_date'] = $end_date;
             }
@@ -13144,9 +13058,6 @@ class FinanceApi
                 foreach($is_immutable as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($is_immutable)){
-            	$queryParams['is_immutable'] = $is_immutable ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['is_immutable'] = $is_immutable;
@@ -13159,9 +13070,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($order_by)){
-            	$queryParams['order_by'] = $order_by ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['order_by'] = $order_by;
             }
@@ -13172,9 +13080,6 @@ class FinanceApi
                 foreach($order_direction as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($order_direction)){
-            	$queryParams['order_direction'] = $order_direction ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['order_direction'] = $order_direction;
@@ -13187,9 +13092,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($page)){
-            	$queryParams['page'] = $page ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['page'] = $page;
             }
@@ -13200,9 +13102,6 @@ class FinanceApi
                 foreach($limit as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($limit)){
-            	$queryParams['limit'] = $limit ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['limit'] = $limit;
@@ -14379,9 +14278,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }
@@ -14393,9 +14289,6 @@ class FinanceApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($donator_id)){
-            	$queryParams['donator_id'] = $donator_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['donator_id'] = $donator_id;
             }
@@ -14406,9 +14299,6 @@ class FinanceApi
                 foreach($donator_spouse_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($donator_spouse_id)){
-            	$queryParams['donator_spouse_id'] = $donator_spouse_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['donator_spouse_id'] = $donator_spouse_id;
@@ -14630,9 +14520,6 @@ class FinanceApi
                 foreach($accounting_period_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
@@ -15854,6 +15741,267 @@ class FinanceApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postFinanceCostcentersBulkcreate
+     *
+     * Import many cost centers
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 inline_object76 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20058
+     */
+    public function postFinanceCostcentersBulkcreate($inline_object76 = null)
+    {
+        list($response) = $this->postFinanceCostcentersBulkcreateWithHttpInfo($inline_object76);
+        return $response;
+    }
+
+    /**
+     * Operation postFinanceCostcentersBulkcreateWithHttpInfo
+     *
+     * Import many cost centers
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20058, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postFinanceCostcentersBulkcreateWithHttpInfo($inline_object76 = null)
+    {
+        $request = $this->postFinanceCostcentersBulkcreateRequest($inline_object76);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 201:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20058' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20058', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20058',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postFinanceCostcentersBulkcreateAsync
+     *
+     * Import many cost centers
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postFinanceCostcentersBulkcreateAsync($inline_object76 = null)
+    {
+        return $this->postFinanceCostcentersBulkcreateAsyncWithHttpInfo($inline_object76)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postFinanceCostcentersBulkcreateAsyncWithHttpInfo
+     *
+     * Import many cost centers
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postFinanceCostcentersBulkcreateAsyncWithHttpInfo($inline_object76 = null)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
+        $request = $this->postFinanceCostcentersBulkcreateRequest($inline_object76);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postFinanceCostcentersBulkcreate'
+     *
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postFinanceCostcentersBulkcreateRequest($inline_object76 = null)
+    {
+
+        $resourcePath = '/finance/costcenters/bulkcreate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($inline_object76)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object76));
+            } else {
+                $httpBody = $inline_object76;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

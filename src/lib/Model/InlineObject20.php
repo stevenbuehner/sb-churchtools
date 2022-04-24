@@ -60,6 +60,12 @@ class InlineObject20 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'street' => 'string',
+        'postal_code' => 'string',
+        'city' => 'string',
+        'phone' => 'string',
+        'email' => 'string',
+        'treasurer_id' => 'int',
         'sort_key' => 'int'
     ];
 
@@ -72,6 +78,12 @@ class InlineObject20 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'street' => null,
+        'postal_code' => null,
+        'city' => null,
+        'phone' => null,
+        'email' => null,
+        'treasurer_id' => null,
         'sort_key' => null
     ];
 
@@ -103,6 +115,12 @@ class InlineObject20 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'street' => 'street',
+        'postal_code' => 'postalCode',
+        'city' => 'city',
+        'phone' => 'phone',
+        'email' => 'email',
+        'treasurer_id' => 'treasurerId',
         'sort_key' => 'sortKey'
     ];
 
@@ -113,6 +131,12 @@ class InlineObject20 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
+        'street' => 'setStreet',
+        'postal_code' => 'setPostalCode',
+        'city' => 'setCity',
+        'phone' => 'setPhone',
+        'email' => 'setEmail',
+        'treasurer_id' => 'setTreasurerId',
         'sort_key' => 'setSortKey'
     ];
 
@@ -123,6 +147,12 @@ class InlineObject20 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
+        'street' => 'getStreet',
+        'postal_code' => 'getPostalCode',
+        'city' => 'getCity',
+        'phone' => 'getPhone',
+        'email' => 'getEmail',
+        'treasurer_id' => 'getTreasurerId',
         'sort_key' => 'getSortKey'
     ];
 
@@ -184,6 +214,12 @@ class InlineObject20 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['postal_code'] = $data['postal_code'] ?? null;
+        $this->container['city'] = $data['city'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['treasurer_id'] = $data['treasurer_id'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
@@ -237,6 +273,150 @@ class InlineObject20 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string|null
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string|null $street street
+     *
+     * @return self
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string|null
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string|null $postal_code postal_code
+     *
+     * @return self
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string|null
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string|null $city city
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets treasurer_id
+     *
+     * @return int|null
+     */
+    public function getTreasurerId()
+    {
+        return $this->container['treasurer_id'];
+    }
+
+    /**
+     * Sets treasurer_id
+     *
+     * @param int|null $treasurer_id treasurer_id
+     *
+     * @return self
+     */
+    public function setTreasurerId($treasurer_id)
+    {
+        $this->container['treasurer_id'] = $treasurer_id;
 
         return $this;
     }

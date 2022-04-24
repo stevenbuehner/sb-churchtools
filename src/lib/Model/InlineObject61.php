@@ -59,12 +59,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'comment' => 'string',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'start_time' => '\DateTime',
-        'end_time' => '\DateTime',
-        'absence_reason_id' => 'int'
+        'status' => 'string'
     ];
 
     /**
@@ -75,12 +70,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'comment' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'start_time' => 'date-time',
-        'end_time' => 'date-time',
-        'absence_reason_id' => null
+        'status' => null
     ];
 
     /**
@@ -110,12 +100,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment' => 'comment',
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'start_time' => 'startTime',
-        'end_time' => 'endTime',
-        'absence_reason_id' => 'absenceReasonId'
+        'status' => 'status'
     ];
 
     /**
@@ -124,12 +109,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'comment' => 'setComment',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'start_time' => 'setStartTime',
-        'end_time' => 'setEndTime',
-        'absence_reason_id' => 'setAbsenceReasonId'
+        'status' => 'setStatus'
     ];
 
     /**
@@ -138,12 +118,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'comment' => 'getComment',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'start_time' => 'getStartTime',
-        'end_time' => 'getEndTime',
-        'absence_reason_id' => 'getAbsenceReasonId'
+        'status' => 'getStatus'
     ];
 
     /**
@@ -203,12 +178,7 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['start_time'] = $data['start_time'] ?? null;
-        $this->container['end_time'] = $data['end_time'] ?? null;
-        $this->container['absence_reason_id'] = $data['absence_reason_id'] ?? null;
+        $this->container['status'] = $data['status'] ?? 'ABSENT';
     }
 
     /**
@@ -220,12 +190,6 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['comment'] === null) {
-            $invalidProperties[] = "'comment' can't be null";
-        }
-        if ($this->container['absence_reason_id'] === null) {
-            $invalidProperties[] = "'absence_reason_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -242,145 +206,25 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets comment
+     * Gets status
      *
-     * @return string
+     * @return string|null
      */
-    public function getComment()
+    public function getStatus()
     {
-        return $this->container['comment'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets comment
+     * Sets status
      *
-     * @param string $comment comment
+     * @param string|null $status One of 'ABSENT' and 'UNKNOWN'
      *
      * @return self
      */
-    public function setComment($comment)
+    public function setStatus($status)
     {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date Date used for all-day absences. If startTime is present, startDate is ignored.
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return \DateTime|null
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime|null $end_date Date used for all-day absences. If endTime is present, endDate is ignored.
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_time
-     *
-     * @return \DateTime|null
-     */
-    public function getStartTime()
-    {
-        return $this->container['start_time'];
-    }
-
-    /**
-     * Sets start_time
-     *
-     * @param \DateTime|null $start_time start_time
-     *
-     * @return self
-     */
-    public function setStartTime($start_time)
-    {
-        $this->container['start_time'] = $start_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_time
-     *
-     * @return \DateTime|null
-     */
-    public function getEndTime()
-    {
-        return $this->container['end_time'];
-    }
-
-    /**
-     * Sets end_time
-     *
-     * @param \DateTime|null $end_time end_time
-     *
-     * @return self
-     */
-    public function setEndTime($end_time)
-    {
-        $this->container['end_time'] = $end_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets absence_reason_id
-     *
-     * @return int
-     */
-    public function getAbsenceReasonId()
-    {
-        return $this->container['absence_reason_id'];
-    }
-
-    /**
-     * Sets absence_reason_id
-     *
-     * @param int $absence_reason_id ID of absence reason.
-     *
-     * @return self
-     */
-    public function setAbsenceReasonId($absence_reason_id)
-    {
-        $this->container['absence_reason_id'] = $absence_reason_id;
+        $this->container['status'] = $status;
 
         return $this;
     }

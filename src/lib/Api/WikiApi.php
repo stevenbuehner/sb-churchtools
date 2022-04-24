@@ -1717,9 +1717,6 @@ class WikiApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($query)){
-            	$queryParams['query'] = $query ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['query'] = $query;
             }
@@ -1730,9 +1727,6 @@ class WikiApi
                 foreach($wiki_category_ids as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($wiki_category_ids)){
-            	$queryParams['wiki_category_ids'] = $wiki_category_ids ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['wiki_category_ids'] = $wiki_category_ids;

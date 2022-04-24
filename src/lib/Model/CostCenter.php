@@ -51,7 +51,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CostCenter';
+    protected static $openAPIModelName = 'Cost_Center';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -67,7 +67,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
         'budget_spent' => 'float',
         'budget_last_period' => 'float',
         'accounting_period_id' => 'int',
-        'group' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup',
+        'group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -454,7 +454,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null
+     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null
      */
     public function getGroup()
     {
@@ -464,7 +464,7 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroup|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null $group group
      *
      * @return self
      */

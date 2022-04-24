@@ -59,7 +59,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => 'object',
+        'person_id' => 'float',
         'group' => '\StevenBuehner\ChurchTools\Model\CheckinPersonsGroup',
         'tag_id' => 'float'
     ];
@@ -72,7 +72,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person' => null,
+        'person_id' => null,
         'group' => null,
         'tag_id' => null
     ];
@@ -104,7 +104,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'person' => 'person',
+        'person_id' => 'personId',
         'group' => 'group',
         'tag_id' => 'tagId'
     ];
@@ -115,7 +115,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'person' => 'setPerson',
+        'person_id' => 'setPersonId',
         'group' => 'setGroup',
         'tag_id' => 'setTagId'
     ];
@@ -126,7 +126,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'person' => 'getPerson',
+        'person_id' => 'getPersonId',
         'group' => 'getGroup',
         'tag_id' => 'getTagId'
     ];
@@ -188,7 +188,7 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['person'] = $data['person'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['group'] = $data['group'] ?? null;
         $this->container['tag_id'] = $data['tag_id'] ?? null;
     }
@@ -202,8 +202,8 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['person'] === null) {
-            $invalidProperties[] = "'person' can't be null";
+        if ($this->container['person_id'] === null) {
+            $invalidProperties[] = "'person_id' can't be null";
         }
         if ($this->container['group'] === null) {
             $invalidProperties[] = "'group' can't be null";
@@ -227,25 +227,25 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets person
+     * Gets person_id
      *
-     * @return object
+     * @return float
      */
-    public function getPerson()
+    public function getPersonId()
     {
-        return $this->container['person'];
+        return $this->container['person_id'];
     }
 
     /**
-     * Sets person
+     * Sets person_id
      *
-     * @param object $person See `POST /persons`
+     * @param float $person_id person_id
      *
      * @return self
      */
-    public function setPerson($person)
+    public function setPersonId($person_id)
     {
-        $this->container['person'] = $person;
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }

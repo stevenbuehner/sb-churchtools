@@ -196,7 +196,7 @@ class InlineObject30 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['name'] = $data['name'] ?? null;
         $this->container['account_class_id'] = $data['account_class_id'] ?? null;
         $this->container['is_cash_asset_account'] = $data['is_cash_asset_account'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? (0 === 'null' ? null : 0);
+        $this->container['sort_key'] = $data['sort_key'] ?? 0;
     }
 
     /**

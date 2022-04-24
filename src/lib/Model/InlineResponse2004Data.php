@@ -62,6 +62,7 @@ class InlineResponse2004Data implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'int',
         'key' => 'string',
         'name' => 'string',
+        'name_translated' => 'string',
         'shorty' => 'string',
         'field_category_code' => 'string',
         'field_type_code' => 'string',
@@ -88,6 +89,7 @@ class InlineResponse2004Data implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => null,
         'key' => null,
         'name' => null,
+        'name_translated' => null,
         'shorty' => null,
         'field_category_code' => null,
         'field_type_code' => null,
@@ -133,6 +135,7 @@ class InlineResponse2004Data implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'id',
         'key' => 'key',
         'name' => 'name',
+        'name_translated' => 'nameTranslated',
         'shorty' => 'shorty',
         'field_category_code' => 'fieldCategoryCode',
         'field_type_code' => 'fieldTypeCode',
@@ -157,6 +160,7 @@ class InlineResponse2004Data implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'setId',
         'key' => 'setKey',
         'name' => 'setName',
+        'name_translated' => 'setNameTranslated',
         'shorty' => 'setShorty',
         'field_category_code' => 'setFieldCategoryCode',
         'field_type_code' => 'setFieldTypeCode',
@@ -181,6 +185,7 @@ class InlineResponse2004Data implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'getId',
         'key' => 'getKey',
         'name' => 'getName',
+        'name_translated' => 'getNameTranslated',
         'shorty' => 'getShorty',
         'field_category_code' => 'getFieldCategoryCode',
         'field_type_code' => 'getFieldTypeCode',
@@ -256,6 +261,7 @@ class InlineResponse2004Data implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['id'] = $data['id'] ?? null;
         $this->container['key'] = $data['key'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['shorty'] = $data['shorty'] ?? null;
         $this->container['field_category_code'] = $data['field_category_code'] ?? null;
         $this->container['field_type_code'] = $data['field_type_code'] ?? null;
@@ -363,6 +369,30 @@ class InlineResponse2004Data implements ModelInterface, ArrayAccess, \JsonSerial
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_translated
+     *
+     * @return string|null
+     */
+    public function getNameTranslated()
+    {
+        return $this->container['name_translated'];
+    }
+
+    /**
+     * Sets name_translated
+     *
+     * @param string|null $name_translated Field name translated
+     *
+     * @return self
+     */
+    public function setNameTranslated($name_translated)
+    {
+        $this->container['name_translated'] = $name_translated;
 
         return $this;
     }

@@ -243,7 +243,7 @@ class InlineResponse20017DataInformation implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['image_url'] = $data['image_url'] ?? ('null' === 'null' ? null : 'null');
+        $this->container['image_url'] = $data['image_url'] ?? 'null';
         $this->container['date_of_foundation'] = $data['date_of_foundation'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['meeting_time'] = $data['meeting_time'] ?? null;
@@ -488,7 +488,7 @@ class InlineResponse20017DataInformation implements ModelInterface, ArrayAccess,
     /**
      * Sets max_members
      *
-     * @param int|null $max_members max_members
+     * @param int|null $max_members Allowed maximal members
      *
      * @return self
      */

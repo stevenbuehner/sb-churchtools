@@ -65,7 +65,7 @@ class GroupDomainObject1 implements ModelInterface, ArrayAccess, \JsonSerializab
         'domain_type' => 'string',
         'title' => 'string',
         'domain_identifier' => 'string',
-        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes'
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes'
     ];
 
     /**
@@ -429,7 +429,7 @@ class GroupDomainObject1 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets domain_attributes
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes|null
+     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes|null
      */
     public function getDomainAttributes()
     {
@@ -439,7 +439,7 @@ class GroupDomainObject1 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets domain_attributes
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20016GroupDomainAttributes|null $domain_attributes domain_attributes
+     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes|null $domain_attributes domain_attributes
      *
      * @return self
      */

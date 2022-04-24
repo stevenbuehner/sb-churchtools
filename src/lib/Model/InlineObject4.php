@@ -369,7 +369,7 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? ('null' === 'null' ? null : 'null');
+        $this->container['title'] = $data['title'] ?? 'null';
         $this->container['first_name'] = $data['first_name'] ?? null;
         $this->container['last_name'] = $data['last_name'] ?? null;
         $this->container['nickname'] = $data['nickname'] ?? null;

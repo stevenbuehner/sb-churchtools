@@ -6,6 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional]
 **name** | **string** |  | [optional]
+**street** | **string** |  | [optional]
+**postal_code** | **string** |  | [optional]
+**city** | **string** |  | [optional]
+**phone** | **string** |  | [optional]
+**email** | **string** |  | [optional]
+**treasurer_id** | [**Int**](Int.md) | Person ID | [optional]
+**treasurer** | **object** | PersonDomainObject | [optional]
 **sort_key** | **int** |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\EntityMetaData**](EntityMetaData.md) |  | [optional]
 

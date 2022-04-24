@@ -593,18 +593,26 @@ class SongApi
         $multipart = false;
 
         // query params
-        if (is_array($song_category_ids)) {
-            $song_category_ids = ObjectSerializer::serializeCollection($song_category_ids, 'deepObject', true);
-        }
         if ($song_category_ids !== null) {
-            $queryParams['song_category_ids'] = $song_category_ids;
+            if('form' === 'form' && is_array($song_category_ids)) {
+                foreach($song_category_ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['song_category_ids[]'] = $song_category_ids;
+            }
         }
         // query params
-        if (is_array($ids)) {
-            $ids = ObjectSerializer::serializeCollection($ids, 'deepObject', true);
-        }
         if ($ids !== null) {
-            $queryParams['ids'] = $ids;
+            if('form' === 'form' && is_array($ids)) {
+                foreach($ids as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['ids[]'] = $ids;
+            }
         }
         // query params
         if ($practice !== null) {
@@ -612,9 +620,6 @@ class SongApi
                 foreach($practice as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($practice)){
-            	$queryParams['practice'] = $practice ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['practice'] = $practice;
@@ -627,9 +632,6 @@ class SongApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($key_of_arrangement)){
-            	$queryParams['key_of_arrangement'] = $key_of_arrangement ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['key_of_arrangement'] = $key_of_arrangement;
             }
@@ -640,9 +642,6 @@ class SongApi
                 foreach($name as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else if (is_bool($name)){
-            	$queryParams['name'] = $name ? 'TRUE' : 'FALSE';
             }
             else {
                 $queryParams['name'] = $name;

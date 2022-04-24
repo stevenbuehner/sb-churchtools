@@ -72,6 +72,7 @@ class InlineResponse20017DataRoles implements ModelInterface, ArrayAccess, \Json
         'is_hidden' => 'bool',
         'grow_path_id' => 'int',
         'force_two_factor_auth' => 'bool',
+        'receive_qr_code' => 'bool',
         'is_active' => 'bool'
     ];
 
@@ -96,6 +97,7 @@ class InlineResponse20017DataRoles implements ModelInterface, ArrayAccess, \Json
         'is_hidden' => null,
         'grow_path_id' => null,
         'force_two_factor_auth' => null,
+        'receive_qr_code' => null,
         'is_active' => null
     ];
 
@@ -139,6 +141,7 @@ class InlineResponse20017DataRoles implements ModelInterface, ArrayAccess, \Json
         'is_hidden' => 'isHidden',
         'grow_path_id' => 'growPathId',
         'force_two_factor_auth' => 'forceTwoFactorAuth',
+        'receive_qr_code' => 'receiveQRCode',
         'is_active' => 'isActive'
     ];
 
@@ -161,6 +164,7 @@ class InlineResponse20017DataRoles implements ModelInterface, ArrayAccess, \Json
         'is_hidden' => 'setIsHidden',
         'grow_path_id' => 'setGrowPathId',
         'force_two_factor_auth' => 'setForceTwoFactorAuth',
+        'receive_qr_code' => 'setReceiveQrCode',
         'is_active' => 'setIsActive'
     ];
 
@@ -183,6 +187,7 @@ class InlineResponse20017DataRoles implements ModelInterface, ArrayAccess, \Json
         'is_hidden' => 'getIsHidden',
         'grow_path_id' => 'getGrowPathId',
         'force_two_factor_auth' => 'getForceTwoFactorAuth',
+        'receive_qr_code' => 'getReceiveQrCode',
         'is_active' => 'getIsActive'
     ];
 
@@ -256,6 +261,7 @@ class InlineResponse20017DataRoles implements ModelInterface, ArrayAccess, \Json
         $this->container['is_hidden'] = $data['is_hidden'] ?? null;
         $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
         $this->container['force_two_factor_auth'] = $data['force_two_factor_auth'] ?? null;
+        $this->container['receive_qr_code'] = $data['receive_qr_code'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
     }
 
@@ -591,6 +597,30 @@ class InlineResponse20017DataRoles implements ModelInterface, ArrayAccess, \Json
     public function setForceTwoFactorAuth($force_two_factor_auth)
     {
         $this->container['force_two_factor_auth'] = $force_two_factor_auth;
+
+        return $this;
+    }
+
+    /**
+     * Gets receive_qr_code
+     *
+     * @return bool|null
+     */
+    public function getReceiveQrCode()
+    {
+        return $this->container['receive_qr_code'];
+    }
+
+    /**
+     * Sets receive_qr_code
+     *
+     * @param bool|null $receive_qr_code Flag, if members with this role can get a QR code.
+     *
+     * @return self
+     */
+    public function setReceiveQrCode($receive_qr_code)
+    {
+        $this->container['receive_qr_code'] = $receive_qr_code;
 
         return $this;
     }

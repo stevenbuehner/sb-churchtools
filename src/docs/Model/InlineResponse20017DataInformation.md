@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **group_category_id** | **int** |  | [optional]
 **age_groups** | **int[]** |  | [optional]
 **target_group_id** | **int** |  | [optional]
-**max_members** | **int** |  | [optional]
+**max_members** | **int** | Allowed maximal members | [optional]
 **group_type_id** | **int** |  | [optional]
 **group_status_id** | **int** |  | [optional]
 **note** | **string** |  | [optional]

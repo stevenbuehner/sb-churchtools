@@ -321,9 +321,6 @@ class QueueApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($job_groups)){
-            	$queryParams['job_groups'] = $job_groups ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['job_groups'] = $job_groups;
             }

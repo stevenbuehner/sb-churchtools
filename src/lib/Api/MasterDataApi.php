@@ -546,9 +546,6 @@ class MasterDataApi
                     $queryParams[$key] = $value;
                 }
             }
-            else if (is_bool($accounting_period_id)){
-            	$queryParams['accounting_period_id'] = $accounting_period_id ? 'TRUE' : 'FALSE';
-            }
             else {
                 $queryParams['accounting_period_id'] = $accounting_period_id;
             }

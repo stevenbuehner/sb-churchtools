@@ -1185,7 +1185,7 @@ Name | Type | Description  | Notes
 ## `getPersonsBirthdays()`
 
 ```php
-getPersonsBirthdays($start_date, $end_date): \StevenBuehner\ChurchTools\Model\InlineResponse200114
+getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body): \StevenBuehner\ChurchTools\Model\InlineResponse200114
 ```
 
 Fetch Birthdays
@@ -1213,9 +1213,13 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
 );
 $start_date = Sat Jan 01 01:00:00 CET 2000; // \DateTime | Birthdays from that date on
 $end_date = Sun Dec 31 01:00:00 CET 2000; // \DateTime | Birthdays up to that date
+$campus_ids = NULL; // array | filter by campus ids
+$my_groups = True; // bool | filter by people in my groups
+$group_ids = NULL; // array | filter by group ids
+$body = new \stdClass; // object
 
 try {
-    $result = $apiInstance->getPersonsBirthdays($start_date, $end_date);
+    $result = $apiInstance->getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonsBirthdays: ', $e->getMessage(), PHP_EOL;
@@ -1228,6 +1232,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_date** | **\DateTime**| Birthdays from that date on | [optional]
  **end_date** | **\DateTime**| Birthdays up to that date | [optional]
+ **campus_ids** | [**array**](../Model/.md)| filter by campus ids | [optional]
+ **my_groups** | **bool**| filter by people in my groups | [optional]
+ **group_ids** | [**array**](../Model/.md)| filter by group ids | [optional]
+ **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -1239,7 +1247,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -1375,7 +1383,7 @@ Name | Type | Description  | Notes
 ## `invitePerson()`
 
 ```php
-invitePerson($person_id)
+invitePerson($person_id, $set_password_url_template)
 ```
 
 Invite Person to ChurchTools
@@ -1402,9 +1410,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $person_id = 'person_id_example'; // string
+$set_password_url_template = 'set_password_url_template_example'; // string | Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId
 
 try {
-    $apiInstance->invitePerson($person_id);
+    $apiInstance->invitePerson($person_id, $set_password_url_template);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->invitePerson: ', $e->getMessage(), PHP_EOL;
 }
@@ -1415,6 +1424,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
+ **set_password_url_template** | **string**| Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId | [optional]
 
 ### Return type
 
@@ -1500,7 +1510,7 @@ Name | Type | Description  | Notes
 ## `postPersonsPersonIdArchive()`
 
 ```php
-postPersonsPersonIdArchive($person_id, $inline_object67)
+postPersonsPersonIdArchive($person_id, $inline_object68)
 ```
 
 
@@ -1527,10 +1537,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $person_id = 'person_id_example'; // string
-$inline_object67 = new \StevenBuehner\ChurchTools\Model\InlineObject67(); // \StevenBuehner\ChurchTools\Model\InlineObject67
+$inline_object68 = new \StevenBuehner\ChurchTools\Model\InlineObject68(); // \StevenBuehner\ChurchTools\Model\InlineObject68
 
 try {
-    $apiInstance->postPersonsPersonIdArchive($person_id, $inline_object67);
+    $apiInstance->postPersonsPersonIdArchive($person_id, $inline_object68);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->postPersonsPersonIdArchive: ', $e->getMessage(), PHP_EOL;
 }
@@ -1541,7 +1551,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
- **inline_object67** | [**\StevenBuehner\ChurchTools\Model\InlineObject67**](../Model/InlineObject67.md)|  | [optional]
+ **inline_object68** | [**\StevenBuehner\ChurchTools\Model\InlineObject68**](../Model/InlineObject68.md)|  | [optional]
 
 ### Return type
 

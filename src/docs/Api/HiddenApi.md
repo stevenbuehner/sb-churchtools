@@ -9,7 +9,10 @@ Method | HTTP request | Description
 [**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](HiddenApi.md#deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Delete all Properties for This Job
 [**deleteSyncExternalsystemsId()**](HiddenApi.md#deleteSyncExternalsystemsId) | **DELETE** /sync/externalsystems/{id} | DELETE external system
 [**deleteSyncFieldMappings()**](HiddenApi.md#deleteSyncFieldMappings) | **DELETE** /sync/externalsystems/{id}/fieldmappings/{domainType} | Delete Mapping for Domain Type
+[**getApiProfiles()**](HiddenApi.md#getApiProfiles) | **GET** /profiles | Get all profiles
 [**getGroupsGroupIdMeetingsMeetingIdMembers()**](HiddenApi.md#getGroupsGroupIdMeetingsMeetingIdMembers) | **GET** /groups/{groupId}/meetings/{meetingId}/members | Get Group Meeting Members
+[**getProfilesChurch()**](HiddenApi.md#getProfilesChurch) | **GET** /profiles/church | Get a profile
+[**getSlugcheck()**](HiddenApi.md#getSlugcheck) | **GET** /profiles/slugcheck/{slug} | Check if a finder slug is free
 [**getSyncAdapters()**](HiddenApi.md#getSyncAdapters) | **GET** /sync/adapters | GET Sync Adapters
 [**getSyncExecutions()**](HiddenApi.md#getSyncExecutions) | **GET** /sync/executions | Statistical Information about Sync Executions
 [**getSyncExternalsystems()**](HiddenApi.md#getSyncExternalsystems) | **GET** /sync/externalsystems | GET External Systems
@@ -21,10 +24,12 @@ Method | HTTP request | Description
 [**getSyncExternalsystemsIdTest()**](HiddenApi.md#getSyncExternalsystemsIdTest) | **GET** /sync/externalsystems/{id}/test | Your GET endpoint
 [**getSyncJobconfigs()**](HiddenApi.md#getSyncJobconfigs) | **GET** /sync/jobconfigs | Your GET endpoint
 [**getSyncLogs()**](HiddenApi.md#getSyncLogs) | **GET** /sync/logs | Get Sync Logs
+[**postNps()**](HiddenApi.md#postNps) | **POST** /nps | Save NPS score
 [**postSyncExternalsystemsExternalSystemIdJobconfigs()**](HiddenApi.md#postSyncExternalsystemsExternalSystemIdJobconfigs) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs | Create job configuration
 [**postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()**](HiddenApi.md#postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/start | Start Execution
 [**postSyncExternalsystemsIdTest()**](HiddenApi.md#postSyncExternalsystemsIdTest) | **POST** /sync/externalsystems/{id}/test | Test the external system
 [**postSyncLogs()**](HiddenApi.md#postSyncLogs) | **POST** /sync/logs | Save Sync Logs
+[**putProfilesChurch()**](HiddenApi.md#putProfilesChurch) | **PUT** /profiles/church | 
 [**putSyncExternalsystemsExternalSystemIdJobconfigs()**](HiddenApi.md#putSyncExternalsystemsExternalSystemIdJobconfigs) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Update job configuration
 [**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()**](HiddenApi.md#putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Save entity filters
 [**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](HiddenApi.md#putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Save Properties, Which Should Be Synced
@@ -344,6 +349,65 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getApiProfiles()`
+
+```php
+getApiProfiles(): \StevenBuehner\ChurchTools\Model\InlineResponse200122
+```
+
+Get all profiles
+
+This endpoint returns all profiles for logged in users with permissions. All others (incl. public access) will only get publisehd profiles.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getApiProfiles();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->getApiProfiles: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200122**](../Model/InlineResponse200122.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getGroupsGroupIdMeetingsMeetingIdMembers()`
 
 ```php
@@ -403,6 +467,126 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getProfilesChurch()`
+
+```php
+getProfilesChurch(): \StevenBuehner\ChurchTools\Model\InlineResponse2003
+```
+
+Get a profile
+
+Get church profile information.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getProfilesChurch();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->getProfilesChurch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getSlugcheck()`
+
+```php
+getSlugcheck($slug)
+```
+
+Check if a finder slug is free
+
+Published profiles are visibale in ChurchTools Finder. Each profile has an unique slug (URI). This endpoint can be used to check if a slug is free.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$slug = 'slug_example'; // string | Slug to check
+
+try {
+    $apiInstance->getSlugcheck($slug);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->getSlugcheck: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **string**| Slug to check |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1121,6 +1305,66 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postNps()`
+
+```php
+postNps($inline_object69): \StevenBuehner\ChurchTools\Model\InlineResponse2018
+```
+
+Save NPS score
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$inline_object69 = new \StevenBuehner\ChurchTools\Model\InlineObject69(); // \StevenBuehner\ChurchTools\Model\InlineObject69
+
+try {
+    $result = $apiInstance->postNps($inline_object69);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->postNps: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object69** | [**\StevenBuehner\ChurchTools\Model\InlineObject69**](../Model/InlineObject69.md)|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse2018**](../Model/InlineResponse2018.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `postSyncExternalsystemsExternalSystemIdJobconfigs()`
 
 ```php
@@ -1188,7 +1432,7 @@ Name | Type | Description  | Notes
 ## `postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()`
 
 ```php
-postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64)
+postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65)
 ```
 
 Start Execution
@@ -1216,10 +1460,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
 );
 $external_system_id = 'external_system_id_example'; // string
 $job_id = 'job_id_example'; // string
-$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
+$inline_object65 = new \StevenBuehner\ChurchTools\Model\InlineObject65(); // \StevenBuehner\ChurchTools\Model\InlineObject65
 
 try {
-    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object64);
+    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65);
 } catch (Exception $e) {
     echo 'Exception when calling HiddenApi->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart: ', $e->getMessage(), PHP_EOL;
 }
@@ -1231,7 +1475,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**|  |
  **job_id** | **string**|  |
- **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
+ **inline_object65** | [**\StevenBuehner\ChurchTools\Model\InlineObject65**](../Model/InlineObject65.md)|  | [optional]
 
 ### Return type
 
@@ -1314,7 +1558,7 @@ void (empty response body)
 ## `postSyncLogs()`
 
 ```php
-postSyncLogs($inline_object63): \StevenBuehner\ChurchTools\Model\InlineResponse2017
+postSyncLogs($inline_object64): \StevenBuehner\ChurchTools\Model\InlineResponse2017
 ```
 
 Save Sync Logs
@@ -1340,10 +1584,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object63 = new \StevenBuehner\ChurchTools\Model\InlineObject63(); // \StevenBuehner\ChurchTools\Model\InlineObject63
+$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
 
 try {
-    $result = $apiInstance->postSyncLogs($inline_object63);
+    $result = $apiInstance->postSyncLogs($inline_object64);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HiddenApi->postSyncLogs: ', $e->getMessage(), PHP_EOL;
@@ -1354,11 +1598,73 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object63** | [**\StevenBuehner\ChurchTools\Model\InlineObject63**](../Model/InlineObject63.md)|  | [optional]
+ **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
 
 ### Return type
 
 [**\StevenBuehner\ChurchTools\Model\InlineResponse2017**](../Model/InlineResponse2017.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putProfilesChurch()`
+
+```php
+putProfilesChurch($inline_object75): \StevenBuehner\ChurchTools\Model\InlineResponse2003
+```
+
+
+
+Update church information
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$inline_object75 = new \StevenBuehner\ChurchTools\Model\InlineObject75(); // \StevenBuehner\ChurchTools\Model\InlineObject75
+
+try {
+    $result = $apiInstance->putProfilesChurch($inline_object75);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->putProfilesChurch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object75** | [**\StevenBuehner\ChurchTools\Model\InlineObject75**](../Model/InlineObject75.md)|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

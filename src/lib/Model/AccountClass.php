@@ -207,7 +207,7 @@ class AccountClass implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['name'] = $data['name'] ?? null;
         $this->container['account_type_id'] = $data['account_type_id'] ?? null;
         $this->container['include_profit_loss'] = $data['include_profit_loss'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? (0 === 'null' ? null : 0);
+        $this->container['sort_key'] = $data['sort_key'] ?? 0;
         $this->container['meta'] = $data['meta'] ?? null;
     }
 

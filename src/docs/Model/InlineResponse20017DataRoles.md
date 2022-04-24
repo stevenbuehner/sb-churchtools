@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **is_hidden** | **bool** | Flag, if this role is hidden in groups. | [optional]
 **grow_path_id** | **int** | ID of the grow path. The id is either given from the group type role. But a group can override the grow path. In this case the group role specific ID is used. | [optional]
 **force_two_factor_auth** | **bool** | Flag, if members with this role have to use two factor authentication. | [optional]
+**receive_qr_code** | **bool** | Flag, if members with this role can get a QR code. | [optional]
 **is_active** | **bool** | Flag, if this role is active in this group. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

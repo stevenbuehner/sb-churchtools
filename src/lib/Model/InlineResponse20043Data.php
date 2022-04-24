@@ -67,8 +67,11 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
         'group_statuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse20043DataGroupStatuses[]',
         'departments' => '\StevenBuehner\ChurchTools\Model\InlineResponse20029Data[]',
         'statuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]',
-        'campuses' => '\StevenBuehner\ChurchTools\Model\Campus1[]',
-        'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]'
+        'campuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]',
+        'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]',
+        'grow_paths' => '\StevenBuehner\ChurchTools\Model\GrowPath[]',
+        'follow_ups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUps[]',
+        'follow_up_intervals' => '\StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUpIntervals[]'
     ];
 
     /**
@@ -88,7 +91,10 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
         'departments' => null,
         'statuses' => null,
         'campuses' => null,
-        'contact_labels' => null
+        'contact_labels' => null,
+        'grow_paths' => null,
+        'follow_ups' => null,
+        'follow_up_intervals' => null
     ];
 
     /**
@@ -127,7 +133,10 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
         'departments' => 'departments',
         'statuses' => 'statuses',
         'campuses' => 'campuses',
-        'contact_labels' => 'contactLabels'
+        'contact_labels' => 'contactLabels',
+        'grow_paths' => 'growPaths',
+        'follow_ups' => 'followUps',
+        'follow_up_intervals' => 'followUpIntervals'
     ];
 
     /**
@@ -145,7 +154,10 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
         'departments' => 'setDepartments',
         'statuses' => 'setStatuses',
         'campuses' => 'setCampuses',
-        'contact_labels' => 'setContactLabels'
+        'contact_labels' => 'setContactLabels',
+        'grow_paths' => 'setGrowPaths',
+        'follow_ups' => 'setFollowUps',
+        'follow_up_intervals' => 'setFollowUpIntervals'
     ];
 
     /**
@@ -163,7 +175,10 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
         'departments' => 'getDepartments',
         'statuses' => 'getStatuses',
         'campuses' => 'getCampuses',
-        'contact_labels' => 'getContactLabels'
+        'contact_labels' => 'getContactLabels',
+        'grow_paths' => 'getGrowPaths',
+        'follow_ups' => 'getFollowUps',
+        'follow_up_intervals' => 'getFollowUpIntervals'
     ];
 
     /**
@@ -233,6 +248,9 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['statuses'] = $data['statuses'] ?? null;
         $this->container['campuses'] = $data['campuses'] ?? null;
         $this->container['contact_labels'] = $data['contact_labels'] ?? null;
+        $this->container['grow_paths'] = $data['grow_paths'] ?? null;
+        $this->container['follow_ups'] = $data['follow_ups'] ?? null;
+        $this->container['follow_up_intervals'] = $data['follow_up_intervals'] ?? null;
     }
 
     /**
@@ -454,7 +472,7 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets campuses
      *
-     * @return \StevenBuehner\ChurchTools\Model\Campus1[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]|null
      */
     public function getCampuses()
     {
@@ -464,7 +482,7 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets campuses
      *
-     * @param \StevenBuehner\ChurchTools\Model\Campus1[]|null $campuses campuses
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]|null $campuses campuses
      *
      * @return self
      */
@@ -495,6 +513,78 @@ class InlineResponse20043Data implements ModelInterface, ArrayAccess, \JsonSeria
     public function setContactLabels($contact_labels)
     {
         $this->container['contact_labels'] = $contact_labels;
+
+        return $this;
+    }
+
+    /**
+     * Gets grow_paths
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GrowPath[]|null
+     */
+    public function getGrowPaths()
+    {
+        return $this->container['grow_paths'];
+    }
+
+    /**
+     * Sets grow_paths
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GrowPath[]|null $grow_paths grow_paths
+     *
+     * @return self
+     */
+    public function setGrowPaths($grow_paths)
+    {
+        $this->container['grow_paths'] = $grow_paths;
+
+        return $this;
+    }
+
+    /**
+     * Gets follow_ups
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUps[]|null
+     */
+    public function getFollowUps()
+    {
+        return $this->container['follow_ups'];
+    }
+
+    /**
+     * Sets follow_ups
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUps[]|null $follow_ups follow_ups
+     *
+     * @return self
+     */
+    public function setFollowUps($follow_ups)
+    {
+        $this->container['follow_ups'] = $follow_ups;
+
+        return $this;
+    }
+
+    /**
+     * Gets follow_up_intervals
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUpIntervals[]|null
+     */
+    public function getFollowUpIntervals()
+    {
+        return $this->container['follow_up_intervals'];
+    }
+
+    /**
+     * Sets follow_up_intervals
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUpIntervals[]|null $follow_up_intervals follow_up_intervals
+     *
+     * @return self
+     */
+    public function setFollowUpIntervals($follow_up_intervals)
+    {
+        $this->container['follow_up_intervals'] = $follow_up_intervals;
 
         return $this;
     }

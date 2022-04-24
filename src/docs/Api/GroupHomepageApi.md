@@ -129,7 +129,7 @@ No authorization required
 ## `getPublicgroupsGroupIdForm()`
 
 ```php
-getPublicgroupsGroupIdForm($group_id, $token): \StevenBuehner\ChurchTools\Model\InlineResponse20072
+getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20072
 ```
 
 Get a Group Sign Up Form
@@ -151,9 +151,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
 );
 $group_id = 'group_id_example'; // string | Group ID of the public group
 $token = 'token_example'; // string | Sign Up Token
+$person_id = 'person_id_example'; // string | The name for which the signup should be made
 
 try {
-    $result = $apiInstance->getPublicgroupsGroupIdForm($group_id, $token);
+    $result = $apiInstance->getPublicgroupsGroupIdForm($group_id, $token, $person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupHomepageApi->getPublicgroupsGroupIdForm: ', $e->getMessage(), PHP_EOL;
@@ -166,6 +167,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**| Group ID of the public group |
  **token** | **string**| Sign Up Token |
+ **person_id** | **string**| The name for which the signup should be made |
 
 ### Return type
 

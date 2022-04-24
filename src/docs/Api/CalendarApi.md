@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**createTemplate()**](CalendarApi.md#createTemplate) | **POST** /calendars/appointments/templates | Create new appointment template
 [**deleteTemplate()**](CalendarApi.md#deleteTemplate) | **DELETE** /calendars/appointments/templates/{templateId} | Delete a appointment template identified by id
 [**getAllTemplates()**](CalendarApi.md#getAllTemplates) | **GET** /calendars/appointments/templates | get all appointment templates
+[**getCalendars()**](CalendarApi.md#getCalendars) | **GET** /calendars | Your GET endpoint
+[**getCalendarsAppointments()**](CalendarApi.md#getCalendarsAppointments) | **GET** /calendars/appointments | Your GET endpoint
 [**getTemplateById()**](CalendarApi.md#getTemplateById) | **GET** /calendars/appointments/templates/{templateId} | get a appointment template
 [**updateTemplate()**](CalendarApi.md#updateTemplate) | **PUT** /calendars/appointments/templates/{templateId} | update a appointment template identified by id
 
@@ -182,6 +184,127 @@ This endpoint does not need any parameter.
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getCalendars()`
+
+```php
+getCalendars(): \StevenBuehner\ChurchTools\Model\InlineResponse200126
+```
+
+Your GET endpoint
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\CalendarApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getCalendars();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CalendarApi->getCalendars: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200126**](../Model/InlineResponse200126.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getCalendarsAppointments()`
+
+```php
+getCalendarsAppointments($calendar_ids, $from, $to): \StevenBuehner\ChurchTools\Model\InlineResponse200125
+```
+
+Your GET endpoint
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\CalendarApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$calendar_ids = NULL; // array
+$from = Sat Jan 01 01:00:00 CET 2022; // \DateTime
+$to = Wed Mar 30 02:00:00 CEST 2022; // \DateTime
+
+try {
+    $result = $apiInstance->getCalendarsAppointments($calendar_ids, $from, $to);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CalendarApi->getCalendarsAppointments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **calendar_ids** | [**array**](../Model/.md)|  | [optional]
+ **from** | **\DateTime**|  | [optional]
+ **to** | **\DateTime**|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200125**](../Model/InlineResponse200125.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
