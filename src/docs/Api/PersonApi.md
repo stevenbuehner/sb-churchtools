@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\PersonApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1216,7 +1216,7 @@ $end_date = Sun Dec 31 01:00:00 CET 2000; // \DateTime | Birthdays up to that da
 $campus_ids = NULL; // array | filter by campus ids
 $my_groups = True; // bool | filter by people in my groups
 $group_ids = NULL; // array | filter by group ids
-$body = new \stdClass; // object
+$body = array('key' => new \stdClass); // object
 
 try {
     $result = $apiInstance->getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body);

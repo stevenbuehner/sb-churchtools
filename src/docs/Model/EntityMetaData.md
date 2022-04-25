@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_person** | [**\StevenBuehner\ChurchTools\Model\EntityMetaDataCreatedPerson**](EntityMetaDataCreatedPerson.md) |  | [optional]
-**created_date** | [**\DateTime**](\DateTime.md) | Date of Creation | [optional]
+**created_date** | **\DateTime** | Date of Creation | [optional]
 **modified_person** | [**\StevenBuehner\ChurchTools\Model\EntityMetaDataModifiedPerson**](EntityMetaDataModifiedPerson.md) |  | [optional]
 **modified_date** | **string** | Date of Last Modification | [optional]
 

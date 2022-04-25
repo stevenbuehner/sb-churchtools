@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**document_date** | [**\DateTime**](\DateTime.md) |  |
+**document_date** | **\DateTime** |  |
 **document_number** | **string** |  |
 **account_id** | **int** |  |
 **contra_account_id** | **int** |  |

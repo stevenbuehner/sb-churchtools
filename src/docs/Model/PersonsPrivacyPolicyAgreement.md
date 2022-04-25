@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**date** | **\DateTime** |  | [optional]
 **type_id** | **int** |  | [optional]
 **who_id** | **int** |  | [optional]
 

@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\SyncApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -836,7 +836,7 @@ $types = array(56); // int[] | Filter by Types
 $query = 'query_example'; // string | Search Through Log Messages
 $levels = NULL; // array | the log levels
 $is_dry_run = True; // bool
-$body = new \stdClass; // object
+$body = array('key' => new \stdClass); // object
 
 try {
     $result = $apiInstance->getSyncLogs($page, $limit, $es_ids, $job_ids, $start_date, $end_date, $types, $query, $levels, $is_dry_run, $body);

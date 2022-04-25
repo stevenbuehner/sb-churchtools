@@ -75,7 +75,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://localhost/api*
+All URIs are relative to */api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

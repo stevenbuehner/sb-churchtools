@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\FileApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -98,7 +98,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FileApi(
 );
 $domain_type = logo; // string | The domain type. Currently supported are 'avatar', 'groupimage', 'logo', 'attatchments', 'html_template', 'service', 'song_arrangement', 'importtable', 'person', 'familyavatar', 'wiki_.?'.
 $domain_identifier = 35; // string | the domain identifier
-$files = "/path/to/file.txt"; // \SplFileObject[]
+$files = array("/path/to/file.txt"); // \SplFileObject[]
 
 try {
     $result = $apiInstance->uploadFiles($domain_type, $domain_identifier, $files);

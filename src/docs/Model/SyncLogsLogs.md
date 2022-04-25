@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date** | [**\DateTime**](\DateTime.md) |  |
+**date** | **\DateTime** |  |
 **job_id** | **float** |  |
 **system** | **string** |  |
 **level** | **string** |  |

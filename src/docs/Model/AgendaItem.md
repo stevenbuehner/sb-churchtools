@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **title** | **string** |  | [optional]
 **note** | **string** |  | [optional]
 **duration** | **int** | Duration of agenda item in seconds. | [optional]
-**start** | [**\DateTime**](\DateTime.md) | The start time of a position is dynamically calculated based on previous items and the start time of the event. | [optional]
+**start** | **\DateTime** | The start time of a position is dynamically calculated based on previous items and the start time of the event. | [optional]
 **is_before_event** | **bool** |  | [optional]
 **responsible** | [**\StevenBuehner\ChurchTools\Model\Agenda1Responsible**](Agenda1Responsible.md) |  | [optional]
 **service_group_notes** | [**\StevenBuehner\ChurchTools\Model\Agenda1ServiceGroupNotes[]**](Agenda1ServiceGroupNotes.md) | Array of notes per service group. You will only see the service groups, you are allowed to see. | [optional]

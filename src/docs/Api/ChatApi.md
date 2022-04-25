@@ -1,6 +1,6 @@
 # StevenBuehner\ChurchTools\ChatApi
 
-All URIs are relative to http://localhost/api.
+All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

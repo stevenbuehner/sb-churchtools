@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  |
-**date** | [**\DateTime**](\DateTime.md) |  |
+**date** | **\DateTime** |  |
 **job** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200111Job**](InlineResponse200111Job.md) |  |
 **type** | **string** |  |
 **level** | **string** |  |

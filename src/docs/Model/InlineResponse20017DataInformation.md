@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **image_url** | **string** |  | [optional] [default to 'null']
-**date_of_foundation** | [**\DateTime**](\DateTime.md) |  | [optional]
-**end_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**date_of_foundation** | **\DateTime** |  | [optional]
+**end_date** | **\DateTime** |  | [optional]
 **meeting_time** | **string** |  | [optional]
 **weekday** | **int** | The number of the weekday. Starting with 0 &#x3D; Sunday, 1 &#x3D; Monday, ... | [optional]
 **group_category_id** | **int** |  | [optional]

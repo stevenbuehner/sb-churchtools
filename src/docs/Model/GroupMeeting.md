@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional]
-**date_from** | [**\DateTime**](\DateTime.md) | Start of the group meeting in UTC / Zulu format | [optional]
-**date_to** | [**\DateTime**](\DateTime.md) | End of the group meeting in UTC / Zulu format | [optional]
+**date_from** | **\DateTime** | Start of the group meeting in UTC / Zulu format | [optional]
+**date_to** | **\DateTime** | End of the group meeting in UTC / Zulu format | [optional]
 **is_completed** | **bool** |  | [optional]
 **is_canceled** | **bool** |  | [optional]
 **num_guests** | **int** |  | [optional]

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional]
-**date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**date** | **\DateTime** |  | [optional]
 **is_repeated** | **string** |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200124BaseMeta**](InlineResponse200124BaseMeta.md) |  | [optional]
 

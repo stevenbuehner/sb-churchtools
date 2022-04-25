@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **service_id** | **int** |  | [optional]
 **agreed** | **bool** |  | [optional]
 **is_valid** | **bool** |  | [optional]
-**requested_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**requested_date** | **\DateTime** |  | [optional]
 **requester_person_id** | **int** |  | [optional]
 **requester_person** | [**\StevenBuehner\ChurchTools\Model\Person1**](Person1.md) |  | [optional]
 **comment** | **string** |  | [optional]

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **service_id** | **int** |  | [optional]
 **agreed** | **bool** |  | [optional]
 **is_valid** | **bool** |  | [optional]
-**requested_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**requested_date** | **\DateTime** |  | [optional]
 **requester_person** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20013DataPerson**](InlineResponse20013DataPerson.md) |  | [optional]
 **comment** | **string** |  | [optional]
 **counter** | **int** |  | [optional]
