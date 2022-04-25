@@ -18,14 +18,16 @@ class ChurchToolsTokenAuthenticatedClient extends \GuzzleHttp\Client implements 
 	 * @param string $churchToolsLoginToken
 	 * @param CookieJar $cookieJar
 	 */
-	public function __construct(Configuration $config, CookieJar $cookieJar) {
+	public function __construct(Configuration $config, CookieJar $cookieJar, array $nativeParams = []) {
+
+		$params = array_merge([
+			'cookies' => $cookieJar
+		], $nativeParams);
+
+		parent::__construct($params);
 
 		$this->config   = $config;
 		$this->cookiJar = $cookieJar;
-
-		parent::__construct([
-			'cookies' => $cookieJar
-		]);
 
 	}
 
