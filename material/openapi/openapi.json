@@ -49380,55 +49380,58 @@
                   "type": "object",
                   "properties": {
                     "data": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "nameTranslated": {
-                          "type": "string"
-                        },
-                        "sortKey": {
-                          "type": "integer"
-                        },
-                        "color": {
-                          "type": "string"
-                        },
-                        "isPublic": {
-                          "type": "boolean"
-                        },
-                        "isPrivate": {
-                          "type": "boolean"
-                        },
-                        "randomUrl": {
-                          "type": "string"
-                        },
-                        "iCalSourceUrl": {
-                          "type": "string"
-                        },
-                        "campusId": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "eventTemplateId": {
-                          "type": [
-                            "string",
-                            "null",
-                            "integer"
-                          ]
-                        },
-                        "meta": {
-                          "type": "object",
-                          "properties": {
-                            "modifiedDate": {
-                              "type": "string",
-                              "format": "date-time",
-                              "example": "2022-03-16T20:00:00.000000Z"
-                            },
-                            "modifiedPid": {
-                              "type": "integer"
+                      "type" : "array",
+                      "items" : {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "nameTranslated": {
+                            "type": "string"
+                          },
+                          "sortKey": {
+                            "type": "integer"
+                          },
+                          "color": {
+                            "type": "string"
+                          },
+                          "isPublic": {
+                            "type": "boolean"
+                          },
+                          "isPrivate": {
+                            "type": "boolean"
+                          },
+                          "randomUrl": {
+                            "type": "string"
+                          },
+                          "iCalSourceUrl": {
+                            "type": "string"
+                          },
+                          "campusId": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          },
+                          "eventTemplateId": {
+                            "type": [
+                              "string",
+                              "null",
+                              "integer"
+                            ]
+                          },
+                          "meta": {
+                            "type": "object",
+                            "properties": {
+                              "modifiedDate": {
+                                "type": "string",
+                                "format": "date-time",
+                                "example": "2022-03-16T20:00:00.000000Z"
+                              },
+                              "modifiedPid": {
+                                "type": "integer"
+                              }
                             }
                           }
                         }
