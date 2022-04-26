@@ -1173,7 +1173,6 @@
                           "team": {
                             "type": "array",
                             "uniqueItems": true,
-                            "minItems": 1,
                             "items": {
                               "type": "object",
                               "properties": {
