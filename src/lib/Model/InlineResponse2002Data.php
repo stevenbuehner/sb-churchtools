@@ -489,10 +489,6 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['groups'] === null) {
             $invalidProperties[] = "'groups' can't be null";
         }
-        if ((count($this->container['groups']) < 1)) {
-            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 1.";
-        }
-
         if ($this->container['logo'] === null) {
             $invalidProperties[] = "'logo' can't be null";
         }
@@ -1074,9 +1070,6 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
 
-        if ((count($groups) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $groups when calling InlineResponse2002Data., number of items must be greater than or equal to 1.');
-        }
         $this->container['groups'] = $groups;
 
         return $this;
