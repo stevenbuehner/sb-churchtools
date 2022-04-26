@@ -792,34 +792,38 @@
                             "properties": {
                               "meetingAt": {
                                 "type": "string",
-                                "minLength": 1
+                                "nullable": true
                               },
                               "street": {
                                 "type": "string",
-                                "minLength": 1
+                                "nullable": true
                               },
                               "addition": {
                                 "type": "string",
-                                "minLength": 1
+                                "nullable": true
                               },
                               "district": {
                                 "type": "string",
-                                "minLength": 1
+                                "nullable": true
                               },
                               "zip": {
                                 "type": "string",
-                                "minLength": 1
+                                "nullable": true
                               },
                               "city": {
                                 "type": "string",
-                                "minLength": 1
+                                "nullable": true
                               },
-                              "country": {},
+                              "country": {
+                                "nullable": true
+                              },
                               "latitude": {
-                                "type": "string"
+                                "type": "string",
+                                "nullable": true
                               },
                               "longitude": {
-                                "type": "string"
+                                "type": "string",
+                                "nullable": true
                               }
                             }
                           },

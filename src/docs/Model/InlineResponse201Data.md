@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **email** | **string** |  |
 **phone** | **string** |  |
 **denomination** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Denomination**](InlineResponse2002Denomination.md) |  |
-**address** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Address**](InlineResponse2002Address.md) |  |
+**address** | [**\StevenBuehner\ChurchTools\Model\InlineResponse201DataAddress**](InlineResponse201DataAddress.md) |  |
 **groups** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Groups[]**](InlineResponse2002Groups.md) |  |
 **logo** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo**](InlineResponse2002Logo.md) |  |
 **banner** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo**](InlineResponse2002Logo.md) |  |

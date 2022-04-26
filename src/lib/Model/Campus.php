@@ -77,7 +77,7 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'string',
         'phone' => 'string',
         'denomination' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Denomination',
-        'address' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Address',
+        'address' => '\StevenBuehner\ChurchTools\Model\InlineResponse201DataAddress',
         'groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Groups[]',
         'logo' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
         'banner' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
@@ -1050,7 +1050,7 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Address
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse201DataAddress
      */
     public function getAddress()
     {
@@ -1060,7 +1060,7 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Address $address address
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse201DataAddress $address address
      *
      * @return self
      */

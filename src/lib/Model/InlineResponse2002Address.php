@@ -241,45 +241,21 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['meeting_at'] === null) {
             $invalidProperties[] = "'meeting_at' can't be null";
         }
-        if ((mb_strlen($this->container['meeting_at']) < 1)) {
-            $invalidProperties[] = "invalid value for 'meeting_at', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['street'] === null) {
             $invalidProperties[] = "'street' can't be null";
         }
-        if ((mb_strlen($this->container['street']) < 1)) {
-            $invalidProperties[] = "invalid value for 'street', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['addition'] === null) {
             $invalidProperties[] = "'addition' can't be null";
         }
-        if ((mb_strlen($this->container['addition']) < 1)) {
-            $invalidProperties[] = "invalid value for 'addition', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['district'] === null) {
             $invalidProperties[] = "'district' can't be null";
         }
-        if ((mb_strlen($this->container['district']) < 1)) {
-            $invalidProperties[] = "invalid value for 'district', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['zip'] === null) {
             $invalidProperties[] = "'zip' can't be null";
         }
-        if ((mb_strlen($this->container['zip']) < 1)) {
-            $invalidProperties[] = "invalid value for 'zip', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
         }
-        if ((mb_strlen($this->container['city']) < 1)) {
-            $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['latitude'] === null) {
             $invalidProperties[] = "'latitude' can't be null";
         }
@@ -320,11 +296,6 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setMeetingAt($meeting_at)
     {
-
-        if ((mb_strlen($meeting_at) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $meeting_at when calling InlineResponse2002Address., must be bigger than or equal to 1.');
-        }
-
         $this->container['meeting_at'] = $meeting_at;
 
         return $this;
@@ -349,11 +320,6 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setStreet($street)
     {
-
-        if ((mb_strlen($street) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $street when calling InlineResponse2002Address., must be bigger than or equal to 1.');
-        }
-
         $this->container['street'] = $street;
 
         return $this;
@@ -378,11 +344,6 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setAddition($addition)
     {
-
-        if ((mb_strlen($addition) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $addition when calling InlineResponse2002Address., must be bigger than or equal to 1.');
-        }
-
         $this->container['addition'] = $addition;
 
         return $this;
@@ -407,11 +368,6 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setDistrict($district)
     {
-
-        if ((mb_strlen($district) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $district when calling InlineResponse2002Address., must be bigger than or equal to 1.');
-        }
-
         $this->container['district'] = $district;
 
         return $this;
@@ -436,11 +392,6 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setZip($zip)
     {
-
-        if ((mb_strlen($zip) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $zip when calling InlineResponse2002Address., must be bigger than or equal to 1.');
-        }
-
         $this->container['zip'] = $zip;
 
         return $this;
@@ -465,11 +416,6 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setCity($city)
     {
-
-        if ((mb_strlen($city) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling InlineResponse2002Address., must be bigger than or equal to 1.');
-        }
-
         $this->container['city'] = $city;
 
         return $this;
