@@ -736,8 +736,7 @@
                             "type": "boolean"
                           },
                           "description": {
-                            "type": "string",
-                            "minLength": 1
+                            "type": "string"
                           },
                           "association": {
                             "type": "object",
