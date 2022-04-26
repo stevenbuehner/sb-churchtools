@@ -715,8 +715,7 @@
                             "minLength": 1
                           },
                           "shortName": {
-                            "type": "string",
-                            "minLength": 1
+                            "type": "string"
                           },
                           "shorty": {
                             "type": "string",

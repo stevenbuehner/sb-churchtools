@@ -67,7 +67,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_statuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse20043DataGroupStatuses[]',
         'departments' => '\StevenBuehner\ChurchTools\Model\InlineResponse20029Data[]',
         'statuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]',
-        'campuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]',
+        'campuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse201Data[]',
         'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]',
         'grow_paths' => '\StevenBuehner\ChurchTools\Model\GrowPath[]',
         'follow_ups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUps[]',
@@ -472,7 +472,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets campuses
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse201Data[]|null
      */
     public function getCampuses()
     {
@@ -482,7 +482,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets campuses
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]|null $campuses campuses
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse201Data[]|null $campuses campuses
      *
      * @return self
      */

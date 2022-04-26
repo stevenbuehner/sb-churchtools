@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2002Data
+ * InlineResponse201Data
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * InlineResponse2002Data Class Doc Comment
+ * InlineResponse201Data Class Doc Comment
  *
  * @category Class
  * @description Profiles are representing campuses and the church itself.
@@ -43,7 +43,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_2_data';
+    protected static $openAPIModelName = 'inline_response_201_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -429,6 +429,10 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['short_name'] === null) {
             $invalidProperties[] = "'short_name' can't be null";
         }
+        if ((mb_strlen($this->container['short_name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'short_name', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['shorty'] === null) {
             $invalidProperties[] = "'shorty' can't be null";
         }
@@ -610,7 +614,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($guid) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $guid when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $guid when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['guid'] = $guid;
@@ -649,7 +653,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
         if ((mb_strlen($profile_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $profile_type when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $profile_type when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['profile_type'] = $profile_type;
@@ -678,7 +682,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $name when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['name'] = $name;
@@ -707,7 +711,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($name_translated) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name_translated when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $name_translated when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['name_translated'] = $name_translated;
@@ -734,6 +738,11 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setShortName($short_name)
     {
+
+        if ((mb_strlen($short_name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $short_name when calling InlineResponse201Data., must be bigger than or equal to 1.');
+        }
+
         $this->container['short_name'] = $short_name;
 
         return $this;
@@ -760,7 +769,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($shorty) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $shorty when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $shorty when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['shorty'] = $shorty;
@@ -789,7 +798,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($slug) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $slug when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $slug when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['slug'] = $slug;
@@ -818,7 +827,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($finder_url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $finder_url when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $finder_url when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['finder_url'] = $finder_url;
@@ -895,7 +904,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $description when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['description'] = $description;
@@ -948,7 +957,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($website) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $website when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $website when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['website'] = $website;
@@ -977,7 +986,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($email) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $email when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['email'] = $email;
@@ -1006,7 +1015,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($phone) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $phone when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $phone when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['phone'] = $phone;
@@ -1084,7 +1093,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
 
 
         if ((count($groups) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $groups when calling InlineResponse2002Data., number of items must be greater than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $groups when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
         }
         $this->container['groups'] = $groups;
 
@@ -1209,7 +1218,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
 
 
         if ((count($services) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $services when calling InlineResponse2002Data., number of items must be greater than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $services when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
         }
         $this->container['services'] = $services;
 
@@ -1261,7 +1270,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($service_banner) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $service_banner when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $service_banner when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['service_banner'] = $service_banner;
@@ -1315,7 +1324,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
 
 
         if ((count($gallery) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $gallery when calling InlineResponse2002Data., number of items must be greater than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $gallery when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
         }
         $this->container['gallery'] = $gallery;
 
@@ -1343,7 +1352,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
         if ((mb_strlen($team_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $team_title when calling InlineResponse2002Data., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $team_title when calling InlineResponse201Data., must be bigger than or equal to 1.');
         }
 
         $this->container['team_title'] = $team_title;
@@ -1373,7 +1382,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
 
 
         if ((count($team) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $team when calling InlineResponse2002Data., number of items must be greater than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $team when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
         }
         $this->container['team'] = $team;
 

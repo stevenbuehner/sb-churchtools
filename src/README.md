@@ -820,6 +820,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse2017Data](docs/Model/InlineResponse2017Data.md)
 - [InlineResponse2018](docs/Model/InlineResponse2018.md)
 - [InlineResponse2019](docs/Model/InlineResponse2019.md)
+- [InlineResponse201Data](docs/Model/InlineResponse201Data.md)
 - [InlineResponse204](docs/Model/InlineResponse204.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse4001](docs/Model/InlineResponse4001.md)
