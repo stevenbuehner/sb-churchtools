@@ -89,7 +89,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         'sign_up_group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
         'gallery' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo[]',
         'team_title' => 'string',
-        'team' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Team[]',
+        'team' => '\StevenBuehner\ChurchTools\Model\InlineResponse201DataTeam[]',
         'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
     ];
 
@@ -1363,7 +1363,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets team
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Team[]
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse201DataTeam[]
      */
     public function getTeam()
     {
@@ -1373,7 +1373,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets team
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Team[] $team team
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse201DataTeam[] $team team
      *
      * @return self
      */

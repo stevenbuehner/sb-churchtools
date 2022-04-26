@@ -822,6 +822,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse2019](docs/Model/InlineResponse2019.md)
 - [InlineResponse201Data](docs/Model/InlineResponse201Data.md)
 - [InlineResponse201DataAddress](docs/Model/InlineResponse201DataAddress.md)
+- [InlineResponse201DataTeam](docs/Model/InlineResponse201DataTeam.md)
 - [InlineResponse204](docs/Model/InlineResponse204.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse4001](docs/Model/InlineResponse4001.md)

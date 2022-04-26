@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2002Team
+ * InlineResponse201DataTeam
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * InlineResponse2002Team Class Doc Comment
+ * InlineResponse201DataTeam Class Doc Comment
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -42,7 +42,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse2002Team implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse201DataTeam implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class InlineResponse2002Team implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_2_team';
+    protected static $openAPIModelName = 'inline_response_201_data_team';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -205,6 +205,10 @@ class InlineResponse2002Team implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['note'] === null) {
             $invalidProperties[] = "'note' can't be null";
         }
+        if ((mb_strlen($this->container['note']) < 1)) {
+            $invalidProperties[] = "invalid value for 'note', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['sort_key'] === null) {
             $invalidProperties[] = "'sort_key' can't be null";
         }
@@ -266,6 +270,11 @@ class InlineResponse2002Team implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setNote($note)
     {
+
+        if ((mb_strlen($note) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $note when calling InlineResponse201DataTeam., must be bigger than or equal to 1.');
+        }
+
         $this->container['note'] = $note;
 
         return $this;

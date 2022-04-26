@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **sign_up_group** | [**\StevenBuehner\ChurchTools\Model\GroupDomainObject1**](GroupDomainObject1.md) |  | [optional]
 **gallery** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo[]**](InlineResponse2002Logo.md) |  |
 **team_title** | **string** |  |
-**team** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Team[]**](InlineResponse2002Team.md) |  |
+**team** | [**\StevenBuehner\ChurchTools\Model\InlineResponse201DataTeam[]**](InlineResponse201DataTeam.md) |  |
 **meta** | [**\StevenBuehner\ChurchTools\Model\Meta**](Meta.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

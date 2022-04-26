@@ -1241,8 +1241,7 @@
                                   }
                                 },
                                 "note": {
-                                  "type": "string",
-                                  "minLength": 1
+                                  "type": "string"
                                 },
                                 "sortKey": {
                                   "type": "number"

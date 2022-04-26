@@ -489,6 +489,7 @@ docs/Model/InlineResponse2018.md
 docs/Model/InlineResponse2019.md
 docs/Model/InlineResponse201Data.md
 docs/Model/InlineResponse201DataAddress.md
+docs/Model/InlineResponse201DataTeam.md
 docs/Model/InlineResponse204.md
 docs/Model/InlineResponse400.md
 docs/Model/InlineResponse4001.md
@@ -1052,6 +1053,7 @@ lib/Model/InlineResponse2018.php
 lib/Model/InlineResponse2019.php
 lib/Model/InlineResponse201Data.php
 lib/Model/InlineResponse201DataAddress.php
+lib/Model/InlineResponse201DataTeam.php
 lib/Model/InlineResponse204.php
 lib/Model/InlineResponse400.php
 lib/Model/InlineResponse4001.php
@@ -1128,3 +1130,4 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/InlineResponse201DataTeamTest.php
