@@ -1128,4 +1128,3 @@ lib/Model/WikiPage1.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/InlineResponse201DataAddressTest.php

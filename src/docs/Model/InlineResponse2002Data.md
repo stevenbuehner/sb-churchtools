@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **logo** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo**](InlineResponse2002Logo.md) |  |
 **banner** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo**](InlineResponse2002Logo.md) |  |
 **social_media** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002SocialMedia**](InlineResponse2002SocialMedia.md) |  |
-**tags** | **string[]** |  |
+**tags** | **object[]** |  |
 **services** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Services[]**](InlineResponse2002Services.md) |  |
 **visitors** | **float** |  |
 **service_banner** | **string** |  |

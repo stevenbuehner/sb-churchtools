@@ -82,7 +82,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         'logo' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
         'banner' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
         'social_media' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002SocialMedia',
-        'tags' => 'string[]',
+        'tags' => 'object[]',
         'services' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Services[]',
         'visitors' => 'float',
         'service_banner' => 'string',
@@ -1138,7 +1138,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets tags
      *
-     * @return string[]
+     * @return object[]
      */
     public function getTags()
     {
@@ -1148,7 +1148,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets tags
      *
-     * @param string[] $tags tags
+     * @param object[] $tags tags
      *
      * @return self
      */
