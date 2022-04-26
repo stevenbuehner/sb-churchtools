@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  |
+**id** | **int** |  |
 **guid** | **string** |  |
 **profile_type** | **string** | church: Church profile for this installation; campus: one specific campus profile |
 **name** | **string** |  |
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **shorty** | **string** |  |
 **slug** | **string** |  |
 **finder_url** | **string** |  |
-**sort_key** | **float** |  |
+**sort_key** | **int** |  |
 **is_published** | **bool** |  |
 **description** | **string** |  |
 **association** | **object** | Will be the same for all profiles. | [optional]
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **social_media** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002SocialMedia**](InlineResponse2002SocialMedia.md) |  |
 **tags** | **object[]** |  |
 **services** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Services[]**](InlineResponse2002Services.md) |  |
-**visitors** | **float** |  |
+**visitors** | **int** |  |
 **service_banner** | **string** |  |
 **sign_up_group** | [**\StevenBuehner\ChurchTools\Model\GroupDomainObject1**](GroupDomainObject1.md) |  | [optional]
 **gallery** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo[]**](InlineResponse2002Logo.md) |  |

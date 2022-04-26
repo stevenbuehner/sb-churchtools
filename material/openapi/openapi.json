@@ -691,7 +691,7 @@
                         ],
                         "properties": {
                           "id": {
-                            "type": "number"
+                            "type": "integer"
                           },
                           "guid": {
                             "type": "string",
@@ -730,7 +730,7 @@
                             "minLength": 1
                           },
                           "sortKey": {
-                            "type": "number"
+                            "type": "integer"
                           },
                           "isPublished": {
                             "type": "boolean"
@@ -1057,7 +1057,7 @@
                             }
                           },
                           "visitors": {
-                            "type": "number"
+                            "type": "integer"
                           },
                           "serviceBanner": {
                             "type": "string",

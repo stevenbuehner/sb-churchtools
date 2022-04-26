@@ -60,7 +60,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
         'guid' => 'string',
         'profile_type' => 'string',
         'name' => 'string',
@@ -69,7 +69,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         'shorty' => 'string',
         'slug' => 'string',
         'finder_url' => 'string',
-        'sort_key' => 'float',
+        'sort_key' => 'int',
         'is_published' => 'bool',
         'description' => 'string',
         'association' => 'object',
@@ -84,7 +84,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         'social_media' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002SocialMedia',
         'tags' => 'object[]',
         'services' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Services[]',
-        'visitors' => 'float',
+        'visitors' => 'int',
         'service_banner' => 'string',
         'sign_up_group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
         'gallery' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo[]',
@@ -548,7 +548,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -558,7 +558,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */
@@ -809,7 +809,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets sort_key
      *
-     * @return float
+     * @return int
      */
     public function getSortKey()
     {
@@ -819,7 +819,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets sort_key
      *
-     * @param float $sort_key sort_key
+     * @param int $sort_key sort_key
      *
      * @return self
      */
@@ -1188,7 +1188,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets visitors
      *
-     * @return float
+     * @return int
      */
     public function getVisitors()
     {
@@ -1198,7 +1198,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets visitors
      *
-     * @param float $visitors visitors
+     * @param int $visitors visitors
      *
      * @return self
      */
