@@ -17825,7 +17825,7 @@
                             ],
                             "properties": {
                               "id": {
-                                "type": "number"
+                                "type": "integer"
                               },
                               "guid": {
                                 "type": "string",
@@ -17849,8 +17849,7 @@
                                 "minLength": 1
                               },
                               "shortName": {
-                                "type": "string",
-                                "minLength": 1
+                                "type": "string"
                               },
                               "shorty": {
                                 "type": "string",
@@ -17865,14 +17864,13 @@
                                 "minLength": 1
                               },
                               "sortKey": {
-                                "type": "number"
+                                "type": "integer"
                               },
                               "isPublished": {
                                 "type": "boolean"
                               },
                               "description": {
-                                "type": "string",
-                                "minLength": 1
+                                "type": "string"
                               },
                               "association": {
                                 "type": "object",
@@ -17928,41 +17926,44 @@
                                 "properties": {
                                   "meetingAt": {
                                     "type": "string",
-                                    "minLength": 1
+                                    "nullable": true
                                   },
                                   "street": {
                                     "type": "string",
-                                    "minLength": 1
+                                    "nullable": true
                                   },
                                   "addition": {
                                     "type": "string",
-                                    "minLength": 1
+                                    "nullable": true
                                   },
                                   "district": {
                                     "type": "string",
-                                    "minLength": 1
+                                    "nullable": true
                                   },
                                   "zip": {
                                     "type": "string",
-                                    "minLength": 1
+                                    "nullable": true
                                   },
                                   "city": {
                                     "type": "string",
-                                    "minLength": 1
+                                    "nullable": true
                                   },
-                                  "country": {},
+                                  "country": {
+                                    "nullable": true
+                                  },
                                   "latitude": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "nullable": true
                                   },
                                   "longitude": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "nullable": true
                                   }
                                 }
                               },
                               "groups": {
                                 "type": "array",
                                 "uniqueItems": true,
-                                "minItems": 1,
                                 "items": {
                                   "type": "object",
                                   "properties": {
@@ -18157,13 +18158,12 @@
                               "tags": {
                                 "type": "array",
                                 "items": {
-                                  "type": "string"
+                                  "type": "object"
                                 }
                               },
                               "services": {
                                 "type": "array",
                                 "uniqueItems": true,
-                                "minItems": 1,
                                 "items": {
                                   "type": "object",
                                   "properties": {
@@ -18191,7 +18191,7 @@
                                 }
                               },
                               "visitors": {
-                                "type": "number"
+                                "type": "integer"
                               },
                               "serviceBanner": {
                                 "type": "string",
@@ -18245,7 +18245,6 @@
                               "gallery": {
                                 "type": "array",
                                 "uniqueItems": true,
-                                "minItems": 1,
                                 "items": {
                                   "description": "",
                                   "type": "object",
@@ -18312,7 +18311,6 @@
                               "team": {
                                 "type": "array",
                                 "uniqueItems": true,
-                                "minItems": 1,
                                 "items": {
                                   "type": "object",
                                   "properties": {
@@ -18377,8 +18375,7 @@
                                       }
                                     },
                                     "note": {
-                                      "type": "string",
-                                      "minLength": 1
+                                      "type": "string"
                                     },
                                     "sortKey": {
                                       "type": "number"

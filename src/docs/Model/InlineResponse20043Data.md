@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **group_statuses** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataGroupStatuses[]**](InlineResponse20043DataGroupStatuses.md) |  | [optional]
 **departments** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20029Data[]**](InlineResponse20029Data.md) |  | [optional]
 **statuses** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]**](InlineResponse2005Data.md) |  | [optional]
-**campuses** | [**\StevenBuehner\ChurchTools\Model\InlineResponse201Data[]**](InlineResponse201Data.md) |  | [optional]
+**campuses** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]**](InlineResponse2002Data.md) |  | [optional]
 **contact_labels** | [**\StevenBuehner\ChurchTools\Model\ContactLabel[]**](ContactLabel.md) |  | [optional]
 **grow_paths** | [**\StevenBuehner\ChurchTools\Model\GrowPath[]**](GrowPath.md) |  | [optional]
 **follow_ups** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUps[]**](InlineResponse20043DataFollowUps.md) |  | [optional]
