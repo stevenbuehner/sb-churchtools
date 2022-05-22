@@ -18599,10 +18599,6 @@
                               },
                               "isDefault": {
                                 "type": "boolean",
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
                                 "example": "false",
                                 "description": "Indicator if label is the default. Used for new person emails"
                               }
@@ -38943,10 +38939,6 @@
                           },
                           "isDefault": {
                             "type": "boolean",
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
                             "example": "false",
                             "description": "Indicator if label is the default. Used for new person emails"
                           }
@@ -39032,10 +39024,6 @@
                         },
                         "isDefault": {
                           "type": "boolean",
-                          "enum": [
-                            "true",
-                            "false"
-                          ],
                           "example": "false",
                           "description": "Indicator if label is the default. Used for new person emails"
                         }
@@ -39088,10 +39076,6 @@
                   "isDefault": {
                     "type": "boolean",
                     "description": "Indicator if label is new default.",
-                    "enum": [
-                      "true",
-                      "false"
-                    ],
                     "example": "false"
                   }
                 },
@@ -39161,10 +39145,6 @@
                         },
                         "isDefault": {
                           "type": "boolean",
-                          "enum": [
-                            "true",
-                            "false"
-                          ],
                           "example": "false",
                           "description": "Indicator if label is the default. Used for new person emails"
                         }
@@ -39234,10 +39214,6 @@
                         },
                         "isDefault": {
                           "type": "boolean",
-                          "enum": [
-                            "true",
-                            "false"
-                          ],
                           "example": "false",
                           "description": "Indicator if label is the default. Used for new person emails"
                         }
@@ -56440,10 +56416,6 @@
           },
           "isDefault": {
             "type": "boolean",
-            "enum": [
-              "true",
-              "false"
-            ],
             "example": "false",
             "description": "Indicator if label is the default. Used for new person emails"
           }
@@ -57777,10 +57749,6 @@
                 },
                 "isDefault": {
                   "type": "boolean",
-                  "enum": [
-                    "true",
-                    "false"
-                  ],
                   "example": "false",
                   "description": "Indicator if label is the default. Used for new person emails"
                 }
