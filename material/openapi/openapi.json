@@ -1330,7 +1330,6 @@
                         ],
                         "example": {
                           "id": 0,
-                            "id": 0,
                           "guid": "string",
                           "profileType": "church",
                           "name": "string",
@@ -2350,7 +2349,6 @@
                       ],
                       "example": {
                         "id": 0,
-                          "id": 0,
                         "guid": "string",
                         "profileType": "church",
                         "name": "string",
@@ -49629,8 +49627,8 @@
                   "type": "object",
                   "properties": {
                     "data": {
-                      "type" : "array",
-                      "items" : {
+                      "type": "array",
+                      "items": {
                         "type": "object",
                         "properties": {
                           "id": {
