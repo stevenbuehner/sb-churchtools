@@ -123,7 +123,7 @@ class DepartmentApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20029
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20030
      */
     public function getAllDepartments()
     {
@@ -139,7 +139,7 @@ class DepartmentApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20030, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllDepartmentsWithHttpInfo()
     {
@@ -182,20 +182,20 @@ class DepartmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20029' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20030' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20029', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20030', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20029';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -213,7 +213,7 @@ class DepartmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20029',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20030',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -253,7 +253,7 @@ class DepartmentApi
      */
     public function getAllDepartmentsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20029';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030';
         $request = $this->getAllDepartmentsRequest();
 
         return $this->client

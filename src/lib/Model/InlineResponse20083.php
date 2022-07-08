@@ -59,9 +59,7 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\WikiCategory1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20083Permissions'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20083Data'
     ];
 
     /**
@@ -72,9 +70,7 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'meta' => null,
-        'permissions' => null
+        'data' => null
     ];
 
     /**
@@ -104,9 +100,7 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'meta' => 'meta',
-        'permissions' => 'permissions'
+        'data' => 'data'
     ];
 
     /**
@@ -115,9 +109,7 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'meta' => 'setMeta',
-        'permissions' => 'setPermissions'
+        'data' => 'setData'
     ];
 
     /**
@@ -126,9 +118,7 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'meta' => 'getMeta',
-        'permissions' => 'getPermissions'
+        'data' => 'getData'
     ];
 
     /**
@@ -189,8 +179,6 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['data'] = $data['data'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
     }
 
     /**
@@ -220,7 +208,7 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\WikiCategory1[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20083Data|null
      */
     public function getData()
     {
@@ -230,61 +218,13 @@ class InlineResponse20083 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\WikiCategory1[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20083Data|null $data data
      *
      * @return self
      */
     public function setData($data)
     {
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
-
-        return $this;
-    }
-
-    /**
-     * Gets permissions
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20083Permissions|null
-     */
-    public function getPermissions()
-    {
-        return $this->container['permissions'];
-    }
-
-    /**
-     * Sets permissions
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20083Permissions|null $permissions permissions
-     *
-     * @return self
-     */
-    public function setPermissions($permissions)
-    {
-        $this->container['permissions'] = $permissions;
 
         return $this;
     }

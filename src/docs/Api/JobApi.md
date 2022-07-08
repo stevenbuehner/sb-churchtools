@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getJobs()`
 
 ```php
-getJobs($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date): \StevenBuehner\ChurchTools\Model\InlineResponse200112
+getJobs($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date): \StevenBuehner\ChurchTools\Model\InlineResponse200113
 ```
 
 Your GET endpoint
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200112**](../Model/InlineResponse200112.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200113**](../Model/InlineResponse200113.md)
 
 ### Authorization
 

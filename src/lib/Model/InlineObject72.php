@@ -59,7 +59,9 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'is_active' => 'bool',
+        'role_id' => 'float',
+        'is_for_waitinglist' => 'bool',
+        'is_active' => 'float',
         'sender_id' => 'float',
         'subject' => 'string',
         'body' => 'string'
@@ -73,6 +75,8 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'role_id' => null,
+        'is_for_waitinglist' => null,
         'is_active' => null,
         'sender_id' => null,
         'subject' => null,
@@ -106,6 +110,8 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'role_id' => 'roleId',
+        'is_for_waitinglist' => 'isForWaitinglist',
         'is_active' => 'isActive',
         'sender_id' => 'senderId',
         'subject' => 'subject',
@@ -118,6 +124,8 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'role_id' => 'setRoleId',
+        'is_for_waitinglist' => 'setIsForWaitinglist',
         'is_active' => 'setIsActive',
         'sender_id' => 'setSenderId',
         'subject' => 'setSubject',
@@ -130,6 +138,8 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'role_id' => 'getRoleId',
+        'is_for_waitinglist' => 'getIsForWaitinglist',
         'is_active' => 'getIsActive',
         'sender_id' => 'getSenderId',
         'subject' => 'getSubject',
@@ -193,6 +203,8 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['role_id'] = $data['role_id'] ?? null;
+        $this->container['is_for_waitinglist'] = $data['is_for_waitinglist'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['sender_id'] = $data['sender_id'] ?? null;
         $this->container['subject'] = $data['subject'] ?? null;
@@ -208,6 +220,12 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['role_id'] === null) {
+            $invalidProperties[] = "'role_id' can't be null";
+        }
+        if ($this->container['is_for_waitinglist'] === null) {
+            $invalidProperties[] = "'is_for_waitinglist' can't be null";
+        }
         if ($this->container['is_active'] === null) {
             $invalidProperties[] = "'is_active' can't be null";
         }
@@ -236,9 +254,57 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets is_active
+     * Gets role_id
+     *
+     * @return float
+     */
+    public function getRoleId()
+    {
+        return $this->container['role_id'];
+    }
+
+    /**
+     * Sets role_id
+     *
+     * @param float $role_id Grouptype Role Id; Must be a role of the group
+     *
+     * @return self
+     */
+    public function setRoleId($role_id)
+    {
+        $this->container['role_id'] = $role_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_for_waitinglist
      *
      * @return bool
+     */
+    public function getIsForWaitinglist()
+    {
+        return $this->container['is_for_waitinglist'];
+    }
+
+    /**
+     * Sets is_for_waitinglist
+     *
+     * @param bool $is_for_waitinglist Only releveant for roleId = requester roles
+     *
+     * @return self
+     */
+    public function setIsForWaitinglist($is_for_waitinglist)
+    {
+        $this->container['is_for_waitinglist'] = $is_for_waitinglist;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return float
      */
     public function getIsActive()
     {
@@ -248,7 +314,7 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_active
      *
-     * @param bool $is_active is_active
+     * @param float $is_active is_active
      *
      * @return self
      */
@@ -272,7 +338,7 @@ class InlineObject72 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sender_id
      *
-     * @param float $sender_id SenderID = PersonID of one leader in that group
+     * @param float $sender_id PersonId; Must be a leader in that group
      *
      * @return self
      */

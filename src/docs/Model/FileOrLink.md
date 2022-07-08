@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **name** | **string** | Name of that file, when it&#39;s been uploaded | [optional]
 **filename** | **string** | Filename of uploaded file or name of the link | [optional]
 **file_url** | **string** | Link to external website or link to file in ChurchTools | [optional]
-**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200108Meta**](InlineResponse200108Meta.md) |  | [optional]
+**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200109Meta**](InlineResponse200109Meta.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

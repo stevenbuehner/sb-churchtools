@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  |
 **date** | **\DateTime** |  |
-**job** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200111Job**](InlineResponse200111Job.md) |  |
+**job** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200112Job**](InlineResponse200112Job.md) |  |
 **type** | **string** |  |
 **level** | **string** |  |
 **message_i18n** | **string** |  | [optional]

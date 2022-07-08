@@ -124,7 +124,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20034|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20035|string
      */
     public function createTemplate($inline_object14)
     {
@@ -141,7 +141,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20034|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20035|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTemplateWithHttpInfo($inline_object14)
     {
@@ -184,14 +184,14 @@ class CalendarApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20034' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20035' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20034', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20035', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -209,7 +209,7 @@ class CalendarApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20034';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -227,7 +227,7 @@ class CalendarApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20034',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20035',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -277,7 +277,7 @@ class CalendarApi
      */
     public function createTemplateAsyncWithHttpInfo($inline_object14)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20034';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
         $request = $this->createTemplateRequest($inline_object14);
 
         return $this->client
@@ -656,7 +656,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20034|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20035|string
      */
     public function getAllTemplates()
     {
@@ -672,7 +672,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20034|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20035|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllTemplatesWithHttpInfo()
     {
@@ -715,14 +715,14 @@ class CalendarApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20034' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20035' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20034', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20035', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -740,7 +740,7 @@ class CalendarApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20034';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -758,7 +758,7 @@ class CalendarApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20034',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20035',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -806,7 +806,7 @@ class CalendarApi
      */
     public function getAllTemplatesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20034';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
         $request = $this->getAllTemplatesRequest();
 
         return $this->client
@@ -933,7 +933,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200126
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200127
      */
     public function getCalendars()
     {
@@ -949,7 +949,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200126, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200127, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCalendarsWithHttpInfo()
     {
@@ -992,20 +992,20 @@ class CalendarApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200126' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200127' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200126', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200127', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200126';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200127';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1023,7 +1023,7 @@ class CalendarApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200126',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200127',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1063,7 +1063,7 @@ class CalendarApi
      */
     public function getCalendarsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200126';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200127';
         $request = $this->getCalendarsRequest();
 
         return $this->client
@@ -1193,7 +1193,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200126
      */
     public function getCalendarsAppointments($calendar_ids = null, $from = null, $to = null)
     {
@@ -1212,7 +1212,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200125, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200126, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCalendarsAppointmentsWithHttpInfo($calendar_ids = null, $from = null, $to = null)
     {
@@ -1255,20 +1255,20 @@ class CalendarApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200125' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200126' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200125', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200126', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200125';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200126';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1286,7 +1286,7 @@ class CalendarApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200125',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200126',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1332,7 +1332,7 @@ class CalendarApi
      */
     public function getCalendarsAppointmentsAsyncWithHttpInfo($calendar_ids = null, $from = null, $to = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200125';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200126';
         $request = $this->getCalendarsAppointmentsRequest($calendar_ids, $from, $to);
 
         return $this->client
@@ -1488,6 +1488,320 @@ class CalendarApi
     }
 
     /**
+     * Operation getCalendarsCalendarIdAppointmentsAppointmentIdStartDate
+     *
+     * Your GET endpoint
+     *
+     * @param  string $calendar_id calendar_id (required)
+     * @param  string $appointment_id appointment_id (required)
+     * @param  string $start_date start_date (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200128
+     */
+    public function getCalendarsCalendarIdAppointmentsAppointmentIdStartDate($calendar_id, $appointment_id, $start_date)
+    {
+        list($response) = $this->getCalendarsCalendarIdAppointmentsAppointmentIdStartDateWithHttpInfo($calendar_id, $appointment_id, $start_date);
+        return $response;
+    }
+
+    /**
+     * Operation getCalendarsCalendarIdAppointmentsAppointmentIdStartDateWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     * @param  string $calendar_id (required)
+     * @param  string $appointment_id (required)
+     * @param  string $start_date (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200128, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCalendarsCalendarIdAppointmentsAppointmentIdStartDateWithHttpInfo($calendar_id, $appointment_id, $start_date)
+    {
+        $request = $this->getCalendarsCalendarIdAppointmentsAppointmentIdStartDateRequest($calendar_id, $appointment_id, $start_date);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200128' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200128', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200128';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200128',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCalendarsCalendarIdAppointmentsAppointmentIdStartDateAsync
+     *
+     * Your GET endpoint
+     *
+     * @param  string $calendar_id (required)
+     * @param  string $appointment_id (required)
+     * @param  string $start_date (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCalendarsCalendarIdAppointmentsAppointmentIdStartDateAsync($calendar_id, $appointment_id, $start_date)
+    {
+        return $this->getCalendarsCalendarIdAppointmentsAppointmentIdStartDateAsyncWithHttpInfo($calendar_id, $appointment_id, $start_date)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCalendarsCalendarIdAppointmentsAppointmentIdStartDateAsyncWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     * @param  string $calendar_id (required)
+     * @param  string $appointment_id (required)
+     * @param  string $start_date (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCalendarsCalendarIdAppointmentsAppointmentIdStartDateAsyncWithHttpInfo($calendar_id, $appointment_id, $start_date)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200128';
+        $request = $this->getCalendarsCalendarIdAppointmentsAppointmentIdStartDateRequest($calendar_id, $appointment_id, $start_date);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCalendarsCalendarIdAppointmentsAppointmentIdStartDate'
+     *
+     * @param  string $calendar_id (required)
+     * @param  string $appointment_id (required)
+     * @param  string $start_date (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCalendarsCalendarIdAppointmentsAppointmentIdStartDateRequest($calendar_id, $appointment_id, $start_date)
+    {
+        // verify the required parameter 'calendar_id' is set
+        if ($calendar_id === null || (is_array($calendar_id) && count($calendar_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $calendar_id when calling getCalendarsCalendarIdAppointmentsAppointmentIdStartDate'
+            );
+        }
+        // verify the required parameter 'appointment_id' is set
+        if ($appointment_id === null || (is_array($appointment_id) && count($appointment_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $appointment_id when calling getCalendarsCalendarIdAppointmentsAppointmentIdStartDate'
+            );
+        }
+        // verify the required parameter 'start_date' is set
+        if ($start_date === null || (is_array($start_date) && count($start_date) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $start_date when calling getCalendarsCalendarIdAppointmentsAppointmentIdStartDate'
+            );
+        }
+
+        $resourcePath = '/calendars/{calendarId}/appointments/{appointmentId}/{startDate}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($calendar_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'calendarId' . '}',
+                ObjectSerializer::toPathValue($calendar_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($appointment_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'appointmentId' . '}',
+                ObjectSerializer::toPathValue($appointment_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($start_date !== null) {
+            $resourcePath = str_replace(
+                '{' . 'startDate' . '}',
+                ObjectSerializer::toPathValue($start_date),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getTemplateById
      *
      * get a appointment template
@@ -1496,7 +1810,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20035|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20036|string
      */
     public function getTemplateById($template_id)
     {
@@ -1513,7 +1827,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20035|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20036|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTemplateByIdWithHttpInfo($template_id)
     {
@@ -1556,14 +1870,14 @@ class CalendarApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20035' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20036' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20035', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20036', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1581,7 +1895,7 @@ class CalendarApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20036';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1599,7 +1913,7 @@ class CalendarApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20035',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20036',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1649,7 +1963,7 @@ class CalendarApi
      */
     public function getTemplateByIdAsyncWithHttpInfo($template_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20036';
         $request = $this->getTemplateByIdRequest($template_id);
 
         return $this->client
@@ -1793,7 +2107,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20035|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20036|string
      */
     public function updateTemplate($template_id, $inline_object15)
     {
@@ -1811,7 +2125,7 @@ class CalendarApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20035|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20036|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTemplateWithHttpInfo($template_id, $inline_object15)
     {
@@ -1854,14 +2168,14 @@ class CalendarApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20035' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20036' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20035', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20036', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1879,7 +2193,7 @@ class CalendarApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20036';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1897,7 +2211,7 @@ class CalendarApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20035',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20036',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1949,7 +2263,7 @@ class CalendarApi
      */
     public function updateTemplateAsyncWithHttpInfo($template_id, $inline_object15)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20035';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20036';
         $request = $this->updateTemplateRequest($template_id, $inline_object15);
 
         return $this->client

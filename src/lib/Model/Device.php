@@ -61,7 +61,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse20074Meta',
+        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse20075Meta',
         'updated_at' => '\DateTime',
         'created_at' => '\DateTime',
         'ttl' => '\DateTime',
@@ -303,7 +303,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20074Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20075Meta|null
      */
     public function getMeta()
     {
@@ -313,7 +313,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20074Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20075Meta|null $meta meta
      *
      * @return self
      */

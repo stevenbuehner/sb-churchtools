@@ -59,17 +59,17 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'clients' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]',
-        'accounting_periods' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods[]',
-        'accounts' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccounts[]',
-        'account_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountTypes[]',
-        'account_classes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountClasses[]',
-        'account_groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountGroups[]',
-        'cash_discounts' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataCashDiscounts[]',
+        'clients' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataClients[]',
+        'accounting_periods' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountingPeriods[]',
+        'accounts' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccounts[]',
+        'account_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountTypes[]',
+        'account_classes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountClasses[]',
+        'account_groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountGroups[]',
+        'cash_discounts' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataCashDiscounts[]',
         'cost_centers' => '\StevenBuehner\ChurchTools\Model\CostCenter[]',
-        'tax_rates' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxRates[]',
-        'tax_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxTypes[]',
-        'transaction_purposes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTransactionPurposes[]'
+        'tax_rates' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataTaxRates[]',
+        'tax_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataTaxTypes[]',
+        'transaction_purposes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataTransactionPurposes[]'
     ];
 
     /**
@@ -268,7 +268,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets clients
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataClients[]|null
      */
     public function getClients()
     {
@@ -278,7 +278,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets clients
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]|null $clients clients
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataClients[]|null $clients clients
      *
      * @return self
      */
@@ -292,7 +292,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets accounting_periods
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountingPeriods[]|null
      */
     public function getAccountingPeriods()
     {
@@ -302,7 +302,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets accounting_periods
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods[]|null $accounting_periods accounting_periods
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountingPeriods[]|null $accounting_periods accounting_periods
      *
      * @return self
      */
@@ -316,7 +316,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets accounts
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccounts[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccounts[]|null
      */
     public function getAccounts()
     {
@@ -326,7 +326,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets accounts
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccounts[]|null $accounts accounts
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccounts[]|null $accounts accounts
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets account_types
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountTypes[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountTypes[]|null
      */
     public function getAccountTypes()
     {
@@ -350,7 +350,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets account_types
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountTypes[]|null $account_types account_types
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountTypes[]|null $account_types account_types
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets account_classes
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountClasses[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountClasses[]|null
      */
     public function getAccountClasses()
     {
@@ -374,7 +374,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets account_classes
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountClasses[]|null $account_classes account_classes
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountClasses[]|null $account_classes account_classes
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets account_groups
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountGroups[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountGroups[]|null
      */
     public function getAccountGroups()
     {
@@ -398,7 +398,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets account_groups
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountGroups[]|null $account_groups account_groups
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountGroups[]|null $account_groups account_groups
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets cash_discounts
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataCashDiscounts[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataCashDiscounts[]|null
      */
     public function getCashDiscounts()
     {
@@ -422,7 +422,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets cash_discounts
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataCashDiscounts[]|null $cash_discounts cash_discounts
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataCashDiscounts[]|null $cash_discounts cash_discounts
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets tax_rates
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxRates[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataTaxRates[]|null
      */
     public function getTaxRates()
     {
@@ -470,7 +470,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets tax_rates
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxRates[]|null $tax_rates tax_rates
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataTaxRates[]|null $tax_rates tax_rates
      *
      * @return self
      */
@@ -484,7 +484,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets tax_types
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxTypes[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataTaxTypes[]|null
      */
     public function getTaxTypes()
     {
@@ -494,7 +494,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets tax_types
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxTypes[]|null $tax_types tax_types
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataTaxTypes[]|null $tax_types tax_types
      *
      * @return self
      */
@@ -508,7 +508,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets transaction_purposes
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTransactionPurposes[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataTransactionPurposes[]|null
      */
     public function getTransactionPurposes()
     {
@@ -518,7 +518,7 @@ class FinanceMasterData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transaction_purposes
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTransactionPurposes[]|null $transaction_purposes transaction_purposes
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataTransactionPurposes[]|null $transaction_purposes transaction_purposes
      *
      * @return self
      */

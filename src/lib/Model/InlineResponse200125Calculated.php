@@ -59,7 +59,7 @@ class InlineResponse200125Calculated implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start_date' => '\DateTime',
+        'start_date' => 'string',
         'end_date' => '\DateTime'
     ];
 
@@ -71,7 +71,7 @@ class InlineResponse200125Calculated implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start_date' => 'date-time',
+        'start_date' => null,
         'end_date' => 'date-time'
     ];
 
@@ -214,7 +214,7 @@ class InlineResponse200125Calculated implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -224,7 +224,7 @@ class InlineResponse200125Calculated implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param string|null $start_date start_date
      *
      * @return self
      */

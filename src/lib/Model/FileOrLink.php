@@ -65,7 +65,7 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'filename' => 'string',
         'file_url' => 'string',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200108Meta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200109Meta'
     ];
 
     /**
@@ -359,7 +359,7 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200108Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200109Meta|null
      */
     public function getMeta()
     {
@@ -369,7 +369,7 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200108Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200109Meta|null $meta meta
      *
      * @return self
      */

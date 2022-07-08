@@ -125,7 +125,7 @@ class QueueApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20079
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20080
      */
     public function getQueueJobGroupsStatus($queue, $job_groups = null)
     {
@@ -143,7 +143,7 @@ class QueueApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20079, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20080, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQueueJobGroupsStatusWithHttpInfo($queue, $job_groups = null)
     {
@@ -186,20 +186,20 @@ class QueueApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20079' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20080' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20079', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20080', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20079';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20080';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -217,7 +217,7 @@ class QueueApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20079',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20080',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -261,7 +261,7 @@ class QueueApi
      */
     public function getQueueJobGroupsStatusAsyncWithHttpInfo($queue, $job_groups = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20079';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20080';
         $request = $this->getQueueJobGroupsStatusRequest($queue, $job_groups);
 
         return $this->client
@@ -416,7 +416,7 @@ class QueueApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20078
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20079
      */
     public function startQueueWorker($queue)
     {
@@ -433,7 +433,7 @@ class QueueApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20078, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20079, HTTP status code, HTTP response headers (array of strings)
      */
     public function startQueueWorkerWithHttpInfo($queue)
     {
@@ -476,20 +476,20 @@ class QueueApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20078' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20079' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20078', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20079', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20078';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20079';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -507,7 +507,7 @@ class QueueApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20078',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20079',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -549,7 +549,7 @@ class QueueApi
      */
     public function startQueueWorkerAsyncWithHttpInfo($queue)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20078';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20079';
         $request = $this->startQueueWorkerRequest($queue);
 
         return $this->client

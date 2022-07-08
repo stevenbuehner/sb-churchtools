@@ -63,8 +63,8 @@ class InlineObject24 implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'account_group_id' => 'int',
         'accounting_period_id' => 'int',
-        'is_donation_account' => 'Bool',
-        'is_opening_balance_account' => 'Bool'
+        'is_donation_account' => 'bool',
+        'is_opening_balance_account' => 'bool'
     ];
 
     /**
@@ -346,7 +346,7 @@ class InlineObject24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_donation_account
      *
-     * @return Bool|null
+     * @return bool|null
      */
     public function getIsDonationAccount()
     {
@@ -356,7 +356,7 @@ class InlineObject24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_donation_account
      *
-     * @param Bool|null $is_donation_account is_donation_account
+     * @param bool|null $is_donation_account is_donation_account
      *
      * @return self
      */
@@ -370,7 +370,7 @@ class InlineObject24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_opening_balance_account
      *
-     * @return Bool|null
+     * @return bool|null
      */
     public function getIsOpeningBalanceAccount()
     {
@@ -380,7 +380,7 @@ class InlineObject24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_opening_balance_account
      *
-     * @param Bool|null $is_opening_balance_account is_opening_balance_account
+     * @param bool|null $is_opening_balance_account is_opening_balance_account
      *
      * @return self
      */

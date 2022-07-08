@@ -218,7 +218,7 @@ class InlineResponse20079Meta implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets count
      *
-     * @param float|null $count Count of Listed Groups
+     * @param float|null $count Count of devices in data array
      *
      * @return self
      */

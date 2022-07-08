@@ -62,7 +62,7 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'float',
         'date' => '\DateTime',
-        'job' => '\StevenBuehner\ChurchTools\Model\InlineResponse200111Job',
+        'job' => '\StevenBuehner\ChurchTools\Model\InlineResponse200112Job',
         'type' => 'string',
         'level' => 'string',
         'message_i18n' => 'string',
@@ -390,7 +390,7 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets job
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200111Job
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200112Job
      */
     public function getJob()
     {
@@ -400,7 +400,7 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets job
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200111Job $job job
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200112Job $job job
      *
      * @return self
      */

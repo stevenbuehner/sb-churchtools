@@ -59,17 +59,19 @@ class InlineResponse20044Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'clients' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]',
-        'accounting_periods' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods[]',
-        'accounts' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccounts[]',
-        'account_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountTypes[]',
-        'account_classes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountClasses[]',
-        'account_groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountGroups[]',
-        'cash_discounts' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataCashDiscounts[]',
-        'cost_centers' => '\StevenBuehner\ChurchTools\Model\CostCenter[]',
-        'tax_rates' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxRates[]',
-        'tax_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxTypes[]',
-        'transaction_purposes' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTransactionPurposes[]'
+        'roles' => '\StevenBuehner\ChurchTools\Model\InlineResponse20042Data[]',
+        'age_groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAgeGroups[]',
+        'target_groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataTargetGroups[]',
+        'group_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupTypes[]',
+        'group_categories' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupCategories[]',
+        'group_statuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupStatuses[]',
+        'departments' => '\StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]',
+        'statuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]',
+        'campuses' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]',
+        'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]',
+        'grow_paths' => '\StevenBuehner\ChurchTools\Model\GrowPath[]',
+        'follow_ups' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataFollowUps[]',
+        'follow_up_intervals' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataFollowUpIntervals[]'
     ];
 
     /**
@@ -80,17 +82,19 @@ class InlineResponse20044Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'clients' => null,
-        'accounting_periods' => null,
-        'accounts' => null,
-        'account_types' => null,
-        'account_classes' => null,
-        'account_groups' => null,
-        'cash_discounts' => null,
-        'cost_centers' => null,
-        'tax_rates' => null,
-        'tax_types' => null,
-        'transaction_purposes' => null
+        'roles' => null,
+        'age_groups' => null,
+        'target_groups' => null,
+        'group_types' => null,
+        'group_categories' => null,
+        'group_statuses' => null,
+        'departments' => null,
+        'statuses' => null,
+        'campuses' => null,
+        'contact_labels' => null,
+        'grow_paths' => null,
+        'follow_ups' => null,
+        'follow_up_intervals' => null
     ];
 
     /**
@@ -120,17 +124,19 @@ class InlineResponse20044Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'clients' => 'clients',
-        'accounting_periods' => 'accountingPeriods',
-        'accounts' => 'accounts',
-        'account_types' => 'accountTypes',
-        'account_classes' => 'accountClasses',
-        'account_groups' => 'accountGroups',
-        'cash_discounts' => 'cashDiscounts',
-        'cost_centers' => 'costCenters',
-        'tax_rates' => 'taxRates',
-        'tax_types' => 'taxTypes',
-        'transaction_purposes' => 'transactionPurposes'
+        'roles' => 'roles',
+        'age_groups' => 'ageGroups',
+        'target_groups' => 'targetGroups',
+        'group_types' => 'groupTypes',
+        'group_categories' => 'groupCategories',
+        'group_statuses' => 'groupStatuses',
+        'departments' => 'departments',
+        'statuses' => 'statuses',
+        'campuses' => 'campuses',
+        'contact_labels' => 'contactLabels',
+        'grow_paths' => 'growPaths',
+        'follow_ups' => 'followUps',
+        'follow_up_intervals' => 'followUpIntervals'
     ];
 
     /**
@@ -139,17 +145,19 @@ class InlineResponse20044Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'clients' => 'setClients',
-        'accounting_periods' => 'setAccountingPeriods',
-        'accounts' => 'setAccounts',
-        'account_types' => 'setAccountTypes',
-        'account_classes' => 'setAccountClasses',
-        'account_groups' => 'setAccountGroups',
-        'cash_discounts' => 'setCashDiscounts',
-        'cost_centers' => 'setCostCenters',
-        'tax_rates' => 'setTaxRates',
-        'tax_types' => 'setTaxTypes',
-        'transaction_purposes' => 'setTransactionPurposes'
+        'roles' => 'setRoles',
+        'age_groups' => 'setAgeGroups',
+        'target_groups' => 'setTargetGroups',
+        'group_types' => 'setGroupTypes',
+        'group_categories' => 'setGroupCategories',
+        'group_statuses' => 'setGroupStatuses',
+        'departments' => 'setDepartments',
+        'statuses' => 'setStatuses',
+        'campuses' => 'setCampuses',
+        'contact_labels' => 'setContactLabels',
+        'grow_paths' => 'setGrowPaths',
+        'follow_ups' => 'setFollowUps',
+        'follow_up_intervals' => 'setFollowUpIntervals'
     ];
 
     /**
@@ -158,17 +166,19 @@ class InlineResponse20044Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'clients' => 'getClients',
-        'accounting_periods' => 'getAccountingPeriods',
-        'accounts' => 'getAccounts',
-        'account_types' => 'getAccountTypes',
-        'account_classes' => 'getAccountClasses',
-        'account_groups' => 'getAccountGroups',
-        'cash_discounts' => 'getCashDiscounts',
-        'cost_centers' => 'getCostCenters',
-        'tax_rates' => 'getTaxRates',
-        'tax_types' => 'getTaxTypes',
-        'transaction_purposes' => 'getTransactionPurposes'
+        'roles' => 'getRoles',
+        'age_groups' => 'getAgeGroups',
+        'target_groups' => 'getTargetGroups',
+        'group_types' => 'getGroupTypes',
+        'group_categories' => 'getGroupCategories',
+        'group_statuses' => 'getGroupStatuses',
+        'departments' => 'getDepartments',
+        'statuses' => 'getStatuses',
+        'campuses' => 'getCampuses',
+        'contact_labels' => 'getContactLabels',
+        'grow_paths' => 'getGrowPaths',
+        'follow_ups' => 'getFollowUps',
+        'follow_up_intervals' => 'getFollowUpIntervals'
     ];
 
     /**
@@ -228,17 +238,19 @@ class InlineResponse20044Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['clients'] = $data['clients'] ?? null;
-        $this->container['accounting_periods'] = $data['accounting_periods'] ?? null;
-        $this->container['accounts'] = $data['accounts'] ?? null;
-        $this->container['account_types'] = $data['account_types'] ?? null;
-        $this->container['account_classes'] = $data['account_classes'] ?? null;
-        $this->container['account_groups'] = $data['account_groups'] ?? null;
-        $this->container['cash_discounts'] = $data['cash_discounts'] ?? null;
-        $this->container['cost_centers'] = $data['cost_centers'] ?? null;
-        $this->container['tax_rates'] = $data['tax_rates'] ?? null;
-        $this->container['tax_types'] = $data['tax_types'] ?? null;
-        $this->container['transaction_purposes'] = $data['transaction_purposes'] ?? null;
+        $this->container['roles'] = $data['roles'] ?? null;
+        $this->container['age_groups'] = $data['age_groups'] ?? null;
+        $this->container['target_groups'] = $data['target_groups'] ?? null;
+        $this->container['group_types'] = $data['group_types'] ?? null;
+        $this->container['group_categories'] = $data['group_categories'] ?? null;
+        $this->container['group_statuses'] = $data['group_statuses'] ?? null;
+        $this->container['departments'] = $data['departments'] ?? null;
+        $this->container['statuses'] = $data['statuses'] ?? null;
+        $this->container['campuses'] = $data['campuses'] ?? null;
+        $this->container['contact_labels'] = $data['contact_labels'] ?? null;
+        $this->container['grow_paths'] = $data['grow_paths'] ?? null;
+        $this->container['follow_ups'] = $data['follow_ups'] ?? null;
+        $this->container['follow_up_intervals'] = $data['follow_up_intervals'] ?? null;
     }
 
     /**
@@ -266,265 +278,313 @@ class InlineResponse20044Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets clients
+     * Gets roles
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20042Data[]|null
      */
-    public function getClients()
+    public function getRoles()
     {
-        return $this->container['clients'];
+        return $this->container['roles'];
     }
 
     /**
-     * Sets clients
+     * Sets roles
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]|null $clients clients
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20042Data[]|null $roles roles
      *
      * @return self
      */
-    public function setClients($clients)
+    public function setRoles($roles)
     {
-        $this->container['clients'] = $clients;
+        $this->container['roles'] = $roles;
 
         return $this;
     }
 
     /**
-     * Gets accounting_periods
+     * Gets age_groups
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAgeGroups[]|null
      */
-    public function getAccountingPeriods()
+    public function getAgeGroups()
     {
-        return $this->container['accounting_periods'];
+        return $this->container['age_groups'];
     }
 
     /**
-     * Sets accounting_periods
+     * Sets age_groups
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods[]|null $accounting_periods accounting_periods
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAgeGroups[]|null $age_groups age_groups
      *
      * @return self
      */
-    public function setAccountingPeriods($accounting_periods)
+    public function setAgeGroups($age_groups)
     {
-        $this->container['accounting_periods'] = $accounting_periods;
+        $this->container['age_groups'] = $age_groups;
 
         return $this;
     }
 
     /**
-     * Gets accounts
+     * Gets target_groups
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccounts[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTargetGroups[]|null
      */
-    public function getAccounts()
+    public function getTargetGroups()
     {
-        return $this->container['accounts'];
+        return $this->container['target_groups'];
     }
 
     /**
-     * Sets accounts
+     * Sets target_groups
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccounts[]|null $accounts accounts
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTargetGroups[]|null $target_groups target_groups
      *
      * @return self
      */
-    public function setAccounts($accounts)
+    public function setTargetGroups($target_groups)
     {
-        $this->container['accounts'] = $accounts;
+        $this->container['target_groups'] = $target_groups;
 
         return $this;
     }
 
     /**
-     * Gets account_types
+     * Gets group_types
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountTypes[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupTypes[]|null
      */
-    public function getAccountTypes()
+    public function getGroupTypes()
     {
-        return $this->container['account_types'];
+        return $this->container['group_types'];
     }
 
     /**
-     * Sets account_types
+     * Sets group_types
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountTypes[]|null $account_types account_types
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupTypes[]|null $group_types group_types
      *
      * @return self
      */
-    public function setAccountTypes($account_types)
+    public function setGroupTypes($group_types)
     {
-        $this->container['account_types'] = $account_types;
+        $this->container['group_types'] = $group_types;
 
         return $this;
     }
 
     /**
-     * Gets account_classes
+     * Gets group_categories
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountClasses[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupCategories[]|null
      */
-    public function getAccountClasses()
+    public function getGroupCategories()
     {
-        return $this->container['account_classes'];
+        return $this->container['group_categories'];
     }
 
     /**
-     * Sets account_classes
+     * Sets group_categories
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountClasses[]|null $account_classes account_classes
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupCategories[]|null $group_categories group_categories
      *
      * @return self
      */
-    public function setAccountClasses($account_classes)
+    public function setGroupCategories($group_categories)
     {
-        $this->container['account_classes'] = $account_classes;
+        $this->container['group_categories'] = $group_categories;
 
         return $this;
     }
 
     /**
-     * Gets account_groups
+     * Gets group_statuses
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountGroups[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupStatuses[]|null
      */
-    public function getAccountGroups()
+    public function getGroupStatuses()
     {
-        return $this->container['account_groups'];
+        return $this->container['group_statuses'];
     }
 
     /**
-     * Sets account_groups
+     * Sets group_statuses
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountGroups[]|null $account_groups account_groups
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataGroupStatuses[]|null $group_statuses group_statuses
      *
      * @return self
      */
-    public function setAccountGroups($account_groups)
+    public function setGroupStatuses($group_statuses)
     {
-        $this->container['account_groups'] = $account_groups;
+        $this->container['group_statuses'] = $group_statuses;
 
         return $this;
     }
 
     /**
-     * Gets cash_discounts
+     * Gets departments
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataCashDiscounts[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]|null
      */
-    public function getCashDiscounts()
+    public function getDepartments()
     {
-        return $this->container['cash_discounts'];
+        return $this->container['departments'];
     }
 
     /**
-     * Sets cash_discounts
+     * Sets departments
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataCashDiscounts[]|null $cash_discounts cash_discounts
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]|null $departments departments
      *
      * @return self
      */
-    public function setCashDiscounts($cash_discounts)
+    public function setDepartments($departments)
     {
-        $this->container['cash_discounts'] = $cash_discounts;
+        $this->container['departments'] = $departments;
 
         return $this;
     }
 
     /**
-     * Gets cost_centers
+     * Gets statuses
      *
-     * @return \StevenBuehner\ChurchTools\Model\CostCenter[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]|null
      */
-    public function getCostCenters()
+    public function getStatuses()
     {
-        return $this->container['cost_centers'];
+        return $this->container['statuses'];
     }
 
     /**
-     * Sets cost_centers
+     * Sets statuses
      *
-     * @param \StevenBuehner\ChurchTools\Model\CostCenter[]|null $cost_centers cost_centers
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]|null $statuses statuses
      *
      * @return self
      */
-    public function setCostCenters($cost_centers)
+    public function setStatuses($statuses)
     {
-        $this->container['cost_centers'] = $cost_centers;
+        $this->container['statuses'] = $statuses;
 
         return $this;
     }
 
     /**
-     * Gets tax_rates
+     * Gets campuses
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxRates[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]|null
      */
-    public function getTaxRates()
+    public function getCampuses()
     {
-        return $this->container['tax_rates'];
+        return $this->container['campuses'];
     }
 
     /**
-     * Sets tax_rates
+     * Sets campuses
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxRates[]|null $tax_rates tax_rates
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]|null $campuses campuses
      *
      * @return self
      */
-    public function setTaxRates($tax_rates)
+    public function setCampuses($campuses)
     {
-        $this->container['tax_rates'] = $tax_rates;
+        $this->container['campuses'] = $campuses;
 
         return $this;
     }
 
     /**
-     * Gets tax_types
+     * Gets contact_labels
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxTypes[]|null
+     * @return \StevenBuehner\ChurchTools\Model\ContactLabel[]|null
      */
-    public function getTaxTypes()
+    public function getContactLabels()
     {
-        return $this->container['tax_types'];
+        return $this->container['contact_labels'];
     }
 
     /**
-     * Sets tax_types
+     * Sets contact_labels
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTaxTypes[]|null $tax_types tax_types
+     * @param \StevenBuehner\ChurchTools\Model\ContactLabel[]|null $contact_labels contact_labels
      *
      * @return self
      */
-    public function setTaxTypes($tax_types)
+    public function setContactLabels($contact_labels)
     {
-        $this->container['tax_types'] = $tax_types;
+        $this->container['contact_labels'] = $contact_labels;
 
         return $this;
     }
 
     /**
-     * Gets transaction_purposes
+     * Gets grow_paths
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTransactionPurposes[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GrowPath[]|null
      */
-    public function getTransactionPurposes()
+    public function getGrowPaths()
     {
-        return $this->container['transaction_purposes'];
+        return $this->container['grow_paths'];
     }
 
     /**
-     * Sets transaction_purposes
+     * Sets grow_paths
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataTransactionPurposes[]|null $transaction_purposes transaction_purposes
+     * @param \StevenBuehner\ChurchTools\Model\GrowPath[]|null $grow_paths grow_paths
      *
      * @return self
      */
-    public function setTransactionPurposes($transaction_purposes)
+    public function setGrowPaths($grow_paths)
     {
-        $this->container['transaction_purposes'] = $transaction_purposes;
+        $this->container['grow_paths'] = $grow_paths;
+
+        return $this;
+    }
+
+    /**
+     * Gets follow_ups
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataFollowUps[]|null
+     */
+    public function getFollowUps()
+    {
+        return $this->container['follow_ups'];
+    }
+
+    /**
+     * Sets follow_ups
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataFollowUps[]|null $follow_ups follow_ups
+     *
+     * @return self
+     */
+    public function setFollowUps($follow_ups)
+    {
+        $this->container['follow_ups'] = $follow_ups;
+
+        return $this;
+    }
+
+    /**
+     * Gets follow_up_intervals
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataFollowUpIntervals[]|null
+     */
+    public function getFollowUpIntervals()
+    {
+        return $this->container['follow_up_intervals'];
+    }
+
+    /**
+     * Sets follow_up_intervals
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataFollowUpIntervals[]|null $follow_up_intervals follow_up_intervals
+     *
+     * @return self
+     */
+    public function setFollowUpIntervals($follow_up_intervals)
+    {
+        $this->container['follow_up_intervals'] = $follow_up_intervals;
 
         return $this;
     }

@@ -36,7 +36,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FileApi(
     $config
 );
 $domain_type = logo; // string | The domain type. Currently supported are 'avatar', 'groupimage', 'logo', 'attatchments', 'html_template', 'service', 'song_arrangement', 'importtable', 'person', 'familyavatar', 'wiki_.?'.
-$domain_identifier = 35; // string | the domain identifier
+$domain_identifier = 35; // int | the domain identifier
 
 try {
     $apiInstance->deleteFiles($domain_type, $domain_identifier);
@@ -50,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. |
- **domain_identifier** | **string**| the domain identifier |
+ **domain_identifier** | **int**| the domain identifier |
 
 ### Return type
 
@@ -72,7 +72,7 @@ void (empty response body)
 ## `uploadFiles()`
 
 ```php
-uploadFiles($domain_type, $domain_identifier, $files): \StevenBuehner\ChurchTools\Model\InlineResponse20030
+uploadFiles($domain_type, $domain_identifier, $files): \StevenBuehner\ChurchTools\Model\InlineResponse20031
 ```
 
 Upload files
@@ -97,7 +97,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FileApi(
     $config
 );
 $domain_type = logo; // string | The domain type. Currently supported are 'avatar', 'groupimage', 'logo', 'attatchments', 'html_template', 'service', 'song_arrangement', 'importtable', 'person', 'familyavatar', 'wiki_.?'.
-$domain_identifier = 35; // string | the domain identifier
+$domain_identifier = 35; // int | the domain identifier
 $files = array("/path/to/file.txt"); // \SplFileObject[]
 
 try {
@@ -113,12 +113,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. |
- **domain_identifier** | **string**| the domain identifier |
+ **domain_identifier** | **int**| the domain identifier |
  **files** | **\SplFileObject[]**|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
 
 ### Authorization
 

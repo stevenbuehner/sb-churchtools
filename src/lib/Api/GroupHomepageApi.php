@@ -414,7 +414,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20025
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20026
      */
     public function getGroupHomepage($hash)
     {
@@ -431,7 +431,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20026, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGroupHomepageWithHttpInfo($hash)
     {
@@ -474,20 +474,20 @@ class GroupHomepageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20025' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20026' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20025', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20026', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20025';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20026';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -505,7 +505,7 @@ class GroupHomepageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20025',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20026',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -547,7 +547,7 @@ class GroupHomepageApi
      */
     public function getGroupHomepageAsyncWithHttpInfo($hash)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20025';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20026';
         $request = $this->getGroupHomepageRequest($hash);
 
         return $this->client
@@ -655,6 +655,11 @@ class GroupHomepageApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -687,7 +692,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20072
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20073
      */
     public function getPublicgroupsGroupIdForm($group_id, $token, $person_id)
     {
@@ -706,7 +711,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20072, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20073, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPublicgroupsGroupIdFormWithHttpInfo($group_id, $token, $person_id)
     {
@@ -749,20 +754,20 @@ class GroupHomepageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20072' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20073' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20072', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20073', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20072';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20073';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -780,7 +785,7 @@ class GroupHomepageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20072',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20073',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -826,7 +831,7 @@ class GroupHomepageApi
      */
     public function getPublicgroupsGroupIdFormAsyncWithHttpInfo($group_id, $token, $person_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20072';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20073';
         $request = $this->getPublicgroupsGroupIdFormRequest($group_id, $token, $person_id);
 
         return $this->client
@@ -1001,7 +1006,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20071|object
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20072|object
      */
     public function issueSignUpToken($group_id, $inline_object45 = null)
     {
@@ -1019,7 +1024,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20071|object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20072|object, HTTP status code, HTTP response headers (array of strings)
      */
     public function issueSignUpTokenWithHttpInfo($group_id, $inline_object45 = null)
     {
@@ -1062,14 +1067,14 @@ class GroupHomepageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20071' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20072' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20071', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20072', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1087,7 +1092,7 @@ class GroupHomepageApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20071';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20072';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1105,7 +1110,7 @@ class GroupHomepageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20071',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20072',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1157,7 +1162,7 @@ class GroupHomepageApi
      */
     public function issueSignUpTokenAsyncWithHttpInfo($group_id, $inline_object45 = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20071';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20072';
         $request = $this->issueSignUpTokenRequest($group_id, $inline_object45);
 
         return $this->client
@@ -1540,7 +1545,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20073
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20074
      */
     public function postPublicgroupsGroupIdSignup($group_id, $inline_object47 = null)
     {
@@ -1558,7 +1563,7 @@ class GroupHomepageApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20073, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20074, HTTP status code, HTTP response headers (array of strings)
      */
     public function postPublicgroupsGroupIdSignupWithHttpInfo($group_id, $inline_object47 = null)
     {
@@ -1601,20 +1606,20 @@ class GroupHomepageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20073' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20074' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20073', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20074', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20073';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20074';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1632,7 +1637,7 @@ class GroupHomepageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20073',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20074',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1676,7 +1681,7 @@ class GroupHomepageApi
      */
     public function postPublicgroupsGroupIdSignupAsyncWithHttpInfo($group_id, $inline_object47 = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20073';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20074';
         $request = $this->postPublicgroupsGroupIdSignupRequest($group_id, $inline_object47);
 
         return $this->client

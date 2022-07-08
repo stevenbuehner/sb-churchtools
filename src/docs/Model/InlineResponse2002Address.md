@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **district** | **string** |  |
 **zip** | **string** |  |
 **city** | **string** |  |
-**country** | **mixed** |  | [optional]
+**country** | **string** |  | [optional]
 **latitude** | **string** |  |
 **longitude** | **string** |  |
 

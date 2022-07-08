@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **num_guests** | **int** |  | [optional]
 **comment** | **string** |  | [optional]
 **poll_result** | **object** |  | [optional]
-**statistics** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20021Statistics**](InlineResponse20021Statistics.md) |  | [optional]
+**statistics** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20022Statistics**](InlineResponse20022Statistics.md) |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\EntityMetaData**](EntityMetaData.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

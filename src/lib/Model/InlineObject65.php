@@ -59,8 +59,7 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'is_dry_run' => 'bool',
-        'is_validation_only' => 'bool'
+        'logs' => '\StevenBuehner\ChurchTools\Model\SyncLogsLogs[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'is_dry_run' => null,
-        'is_validation_only' => null
+        'logs' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_dry_run' => 'isDryRun',
-        'is_validation_only' => 'isValidationOnly'
+        'logs' => 'logs'
     ];
 
     /**
@@ -112,8 +109,7 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'is_dry_run' => 'setIsDryRun',
-        'is_validation_only' => 'setIsValidationOnly'
+        'logs' => 'setLogs'
     ];
 
     /**
@@ -122,8 +118,7 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'is_dry_run' => 'getIsDryRun',
-        'is_validation_only' => 'getIsValidationOnly'
+        'logs' => 'getLogs'
     ];
 
     /**
@@ -183,8 +178,7 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
-        $this->container['is_validation_only'] = $data['is_validation_only'] ?? null;
+        $this->container['logs'] = $data['logs'] ?? null;
     }
 
     /**
@@ -195,6 +189,13 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['logs'] === null) {
+            $invalidProperties[] = "'logs' can't be null";
+        }
+        if ((count($this->container['logs']) < 1)) {
+            $invalidProperties[] = "invalid value for 'logs', number of items must be greater than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -212,49 +213,30 @@ class InlineObject65 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets is_dry_run
+     * Gets logs
      *
-     * @return bool|null
+     * @return \StevenBuehner\ChurchTools\Model\SyncLogsLogs[]
      */
-    public function getIsDryRun()
+    public function getLogs()
     {
-        return $this->container['is_dry_run'];
+        return $this->container['logs'];
     }
 
     /**
-     * Sets is_dry_run
+     * Sets logs
      *
-     * @param bool|null $is_dry_run If `true` no records will be changed, deleted, linked, created. Default: `false`
+     * @param \StevenBuehner\ChurchTools\Model\SyncLogsLogs[] $logs logs
      *
      * @return self
      */
-    public function setIsDryRun($is_dry_run)
+    public function setLogs($logs)
     {
-        $this->container['is_dry_run'] = $is_dry_run;
 
-        return $this;
-    }
 
-    /**
-     * Gets is_validation_only
-     *
-     * @return bool|null
-     */
-    public function getIsValidationOnly()
-    {
-        return $this->container['is_validation_only'];
-    }
-
-    /**
-     * Sets is_validation_only
-     *
-     * @param bool|null $is_validation_only If `true` configuration is validated. Default: `false`
-     *
-     * @return self
-     */
-    public function setIsValidationOnly($is_validation_only)
-    {
-        $this->container['is_validation_only'] = $is_validation_only;
+        if ((count($logs) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $logs when calling InlineObject65., number of items must be greater than or equal to 1.');
+        }
+        $this->container['logs'] = $logs;
 
         return $this;
     }

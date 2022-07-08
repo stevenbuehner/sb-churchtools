@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ## `saveTag()`
 
 ```php
-saveTag($inline_object12): \StevenBuehner\ChurchTools\Model\InlineResponse20028
+saveTag($inline_object12): \StevenBuehner\ChurchTools\Model\InlineResponse20029
 ```
 
 Create new tag
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
 
 ### Authorization
 

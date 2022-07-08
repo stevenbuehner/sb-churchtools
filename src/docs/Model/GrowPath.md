@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  | [optional]
 **name** | **string** |  | [optional]
-**sort_key** | **float** |  | [optional]
+**sort_key** | **int** |  | [optional]
 **color** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -59,8 +59,7 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\AutomaticEmail[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114Meta'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse200119Data[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'meta' => null
+        'data' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'meta' => 'meta'
+        'data' => 'data'
     ];
 
     /**
@@ -112,8 +109,7 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'meta' => 'setMeta'
+        'data' => 'setData'
     ];
 
     /**
@@ -122,8 +118,7 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'meta' => 'getMeta'
+        'data' => 'getData'
     ];
 
     /**
@@ -184,7 +179,6 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['data'] = $data['data'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -196,16 +190,6 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
-        if ((count($this->container['data']) < 1)) {
-            $invalidProperties[] = "invalid value for 'data', number of items must be greater than or equal to 1.";
-        }
-
-        if ($this->container['meta'] === null) {
-            $invalidProperties[] = "'meta' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -224,7 +208,7 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\AutomaticEmail[]
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200119Data[]|null
      */
     public function getData()
     {
@@ -234,42 +218,13 @@ class InlineResponse200119 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\AutomaticEmail[] $data data
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200119Data[]|null $data data
      *
      * @return self
      */
     public function setData($data)
     {
-
-
-        if ((count($data) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $data when calling InlineResponse200119., number of items must be greater than or equal to 1.');
-        }
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114Meta
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200114Meta $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

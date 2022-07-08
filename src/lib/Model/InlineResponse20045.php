@@ -59,7 +59,8 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045Data',
+        'count' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045Count'
     ];
 
     /**
@@ -70,7 +71,8 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'data' => null,
+        'count' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'data' => 'data',
+        'count' => 'count'
     ];
 
     /**
@@ -109,7 +112,8 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'data' => 'setData',
+        'count' => 'setCount'
     ];
 
     /**
@@ -118,7 +122,8 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'data' => 'getData',
+        'count' => 'getCount'
     ];
 
     /**
@@ -179,6 +184,7 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['data'] = $data['data'] ?? null;
+        $this->container['count'] = $data['count'] ?? null;
     }
 
     /**
@@ -208,7 +214,7 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045Data|null
      */
     public function getData()
     {
@@ -218,13 +224,37 @@ class InlineResponse20045 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataClients[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045Data|null $data data
      *
      * @return self
      */
     public function setData($data)
     {
         $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045Count|null
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045Count|null $count count
+     *
+     * @return self
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
 
         return $this;
     }

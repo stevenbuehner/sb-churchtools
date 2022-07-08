@@ -12,13 +12,13 @@ Method | HTTP request | Description
 [**getSongsOfAgenda()**](EventApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
 [**sendAgendaEmail()**](EventApi.md#sendAgendaEmail) | **POST** /agendas/send | Send agenda email to recipients
 [**sendEventEmail()**](EventApi.md#sendEventEmail) | **POST** /events/send | Send Mail to Event Participants
-[**startStopChat()**](EventApi.md#startStopChat) | **POST** /events/{eventId}/chat | Start or stop an event chat
+[**startStopEventChat()**](EventApi.md#startStopEventChat) | **POST** /events/{eventId}/chat | Start or stop an event chat
 
 
 ## `getAgendaForEvent()`
 
 ```php
-getAgendaForEvent($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse20037
+getAgendaForEvent($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse20038
 ```
 
 Get agenda for event
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 ## `getAllEvents()`
 
 ```php
-getAllEvents($from, $to, $canceled): \StevenBuehner\ChurchTools\Model\InlineResponse20036
+getAllEvents($from, $to, $canceled): \StevenBuehner\ChurchTools\Model\InlineResponse20037
 ```
 
 Get all events
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$event_id = 42; // string | ID of event
+$event_id = 42; // int | ID of event
 
 try {
     $result = $apiInstance->getEvent($event_id);
@@ -186,7 +186,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **string**| ID of event |
+ **event_id** | **int**| ID of event |
 
 ### Return type
 
@@ -293,7 +293,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // string | ID of person
+$id = 42; // int | ID of person
 $from = Thu Aug 08 02:00:00 CEST 2019; // \DateTime | Start date from when events are returned. Default value: today
 
 try {
@@ -308,7 +308,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of person |
+ **id** | **int**| ID of person |
  **from** | **\DateTime**| Start date from when events are returned. Default value: today | [optional]
 
 ### Return type
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 ## `getSongsOfAgenda()`
 
 ```php
-getSongsOfAgenda($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse200110
+getSongsOfAgenda($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse200111
 ```
 
 Get All Songs of Agenda
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200110**](../Model/InlineResponse200110.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200111**](../Model/InlineResponse200111.md)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 ## `sendAgendaEmail()`
 
 ```php
-sendAgendaEmail($inline_object17): \StevenBuehner\ChurchTools\Model\InlineResponse20038
+sendAgendaEmail($inline_object17): \StevenBuehner\ChurchTools\Model\InlineResponse20039
 ```
 
 Send agenda email to recipients
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
 
 ### Authorization
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 ## `sendEventEmail()`
 
 ```php
-sendEventEmail($inline_object53): \StevenBuehner\ChurchTools\Model\InlineResponse20038
+sendEventEmail($inline_object54): \StevenBuehner\ChurchTools\Model\InlineResponse20039
 ```
 
 Send Mail to Event Participants
@@ -481,10 +481,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object53 = new \StevenBuehner\ChurchTools\Model\InlineObject53(); // \StevenBuehner\ChurchTools\Model\InlineObject53
+$inline_object54 = new \StevenBuehner\ChurchTools\Model\InlineObject54(); // \StevenBuehner\ChurchTools\Model\InlineObject54
 
 try {
-    $result = $apiInstance->sendEventEmail($inline_object53);
+    $result = $apiInstance->sendEventEmail($inline_object54);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->sendEventEmail: ', $e->getMessage(), PHP_EOL;
@@ -495,11 +495,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object53** | [**\StevenBuehner\ChurchTools\Model\InlineObject53**](../Model/InlineObject53.md)|  |
+ **inline_object54** | [**\StevenBuehner\ChurchTools\Model\InlineObject54**](../Model/InlineObject54.md)|  |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
 
 ### Authorization
 
@@ -514,10 +514,10 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `startStopChat()`
+## `startStopEventChat()`
 
 ```php
-startStopChat($event_id, $inline_object16)
+startStopEventChat($event_id, $inline_object16)
 ```
 
 Start or stop an event chat
@@ -541,13 +541,13 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$event_id = 42; // string | ID of event
+$event_id = 42; // int | ID of event
 $inline_object16 = new \StevenBuehner\ChurchTools\Model\InlineObject16(); // \StevenBuehner\ChurchTools\Model\InlineObject16
 
 try {
-    $apiInstance->startStopChat($event_id, $inline_object16);
+    $apiInstance->startStopEventChat($event_id, $inline_object16);
 } catch (Exception $e) {
-    echo 'Exception when calling EventApi->startStopChat: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventApi->startStopEventChat: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -555,7 +555,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **string**| ID of event |
+ **event_id** | **int**| ID of event |
  **inline_object16** | [**\StevenBuehner\ChurchTools\Model\InlineObject16**](../Model/InlineObject16.md)|  |
 
 ### Return type

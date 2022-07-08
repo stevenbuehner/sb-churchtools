@@ -59,10 +59,16 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
-        'date' => 'string',
-        'age' => 'float',
-        'person' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114Person'
+        'execution_id' => 'string',
+        'job_id' => 'float',
+        'start_date' => 'string',
+        'end_date' => 'string',
+        'status' => 'string',
+        'error_count' => 'int',
+        'both' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114Both',
+        'es' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114Es',
+        'master' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114Es',
+        'is_dry_run' => 'bool'
     ];
 
     /**
@@ -73,10 +79,16 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'date' => null,
-        'age' => null,
-        'person' => null
+        'execution_id' => null,
+        'job_id' => null,
+        'start_date' => null,
+        'end_date' => null,
+        'status' => null,
+        'error_count' => null,
+        'both' => null,
+        'es' => null,
+        'master' => null,
+        'is_dry_run' => null
     ];
 
     /**
@@ -106,10 +118,16 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'date' => 'date',
-        'age' => 'age',
-        'person' => 'person'
+        'execution_id' => 'executionId',
+        'job_id' => 'jobId',
+        'start_date' => 'startDate',
+        'end_date' => 'endDate',
+        'status' => 'status',
+        'error_count' => 'errorCount',
+        'both' => 'both',
+        'es' => 'es',
+        'master' => 'master',
+        'is_dry_run' => 'isDryRun'
     ];
 
     /**
@@ -118,10 +136,16 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'date' => 'setDate',
-        'age' => 'setAge',
-        'person' => 'setPerson'
+        'execution_id' => 'setExecutionId',
+        'job_id' => 'setJobId',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'status' => 'setStatus',
+        'error_count' => 'setErrorCount',
+        'both' => 'setBoth',
+        'es' => 'setEs',
+        'master' => 'setMaster',
+        'is_dry_run' => 'setIsDryRun'
     ];
 
     /**
@@ -130,10 +154,16 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'date' => 'getDate',
-        'age' => 'getAge',
-        'person' => 'getPerson'
+        'execution_id' => 'getExecutionId',
+        'job_id' => 'getJobId',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'status' => 'getStatus',
+        'error_count' => 'getErrorCount',
+        'both' => 'getBoth',
+        'es' => 'getEs',
+        'master' => 'getMaster',
+        'is_dry_run' => 'getIsDryRun'
     ];
 
     /**
@@ -193,10 +223,16 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['date'] = $data['date'] ?? null;
-        $this->container['age'] = $data['age'] ?? null;
-        $this->container['person'] = $data['person'] ?? null;
+        $this->container['execution_id'] = $data['execution_id'] ?? null;
+        $this->container['job_id'] = $data['job_id'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['error_count'] = $data['error_count'] ?? null;
+        $this->container['both'] = $data['both'] ?? null;
+        $this->container['es'] = $data['es'] ?? null;
+        $this->container['master'] = $data['master'] ?? null;
+        $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
     }
 
     /**
@@ -208,23 +244,37 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['execution_id'] === null) {
+            $invalidProperties[] = "'execution_id' can't be null";
         }
-        if ((mb_strlen($this->container['type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ((mb_strlen($this->container['date']) < 1)) {
-            $invalidProperties[] = "invalid value for 'date', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['execution_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'execution_id', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['age'] === null) {
-            $invalidProperties[] = "'age' can't be null";
+        if ($this->container['job_id'] === null) {
+            $invalidProperties[] = "'job_id' can't be null";
         }
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
+        }
+        if ((mb_strlen($this->container['start_date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'start_date', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
+        }
+        if ((mb_strlen($this->container['end_date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'end_date', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        if ((mb_strlen($this->container['status']) < 1)) {
+            $invalidProperties[] = "invalid value for 'status', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -241,107 +291,261 @@ class InlineResponse200114Data implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets type
+     * Gets execution_id
      *
      * @return string
      */
-    public function getType()
+    public function getExecutionId()
     {
-        return $this->container['type'];
+        return $this->container['execution_id'];
     }
 
     /**
-     * Sets type
+     * Sets execution_id
      *
-     * @param string $type Type of Date
+     * @param string $execution_id execution_id
      *
      * @return self
      */
-    public function setType($type)
+    public function setExecutionId($execution_id)
     {
 
-        if ((mb_strlen($type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling InlineResponse200114Data., must be bigger than or equal to 1.');
+        if ((mb_strlen($execution_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $execution_id when calling InlineResponse200114Data., must be bigger than or equal to 1.');
         }
 
-        $this->container['type'] = $type;
+        $this->container['execution_id'] = $execution_id;
 
         return $this;
     }
 
     /**
-     * Gets date
-     *
-     * @return string
-     */
-    public function getDate()
-    {
-        return $this->container['date'];
-    }
-
-    /**
-     * Sets date
-     *
-     * @param string $date Actually birthday
-     *
-     * @return self
-     */
-    public function setDate($date)
-    {
-
-        if ((mb_strlen($date) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $date when calling InlineResponse200114Data., must be bigger than or equal to 1.');
-        }
-
-        $this->container['date'] = $date;
-
-        return $this;
-    }
-
-    /**
-     * Gets age
+     * Gets job_id
      *
      * @return float
      */
-    public function getAge()
+    public function getJobId()
     {
-        return $this->container['age'];
+        return $this->container['job_id'];
     }
 
     /**
-     * Sets age
+     * Sets job_id
      *
-     * @param float $age Calculated age. (see note to that endpoint)
+     * @param float $job_id job_id
      *
      * @return self
      */
-    public function setAge($age)
+    public function setJobId($job_id)
     {
-        $this->container['age'] = $age;
+        $this->container['job_id'] = $job_id;
 
         return $this;
     }
 
     /**
-     * Gets person
+     * Gets start_date
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114Person|null
+     * @return string
      */
-    public function getPerson()
+    public function getStartDate()
     {
-        return $this->container['person'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets person
+     * Sets start_date
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200114Person|null $person person
+     * @param string $start_date start_date
      *
      * @return self
      */
-    public function setPerson($person)
+    public function setStartDate($start_date)
     {
-        $this->container['person'] = $person;
+
+        if ((mb_strlen($start_date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $start_date when calling InlineResponse200114Data., must be bigger than or equal to 1.');
+        }
+
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return string
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param string $end_date end_date
+     *
+     * @return self
+     */
+    public function setEndDate($end_date)
+    {
+
+        if ((mb_strlen($end_date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $end_date when calling InlineResponse200114Data., must be bigger than or equal to 1.');
+        }
+
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+
+        if ((mb_strlen($status) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $status when calling InlineResponse200114Data., must be bigger than or equal to 1.');
+        }
+
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets error_count
+     *
+     * @return int|null
+     */
+    public function getErrorCount()
+    {
+        return $this->container['error_count'];
+    }
+
+    /**
+     * Sets error_count
+     *
+     * @param int|null $error_count error_count
+     *
+     * @return self
+     */
+    public function setErrorCount($error_count)
+    {
+        $this->container['error_count'] = $error_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets both
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114Both|null
+     */
+    public function getBoth()
+    {
+        return $this->container['both'];
+    }
+
+    /**
+     * Sets both
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200114Both|null $both both
+     *
+     * @return self
+     */
+    public function setBoth($both)
+    {
+        $this->container['both'] = $both;
+
+        return $this;
+    }
+
+    /**
+     * Gets es
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114Es|null
+     */
+    public function getEs()
+    {
+        return $this->container['es'];
+    }
+
+    /**
+     * Sets es
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200114Es|null $es es
+     *
+     * @return self
+     */
+    public function setEs($es)
+    {
+        $this->container['es'] = $es;
+
+        return $this;
+    }
+
+    /**
+     * Gets master
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114Es|null
+     */
+    public function getMaster()
+    {
+        return $this->container['master'];
+    }
+
+    /**
+     * Sets master
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200114Es|null $master master
+     *
+     * @return self
+     */
+    public function setMaster($master)
+    {
+        $this->container['master'] = $master;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_dry_run
+     *
+     * @return bool|null
+     */
+    public function getIsDryRun()
+    {
+        return $this->container['is_dry_run'];
+    }
+
+    /**
+     * Sets is_dry_run
+     *
+     * @param bool|null $is_dry_run is_dry_run
+     *
+     * @return self
+     */
+    public function setIsDryRun($is_dry_run)
+    {
+        $this->container['is_dry_run'] = $is_dry_run;
 
         return $this;
     }

@@ -65,7 +65,7 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
         'district' => 'string',
         'zip' => 'string',
         'city' => 'string',
-        'country' => 'mixed',
+        'country' => 'string',
         'latitude' => 'string',
         'longitude' => 'string'
     ];
@@ -424,7 +424,7 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets country
      *
-     * @return mixed|null
+     * @return string|null
      */
     public function getCountry()
     {
@@ -434,7 +434,7 @@ class InlineResponse2002Address implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets country
      *
-     * @param mixed|null $country country
+     * @param string|null $country country
      *
      * @return self
      */

@@ -64,7 +64,7 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'string',
         'module' => 'string',
         'updated' => '\DateTime',
-        'translations' => '\StevenBuehner\ChurchTools\Model\InlineResponse20039Translations'
+        'translations' => '\StevenBuehner\ChurchTools\Model\InlineResponse20040Translations'
     ];
 
     /**
@@ -329,7 +329,7 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets translations
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20039Translations|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20040Translations|null
      */
     public function getTranslations()
     {
@@ -339,7 +339,7 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets translations
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20039Translations|null $translations translations
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20040Translations|null $translations translations
      *
      * @return self
      */

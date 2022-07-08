@@ -397,7 +397,7 @@ class ServiceServiceGroupsApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20026
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20027
      */
     public function getAllServiceGroups()
     {
@@ -413,7 +413,7 @@ class ServiceServiceGroupsApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20026, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20027, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllServiceGroupsWithHttpInfo()
     {
@@ -456,20 +456,20 @@ class ServiceServiceGroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20026' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20027' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20026', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20027', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20026';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20027';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -487,7 +487,7 @@ class ServiceServiceGroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20026',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20027',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -527,7 +527,7 @@ class ServiceServiceGroupsApi
      */
     public function getAllServiceGroupsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20026';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20027';
         $request = $this->getAllServiceGroupsRequest();
 
         return $this->client
@@ -654,7 +654,7 @@ class ServiceServiceGroupsApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20027
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20028
      */
     public function getAllServices()
     {
@@ -670,7 +670,7 @@ class ServiceServiceGroupsApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20027, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20028, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllServicesWithHttpInfo()
     {
@@ -713,20 +713,20 @@ class ServiceServiceGroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20027' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20028' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20027', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20028', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20027';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20028';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -744,7 +744,7 @@ class ServiceServiceGroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20027',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20028',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -784,7 +784,7 @@ class ServiceServiceGroupsApi
      */
     public function getAllServicesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20027';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20028';
         $request = $this->getAllServicesRequest();
 
         return $this->client

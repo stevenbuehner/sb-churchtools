@@ -59,7 +59,27 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cost_centers' => '\StevenBuehner\ChurchTools\Model\FinanceCostcentersBulkcreateCostCenters[]'
+        'name' => 'string',
+        'short_name' => 'string',
+        'shorty' => 'string',
+        'slug' => 'string',
+        'sort_key' => 'float',
+        'is_published' => 'bool',
+        'description' => 'string',
+        'website' => 'string',
+        'email' => 'string',
+        'phone' => 'string',
+        'denomination' => 'string',
+        'association_id' => 'float',
+        'address' => '\StevenBuehner\ChurchTools\Model\CampusesIdAddress',
+        'social_media' => '\StevenBuehner\ChurchTools\Model\CampusesIdSocialMedia',
+        'tags' => 'string[]',
+        'groups' => 'object[]',
+        'visitors' => 'float',
+        'sign_up_group' => 'object',
+        'services' => '\StevenBuehner\ChurchTools\Model\CampusesIdServices[]',
+        'team_title' => 'string',
+        'team' => '\StevenBuehner\ChurchTools\Model\CampusesIdTeam[]'
     ];
 
     /**
@@ -70,7 +90,27 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cost_centers' => null
+        'name' => null,
+        'short_name' => null,
+        'shorty' => null,
+        'slug' => null,
+        'sort_key' => null,
+        'is_published' => null,
+        'description' => null,
+        'website' => null,
+        'email' => null,
+        'phone' => null,
+        'denomination' => null,
+        'association_id' => null,
+        'address' => null,
+        'social_media' => null,
+        'tags' => null,
+        'groups' => null,
+        'visitors' => null,
+        'sign_up_group' => null,
+        'services' => null,
+        'team_title' => null,
+        'team' => null
     ];
 
     /**
@@ -100,7 +140,27 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'cost_centers' => 'costCenters'
+        'name' => 'name',
+        'short_name' => 'shortName',
+        'shorty' => 'shorty',
+        'slug' => 'slug',
+        'sort_key' => 'sortKey',
+        'is_published' => 'isPublished',
+        'description' => 'description',
+        'website' => 'website',
+        'email' => 'email',
+        'phone' => 'phone',
+        'denomination' => 'denomination',
+        'association_id' => 'associationId',
+        'address' => 'address',
+        'social_media' => 'socialMedia',
+        'tags' => 'tags',
+        'groups' => 'groups',
+        'visitors' => 'visitors',
+        'sign_up_group' => 'signUpGroup',
+        'services' => 'services',
+        'team_title' => 'teamTitle',
+        'team' => 'team'
     ];
 
     /**
@@ -109,7 +169,27 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'cost_centers' => 'setCostCenters'
+        'name' => 'setName',
+        'short_name' => 'setShortName',
+        'shorty' => 'setShorty',
+        'slug' => 'setSlug',
+        'sort_key' => 'setSortKey',
+        'is_published' => 'setIsPublished',
+        'description' => 'setDescription',
+        'website' => 'setWebsite',
+        'email' => 'setEmail',
+        'phone' => 'setPhone',
+        'denomination' => 'setDenomination',
+        'association_id' => 'setAssociationId',
+        'address' => 'setAddress',
+        'social_media' => 'setSocialMedia',
+        'tags' => 'setTags',
+        'groups' => 'setGroups',
+        'visitors' => 'setVisitors',
+        'sign_up_group' => 'setSignUpGroup',
+        'services' => 'setServices',
+        'team_title' => 'setTeamTitle',
+        'team' => 'setTeam'
     ];
 
     /**
@@ -118,7 +198,27 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'cost_centers' => 'getCostCenters'
+        'name' => 'getName',
+        'short_name' => 'getShortName',
+        'shorty' => 'getShorty',
+        'slug' => 'getSlug',
+        'sort_key' => 'getSortKey',
+        'is_published' => 'getIsPublished',
+        'description' => 'getDescription',
+        'website' => 'getWebsite',
+        'email' => 'getEmail',
+        'phone' => 'getPhone',
+        'denomination' => 'getDenomination',
+        'association_id' => 'getAssociationId',
+        'address' => 'getAddress',
+        'social_media' => 'getSocialMedia',
+        'tags' => 'getTags',
+        'groups' => 'getGroups',
+        'visitors' => 'getVisitors',
+        'sign_up_group' => 'getSignUpGroup',
+        'services' => 'getServices',
+        'team_title' => 'getTeamTitle',
+        'team' => 'getTeam'
     ];
 
     /**
@@ -162,6 +262,54 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const DENOMINATION_NONE = 'denomination.none';
+    const DENOMINATION_PROTESTANT = 'denomination.protestant';
+    const DENOMINATION_FREE_EVANGELICAL = 'denomination.free.evangelical';
+    const DENOMINATION_CATHOLIC = 'denomination.catholic';
+    const DENOMINATION_ECUMENICAL = 'denomination.ecumenical';
+    const DENOMINATION_ORTHODOX = 'denomination.orthodox';
+    const VISITORS_0 = 0;
+    const VISITORS_1 = 1;
+    const VISITORS_50 = 50;
+    const VISITORS_100 = 100;
+    const VISITORS_250 = 250;
+    const VISITORS_500 = 500;
+    const VISITORS_1000 = 1000;
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDenominationAllowableValues()
+    {
+        return [
+            self::DENOMINATION_NONE,
+            self::DENOMINATION_PROTESTANT,
+            self::DENOMINATION_FREE_EVANGELICAL,
+            self::DENOMINATION_CATHOLIC,
+            self::DENOMINATION_ECUMENICAL,
+            self::DENOMINATION_ORTHODOX,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getVisitorsAllowableValues()
+    {
+        return [
+            self::VISITORS_0,
+            self::VISITORS_1,
+            self::VISITORS_50,
+            self::VISITORS_100,
+            self::VISITORS_250,
+            self::VISITORS_500,
+            self::VISITORS_1000,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -178,7 +326,27 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['cost_centers'] = $data['cost_centers'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['short_name'] = $data['short_name'] ?? null;
+        $this->container['shorty'] = $data['shorty'] ?? null;
+        $this->container['slug'] = $data['slug'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? 0;
+        $this->container['is_published'] = $data['is_published'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['website'] = $data['website'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['denomination'] = $data['denomination'] ?? null;
+        $this->container['association_id'] = $data['association_id'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
+        $this->container['social_media'] = $data['social_media'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['groups'] = $data['groups'] ?? null;
+        $this->container['visitors'] = $data['visitors'] ?? null;
+        $this->container['sign_up_group'] = $data['sign_up_group'] ?? null;
+        $this->container['services'] = $data['services'] ?? null;
+        $this->container['team_title'] = $data['team_title'] ?? null;
+        $this->container['team'] = $data['team'] ?? null;
     }
 
     /**
@@ -189,6 +357,139 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((mb_strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['short_name'] === null) {
+            $invalidProperties[] = "'short_name' can't be null";
+        }
+        if ((mb_strlen($this->container['short_name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'short_name', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['shorty'] === null) {
+            $invalidProperties[] = "'shorty' can't be null";
+        }
+        if ((mb_strlen($this->container['shorty']) < 1)) {
+            $invalidProperties[] = "invalid value for 'shorty', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['slug'] === null) {
+            $invalidProperties[] = "'slug' can't be null";
+        }
+        if ((mb_strlen($this->container['slug']) < 1)) {
+            $invalidProperties[] = "invalid value for 'slug', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['sort_key'] === null) {
+            $invalidProperties[] = "'sort_key' can't be null";
+        }
+        if ($this->container['is_published'] === null) {
+            $invalidProperties[] = "'is_published' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
+        if ((mb_strlen($this->container['description']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1000.";
+        }
+
+        if ((mb_strlen($this->container['description']) < 1)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['website'] === null) {
+            $invalidProperties[] = "'website' can't be null";
+        }
+        if ((mb_strlen($this->container['website']) < 1)) {
+            $invalidProperties[] = "invalid value for 'website', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ((mb_strlen($this->container['email']) < 1)) {
+            $invalidProperties[] = "invalid value for 'email', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['phone'] === null) {
+            $invalidProperties[] = "'phone' can't be null";
+        }
+        if ((mb_strlen($this->container['phone']) < 1)) {
+            $invalidProperties[] = "invalid value for 'phone', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['denomination'] === null) {
+            $invalidProperties[] = "'denomination' can't be null";
+        }
+        $allowedValues = $this->getDenominationAllowableValues();
+        if (!is_null($this->container['denomination']) && !in_array($this->container['denomination'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'denomination', must be one of '%s'",
+                $this->container['denomination'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['association_id'] === null) {
+            $invalidProperties[] = "'association_id' can't be null";
+        }
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
+        }
+        if ($this->container['social_media'] === null) {
+            $invalidProperties[] = "'social_media' can't be null";
+        }
+        if ($this->container['tags'] === null) {
+            $invalidProperties[] = "'tags' can't be null";
+        }
+        if ($this->container['groups'] === null) {
+            $invalidProperties[] = "'groups' can't be null";
+        }
+        if ((count($this->container['groups']) < 1)) {
+            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 1.";
+        }
+
+        if ($this->container['visitors'] === null) {
+            $invalidProperties[] = "'visitors' can't be null";
+        }
+        $allowedValues = $this->getVisitorsAllowableValues();
+        if (!is_null($this->container['visitors']) && !in_array($this->container['visitors'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'visitors', must be one of '%s'",
+                $this->container['visitors'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['sign_up_group'] === null) {
+            $invalidProperties[] = "'sign_up_group' can't be null";
+        }
+        if ($this->container['services'] === null) {
+            $invalidProperties[] = "'services' can't be null";
+        }
+        if ((count($this->container['services']) < 1)) {
+            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 1.";
+        }
+
+        if ($this->container['team_title'] === null) {
+            $invalidProperties[] = "'team_title' can't be null";
+        }
+        if ((mb_strlen($this->container['team_title']) < 1)) {
+            $invalidProperties[] = "invalid value for 'team_title', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['team'] === null) {
+            $invalidProperties[] = "'team' can't be null";
+        }
+        if ((count($this->container['team']) < 1)) {
+            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -206,25 +507,587 @@ class InlineObject76 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets cost_centers
+     * Gets name
      *
-     * @return \StevenBuehner\ChurchTools\Model\FinanceCostcentersBulkcreateCostCenters[]|null
+     * @return string
      */
-    public function getCostCenters()
+    public function getName()
     {
-        return $this->container['cost_centers'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets cost_centers
+     * Sets name
      *
-     * @param \StevenBuehner\ChurchTools\Model\FinanceCostcentersBulkcreateCostCenters[]|null $cost_centers cost_centers
+     * @param string $name name
      *
      * @return self
      */
-    public function setCostCenters($cost_centers)
+    public function setName($name)
     {
-        $this->container['cost_centers'] = $cost_centers;
+
+        if ((mb_strlen($name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets short_name
+     *
+     * @return string
+     */
+    public function getShortName()
+    {
+        return $this->container['short_name'];
+    }
+
+    /**
+     * Sets short_name
+     *
+     * @param string $short_name short_name
+     *
+     * @return self
+     */
+    public function setShortName($short_name)
+    {
+
+        if ((mb_strlen($short_name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $short_name when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['short_name'] = $short_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets shorty
+     *
+     * @return string
+     */
+    public function getShorty()
+    {
+        return $this->container['shorty'];
+    }
+
+    /**
+     * Sets shorty
+     *
+     * @param string $shorty shorty
+     *
+     * @return self
+     */
+    public function setShorty($shorty)
+    {
+
+        if ((mb_strlen($shorty) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $shorty when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['shorty'] = $shorty;
+
+        return $this;
+    }
+
+    /**
+     * Gets slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->container['slug'];
+    }
+
+    /**
+     * Sets slug
+     *
+     * @param string $slug slug
+     *
+     * @return self
+     */
+    public function setSlug($slug)
+    {
+
+        if ((mb_strlen($slug) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $slug when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['slug'] = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return float
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param float $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_published
+     *
+     * @return bool
+     */
+    public function getIsPublished()
+    {
+        return $this->container['is_published'];
+    }
+
+    /**
+     * Sets is_published
+     *
+     * @param bool $is_published is_published
+     *
+     * @return self
+     */
+    public function setIsPublished($is_published)
+    {
+        $this->container['is_published'] = $is_published;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if ((mb_strlen($description) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling InlineObject76., must be smaller than or equal to 1000.');
+        }
+        if ((mb_strlen($description) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets website
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->container['website'];
+    }
+
+    /**
+     * Sets website
+     *
+     * @param string $website website
+     *
+     * @return self
+     */
+    public function setWebsite($website)
+    {
+
+        if ((mb_strlen($website) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $website when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['website'] = $website;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+
+        if ((mb_strlen($email) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $email when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone phone
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+
+        if ((mb_strlen($phone) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $phone when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets denomination
+     *
+     * @return string
+     */
+    public function getDenomination()
+    {
+        return $this->container['denomination'];
+    }
+
+    /**
+     * Sets denomination
+     *
+     * @param string $denomination Either exact string or denomination object with name property
+     *
+     * @return self
+     */
+    public function setDenomination($denomination)
+    {
+        $allowedValues = $this->getDenominationAllowableValues();
+        if (!in_array($denomination, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'denomination', must be one of '%s'",
+                    $denomination,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['denomination'] = $denomination;
+
+        return $this;
+    }
+
+    /**
+     * Gets association_id
+     *
+     * @return float
+     */
+    public function getAssociationId()
+    {
+        return $this->container['association_id'];
+    }
+
+    /**
+     * Sets association_id
+     *
+     * @param float $association_id association_id
+     *
+     * @return self
+     */
+    public function setAssociationId($association_id)
+    {
+        $this->container['association_id'] = $association_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return \StevenBuehner\ChurchTools\Model\CampusesIdAddress
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param \StevenBuehner\ChurchTools\Model\CampusesIdAddress $address address
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_media
+     *
+     * @return \StevenBuehner\ChurchTools\Model\CampusesIdSocialMedia
+     */
+    public function getSocialMedia()
+    {
+        return $this->container['social_media'];
+    }
+
+    /**
+     * Sets social_media
+     *
+     * @param \StevenBuehner\ChurchTools\Model\CampusesIdSocialMedia $social_media social_media
+     *
+     * @return self
+     */
+    public function setSocialMedia($social_media)
+    {
+        $this->container['social_media'] = $social_media;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return string[]
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param string[] $tags List of tags.
+     *
+     * @return self
+     */
+    public function setTags($tags)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets groups
+     *
+     * @return object[]
+     */
+    public function getGroups()
+    {
+        return $this->container['groups'];
+    }
+
+    /**
+     * Sets groups
+     *
+     * @param object[] $groups Either array of group IDs or array of objects with group-property, which is a domain object wiht 'domainIdentifier'
+     *
+     * @return self
+     */
+    public function setGroups($groups)
+    {
+
+
+        if ((count($groups) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $groups when calling InlineObject76., number of items must be greater than or equal to 1.');
+        }
+        $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets visitors
+     *
+     * @return float
+     */
+    public function getVisitors()
+    {
+        return $this->container['visitors'];
+    }
+
+    /**
+     * Sets visitors
+     *
+     * @param float $visitors Single integer, which represents a range.
+     *
+     * @return self
+     */
+    public function setVisitors($visitors)
+    {
+        $allowedValues = $this->getVisitorsAllowableValues();
+        if (!in_array($visitors, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'visitors', must be one of '%s'",
+                    $visitors,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['visitors'] = $visitors;
+
+        return $this;
+    }
+
+    /**
+     * Gets sign_up_group
+     *
+     * @return object
+     */
+    public function getSignUpGroup()
+    {
+        return $this->container['sign_up_group'];
+    }
+
+    /**
+     * Sets sign_up_group
+     *
+     * @param object $sign_up_group SignUp Group; Either groupId or domainObject
+     *
+     * @return self
+     */
+    public function setSignUpGroup($sign_up_group)
+    {
+        $this->container['sign_up_group'] = $sign_up_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets services
+     *
+     * @return \StevenBuehner\ChurchTools\Model\CampusesIdServices[]
+     */
+    public function getServices()
+    {
+        return $this->container['services'];
+    }
+
+    /**
+     * Sets services
+     *
+     * @param \StevenBuehner\ChurchTools\Model\CampusesIdServices[] $services services
+     *
+     * @return self
+     */
+    public function setServices($services)
+    {
+
+
+        if ((count($services) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $services when calling InlineObject76., number of items must be greater than or equal to 1.');
+        }
+        $this->container['services'] = $services;
+
+        return $this;
+    }
+
+    /**
+     * Gets team_title
+     *
+     * @return string
+     */
+    public function getTeamTitle()
+    {
+        return $this->container['team_title'];
+    }
+
+    /**
+     * Sets team_title
+     *
+     * @param string $team_title team_title
+     *
+     * @return self
+     */
+    public function setTeamTitle($team_title)
+    {
+
+        if ((mb_strlen($team_title) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $team_title when calling InlineObject76., must be bigger than or equal to 1.');
+        }
+
+        $this->container['team_title'] = $team_title;
+
+        return $this;
+    }
+
+    /**
+     * Gets team
+     *
+     * @return \StevenBuehner\ChurchTools\Model\CampusesIdTeam[]
+     */
+    public function getTeam()
+    {
+        return $this->container['team'];
+    }
+
+    /**
+     * Sets team
+     *
+     * @param \StevenBuehner\ChurchTools\Model\CampusesIdTeam[] $team team
+     *
+     * @return self
+     */
+    public function setTeam($team)
+    {
+
+
+        if ((count($team) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $team when calling InlineObject76., number of items must be greater than or equal to 1.');
+        }
+        $this->container['team'] = $team;
 
         return $this;
     }

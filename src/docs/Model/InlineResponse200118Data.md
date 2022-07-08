@@ -4,10 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | [optional]
-**name** | **string** |  | [optional]
-**modified_at** | **string** |  | [optional]
-**modified_by** | **float** |  | [optional]
-**count** | **int** |  | [optional]
+**type** | **string** | Type of Date |
+**date** | **string** | Actually birthday |
+**age** | **float** | Calculated age. (see note to that endpoint) |
+**person** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200118Person**](InlineResponse200118Person.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

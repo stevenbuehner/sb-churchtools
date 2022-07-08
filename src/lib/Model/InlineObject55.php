@@ -59,12 +59,10 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'group_type_id' => 'float',
-        'group_status_id' => 'float',
-        'superior_group_id' => 'float',
-        'campus_id' => 'float',
-        'force' => 'bool'
+        'accounting_perdiod_id' => 'float',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime',
+        'show_empty_accounts' => 'bool'
     ];
 
     /**
@@ -75,12 +73,10 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'group_type_id' => null,
-        'group_status_id' => null,
-        'superior_group_id' => null,
-        'campus_id' => null,
-        'force' => null
+        'accounting_perdiod_id' => null,
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'show_empty_accounts' => null
     ];
 
     /**
@@ -110,12 +106,10 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'group_type_id' => 'groupTypeId',
-        'group_status_id' => 'groupStatusId',
-        'superior_group_id' => 'superiorGroupId',
-        'campus_id' => 'campusId',
-        'force' => 'force'
+        'accounting_perdiod_id' => 'accountingPerdiodId',
+        'start_date' => 'startDate',
+        'end_date' => 'endDate',
+        'show_empty_accounts' => 'showEmptyAccounts'
     ];
 
     /**
@@ -124,12 +118,10 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'group_type_id' => 'setGroupTypeId',
-        'group_status_id' => 'setGroupStatusId',
-        'superior_group_id' => 'setSuperiorGroupId',
-        'campus_id' => 'setCampusId',
-        'force' => 'setForce'
+        'accounting_perdiod_id' => 'setAccountingPerdiodId',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'show_empty_accounts' => 'setShowEmptyAccounts'
     ];
 
     /**
@@ -138,12 +130,10 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'group_type_id' => 'getGroupTypeId',
-        'group_status_id' => 'getGroupStatusId',
-        'superior_group_id' => 'getSuperiorGroupId',
-        'campus_id' => 'getCampusId',
-        'force' => 'getForce'
+        'accounting_perdiod_id' => 'getAccountingPerdiodId',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'show_empty_accounts' => 'getShowEmptyAccounts'
     ];
 
     /**
@@ -203,12 +193,10 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['group_type_id'] = $data['group_type_id'] ?? null;
-        $this->container['group_status_id'] = $data['group_status_id'] ?? null;
-        $this->container['superior_group_id'] = $data['superior_group_id'] ?? null;
-        $this->container['campus_id'] = $data['campus_id'] ?? null;
-        $this->container['force'] = $data['force'] ?? null;
+        $this->container['accounting_perdiod_id'] = $data['accounting_perdiod_id'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['show_empty_accounts'] = $data['show_empty_accounts'] ?? true;
     }
 
     /**
@@ -220,18 +208,14 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['accounting_perdiod_id'] === null) {
+            $invalidProperties[] = "'accounting_perdiod_id' can't be null";
         }
-        if ((mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
-
-        if ($this->container['group_type_id'] === null) {
-            $invalidProperties[] = "'group_type_id' can't be null";
-        }
-        if ($this->container['group_status_id'] === null) {
-            $invalidProperties[] = "'group_status_id' can't be null";
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -249,150 +233,97 @@ class InlineObject55 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Group name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-
-        if ((mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling InlineObject55., must be bigger than or equal to 1.');
-        }
-
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_type_id
+     * Gets accounting_perdiod_id
      *
      * @return float
      */
-    public function getGroupTypeId()
+    public function getAccountingPerdiodId()
     {
-        return $this->container['group_type_id'];
+        return $this->container['accounting_perdiod_id'];
     }
 
     /**
-     * Sets group_type_id
+     * Sets accounting_perdiod_id
      *
-     * @param float $group_type_id Id of group type
+     * @param float $accounting_perdiod_id ID of Accounting Period
      *
      * @return self
      */
-    public function setGroupTypeId($group_type_id)
+    public function setAccountingPerdiodId($accounting_perdiod_id)
     {
-        $this->container['group_type_id'] = $group_type_id;
+        $this->container['accounting_perdiod_id'] = $accounting_perdiod_id;
 
         return $this;
     }
 
     /**
-     * Gets group_status_id
+     * Gets start_date
      *
-     * @return float
+     * @return \DateTime
      */
-    public function getGroupStatusId()
+    public function getStartDate()
     {
-        return $this->container['group_status_id'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets group_status_id
+     * Sets start_date
      *
-     * @param float $group_status_id ID of group status
+     * @param \DateTime $start_date Respect Transactions From This Date On
      *
      * @return self
      */
-    public function setGroupStatusId($group_status_id)
+    public function setStartDate($start_date)
     {
-        $this->container['group_status_id'] = $group_status_id;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets superior_group_id
+     * Gets end_date
      *
-     * @return float|null
+     * @return \DateTime
      */
-    public function getSuperiorGroupId()
+    public function getEndDate()
     {
-        return $this->container['superior_group_id'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets superior_group_id
+     * Sets end_date
      *
-     * @param float|null $superior_group_id Group ID of superior group
+     * @param \DateTime $end_date Respect Transactions Before This Date
      *
      * @return self
      */
-    public function setSuperiorGroupId($superior_group_id)
+    public function setEndDate($end_date)
     {
-        $this->container['superior_group_id'] = $superior_group_id;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }
 
     /**
-     * Gets campus_id
-     *
-     * @return float|null
-     */
-    public function getCampusId()
-    {
-        return $this->container['campus_id'];
-    }
-
-    /**
-     * Sets campus_id
-     *
-     * @param float|null $campus_id Campus Id if group is connected to a campus
-     *
-     * @return self
-     */
-    public function setCampusId($campus_id)
-    {
-        $this->container['campus_id'] = $campus_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets force
+     * Gets show_empty_accounts
      *
      * @return bool|null
      */
-    public function getForce()
+    public function getShowEmptyAccounts()
     {
-        return $this->container['force'];
+        return $this->container['show_empty_accounts'];
     }
 
     /**
-     * Sets force
+     * Sets show_empty_accounts
      *
-     * @param bool|null $force Need to be true, if another group with that name already exists
+     * @param bool|null $show_empty_accounts Show Accounts With No Transactions
      *
      * @return self
      */
-    public function setForce($force)
+    public function setShowEmptyAccounts($show_empty_accounts)
     {
-        $this->container['force'] = $force;
+        $this->container['show_empty_accounts'] = $show_empty_accounts;
 
         return $this;
     }

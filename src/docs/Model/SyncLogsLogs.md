@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **type** | **string** |  |
 **message_key** | **string** | Translation Key |
 **args** | **object** | Arguments for Translation Key |
-**domain_type** | **mixed** |  |
-**domain_id** | **mixed** |  |
-**source_entity_id** | **mixed** |  |
+**domain_type** | **string** |  |
+**domain_id** | **string** |  |
+**source_entity_id** | **string** |  |
 **changes** | [**\StevenBuehner\ChurchTools\Model\SyncLogsChanges[]**](SyncLogsChanges.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

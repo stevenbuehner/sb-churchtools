@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**master** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[]**](InlineResponse200100DataMaster.md) |  |
-**es** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[]**](InlineResponse200100DataMaster.md) |  |
+**external_system** | [**\StevenBuehner\ChurchTools\Model\ExternalSystem3**](ExternalSystem3.md) |  |
+**domain_type** | **string** |  |
+**properties** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200100DataProperties**](InlineResponse200100DataProperties.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

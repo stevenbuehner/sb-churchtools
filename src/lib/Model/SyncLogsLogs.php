@@ -67,9 +67,9 @@ class SyncLogsLogs implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'string',
         'message_key' => 'string',
         'args' => 'object',
-        'domain_type' => 'mixed',
-        'domain_id' => 'mixed',
-        'source_entity_id' => 'mixed',
+        'domain_type' => 'string',
+        'domain_id' => 'string',
+        'source_entity_id' => 'string',
         'changes' => '\StevenBuehner\ChurchTools\Model\SyncLogsChanges[]'
     ];
 
@@ -678,7 +678,7 @@ class SyncLogsLogs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets domain_type
      *
-     * @return mixed
+     * @return string
      */
     public function getDomainType()
     {
@@ -688,7 +688,7 @@ class SyncLogsLogs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets domain_type
      *
-     * @param mixed $domain_type domain_type
+     * @param string $domain_type domain_type
      *
      * @return self
      */
@@ -707,7 +707,7 @@ class SyncLogsLogs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets domain_id
      *
-     * @return mixed
+     * @return string
      */
     public function getDomainId()
     {
@@ -717,7 +717,7 @@ class SyncLogsLogs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets domain_id
      *
-     * @param mixed $domain_id domain_id
+     * @param string $domain_id domain_id
      *
      * @return self
      */
@@ -736,7 +736,7 @@ class SyncLogsLogs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets source_entity_id
      *
-     * @return mixed
+     * @return string
      */
     public function getSourceEntityId()
     {
@@ -746,7 +746,7 @@ class SyncLogsLogs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets source_entity_id
      *
-     * @param mixed $source_entity_id source_entity_id
+     * @param string $source_entity_id source_entity_id
      *
      * @return self
      */

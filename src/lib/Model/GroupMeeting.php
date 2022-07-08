@@ -67,7 +67,7 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
         'num_guests' => 'int',
         'comment' => 'string',
         'poll_result' => 'object',
-        'statistics' => '\StevenBuehner\ChurchTools\Model\InlineResponse20021Statistics',
+        'statistics' => '\StevenBuehner\ChurchTools\Model\InlineResponse20022Statistics',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -454,7 +454,7 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets statistics
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20021Statistics|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20022Statistics|null
      */
     public function getStatistics()
     {
@@ -464,7 +464,7 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets statistics
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20021Statistics|null $statistics statistics
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20022Statistics|null $statistics statistics
      *
      * @return self
      */

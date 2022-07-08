@@ -72,7 +72,7 @@ void (empty response body)
 ## `createNewChat()`
 
 ```php
-createNewChat($inline_object18): \StevenBuehner\ChurchTools\Model\InlineResponse20040
+createNewChat($inline_object18): \StevenBuehner\ChurchTools\Model\InlineResponse20041
 ```
 
 Start new chat
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 ## `getAllChats()`
 
 ```php
-getAllChats(): \StevenBuehner\ChurchTools\Model\InlineResponse20040
+getAllChats(): \StevenBuehner\ChurchTools\Model\InlineResponse20041
 ```
 
 Get all chats
@@ -173,7 +173,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ This endpoint does not need any parameter.
 ## `updateChat()`
 
 ```php
-updateChat($guid, $inline_object19): \StevenBuehner\ChurchTools\Model\InlineResponse20040
+updateChat($guid, $inline_object19): \StevenBuehner\ChurchTools\Model\InlineResponse20041
 ```
 
 Update a chat
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
 
 ### Authorization
 

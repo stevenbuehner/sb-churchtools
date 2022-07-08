@@ -59,7 +59,7 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'score' => 'float'
+        'archived' => 'bool'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'score' => null
+        'archived' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'score' => 'score'
+        'archived' => 'archived'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'score' => 'setScore'
+        'archived' => 'setArchived'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'score' => 'getScore'
+        'archived' => 'getArchived'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['score'] = $data['score'] ?? null;
+        $this->container['archived'] = $data['archived'] ?? true;
     }
 
     /**
@@ -190,9 +190,6 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['score'] === null) {
-            $invalidProperties[] = "'score' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,25 +206,25 @@ class InlineObject69 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets score
+     * Gets archived
      *
-     * @return float
+     * @return bool|null
      */
-    public function getScore()
+    public function getArchived()
     {
-        return $this->container['score'];
+        return $this->container['archived'];
     }
 
     /**
-     * Sets score
+     * Sets archived
      *
-     * @param float $score score
+     * @param bool|null $archived if true the person is archived, if false the archive operation is undone
      *
      * @return self
      */
-    public function setScore($score)
+    public function setArchived($archived)
     {
-        $this->container['score'] = $score;
+        $this->container['archived'] = $archived;
 
         return $this;
     }

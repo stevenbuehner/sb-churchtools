@@ -63,20 +63,21 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
         'caption' => 'string',
         'note' => 'string',
         'version' => 'int',
-        'calendar' => '\StevenBuehner\ChurchTools\Model\InlineResponse200123DataResourceTypes',
-        'information' => 'string',
-        'link' => 'string',
-        'is_internal' => 'bool',
+        'resource' => '\StevenBuehner\ChurchTools\Model\InlineResponse200124DataResources',
+        'cal_id' => 'string',
+        'person_id' => 'int',
+        'show_in_cal' => 'bool',
+        'status_id' => 'int',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'repeat_id' => 'int',
-        'repeat_frequency' => 'mixed',
-        'repeat_until' => 'mixed',
-        'repeat_option' => 'mixed',
-        'additions' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseAdditions[]',
+        'repeat_frequency' => 'int',
+        'repeat_until' => '\DateTime',
+        'repeat_option' => 'int',
+        'additionals' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseAdditionals[]',
         'exceptions' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseExceptions[]',
-        'signup' => 'object',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta2'
+        'location' => 'string',
+        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1'
     ];
 
     /**
@@ -91,19 +92,20 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
         'caption' => null,
         'note' => null,
         'version' => null,
-        'calendar' => null,
-        'information' => null,
-        'link' => null,
-        'is_internal' => null,
+        'resource' => null,
+        'cal_id' => null,
+        'person_id' => null,
+        'show_in_cal' => null,
+        'status_id' => null,
         'start_date' => 'date-time',
         'end_date' => 'date-time',
         'repeat_id' => null,
         'repeat_frequency' => null,
         'repeat_until' => 'date-time',
         'repeat_option' => null,
-        'additions' => null,
+        'additionals' => null,
         'exceptions' => null,
-        'signup' => null,
+        'location' => null,
         'meta' => null
     ];
 
@@ -138,19 +140,20 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
         'caption' => 'caption',
         'note' => 'note',
         'version' => 'version',
-        'calendar' => 'calendar',
-        'information' => 'information',
-        'link' => 'link',
-        'is_internal' => 'isInternal',
+        'resource' => 'resource',
+        'cal_id' => 'calId',
+        'person_id' => 'personId',
+        'show_in_cal' => 'showInCal',
+        'status_id' => 'statusId',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
         'repeat_id' => 'repeatId',
         'repeat_frequency' => 'repeatFrequency',
         'repeat_until' => 'repeatUntil',
         'repeat_option' => 'repeatOption',
-        'additions' => 'additions',
+        'additionals' => 'additionals',
         'exceptions' => 'exceptions',
-        'signup' => 'signup',
+        'location' => 'location',
         'meta' => 'meta'
     ];
 
@@ -164,19 +167,20 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
         'caption' => 'setCaption',
         'note' => 'setNote',
         'version' => 'setVersion',
-        'calendar' => 'setCalendar',
-        'information' => 'setInformation',
-        'link' => 'setLink',
-        'is_internal' => 'setIsInternal',
+        'resource' => 'setResource',
+        'cal_id' => 'setCalId',
+        'person_id' => 'setPersonId',
+        'show_in_cal' => 'setShowInCal',
+        'status_id' => 'setStatusId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'repeat_id' => 'setRepeatId',
         'repeat_frequency' => 'setRepeatFrequency',
         'repeat_until' => 'setRepeatUntil',
         'repeat_option' => 'setRepeatOption',
-        'additions' => 'setAdditions',
+        'additionals' => 'setAdditionals',
         'exceptions' => 'setExceptions',
-        'signup' => 'setSignup',
+        'location' => 'setLocation',
         'meta' => 'setMeta'
     ];
 
@@ -190,19 +194,20 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
         'caption' => 'getCaption',
         'note' => 'getNote',
         'version' => 'getVersion',
-        'calendar' => 'getCalendar',
-        'information' => 'getInformation',
-        'link' => 'getLink',
-        'is_internal' => 'getIsInternal',
+        'resource' => 'getResource',
+        'cal_id' => 'getCalId',
+        'person_id' => 'getPersonId',
+        'show_in_cal' => 'getShowInCal',
+        'status_id' => 'getStatusId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'repeat_id' => 'getRepeatId',
         'repeat_frequency' => 'getRepeatFrequency',
         'repeat_until' => 'getRepeatUntil',
         'repeat_option' => 'getRepeatOption',
-        'additions' => 'getAdditions',
+        'additionals' => 'getAdditionals',
         'exceptions' => 'getExceptions',
-        'signup' => 'getSignup',
+        'location' => 'getLocation',
         'meta' => 'getMeta'
     ];
 
@@ -267,19 +272,20 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['caption'] = $data['caption'] ?? null;
         $this->container['note'] = $data['note'] ?? null;
         $this->container['version'] = $data['version'] ?? null;
-        $this->container['calendar'] = $data['calendar'] ?? null;
-        $this->container['information'] = $data['information'] ?? null;
-        $this->container['link'] = $data['link'] ?? null;
-        $this->container['is_internal'] = $data['is_internal'] ?? null;
+        $this->container['resource'] = $data['resource'] ?? null;
+        $this->container['cal_id'] = $data['cal_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['show_in_cal'] = $data['show_in_cal'] ?? null;
+        $this->container['status_id'] = $data['status_id'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['repeat_id'] = $data['repeat_id'] ?? null;
         $this->container['repeat_frequency'] = $data['repeat_frequency'] ?? null;
         $this->container['repeat_until'] = $data['repeat_until'] ?? null;
         $this->container['repeat_option'] = $data['repeat_option'] ?? null;
-        $this->container['additions'] = $data['additions'] ?? null;
+        $this->container['additionals'] = $data['additionals'] ?? null;
         $this->container['exceptions'] = $data['exceptions'] ?? null;
-        $this->container['signup'] = $data['signup'] ?? null;
+        $this->container['location'] = $data['location'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
     }
 
@@ -404,97 +410,121 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets calendar
+     * Gets resource
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200123DataResourceTypes|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200124DataResources|null
      */
-    public function getCalendar()
+    public function getResource()
     {
-        return $this->container['calendar'];
+        return $this->container['resource'];
     }
 
     /**
-     * Sets calendar
+     * Sets resource
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200123DataResourceTypes|null $calendar calendar
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200124DataResources|null $resource resource
      *
      * @return self
      */
-    public function setCalendar($calendar)
+    public function setResource($resource)
     {
-        $this->container['calendar'] = $calendar;
+        $this->container['resource'] = $resource;
 
         return $this;
     }
 
     /**
-     * Gets information
+     * Gets cal_id
      *
      * @return string|null
      */
-    public function getInformation()
+    public function getCalId()
     {
-        return $this->container['information'];
+        return $this->container['cal_id'];
     }
 
     /**
-     * Sets information
+     * Sets cal_id
      *
-     * @param string|null $information information
+     * @param string|null $cal_id cal_id
      *
      * @return self
      */
-    public function setInformation($information)
+    public function setCalId($cal_id)
     {
-        $this->container['information'] = $information;
+        $this->container['cal_id'] = $cal_id;
 
         return $this;
     }
 
     /**
-     * Gets link
+     * Gets person_id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getLink()
+    public function getPersonId()
     {
-        return $this->container['link'];
+        return $this->container['person_id'];
     }
 
     /**
-     * Sets link
+     * Sets person_id
      *
-     * @param string|null $link link
+     * @param int|null $person_id person_id
      *
      * @return self
      */
-    public function setLink($link)
+    public function setPersonId($person_id)
     {
-        $this->container['link'] = $link;
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }
 
     /**
-     * Gets is_internal
+     * Gets show_in_cal
      *
      * @return bool|null
      */
-    public function getIsInternal()
+    public function getShowInCal()
     {
-        return $this->container['is_internal'];
+        return $this->container['show_in_cal'];
     }
 
     /**
-     * Sets is_internal
+     * Sets show_in_cal
      *
-     * @param bool|null $is_internal is_internal
+     * @param bool|null $show_in_cal show_in_cal
      *
      * @return self
      */
-    public function setIsInternal($is_internal)
+    public function setShowInCal($show_in_cal)
     {
-        $this->container['is_internal'] = $is_internal;
+        $this->container['show_in_cal'] = $show_in_cal;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_id
+     *
+     * @return int|null
+     */
+    public function getStatusId()
+    {
+        return $this->container['status_id'];
+    }
+
+    /**
+     * Sets status_id
+     *
+     * @param int|null $status_id status_id
+     *
+     * @return self
+     */
+    public function setStatusId($status_id)
+    {
+        $this->container['status_id'] = $status_id;
 
         return $this;
     }
@@ -574,7 +604,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets repeat_frequency
      *
-     * @return mixed|null
+     * @return int|null
      */
     public function getRepeatFrequency()
     {
@@ -584,7 +614,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets repeat_frequency
      *
-     * @param mixed|null $repeat_frequency repeat_frequency
+     * @param int|null $repeat_frequency repeat_frequency
      *
      * @return self
      */
@@ -598,7 +628,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets repeat_until
      *
-     * @return mixed|null
+     * @return \DateTime|null
      */
     public function getRepeatUntil()
     {
@@ -608,7 +638,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets repeat_until
      *
-     * @param mixed|null $repeat_until repeat_until
+     * @param \DateTime|null $repeat_until repeat_until
      *
      * @return self
      */
@@ -622,7 +652,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets repeat_option
      *
-     * @return mixed|null
+     * @return int|null
      */
     public function getRepeatOption()
     {
@@ -632,7 +662,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets repeat_option
      *
-     * @param mixed|null $repeat_option repeat_option
+     * @param int|null $repeat_option repeat_option
      *
      * @return self
      */
@@ -644,25 +674,25 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets additions
+     * Gets additionals
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseAdditions[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseAdditionals[]|null
      */
-    public function getAdditions()
+    public function getAdditionals()
     {
-        return $this->container['additions'];
+        return $this->container['additionals'];
     }
 
     /**
-     * Sets additions
+     * Sets additionals
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseAdditions[]|null $additions additions
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseAdditionals[]|null $additionals additionals
      *
      * @return self
      */
-    public function setAdditions($additions)
+    public function setAdditionals($additionals)
     {
-        $this->container['additions'] = $additions;
+        $this->container['additionals'] = $additionals;
 
         return $this;
     }
@@ -692,25 +722,25 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets signup
+     * Gets location
      *
-     * @return object|null
+     * @return string|null
      */
-    public function getSignup()
+    public function getLocation()
     {
-        return $this->container['signup'];
+        return $this->container['location'];
     }
 
     /**
-     * Sets signup
+     * Sets location
      *
-     * @param object|null $signup signup
+     * @param string|null $location location
      *
      * @return self
      */
-    public function setSignup($signup)
+    public function setLocation($location)
     {
-        $this->container['signup'] = $signup;
+        $this->container['location'] = $location;
 
         return $this;
     }
@@ -718,7 +748,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta2|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1|null
      */
     public function getMeta()
     {
@@ -728,7 +758,7 @@ class InlineResponse200125Base implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta2|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1|null $meta meta
      *
      * @return self
      */

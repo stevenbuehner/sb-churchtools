@@ -61,7 +61,7 @@ class InlineResponse2002Team implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'person' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject',
         'note' => 'string',
-        'sort_key' => 'float'
+        'sort_key' => 'int'
     ];
 
     /**
@@ -274,7 +274,7 @@ class InlineResponse2002Team implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets sort_key
      *
-     * @return float
+     * @return int
      */
     public function getSortKey()
     {
@@ -284,7 +284,7 @@ class InlineResponse2002Team implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets sort_key
      *
-     * @param float $sort_key sort_key
+     * @param int $sort_key sort_key
      *
      * @return self
      */

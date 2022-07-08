@@ -140,7 +140,7 @@ void (empty response body)
 ## `batchTransaction()`
 
 ```php
-batchTransaction($inline_object41): \StevenBuehner\ChurchTools\Model\InlineResponse20068
+batchTransaction($inline_object41): \StevenBuehner\ChurchTools\Model\InlineResponse20069
 ```
 
 Transaction Batch Processing
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20068**](../Model/InlineResponse20068.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20069**](../Model/InlineResponse20069.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 ## `createCashDiscount()`
 
 ```php
-createCashDiscount($inline_object32): \StevenBuehner\ChurchTools\Model\InlineResponse20057
+createCashDiscount($inline_object32): \StevenBuehner\ChurchTools\Model\InlineResponse20058
 ```
 
 Create new cash discout
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20057**](../Model/InlineResponse20057.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
 
 ### Authorization
 
@@ -262,8 +262,10 @@ Name | Type | Description  | Notes
 ## `createCostCenter()`
 
 ```php
-createCostCenter($inline_object34): \StevenBuehner\ChurchTools\Model\InlineResponse20059
+createCostCenter($inline_object34): \StevenBuehner\ChurchTools\Model\InlineResponse20060
 ```
+
+Create new cost center
 
 Create new cost center
 
@@ -304,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20059**](../Model/InlineResponse20059.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20060**](../Model/InlineResponse20060.md)
 
 ### Authorization
 
@@ -322,7 +324,7 @@ Name | Type | Description  | Notes
 ## `createNewAccount()`
 
 ```php
-createNewAccount($inline_object24): \StevenBuehner\ChurchTools\Model\InlineResponse20048
+createNewAccount($inline_object24): \StevenBuehner\ChurchTools\Model\InlineResponse20049
 ```
 
 Create new account
@@ -364,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20048**](../Model/InlineResponse20048.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20049**](../Model/InlineResponse20049.md)
 
 ### Authorization
 
@@ -382,7 +384,7 @@ Name | Type | Description  | Notes
 ## `createNewAccountClass()`
 
 ```php
-createNewAccountClass($inline_object28): \StevenBuehner\ChurchTools\Model\InlineResponse20052
+createNewAccountClass($inline_object28): \StevenBuehner\ChurchTools\Model\InlineResponse20053
 ```
 
 Create new account class
@@ -424,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20052**](../Model/InlineResponse20052.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20053**](../Model/InlineResponse20053.md)
 
 ### Authorization
 
@@ -442,7 +444,7 @@ Name | Type | Description  | Notes
 ## `createNewAccountGroup()`
 
 ```php
-createNewAccountGroup($inline_object30): \StevenBuehner\ChurchTools\Model\InlineResponse20054
+createNewAccountGroup($inline_object30): \StevenBuehner\ChurchTools\Model\InlineResponse20055
 ```
 
 Create new account group
@@ -484,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20054**](../Model/InlineResponse20054.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20055**](../Model/InlineResponse20055.md)
 
 ### Authorization
 
@@ -502,7 +504,7 @@ Name | Type | Description  | Notes
 ## `createNewAccountType()`
 
 ```php
-createNewAccountType($inline_object26): \StevenBuehner\ChurchTools\Model\InlineResponse20050
+createNewAccountType($inline_object26): \StevenBuehner\ChurchTools\Model\InlineResponse20051
 ```
 
 Create new account type
@@ -544,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20050**](../Model/InlineResponse20050.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20051**](../Model/InlineResponse20051.md)
 
 ### Authorization
 
@@ -622,7 +624,7 @@ Name | Type | Description  | Notes
 ## `createNewClient()`
 
 ```php
-createNewClient($inline_object20): \StevenBuehner\ChurchTools\Model\InlineResponse20045
+createNewClient($inline_object20): \StevenBuehner\ChurchTools\Model\InlineResponse20046
 ```
 
 Create new client
@@ -664,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20045**](../Model/InlineResponse20045.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20046**](../Model/InlineResponse20046.md)
 
 ### Authorization
 
@@ -682,7 +684,7 @@ Name | Type | Description  | Notes
 ## `createNewTransaction()`
 
 ```php
-createNewTransaction($inline_object40): \StevenBuehner\ChurchTools\Model\InlineResponse20067
+createNewTransaction($inline_object40): \StevenBuehner\ChurchTools\Model\InlineResponse20068
 ```
 
 Create new transaction
@@ -724,7 +726,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20067**](../Model/InlineResponse20067.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20068**](../Model/InlineResponse20068.md)
 
 ### Authorization
 
@@ -742,7 +744,7 @@ Name | Type | Description  | Notes
 ## `createNewTransactionPurpose()`
 
 ```php
-createNewTransactionPurpose($inline_object43): \StevenBuehner\ChurchTools\Model\InlineResponse20069
+createNewTransactionPurpose($inline_object43): \StevenBuehner\ChurchTools\Model\InlineResponse20070
 ```
 
 Create new transaction purpose
@@ -784,7 +786,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20069**](../Model/InlineResponse20069.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20070**](../Model/InlineResponse20070.md)
 
 ### Authorization
 
@@ -802,7 +804,7 @@ Name | Type | Description  | Notes
 ## `createTaxRate()`
 
 ```php
-createTaxRate($inline_object38): \StevenBuehner\ChurchTools\Model\InlineResponse20065
+createTaxRate($inline_object38): \StevenBuehner\ChurchTools\Model\InlineResponse20066
 ```
 
 Create new tax rate
@@ -844,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20065**](../Model/InlineResponse20065.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20066**](../Model/InlineResponse20066.md)
 
 ### Authorization
 
@@ -862,7 +864,7 @@ Name | Type | Description  | Notes
 ## `createTaxType()`
 
 ```php
-createTaxType($inline_object36): \StevenBuehner\ChurchTools\Model\InlineResponse20063
+createTaxType($inline_object36): \StevenBuehner\ChurchTools\Model\InlineResponse20064
 ```
 
 Create new tax type
@@ -904,7 +906,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20063**](../Model/InlineResponse20063.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20064**](../Model/InlineResponse20064.md)
 
 ### Authorization
 
@@ -1413,6 +1415,8 @@ deleteCostCenter($id, $dry_run)
 
 Delete cost center
 
+Delete cost center
+
 ### Example
 
 ```php
@@ -1772,7 +1776,7 @@ void (empty response body)
 ## `getAccountById()`
 
 ```php
-getAccountById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20049
+getAccountById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20050
 ```
 
 Get a account
@@ -1814,7 +1818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20049**](../Model/InlineResponse20049.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20050**](../Model/InlineResponse20050.md)
 
 ### Authorization
 
@@ -1832,7 +1836,7 @@ Name | Type | Description  | Notes
 ## `getAccountClassById()`
 
 ```php
-getAccountClassById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20053
+getAccountClassById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20054
 ```
 
 Get a account class
@@ -1874,7 +1878,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20053**](../Model/InlineResponse20053.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20054**](../Model/InlineResponse20054.md)
 
 ### Authorization
 
@@ -1892,7 +1896,7 @@ Name | Type | Description  | Notes
 ## `getAccountGroupById()`
 
 ```php
-getAccountGroupById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20055
+getAccountGroupById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20056
 ```
 
 Get a account group
@@ -1934,7 +1938,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20055**](../Model/InlineResponse20055.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20056**](../Model/InlineResponse20056.md)
 
 ### Authorization
 
@@ -1952,7 +1956,7 @@ Name | Type | Description  | Notes
 ## `getAccountTypeById()`
 
 ```php
-getAccountTypeById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20051
+getAccountTypeById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20052
 ```
 
 Get a account type
@@ -1994,7 +1998,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20051**](../Model/InlineResponse20051.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20052**](../Model/InlineResponse20052.md)
 
 ### Authorization
 
@@ -2072,7 +2076,7 @@ Name | Type | Description  | Notes
 ## `getAllAccountClasses()`
 
 ```php
-getAllAccountClasses(): \StevenBuehner\ChurchTools\Model\InlineResponse20052
+getAllAccountClasses(): \StevenBuehner\ChurchTools\Model\InlineResponse20053
 ```
 
 Get all account classes ordered by id
@@ -2111,7 +2115,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20052**](../Model/InlineResponse20052.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20053**](../Model/InlineResponse20053.md)
 
 ### Authorization
 
@@ -2129,7 +2133,7 @@ This endpoint does not need any parameter.
 ## `getAllAccountGroups()`
 
 ```php
-getAllAccountGroups(): \StevenBuehner\ChurchTools\Model\InlineResponse20054
+getAllAccountGroups(): \StevenBuehner\ChurchTools\Model\InlineResponse20055
 ```
 
 Get all account groups ordered by id
@@ -2168,7 +2172,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20054**](../Model/InlineResponse20054.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20055**](../Model/InlineResponse20055.md)
 
 ### Authorization
 
@@ -2186,7 +2190,7 @@ This endpoint does not need any parameter.
 ## `getAllAccountTypes()`
 
 ```php
-getAllAccountTypes(): \StevenBuehner\ChurchTools\Model\InlineResponse20050
+getAllAccountTypes(): \StevenBuehner\ChurchTools\Model\InlineResponse20051
 ```
 
 Get all account types ordered by id
@@ -2225,7 +2229,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20050**](../Model/InlineResponse20050.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20051**](../Model/InlineResponse20051.md)
 
 ### Authorization
 
@@ -2243,7 +2247,7 @@ This endpoint does not need any parameter.
 ## `getAllAccountingPeriods()`
 
 ```php
-getAllAccountingPeriods(): \StevenBuehner\ChurchTools\Model\InlineResponse20047
+getAllAccountingPeriods(): \StevenBuehner\ChurchTools\Model\InlineResponse20048
 ```
 
 Get all accounting periods
@@ -2282,7 +2286,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20047**](../Model/InlineResponse20047.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20048**](../Model/InlineResponse20048.md)
 
 ### Authorization
 
@@ -2300,7 +2304,7 @@ This endpoint does not need any parameter.
 ## `getAllAccounts()`
 
 ```php
-getAllAccounts($accounting_period_id, $calculate_balance): \StevenBuehner\ChurchTools\Model\InlineResponse20048
+getAllAccounts($accounting_period_id, $calculate_balance): \StevenBuehner\ChurchTools\Model\InlineResponse20049
 ```
 
 Get all accounts ordered by accounting period and number
@@ -2325,7 +2329,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $accounting_period_id = 2; // int | Filter by accounting period
-$calculate_balance = true; // Bool | Calculate balance for accounts
+$calculate_balance = true; // bool | Calculate balance for accounts
 
 try {
     $result = $apiInstance->getAllAccounts($accounting_period_id, $calculate_balance);
@@ -2340,11 +2344,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accounting_period_id** | **int**| Filter by accounting period | [optional]
- **calculate_balance** | [**Bool**](../Model/.md)| Calculate balance for accounts | [optional]
+ **calculate_balance** | **bool**| Calculate balance for accounts | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20048**](../Model/InlineResponse20048.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20049**](../Model/InlineResponse20049.md)
 
 ### Authorization
 
@@ -2362,7 +2366,7 @@ Name | Type | Description  | Notes
 ## `getAllCashDiscounts()`
 
 ```php
-getAllCashDiscounts($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20056
+getAllCashDiscounts($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20057
 ```
 
 Get all cash discounts ordered by id
@@ -2404,7 +2408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20056**](../Model/InlineResponse20056.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20057**](../Model/InlineResponse20057.md)
 
 ### Authorization
 
@@ -2422,7 +2426,7 @@ Name | Type | Description  | Notes
 ## `getAllClients()`
 
 ```php
-getAllClients(): \StevenBuehner\ChurchTools\Model\InlineResponse20045
+getAllClients(): \StevenBuehner\ChurchTools\Model\InlineResponse20046
 ```
 
 Get all clients
@@ -2461,7 +2465,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20045**](../Model/InlineResponse20045.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20046**](../Model/InlineResponse20046.md)
 
 ### Authorization
 
@@ -2479,8 +2483,10 @@ This endpoint does not need any parameter.
 ## `getAllCostCenters()`
 
 ```php
-getAllCostCenters($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20058
+getAllCostCenters($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20059
 ```
+
+Get all cost centers ordered by accounting period and number ascending
 
 Get all cost centers ordered by accounting period and number ascending
 
@@ -2521,7 +2527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20059**](../Model/InlineResponse20059.md)
 
 ### Authorization
 
@@ -2539,7 +2545,7 @@ Name | Type | Description  | Notes
 ## `getAllDonators()`
 
 ```php
-getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20060
+getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20061
 ```
 
 Get all donators including their donation information (e.g. donation amount)
@@ -2589,7 +2595,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20060**](../Model/InlineResponse20060.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20061**](../Model/InlineResponse20061.md)
 
 ### Authorization
 
@@ -2607,7 +2613,7 @@ Name | Type | Description  | Notes
 ## `getAllFinanceTemplates()`
 
 ```php
-getAllFinanceTemplates(): \StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]
+getAllFinanceTemplates(): \StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]
 ```
 
 Get all finance templates
@@ -2646,7 +2652,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]**](../Model/InlineResponse20030Data.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]**](../Model/InlineResponse20031Data.md)
 
 ### Authorization
 
@@ -2664,7 +2670,7 @@ This endpoint does not need any parameter.
 ## `getAllTaxRates()`
 
 ```php
-getAllTaxRates($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20064
+getAllTaxRates($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20065
 ```
 
 Get all tax rates ordered by id
@@ -2706,7 +2712,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20064**](../Model/InlineResponse20064.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20065**](../Model/InlineResponse20065.md)
 
 ### Authorization
 
@@ -2724,7 +2730,7 @@ Name | Type | Description  | Notes
 ## `getAllTaxTypes()`
 
 ```php
-getAllTaxTypes(): \StevenBuehner\ChurchTools\Model\InlineResponse20062
+getAllTaxTypes(): \StevenBuehner\ChurchTools\Model\InlineResponse20063
 ```
 
 Get all tax types
@@ -2763,7 +2769,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20062**](../Model/InlineResponse20062.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20063**](../Model/InlineResponse20063.md)
 
 ### Authorization
 
@@ -2781,7 +2787,7 @@ This endpoint does not need any parameter.
 ## `getAllTransactionPurposes()`
 
 ```php
-getAllTransactionPurposes(): \StevenBuehner\ChurchTools\Model\InlineResponse20069
+getAllTransactionPurposes(): \StevenBuehner\ChurchTools\Model\InlineResponse20070
 ```
 
 Get all transaction purposes
@@ -2820,7 +2826,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20069**](../Model/InlineResponse20069.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20070**](../Model/InlineResponse20070.md)
 
 ### Authorization
 
@@ -2838,7 +2844,7 @@ This endpoint does not need any parameter.
 ## `getAllTransactions()`
 
 ```php
-getAllTransactions($accounting_period_id, $created_pid, $cost_center_ids, $donator_ids, $account_ids, $is_donation, $is_income, $start_date, $end_date, $is_immutable, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20066
+getAllTransactions($accounting_period_id, $created_pid, $cost_center_ids, $donator_ids, $account_ids, $is_donation, $is_income, $start_date, $end_date, $is_immutable, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20067
 ```
 
 Get all transaction
@@ -2906,7 +2912,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20066**](../Model/InlineResponse20066.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20067**](../Model/InlineResponse20067.md)
 
 ### Authorization
 
@@ -2924,7 +2930,7 @@ Name | Type | Description  | Notes
 ## `getCashDiscount()`
 
 ```php
-getCashDiscount($id): \StevenBuehner\ChurchTools\Model\InlineResponse20057
+getCashDiscount($id): \StevenBuehner\ChurchTools\Model\InlineResponse20058
 ```
 
 Get a cash discount
@@ -2966,7 +2972,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20057**](../Model/InlineResponse20057.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
 
 ### Authorization
 
@@ -2984,7 +2990,7 @@ Name | Type | Description  | Notes
 ## `getClientById()`
 
 ```php
-getClientById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20046
+getClientById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20047
 ```
 
 Get a client
@@ -3026,7 +3032,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20046**](../Model/InlineResponse20046.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20047**](../Model/InlineResponse20047.md)
 
 ### Authorization
 
@@ -3044,8 +3050,10 @@ Name | Type | Description  | Notes
 ## `getCostCenter()`
 
 ```php
-getCostCenter($id): \StevenBuehner\ChurchTools\Model\InlineResponse20059
+getCostCenter($id): \StevenBuehner\ChurchTools\Model\InlineResponse20060
 ```
+
+Get a cost center
 
 Get a cost center
 
@@ -3086,7 +3094,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20059**](../Model/InlineResponse20059.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20060**](../Model/InlineResponse20060.md)
 
 ### Authorization
 
@@ -3104,7 +3112,7 @@ Name | Type | Description  | Notes
 ## `getDonationReceipt()`
 
 ```php
-getDonationReceipt($accounting_period_id, $donator_id, $donator_spouse_id): \StevenBuehner\ChurchTools\Model\InlineResponse20061
+getDonationReceipt($accounting_period_id, $donator_id, $donator_spouse_id): \StevenBuehner\ChurchTools\Model\InlineResponse20062
 ```
 
 Get donation receipt PDFs (cover letter and attachment)
@@ -3150,7 +3158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20061**](../Model/InlineResponse20061.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20062**](../Model/InlineResponse20062.md)
 
 ### Authorization
 
@@ -3229,7 +3237,7 @@ void (empty response body)
 ## `getTaxRate()`
 
 ```php
-getTaxRate($id): \StevenBuehner\ChurchTools\Model\InlineResponse20065
+getTaxRate($id): \StevenBuehner\ChurchTools\Model\InlineResponse20066
 ```
 
 Get a tax rate
@@ -3271,7 +3279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20065**](../Model/InlineResponse20065.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20066**](../Model/InlineResponse20066.md)
 
 ### Authorization
 
@@ -3289,7 +3297,7 @@ Name | Type | Description  | Notes
 ## `getTaxType()`
 
 ```php
-getTaxType($id): \StevenBuehner\ChurchTools\Model\InlineResponse20063
+getTaxType($id): \StevenBuehner\ChurchTools\Model\InlineResponse20064
 ```
 
 Get a tax type
@@ -3331,7 +3339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20063**](../Model/InlineResponse20063.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20064**](../Model/InlineResponse20064.md)
 
 ### Authorization
 
@@ -3349,7 +3357,7 @@ Name | Type | Description  | Notes
 ## `getTransactionById()`
 
 ```php
-getTransactionById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20067
+getTransactionById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20068
 ```
 
 Get a transaction
@@ -3391,7 +3399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20067**](../Model/InlineResponse20067.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20068**](../Model/InlineResponse20068.md)
 
 ### Authorization
 
@@ -3409,7 +3417,7 @@ Name | Type | Description  | Notes
 ## `getTransactionPurposeById()`
 
 ```php
-getTransactionPurposeById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20070
+getTransactionPurposeById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20071
 ```
 
 Get a transaction purpose
@@ -3451,7 +3459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20070**](../Model/InlineResponse20070.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20071**](../Model/InlineResponse20071.md)
 
 ### Authorization
 
@@ -3469,7 +3477,7 @@ Name | Type | Description  | Notes
 ## `postFinanceCostcentersBulkcreate()`
 
 ```php
-postFinanceCostcentersBulkcreate($inline_object76): \StevenBuehner\ChurchTools\Model\InlineResponse20058
+postFinanceCostcentersBulkcreate($inline_object77): \StevenBuehner\ChurchTools\Model\InlineResponse20059
 ```
 
 Import many cost centers
@@ -3493,10 +3501,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object76 = new \StevenBuehner\ChurchTools\Model\InlineObject76(); // \StevenBuehner\ChurchTools\Model\InlineObject76
+$inline_object77 = new \StevenBuehner\ChurchTools\Model\InlineObject77(); // \StevenBuehner\ChurchTools\Model\InlineObject77
 
 try {
-    $result = $apiInstance->postFinanceCostcentersBulkcreate($inline_object76);
+    $result = $apiInstance->postFinanceCostcentersBulkcreate($inline_object77);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->postFinanceCostcentersBulkcreate: ', $e->getMessage(), PHP_EOL;
@@ -3507,11 +3515,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object76** | [**\StevenBuehner\ChurchTools\Model\InlineObject76**](../Model/InlineObject76.md)|  | [optional]
+ **inline_object77** | [**\StevenBuehner\ChurchTools\Model\InlineObject77**](../Model/InlineObject77.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20059**](../Model/InlineResponse20059.md)
 
 ### Authorization
 
@@ -3529,7 +3537,7 @@ Name | Type | Description  | Notes
 ## `postFinanceReports()`
 
 ```php
-postFinanceReports($report_type, $inline_object54): \StevenBuehner\ChurchTools\Model\InlineResponse20090
+postFinanceReports($report_type, $inline_object55): \StevenBuehner\ChurchTools\Model\InlineResponse20091
 ```
 
 Issue new Finance Report
@@ -3556,10 +3564,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $report_type = balance; // string | Report Key
-$inline_object54 = new \StevenBuehner\ChurchTools\Model\InlineObject54(); // \StevenBuehner\ChurchTools\Model\InlineObject54
+$inline_object55 = new \StevenBuehner\ChurchTools\Model\InlineObject55(); // \StevenBuehner\ChurchTools\Model\InlineObject55
 
 try {
-    $result = $apiInstance->postFinanceReports($report_type, $inline_object54);
+    $result = $apiInstance->postFinanceReports($report_type, $inline_object55);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->postFinanceReports: ', $e->getMessage(), PHP_EOL;
@@ -3571,11 +3579,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_type** | **string**| Report Key |
- **inline_object54** | [**\StevenBuehner\ChurchTools\Model\InlineObject54**](../Model/InlineObject54.md)|  | [optional]
+ **inline_object55** | [**\StevenBuehner\ChurchTools\Model\InlineObject55**](../Model/InlineObject55.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20090**](../Model/InlineResponse20090.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20091**](../Model/InlineResponse20091.md)
 
 ### Authorization
 
@@ -3593,7 +3601,7 @@ Name | Type | Description  | Notes
 ## `updateAccount()`
 
 ```php
-updateAccount($id, $inline_object25): \StevenBuehner\ChurchTools\Model\InlineResponse20049
+updateAccount($id, $inline_object25): \StevenBuehner\ChurchTools\Model\InlineResponse20050
 ```
 
 Update account
@@ -3637,7 +3645,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20049**](../Model/InlineResponse20049.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20050**](../Model/InlineResponse20050.md)
 
 ### Authorization
 
@@ -3655,7 +3663,7 @@ Name | Type | Description  | Notes
 ## `updateAccountClass()`
 
 ```php
-updateAccountClass($id, $inline_object29): \StevenBuehner\ChurchTools\Model\InlineResponse20053
+updateAccountClass($id, $inline_object29): \StevenBuehner\ChurchTools\Model\InlineResponse20054
 ```
 
 Update account class
@@ -3699,7 +3707,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20053**](../Model/InlineResponse20053.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20054**](../Model/InlineResponse20054.md)
 
 ### Authorization
 
@@ -3717,7 +3725,7 @@ Name | Type | Description  | Notes
 ## `updateAccountGroup()`
 
 ```php
-updateAccountGroup($id, $inline_object31): \StevenBuehner\ChurchTools\Model\InlineResponse20055
+updateAccountGroup($id, $inline_object31): \StevenBuehner\ChurchTools\Model\InlineResponse20056
 ```
 
 Update account group
@@ -3761,7 +3769,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20055**](../Model/InlineResponse20055.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20056**](../Model/InlineResponse20056.md)
 
 ### Authorization
 
@@ -3779,7 +3787,7 @@ Name | Type | Description  | Notes
 ## `updateAccountType()`
 
 ```php
-updateAccountType($id, $inline_object27): \StevenBuehner\ChurchTools\Model\InlineResponse20051
+updateAccountType($id, $inline_object27): \StevenBuehner\ChurchTools\Model\InlineResponse20052
 ```
 
 Update account type
@@ -3823,7 +3831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20051**](../Model/InlineResponse20051.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20052**](../Model/InlineResponse20052.md)
 
 ### Authorization
 
@@ -3903,7 +3911,7 @@ Name | Type | Description  | Notes
 ## `updateCashDiscount()`
 
 ```php
-updateCashDiscount($id, $inline_object33): \StevenBuehner\ChurchTools\Model\InlineResponse20057
+updateCashDiscount($id, $inline_object33): \StevenBuehner\ChurchTools\Model\InlineResponse20058
 ```
 
 Update cash discount
@@ -3947,7 +3955,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20057**](../Model/InlineResponse20057.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
 
 ### Authorization
 
@@ -3965,7 +3973,7 @@ Name | Type | Description  | Notes
 ## `updateClient()`
 
 ```php
-updateClient($id, $inline_object21): \StevenBuehner\ChurchTools\Model\InlineResponse20046
+updateClient($id, $inline_object21): \StevenBuehner\ChurchTools\Model\InlineResponse20047
 ```
 
 Update client
@@ -4009,7 +4017,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20046**](../Model/InlineResponse20046.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20047**](../Model/InlineResponse20047.md)
 
 ### Authorization
 
@@ -4027,8 +4035,10 @@ Name | Type | Description  | Notes
 ## `updateCostCenter()`
 
 ```php
-updateCostCenter($id, $inline_object35): \StevenBuehner\ChurchTools\Model\InlineResponse20059
+updateCostCenter($id, $inline_object35): \StevenBuehner\ChurchTools\Model\InlineResponse20060
 ```
+
+Update cost center
 
 Update cost center
 
@@ -4071,7 +4081,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20059**](../Model/InlineResponse20059.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20060**](../Model/InlineResponse20060.md)
 
 ### Authorization
 
@@ -4089,7 +4099,7 @@ Name | Type | Description  | Notes
 ## `updateTaxRate()`
 
 ```php
-updateTaxRate($id, $inline_object39): \StevenBuehner\ChurchTools\Model\InlineResponse20065
+updateTaxRate($id, $inline_object39): \StevenBuehner\ChurchTools\Model\InlineResponse20066
 ```
 
 Update tax rate
@@ -4133,7 +4143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20065**](../Model/InlineResponse20065.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20066**](../Model/InlineResponse20066.md)
 
 ### Authorization
 
@@ -4151,7 +4161,7 @@ Name | Type | Description  | Notes
 ## `updateTaxType()`
 
 ```php
-updateTaxType($id, $inline_object37): \StevenBuehner\ChurchTools\Model\InlineResponse20063
+updateTaxType($id, $inline_object37): \StevenBuehner\ChurchTools\Model\InlineResponse20064
 ```
 
 Update tax type
@@ -4195,7 +4205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20063**](../Model/InlineResponse20063.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20064**](../Model/InlineResponse20064.md)
 
 ### Authorization
 
@@ -4213,7 +4223,7 @@ Name | Type | Description  | Notes
 ## `updateTransaction()`
 
 ```php
-updateTransaction($id, $inline_object42): \StevenBuehner\ChurchTools\Model\InlineResponse20067
+updateTransaction($id, $inline_object42): \StevenBuehner\ChurchTools\Model\InlineResponse20068
 ```
 
 Update transaction
@@ -4257,7 +4267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20067**](../Model/InlineResponse20067.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20068**](../Model/InlineResponse20068.md)
 
 ### Authorization
 
@@ -4275,7 +4285,7 @@ Name | Type | Description  | Notes
 ## `updateTransactionPurpose()`
 
 ```php
-updateTransactionPurpose($id, $inline_object44): \StevenBuehner\ChurchTools\Model\InlineResponse20070
+updateTransactionPurpose($id, $inline_object44): \StevenBuehner\ChurchTools\Model\InlineResponse20071
 ```
 
 Update transaction purpose
@@ -4319,7 +4329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20070**](../Model/InlineResponse20070.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20071**](../Model/InlineResponse20071.md)
 
 ### Authorization
 

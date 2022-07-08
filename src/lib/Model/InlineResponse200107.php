@@ -59,8 +59,8 @@ class InlineResponse200107 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Absence1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse200107Data[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200107Meta'
     ];
 
     /**
@@ -214,7 +214,7 @@ class InlineResponse200107 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Absence1[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200107Data[]|null
      */
     public function getData()
     {
@@ -224,7 +224,7 @@ class InlineResponse200107 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Absence1[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200107Data[]|null $data data
      *
      * @return self
      */
@@ -238,7 +238,7 @@ class InlineResponse200107 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200107Meta|null
      */
     public function getMeta()
     {
@@ -248,7 +248,7 @@ class InlineResponse200107 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200107Meta|null $meta meta
      *
      * @return self
      */

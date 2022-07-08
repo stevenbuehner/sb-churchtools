@@ -81,7 +81,7 @@ void (empty response body)
 ## `getAllServiceGroups()`
 
 ```php
-getAllServiceGroups(): \StevenBuehner\ChurchTools\Model\InlineResponse20026
+getAllServiceGroups(): \StevenBuehner\ChurchTools\Model\InlineResponse20027
 ```
 
 Get all service groups
@@ -122,7 +122,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ This endpoint does not need any parameter.
 ## `getAllServices()`
 
 ```php
-getAllServices(): \StevenBuehner\ChurchTools\Model\InlineResponse20027
+getAllServices(): \StevenBuehner\ChurchTools\Model\InlineResponse20028
 ```
 
 Get all services
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
 
 ### Authorization
 

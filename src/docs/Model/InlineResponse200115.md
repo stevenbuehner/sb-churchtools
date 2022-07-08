@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **string** | Login Token |
+**data** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200115Data[]**](InlineResponse200115Data.md) |  |
+**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200115Meta**](InlineResponse200115Meta.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

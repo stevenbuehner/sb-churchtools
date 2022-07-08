@@ -123,7 +123,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20083
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20084
      */
     public function getWikiCategories()
     {
@@ -139,7 +139,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20083, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20084, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWikiCategoriesWithHttpInfo()
     {
@@ -182,20 +182,20 @@ class WikiApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20083' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20084' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20083', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20084', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20083';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20084';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -213,7 +213,7 @@ class WikiApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20083',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20084',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -253,7 +253,7 @@ class WikiApi
      */
     public function getWikiCategoriesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20083';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20084';
         $request = $this->getWikiCategoriesRequest();
 
         return $this->client
@@ -381,7 +381,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20086
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20087
      */
     public function getWikiCategoriesWikiCategoryIdPages($wiki_category_id)
     {
@@ -398,7 +398,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20086, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20087, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWikiCategoriesWikiCategoryIdPagesWithHttpInfo($wiki_category_id)
     {
@@ -441,20 +441,20 @@ class WikiApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20086' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20087' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20086', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20087', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20086';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20087';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -472,7 +472,7 @@ class WikiApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20086',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20087',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -514,7 +514,7 @@ class WikiApi
      */
     public function getWikiCategoriesWikiCategoryIdPagesAsyncWithHttpInfo($wiki_category_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20086';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20087';
         $request = $this->getWikiCategoriesWikiCategoryIdPagesRequest($wiki_category_id);
 
         return $this->client
@@ -658,7 +658,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20084
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20085
      */
     public function getWikiCategoriesWikiCategoryIdPagesIdentifier($wiki_category_id, $identifier)
     {
@@ -676,7 +676,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20084, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20085, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWikiCategoriesWikiCategoryIdPagesIdentifierWithHttpInfo($wiki_category_id, $identifier)
     {
@@ -719,20 +719,20 @@ class WikiApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20084' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20085' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20084', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20085', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20084';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20085';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -750,7 +750,7 @@ class WikiApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20084',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20085',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -794,7 +794,7 @@ class WikiApi
      */
     public function getWikiCategoriesWikiCategoryIdPagesIdentifierAsyncWithHttpInfo($wiki_category_id, $identifier)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20084';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20085';
         $request = $this->getWikiCategoriesWikiCategoryIdPagesIdentifierRequest($wiki_category_id, $identifier);
 
         return $this->client
@@ -953,7 +953,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20084
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20085
      */
     public function getWikiCategoriesWikiCategoryIdPagesIdentifierVersions($wiki_category_id, $identifier)
     {
@@ -971,7 +971,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20084, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20085, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWikiCategoriesWikiCategoryIdPagesIdentifierVersionsWithHttpInfo($wiki_category_id, $identifier)
     {
@@ -1014,20 +1014,20 @@ class WikiApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20084' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20085' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20084', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20085', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20084';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20085';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1045,7 +1045,7 @@ class WikiApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20084',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20085',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1089,7 +1089,7 @@ class WikiApi
      */
     public function getWikiCategoriesWikiCategoryIdPagesIdentifierVersionsAsyncWithHttpInfo($wiki_category_id, $identifier)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20084';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20085';
         $request = $this->getWikiCategoriesWikiCategoryIdPagesIdentifierVersionsRequest($wiki_category_id, $identifier);
 
         return $this->client
@@ -1249,7 +1249,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20085
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20086
      */
     public function getWikiCategoriesWikiCategoryIdPagesVersionsVersion($wiki_category_id, $version, $identifier)
     {
@@ -1268,7 +1268,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20085, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20086, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWikiCategoriesWikiCategoryIdPagesVersionsVersionWithHttpInfo($wiki_category_id, $version, $identifier)
     {
@@ -1311,20 +1311,20 @@ class WikiApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20085' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20086' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20085', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20086', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20085';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20086';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1342,7 +1342,7 @@ class WikiApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20085',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20086',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1388,7 +1388,7 @@ class WikiApi
      */
     public function getWikiCategoriesWikiCategoryIdPagesVersionsVersionAsyncWithHttpInfo($wiki_category_id, $version, $identifier)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20085';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20086';
         $request = $this->getWikiCategoriesWikiCategoryIdPagesVersionsVersionRequest($wiki_category_id, $version, $identifier);
 
         return $this->client
@@ -1562,7 +1562,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20087
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20088
      */
     public function getWikiCategoriesWikiCategoryIdSearch($query = null, $wiki_category_ids = null)
     {
@@ -1580,7 +1580,7 @@ class WikiApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20087, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20088, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWikiCategoriesWikiCategoryIdSearchWithHttpInfo($query = null, $wiki_category_ids = null)
     {
@@ -1623,20 +1623,20 @@ class WikiApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20087' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20088' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20087', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20088', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20087';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20088';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1654,7 +1654,7 @@ class WikiApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20087',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20088',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1698,7 +1698,7 @@ class WikiApi
      */
     public function getWikiCategoriesWikiCategoryIdSearchAsyncWithHttpInfo($query = null, $wiki_category_ids = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20087';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20088';
         $request = $this->getWikiCategoriesWikiCategoryIdSearchRequest($query, $wiki_category_ids);
 
         return $this->client

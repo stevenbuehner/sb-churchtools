@@ -59,7 +59,7 @@ class InlineResponse2012 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountingPeriods'
     ];
 
     /**
@@ -208,7 +208,7 @@ class InlineResponse2012 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountingPeriods|null
      */
     public function getData()
     {
@@ -218,7 +218,7 @@ class InlineResponse2012 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataAccountingPeriods|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataAccountingPeriods|null $data data
      *
      * @return self
      */

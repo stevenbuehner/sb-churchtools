@@ -59,12 +59,7 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'token' => 'string',
-        'group' => '\StevenBuehner\ChurchTools\Model\PublicGroup',
-        'form' => '\StevenBuehner\ChurchTools\Model\InlineResponse20072Form[]',
-        'email' => 'string',
-        'requester_id' => 'float',
-        'sign_up_persons' => '\StevenBuehner\ChurchTools\Model\InlineResponse20072SignUpPersons[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20072Data'
     ];
 
     /**
@@ -75,12 +70,7 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'token' => null,
-        'group' => null,
-        'form' => null,
-        'email' => null,
-        'requester_id' => null,
-        'sign_up_persons' => null
+        'data' => null
     ];
 
     /**
@@ -110,12 +100,7 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'token' => 'token',
-        'group' => 'group',
-        'form' => 'form',
-        'email' => 'email',
-        'requester_id' => 'requesterId',
-        'sign_up_persons' => 'signUpPersons'
+        'data' => 'data'
     ];
 
     /**
@@ -124,12 +109,7 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'token' => 'setToken',
-        'group' => 'setGroup',
-        'form' => 'setForm',
-        'email' => 'setEmail',
-        'requester_id' => 'setRequesterId',
-        'sign_up_persons' => 'setSignUpPersons'
+        'data' => 'setData'
     ];
 
     /**
@@ -138,12 +118,7 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'token' => 'getToken',
-        'group' => 'getGroup',
-        'form' => 'getForm',
-        'email' => 'getEmail',
-        'requester_id' => 'getRequesterId',
-        'sign_up_persons' => 'getSignUpPersons'
+        'data' => 'getData'
     ];
 
     /**
@@ -203,12 +178,7 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['token'] = $data['token'] ?? null;
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['form'] = $data['form'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['requester_id'] = $data['requester_id'] ?? null;
-        $this->container['sign_up_persons'] = $data['sign_up_persons'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -220,15 +190,6 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['token'] === null) {
-            $invalidProperties[] = "'token' can't be null";
-        }
-        if ($this->container['group'] === null) {
-            $invalidProperties[] = "'group' can't be null";
-        }
-        if ($this->container['form'] === null) {
-            $invalidProperties[] = "'form' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -245,145 +206,25 @@ class InlineResponse20072 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets token
+     * Gets data
      *
-     * @return string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20072Data|null
      */
-    public function getToken()
+    public function getData()
     {
-        return $this->container['token'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets token
+     * Sets data
      *
-     * @param string $token The sign up token.
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20072Data|null $data data
      *
      * @return self
      */
-    public function setToken($token)
+    public function setData($data)
     {
-        $this->container['token'] = $token;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PublicGroup
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PublicGroup $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets form
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20072Form[]
-     */
-    public function getForm()
-    {
-        return $this->container['form'];
-    }
-
-    /**
-     * Sets form
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20072Form[] $form List of form fields.
-     *
-     * @return self
-     */
-    public function setForm($form)
-    {
-        $this->container['form'] = $form;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email If the user is not yet signed in, this specifies the email address the user has provided.
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets requester_id
-     *
-     * @return float|null
-     */
-    public function getRequesterId()
-    {
-        return $this->container['requester_id'];
-    }
-
-    /**
-     * Sets requester_id
-     *
-     * @param float|null $requester_id If the user is signed in, this specifies the user ID of the requester.
-     *
-     * @return self
-     */
-    public function setRequesterId($requester_id)
-    {
-        $this->container['requester_id'] = $requester_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets sign_up_persons
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20072SignUpPersons[]|null
-     */
-    public function getSignUpPersons()
-    {
-        return $this->container['sign_up_persons'];
-    }
-
-    /**
-     * Sets sign_up_persons
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20072SignUpPersons[]|null $sign_up_persons Lists all persons the current user is allowed to sign up for. This includes spouses, children below the age of 16 and all persons with the same email address.
-     *
-     * @return self
-     */
-    public function setSignUpPersons($sign_up_persons)
-    {
-        $this->container['sign_up_persons'] = $sign_up_persons;
+        $this->container['data'] = $data;
 
         return $this;
     }

@@ -59,7 +59,8 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'count' => 'float'
+        'count' => 'float',
+        'pagination' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114MetaPagination'
     ];
 
     /**
@@ -70,7 +71,8 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'count' => null
+        'count' => null,
+        'pagination' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'count' => 'count'
+        'count' => 'count',
+        'pagination' => 'pagination'
     ];
 
     /**
@@ -109,7 +112,8 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'count' => 'setCount'
+        'count' => 'setCount',
+        'pagination' => 'setPagination'
     ];
 
     /**
@@ -118,7 +122,8 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'count' => 'getCount'
+        'count' => 'getCount',
+        'pagination' => 'getPagination'
     ];
 
     /**
@@ -179,6 +184,7 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(array $data = null)
     {
         $this->container['count'] = $data['count'] ?? null;
+        $this->container['pagination'] = $data['pagination'] ?? null;
     }
 
     /**
@@ -192,6 +198,9 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
 
         if ($this->container['count'] === null) {
             $invalidProperties[] = "'count' can't be null";
+        }
+        if ($this->container['pagination'] === null) {
+            $invalidProperties[] = "'pagination' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,6 +237,30 @@ class InlineResponse200114Meta implements ModelInterface, ArrayAccess, \JsonSeri
     public function setCount($count)
     {
         $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets pagination
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114MetaPagination
+     */
+    public function getPagination()
+    {
+        return $this->container['pagination'];
+    }
+
+    /**
+     * Sets pagination
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200114MetaPagination $pagination pagination
+     *
+     * @return self
+     */
+    public function setPagination($pagination)
+    {
+        $this->container['pagination'] = $pagination;
 
         return $this;
     }

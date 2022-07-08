@@ -66,7 +66,7 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
         'city' => 'string',
         'phone' => 'string',
         'email' => 'string',
-        'treasurer_id' => 'Int',
+        'treasurer_id' => 'int',
         'treasurer' => 'object',
         'sort_key' => 'int',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
@@ -436,7 +436,7 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets treasurer_id
      *
-     * @return Int|null
+     * @return int|null
      */
     public function getTreasurerId()
     {
@@ -446,7 +446,7 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets treasurer_id
      *
-     * @param Int|null $treasurer_id Person ID
+     * @param int|null $treasurer_id Person ID
      *
      * @return self
      */

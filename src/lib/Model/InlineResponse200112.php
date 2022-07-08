@@ -59,8 +59,8 @@ class InlineResponse200112 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Job1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'data' => '\StevenBuehner\ChurchTools\Model\SyncLogEntry[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
     ];
 
     /**
@@ -214,7 +214,7 @@ class InlineResponse200112 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Job1[]|null
+     * @return \StevenBuehner\ChurchTools\Model\SyncLogEntry[]|null
      */
     public function getData()
     {
@@ -224,7 +224,7 @@ class InlineResponse200112 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Job1[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\SyncLogEntry[]|null $data data
      *
      * @return self
      */
@@ -238,7 +238,7 @@ class InlineResponse200112 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
      */
     public function getMeta()
     {
@@ -248,7 +248,7 @@ class InlineResponse200112 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
      *
      * @return self
      */

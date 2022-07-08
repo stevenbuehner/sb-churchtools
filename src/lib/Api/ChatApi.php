@@ -355,7 +355,7 @@ class ChatApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20040
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20041
      */
     public function createNewChat($inline_object18)
     {
@@ -372,7 +372,7 @@ class ChatApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20040, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20041, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewChatWithHttpInfo($inline_object18)
     {
@@ -415,20 +415,20 @@ class ChatApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20040' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20041' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20040', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20041', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20041';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -446,7 +446,7 @@ class ChatApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20040',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20041',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -488,7 +488,7 @@ class ChatApi
      */
     public function createNewChatAsyncWithHttpInfo($inline_object18)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20041';
         $request = $this->createNewChatRequest($inline_object18);
 
         return $this->client
@@ -628,7 +628,7 @@ class ChatApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20040|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20041|string
      */
     public function getAllChats()
     {
@@ -644,7 +644,7 @@ class ChatApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20040|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20041|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllChatsWithHttpInfo()
     {
@@ -687,14 +687,14 @@ class ChatApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20040' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20041' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20040', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20041', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -712,7 +712,7 @@ class ChatApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20041';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -730,7 +730,7 @@ class ChatApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20040',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20041',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -778,7 +778,7 @@ class ChatApi
      */
     public function getAllChatsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20041';
         $request = $this->getAllChatsRequest();
 
         return $this->client
@@ -907,7 +907,7 @@ class ChatApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20040
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20041
      */
     public function updateChat($guid, $inline_object19)
     {
@@ -925,7 +925,7 @@ class ChatApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20040, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20041, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateChatWithHttpInfo($guid, $inline_object19)
     {
@@ -968,20 +968,20 @@ class ChatApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20040' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20041' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20040', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20041', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20041';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -999,7 +999,7 @@ class ChatApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20040',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20041',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1043,7 +1043,7 @@ class ChatApi
      */
     public function updateChatAsyncWithHttpInfo($guid, $inline_object19)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20041';
         $request = $this->updateChatRequest($guid, $inline_object19);
 
         return $this->client

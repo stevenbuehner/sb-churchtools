@@ -73,7 +73,7 @@ No authorization required
 ## `getGroupHomepage()`
 
 ```php
-getGroupHomepage($hash): \StevenBuehner\ChurchTools\Model\InlineResponse20025
+getGroupHomepage($hash): \StevenBuehner\ChurchTools\Model\InlineResponse20026
 ```
 
 Get information about public groups with settings
@@ -87,11 +87,17 @@ Get all information necessary to display public groups. The response will provid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $hash = RNdjTK0tGp1N1afoblczGbFb8ikLfa9b; // string | Random hash for public groups
 
@@ -111,11 +117,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
 
 ### Authorization
 
-No authorization required
+[Login Token (Header)](../../README.md#Login Token (Header))
 
 ### HTTP request headers
 
@@ -129,7 +135,7 @@ No authorization required
 ## `getPublicgroupsGroupIdForm()`
 
 ```php
-getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20072
+getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20073
 ```
 
 Get a Group Sign Up Form
@@ -171,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20072**](../Model/InlineResponse20072.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20073**](../Model/InlineResponse20073.md)
 
 ### Authorization
 
@@ -189,7 +195,7 @@ No authorization required
 ## `issueSignUpToken()`
 
 ```php
-issueSignUpToken($group_id, $inline_object45): \StevenBuehner\ChurchTools\Model\InlineResponse20071
+issueSignUpToken($group_id, $inline_object45): \StevenBuehner\ChurchTools\Model\InlineResponse20072
 ```
 
 Issue new sign up token.
@@ -229,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20071**](../Model/InlineResponse20071.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20072**](../Model/InlineResponse20072.md)
 
 ### Authorization
 
@@ -304,7 +310,7 @@ No authorization required
 ## `postPublicgroupsGroupIdSignup()`
 
 ```php
-postPublicgroupsGroupIdSignup($group_id, $inline_object47): \StevenBuehner\ChurchTools\Model\InlineResponse20073
+postPublicgroupsGroupIdSignup($group_id, $inline_object47): \StevenBuehner\ChurchTools\Model\InlineResponse20074
 ```
 
 Send a Sign Up Form to Get Signed Up into a Public Group
@@ -344,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20073**](../Model/InlineResponse20073.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20074**](../Model/InlineResponse20074.md)
 
 ### Authorization
 

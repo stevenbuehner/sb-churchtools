@@ -59,9 +59,8 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'notice' => 'string',
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse200113Data[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200113Meta'
+        'data' => '\StevenBuehner\ChurchTools\Model\Job1[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
     ];
 
     /**
@@ -72,7 +71,6 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'notice' => null,
         'data' => null,
         'meta' => null
     ];
@@ -104,7 +102,6 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'notice' => 'NOTICE',
         'data' => 'data',
         'meta' => 'meta'
     ];
@@ -115,7 +112,6 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'notice' => 'setNotice',
         'data' => 'setData',
         'meta' => 'setMeta'
     ];
@@ -126,7 +122,6 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'notice' => 'getNotice',
         'data' => 'getData',
         'meta' => 'getMeta'
     ];
@@ -188,7 +183,6 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['notice'] = $data['notice'] ?? null;
         $this->container['data'] = $data['data'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
     }
@@ -202,23 +196,6 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['notice'] === null) {
-            $invalidProperties[] = "'notice' can't be null";
-        }
-        if ((mb_strlen($this->container['notice']) < 1)) {
-            $invalidProperties[] = "invalid value for 'notice', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
-        if ((count($this->container['data']) < 1)) {
-            $invalidProperties[] = "invalid value for 'data', number of items must be greater than or equal to 1.";
-        }
-
-        if ($this->container['meta'] === null) {
-            $invalidProperties[] = "'meta' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -235,38 +212,9 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets notice
-     *
-     * @return string
-     */
-    public function getNotice()
-    {
-        return $this->container['notice'];
-    }
-
-    /**
-     * Sets notice
-     *
-     * @param string $notice notice
-     *
-     * @return self
-     */
-    public function setNotice($notice)
-    {
-
-        if ((mb_strlen($notice) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $notice when calling InlineResponse200113., must be bigger than or equal to 1.');
-        }
-
-        $this->container['notice'] = $notice;
-
-        return $this;
-    }
-
-    /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200113Data[]
+     * @return \StevenBuehner\ChurchTools\Model\Job1[]|null
      */
     public function getData()
     {
@@ -276,17 +224,12 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200113Data[] $data data
+     * @param \StevenBuehner\ChurchTools\Model\Job1[]|null $data data
      *
      * @return self
      */
     public function setData($data)
     {
-
-
-        if ((count($data) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $data when calling InlineResponse200113., number of items must be greater than or equal to 1.');
-        }
         $this->container['data'] = $data;
 
         return $this;
@@ -295,7 +238,7 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200113Meta
+     * @return \StevenBuehner\ChurchTools\Model\Meta|null
      */
     public function getMeta()
     {
@@ -305,7 +248,7 @@ class InlineResponse200113 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200113Meta $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
      *
      * @return self
      */

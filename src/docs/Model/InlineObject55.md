@@ -4,11 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Group name |
-**group_type_id** | **float** | Id of group type |
-**group_status_id** | **float** | ID of group status |
-**superior_group_id** | **float** | Group ID of superior group | [optional]
-**campus_id** | **float** | Campus Id if group is connected to a campus | [optional]
-**force** | **bool** | Need to be true, if another group with that name already exists | [optional]
+**accounting_perdiod_id** | **float** | ID of Accounting Period |
+**start_date** | **\DateTime** | Respect Transactions From This Date On |
+**end_date** | **\DateTime** | Respect Transactions Before This Date |
+**show_empty_accounts** | **bool** | Show Accounts With No Transactions | [optional] [default to true]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

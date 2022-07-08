@@ -355,7 +355,7 @@ class ContactLabelApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200105
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200106
      */
     public function getContactlabel($id)
     {
@@ -372,7 +372,7 @@ class ContactLabelApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200105, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200106, HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactlabelWithHttpInfo($id)
     {
@@ -415,20 +415,20 @@ class ContactLabelApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200105' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200106' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200105', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200106', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200105';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200106';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -446,7 +446,7 @@ class ContactLabelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200105',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200106',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -488,7 +488,7 @@ class ContactLabelApi
      */
     public function getContactlabelAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200105';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200106';
         $request = $this->getContactlabelRequest($id);
 
         return $this->client
@@ -630,7 +630,7 @@ class ContactLabelApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200104
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200105
      */
     public function getContactlabels()
     {
@@ -646,7 +646,7 @@ class ContactLabelApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200104, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200105, HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactlabelsWithHttpInfo()
     {
@@ -689,20 +689,20 @@ class ContactLabelApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200104' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200105' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200104', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200105', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200104';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200105';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -720,7 +720,7 @@ class ContactLabelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200104',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200105',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -760,7 +760,7 @@ class ContactLabelApi
      */
     public function getContactlabelsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200104';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200105';
         $request = $this->getContactlabelsRequest();
 
         return $this->client
@@ -884,15 +884,15 @@ class ContactLabelApi
      *
      * Create new Contact Label
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject59 $inline_object59 inline_object59 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 inline_object60 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2015
      */
-    public function postContactlabels($inline_object59 = null)
+    public function postContactlabels($inline_object60 = null)
     {
-        list($response) = $this->postContactlabelsWithHttpInfo($inline_object59);
+        list($response) = $this->postContactlabelsWithHttpInfo($inline_object60);
         return $response;
     }
 
@@ -901,15 +901,15 @@ class ContactLabelApi
      *
      * Create new Contact Label
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject59 $inline_object59 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postContactlabelsWithHttpInfo($inline_object59 = null)
+    public function postContactlabelsWithHttpInfo($inline_object60 = null)
     {
-        $request = $this->postContactlabelsRequest($inline_object59);
+        $request = $this->postContactlabelsRequest($inline_object60);
 
         try {
             $options = $this->createHttpClientOption();
@@ -994,14 +994,14 @@ class ContactLabelApi
      *
      * Create new Contact Label
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject59 $inline_object59 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postContactlabelsAsync($inline_object59 = null)
+    public function postContactlabelsAsync($inline_object60 = null)
     {
-        return $this->postContactlabelsAsyncWithHttpInfo($inline_object59)
+        return $this->postContactlabelsAsyncWithHttpInfo($inline_object60)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1014,15 +1014,15 @@ class ContactLabelApi
      *
      * Create new Contact Label
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject59 $inline_object59 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postContactlabelsAsyncWithHttpInfo($inline_object59 = null)
+    public function postContactlabelsAsyncWithHttpInfo($inline_object60 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2015';
-        $request = $this->postContactlabelsRequest($inline_object59);
+        $request = $this->postContactlabelsRequest($inline_object60);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1060,12 +1060,12 @@ class ContactLabelApi
     /**
      * Create request for operation 'postContactlabels'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject59 $inline_object59 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postContactlabelsRequest($inline_object59 = null)
+    public function postContactlabelsRequest($inline_object60 = null)
     {
 
         $resourcePath = '/contactlabels';
@@ -1091,11 +1091,11 @@ class ContactLabelApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object59)) {
+        if (isset($inline_object60)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object59));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object60));
             } else {
-                $httpBody = $inline_object59;
+                $httpBody = $inline_object60;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1153,15 +1153,15 @@ class ContactLabelApi
      * Update Contact Label
      *
      * @param  string $id Contact Label ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 inline_object61 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200105
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200106
      */
-    public function putContactlabel($id, $inline_object60 = null)
+    public function putContactlabel($id, $inline_object61 = null)
     {
-        list($response) = $this->putContactlabelWithHttpInfo($id, $inline_object60);
+        list($response) = $this->putContactlabelWithHttpInfo($id, $inline_object61);
         return $response;
     }
 
@@ -1171,15 +1171,15 @@ class ContactLabelApi
      * Update Contact Label
      *
      * @param  string $id Contact Label ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200105, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200106, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putContactlabelWithHttpInfo($id, $inline_object60 = null)
+    public function putContactlabelWithHttpInfo($id, $inline_object61 = null)
     {
-        $request = $this->putContactlabelRequest($id, $inline_object60);
+        $request = $this->putContactlabelRequest($id, $inline_object61);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1218,20 +1218,20 @@ class ContactLabelApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200105' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200106' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200105', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200106', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200105';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200106';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1249,7 +1249,7 @@ class ContactLabelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200105',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200106',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1265,14 +1265,14 @@ class ContactLabelApi
      * Update Contact Label
      *
      * @param  string $id Contact Label ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putContactlabelAsync($id, $inline_object60 = null)
+    public function putContactlabelAsync($id, $inline_object61 = null)
     {
-        return $this->putContactlabelAsyncWithHttpInfo($id, $inline_object60)
+        return $this->putContactlabelAsyncWithHttpInfo($id, $inline_object61)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1286,15 +1286,15 @@ class ContactLabelApi
      * Update Contact Label
      *
      * @param  string $id Contact Label ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putContactlabelAsyncWithHttpInfo($id, $inline_object60 = null)
+    public function putContactlabelAsyncWithHttpInfo($id, $inline_object61 = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200105';
-        $request = $this->putContactlabelRequest($id, $inline_object60);
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200106';
+        $request = $this->putContactlabelRequest($id, $inline_object61);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1333,12 +1333,12 @@ class ContactLabelApi
      * Create request for operation 'putContactlabel'
      *
      * @param  string $id Contact Label ID (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject60 $inline_object60 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject61 $inline_object61 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putContactlabelRequest($id, $inline_object60 = null)
+    public function putContactlabelRequest($id, $inline_object61 = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1378,11 +1378,11 @@ class ContactLabelApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object60)) {
+        if (isset($inline_object61)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object60));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object61));
             } else {
-                $httpBody = $inline_object60;
+                $httpBody = $inline_object61;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

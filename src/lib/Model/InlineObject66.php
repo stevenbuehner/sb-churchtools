@@ -59,9 +59,8 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'float',
-        'group' => '\StevenBuehner\ChurchTools\Model\CheckinPersonsGroup',
-        'tag_id' => 'float'
+        'is_dry_run' => 'bool',
+        'is_validation_only' => 'bool'
     ];
 
     /**
@@ -72,9 +71,8 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
-        'group' => null,
-        'tag_id' => null
+        'is_dry_run' => null,
+        'is_validation_only' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
-        'group' => 'group',
-        'tag_id' => 'tagId'
+        'is_dry_run' => 'isDryRun',
+        'is_validation_only' => 'isValidationOnly'
     ];
 
     /**
@@ -115,9 +112,8 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
-        'group' => 'setGroup',
-        'tag_id' => 'setTagId'
+        'is_dry_run' => 'setIsDryRun',
+        'is_validation_only' => 'setIsValidationOnly'
     ];
 
     /**
@@ -126,9 +122,8 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
-        'group' => 'getGroup',
-        'tag_id' => 'getTagId'
+        'is_dry_run' => 'getIsDryRun',
+        'is_validation_only' => 'getIsValidationOnly'
     ];
 
     /**
@@ -188,9 +183,8 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['tag_id'] = $data['tag_id'] ?? null;
+        $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
+        $this->container['is_validation_only'] = $data['is_validation_only'] ?? null;
     }
 
     /**
@@ -202,15 +196,6 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['person_id'] === null) {
-            $invalidProperties[] = "'person_id' can't be null";
-        }
-        if ($this->container['group'] === null) {
-            $invalidProperties[] = "'group' can't be null";
-        }
-        if ($this->container['tag_id'] === null) {
-            $invalidProperties[] = "'tag_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -227,73 +212,49 @@ class InlineObject66 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets person_id
+     * Gets is_dry_run
      *
-     * @return float
+     * @return bool|null
      */
-    public function getPersonId()
+    public function getIsDryRun()
     {
-        return $this->container['person_id'];
+        return $this->container['is_dry_run'];
     }
 
     /**
-     * Sets person_id
+     * Sets is_dry_run
      *
-     * @param float $person_id person_id
+     * @param bool|null $is_dry_run If `true` no records will be changed, deleted, linked, created. Default: `false`
      *
      * @return self
      */
-    public function setPersonId($person_id)
+    public function setIsDryRun($is_dry_run)
     {
-        $this->container['person_id'] = $person_id;
+        $this->container['is_dry_run'] = $is_dry_run;
 
         return $this;
     }
 
     /**
-     * Gets group
+     * Gets is_validation_only
      *
-     * @return \StevenBuehner\ChurchTools\Model\CheckinPersonsGroup
+     * @return bool|null
      */
-    public function getGroup()
+    public function getIsValidationOnly()
     {
-        return $this->container['group'];
+        return $this->container['is_validation_only'];
     }
 
     /**
-     * Sets group
+     * Sets is_validation_only
      *
-     * @param \StevenBuehner\ChurchTools\Model\CheckinPersonsGroup $group group
+     * @param bool|null $is_validation_only If `true` configuration is validated. Default: `false`
      *
      * @return self
      */
-    public function setGroup($group)
+    public function setIsValidationOnly($is_validation_only)
     {
-        $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_id
-     *
-     * @return float
-     */
-    public function getTagId()
-    {
-        return $this->container['tag_id'];
-    }
-
-    /**
-     * Sets tag_id
-     *
-     * @param float $tag_id tag_id
-     *
-     * @return self
-     */
-    public function setTagId($tag_id)
-    {
-        $this->container['tag_id'] = $tag_id;
+        $this->container['is_validation_only'] = $is_validation_only;
 
         return $this;
     }

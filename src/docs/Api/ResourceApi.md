@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getBookings()`
 
 ```php
-getBookings($resource_ids, $from, $to, $status_ids): \StevenBuehner\ChurchTools\Model\InlineResponse200124
+getBookings($resource_ids, $from, $to, $status_ids): \StevenBuehner\ChurchTools\Model\InlineResponse200125
 ```
 
 Your GET endpoint
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200124**](../Model/InlineResponse200124.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200125**](../Model/InlineResponse200125.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 ## `getResourceMasterdata()`
 
 ```php
-getResourceMasterdata(): \StevenBuehner\ChurchTools\Model\InlineResponse200123
+getResourceMasterdata(): \StevenBuehner\ChurchTools\Model\InlineResponse200124
 ```
 
 Your GET endpoint
@@ -116,7 +116,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200123**](../Model/InlineResponse200123.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200124**](../Model/InlineResponse200124.md)
 
 ### Authorization
 

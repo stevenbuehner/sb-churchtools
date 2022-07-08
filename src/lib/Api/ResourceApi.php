@@ -127,7 +127,7 @@ class ResourceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200124
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125
      */
     public function getBookings($resource_ids = null, $from = null, $to = null, $status_ids = null)
     {
@@ -147,7 +147,7 @@ class ResourceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200124, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200125, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBookingsWithHttpInfo($resource_ids = null, $from = null, $to = null, $status_ids = null)
     {
@@ -190,20 +190,20 @@ class ResourceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200124' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200125' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200124', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200125', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200124';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200125';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -221,7 +221,7 @@ class ResourceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200124',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200125',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -269,7 +269,7 @@ class ResourceApi
      */
     public function getBookingsAsyncWithHttpInfo($resource_ids = null, $from = null, $to = null, $status_ids = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200124';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200125';
         $request = $this->getBookingsRequest($resource_ids, $from, $to, $status_ids);
 
         return $this->client
@@ -444,7 +444,7 @@ class ResourceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200123
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200124
      */
     public function getResourceMasterdata()
     {
@@ -460,7 +460,7 @@ class ResourceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200123, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200124, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResourceMasterdataWithHttpInfo()
     {
@@ -503,20 +503,20 @@ class ResourceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200123' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200124' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200123', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200124', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200123';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200124';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -534,7 +534,7 @@ class ResourceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200123',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200124',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -574,7 +574,7 @@ class ResourceApi
      */
     public function getResourceMasterdataAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200123';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200124';
         $request = $this->getResourceMasterdataRequest();
 
         return $this->client

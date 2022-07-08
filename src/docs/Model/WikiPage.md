@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **text** | **string** |  | [optional]
 **on_startpage** | **bool** |  | [optional]
 **redirect_to** | **string** |  | [optional]
-**permissions** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20084Permissions**](InlineResponse20084Permissions.md) |  | [optional]
+**permissions** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20085Permissions**](InlineResponse20085Permissions.md) |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\EntityMetaData**](EntityMetaData.md) |  | [optional]
 **is_markdown** | **bool** |  | [optional]
 

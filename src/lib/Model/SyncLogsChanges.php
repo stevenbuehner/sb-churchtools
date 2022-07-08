@@ -60,8 +60,8 @@ class SyncLogsChanges implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'field_name' => 'string',
-        'old_value' => 'mixed',
-        'new_value' => 'mixed',
+        'old_value' => 'string',
+        'new_value' => 'string',
         'field_attribute' => 'string'
     ];
 
@@ -250,7 +250,7 @@ class SyncLogsChanges implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets old_value
      *
-     * @return mixed|null
+     * @return string|null
      */
     public function getOldValue()
     {
@@ -260,7 +260,7 @@ class SyncLogsChanges implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets old_value
      *
-     * @param mixed|null $old_value `null` if new
+     * @param string|null $old_value `null` if new
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class SyncLogsChanges implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets new_value
      *
-     * @return mixed|null
+     * @return string|null
      */
     public function getNewValue()
     {
@@ -284,7 +284,7 @@ class SyncLogsChanges implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets new_value
      *
-     * @param mixed|null $new_value new_value
+     * @param string|null $new_value new_value
      *
      * @return self
      */

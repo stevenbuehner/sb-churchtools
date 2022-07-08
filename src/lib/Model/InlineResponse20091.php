@@ -59,7 +59,7 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GroupHierarchy1[]'
+        'url' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'url' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'url' => 'url'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'url' => 'setUrl'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'url' => 'getUrl'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
     }
 
     /**
@@ -190,6 +190,9 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -206,25 +209,25 @@ class InlineResponse20091 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets data
+     * Gets url
      *
-     * @return \StevenBuehner\ChurchTools\Model\GroupHierarchy1[]|null
+     * @return string
      */
-    public function getData()
+    public function getUrl()
     {
-        return $this->container['data'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets data
+     * Sets url
      *
-     * @param \StevenBuehner\ChurchTools\Model\GroupHierarchy1[]|null $data data
+     * @param string $url URI of PDF
      *
      * @return self
      */
-    public function setData($data)
+    public function setUrl($url)
     {
-        $this->container['data'] = $data;
+        $this->container['url'] = $url;
 
         return $this;
     }

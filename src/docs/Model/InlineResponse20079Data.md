@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Name of Job Group. &#x60;__single__&#x60; is For Jobs Which don&#39;t Belong to a Group | [optional]
-**total** | **float** | Total Jobs in Queue of This Job Group | [optional]
-**jobs** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20079Jobs**](InlineResponse20079Jobs.md) |  | [optional]
+**queue** | **string** | Name of Queue | [optional]
+**messages** | **string[]** | Messages from Worker | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

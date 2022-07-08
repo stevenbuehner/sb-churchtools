@@ -4,7 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\StevenBuehner\ChurchTools\Model\TranslationKey[]**](TranslationKey.md) |  | [optional]
-**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2007Meta**](InlineResponse2007Meta.md) |  | [optional]
+**message** | **string** |  | [optional]
+**translated_message** | **string** |  | [optional]
+**message_key** | **string** |  | [optional]
+**args** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20039Args**](InlineResponse20039Args.md) |  | [optional]
+**errors** | [**\StevenBuehner\ChurchTools\Model\PersonDomainObject[]**](PersonDomainObject.md) | Array of DomainObjects with people, who have no eMail Addresses. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

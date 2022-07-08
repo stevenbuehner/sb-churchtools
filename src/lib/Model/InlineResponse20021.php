@@ -35,6 +35,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * InlineResponse20021 Class Doc Comment
  *
  * @category Class
+ * @description Place wehre e.g. a group meeting takes place
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,8 +60,16 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20021Data[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
+        'name' => 'string',
+        'street' => 'string',
+        'district' => 'string',
+        'postalcode' => 'string',
+        'city' => 'string',
+        'marker_url' => 'string',
+        'geo_lat' => 'string',
+        'geo_lng' => 'string',
+        'created_date' => 'string',
+        'created_person' => '\StevenBuehner\ChurchTools\Model\InlineResponse20021CreatedPerson'
     ];
 
     /**
@@ -71,8 +80,16 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'meta' => null
+        'name' => null,
+        'street' => null,
+        'district' => null,
+        'postalcode' => null,
+        'city' => null,
+        'marker_url' => null,
+        'geo_lat' => null,
+        'geo_lng' => null,
+        'created_date' => null,
+        'created_person' => null
     ];
 
     /**
@@ -102,8 +119,16 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'meta' => 'meta'
+        'name' => 'name',
+        'street' => 'street',
+        'district' => 'district',
+        'postalcode' => 'postalcode',
+        'city' => 'city',
+        'marker_url' => 'markerUrl',
+        'geo_lat' => 'geoLat',
+        'geo_lng' => 'geoLng',
+        'created_date' => 'createdDate',
+        'created_person' => 'createdPerson'
     ];
 
     /**
@@ -112,8 +137,16 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'meta' => 'setMeta'
+        'name' => 'setName',
+        'street' => 'setStreet',
+        'district' => 'setDistrict',
+        'postalcode' => 'setPostalcode',
+        'city' => 'setCity',
+        'marker_url' => 'setMarkerUrl',
+        'geo_lat' => 'setGeoLat',
+        'geo_lng' => 'setGeoLng',
+        'created_date' => 'setCreatedDate',
+        'created_person' => 'setCreatedPerson'
     ];
 
     /**
@@ -122,8 +155,16 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'meta' => 'getMeta'
+        'name' => 'getName',
+        'street' => 'getStreet',
+        'district' => 'getDistrict',
+        'postalcode' => 'getPostalcode',
+        'city' => 'getCity',
+        'marker_url' => 'getMarkerUrl',
+        'geo_lat' => 'getGeoLat',
+        'geo_lng' => 'getGeoLng',
+        'created_date' => 'getCreatedDate',
+        'created_person' => 'getCreatedPerson'
     ];
 
     /**
@@ -183,8 +224,16 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['district'] = $data['district'] ?? null;
+        $this->container['postalcode'] = $data['postalcode'] ?? null;
+        $this->container['city'] = $data['city'] ?? null;
+        $this->container['marker_url'] = $data['marker_url'] ?? null;
+        $this->container['geo_lat'] = $data['geo_lat'] ?? null;
+        $this->container['geo_lng'] = $data['geo_lng'] ?? null;
+        $this->container['created_date'] = $data['created_date'] ?? null;
+        $this->container['created_person'] = $data['created_person'] ?? null;
     }
 
     /**
@@ -195,6 +244,42 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['street']) && (mb_strlen($this->container['street']) < 1)) {
+            $invalidProperties[] = "invalid value for 'street', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['district']) && (mb_strlen($this->container['district']) < 1)) {
+            $invalidProperties[] = "invalid value for 'district', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['postalcode']) && (mb_strlen($this->container['postalcode']) < 1)) {
+            $invalidProperties[] = "invalid value for 'postalcode', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['city']) && (mb_strlen($this->container['city']) < 1)) {
+            $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['marker_url']) && (mb_strlen($this->container['marker_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'marker_url', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['geo_lat']) && (mb_strlen($this->container['geo_lat']) < 1)) {
+            $invalidProperties[] = "invalid value for 'geo_lat', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['geo_lng']) && (mb_strlen($this->container['geo_lng']) < 1)) {
+            $invalidProperties[] = "invalid value for 'geo_lng', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['created_date']) && (mb_strlen($this->container['created_date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'created_date', the character length must be bigger than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -212,49 +297,286 @@ class InlineResponse20021 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets data
+     * Gets name
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20021Data[]|null
+     * @return string|null
      */
-    public function getData()
+    public function getName()
     {
-        return $this->container['data'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets data
+     * Sets name
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20021Data[]|null $data data
+     * @param string|null $name Name of the place or the person livning there
      *
      * @return self
      */
-    public function setData($data)
+    public function setName($name)
     {
-        $this->container['data'] = $data;
+
+        if (!is_null($name) && (mb_strlen($name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets street
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     * @return string|null
      */
-    public function getMeta()
+    public function getStreet()
     {
-        return $this->container['meta'];
+        return $this->container['street'];
     }
 
     /**
-     * Sets meta
+     * Sets street
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
+     * @param string|null $street Street
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setStreet($street)
     {
-        $this->container['meta'] = $meta;
+
+        if (!is_null($street) && (mb_strlen($street) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $street when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets district
+     *
+     * @return string|null
+     */
+    public function getDistrict()
+    {
+        return $this->container['district'];
+    }
+
+    /**
+     * Sets district
+     *
+     * @param string|null $district Disctrict
+     *
+     * @return self
+     */
+    public function setDistrict($district)
+    {
+
+        if (!is_null($district) && (mb_strlen($district) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $district when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['district'] = $district;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalcode
+     *
+     * @return string|null
+     */
+    public function getPostalcode()
+    {
+        return $this->container['postalcode'];
+    }
+
+    /**
+     * Sets postalcode
+     *
+     * @param string|null $postalcode Zip code of the place
+     *
+     * @return self
+     */
+    public function setPostalcode($postalcode)
+    {
+
+        if (!is_null($postalcode) && (mb_strlen($postalcode) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $postalcode when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['postalcode'] = $postalcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string|null
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string|null $city City
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+
+        if (!is_null($city) && (mb_strlen($city) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets marker_url
+     *
+     * @return string|null
+     */
+    public function getMarkerUrl()
+    {
+        return $this->container['marker_url'];
+    }
+
+    /**
+     * Sets marker_url
+     *
+     * @param string|null $marker_url url for the marker icon
+     *
+     * @return self
+     */
+    public function setMarkerUrl($marker_url)
+    {
+
+        if (!is_null($marker_url) && (mb_strlen($marker_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $marker_url when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['marker_url'] = $marker_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets geo_lat
+     *
+     * @return string|null
+     */
+    public function getGeoLat()
+    {
+        return $this->container['geo_lat'];
+    }
+
+    /**
+     * Sets geo_lat
+     *
+     * @param string|null $geo_lat Latitude
+     *
+     * @return self
+     */
+    public function setGeoLat($geo_lat)
+    {
+
+        if (!is_null($geo_lat) && (mb_strlen($geo_lat) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $geo_lat when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['geo_lat'] = $geo_lat;
+
+        return $this;
+    }
+
+    /**
+     * Gets geo_lng
+     *
+     * @return string|null
+     */
+    public function getGeoLng()
+    {
+        return $this->container['geo_lng'];
+    }
+
+    /**
+     * Sets geo_lng
+     *
+     * @param string|null $geo_lng Longitude
+     *
+     * @return self
+     */
+    public function setGeoLng($geo_lng)
+    {
+
+        if (!is_null($geo_lng) && (mb_strlen($geo_lng) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $geo_lng when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['geo_lng'] = $geo_lng;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_date
+     *
+     * @return string|null
+     */
+    public function getCreatedDate()
+    {
+        return $this->container['created_date'];
+    }
+
+    /**
+     * Sets created_date
+     *
+     * @param string|null $created_date Date of creation
+     *
+     * @return self
+     */
+    public function setCreatedDate($created_date)
+    {
+
+        if (!is_null($created_date) && (mb_strlen($created_date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $created_date when calling InlineResponse20021., must be bigger than or equal to 1.');
+        }
+
+        $this->container['created_date'] = $created_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20021CreatedPerson|null
+     */
+    public function getCreatedPerson()
+    {
+        return $this->container['created_person'];
+    }
+
+    /**
+     * Sets created_person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20021CreatedPerson|null $created_person created_person
+     *
+     * @return self
+     */
+    public function setCreatedPerson($created_person)
+    {
+        $this->container['created_person'] = $created_person;
 
         return $this;
     }

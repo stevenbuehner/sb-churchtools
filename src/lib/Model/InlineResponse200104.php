@@ -59,7 +59,7 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]',
+        'data' => '\StevenBuehner\ChurchTools\Model\FieldMapping',
         'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
     ];
 
@@ -214,7 +214,7 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\ContactLabel[]|null
+     * @return \StevenBuehner\ChurchTools\Model\FieldMapping|null
      */
     public function getData()
     {
@@ -224,7 +224,7 @@ class InlineResponse200104 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\ContactLabel[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\FieldMapping|null $data data
      *
      * @return self
      */

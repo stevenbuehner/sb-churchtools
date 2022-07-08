@@ -78,7 +78,7 @@ void (empty response body)
 ## `getGroupsAbsences()`
 
 ```php
-getGroupsAbsences($group_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\InlineResponse200107
+getGroupsAbsences($group_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\InlineResponse200108
 ```
 
 Fetch all absences for persons in a group
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200107**](../Model/InlineResponse200107.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200108**](../Model/InlineResponse200108.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 ## `getPersonsAbsences()`
 
 ```php
-getPersonsAbsences($person_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\InlineResponse200107
+getPersonsAbsences($person_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\InlineResponse200108
 ```
 
 Fetch all absences for a person
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200107**](../Model/InlineResponse200107.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200108**](../Model/InlineResponse200108.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 ## `postPersonsAbsences()`
 
 ```php
-postPersonsAbsences($person_id, $inline_object62): \StevenBuehner\ChurchTools\Model\InlineResponse2016
+postPersonsAbsences($person_id, $inline_object63): \StevenBuehner\ChurchTools\Model\InlineResponse2016
 ```
 
 Create new absence for person
@@ -301,10 +301,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     $config
 );
 $person_id = 'person_id_example'; // string
-$inline_object62 = new \StevenBuehner\ChurchTools\Model\InlineObject62(); // \StevenBuehner\ChurchTools\Model\InlineObject62
+$inline_object63 = new \StevenBuehner\ChurchTools\Model\InlineObject63(); // \StevenBuehner\ChurchTools\Model\InlineObject63
 
 try {
-    $result = $apiInstance->postPersonsAbsences($person_id, $inline_object62);
+    $result = $apiInstance->postPersonsAbsences($person_id, $inline_object63);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AbsenceApi->postPersonsAbsences: ', $e->getMessage(), PHP_EOL;
@@ -316,7 +316,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
- **inline_object62** | [**\StevenBuehner\ChurchTools\Model\InlineObject62**](../Model/InlineObject62.md)|  | [optional]
+ **inline_object63** | [**\StevenBuehner\ChurchTools\Model\InlineObject63**](../Model/InlineObject63.md)|  | [optional]
 
 ### Return type
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 ## `putPersonsAbsence()`
 
 ```php
-putPersonsAbsence($person_id, $id, $inline_object63): \StevenBuehner\ChurchTools\Model\InlineResponse2016
+putPersonsAbsence($person_id, $id, $inline_object64): \StevenBuehner\ChurchTools\Model\InlineResponse2016
 ```
 
 Update absence
@@ -366,10 +366,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
 );
 $person_id = 'person_id_example'; // string
 $id = 'id_example'; // string
-$inline_object63 = new \StevenBuehner\ChurchTools\Model\InlineObject63(); // \StevenBuehner\ChurchTools\Model\InlineObject63
+$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
 
 try {
-    $result = $apiInstance->putPersonsAbsence($person_id, $id, $inline_object63);
+    $result = $apiInstance->putPersonsAbsence($person_id, $id, $inline_object64);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AbsenceApi->putPersonsAbsence: ', $e->getMessage(), PHP_EOL;
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
  **id** | **string**|  |
- **inline_object63** | [**\StevenBuehner\ChurchTools\Model\InlineObject63**](../Model/InlineObject63.md)|  | [optional]
+ **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
 
 ### Return type
 

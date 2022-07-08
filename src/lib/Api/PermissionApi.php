@@ -123,7 +123,7 @@ class PermissionApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20081
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082
      */
     public function getGlobalPermissions()
     {
@@ -139,7 +139,7 @@ class PermissionApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20081, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20082, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGlobalPermissionsWithHttpInfo()
     {
@@ -182,20 +182,20 @@ class PermissionApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20081' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20082' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20081', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20082', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20081';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20082';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -213,7 +213,7 @@ class PermissionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20081',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20082',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -253,7 +253,7 @@ class PermissionApi
      */
     public function getGlobalPermissionsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20081';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20082';
         $request = $this->getGlobalPermissionsRequest();
 
         return $this->client
@@ -381,7 +381,7 @@ class PermissionApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20083
      */
     public function getInternalPermissionsForPerson($person_id)
     {
@@ -398,7 +398,7 @@ class PermissionApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20082, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20083, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInternalPermissionsForPersonWithHttpInfo($person_id)
     {
@@ -441,20 +441,20 @@ class PermissionApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20082' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20083' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20082', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20083', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20082';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20083';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -472,7 +472,7 @@ class PermissionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20082',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20083',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -514,7 +514,7 @@ class PermissionApi
      */
     public function getInternalPermissionsForPersonAsyncWithHttpInfo($person_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20082';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20083';
         $request = $this->getInternalPermissionsForPersonRequest($person_id);
 
         return $this->client
@@ -657,7 +657,7 @@ class PermissionApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20089
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20090
      */
     public function getPermissionsInternalGroupsGroupId($group_id)
     {
@@ -674,7 +674,7 @@ class PermissionApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20089, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20090, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPermissionsInternalGroupsGroupIdWithHttpInfo($group_id)
     {
@@ -717,20 +717,20 @@ class PermissionApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20089' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20090' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20089', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20090', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20089';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20090';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -748,7 +748,7 @@ class PermissionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20089',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20090',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -790,7 +790,7 @@ class PermissionApi
      */
     public function getPermissionsInternalGroupsGroupIdAsyncWithHttpInfo($group_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20089';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20090';
         $request = $this->getPermissionsInternalGroupsGroupIdRequest($group_id);
 
         return $this->client

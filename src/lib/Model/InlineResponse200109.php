@@ -59,7 +59,8 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Song1'
+        'data' => '\StevenBuehner\ChurchTools\Model\Song1[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
     ];
 
     /**
@@ -70,7 +71,8 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'data' => null,
+        'meta' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'data' => 'data',
+        'meta' => 'meta'
     ];
 
     /**
@@ -109,7 +112,8 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'data' => 'setData',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -118,7 +122,8 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'data' => 'getData',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -179,6 +184,7 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['data'] = $data['data'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -208,7 +214,7 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Song1|null
+     * @return \StevenBuehner\ChurchTools\Model\Song1[]|null
      */
     public function getData()
     {
@@ -218,13 +224,37 @@ class InlineResponse200109 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Song1|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\Song1[]|null $data data
      *
      * @return self
      */
     public function setData($data)
     {
         $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

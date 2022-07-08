@@ -4,6 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**group_homepage_hash** | **string** | The hash of the group homepage. This allows the client to return to the group homepage. | [optional]
+**token** | **string** | The sign up token. |
+**group** | [**\StevenBuehner\ChurchTools\Model\PublicGroup**](PublicGroup.md) |  |
+**form** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20073Form[]**](InlineResponse20073Form.md) | List of form fields. |
+**email** | **string** | If the user is not yet signed in, this specifies the email address the user has provided. | [optional]
+**requester_id** | **float** | If the user is signed in, this specifies the user ID of the requester. | [optional]
+**sign_up_persons** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20073SignUpPersons[]**](InlineResponse20073SignUpPersons.md) | Lists all persons the current user is allowed to sign up for. This includes spouses, children below the age of 16 and all persons with the same email address. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

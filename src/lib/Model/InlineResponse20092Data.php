@@ -59,10 +59,7 @@ class InlineResponse20092Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'int',
-        'group_id' => 'int',
-        'group_type_role_id' => 'int',
-        'last_change' => '\DateTime'
+        'churchdb' => '\StevenBuehner\ChurchTools\Model\InlineResponse20092DataChurchdb'
     ];
 
     /**
@@ -73,10 +70,7 @@ class InlineResponse20092Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
-        'group_id' => null,
-        'group_type_role_id' => null,
-        'last_change' => 'date'
+        'churchdb' => null
     ];
 
     /**
@@ -106,10 +100,7 @@ class InlineResponse20092Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
-        'group_id' => 'groupId',
-        'group_type_role_id' => 'groupTypeRoleId',
-        'last_change' => 'lastChange'
+        'churchdb' => 'churchdb'
     ];
 
     /**
@@ -118,10 +109,7 @@ class InlineResponse20092Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
-        'group_id' => 'setGroupId',
-        'group_type_role_id' => 'setGroupTypeRoleId',
-        'last_change' => 'setLastChange'
+        'churchdb' => 'setChurchdb'
     ];
 
     /**
@@ -130,10 +118,7 @@ class InlineResponse20092Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
-        'group_id' => 'getGroupId',
-        'group_type_role_id' => 'getGroupTypeRoleId',
-        'last_change' => 'getLastChange'
+        'churchdb' => 'getChurchdb'
     ];
 
     /**
@@ -193,10 +178,7 @@ class InlineResponse20092Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['group_id'] = $data['group_id'] ?? null;
-        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
-        $this->container['last_change'] = $data['last_change'] ?? null;
+        $this->container['churchdb'] = $data['churchdb'] ?? null;
     }
 
     /**
@@ -224,97 +206,25 @@ class InlineResponse20092Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets person_id
+     * Gets churchdb
      *
-     * @return int|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20092DataChurchdb|null
      */
-    public function getPersonId()
+    public function getChurchdb()
     {
-        return $this->container['person_id'];
+        return $this->container['churchdb'];
     }
 
     /**
-     * Sets person_id
+     * Sets churchdb
      *
-     * @param int|null $person_id person_id
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20092DataChurchdb|null $churchdb churchdb
      *
      * @return self
      */
-    public function setPersonId($person_id)
+    public function setChurchdb($churchdb)
     {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_id
-     *
-     * @return int|null
-     */
-    public function getGroupId()
-    {
-        return $this->container['group_id'];
-    }
-
-    /**
-     * Sets group_id
-     *
-     * @param int|null $group_id group_id
-     *
-     * @return self
-     */
-    public function setGroupId($group_id)
-    {
-        $this->container['group_id'] = $group_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_type_role_id
-     *
-     * @return int|null
-     */
-    public function getGroupTypeRoleId()
-    {
-        return $this->container['group_type_role_id'];
-    }
-
-    /**
-     * Sets group_type_role_id
-     *
-     * @param int|null $group_type_role_id group_type_role_id
-     *
-     * @return self
-     */
-    public function setGroupTypeRoleId($group_type_role_id)
-    {
-        $this->container['group_type_role_id'] = $group_type_role_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_change
-     *
-     * @return \DateTime|null
-     */
-    public function getLastChange()
-    {
-        return $this->container['last_change'];
-    }
-
-    /**
-     * Sets last_change
-     *
-     * @param \DateTime|null $last_change last_change
-     *
-     * @return self
-     */
-    public function setLastChange($last_change)
-    {
-        $this->container['last_change'] = $last_change;
+        $this->container['churchdb'] = $churchdb;
 
         return $this;
     }

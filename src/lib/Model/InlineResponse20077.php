@@ -59,8 +59,8 @@ class InlineResponse20077 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\SyncEntityMapping[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
+        'data' => '\StevenBuehner\ChurchTools\Model\Device[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse20077Meta'
     ];
 
     /**
@@ -214,7 +214,7 @@ class InlineResponse20077 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\SyncEntityMapping[]|null
+     * @return \StevenBuehner\ChurchTools\Model\Device[]|null
      */
     public function getData()
     {
@@ -224,7 +224,7 @@ class InlineResponse20077 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\SyncEntityMapping[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\Device[]|null $data data
      *
      * @return self
      */
@@ -238,7 +238,7 @@ class InlineResponse20077 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20077Meta|null
      */
     public function getMeta()
     {
@@ -248,7 +248,7 @@ class InlineResponse20077 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20077Meta|null $meta meta
      *
      * @return self
      */

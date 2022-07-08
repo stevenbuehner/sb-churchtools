@@ -59,7 +59,8 @@ class InlineResponse20098 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        '' => '\StevenBuehner\ChurchTools\Model\JobConfigurationReturn1'
+        'data' => '\StevenBuehner\ChurchTools\Model\JobConfigurationReturn1[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
     ];
 
     /**
@@ -70,7 +71,8 @@ class InlineResponse20098 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        '' => null
+        'data' => null,
+        'meta' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class InlineResponse20098 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        '' => ''
+        'data' => 'data',
+        'meta' => 'meta'
     ];
 
     /**
@@ -109,7 +112,8 @@ class InlineResponse20098 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        '' => 'set'
+        'data' => 'setData',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -118,7 +122,8 @@ class InlineResponse20098 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        '' => 'get'
+        'data' => 'getData',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -178,7 +183,8 @@ class InlineResponse20098 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container[''] = $data[''] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -206,25 +212,49 @@ class InlineResponse20098 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets 
+     * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\JobConfigurationReturn1|null
+     * @return \StevenBuehner\ChurchTools\Model\JobConfigurationReturn1[]|null
      */
-    public function get()
+    public function getData()
     {
-        return $this->container[''];
+        return $this->container['data'];
     }
 
     /**
-     * Sets 
+     * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\JobConfigurationReturn1|null $ 
+     * @param \StevenBuehner\ChurchTools\Model\JobConfigurationReturn1[]|null $data data
      *
      * @return self
      */
-    public function set($)
+    public function setData($data)
     {
-        $this->container[''] = $;
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

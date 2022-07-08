@@ -59,8 +59,7 @@ class InlineResponse200103 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\FieldMapping',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'data' => '\StevenBuehner\ChurchTools\Model\FieldMapping'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineResponse200103 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'meta' => null
+        'data' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class InlineResponse200103 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'meta' => 'meta'
+        'data' => 'data'
     ];
 
     /**
@@ -112,8 +109,7 @@ class InlineResponse200103 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'meta' => 'setMeta'
+        'data' => 'setData'
     ];
 
     /**
@@ -122,8 +118,7 @@ class InlineResponse200103 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'meta' => 'getMeta'
+        'data' => 'getData'
     ];
 
     /**
@@ -184,7 +179,6 @@ class InlineResponse200103 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['data'] = $data['data'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -231,30 +225,6 @@ class InlineResponse200103 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setData($data)
     {
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

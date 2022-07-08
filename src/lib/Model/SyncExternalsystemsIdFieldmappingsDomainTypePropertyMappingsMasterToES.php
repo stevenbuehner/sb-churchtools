@@ -63,7 +63,7 @@ class SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES imp
         'to' => 'string',
         'from_filter' => 'string',
         'to_filter' => 'string',
-        'value_mapping' => 'mixed[]',
+        'value_mapping' => 'object',
         'others' => 'mixed[]'
     ];
 
@@ -334,7 +334,7 @@ class SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES imp
     /**
      * Gets value_mapping
      *
-     * @return mixed[]|null
+     * @return object|null
      */
     public function getValueMapping()
     {
@@ -344,7 +344,7 @@ class SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES imp
     /**
      * Sets value_mapping
      *
-     * @param mixed[]|null $value_mapping value_mapping
+     * @param object|null $value_mapping value_mapping
      *
      * @return self
      */

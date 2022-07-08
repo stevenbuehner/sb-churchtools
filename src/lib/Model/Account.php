@@ -68,7 +68,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_opening_balance_account' => 'bool',
         'taxe_rate_id' => 'int',
         'balance' => 'float',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataPermissions1',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataPermissions1',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -484,7 +484,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets permissions
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataPermissions1|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataPermissions1|null
      */
     public function getPermissions()
     {
@@ -494,7 +494,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets permissions
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataPermissions1|null $permissions permissions
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataPermissions1|null $permissions permissions
      *
      * @return self
      */

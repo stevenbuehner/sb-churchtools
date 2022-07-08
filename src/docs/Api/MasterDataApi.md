@@ -73,7 +73,7 @@ void (empty response body)
 ## `getAllData()`
 
 ```php
-getAllData($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20044
+getAllData($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20045
 ```
 
 Get a master data for finance module
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20044**](../Model/InlineResponse20044.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20045**](../Model/InlineResponse20045.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ## `getAllGroupTypeRoles()`
 
 ```php
-getAllGroupTypeRoles(): \StevenBuehner\ChurchTools\Model\InlineResponse20041
+getAllGroupTypeRoles(): \StevenBuehner\ChurchTools\Model\InlineResponse20042
 ```
 
 Get all group type roles
@@ -174,7 +174,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20042**](../Model/InlineResponse20042.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ This endpoint does not need any parameter.
 ## `getMasterDataPerson()`
 
 ```php
-getMasterDataPerson(): \StevenBuehner\ChurchTools\Model\InlineResponse20043
+getMasterDataPerson(): \StevenBuehner\ChurchTools\Model\InlineResponse20044
 ```
 
 Fetch all master data for the module \"People & Groups\"
@@ -292,7 +292,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20043**](../Model/InlineResponse20043.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20044**](../Model/InlineResponse20044.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ This endpoint does not need any parameter.
 ## `masterdataPersonRolesRoleIdGet()`
 
 ```php
-masterdataPersonRolesRoleIdGet($role_id): \StevenBuehner\ChurchTools\Model\InlineResponse20042
+masterdataPersonRolesRoleIdGet($role_id): \StevenBuehner\ChurchTools\Model\InlineResponse20043
 ```
 
 Get a group type role
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20042**](../Model/InlineResponse20042.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20043**](../Model/InlineResponse20043.md)
 
 ### Authorization
 

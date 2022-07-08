@@ -68,8 +68,7 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost_center_id' => 'int',
         'donator_id' => 'int',
         'split_transaction_id' => 'int',
-        'tax_rate_id' => 'int',
-        'tax_amount' => 'float',
+        'tax_rate_id' => 'float',
         'cash_discount_id' => 'int',
         'cash_discount_amount' => 'float',
         'is_immutable' => 'bool'
@@ -92,8 +91,7 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost_center_id' => null,
         'donator_id' => null,
         'split_transaction_id' => null,
-        'tax_rate_id' => null,
-        'tax_amount' => 'integer',
+        'tax_rate_id' => 'integer',
         'cash_discount_id' => null,
         'cash_discount_amount' => 'integer',
         'is_immutable' => null
@@ -136,7 +134,6 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator_id' => 'donatorId',
         'split_transaction_id' => 'splitTransactionId',
         'tax_rate_id' => 'taxRateId',
-        'tax_amount' => 'taxAmount',
         'cash_discount_id' => 'cashDiscountId',
         'cash_discount_amount' => 'cashDiscountAmount',
         'is_immutable' => 'isImmutable'
@@ -158,7 +155,6 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator_id' => 'setDonatorId',
         'split_transaction_id' => 'setSplitTransactionId',
         'tax_rate_id' => 'setTaxRateId',
-        'tax_amount' => 'setTaxAmount',
         'cash_discount_id' => 'setCashDiscountId',
         'cash_discount_amount' => 'setCashDiscountAmount',
         'is_immutable' => 'setIsImmutable'
@@ -180,7 +176,6 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator_id' => 'getDonatorId',
         'split_transaction_id' => 'getSplitTransactionId',
         'tax_rate_id' => 'getTaxRateId',
-        'tax_amount' => 'getTaxAmount',
         'cash_discount_id' => 'getCashDiscountId',
         'cash_discount_amount' => 'getCashDiscountAmount',
         'is_immutable' => 'getIsImmutable'
@@ -253,7 +248,6 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['donator_id'] = $data['donator_id'] ?? null;
         $this->container['split_transaction_id'] = $data['split_transaction_id'] ?? null;
         $this->container['tax_rate_id'] = $data['tax_rate_id'] ?? null;
-        $this->container['tax_amount'] = $data['tax_amount'] ?? null;
         $this->container['cash_discount_id'] = $data['cash_discount_id'] ?? null;
         $this->container['cash_discount_amount'] = $data['cash_discount_amount'] ?? null;
         $this->container['is_immutable'] = $data['is_immutable'] ?? false;
@@ -523,7 +517,7 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_rate_id
      *
-     * @return int|null
+     * @return float|null
      */
     public function getTaxRateId()
     {
@@ -533,37 +527,13 @@ class InlineObject42 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_rate_id
      *
-     * @param int|null $tax_rate_id tax_rate_id
+     * @param float|null $tax_rate_id If updated, the corresponding tax split booking automatically gets updated.
      *
      * @return self
      */
     public function setTaxRateId($tax_rate_id)
     {
         $this->container['tax_rate_id'] = $tax_rate_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_amount
-     *
-     * @return float|null
-     */
-    public function getTaxAmount()
-    {
-        return $this->container['tax_amount'];
-    }
-
-    /**
-     * Sets tax_amount
-     *
-     * @param float|null $tax_amount Value is in cent.
-     *
-     * @return self
-     */
-    public function setTaxAmount($tax_amount)
-    {
-        $this->container['tax_amount'] = $tax_amount;
 
         return $this;
     }

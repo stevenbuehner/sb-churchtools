@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getAllTranslations()`
 
 ```php
-getAllTranslations($updated_by_church): \StevenBuehner\ChurchTools\Model\InlineResponse20039
+getAllTranslations($updated_by_church): \StevenBuehner\ChurchTools\Model\InlineResponse20040
 ```
 
 Get all translations
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20040**](../Model/InlineResponse20040.md)
 
 ### Authorization
 

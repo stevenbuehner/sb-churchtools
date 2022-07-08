@@ -59,7 +59,9 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string'
+        'name' => 'string',
+        'sort_key' => 'int',
+        'is_default' => 'bool'
     ];
 
     /**
@@ -70,7 +72,9 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null
+        'name' => null,
+        'sort_key' => null,
+        'is_default' => null
     ];
 
     /**
@@ -100,7 +104,9 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status'
+        'name' => 'name',
+        'sort_key' => 'sortKey',
+        'is_default' => 'isDefault'
     ];
 
     /**
@@ -109,7 +115,9 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus'
+        'name' => 'setName',
+        'sort_key' => 'setSortKey',
+        'is_default' => 'setIsDefault'
     ];
 
     /**
@@ -118,7 +126,9 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus'
+        'name' => 'getName',
+        'sort_key' => 'getSortKey',
+        'is_default' => 'getIsDefault'
     ];
 
     /**
@@ -178,7 +188,9 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = $data['status'] ?? 'ABSENT';
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['is_default'] = $data['is_default'] ?? null;
     }
 
     /**
@@ -190,6 +202,15 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['sort_key'] === null) {
+            $invalidProperties[] = "'sort_key' can't be null";
+        }
+        if ($this->container['is_default'] === null) {
+            $invalidProperties[] = "'is_default' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -206,25 +227,73 @@ class InlineObject61 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets status
+     * Gets name
      *
-     * @return string|null
+     * @return string
      */
-    public function getStatus()
+    public function getName()
     {
-        return $this->container['status'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets status
+     * Sets name
      *
-     * @param string|null $status One of 'ABSENT' and 'UNKNOWN'
+     * @param string $name Name of Contact Label
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setName($name)
     {
-        $this->container['status'] = $status;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int $sort_key SortKey
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_default
+     *
+     * @return bool
+     */
+    public function getIsDefault()
+    {
+        return $this->container['is_default'];
+    }
+
+    /**
+     * Sets is_default
+     *
+     * @param bool $is_default Indicator if label is new default.
+     *
+     * @return self
+     */
+    public function setIsDefault($is_default)
+    {
+        $this->container['is_default'] = $is_default;
 
         return $this;
     }

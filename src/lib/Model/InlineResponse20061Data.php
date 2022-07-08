@@ -59,8 +59,11 @@ class InlineResponse20061Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cover_letter' => 'string',
-        'attachment' => 'string'
+        'persons' => '\StevenBuehner\ChurchTools\Model\InlineResponse20018Person[]',
+        'count' => 'int',
+        'sum' => 'float',
+        'last_donation_date' => '\DateTime',
+        'last_donation_amount' => 'float'
     ];
 
     /**
@@ -71,8 +74,11 @@ class InlineResponse20061Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cover_letter' => null,
-        'attachment' => null
+        'persons' => null,
+        'count' => null,
+        'sum' => 'integer',
+        'last_donation_date' => 'date',
+        'last_donation_amount' => 'integer'
     ];
 
     /**
@@ -102,8 +108,11 @@ class InlineResponse20061Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'cover_letter' => 'coverLetter',
-        'attachment' => 'attachment'
+        'persons' => 'persons',
+        'count' => 'count',
+        'sum' => 'sum',
+        'last_donation_date' => 'lastDonationDate',
+        'last_donation_amount' => 'lastDonationAmount'
     ];
 
     /**
@@ -112,8 +121,11 @@ class InlineResponse20061Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'cover_letter' => 'setCoverLetter',
-        'attachment' => 'setAttachment'
+        'persons' => 'setPersons',
+        'count' => 'setCount',
+        'sum' => 'setSum',
+        'last_donation_date' => 'setLastDonationDate',
+        'last_donation_amount' => 'setLastDonationAmount'
     ];
 
     /**
@@ -122,8 +134,11 @@ class InlineResponse20061Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'cover_letter' => 'getCoverLetter',
-        'attachment' => 'getAttachment'
+        'persons' => 'getPersons',
+        'count' => 'getCount',
+        'sum' => 'getSum',
+        'last_donation_date' => 'getLastDonationDate',
+        'last_donation_amount' => 'getLastDonationAmount'
     ];
 
     /**
@@ -183,8 +198,11 @@ class InlineResponse20061Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['cover_letter'] = $data['cover_letter'] ?? null;
-        $this->container['attachment'] = $data['attachment'] ?? null;
+        $this->container['persons'] = $data['persons'] ?? null;
+        $this->container['count'] = $data['count'] ?? null;
+        $this->container['sum'] = $data['sum'] ?? null;
+        $this->container['last_donation_date'] = $data['last_donation_date'] ?? null;
+        $this->container['last_donation_amount'] = $data['last_donation_amount'] ?? null;
     }
 
     /**
@@ -212,49 +230,121 @@ class InlineResponse20061Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets cover_letter
+     * Gets persons
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20018Person[]|null
      */
-    public function getCoverLetter()
+    public function getPersons()
     {
-        return $this->container['cover_letter'];
+        return $this->container['persons'];
     }
 
     /**
-     * Sets cover_letter
+     * Sets persons
      *
-     * @param string|null $cover_letter URL to the cover letter of the donation receipt
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20018Person[]|null $persons Contains either one element (a single donator) or two elements (donator and their spouse).
      *
      * @return self
      */
-    public function setCoverLetter($cover_letter)
+    public function setPersons($persons)
     {
-        $this->container['cover_letter'] = $cover_letter;
+        $this->container['persons'] = $persons;
 
         return $this;
     }
 
     /**
-     * Gets attachment
+     * Gets count
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getAttachment()
+    public function getCount()
     {
-        return $this->container['attachment'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets attachment
+     * Sets count
      *
-     * @param string|null $attachment URL to the attachment of the donation receipt
+     * @param int|null $count Total number of donations in the specified accounting period.
      *
      * @return self
      */
-    public function setAttachment($attachment)
+    public function setCount($count)
     {
-        $this->container['attachment'] = $attachment;
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets sum
+     *
+     * @return float|null
+     */
+    public function getSum()
+    {
+        return $this->container['sum'];
+    }
+
+    /**
+     * Sets sum
+     *
+     * @param float|null $sum Value is in cent.
+     *
+     * @return self
+     */
+    public function setSum($sum)
+    {
+        $this->container['sum'] = $sum;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_donation_date
+     *
+     * @return \DateTime|null
+     */
+    public function getLastDonationDate()
+    {
+        return $this->container['last_donation_date'];
+    }
+
+    /**
+     * Sets last_donation_date
+     *
+     * @param \DateTime|null $last_donation_date last_donation_date
+     *
+     * @return self
+     */
+    public function setLastDonationDate($last_donation_date)
+    {
+        $this->container['last_donation_date'] = $last_donation_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_donation_amount
+     *
+     * @return float|null
+     */
+    public function getLastDonationAmount()
+    {
+        return $this->container['last_donation_amount'];
+    }
+
+    /**
+     * Sets last_donation_amount
+     *
+     * @param float|null $last_donation_amount Value is in cent.
+     *
+     * @return self
+     */
+    public function setLastDonationAmount($last_donation_amount)
+    {
+        $this->container['last_donation_amount'] = $last_donation_amount;
 
         return $this;
     }

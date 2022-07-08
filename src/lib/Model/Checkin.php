@@ -61,7 +61,7 @@ class Checkin implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'person' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject',
         'group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
-        'group_meeting' => '\StevenBuehner\ChurchTools\Model\InlineResponse20021Data',
+        'group_meeting' => '\StevenBuehner\ChurchTools\Model\InlineResponse20022Data',
         'total_checked_in' => 'int'
     ];
 
@@ -274,7 +274,7 @@ class Checkin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group_meeting
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20021Data|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20022Data|null
      */
     public function getGroupMeeting()
     {
@@ -284,7 +284,7 @@ class Checkin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group_meeting
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20021Data|null $group_meeting group_meeting
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20022Data|null $group_meeting group_meeting
      *
      * @return self
      */

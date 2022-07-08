@@ -131,7 +131,7 @@ class JobApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200112
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200113
      */
     public function getJobs($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
@@ -155,7 +155,7 @@ class JobApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200112, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200113, HTTP status code, HTTP response headers (array of strings)
      */
     public function getJobsWithHttpInfo($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
@@ -198,20 +198,20 @@ class JobApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200112' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200113' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200112', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200113', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200112';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200113';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -229,7 +229,7 @@ class JobApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200112',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200113',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -285,7 +285,7 @@ class JobApi
      */
     public function getJobsAsyncWithHttpInfo($status = null, $identifier = null, $name = null, $domain_ids = null, $created_start_date = null, $created_end_date = null, $modified_start_date = null, $modified_end_date = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200112';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200113';
         $request = $this->getJobsRequest($status, $identifier, $name, $domain_ids, $created_start_date, $created_end_date, $modified_start_date, $modified_end_date);
 
         return $this->client

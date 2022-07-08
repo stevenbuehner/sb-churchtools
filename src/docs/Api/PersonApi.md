@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**deleteDeviceForPerson()**](PersonApi.md#deleteDeviceForPerson) | **DELETE** /persons/{personId}/devices/{deviceId} | Remove device for person
 [**deletePerson()**](PersonApi.md#deletePerson) | **DELETE** /persons/{id} | Delete person
 [**deletePersonSetting()**](PersonApi.md#deletePersonSetting) | **DELETE** /persons/{id}/settings/{module}/{attribute} | Delete a person setting
+[**deleteSecuritylevelId()**](PersonApi.md#deleteSecuritylevelId) | **DELETE** /securitylevels/{id} | Delete the Security Level
 [**getAllGroupsForPerson()**](PersonApi.md#getAllGroupsForPerson) | **GET** /persons/{id}/groups | Get all groups a member is in
 [**getAllPersonSettings()**](PersonApi.md#getAllPersonSettings) | **GET** /persons/{id}/settings | Get all person settings
 [**getAllPersons()**](PersonApi.md#getAllPersons) | **GET** /persons | Get all persons
@@ -23,10 +24,13 @@ Method | HTTP request | Description
 [**getPersonSetting()**](PersonApi.md#getPersonSetting) | **GET** /persons/{id}/settings/{module}/{attribute} | Get person setting
 [**getPersonTags()**](PersonApi.md#getPersonTags) | **GET** /persons/{id}/tags | Get all tags attached to a person
 [**getPersonsBirthdays()**](PersonApi.md#getPersonsBirthdays) | **GET** /persons/birthdays | Fetch Birthdays
+[**getPersonsDuplicates()**](PersonApi.md#getPersonsDuplicates) | **GET** /persons/duplicates | get potential duplicates of persons
 [**getPersonsIdLogintoken()**](PersonApi.md#getPersonsIdLogintoken) | **GET** /persons/{id}/logintoken | Fetch Login Token
+[**getPersonsPersonidMergeDuplicateid()**](PersonApi.md#getPersonsPersonidMergeDuplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a  merge
 [**getServiceRequestById()**](PersonApi.md#getServiceRequestById) | **GET** /persons/{id}/servicerequests/{requestId} | Get a specific service request for a person
 [**invitePerson()**](PersonApi.md#invitePerson) | **POST** /persons/{personId}/invite | Invite Person to ChurchTools
 [**patchPerson()**](PersonApi.md#patchPerson) | **PATCH** /persons/{id} | Updates a person
+[**patchPersonsPersonidMergeDuplicateid()**](PersonApi.md#patchPersonsPersonidMergeDuplicateid) | **PATCH** /persons/{personId}/merge/{duplicateId} | Merge two person records
 [**postPersonsPersonIdArchive()**](PersonApi.md#postPersonsPersonIdArchive) | **POST** /persons/{personId}/archive | 
 [**undoServiceRequestById()**](PersonApi.md#undoServiceRequestById) | **POST** /persons/{id}/servicerequests/{requestId}/undo | Undo last service request action
 [**updateDeviceForPerson()**](PersonApi.md#updateDeviceForPerson) | **PUT** /persons/{personId}/devices/{deviceId} | Create / Update new device for person
@@ -236,6 +240,8 @@ deletePerson($id)
 
 Delete person
 
+Delete the Person
+
 ### Example
 
 ```php
@@ -347,6 +353,67 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteSecuritylevelId()`
+
+```php
+deleteSecuritylevelId($id)
+```
+
+Delete the Security Level
+
+Delete a security level
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | Id of a particular security level
+
+try {
+    $apiInstance->deleteSecuritylevelId($id);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonApi->deleteSecuritylevelId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Id of a particular security level |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -559,7 +626,7 @@ Name | Type | Description  | Notes
 ## `getDeviceForPerson()`
 
 ```php
-getDeviceForPerson($person_id, $device_id): \StevenBuehner\ChurchTools\Model\InlineResponse20075
+getDeviceForPerson($person_id, $device_id): \StevenBuehner\ChurchTools\Model\InlineResponse20076
 ```
 
 Fetch one device
@@ -605,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20075**](../Model/InlineResponse20075.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20076**](../Model/InlineResponse20076.md)
 
 ### Authorization
 
@@ -747,7 +814,7 @@ Name | Type | Description  | Notes
 ## `getPersonDevices()`
 
 ```php
-getPersonDevices($person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20074
+getPersonDevices($person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20075
 ```
 
 Fetch all registered devices for person
@@ -791,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20074**](../Model/InlineResponse20074.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20075**](../Model/InlineResponse20075.md)
 
 ### Authorization
 
@@ -835,7 +902,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // string | ID of person
+$id = 42; // int | ID of person
 $from = Thu Aug 08 02:00:00 CEST 2019; // \DateTime | Start date from when events are returned. Default value: today
 
 try {
@@ -850,7 +917,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of person |
+ **id** | **int**| ID of person |
  **from** | **\DateTime**| Start date from when events are returned. Default value: today | [optional]
 
 ### Return type
@@ -1185,7 +1252,7 @@ Name | Type | Description  | Notes
 ## `getPersonsBirthdays()`
 
 ```php
-getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body): \StevenBuehner\ChurchTools\Model\InlineResponse200114
+getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body): \StevenBuehner\ChurchTools\Model\InlineResponse200115
 ```
 
 Fetch Birthdays
@@ -1211,8 +1278,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$start_date = Sat Jan 01 01:00:00 CET 2000; // \DateTime | Birthdays from that date on
-$end_date = Sun Dec 31 01:00:00 CET 2000; // \DateTime | Birthdays up to that date
+$start_date = Sat Jan 01 01:00:00 CET 2000; // \DateTime | Birthdays from that date on defaults to yesterday
+$end_date = Sun Dec 31 01:00:00 CET 2000; // \DateTime | Birthdays up to that date, defaults to 30 deays from now
 $campus_ids = NULL; // array | filter by campus ids
 $my_groups = True; // bool | filter by people in my groups
 $group_ids = NULL; // array | filter by group ids
@@ -1230,8 +1297,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**| Birthdays from that date on | [optional]
- **end_date** | **\DateTime**| Birthdays up to that date | [optional]
+ **start_date** | **\DateTime**| Birthdays from that date on defaults to yesterday | [optional]
+ **end_date** | **\DateTime**| Birthdays up to that date, defaults to 30 deays from now | [optional]
  **campus_ids** | [**array**](../Model/.md)| filter by campus ids | [optional]
  **my_groups** | **bool**| filter by people in my groups | [optional]
  **group_ids** | [**array**](../Model/.md)| filter by group ids | [optional]
@@ -1239,7 +1306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200114**](../Model/InlineResponse200114.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200115**](../Model/InlineResponse200115.md)
 
 ### Authorization
 
@@ -1254,10 +1321,74 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPersonsDuplicates()`
+
+```php
+getPersonsDuplicates($tolerance, $relation_name_for_duplicates): \StevenBuehner\ChurchTools\Model\InlineResponse200129
+```
+
+get potential duplicates of persons
+
+**Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  Provide a list of potential duplicate person records. You can suppress some duplicates  The other parameters are used to filter duplicates.  Returns an array of duplicates  * `p1` - properties of Person 1 * `p2` - properties of Person 2 * `d`  - distances of fields - this represents number of changes needed to convert P1 to P2           related to the length. e.g. `Maier` -> `Mayer` yields `d=20`
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$tolerance = 30; // int | Tolerance for matching; defaults to 30
+$relation_name_for_duplicates = 'relation_name_for_duplicates_example'; // string | Name of `Duplicate` Relationship; Persons with this relationship will never be reported as duplicates.
+
+try {
+    $result = $apiInstance->getPersonsDuplicates($tolerance, $relation_name_for_duplicates);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonApi->getPersonsDuplicates: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tolerance** | **int**| Tolerance for matching; defaults to 30 | [optional] [default to 30]
+ **relation_name_for_duplicates** | **string**| Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200129**](../Model/InlineResponse200129.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getPersonsIdLogintoken()`
 
 ```php
-getPersonsIdLogintoken($id): \StevenBuehner\ChurchTools\Model\InlineResponse200115
+getPersonsIdLogintoken($id): \StevenBuehner\ChurchTools\Model\InlineResponse200116
 ```
 
 Fetch Login Token
@@ -1301,7 +1432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200115**](../Model/InlineResponse200115.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200116**](../Model/InlineResponse200116.md)
 
 ### Authorization
 
@@ -1311,6 +1442,69 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPersonsPersonidMergeDuplicateid()`
+
+```php
+getPersonsPersonidMergeDuplicateid($duplicate_id, $person_id)
+```
+
+Get information to compare two person records in order to prepare a  merge
+
+**Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  This retrieves the basis for a merge of two person records You will receive person data, relationships, groups etc. for both persons.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$duplicate_id = 100; // string | Id of the doublette person
+$person_id = 'person_id_example'; // string | id of the original person
+
+try {
+    $apiInstance->getPersonsPersonidMergeDuplicateid($duplicate_id, $person_id);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonApi->getPersonsPersonidMergeDuplicateid: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **duplicate_id** | **string**| Id of the doublette person |
+ **person_id** | **string**| id of the original person |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1507,10 +1701,77 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `patchPersonsPersonidMergeDuplicateid()`
+
+```php
+patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicate, $inline_object53)
+```
+
+Merge two person records
+
+**Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  Generally, you can provide any person field to save, but be aware that write access to the provided ields is required. Beware, that not all fields which are listed in the Person schema can be updated. E.g. `imageUrl` or `familyUrl`  (see `PATCH /api/person/{id}`)  * using PATCH you can perform the eventual merge, it will   + patch the person record    + replace the personId of the doublette with the Original in all related records.     * Group memberships     * Person relation     * Bookings     * Wiki-Entries     * Financial transactions     * ... * delete the doublette if `deleteDuplicate` is true  all to be done within one transaction.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$duplicate_id = 100; // string | Id of the doublette person
+$person_id = 'person_id_example'; // string | id of the original person
+$delete_duplicate = True; // bool | Flag to delete the doublette
+$inline_object53 = new \StevenBuehner\ChurchTools\Model\InlineObject53(); // \StevenBuehner\ChurchTools\Model\InlineObject53
+
+try {
+    $apiInstance->patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicate, $inline_object53);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonApi->patchPersonsPersonidMergeDuplicateid: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **duplicate_id** | **string**| Id of the doublette person |
+ **person_id** | **string**| id of the original person |
+ **delete_duplicate** | **bool**| Flag to delete the doublette | [optional]
+ **inline_object53** | [**\StevenBuehner\ChurchTools\Model\InlineObject53**](../Model/InlineObject53.md)|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `postPersonsPersonIdArchive()`
 
 ```php
-postPersonsPersonIdArchive($person_id, $inline_object68)
+postPersonsPersonIdArchive($person_id, $inline_object69)
 ```
 
 
@@ -1537,10 +1798,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $person_id = 'person_id_example'; // string
-$inline_object68 = new \StevenBuehner\ChurchTools\Model\InlineObject68(); // \StevenBuehner\ChurchTools\Model\InlineObject68
+$inline_object69 = new \StevenBuehner\ChurchTools\Model\InlineObject69(); // \StevenBuehner\ChurchTools\Model\InlineObject69
 
 try {
-    $apiInstance->postPersonsPersonIdArchive($person_id, $inline_object68);
+    $apiInstance->postPersonsPersonIdArchive($person_id, $inline_object69);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->postPersonsPersonIdArchive: ', $e->getMessage(), PHP_EOL;
 }
@@ -1551,7 +1812,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
- **inline_object68** | [**\StevenBuehner\ChurchTools\Model\InlineObject68**](../Model/InlineObject68.md)|  | [optional]
+ **inline_object69** | [**\StevenBuehner\ChurchTools\Model\InlineObject69**](../Model/InlineObject69.md)|  | [optional]
 
 ### Return type
 
@@ -1637,7 +1898,7 @@ Name | Type | Description  | Notes
 ## `updateDeviceForPerson()`
 
 ```php
-updateDeviceForPerson($person_id, $device_id, $inline_object48): \StevenBuehner\ChurchTools\Model\InlineResponse20076
+updateDeviceForPerson($person_id, $device_id, $inline_object48): \StevenBuehner\ChurchTools\Model\InlineResponse20077
 ```
 
 Create / Update new device for person
@@ -1685,7 +1946,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20076**](../Model/InlineResponse20076.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20077**](../Model/InlineResponse20077.md)
 
 ### Authorization
 

@@ -423,7 +423,7 @@ class TagApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20028|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20029|string
      */
     public function saveTag($inline_object12)
     {
@@ -440,7 +440,7 @@ class TagApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20028|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20029|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveTagWithHttpInfo($inline_object12)
     {
@@ -483,14 +483,14 @@ class TagApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20028' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20029' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20028', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20029', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -508,7 +508,7 @@ class TagApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20028';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20029';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -526,7 +526,7 @@ class TagApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20028',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20029',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -576,7 +576,7 @@ class TagApi
      */
     public function saveTagAsyncWithHttpInfo($inline_object12)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20028';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20029';
         $request = $this->saveTagRequest($inline_object12);
 
         return $this->client

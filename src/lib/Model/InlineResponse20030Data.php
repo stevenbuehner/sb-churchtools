@@ -61,16 +61,8 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'filename' => 'string',
-        'file_url' => 'string',
-        'image_url' => 'string',
-        'relative_url' => 'string',
-        'type' => 'string',
-        'show_only_when_editable' => 'bool',
-        'security_level_id' => 'int',
-        'size' => 'int',
-        'domain_type' => 'string',
-        'domain_id' => 'string'
+        'shorty' => 'string',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -83,16 +75,8 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'filename' => null,
-        'file_url' => null,
-        'image_url' => null,
-        'relative_url' => null,
-        'type' => null,
-        'show_only_when_editable' => null,
-        'security_level_id' => null,
-        'size' => null,
-        'domain_type' => null,
-        'domain_id' => null
+        'shorty' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -124,16 +108,8 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'filename' => 'filename',
-        'file_url' => 'fileUrl',
-        'image_url' => 'imageUrl',
-        'relative_url' => 'relativeUrl',
-        'type' => 'type',
-        'show_only_when_editable' => 'showOnlyWhenEditable',
-        'security_level_id' => 'securityLevelId',
-        'size' => 'size',
-        'domain_type' => 'domainType',
-        'domain_id' => 'domainId'
+        'shorty' => 'shorty',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -144,16 +120,8 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'filename' => 'setFilename',
-        'file_url' => 'setFileUrl',
-        'image_url' => 'setImageUrl',
-        'relative_url' => 'setRelativeUrl',
-        'type' => 'setType',
-        'show_only_when_editable' => 'setShowOnlyWhenEditable',
-        'security_level_id' => 'setSecurityLevelId',
-        'size' => 'setSize',
-        'domain_type' => 'setDomainType',
-        'domain_id' => 'setDomainId'
+        'shorty' => 'setShorty',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -164,16 +132,8 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'filename' => 'getFilename',
-        'file_url' => 'getFileUrl',
-        'image_url' => 'getImageUrl',
-        'relative_url' => 'getRelativeUrl',
-        'type' => 'getType',
-        'show_only_when_editable' => 'getShowOnlyWhenEditable',
-        'security_level_id' => 'getSecurityLevelId',
-        'size' => 'getSize',
-        'domain_type' => 'getDomainType',
-        'domain_id' => 'getDomainId'
+        'shorty' => 'getShorty',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -235,16 +195,8 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['filename'] = $data['filename'] ?? null;
-        $this->container['file_url'] = $data['file_url'] ?? null;
-        $this->container['image_url'] = $data['image_url'] ?? null;
-        $this->container['relative_url'] = $data['relative_url'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['show_only_when_editable'] = $data['show_only_when_editable'] ?? null;
-        $this->container['security_level_id'] = $data['security_level_id'] ?? null;
-        $this->container['size'] = $data['size'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
-        $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['shorty'] = $data['shorty'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
     /**
@@ -284,7 +236,7 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param int|null $id ID of department
      *
      * @return self
      */
@@ -308,7 +260,7 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets name
      *
-     * @param string|null $name name
+     * @param string|null $name Department name
      *
      * @return self
      */
@@ -320,241 +272,49 @@ class InlineResponse20030Data implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets filename
+     * Gets shorty
      *
      * @return string|null
      */
-    public function getFilename()
+    public function getShorty()
     {
-        return $this->container['filename'];
+        return $this->container['shorty'];
     }
 
     /**
-     * Sets filename
+     * Sets shorty
      *
-     * @param string|null $filename filename
+     * @param string|null $shorty Abbreviation
      *
      * @return self
      */
-    public function setFilename($filename)
+    public function setShorty($shorty)
     {
-        $this->container['filename'] = $filename;
+        $this->container['shorty'] = $shorty;
 
         return $this;
     }
 
     /**
-     * Gets file_url
-     *
-     * @return string|null
-     */
-    public function getFileUrl()
-    {
-        return $this->container['file_url'];
-    }
-
-    /**
-     * Sets file_url
-     *
-     * @param string|null $file_url file_url
-     *
-     * @return self
-     */
-    public function setFileUrl($file_url)
-    {
-        $this->container['file_url'] = $file_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets image_url
-     *
-     * @return string|null
-     */
-    public function getImageUrl()
-    {
-        return $this->container['image_url'];
-    }
-
-    /**
-     * Sets image_url
-     *
-     * @param string|null $image_url image_url
-     *
-     * @return self
-     */
-    public function setImageUrl($image_url)
-    {
-        $this->container['image_url'] = $image_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets relative_url
-     *
-     * @return string|null
-     */
-    public function getRelativeUrl()
-    {
-        return $this->container['relative_url'];
-    }
-
-    /**
-     * Sets relative_url
-     *
-     * @param string|null $relative_url relative_url
-     *
-     * @return self
-     */
-    public function setRelativeUrl($relative_url)
-    {
-        $this->container['relative_url'] = $relative_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_only_when_editable
-     *
-     * @return bool|null
-     */
-    public function getShowOnlyWhenEditable()
-    {
-        return $this->container['show_only_when_editable'];
-    }
-
-    /**
-     * Sets show_only_when_editable
-     *
-     * @param bool|null $show_only_when_editable show_only_when_editable
-     *
-     * @return self
-     */
-    public function setShowOnlyWhenEditable($show_only_when_editable)
-    {
-        $this->container['show_only_when_editable'] = $show_only_when_editable;
-
-        return $this;
-    }
-
-    /**
-     * Gets security_level_id
+     * Gets sort_key
      *
      * @return int|null
      */
-    public function getSecurityLevelId()
+    public function getSortKey()
     {
-        return $this->container['security_level_id'];
+        return $this->container['sort_key'];
     }
 
     /**
-     * Sets security_level_id
+     * Sets sort_key
      *
-     * @param int|null $security_level_id security_level_id
+     * @param int|null $sort_key Used to sort all departments
      *
      * @return self
      */
-    public function setSecurityLevelId($security_level_id)
+    public function setSortKey($sort_key)
     {
-        $this->container['security_level_id'] = $security_level_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets size
-     *
-     * @return int|null
-     */
-    public function getSize()
-    {
-        return $this->container['size'];
-    }
-
-    /**
-     * Sets size
-     *
-     * @param int|null $size The file size in byte
-     *
-     * @return self
-     */
-    public function setSize($size)
-    {
-        $this->container['size'] = $size;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_type
-     *
-     * @return string|null
-     */
-    public function getDomainType()
-    {
-        return $this->container['domain_type'];
-    }
-
-    /**
-     * Sets domain_type
-     *
-     * @param string|null $domain_type domain_type
-     *
-     * @return self
-     */
-    public function setDomainType($domain_type)
-    {
-        $this->container['domain_type'] = $domain_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_id
-     *
-     * @return string|null
-     */
-    public function getDomainId()
-    {
-        return $this->container['domain_id'];
-    }
-
-    /**
-     * Sets domain_id
-     *
-     * @param string|null $domain_id domain_id
-     *
-     * @return self
-     */
-    public function setDomainId($domain_id)
-    {
-        $this->container['domain_id'] = $domain_id;
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

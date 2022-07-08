@@ -59,7 +59,13 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string'
+        'date_from' => 'string',
+        'date_to' => 'string',
+        'is_completed' => 'bool',
+        'is_canceled' => 'bool',
+        'num_guests' => 'int',
+        'comment' => 'string',
+        'poll_result' => 'string'
     ];
 
     /**
@@ -70,7 +76,13 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null
+        'date_from' => null,
+        'date_to' => null,
+        'is_completed' => null,
+        'is_canceled' => null,
+        'num_guests' => null,
+        'comment' => null,
+        'poll_result' => null
     ];
 
     /**
@@ -100,7 +112,13 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status'
+        'date_from' => 'dateFrom',
+        'date_to' => 'dateTo',
+        'is_completed' => 'isCompleted',
+        'is_canceled' => 'isCanceled',
+        'num_guests' => 'numGuests',
+        'comment' => 'comment',
+        'poll_result' => 'pollResult'
     ];
 
     /**
@@ -109,7 +127,13 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus'
+        'date_from' => 'setDateFrom',
+        'date_to' => 'setDateTo',
+        'is_completed' => 'setIsCompleted',
+        'is_canceled' => 'setIsCanceled',
+        'num_guests' => 'setNumGuests',
+        'comment' => 'setComment',
+        'poll_result' => 'setPollResult'
     ];
 
     /**
@@ -118,7 +142,13 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus'
+        'date_from' => 'getDateFrom',
+        'date_to' => 'getDateTo',
+        'is_completed' => 'getIsCompleted',
+        'is_canceled' => 'getIsCanceled',
+        'num_guests' => 'getNumGuests',
+        'comment' => 'getComment',
+        'poll_result' => 'getPollResult'
     ];
 
     /**
@@ -162,21 +192,6 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const STATUS_ABSENT = 'absent';
-    const STATUS_PRESENT = 'present';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_ABSENT,
-            self::STATUS_PRESENT,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -193,7 +208,13 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = $data['status'] ?? null;
+        $this->container['date_from'] = $data['date_from'] ?? null;
+        $this->container['date_to'] = $data['date_to'] ?? null;
+        $this->container['is_completed'] = $data['is_completed'] ?? null;
+        $this->container['is_canceled'] = $data['is_canceled'] ?? null;
+        $this->container['num_guests'] = $data['num_guests'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
+        $this->container['poll_result'] = $data['poll_result'] ?? null;
     }
 
     /**
@@ -204,15 +225,6 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -230,35 +242,169 @@ class InlineObject74 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets status
+     * Gets date_from
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getDateFrom()
     {
-        return $this->container['status'];
+        return $this->container['date_from'];
     }
 
     /**
-     * Sets status
+     * Sets date_from
      *
-     * @param string|null $status status
+     * @param string|null $date_from date_from
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setDateFrom($date_from)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['status'] = $status;
+        $this->container['date_from'] = $date_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_to
+     *
+     * @return string|null
+     */
+    public function getDateTo()
+    {
+        return $this->container['date_to'];
+    }
+
+    /**
+     * Sets date_to
+     *
+     * @param string|null $date_to date_to
+     *
+     * @return self
+     */
+    public function setDateTo($date_to)
+    {
+        $this->container['date_to'] = $date_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_completed
+     *
+     * @return bool|null
+     */
+    public function getIsCompleted()
+    {
+        return $this->container['is_completed'];
+    }
+
+    /**
+     * Sets is_completed
+     *
+     * @param bool|null $is_completed is_completed
+     *
+     * @return self
+     */
+    public function setIsCompleted($is_completed)
+    {
+        $this->container['is_completed'] = $is_completed;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_canceled
+     *
+     * @return bool|null
+     */
+    public function getIsCanceled()
+    {
+        return $this->container['is_canceled'];
+    }
+
+    /**
+     * Sets is_canceled
+     *
+     * @param bool|null $is_canceled is_canceled
+     *
+     * @return self
+     */
+    public function setIsCanceled($is_canceled)
+    {
+        $this->container['is_canceled'] = $is_canceled;
+
+        return $this;
+    }
+
+    /**
+     * Gets num_guests
+     *
+     * @return int|null
+     */
+    public function getNumGuests()
+    {
+        return $this->container['num_guests'];
+    }
+
+    /**
+     * Sets num_guests
+     *
+     * @param int|null $num_guests num_guests
+     *
+     * @return self
+     */
+    public function setNumGuests($num_guests)
+    {
+        $this->container['num_guests'] = $num_guests;
+
+        return $this;
+    }
+
+    /**
+     * Gets comment
+     *
+     * @return string|null
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     * @param string|null $comment comment
+     *
+     * @return self
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets poll_result
+     *
+     * @return string|null
+     */
+    public function getPollResult()
+    {
+        return $this->container['poll_result'];
+    }
+
+    /**
+     * Sets poll_result
+     *
+     * @param string|null $poll_result poll_result
+     *
+     * @return self
+     */
+    public function setPollResult($poll_result)
+    {
+        $this->container['poll_result'] = $poll_result;
 
         return $this;
     }

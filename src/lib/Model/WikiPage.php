@@ -66,7 +66,7 @@ class WikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
         'text' => 'string',
         'on_startpage' => 'bool',
         'redirect_to' => 'string',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20084Permissions',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20085Permissions',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData',
         'is_markdown' => 'bool'
     ];
@@ -433,7 +433,7 @@ class WikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets permissions
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20084Permissions|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20085Permissions|null
      */
     public function getPermissions()
     {
@@ -443,7 +443,7 @@ class WikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets permissions
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20084Permissions|null $permissions permissions
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20085Permissions|null $permissions permissions
      *
      * @return self
      */

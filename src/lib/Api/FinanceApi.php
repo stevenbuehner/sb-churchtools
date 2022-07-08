@@ -385,7 +385,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20068
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20069
      */
     public function batchTransaction($inline_object41 = null)
     {
@@ -402,7 +402,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20068, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20069, HTTP status code, HTTP response headers (array of strings)
      */
     public function batchTransactionWithHttpInfo($inline_object41 = null)
     {
@@ -445,20 +445,20 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20068' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20069' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20068', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20069', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20069';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -476,7 +476,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20068',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20069',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -518,7 +518,7 @@ class FinanceApi
      */
     public function batchTransactionAsyncWithHttpInfo($inline_object41 = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20069';
         $request = $this->batchTransactionRequest($inline_object41);
 
         return $this->client
@@ -653,7 +653,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20057|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20058|string
      */
     public function createCashDiscount($inline_object32)
     {
@@ -670,7 +670,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20057|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20058|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCashDiscountWithHttpInfo($inline_object32)
     {
@@ -713,14 +713,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20057' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20058' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20057', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20058', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -738,7 +738,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -756,7 +756,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20057',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20058',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -806,7 +806,7 @@ class FinanceApi
      */
     public function createCashDiscountAsyncWithHttpInfo($inline_object32)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
         $request = $this->createCashDiscountRequest($inline_object32);
 
         return $this->client
@@ -947,7 +947,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20059|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20060|string
      */
     public function createCostCenter($inline_object34)
     {
@@ -964,7 +964,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20059|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20060|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCostCenterWithHttpInfo($inline_object34)
     {
@@ -1007,14 +1007,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20059' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20060' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20059', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20060', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1032,7 +1032,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1050,7 +1050,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20059',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20060',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1100,7 +1100,7 @@ class FinanceApi
      */
     public function createCostCenterAsyncWithHttpInfo($inline_object34)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
         $request = $this->createCostCenterRequest($inline_object34);
 
         return $this->client
@@ -1241,7 +1241,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20048|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20049|string
      */
     public function createNewAccount($inline_object24)
     {
@@ -1258,7 +1258,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20048|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20049|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewAccountWithHttpInfo($inline_object24)
     {
@@ -1301,14 +1301,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20048' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20049' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20048', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20049', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1326,7 +1326,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20048';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1344,7 +1344,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20048',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20049',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1394,7 +1394,7 @@ class FinanceApi
      */
     public function createNewAccountAsyncWithHttpInfo($inline_object24)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20048';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
         $request = $this->createNewAccountRequest($inline_object24);
 
         return $this->client
@@ -1535,7 +1535,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20052|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20053|string
      */
     public function createNewAccountClass($inline_object28)
     {
@@ -1552,7 +1552,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20052|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20053|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewAccountClassWithHttpInfo($inline_object28)
     {
@@ -1595,14 +1595,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20052' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20053' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20052', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20053', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1620,7 +1620,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1638,7 +1638,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20052',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20053',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1688,7 +1688,7 @@ class FinanceApi
      */
     public function createNewAccountClassAsyncWithHttpInfo($inline_object28)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
         $request = $this->createNewAccountClassRequest($inline_object28);
 
         return $this->client
@@ -1829,7 +1829,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20054|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20055|string
      */
     public function createNewAccountGroup($inline_object30)
     {
@@ -1846,7 +1846,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20054|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20055|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewAccountGroupWithHttpInfo($inline_object30)
     {
@@ -1889,14 +1889,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20054' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20055' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20054', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20055', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1914,7 +1914,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1932,7 +1932,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20054',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20055',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1982,7 +1982,7 @@ class FinanceApi
      */
     public function createNewAccountGroupAsyncWithHttpInfo($inline_object30)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
         $request = $this->createNewAccountGroupRequest($inline_object30);
 
         return $this->client
@@ -2123,7 +2123,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20050|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20051|string
      */
     public function createNewAccountType($inline_object26)
     {
@@ -2140,7 +2140,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20050|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20051|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewAccountTypeWithHttpInfo($inline_object26)
     {
@@ -2183,14 +2183,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20050' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20051' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20050', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20051', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2208,7 +2208,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2226,7 +2226,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20050',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20051',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2276,7 +2276,7 @@ class FinanceApi
      */
     public function createNewAccountTypeAsyncWithHttpInfo($inline_object26)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
         $request = $this->createNewAccountTypeRequest($inline_object26);
 
         return $this->client
@@ -2711,7 +2711,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20046
      */
     public function createNewClient($inline_object20)
     {
@@ -2728,7 +2728,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20045, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20046, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewClientWithHttpInfo($inline_object20)
     {
@@ -2771,20 +2771,20 @@ class FinanceApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20045' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20046' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20045', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20046', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20045';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2802,7 +2802,7 @@ class FinanceApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20045',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20046',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2844,7 +2844,7 @@ class FinanceApi
      */
     public function createNewClientAsyncWithHttpInfo($inline_object20)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20045';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
         $request = $this->createNewClientRequest($inline_object20);
 
         return $this->client
@@ -2985,7 +2985,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20067
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20068
      */
     public function createNewTransaction($inline_object40)
     {
@@ -3002,7 +3002,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20067, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20068, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewTransactionWithHttpInfo($inline_object40)
     {
@@ -3045,20 +3045,20 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20067' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20068' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20067', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20068', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3076,7 +3076,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20067',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20068',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3118,7 +3118,7 @@ class FinanceApi
      */
     public function createNewTransactionAsyncWithHttpInfo($inline_object40)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
         $request = $this->createNewTransactionRequest($inline_object40);
 
         return $this->client
@@ -3259,7 +3259,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20069
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20070
      */
     public function createNewTransactionPurpose($inline_object43)
     {
@@ -3276,7 +3276,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20069, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20070, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewTransactionPurposeWithHttpInfo($inline_object43)
     {
@@ -3319,20 +3319,20 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20069' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20070' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20069', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20070', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20069';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3350,7 +3350,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20069',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20070',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3392,7 +3392,7 @@ class FinanceApi
      */
     public function createNewTransactionPurposeAsyncWithHttpInfo($inline_object43)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20069';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
         $request = $this->createNewTransactionPurposeRequest($inline_object43);
 
         return $this->client
@@ -3533,7 +3533,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20065|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20066|string
      */
     public function createTaxRate($inline_object38)
     {
@@ -3550,7 +3550,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20065|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20066|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTaxRateWithHttpInfo($inline_object38)
     {
@@ -3593,14 +3593,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20065' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20066' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20065', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20066', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3618,7 +3618,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3636,7 +3636,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20065',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20066',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3686,7 +3686,7 @@ class FinanceApi
      */
     public function createTaxRateAsyncWithHttpInfo($inline_object38)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
         $request = $this->createTaxRateRequest($inline_object38);
 
         return $this->client
@@ -3827,7 +3827,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20063|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20064|string
      */
     public function createTaxType($inline_object36)
     {
@@ -3844,7 +3844,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20063|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20064|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTaxTypeWithHttpInfo($inline_object36)
     {
@@ -3887,14 +3887,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20063' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20064' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20063', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20064', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3912,7 +3912,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3930,7 +3930,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20063',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20064',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3980,7 +3980,7 @@ class FinanceApi
      */
     public function createTaxTypeAsyncWithHttpInfo($inline_object36)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
         $request = $this->createTaxTypeRequest($inline_object36);
 
         return $this->client
@@ -7758,7 +7758,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20049|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20050|string
      */
     public function getAccountById($id)
     {
@@ -7775,7 +7775,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20049|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20050|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountByIdWithHttpInfo($id)
     {
@@ -7818,14 +7818,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20049' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20050' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20049', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20050', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -7843,7 +7843,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7861,7 +7861,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20049',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20050',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7911,7 +7911,7 @@ class FinanceApi
      */
     public function getAccountByIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
         $request = $this->getAccountByIdRequest($id);
 
         return $this->client
@@ -8054,7 +8054,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20053|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20054|string
      */
     public function getAccountClassById($id)
     {
@@ -8071,7 +8071,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20053|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20054|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountClassByIdWithHttpInfo($id)
     {
@@ -8114,14 +8114,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20053' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20054' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20053', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20054', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -8139,7 +8139,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8157,7 +8157,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20053',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20054',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8207,7 +8207,7 @@ class FinanceApi
      */
     public function getAccountClassByIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
         $request = $this->getAccountClassByIdRequest($id);
 
         return $this->client
@@ -8350,7 +8350,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20055|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20056|string
      */
     public function getAccountGroupById($id)
     {
@@ -8367,7 +8367,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20055|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20056|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountGroupByIdWithHttpInfo($id)
     {
@@ -8410,14 +8410,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20055' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20056' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20055', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20056', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -8435,7 +8435,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20056';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8453,7 +8453,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20055',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20056',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8503,7 +8503,7 @@ class FinanceApi
      */
     public function getAccountGroupByIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20056';
         $request = $this->getAccountGroupByIdRequest($id);
 
         return $this->client
@@ -8646,7 +8646,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20051|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20052|string
      */
     public function getAccountTypeById($id)
     {
@@ -8663,7 +8663,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20051|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20052|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountTypeByIdWithHttpInfo($id)
     {
@@ -8706,14 +8706,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20051' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20052' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20051', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20052', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -8731,7 +8731,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8749,7 +8749,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20051',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20052',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8799,7 +8799,7 @@ class FinanceApi
      */
     public function getAccountTypeByIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
         $request = $this->getAccountTypeByIdRequest($id);
 
         return $this->client
@@ -9237,7 +9237,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20052|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20053|string
      */
     public function getAllAccountClasses()
     {
@@ -9253,7 +9253,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20052|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20053|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAccountClassesWithHttpInfo()
     {
@@ -9296,14 +9296,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20052' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20053' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20052', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20053', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9321,7 +9321,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -9339,7 +9339,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20052',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20053',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9387,7 +9387,7 @@ class FinanceApi
      */
     public function getAllAccountClassesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
         $request = $this->getAllAccountClassesRequest();
 
         return $this->client
@@ -9514,7 +9514,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20054|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20055|string
      */
     public function getAllAccountGroups()
     {
@@ -9530,7 +9530,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20054|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20055|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAccountGroupsWithHttpInfo()
     {
@@ -9573,14 +9573,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20054' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20055' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20054', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20055', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9598,7 +9598,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -9616,7 +9616,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20054',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20055',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9664,7 +9664,7 @@ class FinanceApi
      */
     public function getAllAccountGroupsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
         $request = $this->getAllAccountGroupsRequest();
 
         return $this->client
@@ -9791,7 +9791,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20050|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20051|string
      */
     public function getAllAccountTypes()
     {
@@ -9807,7 +9807,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20050|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20051|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAccountTypesWithHttpInfo()
     {
@@ -9850,14 +9850,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20050' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20051' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20050', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20051', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -9875,7 +9875,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -9893,7 +9893,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20050',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20051',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9941,7 +9941,7 @@ class FinanceApi
      */
     public function getAllAccountTypesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
         $request = $this->getAllAccountTypesRequest();
 
         return $this->client
@@ -10068,7 +10068,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20047|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20048|string
      */
     public function getAllAccountingPeriods()
     {
@@ -10084,7 +10084,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20047|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20048|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAccountingPeriodsWithHttpInfo()
     {
@@ -10127,14 +10127,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20047' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20048' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20047', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20048', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10152,7 +10152,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20047';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20048';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -10170,7 +10170,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20047',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20048',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10218,7 +10218,7 @@ class FinanceApi
      */
     public function getAllAccountingPeriodsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20047';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20048';
         $request = $this->getAllAccountingPeriodsRequest();
 
         return $this->client
@@ -10343,11 +10343,11 @@ class FinanceApi
      * Get all accounts ordered by accounting period and number
      *
      * @param  int $accounting_period_id Filter by accounting period (optional)
-     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
+     * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20048|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20049|string
      */
     public function getAllAccounts($accounting_period_id = null, $calculate_balance = null)
     {
@@ -10361,11 +10361,11 @@ class FinanceApi
      * Get all accounts ordered by accounting period and number
      *
      * @param  int $accounting_period_id Filter by accounting period (optional)
-     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
+     * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20048|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20049|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAccountsWithHttpInfo($accounting_period_id = null, $calculate_balance = null)
     {
@@ -10408,14 +10408,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20048' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20049' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20048', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20049', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10433,7 +10433,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20048';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -10451,7 +10451,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20048',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20049',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10475,7 +10475,7 @@ class FinanceApi
      * Get all accounts ordered by accounting period and number
      *
      * @param  int $accounting_period_id Filter by accounting period (optional)
-     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
+     * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10496,14 +10496,14 @@ class FinanceApi
      * Get all accounts ordered by accounting period and number
      *
      * @param  int $accounting_period_id Filter by accounting period (optional)
-     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
+     * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAllAccountsAsyncWithHttpInfo($accounting_period_id = null, $calculate_balance = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20048';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
         $request = $this->getAllAccountsRequest($accounting_period_id, $calculate_balance);
 
         return $this->client
@@ -10543,7 +10543,7 @@ class FinanceApi
      * Create request for operation 'getAllAccounts'
      *
      * @param  int $accounting_period_id Filter by accounting period (optional)
-     * @param  Bool $calculate_balance Calculate balance for accounts (optional)
+     * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -10655,7 +10655,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20056|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20057|string
      */
     public function getAllCashDiscounts($accounting_period_id = null)
     {
@@ -10672,7 +10672,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20056|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20057|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllCashDiscountsWithHttpInfo($accounting_period_id = null)
     {
@@ -10715,14 +10715,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20056' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20057' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20056', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20057', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -10740,7 +10740,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20056';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -10758,7 +10758,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20056',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20057',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10808,7 +10808,7 @@ class FinanceApi
      */
     public function getAllCashDiscountsAsyncWithHttpInfo($accounting_period_id = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20056';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
         $request = $this->getAllCashDiscountsRequest($accounting_period_id);
 
         return $this->client
@@ -10947,7 +10947,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20046|string
      */
     public function getAllClients()
     {
@@ -10963,7 +10963,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20045|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20046|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllClientsWithHttpInfo()
     {
@@ -11006,14 +11006,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20045' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20046' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20045', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20046', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11031,7 +11031,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20045';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11049,7 +11049,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20045',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20046',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11097,7 +11097,7 @@ class FinanceApi
      */
     public function getAllClientsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20045';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
         $request = $this->getAllClientsRequest();
 
         return $this->client
@@ -11225,7 +11225,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20058|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20059|string
      */
     public function getAllCostCenters($accounting_period_id = null)
     {
@@ -11242,7 +11242,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20058|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20059|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllCostCentersWithHttpInfo($accounting_period_id = null)
     {
@@ -11285,14 +11285,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20058' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20059' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20058', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20059', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11310,7 +11310,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11328,7 +11328,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20058',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20059',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11378,7 +11378,7 @@ class FinanceApi
      */
     public function getAllCostCentersAsyncWithHttpInfo($accounting_period_id = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
         $request = $this->getAllCostCentersRequest($accounting_period_id);
 
         return $this->client
@@ -11522,7 +11522,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20060|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20061|string
      */
     public function getAllDonators($accounting_period_id, $order_by = null, $order_direction = null, $page = 1, $limit = 10)
     {
@@ -11543,7 +11543,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20060|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20061|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllDonatorsWithHttpInfo($accounting_period_id, $order_by = null, $order_direction = null, $page = 1, $limit = 10)
     {
@@ -11586,14 +11586,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20060' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20061' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20060', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20061', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11611,7 +11611,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20061';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11629,7 +11629,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20060',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20061',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11687,7 +11687,7 @@ class FinanceApi
      */
     public function getAllDonatorsAsyncWithHttpInfo($accounting_period_id, $order_by = null, $order_direction = null, $page = 1, $limit = 10)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20061';
         $request = $this->getAllDonatorsRequest($accounting_period_id, $order_by, $order_direction, $page, $limit);
 
         return $this->client
@@ -11880,7 +11880,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]|string
      */
     public function getAllFinanceTemplates()
     {
@@ -11896,7 +11896,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllFinanceTemplatesWithHttpInfo()
     {
@@ -11939,14 +11939,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11964,7 +11964,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11982,7 +11982,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12030,7 +12030,7 @@ class FinanceApi
      */
     public function getAllFinanceTemplatesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030Data[]';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]';
         $request = $this->getAllFinanceTemplatesRequest();
 
         return $this->client
@@ -12158,7 +12158,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20064|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20065|string
      */
     public function getAllTaxRates($accounting_period_id = null)
     {
@@ -12175,7 +12175,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20064|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20065|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllTaxRatesWithHttpInfo($accounting_period_id = null)
     {
@@ -12218,14 +12218,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20064' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20065' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20064', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20065', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12243,7 +12243,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -12261,7 +12261,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20064',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20065',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12311,7 +12311,7 @@ class FinanceApi
      */
     public function getAllTaxRatesAsyncWithHttpInfo($accounting_period_id = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
         $request = $this->getAllTaxRatesRequest($accounting_period_id);
 
         return $this->client
@@ -12450,7 +12450,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20062|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20063|string
      */
     public function getAllTaxTypes()
     {
@@ -12466,7 +12466,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20062|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20063|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllTaxTypesWithHttpInfo()
     {
@@ -12509,14 +12509,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20062' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20063' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20062', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20063', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12534,7 +12534,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20062';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -12552,7 +12552,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20062',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20063',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12600,7 +12600,7 @@ class FinanceApi
      */
     public function getAllTaxTypesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20062';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
         $request = $this->getAllTaxTypesRequest();
 
         return $this->client
@@ -12727,7 +12727,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20069|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20070|string
      */
     public function getAllTransactionPurposes()
     {
@@ -12743,7 +12743,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20069|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20070|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllTransactionPurposesWithHttpInfo()
     {
@@ -12786,14 +12786,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20069' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20070' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20069', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20070', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -12811,7 +12811,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20069';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -12829,7 +12829,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20069',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20070',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12877,7 +12877,7 @@ class FinanceApi
      */
     public function getAllTransactionPurposesAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20069';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
         $request = $this->getAllTransactionPurposesRequest();
 
         return $this->client
@@ -13018,7 +13018,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20066|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20067|string
      */
     public function getAllTransactions($accounting_period_id, $created_pid = null, $cost_center_ids = null, $donator_ids = null, $account_ids = null, $is_donation = null, $is_income = null, $start_date = null, $end_date = null, $is_immutable = null, $order_by = null, $order_direction = null, $page = 1, $limit = 10)
     {
@@ -13048,7 +13048,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20066|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20067|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllTransactionsWithHttpInfo($accounting_period_id, $created_pid = null, $cost_center_ids = null, $donator_ids = null, $account_ids = null, $is_donation = null, $is_income = null, $start_date = null, $end_date = null, $is_immutable = null, $order_by = null, $order_direction = null, $page = 1, $limit = 10)
     {
@@ -13091,14 +13091,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20066' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20067' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20066', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20067', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13116,7 +13116,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -13134,7 +13134,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20066',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20067',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13210,7 +13210,7 @@ class FinanceApi
      */
     public function getAllTransactionsAsyncWithHttpInfo($accounting_period_id, $created_pid = null, $cost_center_ids = null, $donator_ids = null, $account_ids = null, $is_donation = null, $is_income = null, $start_date = null, $end_date = null, $is_immutable = null, $order_by = null, $order_direction = null, $page = 1, $limit = 10)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
         $request = $this->getAllTransactionsRequest($accounting_period_id, $created_pid, $cost_center_ids, $donator_ids, $account_ids, $is_donation, $is_income, $start_date, $end_date, $is_immutable, $order_by, $order_direction, $page, $limit);
 
         return $this->client
@@ -13512,7 +13512,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20057|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20058|string
      */
     public function getCashDiscount($id)
     {
@@ -13529,7 +13529,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20057|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20058|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCashDiscountWithHttpInfo($id)
     {
@@ -13572,14 +13572,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20057' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20058' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20057', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20058', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13597,7 +13597,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -13615,7 +13615,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20057',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20058',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13665,7 +13665,7 @@ class FinanceApi
      */
     public function getCashDiscountAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
         $request = $this->getCashDiscountRequest($id);
 
         return $this->client
@@ -13808,7 +13808,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20046|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20047|string
      */
     public function getClientById($id)
     {
@@ -13825,7 +13825,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20046|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20047|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientByIdWithHttpInfo($id)
     {
@@ -13868,14 +13868,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20046' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20047' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20046', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20047', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -13893,7 +13893,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20047';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -13911,7 +13911,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20046',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20047',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13961,7 +13961,7 @@ class FinanceApi
      */
     public function getClientByIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20047';
         $request = $this->getClientByIdRequest($id);
 
         return $this->client
@@ -14104,7 +14104,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20059|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20060|string
      */
     public function getCostCenter($id)
     {
@@ -14121,7 +14121,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20059|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20060|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCostCenterWithHttpInfo($id)
     {
@@ -14164,14 +14164,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20059' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20060' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20059', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20060', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14189,7 +14189,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -14207,7 +14207,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20059',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20060',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14257,7 +14257,7 @@ class FinanceApi
      */
     public function getCostCenterAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
         $request = $this->getCostCenterRequest($id);
 
         return $this->client
@@ -14402,7 +14402,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20061|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20062|string
      */
     public function getDonationReceipt($accounting_period_id, $donator_id, $donator_spouse_id = null)
     {
@@ -14421,7 +14421,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20061|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20062|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDonationReceiptWithHttpInfo($accounting_period_id, $donator_id, $donator_spouse_id = null)
     {
@@ -14464,14 +14464,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20061' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20062' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20061', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20062', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -14489,7 +14489,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20061';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20062';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -14507,7 +14507,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20061',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20062',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14561,7 +14561,7 @@ class FinanceApi
      */
     public function getDonationReceiptAsyncWithHttpInfo($accounting_period_id, $donator_id, $donator_spouse_id = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20061';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20062';
         $request = $this->getDonationReceiptRequest($accounting_period_id, $donator_id, $donator_spouse_id);
 
         return $this->client
@@ -14965,7 +14965,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20065|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20066|string
      */
     public function getTaxRate($id)
     {
@@ -14982,7 +14982,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20065|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20066|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTaxRateWithHttpInfo($id)
     {
@@ -15025,14 +15025,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20065' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20066' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20065', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20066', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15050,7 +15050,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -15068,7 +15068,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20065',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20066',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15118,7 +15118,7 @@ class FinanceApi
      */
     public function getTaxRateAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
         $request = $this->getTaxRateRequest($id);
 
         return $this->client
@@ -15261,7 +15261,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20063|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20064|string
      */
     public function getTaxType($id)
     {
@@ -15278,7 +15278,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20063|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20064|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTaxTypeWithHttpInfo($id)
     {
@@ -15321,14 +15321,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20063' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20064' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20063', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20064', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15346,7 +15346,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -15364,7 +15364,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20063',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20064',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15414,7 +15414,7 @@ class FinanceApi
      */
     public function getTaxTypeAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
         $request = $this->getTaxTypeRequest($id);
 
         return $this->client
@@ -15557,7 +15557,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20067|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20068|string
      */
     public function getTransactionById($id)
     {
@@ -15574,7 +15574,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20067|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20068|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionByIdWithHttpInfo($id)
     {
@@ -15617,14 +15617,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20067' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20068' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20067', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20068', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15642,7 +15642,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -15660,7 +15660,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20067',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20068',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15710,7 +15710,7 @@ class FinanceApi
      */
     public function getTransactionByIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
         $request = $this->getTransactionByIdRequest($id);
 
         return $this->client
@@ -15853,7 +15853,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20070|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20071|string
      */
     public function getTransactionPurposeById($id)
     {
@@ -15870,7 +15870,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20070|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20071|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionPurposeByIdWithHttpInfo($id)
     {
@@ -15913,14 +15913,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20070' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20071' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20070', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20071', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -15938,7 +15938,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20071';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -15956,7 +15956,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20070',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20071',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16006,7 +16006,7 @@ class FinanceApi
      */
     public function getTransactionPurposeByIdAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20071';
         $request = $this->getTransactionPurposeByIdRequest($id);
 
         return $this->client
@@ -16145,15 +16145,15 @@ class FinanceApi
      *
      * Import many cost centers
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 inline_object76 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject77 $inline_object77 inline_object77 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20058
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20059
      */
-    public function postFinanceCostcentersBulkcreate($inline_object76 = null)
+    public function postFinanceCostcentersBulkcreate($inline_object77 = null)
     {
-        list($response) = $this->postFinanceCostcentersBulkcreateWithHttpInfo($inline_object76);
+        list($response) = $this->postFinanceCostcentersBulkcreateWithHttpInfo($inline_object77);
         return $response;
     }
 
@@ -16162,15 +16162,15 @@ class FinanceApi
      *
      * Import many cost centers
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject77 $inline_object77 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20058, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20059, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postFinanceCostcentersBulkcreateWithHttpInfo($inline_object76 = null)
+    public function postFinanceCostcentersBulkcreateWithHttpInfo($inline_object77 = null)
     {
-        $request = $this->postFinanceCostcentersBulkcreateRequest($inline_object76);
+        $request = $this->postFinanceCostcentersBulkcreateRequest($inline_object77);
 
         try {
             $options = $this->createHttpClientOption();
@@ -16209,20 +16209,20 @@ class FinanceApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20058' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20059' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20058', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20059', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -16240,7 +16240,7 @@ class FinanceApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20058',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20059',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16255,14 +16255,14 @@ class FinanceApi
      *
      * Import many cost centers
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject77 $inline_object77 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFinanceCostcentersBulkcreateAsync($inline_object76 = null)
+    public function postFinanceCostcentersBulkcreateAsync($inline_object77 = null)
     {
-        return $this->postFinanceCostcentersBulkcreateAsyncWithHttpInfo($inline_object76)
+        return $this->postFinanceCostcentersBulkcreateAsyncWithHttpInfo($inline_object77)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -16275,15 +16275,15 @@ class FinanceApi
      *
      * Import many cost centers
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject77 $inline_object77 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFinanceCostcentersBulkcreateAsyncWithHttpInfo($inline_object76 = null)
+    public function postFinanceCostcentersBulkcreateAsyncWithHttpInfo($inline_object77 = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
-        $request = $this->postFinanceCostcentersBulkcreateRequest($inline_object76);
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
+        $request = $this->postFinanceCostcentersBulkcreateRequest($inline_object77);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -16321,12 +16321,12 @@ class FinanceApi
     /**
      * Create request for operation 'postFinanceCostcentersBulkcreate'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject76 $inline_object76 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject77 $inline_object77 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postFinanceCostcentersBulkcreateRequest($inline_object76 = null)
+    public function postFinanceCostcentersBulkcreateRequest($inline_object77 = null)
     {
 
         $resourcePath = '/finance/costcenters/bulkcreate';
@@ -16352,11 +16352,11 @@ class FinanceApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object76)) {
+        if (isset($inline_object77)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object76));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object77));
             } else {
-                $httpBody = $inline_object76;
+                $httpBody = $inline_object77;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -16414,15 +16414,15 @@ class FinanceApi
      * Issue new Finance Report
      *
      * @param  string $report_type Report Key (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 inline_object54 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 inline_object55 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20090
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20091
      */
-    public function postFinanceReports($report_type, $inline_object54 = null)
+    public function postFinanceReports($report_type, $inline_object55 = null)
     {
-        list($response) = $this->postFinanceReportsWithHttpInfo($report_type, $inline_object54);
+        list($response) = $this->postFinanceReportsWithHttpInfo($report_type, $inline_object55);
         return $response;
     }
 
@@ -16432,15 +16432,15 @@ class FinanceApi
      * Issue new Finance Report
      *
      * @param  string $report_type Report Key (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20090, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20091, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postFinanceReportsWithHttpInfo($report_type, $inline_object54 = null)
+    public function postFinanceReportsWithHttpInfo($report_type, $inline_object55 = null)
     {
-        $request = $this->postFinanceReportsRequest($report_type, $inline_object54);
+        $request = $this->postFinanceReportsRequest($report_type, $inline_object55);
 
         try {
             $options = $this->createHttpClientOption();
@@ -16479,20 +16479,20 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20090' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20091' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20090', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20091', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20090';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20091';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -16510,7 +16510,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20090',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20091',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16526,14 +16526,14 @@ class FinanceApi
      * Issue new Finance Report
      *
      * @param  string $report_type Report Key (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFinanceReportsAsync($report_type, $inline_object54 = null)
+    public function postFinanceReportsAsync($report_type, $inline_object55 = null)
     {
-        return $this->postFinanceReportsAsyncWithHttpInfo($report_type, $inline_object54)
+        return $this->postFinanceReportsAsyncWithHttpInfo($report_type, $inline_object55)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -16547,15 +16547,15 @@ class FinanceApi
      * Issue new Finance Report
      *
      * @param  string $report_type Report Key (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postFinanceReportsAsyncWithHttpInfo($report_type, $inline_object54 = null)
+    public function postFinanceReportsAsyncWithHttpInfo($report_type, $inline_object55 = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20090';
-        $request = $this->postFinanceReportsRequest($report_type, $inline_object54);
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20091';
+        $request = $this->postFinanceReportsRequest($report_type, $inline_object55);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -16594,12 +16594,12 @@ class FinanceApi
      * Create request for operation 'postFinanceReports'
      *
      * @param  string $report_type Report Key (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject55 $inline_object55 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postFinanceReportsRequest($report_type, $inline_object54 = null)
+    public function postFinanceReportsRequest($report_type, $inline_object55 = null)
     {
         // verify the required parameter 'report_type' is set
         if ($report_type === null || (is_array($report_type) && count($report_type) === 0)) {
@@ -16639,11 +16639,11 @@ class FinanceApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object54)) {
+        if (isset($inline_object55)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object54));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object55));
             } else {
-                $httpBody = $inline_object54;
+                $httpBody = $inline_object55;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -16705,7 +16705,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20049|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20050|string
      */
     public function updateAccount($id, $inline_object25)
     {
@@ -16723,7 +16723,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20049|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20050|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountWithHttpInfo($id, $inline_object25)
     {
@@ -16766,14 +16766,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20049' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20050' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20049', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20050', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -16791,7 +16791,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -16809,7 +16809,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20049',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20050',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16861,7 +16861,7 @@ class FinanceApi
      */
     public function updateAccountAsyncWithHttpInfo($id, $inline_object25)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20049';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20050';
         $request = $this->updateAccountRequest($id, $inline_object25);
 
         return $this->client
@@ -17018,7 +17018,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20053|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20054|string
      */
     public function updateAccountClass($id, $inline_object29)
     {
@@ -17036,7 +17036,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20053|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20054|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountClassWithHttpInfo($id, $inline_object29)
     {
@@ -17079,14 +17079,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20053' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20054' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20053', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20054', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17104,7 +17104,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -17122,7 +17122,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20053',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20054',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17174,7 +17174,7 @@ class FinanceApi
      */
     public function updateAccountClassAsyncWithHttpInfo($id, $inline_object29)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20053';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20054';
         $request = $this->updateAccountClassRequest($id, $inline_object29);
 
         return $this->client
@@ -17331,7 +17331,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20055|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20056|string
      */
     public function updateAccountGroup($id, $inline_object31)
     {
@@ -17349,7 +17349,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20055|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20056|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountGroupWithHttpInfo($id, $inline_object31)
     {
@@ -17392,14 +17392,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20055' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20056' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20055', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20056', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17417,7 +17417,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20056';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -17435,7 +17435,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20055',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20056',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17487,7 +17487,7 @@ class FinanceApi
      */
     public function updateAccountGroupAsyncWithHttpInfo($id, $inline_object31)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20055';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20056';
         $request = $this->updateAccountGroupRequest($id, $inline_object31);
 
         return $this->client
@@ -17644,7 +17644,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20051|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20052|string
      */
     public function updateAccountType($id, $inline_object27)
     {
@@ -17662,7 +17662,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20051|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20052|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountTypeWithHttpInfo($id, $inline_object27)
     {
@@ -17705,14 +17705,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20051' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20052' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20051', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20052', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -17730,7 +17730,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -17748,7 +17748,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20051',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20052',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17800,7 +17800,7 @@ class FinanceApi
      */
     public function updateAccountTypeAsyncWithHttpInfo($id, $inline_object27)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20051';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20052';
         $request = $this->updateAccountTypeRequest($id, $inline_object27);
 
         return $this->client
@@ -18270,7 +18270,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20057|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20058|string
      */
     public function updateCashDiscount($id, $inline_object33)
     {
@@ -18288,7 +18288,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20057|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20058|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCashDiscountWithHttpInfo($id, $inline_object33)
     {
@@ -18331,14 +18331,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20057' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20058' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20057', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20058', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18356,7 +18356,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -18374,7 +18374,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20057',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20058',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18426,7 +18426,7 @@ class FinanceApi
      */
     public function updateCashDiscountAsyncWithHttpInfo($id, $inline_object33)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20057';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20058';
         $request = $this->updateCashDiscountRequest($id, $inline_object33);
 
         return $this->client
@@ -18583,7 +18583,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20046|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20047|string
      */
     public function updateClient($id, $inline_object21)
     {
@@ -18601,7 +18601,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20046|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20047|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateClientWithHttpInfo($id, $inline_object21)
     {
@@ -18644,14 +18644,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20046' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20047' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20046', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20047', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18669,7 +18669,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20047';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -18687,7 +18687,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20046',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20047',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18739,7 +18739,7 @@ class FinanceApi
      */
     public function updateClientAsyncWithHttpInfo($id, $inline_object21)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20046';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20047';
         $request = $this->updateClientRequest($id, $inline_object21);
 
         return $this->client
@@ -18896,7 +18896,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20059|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20060|string
      */
     public function updateCostCenter($id, $inline_object35)
     {
@@ -18914,7 +18914,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20059|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20060|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCostCenterWithHttpInfo($id, $inline_object35)
     {
@@ -18957,14 +18957,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20059' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20060' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20059', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20060', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -18982,7 +18982,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -19000,7 +19000,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20059',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20060',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -19052,7 +19052,7 @@ class FinanceApi
      */
     public function updateCostCenterAsyncWithHttpInfo($id, $inline_object35)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20059';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20060';
         $request = $this->updateCostCenterRequest($id, $inline_object35);
 
         return $this->client
@@ -19209,7 +19209,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20065|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20066|string
      */
     public function updateTaxRate($id, $inline_object39)
     {
@@ -19227,7 +19227,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20065|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20066|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTaxRateWithHttpInfo($id, $inline_object39)
     {
@@ -19270,14 +19270,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20065' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20066' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20065', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20066', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19295,7 +19295,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -19313,7 +19313,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20065',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20066',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -19365,7 +19365,7 @@ class FinanceApi
      */
     public function updateTaxRateAsyncWithHttpInfo($id, $inline_object39)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20065';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20066';
         $request = $this->updateTaxRateRequest($id, $inline_object39);
 
         return $this->client
@@ -19522,7 +19522,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20063|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20064|string
      */
     public function updateTaxType($id, $inline_object37)
     {
@@ -19540,7 +19540,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20063|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20064|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTaxTypeWithHttpInfo($id, $inline_object37)
     {
@@ -19583,14 +19583,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20063' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20064' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20063', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20064', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19608,7 +19608,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -19626,7 +19626,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20063',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20064',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -19678,7 +19678,7 @@ class FinanceApi
      */
     public function updateTaxTypeAsyncWithHttpInfo($id, $inline_object37)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20063';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20064';
         $request = $this->updateTaxTypeRequest($id, $inline_object37);
 
         return $this->client
@@ -19835,7 +19835,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20067|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20068|string
      */
     public function updateTransaction($id, $inline_object42)
     {
@@ -19853,7 +19853,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20067|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20068|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTransactionWithHttpInfo($id, $inline_object42)
     {
@@ -19896,14 +19896,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20067' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20068' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20067', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20068', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -19921,7 +19921,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -19939,7 +19939,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20067',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20068',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -19991,7 +19991,7 @@ class FinanceApi
      */
     public function updateTransactionAsyncWithHttpInfo($id, $inline_object42)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20067';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20068';
         $request = $this->updateTransactionRequest($id, $inline_object42);
 
         return $this->client
@@ -20148,7 +20148,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20070|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20071|string
      */
     public function updateTransactionPurpose($id, $inline_object44)
     {
@@ -20166,7 +20166,7 @@ class FinanceApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20070|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20071|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTransactionPurposeWithHttpInfo($id, $inline_object44)
     {
@@ -20209,14 +20209,14 @@ class FinanceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20070' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20071' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20070', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20071', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -20234,7 +20234,7 @@ class FinanceApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20071';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -20252,7 +20252,7 @@ class FinanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20070',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20071',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -20304,7 +20304,7 @@ class FinanceApi
      */
     public function updateTransactionPurposeAsyncWithHttpInfo($id, $inline_object44)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20070';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20071';
         $request = $this->updateTransactionPurposeRequest($id, $inline_object44);
 
         return $this->client

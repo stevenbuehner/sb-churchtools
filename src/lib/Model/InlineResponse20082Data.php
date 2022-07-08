@@ -59,7 +59,16 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'churchdb' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchdb'
+        'churchcore' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcore',
+        'churchcheckin' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcheckin',
+        'churchdb' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchdb',
+        'churchcal' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcal',
+        'churchresource' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchresource',
+        'churchservice' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchservice',
+        'churchwiki' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchwiki',
+        'churchfinance' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchfinance',
+        'finance' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataFinance',
+        'churchreport' => '\StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchreport'
     ];
 
     /**
@@ -70,7 +79,16 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'churchdb' => null
+        'churchcore' => null,
+        'churchcheckin' => null,
+        'churchdb' => null,
+        'churchcal' => null,
+        'churchresource' => null,
+        'churchservice' => null,
+        'churchwiki' => null,
+        'churchfinance' => null,
+        'finance' => null,
+        'churchreport' => null
     ];
 
     /**
@@ -100,7 +118,16 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'churchdb' => 'churchdb'
+        'churchcore' => 'churchcore',
+        'churchcheckin' => 'churchcheckin',
+        'churchdb' => 'churchdb',
+        'churchcal' => 'churchcal',
+        'churchresource' => 'churchresource',
+        'churchservice' => 'churchservice',
+        'churchwiki' => 'churchwiki',
+        'churchfinance' => 'churchfinance',
+        'finance' => 'finance',
+        'churchreport' => 'churchreport'
     ];
 
     /**
@@ -109,7 +136,16 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'churchdb' => 'setChurchdb'
+        'churchcore' => 'setChurchcore',
+        'churchcheckin' => 'setChurchcheckin',
+        'churchdb' => 'setChurchdb',
+        'churchcal' => 'setChurchcal',
+        'churchresource' => 'setChurchresource',
+        'churchservice' => 'setChurchservice',
+        'churchwiki' => 'setChurchwiki',
+        'churchfinance' => 'setChurchfinance',
+        'finance' => 'setFinance',
+        'churchreport' => 'setChurchreport'
     ];
 
     /**
@@ -118,7 +154,16 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'churchdb' => 'getChurchdb'
+        'churchcore' => 'getChurchcore',
+        'churchcheckin' => 'getChurchcheckin',
+        'churchdb' => 'getChurchdb',
+        'churchcal' => 'getChurchcal',
+        'churchresource' => 'getChurchresource',
+        'churchservice' => 'getChurchservice',
+        'churchwiki' => 'getChurchwiki',
+        'churchfinance' => 'getChurchfinance',
+        'finance' => 'getFinance',
+        'churchreport' => 'getChurchreport'
     ];
 
     /**
@@ -178,7 +223,16 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
+        $this->container['churchcore'] = $data['churchcore'] ?? null;
+        $this->container['churchcheckin'] = $data['churchcheckin'] ?? null;
         $this->container['churchdb'] = $data['churchdb'] ?? null;
+        $this->container['churchcal'] = $data['churchcal'] ?? null;
+        $this->container['churchresource'] = $data['churchresource'] ?? null;
+        $this->container['churchservice'] = $data['churchservice'] ?? null;
+        $this->container['churchwiki'] = $data['churchwiki'] ?? null;
+        $this->container['churchfinance'] = $data['churchfinance'] ?? null;
+        $this->container['finance'] = $data['finance'] ?? null;
+        $this->container['churchreport'] = $data['churchreport'] ?? null;
     }
 
     /**
@@ -206,6 +260,54 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
+     * Gets churchcore
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcore|null
+     */
+    public function getChurchcore()
+    {
+        return $this->container['churchcore'];
+    }
+
+    /**
+     * Sets churchcore
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcore|null $churchcore churchcore
+     *
+     * @return self
+     */
+    public function setChurchcore($churchcore)
+    {
+        $this->container['churchcore'] = $churchcore;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchcheckin
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcheckin|null
+     */
+    public function getChurchcheckin()
+    {
+        return $this->container['churchcheckin'];
+    }
+
+    /**
+     * Sets churchcheckin
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcheckin|null $churchcheckin churchcheckin
+     *
+     * @return self
+     */
+    public function setChurchcheckin($churchcheckin)
+    {
+        $this->container['churchcheckin'] = $churchcheckin;
+
+        return $this;
+    }
+
+    /**
      * Gets churchdb
      *
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchdb|null
@@ -225,6 +327,174 @@ class InlineResponse20082Data implements ModelInterface, ArrayAccess, \JsonSeria
     public function setChurchdb($churchdb)
     {
         $this->container['churchdb'] = $churchdb;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchcal
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcal|null
+     */
+    public function getChurchcal()
+    {
+        return $this->container['churchcal'];
+    }
+
+    /**
+     * Sets churchcal
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchcal|null $churchcal churchcal
+     *
+     * @return self
+     */
+    public function setChurchcal($churchcal)
+    {
+        $this->container['churchcal'] = $churchcal;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchresource
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchresource|null
+     */
+    public function getChurchresource()
+    {
+        return $this->container['churchresource'];
+    }
+
+    /**
+     * Sets churchresource
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchresource|null $churchresource churchresource
+     *
+     * @return self
+     */
+    public function setChurchresource($churchresource)
+    {
+        $this->container['churchresource'] = $churchresource;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchservice
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchservice|null
+     */
+    public function getChurchservice()
+    {
+        return $this->container['churchservice'];
+    }
+
+    /**
+     * Sets churchservice
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchservice|null $churchservice churchservice
+     *
+     * @return self
+     */
+    public function setChurchservice($churchservice)
+    {
+        $this->container['churchservice'] = $churchservice;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchwiki
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchwiki|null
+     */
+    public function getChurchwiki()
+    {
+        return $this->container['churchwiki'];
+    }
+
+    /**
+     * Sets churchwiki
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchwiki|null $churchwiki churchwiki
+     *
+     * @return self
+     */
+    public function setChurchwiki($churchwiki)
+    {
+        $this->container['churchwiki'] = $churchwiki;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchfinance
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchfinance|null
+     */
+    public function getChurchfinance()
+    {
+        return $this->container['churchfinance'];
+    }
+
+    /**
+     * Sets churchfinance
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchfinance|null $churchfinance churchfinance
+     *
+     * @return self
+     */
+    public function setChurchfinance($churchfinance)
+    {
+        $this->container['churchfinance'] = $churchfinance;
+
+        return $this;
+    }
+
+    /**
+     * Gets finance
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataFinance|null
+     */
+    public function getFinance()
+    {
+        return $this->container['finance'];
+    }
+
+    /**
+     * Sets finance
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataFinance|null $finance finance
+     *
+     * @return self
+     */
+    public function setFinance($finance)
+    {
+        $this->container['finance'] = $finance;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchreport
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchreport|null
+     */
+    public function getChurchreport()
+    {
+        return $this->container['churchreport'];
+    }
+
+    /**
+     * Sets churchreport
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20082DataChurchreport|null $churchreport churchreport
+     *
+     * @return self
+     */
+    public function setChurchreport($churchreport)
+    {
+        $this->container['churchreport'] = $churchreport;
 
         return $this;
     }

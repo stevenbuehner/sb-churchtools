@@ -59,7 +59,7 @@ class InlineResponse200121 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse200121Data[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\AutomaticEmail'
     ];
 
     /**
@@ -190,6 +190,9 @@ class InlineResponse200121 implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -208,7 +211,7 @@ class InlineResponse200121 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200121Data[]|null
+     * @return \StevenBuehner\ChurchTools\Model\AutomaticEmail
      */
     public function getData()
     {
@@ -218,7 +221,7 @@ class InlineResponse200121 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200121Data[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\AutomaticEmail $data data
      *
      * @return self
      */

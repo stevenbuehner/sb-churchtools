@@ -61,7 +61,7 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'float',
         'name' => 'string',
-        'sort_key' => 'float',
+        'sort_key' => 'int',
         'color' => 'string'
     ];
 
@@ -274,7 +274,7 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sort_key
      *
-     * @return float|null
+     * @return int|null
      */
     public function getSortKey()
     {
@@ -284,7 +284,7 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sort_key
      *
-     * @param float|null $sort_key sort_key
+     * @param int|null $sort_key sort_key
      *
      * @return self
      */

@@ -59,8 +59,9 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'master' => '\StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[]',
-        'es' => '\StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[]'
+        'external_system' => '\StevenBuehner\ChurchTools\Model\ExternalSystem3',
+        'domain_type' => 'string',
+        'properties' => '\StevenBuehner\ChurchTools\Model\InlineResponse200100DataProperties'
     ];
 
     /**
@@ -71,8 +72,9 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'master' => null,
-        'es' => null
+        'external_system' => null,
+        'domain_type' => null,
+        'properties' => null
     ];
 
     /**
@@ -102,8 +104,9 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'master' => 'master',
-        'es' => 'es'
+        'external_system' => 'externalSystem',
+        'domain_type' => 'domainType',
+        'properties' => 'properties'
     ];
 
     /**
@@ -112,8 +115,9 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'master' => 'setMaster',
-        'es' => 'setEs'
+        'external_system' => 'setExternalSystem',
+        'domain_type' => 'setDomainType',
+        'properties' => 'setProperties'
     ];
 
     /**
@@ -122,8 +126,9 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'master' => 'getMaster',
-        'es' => 'getEs'
+        'external_system' => 'getExternalSystem',
+        'domain_type' => 'getDomainType',
+        'properties' => 'getProperties'
     ];
 
     /**
@@ -183,8 +188,9 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['master'] = $data['master'] ?? null;
-        $this->container['es'] = $data['es'] ?? null;
+        $this->container['external_system'] = $data['external_system'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['properties'] = $data['properties'] ?? null;
     }
 
     /**
@@ -196,11 +202,18 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['master'] === null) {
-            $invalidProperties[] = "'master' can't be null";
+        if ($this->container['external_system'] === null) {
+            $invalidProperties[] = "'external_system' can't be null";
         }
-        if ($this->container['es'] === null) {
-            $invalidProperties[] = "'es' can't be null";
+        if ($this->container['domain_type'] === null) {
+            $invalidProperties[] = "'domain_type' can't be null";
+        }
+        if ((mb_strlen($this->container['domain_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['properties'] === null) {
+            $invalidProperties[] = "'properties' can't be null";
         }
         return $invalidProperties;
     }
@@ -218,53 +231,78 @@ class InlineResponse200100Data implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets master
+     * Gets external_system
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[]
+     * @return \StevenBuehner\ChurchTools\Model\ExternalSystem3
      */
-    public function getMaster()
+    public function getExternalSystem()
     {
-        return $this->container['master'];
+        return $this->container['external_system'];
     }
 
     /**
-     * Sets master
+     * Sets external_system
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[] $master master
+     * @param \StevenBuehner\ChurchTools\Model\ExternalSystem3 $external_system external_system
      *
      * @return self
      */
-    public function setMaster($master)
+    public function setExternalSystem($external_system)
     {
-
-
-        $this->container['master'] = $master;
+        $this->container['external_system'] = $external_system;
 
         return $this;
     }
 
     /**
-     * Gets es
+     * Gets domain_type
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[]
+     * @return string
      */
-    public function getEs()
+    public function getDomainType()
     {
-        return $this->container['es'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets es
+     * Sets domain_type
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200100DataMaster[] $es es
+     * @param string $domain_type domain_type
      *
      * @return self
      */
-    public function setEs($es)
+    public function setDomainType($domain_type)
     {
 
+        if ((mb_strlen($domain_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $domain_type when calling InlineResponse200100Data., must be bigger than or equal to 1.');
+        }
 
-        $this->container['es'] = $es;
+        $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets properties
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200100DataProperties
+     */
+    public function getProperties()
+    {
+        return $this->container['properties'];
+    }
+
+    /**
+     * Sets properties
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200100DataProperties $properties properties
+     *
+     * @return self
+     */
+    public function setProperties($properties)
+    {
+        $this->container['properties'] = $properties;
 
         return $this;
     }

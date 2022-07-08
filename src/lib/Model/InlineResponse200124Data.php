@@ -59,8 +59,8 @@ class InlineResponse200124Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'base' => '\StevenBuehner\ChurchTools\Model\InlineResponse200124Base',
-        'calculated' => '\StevenBuehner\ChurchTools\Model\InlineResponse200124Calculated'
+        'resource_types' => '\StevenBuehner\ChurchTools\Model\InlineResponse200124DataResourceTypes[]',
+        'resources' => '\StevenBuehner\ChurchTools\Model\InlineResponse200124DataResources[]'
     ];
 
     /**
@@ -71,8 +71,8 @@ class InlineResponse200124Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'base' => null,
-        'calculated' => null
+        'resource_types' => null,
+        'resources' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class InlineResponse200124Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'base' => 'base',
-        'calculated' => 'calculated'
+        'resource_types' => 'resourceTypes',
+        'resources' => 'resources'
     ];
 
     /**
@@ -112,8 +112,8 @@ class InlineResponse200124Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'base' => 'setBase',
-        'calculated' => 'setCalculated'
+        'resource_types' => 'setResourceTypes',
+        'resources' => 'setResources'
     ];
 
     /**
@@ -122,8 +122,8 @@ class InlineResponse200124Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'base' => 'getBase',
-        'calculated' => 'getCalculated'
+        'resource_types' => 'getResourceTypes',
+        'resources' => 'getResources'
     ];
 
     /**
@@ -183,8 +183,8 @@ class InlineResponse200124Data implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['base'] = $data['base'] ?? null;
-        $this->container['calculated'] = $data['calculated'] ?? null;
+        $this->container['resource_types'] = $data['resource_types'] ?? null;
+        $this->container['resources'] = $data['resources'] ?? null;
     }
 
     /**
@@ -212,49 +212,49 @@ class InlineResponse200124Data implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets base
+     * Gets resource_types
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200124Base|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200124DataResourceTypes[]|null
      */
-    public function getBase()
+    public function getResourceTypes()
     {
-        return $this->container['base'];
+        return $this->container['resource_types'];
     }
 
     /**
-     * Sets base
+     * Sets resource_types
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200124Base|null $base base
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200124DataResourceTypes[]|null $resource_types resource_types
      *
      * @return self
      */
-    public function setBase($base)
+    public function setResourceTypes($resource_types)
     {
-        $this->container['base'] = $base;
+        $this->container['resource_types'] = $resource_types;
 
         return $this;
     }
 
     /**
-     * Gets calculated
+     * Gets resources
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200124Calculated|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200124DataResources[]|null
      */
-    public function getCalculated()
+    public function getResources()
     {
-        return $this->container['calculated'];
+        return $this->container['resources'];
     }
 
     /**
-     * Sets calculated
+     * Sets resources
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200124Calculated|null $calculated calculated
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200124DataResources[]|null $resources resources
      *
      * @return self
      */
-    public function setCalculated($calculated)
+    public function setResources($resources)
     {
-        $this->container['calculated'] = $calculated;
+        $this->container['resources'] = $resources;
 
         return $this;
     }

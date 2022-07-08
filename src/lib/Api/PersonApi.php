@@ -1474,6 +1474,237 @@ class PersonApi
     }
 
     /**
+     * Operation deleteSecuritylevelId
+     *
+     * Delete the Security Level
+     *
+     * @param  string $id Id of a particular security level (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteSecuritylevelId($id)
+    {
+        $this->deleteSecuritylevelIdWithHttpInfo($id);
+    }
+
+    /**
+     * Operation deleteSecuritylevelIdWithHttpInfo
+     *
+     * Delete the Security Level
+     *
+     * @param  string $id Id of a particular security level (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteSecuritylevelIdWithHttpInfo($id)
+    {
+        $request = $this->deleteSecuritylevelIdRequest($id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteSecuritylevelIdAsync
+     *
+     * Delete the Security Level
+     *
+     * @param  string $id Id of a particular security level (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteSecuritylevelIdAsync($id)
+    {
+        return $this->deleteSecuritylevelIdAsyncWithHttpInfo($id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteSecuritylevelIdAsyncWithHttpInfo
+     *
+     * Delete the Security Level
+     *
+     * @param  string $id Id of a particular security level (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteSecuritylevelIdAsyncWithHttpInfo($id)
+    {
+        $returnType = '';
+        $request = $this->deleteSecuritylevelIdRequest($id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteSecuritylevelId'
+     *
+     * @param  string $id Id of a particular security level (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteSecuritylevelIdRequest($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling deleteSecuritylevelId'
+            );
+        }
+
+        $resourcePath = '/securitylevels/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getAllGroupsForPerson
      *
      * Get all groups a member is in
@@ -2472,7 +2703,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20075
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20076
      */
     public function getDeviceForPerson($person_id, $device_id)
     {
@@ -2490,7 +2721,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20075, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20076, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDeviceForPersonWithHttpInfo($person_id, $device_id)
     {
@@ -2533,20 +2764,20 @@ class PersonApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20075' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20076' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20075', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20076', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20075';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20076';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2564,7 +2795,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20075',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20076',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2608,7 +2839,7 @@ class PersonApi
      */
     public function getDeviceForPersonAsyncWithHttpInfo($person_id, $device_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20075';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20076';
         $request = $this->getDeviceForPersonRequest($person_id, $device_id);
 
         return $this->client
@@ -3338,7 +3569,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20074
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20075
      */
     public function getPersonDevices($person_id)
     {
@@ -3355,7 +3586,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20074, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20075, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPersonDevicesWithHttpInfo($person_id)
     {
@@ -3398,20 +3629,20 @@ class PersonApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20074' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20075' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20074', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20075', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20074';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20075';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3429,7 +3660,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20074',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20075',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3471,7 +3702,7 @@ class PersonApi
      */
     public function getPersonDevicesAsyncWithHttpInfo($person_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20074';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20075';
         $request = $this->getPersonDevicesRequest($person_id);
 
         return $this->client
@@ -3610,7 +3841,7 @@ class PersonApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -3628,7 +3859,7 @@ class PersonApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -3742,7 +3973,7 @@ class PersonApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \InvalidArgumentException
@@ -3763,7 +3994,7 @@ class PersonApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \InvalidArgumentException
@@ -3810,7 +4041,7 @@ class PersonApi
     /**
      * Create request for operation 'getPersonEvents'
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \InvalidArgumentException
@@ -5391,8 +5622,8 @@ class PersonApi
      *
      * Fetch Birthdays
      *
-     * @param  \DateTime $start_date Birthdays from that date on (optional)
-     * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  \DateTime $start_date Birthdays from that date on defaults to yesterday (optional)
+     * @param  \DateTime $end_date Birthdays up to that date, defaults to 30 deays from now (optional)
      * @param  array $campus_ids filter by campus ids (optional)
      * @param  bool $my_groups filter by people in my groups (optional)
      * @param  array $group_ids filter by group ids (optional)
@@ -5400,7 +5631,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200114
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200115
      */
     public function getPersonsBirthdays($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
@@ -5413,8 +5644,8 @@ class PersonApi
      *
      * Fetch Birthdays
      *
-     * @param  \DateTime $start_date Birthdays from that date on (optional)
-     * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  \DateTime $start_date Birthdays from that date on defaults to yesterday (optional)
+     * @param  \DateTime $end_date Birthdays up to that date, defaults to 30 deays from now (optional)
      * @param  array $campus_ids filter by campus ids (optional)
      * @param  bool $my_groups filter by people in my groups (optional)
      * @param  array $group_ids filter by group ids (optional)
@@ -5422,7 +5653,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200115, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPersonsBirthdaysWithHttpInfo($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
@@ -5465,20 +5696,20 @@ class PersonApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200114' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200115' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200114', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200115', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200114';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200115';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5496,7 +5727,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200114',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200115',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5511,8 +5742,8 @@ class PersonApi
      *
      * Fetch Birthdays
      *
-     * @param  \DateTime $start_date Birthdays from that date on (optional)
-     * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  \DateTime $start_date Birthdays from that date on defaults to yesterday (optional)
+     * @param  \DateTime $end_date Birthdays up to that date, defaults to 30 deays from now (optional)
      * @param  array $campus_ids filter by campus ids (optional)
      * @param  bool $my_groups filter by people in my groups (optional)
      * @param  array $group_ids filter by group ids (optional)
@@ -5536,8 +5767,8 @@ class PersonApi
      *
      * Fetch Birthdays
      *
-     * @param  \DateTime $start_date Birthdays from that date on (optional)
-     * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  \DateTime $start_date Birthdays from that date on defaults to yesterday (optional)
+     * @param  \DateTime $end_date Birthdays up to that date, defaults to 30 deays from now (optional)
      * @param  array $campus_ids filter by campus ids (optional)
      * @param  bool $my_groups filter by people in my groups (optional)
      * @param  array $group_ids filter by group ids (optional)
@@ -5548,7 +5779,7 @@ class PersonApi
      */
     public function getPersonsBirthdaysAsyncWithHttpInfo($start_date = null, $end_date = null, $campus_ids = null, $my_groups = null, $group_ids = null, $body = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200114';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200115';
         $request = $this->getPersonsBirthdaysRequest($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body);
 
         return $this->client
@@ -5587,8 +5818,8 @@ class PersonApi
     /**
      * Create request for operation 'getPersonsBirthdays'
      *
-     * @param  \DateTime $start_date Birthdays from that date on (optional)
-     * @param  \DateTime $end_date Birthdays up to that date (optional)
+     * @param  \DateTime $start_date Birthdays from that date on defaults to yesterday (optional)
+     * @param  \DateTime $end_date Birthdays up to that date, defaults to 30 deays from now (optional)
      * @param  array $campus_ids filter by campus ids (optional)
      * @param  bool $my_groups filter by people in my groups (optional)
      * @param  array $group_ids filter by group ids (optional)
@@ -5735,6 +5966,299 @@ class PersonApi
     }
 
     /**
+     * Operation getPersonsDuplicates
+     *
+     * get potential duplicates of persons
+     *
+     * @param  int $tolerance Tolerance for matching; defaults to 30 (optional, default to 30)
+     * @param  string $relation_name_for_duplicates Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200129
+     */
+    public function getPersonsDuplicates($tolerance = 30, $relation_name_for_duplicates = null)
+    {
+        list($response) = $this->getPersonsDuplicatesWithHttpInfo($tolerance, $relation_name_for_duplicates);
+        return $response;
+    }
+
+    /**
+     * Operation getPersonsDuplicatesWithHttpInfo
+     *
+     * get potential duplicates of persons
+     *
+     * @param  int $tolerance Tolerance for matching; defaults to 30 (optional, default to 30)
+     * @param  string $relation_name_for_duplicates Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200129, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getPersonsDuplicatesWithHttpInfo($tolerance = 30, $relation_name_for_duplicates = null)
+    {
+        $request = $this->getPersonsDuplicatesRequest($tolerance, $relation_name_for_duplicates);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200129' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200129', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200129';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200129',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getPersonsDuplicatesAsync
+     *
+     * get potential duplicates of persons
+     *
+     * @param  int $tolerance Tolerance for matching; defaults to 30 (optional, default to 30)
+     * @param  string $relation_name_for_duplicates Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPersonsDuplicatesAsync($tolerance = 30, $relation_name_for_duplicates = null)
+    {
+        return $this->getPersonsDuplicatesAsyncWithHttpInfo($tolerance, $relation_name_for_duplicates)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getPersonsDuplicatesAsyncWithHttpInfo
+     *
+     * get potential duplicates of persons
+     *
+     * @param  int $tolerance Tolerance for matching; defaults to 30 (optional, default to 30)
+     * @param  string $relation_name_for_duplicates Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPersonsDuplicatesAsyncWithHttpInfo($tolerance = 30, $relation_name_for_duplicates = null)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200129';
+        $request = $this->getPersonsDuplicatesRequest($tolerance, $relation_name_for_duplicates);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getPersonsDuplicates'
+     *
+     * @param  int $tolerance Tolerance for matching; defaults to 30 (optional, default to 30)
+     * @param  string $relation_name_for_duplicates Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getPersonsDuplicatesRequest($tolerance = 30, $relation_name_for_duplicates = null)
+    {
+        if ($tolerance !== null && $tolerance > 100) {
+            throw new \InvalidArgumentException('invalid value for "$tolerance" when calling PersonApi.getPersonsDuplicates, must be smaller than or equal to 100.');
+        }
+
+
+        $resourcePath = '/persons/duplicates';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($tolerance !== null) {
+            if('form' === 'form' && is_array($tolerance)) {
+                foreach($tolerance as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['tolerance'] = $tolerance;
+            }
+        }
+        // query params
+        if ($relation_name_for_duplicates !== null) {
+            if('form' === 'form' && is_array($relation_name_for_duplicates)) {
+                foreach($relation_name_for_duplicates as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['relationNameForDuplicates'] = $relation_name_for_duplicates;
+            }
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getPersonsIdLogintoken
      *
      * Fetch Login Token
@@ -5743,7 +6267,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200115
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200116
      */
     public function getPersonsIdLogintoken($id)
     {
@@ -5760,7 +6284,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200115, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200116, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPersonsIdLogintokenWithHttpInfo($id)
     {
@@ -5803,20 +6327,20 @@ class PersonApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200115' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200116' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200115', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200116', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200115';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200116';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5834,7 +6358,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200115',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200116',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5876,7 +6400,7 @@ class PersonApi
      */
     public function getPersonsIdLogintokenAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200115';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200116';
         $request = $this->getPersonsIdLogintokenRequest($id);
 
         return $this->client
@@ -5955,6 +6479,256 @@ class PersonApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getPersonsPersonidMergeDuplicateid
+     *
+     * Get information to compare two person records in order to prepare a  merge
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getPersonsPersonidMergeDuplicateid($duplicate_id, $person_id)
+    {
+        $this->getPersonsPersonidMergeDuplicateidWithHttpInfo($duplicate_id, $person_id);
+    }
+
+    /**
+     * Operation getPersonsPersonidMergeDuplicateidWithHttpInfo
+     *
+     * Get information to compare two person records in order to prepare a  merge
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getPersonsPersonidMergeDuplicateidWithHttpInfo($duplicate_id, $person_id)
+    {
+        $request = $this->getPersonsPersonidMergeDuplicateidRequest($duplicate_id, $person_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getPersonsPersonidMergeDuplicateidAsync
+     *
+     * Get information to compare two person records in order to prepare a  merge
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPersonsPersonidMergeDuplicateidAsync($duplicate_id, $person_id)
+    {
+        return $this->getPersonsPersonidMergeDuplicateidAsyncWithHttpInfo($duplicate_id, $person_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getPersonsPersonidMergeDuplicateidAsyncWithHttpInfo
+     *
+     * Get information to compare two person records in order to prepare a  merge
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPersonsPersonidMergeDuplicateidAsyncWithHttpInfo($duplicate_id, $person_id)
+    {
+        $returnType = '';
+        $request = $this->getPersonsPersonidMergeDuplicateidRequest($duplicate_id, $person_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getPersonsPersonidMergeDuplicateid'
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getPersonsPersonidMergeDuplicateidRequest($duplicate_id, $person_id)
+    {
+        // verify the required parameter 'duplicate_id' is set
+        if ($duplicate_id === null || (is_array($duplicate_id) && count($duplicate_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $duplicate_id when calling getPersonsPersonidMergeDuplicateid'
+            );
+        }
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $person_id when calling getPersonsPersonidMergeDuplicateid'
+            );
+        }
+
+        $resourcePath = '/persons/{personId}/merge/{duplicateId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($duplicate_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'duplicateId' . '}',
+                ObjectSerializer::toPathValue($duplicate_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($person_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
                 []
             );
         }
@@ -6886,33 +7660,310 @@ class PersonApi
     }
 
     /**
-     * Operation postPersonsPersonIdArchive
+     * Operation patchPersonsPersonidMergeDuplicateid
      *
-     * @param  string $person_id person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 inline_object68 (optional)
+     * Merge two person records
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     * @param  bool $delete_duplicate Flag to delete the doublette (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 inline_object53 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function postPersonsPersonIdArchive($person_id, $inline_object68 = null)
+    public function patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicate = null, $inline_object53 = null)
     {
-        $this->postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object68);
+        $this->patchPersonsPersonidMergeDuplicateidWithHttpInfo($duplicate_id, $person_id, $delete_duplicate, $inline_object53);
+    }
+
+    /**
+     * Operation patchPersonsPersonidMergeDuplicateidWithHttpInfo
+     *
+     * Merge two person records
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     * @param  bool $delete_duplicate Flag to delete the doublette (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function patchPersonsPersonidMergeDuplicateidWithHttpInfo($duplicate_id, $person_id, $delete_duplicate = null, $inline_object53 = null)
+    {
+        $request = $this->patchPersonsPersonidMergeDuplicateidRequest($duplicate_id, $person_id, $delete_duplicate, $inline_object53);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation patchPersonsPersonidMergeDuplicateidAsync
+     *
+     * Merge two person records
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     * @param  bool $delete_duplicate Flag to delete the doublette (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchPersonsPersonidMergeDuplicateidAsync($duplicate_id, $person_id, $delete_duplicate = null, $inline_object53 = null)
+    {
+        return $this->patchPersonsPersonidMergeDuplicateidAsyncWithHttpInfo($duplicate_id, $person_id, $delete_duplicate, $inline_object53)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation patchPersonsPersonidMergeDuplicateidAsyncWithHttpInfo
+     *
+     * Merge two person records
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     * @param  bool $delete_duplicate Flag to delete the doublette (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function patchPersonsPersonidMergeDuplicateidAsyncWithHttpInfo($duplicate_id, $person_id, $delete_duplicate = null, $inline_object53 = null)
+    {
+        $returnType = '';
+        $request = $this->patchPersonsPersonidMergeDuplicateidRequest($duplicate_id, $person_id, $delete_duplicate, $inline_object53);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'patchPersonsPersonidMergeDuplicateid'
+     *
+     * @param  string $duplicate_id Id of the doublette person (required)
+     * @param  string $person_id id of the original person (required)
+     * @param  bool $delete_duplicate Flag to delete the doublette (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function patchPersonsPersonidMergeDuplicateidRequest($duplicate_id, $person_id, $delete_duplicate = null, $inline_object53 = null)
+    {
+        // verify the required parameter 'duplicate_id' is set
+        if ($duplicate_id === null || (is_array($duplicate_id) && count($duplicate_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $duplicate_id when calling patchPersonsPersonidMergeDuplicateid'
+            );
+        }
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $person_id when calling patchPersonsPersonidMergeDuplicateid'
+            );
+        }
+
+        $resourcePath = '/persons/{personId}/merge/{duplicateId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($delete_duplicate !== null) {
+            if('form' === 'form' && is_array($delete_duplicate)) {
+                foreach($delete_duplicate as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['deleteDuplicate'] = $delete_duplicate;
+            }
+        }
+
+
+        // path params
+        if ($duplicate_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'duplicateId' . '}',
+                ObjectSerializer::toPathValue($duplicate_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($person_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($inline_object53)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object53));
+            } else {
+                $httpBody = $inline_object53;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postPersonsPersonIdArchive
+     *
+     * @param  string $person_id person_id (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 inline_object69 (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function postPersonsPersonIdArchive($person_id, $inline_object69 = null)
+    {
+        $this->postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object69);
     }
 
     /**
      * Operation postPersonsPersonIdArchiveWithHttpInfo
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object68 = null)
+    public function postPersonsPersonIdArchiveWithHttpInfo($person_id, $inline_object69 = null)
     {
-        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object68);
+        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object69);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6962,14 +8013,14 @@ class PersonApi
      * Operation postPersonsPersonIdArchiveAsync
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsPersonIdArchiveAsync($person_id, $inline_object68 = null)
+    public function postPersonsPersonIdArchiveAsync($person_id, $inline_object69 = null)
     {
-        return $this->postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object68)
+        return $this->postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object69)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6981,15 +8032,15 @@ class PersonApi
      * Operation postPersonsPersonIdArchiveAsyncWithHttpInfo
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object68 = null)
+    public function postPersonsPersonIdArchiveAsyncWithHttpInfo($person_id, $inline_object69 = null)
     {
         $returnType = '';
-        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object68);
+        $request = $this->postPersonsPersonIdArchiveRequest($person_id, $inline_object69);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7018,12 +8069,12 @@ class PersonApi
      * Create request for operation 'postPersonsPersonIdArchive'
      *
      * @param  string $person_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject69 $inline_object69 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postPersonsPersonIdArchiveRequest($person_id, $inline_object68 = null)
+    public function postPersonsPersonIdArchiveRequest($person_id, $inline_object69 = null)
     {
         // verify the required parameter 'person_id' is set
         if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
@@ -7063,11 +8114,11 @@ class PersonApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object68)) {
+        if (isset($inline_object69)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object68));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object69));
             } else {
-                $httpBody = $inline_object68;
+                $httpBody = $inline_object69;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7445,7 +8496,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20076
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20077
      */
     public function updateDeviceForPerson($person_id, $device_id, $inline_object48 = null)
     {
@@ -7464,7 +8515,7 @@ class PersonApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20076, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20077, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateDeviceForPersonWithHttpInfo($person_id, $device_id, $inline_object48 = null)
     {
@@ -7507,20 +8558,20 @@ class PersonApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20076' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20077' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20076', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20077', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20076';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20077';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7538,7 +8589,7 @@ class PersonApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20076',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20077',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7584,7 +8635,7 @@ class PersonApi
      */
     public function updateDeviceForPersonAsyncWithHttpInfo($person_id, $device_id, $inline_object48 = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20076';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20077';
         $request = $this->updateDeviceForPersonRequest($person_id, $device_id, $inline_object48);
 
         return $this->client

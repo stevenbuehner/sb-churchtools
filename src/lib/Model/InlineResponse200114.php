@@ -59,6 +59,7 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
+        'notice' => 'string',
         'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114Data[]',
         'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200114Meta'
     ];
@@ -71,6 +72,7 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'notice' => null,
         'data' => null,
         'meta' => null
     ];
@@ -102,6 +104,7 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
+        'notice' => 'NOTICE',
         'data' => 'data',
         'meta' => 'meta'
     ];
@@ -112,6 +115,7 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
+        'notice' => 'setNotice',
         'data' => 'setData',
         'meta' => 'setMeta'
     ];
@@ -122,6 +126,7 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
+        'notice' => 'getNotice',
         'data' => 'getData',
         'meta' => 'getMeta'
     ];
@@ -183,6 +188,7 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
+        $this->container['notice'] = $data['notice'] ?? null;
         $this->container['data'] = $data['data'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
     }
@@ -195,6 +201,13 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['notice'] === null) {
+            $invalidProperties[] = "'notice' can't be null";
+        }
+        if ((mb_strlen($this->container['notice']) < 1)) {
+            $invalidProperties[] = "invalid value for 'notice', the character length must be bigger than or equal to 1.";
+        }
 
         if ($this->container['data'] === null) {
             $invalidProperties[] = "'data' can't be null";
@@ -220,6 +233,35 @@ class InlineResponse200114 implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets notice
+     *
+     * @return string
+     */
+    public function getNotice()
+    {
+        return $this->container['notice'];
+    }
+
+    /**
+     * Sets notice
+     *
+     * @param string $notice notice
+     *
+     * @return self
+     */
+    public function setNotice($notice)
+    {
+
+        if ((mb_strlen($notice) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $notice when calling InlineResponse200114., must be bigger than or equal to 1.');
+        }
+
+        $this->container['notice'] = $notice;
+
+        return $this;
+    }
 
     /**
      * Gets data

@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_active** | **bool** |  |
-**sender_id** | **float** | SenderID &#x3D; PersonID of one leader in that group |
+**role_id** | **float** | Grouptype Role Id; Must be a role of the group |
+**is_for_waitinglist** | **bool** | Only releveant for roleId &#x3D; requester roles |
+**is_active** | **float** |  |
+**sender_id** | **float** | PersonId; Must be a leader in that group |
 **subject** | **string** |  |
 **body** | **string** |  |
 

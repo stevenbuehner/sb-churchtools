@@ -121,7 +121,7 @@ class FileApi
      * Delete files that are matching the domainType and domainIdentifier
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -138,7 +138,7 @@ class FileApi
      * Delete files that are matching the domainType and domainIdentifier
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -206,7 +206,7 @@ class FileApi
      * Delete files that are matching the domainType and domainIdentifier
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -227,7 +227,7 @@ class FileApi
      * Delete files that are matching the domainType and domainIdentifier
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -264,7 +264,7 @@ class FileApi
      * Create request for operation 'deleteFiles'
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -379,12 +379,12 @@ class FileApi
      * Upload files
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      * @param  \SplFileObject[] $files files (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20030|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20031|string
      */
     public function uploadFiles($domain_type, $domain_identifier, $files = null)
     {
@@ -398,12 +398,12 @@ class FileApi
      * Upload files
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      * @param  \SplFileObject[] $files (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20030|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20031|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadFilesWithHttpInfo($domain_type, $domain_identifier, $files = null)
     {
@@ -446,14 +446,14 @@ class FileApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20030' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20031' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20030', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20031', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -471,7 +471,7 @@ class FileApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20031';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -489,7 +489,7 @@ class FileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20030',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20031',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -513,7 +513,7 @@ class FileApi
      * Upload files
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      * @param  \SplFileObject[] $files (optional)
      *
      * @throws \InvalidArgumentException
@@ -535,7 +535,7 @@ class FileApi
      * Upload files
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      * @param  \SplFileObject[] $files (optional)
      *
      * @throws \InvalidArgumentException
@@ -543,7 +543,7 @@ class FileApi
      */
     public function uploadFilesAsyncWithHttpInfo($domain_type, $domain_identifier, $files = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20030';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20031';
         $request = $this->uploadFilesRequest($domain_type, $domain_identifier, $files);
 
         return $this->client
@@ -583,7 +583,7 @@ class FileApi
      * Create request for operation 'uploadFiles'
      *
      * @param  string $domain_type The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. (required)
-     * @param  string $domain_identifier the domain identifier (required)
+     * @param  int $domain_identifier the domain identifier (required)
      * @param  \SplFileObject[] $files (optional)
      *
      * @throws \InvalidArgumentException

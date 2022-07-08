@@ -60,7 +60,7 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
         'name' => 'string',
         'is_default' => 'bool',
         'key_of_arrangement' => 'string',
@@ -213,21 +213,6 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const IS_DEFAULT_TRUE = 'true';
-    const IS_DEFAULT_FALSE = 'false';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getIsDefaultAllowableValues()
-    {
-        return [
-            self::IS_DEFAULT_TRUE,
-            self::IS_DEFAULT_FALSE,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -266,15 +251,6 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getIsDefaultAllowableValues();
-        if (!is_null($this->container['is_default']) && !in_array($this->container['is_default'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'is_default', must be one of '%s'",
-                $this->container['is_default'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -293,7 +269,7 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getId()
     {
@@ -303,7 +279,7 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float|null $id id
+     * @param int|null $id id
      *
      * @return self
      */
@@ -357,16 +333,6 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIsDefault($is_default)
     {
-        $allowedValues = $this->getIsDefaultAllowableValues();
-        if (!is_null($is_default) && !in_array($is_default, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'is_default', must be one of '%s'",
-                    $is_default,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['is_default'] = $is_default;
 
         return $this;

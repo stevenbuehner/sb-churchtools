@@ -59,13 +59,10 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'date_from' => 'string',
-        'date_to' => 'string',
-        'is_completed' => 'bool',
-        'is_canceled' => 'bool',
-        'num_guests' => 'int',
-        'comment' => 'string',
-        'poll_result' => 'string'
+        'is_active' => 'bool',
+        'sender_id' => 'float',
+        'subject' => 'string',
+        'body' => 'string'
     ];
 
     /**
@@ -76,13 +73,10 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'date_from' => null,
-        'date_to' => null,
-        'is_completed' => null,
-        'is_canceled' => null,
-        'num_guests' => null,
-        'comment' => null,
-        'poll_result' => null
+        'is_active' => null,
+        'sender_id' => null,
+        'subject' => null,
+        'body' => null
     ];
 
     /**
@@ -112,13 +106,10 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'date_from' => 'dateFrom',
-        'date_to' => 'dateTo',
-        'is_completed' => 'isCompleted',
-        'is_canceled' => 'isCanceled',
-        'num_guests' => 'numGuests',
-        'comment' => 'comment',
-        'poll_result' => 'pollResult'
+        'is_active' => 'isActive',
+        'sender_id' => 'senderId',
+        'subject' => 'subject',
+        'body' => 'body'
     ];
 
     /**
@@ -127,13 +118,10 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'date_from' => 'setDateFrom',
-        'date_to' => 'setDateTo',
-        'is_completed' => 'setIsCompleted',
-        'is_canceled' => 'setIsCanceled',
-        'num_guests' => 'setNumGuests',
-        'comment' => 'setComment',
-        'poll_result' => 'setPollResult'
+        'is_active' => 'setIsActive',
+        'sender_id' => 'setSenderId',
+        'subject' => 'setSubject',
+        'body' => 'setBody'
     ];
 
     /**
@@ -142,13 +130,10 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'date_from' => 'getDateFrom',
-        'date_to' => 'getDateTo',
-        'is_completed' => 'getIsCompleted',
-        'is_canceled' => 'getIsCanceled',
-        'num_guests' => 'getNumGuests',
-        'comment' => 'getComment',
-        'poll_result' => 'getPollResult'
+        'is_active' => 'getIsActive',
+        'sender_id' => 'getSenderId',
+        'subject' => 'getSubject',
+        'body' => 'getBody'
     ];
 
     /**
@@ -208,13 +193,10 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['date_from'] = $data['date_from'] ?? null;
-        $this->container['date_to'] = $data['date_to'] ?? null;
-        $this->container['is_completed'] = $data['is_completed'] ?? null;
-        $this->container['is_canceled'] = $data['is_canceled'] ?? null;
-        $this->container['num_guests'] = $data['num_guests'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['poll_result'] = $data['poll_result'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
+        $this->container['sender_id'] = $data['sender_id'] ?? null;
+        $this->container['subject'] = $data['subject'] ?? null;
+        $this->container['body'] = $data['body'] ?? null;
     }
 
     /**
@@ -226,6 +208,18 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
+        }
+        if ($this->container['sender_id'] === null) {
+            $invalidProperties[] = "'sender_id' can't be null";
+        }
+        if ($this->container['subject'] === null) {
+            $invalidProperties[] = "'subject' can't be null";
+        }
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -242,169 +236,97 @@ class InlineObject73 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets date_from
+     * Gets is_active
      *
-     * @return string|null
+     * @return bool
      */
-    public function getDateFrom()
+    public function getIsActive()
     {
-        return $this->container['date_from'];
+        return $this->container['is_active'];
     }
 
     /**
-     * Sets date_from
+     * Sets is_active
      *
-     * @param string|null $date_from date_from
+     * @param bool $is_active is_active
      *
      * @return self
      */
-    public function setDateFrom($date_from)
+    public function setIsActive($is_active)
     {
-        $this->container['date_from'] = $date_from;
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }
 
     /**
-     * Gets date_to
+     * Gets sender_id
      *
-     * @return string|null
+     * @return float
      */
-    public function getDateTo()
+    public function getSenderId()
     {
-        return $this->container['date_to'];
+        return $this->container['sender_id'];
     }
 
     /**
-     * Sets date_to
+     * Sets sender_id
      *
-     * @param string|null $date_to date_to
+     * @param float $sender_id SenderID = PersonID of one leader in that group
      *
      * @return self
      */
-    public function setDateTo($date_to)
+    public function setSenderId($sender_id)
     {
-        $this->container['date_to'] = $date_to;
+        $this->container['sender_id'] = $sender_id;
 
         return $this;
     }
 
     /**
-     * Gets is_completed
+     * Gets subject
      *
-     * @return bool|null
+     * @return string
      */
-    public function getIsCompleted()
+    public function getSubject()
     {
-        return $this->container['is_completed'];
+        return $this->container['subject'];
     }
 
     /**
-     * Sets is_completed
+     * Sets subject
      *
-     * @param bool|null $is_completed is_completed
+     * @param string $subject subject
      *
      * @return self
      */
-    public function setIsCompleted($is_completed)
+    public function setSubject($subject)
     {
-        $this->container['is_completed'] = $is_completed;
+        $this->container['subject'] = $subject;
 
         return $this;
     }
 
     /**
-     * Gets is_canceled
+     * Gets body
      *
-     * @return bool|null
+     * @return string
      */
-    public function getIsCanceled()
+    public function getBody()
     {
-        return $this->container['is_canceled'];
+        return $this->container['body'];
     }
 
     /**
-     * Sets is_canceled
+     * Sets body
      *
-     * @param bool|null $is_canceled is_canceled
+     * @param string $body body
      *
      * @return self
      */
-    public function setIsCanceled($is_canceled)
+    public function setBody($body)
     {
-        $this->container['is_canceled'] = $is_canceled;
-
-        return $this;
-    }
-
-    /**
-     * Gets num_guests
-     *
-     * @return int|null
-     */
-    public function getNumGuests()
-    {
-        return $this->container['num_guests'];
-    }
-
-    /**
-     * Sets num_guests
-     *
-     * @param int|null $num_guests num_guests
-     *
-     * @return self
-     */
-    public function setNumGuests($num_guests)
-    {
-        $this->container['num_guests'] = $num_guests;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string|null
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string|null $comment comment
-     *
-     * @return self
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets poll_result
-     *
-     * @return string|null
-     */
-    public function getPollResult()
-    {
-        return $this->container['poll_result'];
-    }
-
-    /**
-     * Sets poll_result
-     *
-     * @param string|null $poll_result poll_result
-     *
-     * @return self
-     */
-    public function setPollResult($poll_result)
-    {
-        $this->container['poll_result'] = $poll_result;
+        $this->container['body'] = $body;
 
         return $this;
     }

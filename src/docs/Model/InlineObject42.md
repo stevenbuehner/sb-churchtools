@@ -13,8 +13,7 @@ Name | Type | Description | Notes
 **cost_center_id** | **int** |  |
 **donator_id** | **int** |  | [optional]
 **split_transaction_id** | **int** |  | [optional]
-**tax_rate_id** | **int** |  | [optional]
-**tax_amount** | **float** | Value is in cent. | [optional]
+**tax_rate_id** | **float** | If updated, the corresponding tax split booking automatically gets updated. | [optional]
 **cash_discount_id** | **int** |  | [optional]
 **cash_discount_amount** | **float** | Value is in cent. | [optional]
 **is_immutable** | **bool** | If &#x60;true&#x60; this transaction is immutable and cannot be edited or deleted. | [optional] [default to false]

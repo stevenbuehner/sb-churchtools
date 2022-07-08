@@ -14,8 +14,7 @@ Name | Type | Description | Notes
 **donator_id** | **int** |  | [optional]
 **donator_spouse_id** | **int** |  | [optional]
 **split_transaction_id** | **int** |  | [optional]
-**tax_rate_id** | **int** |  | [optional]
-**tax_amount** | **float** | Value is in cent. | [optional]
+**tax_rate_id** | **float** | If set, a corresponding tax split booking automatically gets created. | [optional]
 **cash_discount_id** | **int** |  | [optional]
 **cash_discount_amount** | **float** | Value is in cent. | [optional]
 

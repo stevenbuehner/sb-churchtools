@@ -59,10 +59,10 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1'
+        'id' => 'string',
+        'start_date' => 'string',
+        'end_date' => 'string',
+        'user_id' => 'string'
     ];
 
     /**
@@ -74,9 +74,9 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
-        'meta' => null
+        'start_date' => null,
+        'end_date' => null,
+        'user_id' => null
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
         'id' => 'id',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
-        'meta' => 'meta'
+        'user_id' => 'userId'
     ];
 
     /**
@@ -121,7 +121,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
         'id' => 'setId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'meta' => 'setMeta'
+        'user_id' => 'setUserId'
     ];
 
     /**
@@ -133,7 +133,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
         'id' => 'getId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'meta' => 'getMeta'
+        'user_id' => 'getUserId'
     ];
 
     /**
@@ -196,7 +196,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
         $this->container['id'] = $data['id'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['user_id'] = $data['user_id'] ?? null;
     }
 
     /**
@@ -226,7 +226,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -236,7 +236,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return self
      */
@@ -250,7 +250,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -260,7 +260,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param string|null $start_date start_date
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndDate()
     {
@@ -284,7 +284,7 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param string|null $end_date end_date
      *
      * @return self
      */
@@ -296,25 +296,25 @@ class InlineResponse200125BaseExceptions implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets meta
+     * Gets user_id
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1|null
+     * @return string|null
      */
-    public function getMeta()
+    public function getUserId()
     {
-        return $this->container['meta'];
+        return $this->container['user_id'];
     }
 
     /**
-     * Sets meta
+     * Sets user_id
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1|null $meta meta
+     * @param string|null $user_id user_id
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setUserId($user_id)
     {
-        $this->container['meta'] = $meta;
+        $this->container['user_id'] = $user_id;
 
         return $this;
     }

@@ -59,9 +59,8 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'sort_key' => 'float',
-        'is_default' => 'bool'
+        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]',
+        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]'
     ];
 
     /**
@@ -72,9 +71,8 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'sort_key' => null,
-        'is_default' => null
+        'property_mappings_master_to_es' => null,
+        'property_mappings_esto_master' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'sort_key' => 'sortKey',
-        'is_default' => 'isDefault'
+        'property_mappings_master_to_es' => 'propertyMappingsMasterToES',
+        'property_mappings_esto_master' => 'propertyMappingsESToMaster'
     ];
 
     /**
@@ -115,9 +112,8 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'sort_key' => 'setSortKey',
-        'is_default' => 'setIsDefault'
+        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs',
+        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster'
     ];
 
     /**
@@ -126,9 +122,8 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'sort_key' => 'getSortKey',
-        'is_default' => 'getIsDefault'
+        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs',
+        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster'
     ];
 
     /**
@@ -188,9 +183,8 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['is_default'] = $data['is_default'] ?? null;
+        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
+        $this->container['property_mappings_esto_master'] = $data['property_mappings_esto_master'] ?? null;
     }
 
     /**
@@ -202,15 +196,6 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['sort_key'] === null) {
-            $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['is_default'] === null) {
-            $invalidProperties[] = "'is_default' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -227,73 +212,49 @@ class InlineObject59 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets name
+     * Gets property_mappings_master_to_es
      *
-     * @return string
+     * @return \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null
      */
-    public function getName()
+    public function getPropertyMappingsMasterToEs()
     {
-        return $this->container['name'];
+        return $this->container['property_mappings_master_to_es'];
     }
 
     /**
-     * Sets name
+     * Sets property_mappings_master_to_es
      *
-     * @param string $name Name of Contact Label
+     * @param \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null $property_mappings_master_to_es property_mappings_master_to_es
      *
      * @return self
      */
-    public function setName($name)
+    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
     {
-        $this->container['name'] = $name;
+        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
 
         return $this;
     }
 
     /**
-     * Gets sort_key
+     * Gets property_mappings_esto_master
      *
-     * @return float
+     * @return \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null
      */
-    public function getSortKey()
+    public function getPropertyMappingsEstoMaster()
     {
-        return $this->container['sort_key'];
+        return $this->container['property_mappings_esto_master'];
     }
 
     /**
-     * Sets sort_key
+     * Sets property_mappings_esto_master
      *
-     * @param float $sort_key SortKey
+     * @param \StevenBuehner\ChurchTools\Model\SyncExternalsystemsIdFieldmappingsDomainTypePropertyMappingsMasterToES[]|null $property_mappings_esto_master property_mappings_esto_master
      *
      * @return self
      */
-    public function setSortKey($sort_key)
+    public function setPropertyMappingsEstoMaster($property_mappings_esto_master)
     {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default
-     *
-     * @return bool
-     */
-    public function getIsDefault()
-    {
-        return $this->container['is_default'];
-    }
-
-    /**
-     * Sets is_default
-     *
-     * @param bool $is_default Indicator if label is new default.
-     *
-     * @return self
-     */
-    public function setIsDefault($is_default)
-    {
-        $this->container['is_default'] = $is_default;
+        $this->container['property_mappings_esto_master'] = $property_mappings_esto_master;
 
         return $this;
     }

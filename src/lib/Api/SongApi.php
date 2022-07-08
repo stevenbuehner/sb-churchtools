@@ -124,7 +124,7 @@ class SongApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200109
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200110
      */
     public function getSong($song_id)
     {
@@ -141,7 +141,7 @@ class SongApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200109, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200110, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSongWithHttpInfo($song_id)
     {
@@ -184,20 +184,20 @@ class SongApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200109' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200110' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200109', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200110', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200109';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200110';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -215,7 +215,7 @@ class SongApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200109',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200110',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -257,7 +257,7 @@ class SongApi
      */
     public function getSongAsyncWithHttpInfo($song_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200109';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200110';
         $request = $this->getSongRequest($song_id);
 
         return $this->client
@@ -404,7 +404,7 @@ class SongApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200108
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200109
      */
     public function getSongs($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
@@ -425,7 +425,7 @@ class SongApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200108, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200109, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSongsWithHttpInfo($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
@@ -468,20 +468,20 @@ class SongApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200108' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200109' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200108', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200109', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200108';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200109';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -499,7 +499,7 @@ class SongApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200108',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200109',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -549,7 +549,7 @@ class SongApi
      */
     public function getSongsAsyncWithHttpInfo($song_category_ids = null, $ids = null, $practice = null, $key_of_arrangement = null, $name = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200108';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200109';
         $request = $this->getSongsRequest($song_category_ids, $ids, $practice, $key_of_arrangement, $name);
 
         return $this->client
@@ -737,7 +737,7 @@ class SongApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200110
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200111
      */
     public function getSongsOfAgenda($event_id)
     {
@@ -754,7 +754,7 @@ class SongApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200110, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200111, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSongsOfAgendaWithHttpInfo($event_id)
     {
@@ -797,20 +797,20 @@ class SongApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200110' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200111' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200110', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200111', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200110';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200111';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -828,7 +828,7 @@ class SongApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200110',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200111',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -870,7 +870,7 @@ class SongApi
      */
     public function getSongsOfAgendaAsyncWithHttpInfo($event_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200110';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200111';
         $request = $this->getSongsOfAgendaRequest($event_id);
 
         return $this->client

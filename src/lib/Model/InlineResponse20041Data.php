@@ -59,18 +59,12 @@ class InlineResponse20041Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'group_type_id' => 'int',
-        'name' => 'string',
-        'name_translated' => 'string',
-        'shorty' => 'string',
-        'sort_key' => 'int',
-        'to_delete' => 'bool',
-        'has_requested' => 'bool',
-        'is_leader' => 'bool',
-        'is_default' => 'bool',
-        'is_hidden' => 'bool',
-        'grow_path_id' => 'int'
+        'guid' => 'string',
+        'prefix' => 'string',
+        'domain_id' => 'int',
+        'status' => 'string',
+        'creator' => 'int',
+        'roomname' => 'string'
     ];
 
     /**
@@ -81,18 +75,12 @@ class InlineResponse20041Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'group_type_id' => null,
-        'name' => null,
-        'name_translated' => null,
-        'shorty' => null,
-        'sort_key' => null,
-        'to_delete' => null,
-        'has_requested' => null,
-        'is_leader' => null,
-        'is_default' => null,
-        'is_hidden' => null,
-        'grow_path_id' => null
+        'guid' => null,
+        'prefix' => null,
+        'domain_id' => null,
+        'status' => null,
+        'creator' => null,
+        'roomname' => null
     ];
 
     /**
@@ -122,18 +110,12 @@ class InlineResponse20041Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'group_type_id' => 'groupTypeId',
-        'name' => 'name',
-        'name_translated' => 'nameTranslated',
-        'shorty' => 'shorty',
-        'sort_key' => 'sortKey',
-        'to_delete' => 'toDelete',
-        'has_requested' => 'hasRequested',
-        'is_leader' => 'isLeader',
-        'is_default' => 'isDefault',
-        'is_hidden' => 'isHidden',
-        'grow_path_id' => 'growPathId'
+        'guid' => 'guid',
+        'prefix' => 'prefix',
+        'domain_id' => 'domainId',
+        'status' => 'status',
+        'creator' => 'creator',
+        'roomname' => 'roomname'
     ];
 
     /**
@@ -142,18 +124,12 @@ class InlineResponse20041Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'group_type_id' => 'setGroupTypeId',
-        'name' => 'setName',
-        'name_translated' => 'setNameTranslated',
-        'shorty' => 'setShorty',
-        'sort_key' => 'setSortKey',
-        'to_delete' => 'setToDelete',
-        'has_requested' => 'setHasRequested',
-        'is_leader' => 'setIsLeader',
-        'is_default' => 'setIsDefault',
-        'is_hidden' => 'setIsHidden',
-        'grow_path_id' => 'setGrowPathId'
+        'guid' => 'setGuid',
+        'prefix' => 'setPrefix',
+        'domain_id' => 'setDomainId',
+        'status' => 'setStatus',
+        'creator' => 'setCreator',
+        'roomname' => 'setRoomname'
     ];
 
     /**
@@ -162,18 +138,12 @@ class InlineResponse20041Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'group_type_id' => 'getGroupTypeId',
-        'name' => 'getName',
-        'name_translated' => 'getNameTranslated',
-        'shorty' => 'getShorty',
-        'sort_key' => 'getSortKey',
-        'to_delete' => 'getToDelete',
-        'has_requested' => 'getHasRequested',
-        'is_leader' => 'getIsLeader',
-        'is_default' => 'getIsDefault',
-        'is_hidden' => 'getIsHidden',
-        'grow_path_id' => 'getGrowPathId'
+        'guid' => 'getGuid',
+        'prefix' => 'getPrefix',
+        'domain_id' => 'getDomainId',
+        'status' => 'getStatus',
+        'creator' => 'getCreator',
+        'roomname' => 'getRoomname'
     ];
 
     /**
@@ -233,18 +203,12 @@ class InlineResponse20041Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['group_type_id'] = $data['group_type_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['shorty'] = $data['shorty'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['to_delete'] = $data['to_delete'] ?? null;
-        $this->container['has_requested'] = $data['has_requested'] ?? null;
-        $this->container['is_leader'] = $data['is_leader'] ?? null;
-        $this->container['is_default'] = $data['is_default'] ?? null;
-        $this->container['is_hidden'] = $data['is_hidden'] ?? null;
-        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
+        $this->container['guid'] = $data['guid'] ?? null;
+        $this->container['prefix'] = $data['prefix'] ?? null;
+        $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['creator'] = $data['creator'] ?? null;
+        $this->container['roomname'] = $data['roomname'] ?? null;
     }
 
     /**
@@ -272,289 +236,145 @@ class InlineResponse20041Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id ID of this group type role.
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_type_id
-     *
-     * @return int|null
-     */
-    public function getGroupTypeId()
-    {
-        return $this->container['group_type_id'];
-    }
-
-    /**
-     * Sets group_type_id
-     *
-     * @param int|null $group_type_id ID of corresponding group type.
-     *
-     * @return self
-     */
-    public function setGroupTypeId($group_type_id)
-    {
-        $this->container['group_type_id'] = $group_type_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets guid
      *
      * @return string|null
      */
-    public function getName()
+    public function getGuid()
     {
-        return $this->container['name'];
+        return $this->container['guid'];
     }
 
     /**
-     * Sets name
+     * Sets guid
      *
-     * @param string|null $name Name of role.
+     * @param string|null $guid guid
      *
      * @return self
      */
-    public function setName($name)
+    public function setGuid($guid)
     {
-        $this->container['name'] = $name;
+        $this->container['guid'] = $guid;
 
         return $this;
     }
 
     /**
-     * Gets name_translated
+     * Gets prefix
      *
      * @return string|null
      */
-    public function getNameTranslated()
+    public function getPrefix()
     {
-        return $this->container['name_translated'];
+        return $this->container['prefix'];
     }
 
     /**
-     * Sets name_translated
+     * Sets prefix
      *
-     * @param string|null $name_translated Trasnlated name of role.
+     * @param string|null $prefix prefix
      *
      * @return self
      */
-    public function setNameTranslated($name_translated)
+    public function setPrefix($prefix)
     {
-        $this->container['name_translated'] = $name_translated;
+        $this->container['prefix'] = $prefix;
 
         return $this;
     }
 
     /**
-     * Gets shorty
+     * Gets domain_id
+     *
+     * @return int|null
+     */
+    public function getDomainId()
+    {
+        return $this->container['domain_id'];
+    }
+
+    /**
+     * Sets domain_id
+     *
+     * @param int|null $domain_id domain_id
+     *
+     * @return self
+     */
+    public function setDomainId($domain_id)
+    {
+        $this->container['domain_id'] = $domain_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
      *
      * @return string|null
      */
-    public function getShorty()
+    public function getStatus()
     {
-        return $this->container['shorty'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets shorty
+     * Sets status
      *
-     * @param string|null $shorty Abbreviation of the name.
+     * @param string|null $status status
      *
      * @return self
      */
-    public function setShorty($shorty)
+    public function setStatus($status)
     {
-        $this->container['shorty'] = $shorty;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets sort_key
+     * Gets creator
      *
      * @return int|null
      */
-    public function getSortKey()
+    public function getCreator()
     {
-        return $this->container['sort_key'];
+        return $this->container['creator'];
     }
 
     /**
-     * Sets sort_key
+     * Sets creator
      *
-     * @param int|null $sort_key Number used for sorting roles.
+     * @param int|null $creator creator
      *
      * @return self
      */
-    public function setSortKey($sort_key)
+    public function setCreator($creator)
     {
-        $this->container['sort_key'] = $sort_key;
+        $this->container['creator'] = $creator;
 
         return $this;
     }
 
     /**
-     * Gets to_delete
+     * Gets roomname
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getToDelete()
+    public function getRoomname()
     {
-        return $this->container['to_delete'];
+        return $this->container['roomname'];
     }
 
     /**
-     * Sets to_delete
+     * Sets roomname
      *
-     * @param bool|null $to_delete Flag, if members of this role can be deleted or removed from the group.
+     * @param string|null $roomname roomname
      *
      * @return self
      */
-    public function setToDelete($to_delete)
+    public function setRoomname($roomname)
     {
-        $this->container['to_delete'] = $to_delete;
-
-        return $this;
-    }
-
-    /**
-     * Gets has_requested
-     *
-     * @return bool|null
-     */
-    public function getHasRequested()
-    {
-        return $this->container['has_requested'];
-    }
-
-    /**
-     * Sets has_requested
-     *
-     * @param bool|null $has_requested Flag, if group member is requesting group access.
-     *
-     * @return self
-     */
-    public function setHasRequested($has_requested)
-    {
-        $this->container['has_requested'] = $has_requested;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_leader
-     *
-     * @return bool|null
-     */
-    public function getIsLeader()
-    {
-        return $this->container['is_leader'];
-    }
-
-    /**
-     * Sets is_leader
-     *
-     * @param bool|null $is_leader Flag, this role is a leader.
-     *
-     * @return self
-     */
-    public function setIsLeader($is_leader)
-    {
-        $this->container['is_leader'] = $is_leader;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default
-     *
-     * @return bool|null
-     */
-    public function getIsDefault()
-    {
-        return $this->container['is_default'];
-    }
-
-    /**
-     * Sets is_default
-     *
-     * @param bool|null $is_default Indicator of default roles.
-     *
-     * @return self
-     */
-    public function setIsDefault($is_default)
-    {
-        $this->container['is_default'] = $is_default;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_hidden
-     *
-     * @return bool|null
-     */
-    public function getIsHidden()
-    {
-        return $this->container['is_hidden'];
-    }
-
-    /**
-     * Sets is_hidden
-     *
-     * @param bool|null $is_hidden Flag, if this role is hidden in groups.
-     *
-     * @return self
-     */
-    public function setIsHidden($is_hidden)
-    {
-        $this->container['is_hidden'] = $is_hidden;
-
-        return $this;
-    }
-
-    /**
-     * Gets grow_path_id
-     *
-     * @return int|null
-     */
-    public function getGrowPathId()
-    {
-        return $this->container['grow_path_id'];
-    }
-
-    /**
-     * Sets grow_path_id
-     *
-     * @param int|null $grow_path_id ID of the grow path.
-     *
-     * @return self
-     */
-    public function setGrowPathId($grow_path_id)
-    {
-        $this->container['grow_path_id'] = $grow_path_id;
+        $this->container['roomname'] = $roomname;
 
         return $this;
     }

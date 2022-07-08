@@ -64,7 +64,7 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'is_closed' => 'bool',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044DataPermissions',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20045DataPermissions',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -364,7 +364,7 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets permissions
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044DataPermissions|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20045DataPermissions|null
      */
     public function getPermissions()
     {
@@ -374,7 +374,7 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets permissions
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044DataPermissions|null $permissions permissions
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20045DataPermissions|null $permissions permissions
      *
      * @return self
      */

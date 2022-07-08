@@ -59,7 +59,7 @@ class InlineResponse200116 implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GroupStatistics'
+        'data' => 'string'
     ];
 
     /**
@@ -190,6 +190,13 @@ class InlineResponse200116 implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
+        if ((mb_strlen($this->container['data']) < 1)) {
+            $invalidProperties[] = "invalid value for 'data', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -208,7 +215,7 @@ class InlineResponse200116 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GroupStatistics|null
+     * @return string
      */
     public function getData()
     {
@@ -218,12 +225,17 @@ class InlineResponse200116 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GroupStatistics|null $data data
+     * @param string $data Login Token
      *
      * @return self
      */
     public function setData($data)
     {
+
+        if ((mb_strlen($data) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $data when calling InlineResponse200116., must be bigger than or equal to 1.');
+        }
+
         $this->container['data'] = $data;
 
         return $this;

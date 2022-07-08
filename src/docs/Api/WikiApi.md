@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `getWikiCategories()`
 
 ```php
-getWikiCategories(): \StevenBuehner\ChurchTools\Model\InlineResponse20083
+getWikiCategories(): \StevenBuehner\ChurchTools\Model\InlineResponse20084
 ```
 
 Get all wiki categories.
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20083**](../Model/InlineResponse20083.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20084**](../Model/InlineResponse20084.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ This endpoint does not need any parameter.
 ## `getWikiCategoriesWikiCategoryIdPages()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPages($wiki_category_id): \StevenBuehner\ChurchTools\Model\InlineResponse20086
+getWikiCategoriesWikiCategoryIdPages($wiki_category_id): \StevenBuehner\ChurchTools\Model\InlineResponse20087
 ```
 
 Returns all Wiki Pages in the given Category.
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20086**](../Model/InlineResponse20086.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20087**](../Model/InlineResponse20087.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdPagesIdentifier()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPagesIdentifier($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20084
+getWikiCategoriesWikiCategoryIdPagesIdentifier($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20085
 ```
 
 Returns the latest version of the wiki page with the given identifier.
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20084**](../Model/InlineResponse20084.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20085**](../Model/InlineResponse20085.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdPagesIdentifierVersions()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPagesIdentifierVersions($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20084
+getWikiCategoriesWikiCategoryIdPagesIdentifierVersions($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20085
 ```
 
 Returns all version of the wiki page for the given
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20084**](../Model/InlineResponse20084.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20085**](../Model/InlineResponse20085.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdPagesVersionsVersion()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPagesVersionsVersion($wiki_category_id, $version, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20085
+getWikiCategoriesWikiCategoryIdPagesVersionsVersion($wiki_category_id, $version, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20086
 ```
 
 Returns the wiki page with the given identifier and version.
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20085**](../Model/InlineResponse20085.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20086**](../Model/InlineResponse20086.md)
 
 ### Authorization
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdSearch()`
 
 ```php
-getWikiCategoriesWikiCategoryIdSearch($query, $wiki_category_ids): \StevenBuehner\ChurchTools\Model\InlineResponse20087
+getWikiCategoriesWikiCategoryIdSearch($query, $wiki_category_ids): \StevenBuehner\ChurchTools\Model\InlineResponse20088
 ```
 
 Your GET endpoint
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20087**](../Model/InlineResponse20087.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20088**](../Model/InlineResponse20088.md)
 
 ### Authorization
 

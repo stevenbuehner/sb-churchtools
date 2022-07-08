@@ -82,7 +82,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         'logo' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
         'banner' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
         'social_media' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002SocialMedia',
-        'tags' => 'object[]',
+        'tags' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Tags[]',
         'services' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Services[]',
         'visitors' => 'int',
         'service_banner' => 'string',
@@ -429,6 +429,10 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['short_name'] === null) {
             $invalidProperties[] = "'short_name' can't be null";
         }
+        if ((mb_strlen($this->container['short_name']) < 0)) {
+            $invalidProperties[] = "invalid value for 'short_name', the character length must be bigger than or equal to 0.";
+        }
+
         if ($this->container['shorty'] === null) {
             $invalidProperties[] = "'shorty' can't be null";
         }
@@ -459,6 +463,10 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['description'] === null) {
             $invalidProperties[] = "'description' can't be null";
         }
+        if ((mb_strlen($this->container['description']) < 0)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 0.";
+        }
+
         if ($this->container['website'] === null) {
             $invalidProperties[] = "'website' can't be null";
         }
@@ -489,6 +497,10 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['groups'] === null) {
             $invalidProperties[] = "'groups' can't be null";
         }
+        if ((count($this->container['groups']) < 0)) {
+            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 0.";
+        }
+
         if ($this->container['logo'] === null) {
             $invalidProperties[] = "'logo' can't be null";
         }
@@ -504,6 +516,10 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['services'] === null) {
             $invalidProperties[] = "'services' can't be null";
         }
+        if ((count($this->container['services']) < 0)) {
+            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 0.";
+        }
+
         if ($this->container['visitors'] === null) {
             $invalidProperties[] = "'visitors' can't be null";
         }
@@ -517,6 +533,10 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['gallery'] === null) {
             $invalidProperties[] = "'gallery' can't be null";
         }
+        if ((count($this->container['gallery']) < 0)) {
+            $invalidProperties[] = "invalid value for 'gallery', number of items must be greater than or equal to 0.";
+        }
+
         if ($this->container['team_title'] === null) {
             $invalidProperties[] = "'team_title' can't be null";
         }
@@ -527,6 +547,10 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['team'] === null) {
             $invalidProperties[] = "'team' can't be null";
         }
+        if ((count($this->container['team']) < 0)) {
+            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 0.";
+        }
+
         if ($this->container['meta'] === null) {
             $invalidProperties[] = "'meta' can't be null";
         }
@@ -714,6 +738,11 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setShortName($short_name)
     {
+
+        if ((mb_strlen($short_name) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $short_name when calling InlineResponse2002Data., must be bigger than or equal to 0.');
+        }
+
         $this->container['short_name'] = $short_name;
 
         return $this;
@@ -873,6 +902,11 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDescription($description)
     {
+
+        if ((mb_strlen($description) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling InlineResponse2002Data., must be bigger than or equal to 0.');
+        }
+
         $this->container['description'] = $description;
 
         return $this;
@@ -1058,6 +1092,9 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
 
+        if ((count($groups) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $groups when calling InlineResponse2002Data., number of items must be greater than or equal to 0.');
+        }
         $this->container['groups'] = $groups;
 
         return $this;
@@ -1138,7 +1175,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets tags
      *
-     * @return object[]
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Tags[]
      */
     public function getTags()
     {
@@ -1148,7 +1185,7 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets tags
      *
-     * @param object[] $tags tags
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Tags[] $tags tags
      *
      * @return self
      */
@@ -1180,6 +1217,9 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
 
+        if ((count($services) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $services when calling InlineResponse2002Data., number of items must be greater than or equal to 0.');
+        }
         $this->container['services'] = $services;
 
         return $this;
@@ -1283,6 +1323,9 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
 
+        if ((count($gallery) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $gallery when calling InlineResponse2002Data., number of items must be greater than or equal to 0.');
+        }
         $this->container['gallery'] = $gallery;
 
         return $this;
@@ -1338,6 +1381,9 @@ class InlineResponse2002Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
 
 
+        if ((count($team) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $team when calling InlineResponse2002Data., number of items must be greater than or equal to 0.');
+        }
         $this->container['team'] = $team;
 
         return $this;

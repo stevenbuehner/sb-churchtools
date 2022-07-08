@@ -230,17 +230,11 @@ Delete all saved filters for this job configuration.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 
 $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
@@ -265,7 +259,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+No authorization required
 
 ### HTTP request headers
 
@@ -293,17 +287,11 @@ Delete all saved properties for this job configuration.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 
 $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
@@ -328,7 +316,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+No authorization required
 
 ### HTTP request headers
 
@@ -466,7 +454,7 @@ Name | Type | Description  | Notes
 ## `getSyncConflicts()`
 
 ```php
-getSyncConflicts($types, $domain_types, $source_ids): \StevenBuehner\ChurchTools\Model\InlineResponse20080
+getSyncConflicts($types, $domain_types, $source_ids): \StevenBuehner\ChurchTools\Model\InlineResponse20081
 ```
 
 Fetch all conflicts
@@ -514,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20080**](../Model/InlineResponse20080.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20081**](../Model/InlineResponse20081.md)
 
 ### Authorization
 
@@ -532,7 +520,7 @@ Name | Type | Description  | Notes
 ## `getSyncExecutions()`
 
 ```php
-getSyncExecutions($es_ids, $job_ids, $start_date, $end_date, $statuses, $page, $limit, $is_dry_run): \StevenBuehner\ChurchTools\Model\InlineResponse200113
+getSyncExecutions($es_ids, $job_ids, $start_date, $end_date, $statuses, $page, $limit, $is_dry_run): \StevenBuehner\ChurchTools\Model\InlineResponse200114
 ```
 
 Statistical Information about Sync Executions
@@ -590,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200113**](../Model/InlineResponse200113.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200114**](../Model/InlineResponse200114.md)
 
 ### Authorization
 
@@ -608,7 +596,7 @@ Name | Type | Description  | Notes
 ## `getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()`
 
 ```php
-getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\InlineResponse200100
+getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\InlineResponse200101
 ```
 
 Fetch all entity filters for this job
@@ -622,17 +610,11 @@ Fetch all entity filters for this job.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 
 $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
@@ -654,11 +636,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200100**](../Model/InlineResponse200100.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200101**](../Model/InlineResponse200101.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+No authorization required
 
 ### HTTP request headers
 
@@ -672,7 +654,7 @@ Name | Type | Description  | Notes
 ## `getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()`
 
 ```php
-getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\InlineResponse20099
+getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\InlineResponse200100
 ```
 
 Fetch all Properties for This Job
@@ -686,17 +668,11 @@ Fetch all properties (field mapping entries), which are checked for this particu
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 
 $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
@@ -718,11 +694,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20099**](../Model/InlineResponse20099.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200100**](../Model/InlineResponse200100.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+No authorization required
 
 ### HTTP request headers
 
@@ -736,7 +712,7 @@ Name | Type | Description  | Notes
 ## `getSyncFieldMappings()`
 
 ```php
-getSyncFieldMappings($id, $domain_type): \StevenBuehner\ChurchTools\Model\InlineResponse200102
+getSyncFieldMappings($id, $domain_type): \StevenBuehner\ChurchTools\Model\InlineResponse200103
 ```
 
 Get Mapping for Domain Type
@@ -782,7 +758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200102**](../Model/InlineResponse200102.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200103**](../Model/InlineResponse200103.md)
 
 ### Authorization
 
@@ -800,7 +776,7 @@ Name | Type | Description  | Notes
 ## `getSyncLogs()`
 
 ```php
-getSyncLogs($page, $limit, $es_ids, $job_ids, $start_date, $end_date, $types, $query, $levels, $is_dry_run, $body): \StevenBuehner\ChurchTools\Model\InlineResponse200111
+getSyncLogs($page, $limit, $es_ids, $job_ids, $start_date, $end_date, $types, $query, $levels, $is_dry_run, $body): \StevenBuehner\ChurchTools\Model\InlineResponse200112
 ```
 
 Get Sync Logs
@@ -831,7 +807,7 @@ $limit = 10; // float | Number of Logs per Page
 $es_ids = array(56); // int[] | Filter by External Systems
 $job_ids = array(56); // int[] | Filter by Jobs
 $start_date = Mon Feb 01 01:00:00 CET 2021; // \DateTime | Show Logs From This Date on
-$end_date = Sun Jan 31 01:00:00 CET 2021; // \DateTime | Show Logs Until This Date
+$end_date = Mon Feb 01 01:00:00 CET 2021; // \DateTime | Show Logs Until This Date
 $types = array(56); // int[] | Filter by Types
 $query = 'query_example'; // string | Search Through Log Messages
 $levels = NULL; // array | the log levels
@@ -851,7 +827,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| Page Number | [optional] [default to 1]
- **limit** | **float**| Number of Logs per Page | [optional]
+ **limit** | **float**| Number of Logs per Page | [optional] [default to 10]
  **es_ids** | [**int[]**](../Model/int.md)| Filter by External Systems | [optional]
  **job_ids** | [**int[]**](../Model/int.md)| Filter by Jobs | [optional]
  **start_date** | **\DateTime**| Show Logs From This Date on | [optional]
@@ -864,7 +840,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200111**](../Model/InlineResponse200111.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200112**](../Model/InlineResponse200112.md)
 
 ### Authorization
 
@@ -882,7 +858,7 @@ Name | Type | Description  | Notes
 ## `getSyncMappings()`
 
 ```php
-getSyncMappings($domain_type, $domain_id, $source_id): \StevenBuehner\ChurchTools\Model\InlineResponse20077
+getSyncMappings($domain_type, $domain_id, $source_id): \StevenBuehner\ChurchTools\Model\InlineResponse20078
 ```
 
 Fetch all registered mappings
@@ -930,7 +906,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20077**](../Model/InlineResponse20077.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20078**](../Model/InlineResponse20078.md)
 
 ### Authorization
 
@@ -1009,7 +985,7 @@ void (empty response body)
 ## `postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()`
 
 ```php
-postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65)
+postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object66)
 ```
 
 Start Execution
@@ -1037,10 +1013,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string
 $job_id = 'job_id_example'; // string
-$inline_object65 = new \StevenBuehner\ChurchTools\Model\InlineObject65(); // \StevenBuehner\ChurchTools\Model\InlineObject65
+$inline_object66 = new \StevenBuehner\ChurchTools\Model\InlineObject66(); // \StevenBuehner\ChurchTools\Model\InlineObject66
 
 try {
-    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object65);
+    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object66);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart: ', $e->getMessage(), PHP_EOL;
 }
@@ -1052,7 +1028,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**|  |
  **job_id** | **string**|  |
- **inline_object65** | [**\StevenBuehner\ChurchTools\Model\InlineObject65**](../Model/InlineObject65.md)|  | [optional]
+ **inline_object66** | [**\StevenBuehner\ChurchTools\Model\InlineObject66**](../Model/InlineObject66.md)|  | [optional]
 
 ### Return type
 
@@ -1074,7 +1050,7 @@ void (empty response body)
 ## `postSyncLogs()`
 
 ```php
-postSyncLogs($inline_object64): \StevenBuehner\ChurchTools\Model\InlineResponse2017
+postSyncLogs($inline_object65): \StevenBuehner\ChurchTools\Model\InlineResponse2017
 ```
 
 Save Sync Logs
@@ -1100,10 +1076,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
+$inline_object65 = new \StevenBuehner\ChurchTools\Model\InlineObject65(); // \StevenBuehner\ChurchTools\Model\InlineObject65
 
 try {
-    $result = $apiInstance->postSyncLogs($inline_object64);
+    $result = $apiInstance->postSyncLogs($inline_object65);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncLogs: ', $e->getMessage(), PHP_EOL;
@@ -1114,7 +1090,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
+ **inline_object65** | [**\StevenBuehner\ChurchTools\Model\InlineObject65**](../Model/InlineObject65.md)|  | [optional]
 
 ### Return type
 
@@ -1136,7 +1112,7 @@ Name | Type | Description  | Notes
 ## `putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()`
 
 ```php
-putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object57): \StevenBuehner\ChurchTools\Model\InlineResponse200101
+putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object58): \StevenBuehner\ChurchTools\Model\InlineResponse200102
 ```
 
 Save entity filters
@@ -1150,24 +1126,18 @@ Save entity filter for this job.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 
 $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
-$inline_object57 = new \StevenBuehner\ChurchTools\Model\InlineObject57(); // \StevenBuehner\ChurchTools\Model\InlineObject57
+$inline_object58 = new \StevenBuehner\ChurchTools\Model\InlineObject58(); // \StevenBuehner\ChurchTools\Model\InlineObject58
 
 try {
-    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object57);
+    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object58);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter: ', $e->getMessage(), PHP_EOL;
@@ -1180,15 +1150,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**| External System ID |
  **job_id** | **string**| Job Configuration ID |
- **inline_object57** | [**\StevenBuehner\ChurchTools\Model\InlineObject57**](../Model/InlineObject57.md)|  | [optional]
+ **inline_object58** | [**\StevenBuehner\ChurchTools\Model\InlineObject58**](../Model/InlineObject58.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200101**](../Model/InlineResponse200101.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200102**](../Model/InlineResponse200102.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+No authorization required
 
 ### HTTP request headers
 
@@ -1202,7 +1172,7 @@ Name | Type | Description  | Notes
 ## `putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()`
 
 ```php
-putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object56): \StevenBuehner\ChurchTools\Model\InlineResponse20099
+putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object57): \StevenBuehner\ChurchTools\Model\InlineResponse200100
 ```
 
 Save Properties, Which Should Be Synced
@@ -1216,24 +1186,18 @@ Save properties (field mapping entries) for this job. Those properties will be s
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 
 $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
-$inline_object56 = new \StevenBuehner\ChurchTools\Model\InlineObject56(); // \StevenBuehner\ChurchTools\Model\InlineObject56
+$inline_object57 = new \StevenBuehner\ChurchTools\Model\InlineObject57(); // \StevenBuehner\ChurchTools\Model\InlineObject57
 
 try {
-    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object56);
+    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object57);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties: ', $e->getMessage(), PHP_EOL;
@@ -1246,15 +1210,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**| External System ID |
  **job_id** | **string**| Job Configuration ID |
- **inline_object56** | [**\StevenBuehner\ChurchTools\Model\InlineObject56**](../Model/InlineObject56.md)|  | [optional]
+ **inline_object57** | [**\StevenBuehner\ChurchTools\Model\InlineObject57**](../Model/InlineObject57.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20099**](../Model/InlineResponse20099.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200100**](../Model/InlineResponse200100.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+No authorization required
 
 ### HTTP request headers
 
@@ -1268,7 +1232,7 @@ Name | Type | Description  | Notes
 ## `putSyncFieldMappings()`
 
 ```php
-putSyncFieldMappings($id, $domain_type, $inline_object58): \StevenBuehner\ChurchTools\Model\InlineResponse200103
+putSyncFieldMappings($id, $domain_type, $inline_object59): \StevenBuehner\ChurchTools\Model\InlineResponse200104
 ```
 
 Save Mapping for Domain Type
@@ -1296,10 +1260,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $id = 'id_example'; // string | ID of External System
 $domain_type = 'domain_type_example'; // string | Domatin Type
-$inline_object58 = new \StevenBuehner\ChurchTools\Model\InlineObject58(); // \StevenBuehner\ChurchTools\Model\InlineObject58
+$inline_object59 = new \StevenBuehner\ChurchTools\Model\InlineObject59(); // \StevenBuehner\ChurchTools\Model\InlineObject59
 
 try {
-    $result = $apiInstance->putSyncFieldMappings($id, $domain_type, $inline_object58);
+    $result = $apiInstance->putSyncFieldMappings($id, $domain_type, $inline_object59);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncFieldMappings: ', $e->getMessage(), PHP_EOL;
@@ -1312,11 +1276,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of External System |
  **domain_type** | **string**| Domatin Type |
- **inline_object58** | [**\StevenBuehner\ChurchTools\Model\InlineObject58**](../Model/InlineObject58.md)|  | [optional]
+ **inline_object59** | [**\StevenBuehner\ChurchTools\Model\InlineObject59**](../Model/InlineObject59.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200103**](../Model/InlineResponse200103.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200104**](../Model/InlineResponse200104.md)
 
 ### Authorization
 

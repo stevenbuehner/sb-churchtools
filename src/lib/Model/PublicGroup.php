@@ -62,7 +62,7 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'float',
         'name' => 'string',
-        'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20025Information',
+        'information' => '\StevenBuehner\ChurchTools\Model\InlineResponse20026Information',
         'children' => 'array',
         'auto_accept' => 'bool',
         'allow_waitinglist' => 'bool',
@@ -71,8 +71,8 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'requested_places_count' => 'float',
         'requested_waitinglist_places_count' => 'float',
         'can_sign_up' => 'bool',
-        'sign_up_conditions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20025SignUpConditions',
-        'sign_up_persons' => '\StevenBuehner\ChurchTools\Model\InlineResponse20025SignUpPersons[]',
+        'sign_up_conditions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20026SignUpConditions',
+        'sign_up_persons' => '\StevenBuehner\ChurchTools\Model\InlineResponse20026SignUpPersons[]',
         'sign_up_headline' => 'string'
     ];
 
@@ -368,7 +368,7 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets information
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20025Information
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20026Information
      */
     public function getInformation()
     {
@@ -378,7 +378,7 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets information
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20025Information $information information
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20026Information $information information
      *
      * @return self
      */
@@ -584,7 +584,7 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sign_up_conditions
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20025SignUpConditions
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20026SignUpConditions
      */
     public function getSignUpConditions()
     {
@@ -594,7 +594,7 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sign_up_conditions
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20025SignUpConditions $sign_up_conditions sign_up_conditions
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20026SignUpConditions $sign_up_conditions sign_up_conditions
      *
      * @return self
      */
@@ -608,7 +608,7 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sign_up_persons
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20025SignUpPersons[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20026SignUpPersons[]|null
      */
     public function getSignUpPersons()
     {
@@ -618,7 +618,7 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sign_up_persons
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20025SignUpPersons[]|null $sign_up_persons Lists all persons the current user is allowed to sign up for. This includes spouses, children below the age of 16 and all persons with the same email address.
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20026SignUpPersons[]|null $sign_up_persons Lists all persons the current user is allowed to sign up for. This includes spouses, children below the age of 16 and all persons with the same email address.
      *
      * @return self
      */

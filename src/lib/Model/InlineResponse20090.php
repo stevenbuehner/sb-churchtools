@@ -59,7 +59,7 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'url' => 'string'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20090Data'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'url' => null
+        'data' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url'
+        'data' => 'data'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl'
+        'data' => 'setData'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl'
+        'data' => 'getData'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = $data['url'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -190,9 +190,6 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,25 +206,25 @@ class InlineResponse20090 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets url
+     * Gets data
      *
-     * @return string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20090Data|null
      */
-    public function getUrl()
+    public function getData()
     {
-        return $this->container['url'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets url
+     * Sets data
      *
-     * @param string $url URI of PDF
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20090Data|null $data data
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setData($data)
     {
-        $this->container['url'] = $url;
+        $this->container['data'] = $data;
 
         return $this;
     }

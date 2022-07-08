@@ -116,479 +116,6 @@ class DefaultApi
     }
 
     /**
-     * Operation deleteFilesId
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function deleteFilesId($id)
-    {
-        $this->deleteFilesIdWithHttpInfo($id);
-    }
-
-    /**
-     * Operation deleteFilesIdWithHttpInfo
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function deleteFilesIdWithHttpInfo($id)
-    {
-        $request = $this->deleteFilesIdRequest($id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deleteFilesIdAsync
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteFilesIdAsync($id)
-    {
-        return $this->deleteFilesIdAsyncWithHttpInfo($id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation deleteFilesIdAsyncWithHttpInfo
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteFilesIdAsyncWithHttpInfo($id)
-    {
-        $returnType = '';
-        $request = $this->deleteFilesIdRequest($id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'deleteFilesId'
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function deleteFilesIdRequest($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteFilesId'
-            );
-        }
-
-        $resourcePath = '/files/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getGroupsGroupIdRolesRoleId
-     *
-     * Your GET endpoint
-     *
-     * @param  string $group_id group_id (required)
-     * @param  string $role_id role_id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function getGroupsGroupIdRolesRoleId($group_id, $role_id)
-    {
-        $this->getGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id);
-    }
-
-    /**
-     * Operation getGroupsGroupIdRolesRoleIdWithHttpInfo
-     *
-     * Your GET endpoint
-     *
-     * @param  string $group_id (required)
-     * @param  string $role_id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id)
-    {
-        $request = $this->getGroupsGroupIdRolesRoleIdRequest($group_id, $role_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getGroupsGroupIdRolesRoleIdAsync
-     *
-     * Your GET endpoint
-     *
-     * @param  string $group_id (required)
-     * @param  string $role_id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getGroupsGroupIdRolesRoleIdAsync($group_id, $role_id)
-    {
-        return $this->getGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getGroupsGroupIdRolesRoleIdAsyncWithHttpInfo
-     *
-     * Your GET endpoint
-     *
-     * @param  string $group_id (required)
-     * @param  string $role_id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id)
-    {
-        $returnType = '';
-        $request = $this->getGroupsGroupIdRolesRoleIdRequest($group_id, $role_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getGroupsGroupIdRolesRoleId'
-     *
-     * @param  string $group_id (required)
-     * @param  string $role_id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getGroupsGroupIdRolesRoleIdRequest($group_id, $role_id)
-    {
-        // verify the required parameter 'group_id' is set
-        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $group_id when calling getGroupsGroupIdRolesRoleId'
-            );
-        }
-        // verify the required parameter 'role_id' is set
-        if ($role_id === null || (is_array($role_id) && count($role_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $role_id when calling getGroupsGroupIdRolesRoleId'
-            );
-        }
-
-        $resourcePath = '/groups/{groupId}/roles/{roleId}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($group_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'groupId' . '}',
-                ObjectSerializer::toPathValue($group_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($role_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'roleId' . '}',
-                ObjectSerializer::toPathValue($role_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation getGroupsGroupIdTags
      *
      * Fetch group tags
@@ -597,7 +124,7 @@ class DefaultApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200118
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200119
      */
     public function getGroupsGroupIdTags($group_id)
     {
@@ -614,7 +141,7 @@ class DefaultApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200118, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200119, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGroupsGroupIdTagsWithHttpInfo($group_id)
     {
@@ -657,20 +184,20 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200118' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200119' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200118', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200119', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200118';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200119';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -688,7 +215,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200118',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200119',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -730,7 +257,7 @@ class DefaultApi
      */
     public function getGroupsGroupIdTagsAsyncWithHttpInfo($group_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200118';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200119';
         $request = $this->getGroupsGroupIdTagsRequest($group_id);
 
         return $this->client
@@ -874,7 +401,7 @@ class DefaultApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200117
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200118
      */
     public function getPublicgroupsGroupIdPossiblerequesters($group_id, $token)
     {
@@ -892,7 +419,7 @@ class DefaultApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200117, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200118, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPublicgroupsGroupIdPossiblerequestersWithHttpInfo($group_id, $token)
     {
@@ -935,20 +462,20 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200117' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200118' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200117', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200118', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200117';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200118';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -966,7 +493,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200117',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200118',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1010,7 +537,7 @@ class DefaultApi
      */
     public function getPublicgroupsGroupIdPossiblerequestersAsyncWithHttpInfo($group_id, $token)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200117';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200118';
         $request = $this->getPublicgroupsGroupIdPossiblerequestersRequest($group_id, $token);
 
         return $this->client
@@ -1163,287 +690,19 @@ class DefaultApi
     }
 
     /**
-     * Operation patchFilesId
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse204
-     */
-    public function patchFilesId($id)
-    {
-        list($response) = $this->patchFilesIdWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation patchFilesIdWithHttpInfo
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse204, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function patchFilesIdWithHttpInfo($id)
-    {
-        $request = $this->patchFilesIdRequest($id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 204:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse204' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse204', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse204';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 204:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse204',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation patchFilesIdAsync
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function patchFilesIdAsync($id)
-    {
-        return $this->patchFilesIdAsyncWithHttpInfo($id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation patchFilesIdAsyncWithHttpInfo
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function patchFilesIdAsyncWithHttpInfo($id)
-    {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse204';
-        $request = $this->patchFilesIdRequest($id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'patchFilesId'
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function patchFilesIdRequest($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling patchFilesId'
-            );
-        }
-
-        $resourcePath = '/files/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation patchGroupsGroupIdRolesRoleId
      *
      * @param  string $group_id group_id (required)
      * @param  string $role_id role_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 inline_object70 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject71 $inline_object71 inline_object71 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function patchGroupsGroupIdRolesRoleId($group_id, $role_id, $inline_object70 = null)
+    public function patchGroupsGroupIdRolesRoleId($group_id, $role_id, $inline_object71 = null)
     {
-        $this->patchGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id, $inline_object70);
+        $this->patchGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id, $inline_object71);
     }
 
     /**
@@ -1451,15 +710,15 @@ class DefaultApi
      *
      * @param  string $group_id (required)
      * @param  string $role_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject71 $inline_object71 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id, $inline_object70 = null)
+    public function patchGroupsGroupIdRolesRoleIdWithHttpInfo($group_id, $role_id, $inline_object71 = null)
     {
-        $request = $this->patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object70);
+        $request = $this->patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object71);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1510,14 +769,14 @@ class DefaultApi
      *
      * @param  string $group_id (required)
      * @param  string $role_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject71 $inline_object71 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function patchGroupsGroupIdRolesRoleIdAsync($group_id, $role_id, $inline_object70 = null)
+    public function patchGroupsGroupIdRolesRoleIdAsync($group_id, $role_id, $inline_object71 = null)
     {
-        return $this->patchGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id, $inline_object70)
+        return $this->patchGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id, $inline_object71)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1530,15 +789,15 @@ class DefaultApi
      *
      * @param  string $group_id (required)
      * @param  string $role_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject71 $inline_object71 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function patchGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id, $inline_object70 = null)
+    public function patchGroupsGroupIdRolesRoleIdAsyncWithHttpInfo($group_id, $role_id, $inline_object71 = null)
     {
         $returnType = '';
-        $request = $this->patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object70);
+        $request = $this->patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object71);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1568,12 +827,12 @@ class DefaultApi
      *
      * @param  string $group_id (required)
      * @param  string $role_id (required)
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject70 $inline_object70 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject71 $inline_object71 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object70 = null)
+    public function patchGroupsGroupIdRolesRoleIdRequest($group_id, $role_id, $inline_object71 = null)
     {
         // verify the required parameter 'group_id' is set
         if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
@@ -1627,11 +886,11 @@ class DefaultApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object70)) {
+        if (isset($inline_object71)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object70));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object71));
             } else {
-                $httpBody = $inline_object70;
+                $httpBody = $inline_object71;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

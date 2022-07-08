@@ -59,8 +59,11 @@ class InlineResponse20039 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\TranslationKey[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse2007Meta'
+        'message' => 'string',
+        'translated_message' => 'string',
+        'message_key' => 'string',
+        'args' => '\StevenBuehner\ChurchTools\Model\InlineResponse20039Args',
+        'errors' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject[]'
     ];
 
     /**
@@ -71,8 +74,11 @@ class InlineResponse20039 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'meta' => null
+        'message' => null,
+        'translated_message' => null,
+        'message_key' => null,
+        'args' => null,
+        'errors' => null
     ];
 
     /**
@@ -102,8 +108,11 @@ class InlineResponse20039 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'meta' => 'meta'
+        'message' => 'message',
+        'translated_message' => 'translatedMessage',
+        'message_key' => 'messageKey',
+        'args' => 'args',
+        'errors' => 'errors'
     ];
 
     /**
@@ -112,8 +121,11 @@ class InlineResponse20039 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'meta' => 'setMeta'
+        'message' => 'setMessage',
+        'translated_message' => 'setTranslatedMessage',
+        'message_key' => 'setMessageKey',
+        'args' => 'setArgs',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -122,8 +134,11 @@ class InlineResponse20039 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'meta' => 'getMeta'
+        'message' => 'getMessage',
+        'translated_message' => 'getTranslatedMessage',
+        'message_key' => 'getMessageKey',
+        'args' => 'getArgs',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -183,8 +198,11 @@ class InlineResponse20039 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['translated_message'] = $data['translated_message'] ?? null;
+        $this->container['message_key'] = $data['message_key'] ?? null;
+        $this->container['args'] = $data['args'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -212,49 +230,121 @@ class InlineResponse20039 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets data
+     * Gets message
      *
-     * @return \StevenBuehner\ChurchTools\Model\TranslationKey[]|null
+     * @return string|null
      */
-    public function getData()
+    public function getMessage()
     {
-        return $this->container['data'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets data
+     * Sets message
      *
-     * @param \StevenBuehner\ChurchTools\Model\TranslationKey[]|null $data data
+     * @param string|null $message message
      *
      * @return self
      */
-    public function setData($data)
+    public function setMessage($message)
     {
-        $this->container['data'] = $data;
+        $this->container['message'] = $message;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets translated_message
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2007Meta|null
+     * @return string|null
      */
-    public function getMeta()
+    public function getTranslatedMessage()
     {
-        return $this->container['meta'];
+        return $this->container['translated_message'];
     }
 
     /**
-     * Sets meta
+     * Sets translated_message
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2007Meta|null $meta meta
+     * @param string|null $translated_message translated_message
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setTranslatedMessage($translated_message)
     {
-        $this->container['meta'] = $meta;
+        $this->container['translated_message'] = $translated_message;
+
+        return $this;
+    }
+
+    /**
+     * Gets message_key
+     *
+     * @return string|null
+     */
+    public function getMessageKey()
+    {
+        return $this->container['message_key'];
+    }
+
+    /**
+     * Sets message_key
+     *
+     * @param string|null $message_key message_key
+     *
+     * @return self
+     */
+    public function setMessageKey($message_key)
+    {
+        $this->container['message_key'] = $message_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets args
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20039Args|null
+     */
+    public function getArgs()
+    {
+        return $this->container['args'];
+    }
+
+    /**
+     * Sets args
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20039Args|null $args args
+     *
+     * @return self
+     */
+    public function setArgs($args)
+    {
+        $this->container['args'] = $args;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null $errors Array of DomainObjects with people, who have no eMail Addresses.
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
 
         return $this;
     }

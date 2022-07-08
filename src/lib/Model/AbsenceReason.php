@@ -59,7 +59,7 @@ class AbsenceReason implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
         'name' => 'string',
         'name_translated' => 'string',
         'sort_key' => 'string'
@@ -238,7 +238,7 @@ class AbsenceReason implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -248,7 +248,7 @@ class AbsenceReason implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */

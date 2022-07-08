@@ -124,7 +124,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20037|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20038|string
      */
     public function getAgendaForEvent($event_id)
     {
@@ -141,7 +141,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20037|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20038|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAgendaForEventWithHttpInfo($event_id)
     {
@@ -184,14 +184,14 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20037' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20038' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20037', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20038', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -209,7 +209,7 @@ class EventApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20037';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20038';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -227,7 +227,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20037',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20038',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -277,7 +277,7 @@ class EventApi
      */
     public function getAgendaForEventAsyncWithHttpInfo($event_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20037';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20038';
         $request = $this->getAgendaForEventRequest($event_id);
 
         return $this->client
@@ -422,7 +422,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20036
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20037
      */
     public function getAllEvents($from = null, $to = null, $canceled = null)
     {
@@ -441,7 +441,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20036, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20037, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllEventsWithHttpInfo($from = null, $to = null, $canceled = null)
     {
@@ -484,20 +484,20 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20036' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20037' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20036', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20037', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20036';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20037';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -515,7 +515,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20036',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20037',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -561,7 +561,7 @@ class EventApi
      */
     public function getAllEventsAsyncWithHttpInfo($from = null, $to = null, $canceled = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20036';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20037';
         $request = $this->getAllEventsRequest($from, $to, $canceled);
 
         return $this->client
@@ -721,7 +721,7 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -738,7 +738,7 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -851,7 +851,7 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -871,7 +871,7 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -917,7 +917,7 @@ class EventApi
     /**
      * Create request for operation 'getEvent'
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1274,7 +1274,7 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1292,7 +1292,7 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1406,7 +1406,7 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \InvalidArgumentException
@@ -1427,7 +1427,7 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \InvalidArgumentException
@@ -1474,7 +1474,7 @@ class EventApi
     /**
      * Create request for operation 'getPersonEvents'
      *
-     * @param  string $id ID of person (required)
+     * @param  int $id ID of person (required)
      * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
      *
      * @throws \InvalidArgumentException
@@ -1590,7 +1590,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200110
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200111
      */
     public function getSongsOfAgenda($event_id)
     {
@@ -1607,7 +1607,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200110, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse200111, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSongsOfAgendaWithHttpInfo($event_id)
     {
@@ -1650,20 +1650,20 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200110' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse200111' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200110', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse200111', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200110';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200111';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1681,7 +1681,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse200110',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse200111',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1723,7 +1723,7 @@ class EventApi
      */
     public function getSongsOfAgendaAsyncWithHttpInfo($event_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200110';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse200111';
         $request = $this->getSongsOfAgendaRequest($event_id);
 
         return $this->client
@@ -1866,7 +1866,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20038|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20039|string
      * @deprecated
      */
     public function sendAgendaEmail($inline_object17)
@@ -1884,7 +1884,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20038|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20039|string, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function sendAgendaEmailWithHttpInfo($inline_object17)
@@ -1928,14 +1928,14 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20038' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20039' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20038', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20039', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1953,7 +1953,7 @@ class EventApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20038';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20039';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1971,7 +1971,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20038',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20039',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2023,7 +2023,7 @@ class EventApi
      */
     public function sendAgendaEmailAsyncWithHttpInfo($inline_object17)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20038';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20039';
         $request = $this->sendAgendaEmailRequest($inline_object17);
 
         return $this->client
@@ -2161,15 +2161,15 @@ class EventApi
      *
      * Send Mail to Event Participants
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 inline_object53 (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 inline_object54 (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20038|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20039|string
      */
-    public function sendEventEmail($inline_object53)
+    public function sendEventEmail($inline_object54)
     {
-        list($response) = $this->sendEventEmailWithHttpInfo($inline_object53);
+        list($response) = $this->sendEventEmailWithHttpInfo($inline_object54);
         return $response;
     }
 
@@ -2178,15 +2178,15 @@ class EventApi
      *
      * Send Mail to Event Participants
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20038|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20039|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendEventEmailWithHttpInfo($inline_object53)
+    public function sendEventEmailWithHttpInfo($inline_object54)
     {
-        $request = $this->sendEventEmailRequest($inline_object53);
+        $request = $this->sendEventEmailRequest($inline_object54);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2225,14 +2225,14 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20038' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20039' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20038', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20039', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2250,7 +2250,7 @@ class EventApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20038';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20039';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2268,7 +2268,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20038',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20039',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2291,14 +2291,14 @@ class EventApi
      *
      * Send Mail to Event Participants
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendEventEmailAsync($inline_object53)
+    public function sendEventEmailAsync($inline_object54)
     {
-        return $this->sendEventEmailAsyncWithHttpInfo($inline_object53)
+        return $this->sendEventEmailAsyncWithHttpInfo($inline_object54)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2311,15 +2311,15 @@ class EventApi
      *
      * Send Mail to Event Participants
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendEventEmailAsyncWithHttpInfo($inline_object53)
+    public function sendEventEmailAsyncWithHttpInfo($inline_object54)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20038';
-        $request = $this->sendEventEmailRequest($inline_object53);
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20039';
+        $request = $this->sendEventEmailRequest($inline_object54);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2357,17 +2357,17 @@ class EventApi
     /**
      * Create request for operation 'sendEventEmail'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject53 $inline_object53 (required)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject54 $inline_object54 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function sendEventEmailRequest($inline_object53)
+    public function sendEventEmailRequest($inline_object54)
     {
-        // verify the required parameter 'inline_object53' is set
-        if ($inline_object53 === null || (is_array($inline_object53) && count($inline_object53) === 0)) {
+        // verify the required parameter 'inline_object54' is set
+        if ($inline_object54 === null || (is_array($inline_object54) && count($inline_object54) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $inline_object53 when calling sendEventEmail'
+                'Missing the required parameter $inline_object54 when calling sendEventEmail'
             );
         }
 
@@ -2394,11 +2394,11 @@ class EventApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object53)) {
+        if (isset($inline_object54)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object53));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object54));
             } else {
-                $httpBody = $inline_object53;
+                $httpBody = $inline_object54;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2451,37 +2451,37 @@ class EventApi
     }
 
     /**
-     * Operation startStopChat
+     * Operation startStopEventChat
      *
      * Start or stop an event chat
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      * @param  \StevenBuehner\ChurchTools\Model\InlineObject16 $inline_object16 inline_object16 (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function startStopChat($event_id, $inline_object16)
+    public function startStopEventChat($event_id, $inline_object16)
     {
-        $this->startStopChatWithHttpInfo($event_id, $inline_object16);
+        $this->startStopEventChatWithHttpInfo($event_id, $inline_object16);
     }
 
     /**
-     * Operation startStopChatWithHttpInfo
+     * Operation startStopEventChatWithHttpInfo
      *
      * Start or stop an event chat
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      * @param  \StevenBuehner\ChurchTools\Model\InlineObject16 $inline_object16 (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function startStopChatWithHttpInfo($event_id, $inline_object16)
+    public function startStopEventChatWithHttpInfo($event_id, $inline_object16)
     {
-        $request = $this->startStopChatRequest($event_id, $inline_object16);
+        $request = $this->startStopEventChatRequest($event_id, $inline_object16);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2536,19 +2536,19 @@ class EventApi
     }
 
     /**
-     * Operation startStopChatAsync
+     * Operation startStopEventChatAsync
      *
      * Start or stop an event chat
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      * @param  \StevenBuehner\ChurchTools\Model\InlineObject16 $inline_object16 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function startStopChatAsync($event_id, $inline_object16)
+    public function startStopEventChatAsync($event_id, $inline_object16)
     {
-        return $this->startStopChatAsyncWithHttpInfo($event_id, $inline_object16)
+        return $this->startStopEventChatAsyncWithHttpInfo($event_id, $inline_object16)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2557,20 +2557,20 @@ class EventApi
     }
 
     /**
-     * Operation startStopChatAsyncWithHttpInfo
+     * Operation startStopEventChatAsyncWithHttpInfo
      *
      * Start or stop an event chat
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      * @param  \StevenBuehner\ChurchTools\Model\InlineObject16 $inline_object16 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function startStopChatAsyncWithHttpInfo($event_id, $inline_object16)
+    public function startStopEventChatAsyncWithHttpInfo($event_id, $inline_object16)
     {
         $returnType = '';
-        $request = $this->startStopChatRequest($event_id, $inline_object16);
+        $request = $this->startStopEventChatRequest($event_id, $inline_object16);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2596,26 +2596,26 @@ class EventApi
     }
 
     /**
-     * Create request for operation 'startStopChat'
+     * Create request for operation 'startStopEventChat'
      *
-     * @param  string $event_id ID of event (required)
+     * @param  int $event_id ID of event (required)
      * @param  \StevenBuehner\ChurchTools\Model\InlineObject16 $inline_object16 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function startStopChatRequest($event_id, $inline_object16)
+    public function startStopEventChatRequest($event_id, $inline_object16)
     {
         // verify the required parameter 'event_id' is set
         if ($event_id === null || (is_array($event_id) && count($event_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $event_id when calling startStopChat'
+                'Missing the required parameter $event_id when calling startStopEventChat'
             );
         }
         // verify the required parameter 'inline_object16' is set
         if ($inline_object16 === null || (is_array($inline_object16) && count($inline_object16) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $inline_object16 when calling startStopChat'
+                'Missing the required parameter $inline_object16 when calling startStopEventChat'
             );
         }
 

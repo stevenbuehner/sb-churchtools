@@ -59,9 +59,8 @@ class InlineResponse20079Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'total' => 'float',
-        'jobs' => '\StevenBuehner\ChurchTools\Model\InlineResponse20079Jobs'
+        'queue' => 'string',
+        'messages' => 'string[]'
     ];
 
     /**
@@ -72,9 +71,8 @@ class InlineResponse20079Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'total' => null,
-        'jobs' => null
+        'queue' => null,
+        'messages' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class InlineResponse20079Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'total' => 'total',
-        'jobs' => 'jobs'
+        'queue' => 'queue',
+        'messages' => 'messages'
     ];
 
     /**
@@ -115,9 +112,8 @@ class InlineResponse20079Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'total' => 'setTotal',
-        'jobs' => 'setJobs'
+        'queue' => 'setQueue',
+        'messages' => 'setMessages'
     ];
 
     /**
@@ -126,9 +122,8 @@ class InlineResponse20079Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'total' => 'getTotal',
-        'jobs' => 'getJobs'
+        'queue' => 'getQueue',
+        'messages' => 'getMessages'
     ];
 
     /**
@@ -188,9 +183,8 @@ class InlineResponse20079Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['jobs'] = $data['jobs'] ?? null;
+        $this->container['queue'] = $data['queue'] ?? null;
+        $this->container['messages'] = $data['messages'] ?? null;
     }
 
     /**
@@ -218,73 +212,49 @@ class InlineResponse20079Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets name
+     * Gets queue
      *
      * @return string|null
      */
-    public function getName()
+    public function getQueue()
     {
-        return $this->container['name'];
+        return $this->container['queue'];
     }
 
     /**
-     * Sets name
+     * Sets queue
      *
-     * @param string|null $name Name of Job Group. `__single__` is For Jobs Which don't Belong to a Group
+     * @param string|null $queue Name of Queue
      *
      * @return self
      */
-    public function setName($name)
+    public function setQueue($queue)
     {
-        $this->container['name'] = $name;
+        $this->container['queue'] = $queue;
 
         return $this;
     }
 
     /**
-     * Gets total
+     * Gets messages
      *
-     * @return float|null
+     * @return string[]|null
      */
-    public function getTotal()
+    public function getMessages()
     {
-        return $this->container['total'];
+        return $this->container['messages'];
     }
 
     /**
-     * Sets total
+     * Sets messages
      *
-     * @param float|null $total Total Jobs in Queue of This Job Group
+     * @param string[]|null $messages Messages from Worker
      *
      * @return self
      */
-    public function setTotal($total)
+    public function setMessages($messages)
     {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets jobs
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20079Jobs|null
-     */
-    public function getJobs()
-    {
-        return $this->container['jobs'];
-    }
-
-    /**
-     * Sets jobs
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20079Jobs|null $jobs jobs
-     *
-     * @return self
-     */
-    public function setJobs($jobs)
-    {
-        $this->container['jobs'] = $jobs;
+        $this->container['messages'] = $messages;
 
         return $this;
     }

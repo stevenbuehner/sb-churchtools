@@ -124,7 +124,7 @@ class TranslationApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20039|string
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20040|string
      */
     public function getAllTranslations($updated_by_church = null)
     {
@@ -141,7 +141,7 @@ class TranslationApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20039|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20040|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllTranslationsWithHttpInfo($updated_by_church = null)
     {
@@ -184,14 +184,14 @@ class TranslationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20039' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20040' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20039', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20040', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -209,7 +209,7 @@ class TranslationApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20039';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -227,7 +227,7 @@ class TranslationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20039',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20040',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -277,7 +277,7 @@ class TranslationApi
      */
     public function getAllTranslationsAsyncWithHttpInfo($updated_by_church = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20039';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20040';
         $request = $this->getAllTranslationsRequest($updated_by_church);
 
         return $this->client

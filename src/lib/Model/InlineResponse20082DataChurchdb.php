@@ -35,7 +35,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * InlineResponse20082DataChurchdb Class Doc Comment
  *
  * @category Class
- * @description Group Internal Permission, which Affect a Person
+ * @description Permissions for Person &amp; Groups Module
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,10 +60,8 @@ class InlineResponse20082DataChurchdb implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'see_persons' => 'int',
-        'invite_person' => 'bool',
-        'see_tags' => 'bool',
-        'edit_persons' => 'bool'
+        'view_birthdaylist' => 'bool',
+        'security_level_person' => 'float[]'
     ];
 
     /**
@@ -74,10 +72,8 @@ class InlineResponse20082DataChurchdb implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'see_persons' => null,
-        'invite_person' => null,
-        'see_tags' => null,
-        'edit_persons' => null
+        'view_birthdaylist' => null,
+        'security_level_person' => null
     ];
 
     /**
@@ -107,10 +103,8 @@ class InlineResponse20082DataChurchdb implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'see_persons' => '+see persons',
-        'invite_person' => '+invite person',
-        'see_tags' => '+see tags',
-        'edit_persons' => '+edit persons'
+        'view_birthdaylist' => 'view birthdaylist',
+        'security_level_person' => 'security level person'
     ];
 
     /**
@@ -119,10 +113,8 @@ class InlineResponse20082DataChurchdb implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'see_persons' => 'setSeePersons',
-        'invite_person' => 'setInvitePerson',
-        'see_tags' => 'setSeeTags',
-        'edit_persons' => 'setEditPersons'
+        'view_birthdaylist' => 'setViewBirthdaylist',
+        'security_level_person' => 'setSecurityLevelPerson'
     ];
 
     /**
@@ -131,10 +123,8 @@ class InlineResponse20082DataChurchdb implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'see_persons' => 'getSeePersons',
-        'invite_person' => 'getInvitePerson',
-        'see_tags' => 'getSeeTags',
-        'edit_persons' => 'getEditPersons'
+        'view_birthdaylist' => 'getViewBirthdaylist',
+        'security_level_person' => 'getSecurityLevelPerson'
     ];
 
     /**
@@ -194,10 +184,8 @@ class InlineResponse20082DataChurchdb implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['see_persons'] = $data['see_persons'] ?? null;
-        $this->container['invite_person'] = $data['invite_person'] ?? null;
-        $this->container['see_tags'] = $data['see_tags'] ?? null;
-        $this->container['edit_persons'] = $data['edit_persons'] ?? null;
+        $this->container['view_birthdaylist'] = $data['view_birthdaylist'] ?? null;
+        $this->container['security_level_person'] = $data['security_level_person'] ?? null;
     }
 
     /**
@@ -225,97 +213,49 @@ class InlineResponse20082DataChurchdb implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets see_persons
+     * Gets view_birthdaylist
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getSeePersons()
+    public function getViewBirthdaylist()
     {
-        return $this->container['see_persons'];
+        return $this->container['view_birthdaylist'];
     }
 
     /**
-     * Sets see_persons
+     * Sets view_birthdaylist
      *
-     * @param int|null $see_persons Security Level to View Person
+     * @param bool|null $view_birthdaylist view_birthdaylist
      *
      * @return self
      */
-    public function setSeePersons($see_persons)
+    public function setViewBirthdaylist($view_birthdaylist)
     {
-        $this->container['see_persons'] = $see_persons;
+        $this->container['view_birthdaylist'] = $view_birthdaylist;
 
         return $this;
     }
 
     /**
-     * Gets invite_person
+     * Gets security_level_person
      *
-     * @return bool|null
+     * @return float[]|null
      */
-    public function getInvitePerson()
+    public function getSecurityLevelPerson()
     {
-        return $this->container['invite_person'];
+        return $this->container['security_level_person'];
     }
 
     /**
-     * Sets invite_person
+     * Sets security_level_person
      *
-     * @param bool|null $invite_person invite_person
+     * @param float[]|null $security_level_person security_level_person
      *
      * @return self
      */
-    public function setInvitePerson($invite_person)
+    public function setSecurityLevelPerson($security_level_person)
     {
-        $this->container['invite_person'] = $invite_person;
-
-        return $this;
-    }
-
-    /**
-     * Gets see_tags
-     *
-     * @return bool|null
-     */
-    public function getSeeTags()
-    {
-        return $this->container['see_tags'];
-    }
-
-    /**
-     * Sets see_tags
-     *
-     * @param bool|null $see_tags see_tags
-     *
-     * @return self
-     */
-    public function setSeeTags($see_tags)
-    {
-        $this->container['see_tags'] = $see_tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets edit_persons
-     *
-     * @return bool|null
-     */
-    public function getEditPersons()
-    {
-        return $this->container['edit_persons'];
-    }
-
-    /**
-     * Sets edit_persons
-     *
-     * @param bool|null $edit_persons edit_persons
-     *
-     * @return self
-     */
-    public function setEditPersons($edit_persons)
-    {
-        $this->container['edit_persons'] = $edit_persons;
+        $this->container['security_level_person'] = $security_level_person;
 
         return $this;
     }

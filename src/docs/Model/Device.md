@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **string** | Device Type | [optional]
-**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20074Meta**](InlineResponse20074Meta.md) |  | [optional]
+**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20075Meta**](InlineResponse20075Meta.md) |  | [optional]
 **updated_at** | **\DateTime** |  | [optional]
 **created_at** | **\DateTime** |  | [optional]
 **ttl** | **\DateTime** | Time To Live of Device | [optional]

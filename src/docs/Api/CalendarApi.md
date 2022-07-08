@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getAllTemplates()**](CalendarApi.md#getAllTemplates) | **GET** /calendars/appointments/templates | get all appointment templates
 [**getCalendars()**](CalendarApi.md#getCalendars) | **GET** /calendars | Your GET endpoint
 [**getCalendarsAppointments()**](CalendarApi.md#getCalendarsAppointments) | **GET** /calendars/appointments | Your GET endpoint
+[**getCalendarsCalendarIdAppointmentsAppointmentIdStartDate()**](CalendarApi.md#getCalendarsCalendarIdAppointmentsAppointmentIdStartDate) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/{startDate} | Your GET endpoint
 [**getTemplateById()**](CalendarApi.md#getTemplateById) | **GET** /calendars/appointments/templates/{templateId} | get a appointment template
 [**updateTemplate()**](CalendarApi.md#updateTemplate) | **PUT** /calendars/appointments/templates/{templateId} | update a appointment template identified by id
 
@@ -16,8 +17,10 @@ Method | HTTP request | Description
 ## `createTemplate()`
 
 ```php
-createTemplate($inline_object14): \StevenBuehner\ChurchTools\Model\InlineResponse20034
+createTemplate($inline_object14): \StevenBuehner\ChurchTools\Model\InlineResponse20035
 ```
+
+Create new appointment template
 
 Create new appointment template
 
@@ -58,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20034**](../Model/InlineResponse20034.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
 
 ### Authorization
 
@@ -78,6 +81,8 @@ Name | Type | Description  | Notes
 ```php
 deleteTemplate($template_id)
 ```
+
+Delete a appointment template identified by id
 
 Delete a appointment template identified by id
 
@@ -135,8 +140,10 @@ void (empty response body)
 ## `getAllTemplates()`
 
 ```php
-getAllTemplates(): \StevenBuehner\ChurchTools\Model\InlineResponse20034
+getAllTemplates(): \StevenBuehner\ChurchTools\Model\InlineResponse20035
 ```
+
+get all appointment templates
 
 get all appointment templates
 
@@ -174,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20034**](../Model/InlineResponse20034.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
 
 ### Authorization
 
@@ -192,7 +199,7 @@ This endpoint does not need any parameter.
 ## `getCalendars()`
 
 ```php
-getCalendars(): \StevenBuehner\ChurchTools\Model\InlineResponse200126
+getCalendars(): \StevenBuehner\ChurchTools\Model\InlineResponse200127
 ```
 
 Your GET endpoint
@@ -231,7 +238,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200126**](../Model/InlineResponse200126.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200127**](../Model/InlineResponse200127.md)
 
 ### Authorization
 
@@ -249,7 +256,7 @@ This endpoint does not need any parameter.
 ## `getCalendarsAppointments()`
 
 ```php
-getCalendarsAppointments($calendar_ids, $from, $to): \StevenBuehner\ChurchTools\Model\InlineResponse200125
+getCalendarsAppointments($calendar_ids, $from, $to): \StevenBuehner\ChurchTools\Model\InlineResponse200126
 ```
 
 Your GET endpoint
@@ -295,7 +302,71 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200125**](../Model/InlineResponse200125.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200126**](../Model/InlineResponse200126.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getCalendarsCalendarIdAppointmentsAppointmentIdStartDate()`
+
+```php
+getCalendarsCalendarIdAppointmentsAppointmentIdStartDate($calendar_id, $appointment_id, $start_date): \StevenBuehner\ChurchTools\Model\InlineResponse200128
+```
+
+Your GET endpoint
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\CalendarApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$calendar_id = 'calendar_id_example'; // string
+$appointment_id = 'appointment_id_example'; // string
+$start_date = 'start_date_example'; // string
+
+try {
+    $result = $apiInstance->getCalendarsCalendarIdAppointmentsAppointmentIdStartDate($calendar_id, $appointment_id, $start_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CalendarApi->getCalendarsCalendarIdAppointmentsAppointmentIdStartDate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **calendar_id** | **string**|  |
+ **appointment_id** | **string**|  |
+ **start_date** | **string**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\InlineResponse200128**](../Model/InlineResponse200128.md)
 
 ### Authorization
 
@@ -313,10 +384,12 @@ Name | Type | Description  | Notes
 ## `getTemplateById()`
 
 ```php
-getTemplateById($template_id): \StevenBuehner\ChurchTools\Model\InlineResponse20035
+getTemplateById($template_id): \StevenBuehner\ChurchTools\Model\InlineResponse20036
 ```
 
 get a appointment template
+
+getTemplateById
 
 ### Example
 
@@ -355,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
 
 ### Authorization
 
@@ -373,8 +446,10 @@ Name | Type | Description  | Notes
 ## `updateTemplate()`
 
 ```php
-updateTemplate($template_id, $inline_object15): \StevenBuehner\ChurchTools\Model\InlineResponse20035
+updateTemplate($template_id, $inline_object15): \StevenBuehner\ChurchTools\Model\InlineResponse20036
 ```
+
+update a appointment template identified by id
 
 update a appointment template identified by id
 
@@ -417,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
+[**\StevenBuehner\ChurchTools\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
 
 ### Authorization
 

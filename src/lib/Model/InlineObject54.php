@@ -59,10 +59,13 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'accounting_perdiod_id' => 'float',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'show_empty_accounts' => 'bool'
+        'event_ids' => 'int[]',
+        'recipients' => 'int[]',
+        'send_copy_to_me' => 'bool',
+        'subject' => 'string',
+        'body' => 'string',
+        'append_agenda_button' => 'bool',
+        'files' => 'int[]'
     ];
 
     /**
@@ -73,10 +76,13 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'accounting_perdiod_id' => null,
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'show_empty_accounts' => null
+        'event_ids' => null,
+        'recipients' => null,
+        'send_copy_to_me' => null,
+        'subject' => null,
+        'body' => null,
+        'append_agenda_button' => null,
+        'files' => null
     ];
 
     /**
@@ -106,10 +112,13 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'accounting_perdiod_id' => 'accountingPerdiodId',
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'show_empty_accounts' => 'showEmptyAccounts'
+        'event_ids' => 'eventIds',
+        'recipients' => 'recipients',
+        'send_copy_to_me' => 'sendCopyToMe',
+        'subject' => 'subject',
+        'body' => 'body',
+        'append_agenda_button' => 'appendAgendaButton',
+        'files' => 'files'
     ];
 
     /**
@@ -118,10 +127,13 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'accounting_perdiod_id' => 'setAccountingPerdiodId',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'show_empty_accounts' => 'setShowEmptyAccounts'
+        'event_ids' => 'setEventIds',
+        'recipients' => 'setRecipients',
+        'send_copy_to_me' => 'setSendCopyToMe',
+        'subject' => 'setSubject',
+        'body' => 'setBody',
+        'append_agenda_button' => 'setAppendAgendaButton',
+        'files' => 'setFiles'
     ];
 
     /**
@@ -130,10 +142,13 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'accounting_perdiod_id' => 'getAccountingPerdiodId',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'show_empty_accounts' => 'getShowEmptyAccounts'
+        'event_ids' => 'getEventIds',
+        'recipients' => 'getRecipients',
+        'send_copy_to_me' => 'getSendCopyToMe',
+        'subject' => 'getSubject',
+        'body' => 'getBody',
+        'append_agenda_button' => 'getAppendAgendaButton',
+        'files' => 'getFiles'
     ];
 
     /**
@@ -193,10 +208,13 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['accounting_perdiod_id'] = $data['accounting_perdiod_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['show_empty_accounts'] = $data['show_empty_accounts'] ?? true;
+        $this->container['event_ids'] = $data['event_ids'] ?? null;
+        $this->container['recipients'] = $data['recipients'] ?? null;
+        $this->container['send_copy_to_me'] = $data['send_copy_to_me'] ?? false;
+        $this->container['subject'] = $data['subject'] ?? null;
+        $this->container['body'] = $data['body'] ?? null;
+        $this->container['append_agenda_button'] = $data['append_agenda_button'] ?? null;
+        $this->container['files'] = $data['files'] ?? null;
     }
 
     /**
@@ -208,14 +226,23 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['accounting_perdiod_id'] === null) {
-            $invalidProperties[] = "'accounting_perdiod_id' can't be null";
+        if ($this->container['event_ids'] === null) {
+            $invalidProperties[] = "'event_ids' can't be null";
         }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
+        if ($this->container['recipients'] === null) {
+            $invalidProperties[] = "'recipients' can't be null";
         }
-        if ($this->container['end_date'] === null) {
-            $invalidProperties[] = "'end_date' can't be null";
+        if ($this->container['subject'] === null) {
+            $invalidProperties[] = "'subject' can't be null";
+        }
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
+        if ($this->container['append_agenda_button'] === null) {
+            $invalidProperties[] = "'append_agenda_button' can't be null";
+        }
+        if ($this->container['files'] === null) {
+            $invalidProperties[] = "'files' can't be null";
         }
         return $invalidProperties;
     }
@@ -233,97 +260,169 @@ class InlineObject54 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets accounting_perdiod_id
+     * Gets event_ids
      *
-     * @return float
+     * @return int[]
      */
-    public function getAccountingPerdiodId()
+    public function getEventIds()
     {
-        return $this->container['accounting_perdiod_id'];
+        return $this->container['event_ids'];
     }
 
     /**
-     * Sets accounting_perdiod_id
+     * Sets event_ids
      *
-     * @param float $accounting_perdiod_id ID of Accounting Period
+     * @param int[] $event_ids Array of event IDs. Multiple event IDs MUST be integrated events, i.e. all events share the same agenda.
      *
      * @return self
      */
-    public function setAccountingPerdiodId($accounting_perdiod_id)
+    public function setEventIds($event_ids)
     {
-        $this->container['accounting_perdiod_id'] = $accounting_perdiod_id;
+        $this->container['event_ids'] = $event_ids;
 
         return $this;
     }
 
     /**
-     * Gets start_date
+     * Gets recipients
      *
-     * @return \DateTime
+     * @return int[]
      */
-    public function getStartDate()
+    public function getRecipients()
     {
-        return $this->container['start_date'];
+        return $this->container['recipients'];
     }
 
     /**
-     * Sets start_date
+     * Sets recipients
      *
-     * @param \DateTime $start_date Respect Transactions From This Date On
+     * @param int[] $recipients Array of person IDs.
      *
      * @return self
      */
-    public function setStartDate($start_date)
+    public function setRecipients($recipients)
     {
-        $this->container['start_date'] = $start_date;
+        $this->container['recipients'] = $recipients;
 
         return $this;
     }
 
     /**
-     * Gets end_date
-     *
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime $end_date Respect Transactions Before This Date
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_empty_accounts
+     * Gets send_copy_to_me
      *
      * @return bool|null
      */
-    public function getShowEmptyAccounts()
+    public function getSendCopyToMe()
     {
-        return $this->container['show_empty_accounts'];
+        return $this->container['send_copy_to_me'];
     }
 
     /**
-     * Sets show_empty_accounts
+     * Sets send_copy_to_me
      *
-     * @param bool|null $show_empty_accounts Show Accounts With No Transactions
+     * @param bool|null $send_copy_to_me Flag if a mail should be send to the user sending the request.
      *
      * @return self
      */
-    public function setShowEmptyAccounts($show_empty_accounts)
+    public function setSendCopyToMe($send_copy_to_me)
     {
-        $this->container['show_empty_accounts'] = $show_empty_accounts;
+        $this->container['send_copy_to_me'] = $send_copy_to_me;
+
+        return $this;
+    }
+
+    /**
+     * Gets subject
+     *
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->container['subject'];
+    }
+
+    /**
+     * Sets subject
+     *
+     * @param string $subject E-Mail subject.
+     *
+     * @return self
+     */
+    public function setSubject($subject)
+    {
+        $this->container['subject'] = $subject;
+
+        return $this;
+    }
+
+    /**
+     * Gets body
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->container['body'];
+    }
+
+    /**
+     * Sets body
+     *
+     * @param string $body E-Mail body.
+     *
+     * @return self
+     */
+    public function setBody($body)
+    {
+        $this->container['body'] = $body;
+
+        return $this;
+    }
+
+    /**
+     * Gets append_agenda_button
+     *
+     * @return bool
+     */
+    public function getAppendAgendaButton()
+    {
+        return $this->container['append_agenda_button'];
+    }
+
+    /**
+     * Sets append_agenda_button
+     *
+     * @param bool $append_agenda_button If an agenda exists for the event, a button with a link to that agenda is added to the mail body.
+     *
+     * @return self
+     */
+    public function setAppendAgendaButton($append_agenda_button)
+    {
+        $this->container['append_agenda_button'] = $append_agenda_button;
+
+        return $this;
+    }
+
+    /**
+     * Gets files
+     *
+     * @return int[]
+     */
+    public function getFiles()
+    {
+        return $this->container['files'];
+    }
+
+    /**
+     * Sets files
+     *
+     * @param int[] $files List of file Ids. If the file is attached to the event it is added to the mail body.
+     *
+     * @return self
+     */
+    public function setFiles($files)
+    {
+        $this->container['files'] = $files;
 
         return $this;
     }

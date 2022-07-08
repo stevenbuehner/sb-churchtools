@@ -4,18 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**roles** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20041Data[]**](InlineResponse20041Data.md) |  | [optional]
-**age_groups** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataAgeGroups[]**](InlineResponse20043DataAgeGroups.md) |  | [optional]
-**target_groups** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataTargetGroups[]**](InlineResponse20043DataTargetGroups.md) |  | [optional]
-**group_types** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataGroupTypes[]**](InlineResponse20043DataGroupTypes.md) |  | [optional]
-**group_categories** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataGroupCategories[]**](InlineResponse20043DataGroupCategories.md) |  | [optional]
-**group_statuses** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataGroupStatuses[]**](InlineResponse20043DataGroupStatuses.md) |  | [optional]
-**departments** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20029Data[]**](InlineResponse20029Data.md) |  | [optional]
-**statuses** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2005Data[]**](InlineResponse2005Data.md) |  | [optional]
-**campuses** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Data[]**](InlineResponse2002Data.md) |  | [optional]
-**contact_labels** | [**\StevenBuehner\ChurchTools\Model\ContactLabel[]**](ContactLabel.md) |  | [optional]
-**grow_paths** | [**\StevenBuehner\ChurchTools\Model\GrowPath[]**](GrowPath.md) |  | [optional]
-**follow_ups** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUps[]**](InlineResponse20043DataFollowUps.md) |  | [optional]
-**follow_up_intervals** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20043DataFollowUpIntervals[]**](InlineResponse20043DataFollowUpIntervals.md) |  | [optional]
+**id** | **int** | ID of this group type role. | [optional]
+**group_type_id** | **int** | ID of corresponding group type. | [optional]
+**name** | **string** | Name of role. | [optional]
+**name_translated** | **string** | Trasnlated name of role. | [optional]
+**shorty** | **string** | Abbreviation of the name. | [optional]
+**sort_key** | **int** | Number used for sorting roles. | [optional]
+**to_delete** | **bool** | Flag, if members of this role can be deleted or removed from the group. | [optional]
+**has_requested** | **bool** | Flag, if group member is requesting group access. | [optional]
+**is_leader** | **bool** | Flag, this role is a leader. | [optional]
+**is_default** | **bool** | Indicator of default roles. | [optional]
+**is_hidden** | **bool** | Flag, if this role is hidden in groups. | [optional]
+**grow_path_id** | **int** | ID of the grow path. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

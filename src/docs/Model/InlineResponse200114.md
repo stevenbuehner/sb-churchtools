@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**notice** | **string** |  |
 **data** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200114Data[]**](InlineResponse200114Data.md) |  |
 **meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200114Meta**](InlineResponse200114Meta.md) |  |
 

@@ -59,10 +59,7 @@ class InlineResponse20024Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject',
-        'group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
-        'group_meeting' => '\StevenBuehner\ChurchTools\Model\InlineResponse20021Data',
-        'total_checked_in' => 'int'
+        'url' => 'string'
     ];
 
     /**
@@ -73,10 +70,7 @@ class InlineResponse20024Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person' => null,
-        'group' => null,
-        'group_meeting' => null,
-        'total_checked_in' => null
+        'url' => null
     ];
 
     /**
@@ -106,10 +100,7 @@ class InlineResponse20024Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'person' => 'person',
-        'group' => 'group',
-        'group_meeting' => 'groupMeeting',
-        'total_checked_in' => 'totalCheckedIn'
+        'url' => 'url'
     ];
 
     /**
@@ -118,10 +109,7 @@ class InlineResponse20024Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'person' => 'setPerson',
-        'group' => 'setGroup',
-        'group_meeting' => 'setGroupMeeting',
-        'total_checked_in' => 'setTotalCheckedIn'
+        'url' => 'setUrl'
     ];
 
     /**
@@ -130,10 +118,7 @@ class InlineResponse20024Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'person' => 'getPerson',
-        'group' => 'getGroup',
-        'group_meeting' => 'getGroupMeeting',
-        'total_checked_in' => 'getTotalCheckedIn'
+        'url' => 'getUrl'
     ];
 
     /**
@@ -193,10 +178,7 @@ class InlineResponse20024Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['person'] = $data['person'] ?? null;
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['group_meeting'] = $data['group_meeting'] ?? null;
-        $this->container['total_checked_in'] = $data['total_checked_in'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
     }
 
     /**
@@ -224,97 +206,25 @@ class InlineResponse20024Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets person
+     * Gets url
      *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject|null
+     * @return string|null
      */
-    public function getPerson()
+    public function getUrl()
     {
-        return $this->container['person'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets person
+     * Sets url
      *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject|null $person person
+     * @param string|null $url download URL for the created QR code PDF
      *
      * @return self
      */
-    public function setPerson($person)
+    public function setUrl($url)
     {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_meeting
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20021Data|null
-     */
-    public function getGroupMeeting()
-    {
-        return $this->container['group_meeting'];
-    }
-
-    /**
-     * Sets group_meeting
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20021Data|null $group_meeting group_meeting
-     *
-     * @return self
-     */
-    public function setGroupMeeting($group_meeting)
-    {
-        $this->container['group_meeting'] = $group_meeting;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_checked_in
-     *
-     * @return int|null
-     */
-    public function getTotalCheckedIn()
-    {
-        return $this->container['total_checked_in'];
-    }
-
-    /**
-     * Sets total_checked_in
-     *
-     * @param int|null $total_checked_in total_checked_in
-     *
-     * @return self
-     */
-    public function setTotalCheckedIn($total_checked_in)
-    {
-        $this->container['total_checked_in'] = $total_checked_in;
+        $this->container['url'] = $url;
 
         return $this;
     }

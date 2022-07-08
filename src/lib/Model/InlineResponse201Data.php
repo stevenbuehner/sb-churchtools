@@ -60,7 +60,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
         'guid' => 'string',
         'profile_type' => 'string',
         'name' => 'string',
@@ -77,19 +77,19 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         'email' => 'string',
         'phone' => 'string',
         'denomination' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Denomination',
-        'address' => '\StevenBuehner\ChurchTools\Model\InlineResponse201DataAddress',
+        'address' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Address',
         'groups' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Groups[]',
         'logo' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
         'banner' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo',
         'social_media' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002SocialMedia',
-        'tags' => 'string[]',
+        'tags' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Tags[]',
         'services' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Services[]',
-        'visitors' => 'float',
+        'visitors' => 'int',
         'service_banner' => 'string',
         'sign_up_group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
         'gallery' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo[]',
         'team_title' => 'string',
-        'team' => '\StevenBuehner\ChurchTools\Model\InlineResponse201DataTeam[]',
+        'team' => '\StevenBuehner\ChurchTools\Model\InlineResponse2002Team[]',
         'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
     ];
 
@@ -429,8 +429,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['short_name'] === null) {
             $invalidProperties[] = "'short_name' can't be null";
         }
-        if ((mb_strlen($this->container['short_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'short_name', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['short_name']) < 0)) {
+            $invalidProperties[] = "invalid value for 'short_name', the character length must be bigger than or equal to 0.";
         }
 
         if ($this->container['shorty'] === null) {
@@ -463,8 +463,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['description'] === null) {
             $invalidProperties[] = "'description' can't be null";
         }
-        if ((mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['description']) < 0)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 0.";
         }
 
         if ($this->container['website'] === null) {
@@ -497,8 +497,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['groups'] === null) {
             $invalidProperties[] = "'groups' can't be null";
         }
-        if ((count($this->container['groups']) < 1)) {
-            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 1.";
+        if ((count($this->container['groups']) < 0)) {
+            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 0.";
         }
 
         if ($this->container['logo'] === null) {
@@ -516,8 +516,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['services'] === null) {
             $invalidProperties[] = "'services' can't be null";
         }
-        if ((count($this->container['services']) < 1)) {
-            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 1.";
+        if ((count($this->container['services']) < 0)) {
+            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 0.";
         }
 
         if ($this->container['visitors'] === null) {
@@ -533,8 +533,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['gallery'] === null) {
             $invalidProperties[] = "'gallery' can't be null";
         }
-        if ((count($this->container['gallery']) < 1)) {
-            $invalidProperties[] = "invalid value for 'gallery', number of items must be greater than or equal to 1.";
+        if ((count($this->container['gallery']) < 0)) {
+            $invalidProperties[] = "invalid value for 'gallery', number of items must be greater than or equal to 0.";
         }
 
         if ($this->container['team_title'] === null) {
@@ -547,8 +547,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['team'] === null) {
             $invalidProperties[] = "'team' can't be null";
         }
-        if ((count($this->container['team']) < 1)) {
-            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 1.";
+        if ((count($this->container['team']) < 0)) {
+            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 0.";
         }
 
         if ($this->container['meta'] === null) {
@@ -572,7 +572,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -582,7 +582,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */
@@ -739,8 +739,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setShortName($short_name)
     {
 
-        if ((mb_strlen($short_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $short_name when calling InlineResponse201Data., must be bigger than or equal to 1.');
+        if ((mb_strlen($short_name) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $short_name when calling InlineResponse201Data., must be bigger than or equal to 0.');
         }
 
         $this->container['short_name'] = $short_name;
@@ -903,8 +903,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setDescription($description)
     {
 
-        if ((mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling InlineResponse201Data., must be bigger than or equal to 1.');
+        if ((mb_strlen($description) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling InlineResponse201Data., must be bigger than or equal to 0.');
         }
 
         $this->container['description'] = $description;
@@ -1050,7 +1050,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets address
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse201DataAddress
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Address
      */
     public function getAddress()
     {
@@ -1060,7 +1060,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets address
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse201DataAddress $address address
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Address $address address
      *
      * @return self
      */
@@ -1092,8 +1092,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     {
 
 
-        if ((count($groups) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $groups when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
+        if ((count($groups) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $groups when calling InlineResponse201Data., number of items must be greater than or equal to 0.');
         }
         $this->container['groups'] = $groups;
 
@@ -1175,7 +1175,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets tags
      *
-     * @return string[]
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Tags[]
      */
     public function getTags()
     {
@@ -1185,7 +1185,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets tags
      *
-     * @param string[] $tags tags
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Tags[] $tags tags
      *
      * @return self
      */
@@ -1217,8 +1217,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     {
 
 
-        if ((count($services) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $services when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
+        if ((count($services) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $services when calling InlineResponse201Data., number of items must be greater than or equal to 0.');
         }
         $this->container['services'] = $services;
 
@@ -1228,7 +1228,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets visitors
      *
-     * @return float
+     * @return int
      */
     public function getVisitors()
     {
@@ -1238,7 +1238,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets visitors
      *
-     * @param float $visitors visitors
+     * @param int $visitors visitors
      *
      * @return self
      */
@@ -1323,8 +1323,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     {
 
 
-        if ((count($gallery) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $gallery when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
+        if ((count($gallery) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $gallery when calling InlineResponse201Data., number of items must be greater than or equal to 0.');
         }
         $this->container['gallery'] = $gallery;
 
@@ -1363,7 +1363,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets team
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse201DataTeam[]
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse2002Team[]
      */
     public function getTeam()
     {
@@ -1373,7 +1373,7 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets team
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse201DataTeam[] $team team
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse2002Team[] $team team
      *
      * @return self
      */
@@ -1381,8 +1381,8 @@ class InlineResponse201Data implements ModelInterface, ArrayAccess, \JsonSeriali
     {
 
 
-        if ((count($team) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $team when calling InlineResponse201Data., number of items must be greater than or equal to 1.');
+        if ((count($team) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $team when calling InlineResponse201Data., number of items must be greater than or equal to 0.');
         }
         $this->container['team'] = $team;
 

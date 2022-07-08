@@ -60,7 +60,7 @@ class Agenda1StartTimes implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'event_id' => 'mixed'
+        'event_id' => '\DateTime'
     ];
 
     /**
@@ -209,7 +209,7 @@ class Agenda1StartTimes implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets event_id
      *
-     * @return mixed|null
+     * @return \DateTime|null
      */
     public function getEventId()
     {
@@ -219,7 +219,7 @@ class Agenda1StartTimes implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets event_id
      *
-     * @param mixed|null $event_id event_id
+     * @param \DateTime|null $event_id event_id
      *
      * @return self
      */

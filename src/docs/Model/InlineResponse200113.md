@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**notice** | **string** |  |
-**data** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200113Data[]**](InlineResponse200113Data.md) |  |
-**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200113Meta**](InlineResponse200113Meta.md) |  |
+**data** | [**\StevenBuehner\ChurchTools\Model\Job1[]**](Job1.md) |  | [optional]
+**meta** | [**\StevenBuehner\ChurchTools\Model\Meta**](Meta.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

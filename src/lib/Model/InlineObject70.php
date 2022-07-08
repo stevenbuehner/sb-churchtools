@@ -59,12 +59,7 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'can_read_chat' => 'bool',
-        'can_write_chat' => 'bool',
-        'grow_path_id' => 'float',
-        'force_two_factor_auth' => 'bool',
-        'receive_qr_code' => 'bool',
-        'is_active' => 'bool'
+        'score' => 'float'
     ];
 
     /**
@@ -75,12 +70,7 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'can_read_chat' => null,
-        'can_write_chat' => null,
-        'grow_path_id' => null,
-        'force_two_factor_auth' => null,
-        'receive_qr_code' => null,
-        'is_active' => null
+        'score' => null
     ];
 
     /**
@@ -110,12 +100,7 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'can_read_chat' => 'canReadChat',
-        'can_write_chat' => 'canWriteChat',
-        'grow_path_id' => 'growPathId',
-        'force_two_factor_auth' => 'forceTwoFactorAuth',
-        'receive_qr_code' => 'receiveQRCode',
-        'is_active' => 'isActive'
+        'score' => 'score'
     ];
 
     /**
@@ -124,12 +109,7 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'can_read_chat' => 'setCanReadChat',
-        'can_write_chat' => 'setCanWriteChat',
-        'grow_path_id' => 'setGrowPathId',
-        'force_two_factor_auth' => 'setForceTwoFactorAuth',
-        'receive_qr_code' => 'setReceiveQrCode',
-        'is_active' => 'setIsActive'
+        'score' => 'setScore'
     ];
 
     /**
@@ -138,12 +118,7 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'can_read_chat' => 'getCanReadChat',
-        'can_write_chat' => 'getCanWriteChat',
-        'grow_path_id' => 'getGrowPathId',
-        'force_two_factor_auth' => 'getForceTwoFactorAuth',
-        'receive_qr_code' => 'getReceiveQrCode',
-        'is_active' => 'getIsActive'
+        'score' => 'getScore'
     ];
 
     /**
@@ -203,12 +178,7 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['can_read_chat'] = $data['can_read_chat'] ?? null;
-        $this->container['can_write_chat'] = $data['can_write_chat'] ?? null;
-        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
-        $this->container['force_two_factor_auth'] = $data['force_two_factor_auth'] ?? null;
-        $this->container['receive_qr_code'] = $data['receive_qr_code'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
+        $this->container['score'] = $data['score'] ?? null;
     }
 
     /**
@@ -220,6 +190,9 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['score'] === null) {
+            $invalidProperties[] = "'score' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -236,145 +209,25 @@ class InlineObject70 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets can_read_chat
+     * Gets score
      *
-     * @return bool|null
+     * @return float
      */
-    public function getCanReadChat()
+    public function getScore()
     {
-        return $this->container['can_read_chat'];
+        return $this->container['score'];
     }
 
     /**
-     * Sets can_read_chat
+     * Sets score
      *
-     * @param bool|null $can_read_chat can_read_chat
+     * @param float $score score
      *
      * @return self
      */
-    public function setCanReadChat($can_read_chat)
+    public function setScore($score)
     {
-        $this->container['can_read_chat'] = $can_read_chat;
-
-        return $this;
-    }
-
-    /**
-     * Gets can_write_chat
-     *
-     * @return bool|null
-     */
-    public function getCanWriteChat()
-    {
-        return $this->container['can_write_chat'];
-    }
-
-    /**
-     * Sets can_write_chat
-     *
-     * @param bool|null $can_write_chat can_write_chat
-     *
-     * @return self
-     */
-    public function setCanWriteChat($can_write_chat)
-    {
-        $this->container['can_write_chat'] = $can_write_chat;
-
-        return $this;
-    }
-
-    /**
-     * Gets grow_path_id
-     *
-     * @return float|null
-     */
-    public function getGrowPathId()
-    {
-        return $this->container['grow_path_id'];
-    }
-
-    /**
-     * Sets grow_path_id
-     *
-     * @param float|null $grow_path_id grow_path_id
-     *
-     * @return self
-     */
-    public function setGrowPathId($grow_path_id)
-    {
-        $this->container['grow_path_id'] = $grow_path_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets force_two_factor_auth
-     *
-     * @return bool|null
-     */
-    public function getForceTwoFactorAuth()
-    {
-        return $this->container['force_two_factor_auth'];
-    }
-
-    /**
-     * Sets force_two_factor_auth
-     *
-     * @param bool|null $force_two_factor_auth force_two_factor_auth
-     *
-     * @return self
-     */
-    public function setForceTwoFactorAuth($force_two_factor_auth)
-    {
-        $this->container['force_two_factor_auth'] = $force_two_factor_auth;
-
-        return $this;
-    }
-
-    /**
-     * Gets receive_qr_code
-     *
-     * @return bool|null
-     */
-    public function getReceiveQrCode()
-    {
-        return $this->container['receive_qr_code'];
-    }
-
-    /**
-     * Sets receive_qr_code
-     *
-     * @param bool|null $receive_qr_code receive_qr_code
-     *
-     * @return self
-     */
-    public function setReceiveQrCode($receive_qr_code)
-    {
-        $this->container['receive_qr_code'] = $receive_qr_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_active
-     *
-     * @return bool|null
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool|null $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
+        $this->container['score'] = $score;
 
         return $this;
     }

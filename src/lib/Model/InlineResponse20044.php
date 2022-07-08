@@ -59,8 +59,7 @@ class InlineResponse20044 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044Data',
-        'count' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044Count'
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20044Data'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineResponse20044 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'count' => null
+        'data' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class InlineResponse20044 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'count' => 'count'
+        'data' => 'data'
     ];
 
     /**
@@ -112,8 +109,7 @@ class InlineResponse20044 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'count' => 'setCount'
+        'data' => 'setData'
     ];
 
     /**
@@ -122,8 +118,7 @@ class InlineResponse20044 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'count' => 'getCount'
+        'data' => 'getData'
     ];
 
     /**
@@ -184,7 +179,6 @@ class InlineResponse20044 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['data'] = $data['data'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
     }
 
     /**
@@ -231,30 +225,6 @@ class InlineResponse20044 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setData($data)
     {
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20044Count|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20044Count|null $count count
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
 
         return $this;
     }

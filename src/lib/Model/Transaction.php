@@ -71,11 +71,11 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator' => '\StevenBuehner\ChurchTools\Model\InlineResponse20018Person',
         'donator_spouse' => '\StevenBuehner\ChurchTools\Model\InlineResponse20018Person',
         'split_transaction_id' => 'int',
-        'tax_rate_id' => 'int',
-        'tax_amount' => 'float',
+        'tax_rate_id' => 'float',
+        'tax_transaction_id' => 'float',
         'cash_discount_id' => 'int',
         'cash_discount_amount' => 'float',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20066Permissions',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\InlineResponse20067Permissions',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -99,8 +99,8 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator' => null,
         'donator_spouse' => null,
         'split_transaction_id' => null,
-        'tax_rate_id' => null,
-        'tax_amount' => 'integer',
+        'tax_rate_id' => 'integer',
+        'tax_transaction_id' => 'integer',
         'cash_discount_id' => null,
         'cash_discount_amount' => 'integer',
         'permissions' => null,
@@ -147,7 +147,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator_spouse' => 'donatorSpouse',
         'split_transaction_id' => 'splitTransactionId',
         'tax_rate_id' => 'taxRateId',
-        'tax_amount' => 'taxAmount',
+        'tax_transaction_id' => 'taxTransactionId',
         'cash_discount_id' => 'cashDiscountId',
         'cash_discount_amount' => 'cashDiscountAmount',
         'permissions' => 'permissions',
@@ -173,7 +173,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator_spouse' => 'setDonatorSpouse',
         'split_transaction_id' => 'setSplitTransactionId',
         'tax_rate_id' => 'setTaxRateId',
-        'tax_amount' => 'setTaxAmount',
+        'tax_transaction_id' => 'setTaxTransactionId',
         'cash_discount_id' => 'setCashDiscountId',
         'cash_discount_amount' => 'setCashDiscountAmount',
         'permissions' => 'setPermissions',
@@ -199,7 +199,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'donator_spouse' => 'getDonatorSpouse',
         'split_transaction_id' => 'getSplitTransactionId',
         'tax_rate_id' => 'getTaxRateId',
-        'tax_amount' => 'getTaxAmount',
+        'tax_transaction_id' => 'getTaxTransactionId',
         'cash_discount_id' => 'getCashDiscountId',
         'cash_discount_amount' => 'getCashDiscountAmount',
         'permissions' => 'getPermissions',
@@ -276,7 +276,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['donator_spouse'] = $data['donator_spouse'] ?? null;
         $this->container['split_transaction_id'] = $data['split_transaction_id'] ?? null;
         $this->container['tax_rate_id'] = $data['tax_rate_id'] ?? null;
-        $this->container['tax_amount'] = $data['tax_amount'] ?? null;
+        $this->container['tax_transaction_id'] = $data['tax_transaction_id'] ?? null;
         $this->container['cash_discount_id'] = $data['cash_discount_id'] ?? null;
         $this->container['cash_discount_amount'] = $data['cash_discount_amount'] ?? null;
         $this->container['permissions'] = $data['permissions'] ?? null;
@@ -598,7 +598,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_rate_id
      *
-     * @return int|null
+     * @return float|null
      */
     public function getTaxRateId()
     {
@@ -608,7 +608,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_rate_id
      *
-     * @param int|null $tax_rate_id tax_rate_id
+     * @param float|null $tax_rate_id If a tax rate is set for the transaction, the corresponding tax transaction is returned in the field taxTransactionId.
      *
      * @return self
      */
@@ -620,25 +620,25 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets tax_amount
+     * Gets tax_transaction_id
      *
      * @return float|null
      */
-    public function getTaxAmount()
+    public function getTaxTransactionId()
     {
-        return $this->container['tax_amount'];
+        return $this->container['tax_transaction_id'];
     }
 
     /**
-     * Sets tax_amount
+     * Sets tax_transaction_id
      *
-     * @param float|null $tax_amount Value is in cent.
+     * @param float|null $tax_transaction_id Reference to the transaction which is a split booking for taxes.
      *
      * @return self
      */
-    public function setTaxAmount($tax_amount)
+    public function setTaxTransactionId($tax_transaction_id)
     {
-        $this->container['tax_amount'] = $tax_amount;
+        $this->container['tax_transaction_id'] = $tax_transaction_id;
 
         return $this;
     }
@@ -694,7 +694,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets permissions
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20066Permissions|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20067Permissions|null
      */
     public function getPermissions()
     {
@@ -704,7 +704,7 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets permissions
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20066Permissions|null $permissions permissions
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20067Permissions|null $permissions permissions
      *
      * @return self
      */

@@ -59,11 +59,10 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'name' => 'string',
-        'modified_at' => 'string',
-        'modified_by' => 'float',
-        'count' => 'int'
+        'type' => 'string',
+        'date' => 'string',
+        'age' => 'float',
+        'person' => '\StevenBuehner\ChurchTools\Model\InlineResponse200118Person'
     ];
 
     /**
@@ -74,11 +73,10 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'modified_at' => null,
-        'modified_by' => null,
-        'count' => null
+        'type' => null,
+        'date' => null,
+        'age' => null,
+        'person' => null
     ];
 
     /**
@@ -108,11 +106,10 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'modified_at' => 'modifiedAt',
-        'modified_by' => 'modifiedBy',
-        'count' => 'count'
+        'type' => 'type',
+        'date' => 'date',
+        'age' => 'age',
+        'person' => 'person'
     ];
 
     /**
@@ -121,11 +118,10 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'modified_at' => 'setModifiedAt',
-        'modified_by' => 'setModifiedBy',
-        'count' => 'setCount'
+        'type' => 'setType',
+        'date' => 'setDate',
+        'age' => 'setAge',
+        'person' => 'setPerson'
     ];
 
     /**
@@ -134,11 +130,10 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'modified_at' => 'getModifiedAt',
-        'modified_by' => 'getModifiedBy',
-        'count' => 'getCount'
+        'type' => 'getType',
+        'date' => 'getDate',
+        'age' => 'getAge',
+        'person' => 'getPerson'
     ];
 
     /**
@@ -198,11 +193,10 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['modified_at'] = $data['modified_at'] ?? null;
-        $this->container['modified_by'] = $data['modified_by'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['age'] = $data['age'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
     }
 
     /**
@@ -214,6 +208,23 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        if ((mb_strlen($this->container['type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
+        if ((mb_strlen($this->container['date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'date', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['age'] === null) {
+            $invalidProperties[] = "'age' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -230,121 +241,107 @@ class InlineResponse200118Data implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets id
+     * Gets type
      *
-     * @return float|null
+     * @return string
      */
-    public function getId()
+    public function getType()
     {
-        return $this->container['id'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets id
+     * Sets type
      *
-     * @param float|null $id id
+     * @param string $type Type of Date
      *
      * @return self
      */
-    public function setId($id)
+    public function setType($type)
     {
-        $this->container['id'] = $id;
+
+        if ((mb_strlen($type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $type when calling InlineResponse200118Data., must be bigger than or equal to 1.');
+        }
+
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets date
      *
-     * @return string|null
+     * @return string
      */
-    public function getName()
+    public function getDate()
     {
-        return $this->container['name'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets name
+     * Sets date
      *
-     * @param string|null $name name
+     * @param string $date Actually birthday
      *
      * @return self
      */
-    public function setName($name)
+    public function setDate($date)
     {
-        $this->container['name'] = $name;
+
+        if ((mb_strlen($date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $date when calling InlineResponse200118Data., must be bigger than or equal to 1.');
+        }
+
+        $this->container['date'] = $date;
 
         return $this;
     }
 
     /**
-     * Gets modified_at
+     * Gets age
      *
-     * @return string|null
+     * @return float
      */
-    public function getModifiedAt()
+    public function getAge()
     {
-        return $this->container['modified_at'];
+        return $this->container['age'];
     }
 
     /**
-     * Sets modified_at
+     * Sets age
      *
-     * @param string|null $modified_at modified_at
+     * @param float $age Calculated age. (see note to that endpoint)
      *
      * @return self
      */
-    public function setModifiedAt($modified_at)
+    public function setAge($age)
     {
-        $this->container['modified_at'] = $modified_at;
+        $this->container['age'] = $age;
 
         return $this;
     }
 
     /**
-     * Gets modified_by
+     * Gets person
      *
-     * @return float|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200118Person|null
      */
-    public function getModifiedBy()
+    public function getPerson()
     {
-        return $this->container['modified_by'];
+        return $this->container['person'];
     }
 
     /**
-     * Sets modified_by
+     * Sets person
      *
-     * @param float|null $modified_by modified_by
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200118Person|null $person person
      *
      * @return self
      */
-    public function setModifiedBy($modified_by)
+    public function setPerson($person)
     {
-        $this->container['modified_by'] = $modified_by;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int|null $count count
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
+        $this->container['person'] = $person;
 
         return $this;
     }

@@ -59,11 +59,7 @@ class InlineResponse20038 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'translated_message' => 'string',
-        'message_key' => 'string',
-        'args' => '\StevenBuehner\ChurchTools\Model\InlineResponse20038Args',
-        'errors' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\Agenda1'
     ];
 
     /**
@@ -74,11 +70,7 @@ class InlineResponse20038 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'translated_message' => null,
-        'message_key' => null,
-        'args' => null,
-        'errors' => null
+        'data' => null
     ];
 
     /**
@@ -108,11 +100,7 @@ class InlineResponse20038 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'translated_message' => 'translatedMessage',
-        'message_key' => 'messageKey',
-        'args' => 'args',
-        'errors' => 'errors'
+        'data' => 'data'
     ];
 
     /**
@@ -121,11 +109,7 @@ class InlineResponse20038 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'translated_message' => 'setTranslatedMessage',
-        'message_key' => 'setMessageKey',
-        'args' => 'setArgs',
-        'errors' => 'setErrors'
+        'data' => 'setData'
     ];
 
     /**
@@ -134,11 +118,7 @@ class InlineResponse20038 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'translated_message' => 'getTranslatedMessage',
-        'message_key' => 'getMessageKey',
-        'args' => 'getArgs',
-        'errors' => 'getErrors'
+        'data' => 'getData'
     ];
 
     /**
@@ -198,11 +178,7 @@ class InlineResponse20038 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['translated_message'] = $data['translated_message'] ?? null;
-        $this->container['message_key'] = $data['message_key'] ?? null;
-        $this->container['args'] = $data['args'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -230,121 +206,25 @@ class InlineResponse20038 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets message
+     * Gets data
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\Agenda1|null
      */
-    public function getMessage()
+    public function getData()
     {
-        return $this->container['message'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets message
+     * Sets data
      *
-     * @param string|null $message message
+     * @param \StevenBuehner\ChurchTools\Model\Agenda1|null $data data
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setData($data)
     {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets translated_message
-     *
-     * @return string|null
-     */
-    public function getTranslatedMessage()
-    {
-        return $this->container['translated_message'];
-    }
-
-    /**
-     * Sets translated_message
-     *
-     * @param string|null $translated_message translated_message
-     *
-     * @return self
-     */
-    public function setTranslatedMessage($translated_message)
-    {
-        $this->container['translated_message'] = $translated_message;
-
-        return $this;
-    }
-
-    /**
-     * Gets message_key
-     *
-     * @return string|null
-     */
-    public function getMessageKey()
-    {
-        return $this->container['message_key'];
-    }
-
-    /**
-     * Sets message_key
-     *
-     * @param string|null $message_key message_key
-     *
-     * @return self
-     */
-    public function setMessageKey($message_key)
-    {
-        $this->container['message_key'] = $message_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets args
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20038Args|null
-     */
-    public function getArgs()
-    {
-        return $this->container['args'];
-    }
-
-    /**
-     * Sets args
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20038Args|null $args args
-     *
-     * @return self
-     */
-    public function setArgs($args)
-    {
-        $this->container['args'] = $args;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null $errors Array of DomainObjects with people, who have no eMail Addresses.
-     *
-     * @return self
-     */
-    public function setErrors($errors)
-    {
-        $this->container['errors'] = $errors;
+        $this->container['data'] = $data;
 
         return $this;
     }

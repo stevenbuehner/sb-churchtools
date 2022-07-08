@@ -59,12 +59,12 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'role_id' => 'float',
-        'is_for_waitinglist' => 'bool',
-        'is_active' => 'float',
-        'sender_id' => 'float',
-        'subject' => 'string',
-        'body' => 'string'
+        'can_read_chat' => 'bool',
+        'can_write_chat' => 'bool',
+        'grow_path_id' => 'float',
+        'force_two_factor_auth' => 'bool',
+        'receive_qr_code' => 'bool',
+        'is_active' => 'bool'
     ];
 
     /**
@@ -75,12 +75,12 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'role_id' => null,
-        'is_for_waitinglist' => null,
-        'is_active' => null,
-        'sender_id' => null,
-        'subject' => null,
-        'body' => null
+        'can_read_chat' => null,
+        'can_write_chat' => null,
+        'grow_path_id' => null,
+        'force_two_factor_auth' => null,
+        'receive_qr_code' => null,
+        'is_active' => null
     ];
 
     /**
@@ -110,12 +110,12 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'role_id' => 'roleId',
-        'is_for_waitinglist' => 'isForWaitinglist',
-        'is_active' => 'isActive',
-        'sender_id' => 'senderId',
-        'subject' => 'subject',
-        'body' => 'body'
+        'can_read_chat' => 'canReadChat',
+        'can_write_chat' => 'canWriteChat',
+        'grow_path_id' => 'growPathId',
+        'force_two_factor_auth' => 'forceTwoFactorAuth',
+        'receive_qr_code' => 'receiveQRCode',
+        'is_active' => 'isActive'
     ];
 
     /**
@@ -124,12 +124,12 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'role_id' => 'setRoleId',
-        'is_for_waitinglist' => 'setIsForWaitinglist',
-        'is_active' => 'setIsActive',
-        'sender_id' => 'setSenderId',
-        'subject' => 'setSubject',
-        'body' => 'setBody'
+        'can_read_chat' => 'setCanReadChat',
+        'can_write_chat' => 'setCanWriteChat',
+        'grow_path_id' => 'setGrowPathId',
+        'force_two_factor_auth' => 'setForceTwoFactorAuth',
+        'receive_qr_code' => 'setReceiveQrCode',
+        'is_active' => 'setIsActive'
     ];
 
     /**
@@ -138,12 +138,12 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'role_id' => 'getRoleId',
-        'is_for_waitinglist' => 'getIsForWaitinglist',
-        'is_active' => 'getIsActive',
-        'sender_id' => 'getSenderId',
-        'subject' => 'getSubject',
-        'body' => 'getBody'
+        'can_read_chat' => 'getCanReadChat',
+        'can_write_chat' => 'getCanWriteChat',
+        'grow_path_id' => 'getGrowPathId',
+        'force_two_factor_auth' => 'getForceTwoFactorAuth',
+        'receive_qr_code' => 'getReceiveQrCode',
+        'is_active' => 'getIsActive'
     ];
 
     /**
@@ -203,12 +203,12 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['role_id'] = $data['role_id'] ?? null;
-        $this->container['is_for_waitinglist'] = $data['is_for_waitinglist'] ?? null;
+        $this->container['can_read_chat'] = $data['can_read_chat'] ?? null;
+        $this->container['can_write_chat'] = $data['can_write_chat'] ?? null;
+        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
+        $this->container['force_two_factor_auth'] = $data['force_two_factor_auth'] ?? null;
+        $this->container['receive_qr_code'] = $data['receive_qr_code'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
-        $this->container['sender_id'] = $data['sender_id'] ?? null;
-        $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['body'] = $data['body'] ?? null;
     }
 
     /**
@@ -220,24 +220,6 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['role_id'] === null) {
-            $invalidProperties[] = "'role_id' can't be null";
-        }
-        if ($this->container['is_for_waitinglist'] === null) {
-            $invalidProperties[] = "'is_for_waitinglist' can't be null";
-        }
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
-        if ($this->container['sender_id'] === null) {
-            $invalidProperties[] = "'sender_id' can't be null";
-        }
-        if ($this->container['subject'] === null) {
-            $invalidProperties[] = "'subject' can't be null";
-        }
-        if ($this->container['body'] === null) {
-            $invalidProperties[] = "'body' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -254,49 +236,121 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets role_id
+     * Gets can_read_chat
      *
-     * @return float
+     * @return bool|null
      */
-    public function getRoleId()
+    public function getCanReadChat()
     {
-        return $this->container['role_id'];
+        return $this->container['can_read_chat'];
     }
 
     /**
-     * Sets role_id
+     * Sets can_read_chat
      *
-     * @param float $role_id Grouptype Role Id; Must be a role of the group
+     * @param bool|null $can_read_chat can_read_chat
      *
      * @return self
      */
-    public function setRoleId($role_id)
+    public function setCanReadChat($can_read_chat)
     {
-        $this->container['role_id'] = $role_id;
+        $this->container['can_read_chat'] = $can_read_chat;
 
         return $this;
     }
 
     /**
-     * Gets is_for_waitinglist
+     * Gets can_write_chat
      *
-     * @return bool
+     * @return bool|null
      */
-    public function getIsForWaitinglist()
+    public function getCanWriteChat()
     {
-        return $this->container['is_for_waitinglist'];
+        return $this->container['can_write_chat'];
     }
 
     /**
-     * Sets is_for_waitinglist
+     * Sets can_write_chat
      *
-     * @param bool $is_for_waitinglist Only releveant for roleId = requester roles
+     * @param bool|null $can_write_chat can_write_chat
      *
      * @return self
      */
-    public function setIsForWaitinglist($is_for_waitinglist)
+    public function setCanWriteChat($can_write_chat)
     {
-        $this->container['is_for_waitinglist'] = $is_for_waitinglist;
+        $this->container['can_write_chat'] = $can_write_chat;
+
+        return $this;
+    }
+
+    /**
+     * Gets grow_path_id
+     *
+     * @return float|null
+     */
+    public function getGrowPathId()
+    {
+        return $this->container['grow_path_id'];
+    }
+
+    /**
+     * Sets grow_path_id
+     *
+     * @param float|null $grow_path_id grow_path_id
+     *
+     * @return self
+     */
+    public function setGrowPathId($grow_path_id)
+    {
+        $this->container['grow_path_id'] = $grow_path_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets force_two_factor_auth
+     *
+     * @return bool|null
+     */
+    public function getForceTwoFactorAuth()
+    {
+        return $this->container['force_two_factor_auth'];
+    }
+
+    /**
+     * Sets force_two_factor_auth
+     *
+     * @param bool|null $force_two_factor_auth force_two_factor_auth
+     *
+     * @return self
+     */
+    public function setForceTwoFactorAuth($force_two_factor_auth)
+    {
+        $this->container['force_two_factor_auth'] = $force_two_factor_auth;
+
+        return $this;
+    }
+
+    /**
+     * Gets receive_qr_code
+     *
+     * @return bool|null
+     */
+    public function getReceiveQrCode()
+    {
+        return $this->container['receive_qr_code'];
+    }
+
+    /**
+     * Sets receive_qr_code
+     *
+     * @param bool|null $receive_qr_code receive_qr_code
+     *
+     * @return self
+     */
+    public function setReceiveQrCode($receive_qr_code)
+    {
+        $this->container['receive_qr_code'] = $receive_qr_code;
 
         return $this;
     }
@@ -304,7 +358,7 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_active
      *
-     * @return float
+     * @return bool|null
      */
     public function getIsActive()
     {
@@ -314,85 +368,13 @@ class InlineObject71 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_active
      *
-     * @param float $is_active is_active
+     * @param bool|null $is_active is_active
      *
      * @return self
      */
     public function setIsActive($is_active)
     {
         $this->container['is_active'] = $is_active;
-
-        return $this;
-    }
-
-    /**
-     * Gets sender_id
-     *
-     * @return float
-     */
-    public function getSenderId()
-    {
-        return $this->container['sender_id'];
-    }
-
-    /**
-     * Sets sender_id
-     *
-     * @param float $sender_id PersonId; Must be a leader in that group
-     *
-     * @return self
-     */
-    public function setSenderId($sender_id)
-    {
-        $this->container['sender_id'] = $sender_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string $subject subject
-     *
-     * @return self
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets body
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     *
-     * @param string $body body
-     *
-     * @return self
-     */
-    public function setBody($body)
-    {
-        $this->container['body'] = $body;
 
         return $this;
     }

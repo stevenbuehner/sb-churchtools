@@ -59,8 +59,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'master' => 'object[]',
-        'es' => 'object[]'
+        'property_mappings_master_to_es' => 'object[]',
+        'property_mappings_esto_master' => 'object[]'
     ];
 
     /**
@@ -71,8 +71,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'master' => null,
-        'es' => null
+        'property_mappings_master_to_es' => null,
+        'property_mappings_esto_master' => null
     ];
 
     /**
@@ -102,8 +102,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'master' => 'master',
-        'es' => 'es'
+        'property_mappings_master_to_es' => 'propertyMappingsMasterToES',
+        'property_mappings_esto_master' => 'propertyMappingsESToMaster'
     ];
 
     /**
@@ -112,8 +112,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'master' => 'setMaster',
-        'es' => 'setEs'
+        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs',
+        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster'
     ];
 
     /**
@@ -122,8 +122,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'master' => 'getMaster',
-        'es' => 'getEs'
+        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs',
+        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster'
     ];
 
     /**
@@ -183,8 +183,8 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['master'] = $data['master'] ?? null;
-        $this->container['es'] = $data['es'] ?? null;
+        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
+        $this->container['property_mappings_esto_master'] = $data['property_mappings_esto_master'] ?? null;
     }
 
     /**
@@ -196,12 +196,20 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['master'] === null) {
-            $invalidProperties[] = "'master' can't be null";
+        if ($this->container['property_mappings_master_to_es'] === null) {
+            $invalidProperties[] = "'property_mappings_master_to_es' can't be null";
         }
-        if ($this->container['es'] === null) {
-            $invalidProperties[] = "'es' can't be null";
+        if ((count($this->container['property_mappings_master_to_es']) < 1)) {
+            $invalidProperties[] = "invalid value for 'property_mappings_master_to_es', number of items must be greater than or equal to 1.";
         }
+
+        if ($this->container['property_mappings_esto_master'] === null) {
+            $invalidProperties[] = "'property_mappings_esto_master' can't be null";
+        }
+        if ((count($this->container['property_mappings_esto_master']) < 1)) {
+            $invalidProperties[] = "invalid value for 'property_mappings_esto_master', number of items must be greater than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -218,53 +226,59 @@ class InlineObject57 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets master
+     * Gets property_mappings_master_to_es
      *
      * @return object[]
      */
-    public function getMaster()
+    public function getPropertyMappingsMasterToEs()
     {
-        return $this->container['master'];
+        return $this->container['property_mappings_master_to_es'];
     }
 
     /**
-     * Sets master
+     * Sets property_mappings_master_to_es
      *
-     * @param object[] $master master
+     * @param object[] $property_mappings_master_to_es property_mappings_master_to_es
      *
      * @return self
      */
-    public function setMaster($master)
+    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
     {
 
 
-        $this->container['master'] = $master;
+        if ((count($property_mappings_master_to_es) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $property_mappings_master_to_es when calling InlineObject57., number of items must be greater than or equal to 1.');
+        }
+        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
 
         return $this;
     }
 
     /**
-     * Gets es
+     * Gets property_mappings_esto_master
      *
      * @return object[]
      */
-    public function getEs()
+    public function getPropertyMappingsEstoMaster()
     {
-        return $this->container['es'];
+        return $this->container['property_mappings_esto_master'];
     }
 
     /**
-     * Sets es
+     * Sets property_mappings_esto_master
      *
-     * @param object[] $es es
+     * @param object[] $property_mappings_esto_master property_mappings_esto_master
      *
      * @return self
      */
-    public function setEs($es)
+    public function setPropertyMappingsEstoMaster($property_mappings_esto_master)
     {
 
 
-        $this->container['es'] = $es;
+        if ((count($property_mappings_esto_master) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $property_mappings_esto_master when calling InlineObject57., number of items must be greater than or equal to 1.');
+        }
+        $this->container['property_mappings_esto_master'] = $property_mappings_esto_master;
 
         return $this;
     }

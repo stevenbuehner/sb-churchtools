@@ -59,7 +59,7 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20099Data'
+        '' => '\StevenBuehner\ChurchTools\Model\JobConfigurationReturn1'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        '' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        '' => ''
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        '' => 'set'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        '' => 'get'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
+        $this->container[''] = $data[''] ?? null;
     }
 
     /**
@@ -190,9 +190,6 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,25 +206,25 @@ class InlineResponse20099 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets data
+     * Gets 
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20099Data
+     * @return \StevenBuehner\ChurchTools\Model\JobConfigurationReturn1|null
      */
-    public function getData()
+    public function get()
     {
-        return $this->container['data'];
+        return $this->container[''];
     }
 
     /**
-     * Sets data
+     * Sets 
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20099Data $data data
+     * @param \StevenBuehner\ChurchTools\Model\JobConfigurationReturn1|null $ 
      *
      * @return self
      */
-    public function setData($data)
+    public function set($)
     {
-        $this->container['data'] = $data;
+        $this->container[''] = $;
 
         return $this;
     }

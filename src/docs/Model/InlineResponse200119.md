@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\StevenBuehner\ChurchTools\Model\AutomaticEmail[]**](AutomaticEmail.md) |  |
-**meta** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200114Meta**](InlineResponse200114Meta.md) |  |
+**data** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200119Data[]**](InlineResponse200119Data.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

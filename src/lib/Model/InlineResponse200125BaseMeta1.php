@@ -59,8 +59,10 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
+        'created_date' => '\DateTime',
+        'created_person' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1CreatedPerson',
         'modified_date' => '\DateTime',
-        'modified_pid' => 'mixed'
+        'modified_person' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1CreatedPerson'
     ];
 
     /**
@@ -71,8 +73,10 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'created_date' => 'date-time',
+        'created_person' => null,
         'modified_date' => 'date-time',
-        'modified_pid' => null
+        'modified_person' => null
     ];
 
     /**
@@ -102,8 +106,10 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'created_date' => 'createdDate',
+        'created_person' => 'createdPerson',
         'modified_date' => 'modifiedDate',
-        'modified_pid' => 'modifiedPid'
+        'modified_person' => 'modifiedPerson'
     ];
 
     /**
@@ -112,8 +118,10 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'created_date' => 'setCreatedDate',
+        'created_person' => 'setCreatedPerson',
         'modified_date' => 'setModifiedDate',
-        'modified_pid' => 'setModifiedPid'
+        'modified_person' => 'setModifiedPerson'
     ];
 
     /**
@@ -122,8 +130,10 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'created_date' => 'getCreatedDate',
+        'created_person' => 'getCreatedPerson',
         'modified_date' => 'getModifiedDate',
-        'modified_pid' => 'getModifiedPid'
+        'modified_person' => 'getModifiedPerson'
     ];
 
     /**
@@ -183,8 +193,10 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
+        $this->container['created_date'] = $data['created_date'] ?? null;
+        $this->container['created_person'] = $data['created_person'] ?? null;
         $this->container['modified_date'] = $data['modified_date'] ?? null;
-        $this->container['modified_pid'] = $data['modified_pid'] ?? null;
+        $this->container['modified_person'] = $data['modified_person'] ?? null;
     }
 
     /**
@@ -212,6 +224,54 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
+     * Gets created_date
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedDate()
+    {
+        return $this->container['created_date'];
+    }
+
+    /**
+     * Sets created_date
+     *
+     * @param \DateTime|null $created_date created_date
+     *
+     * @return self
+     */
+    public function setCreatedDate($created_date)
+    {
+        $this->container['created_date'] = $created_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1CreatedPerson|null
+     */
+    public function getCreatedPerson()
+    {
+        return $this->container['created_person'];
+    }
+
+    /**
+     * Sets created_person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1CreatedPerson|null $created_person created_person
+     *
+     * @return self
+     */
+    public function setCreatedPerson($created_person)
+    {
+        $this->container['created_person'] = $created_person;
+
+        return $this;
+    }
+
+    /**
      * Gets modified_date
      *
      * @return \DateTime|null
@@ -236,25 +296,25 @@ class InlineResponse200125BaseMeta1 implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets modified_pid
+     * Gets modified_person
      *
-     * @return mixed|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1CreatedPerson|null
      */
-    public function getModifiedPid()
+    public function getModifiedPerson()
     {
-        return $this->container['modified_pid'];
+        return $this->container['modified_person'];
     }
 
     /**
-     * Sets modified_pid
+     * Sets modified_person
      *
-     * @param mixed|null $modified_pid modified_pid
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta1CreatedPerson|null $modified_person modified_person
      *
      * @return self
      */
-    public function setModifiedPid($modified_pid)
+    public function setModifiedPerson($modified_person)
     {
-        $this->container['modified_pid'] = $modified_pid;
+        $this->container['modified_person'] = $modified_person;
 
         return $this;
     }

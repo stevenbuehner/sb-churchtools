@@ -59,18 +59,8 @@ class InlineResponse200126Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'name_translated' => 'string',
-        'sort_key' => 'int',
-        'color' => 'string',
-        'is_public' => 'bool',
-        'is_private' => 'bool',
-        'random_url' => 'string',
-        'i_cal_source_url' => 'string',
-        'campus_id' => 'mixed',
-        'event_template_id' => 'mixed',
-        'meta' => '\StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta'
+        'base' => '\StevenBuehner\ChurchTools\Model\InlineResponse200126Base',
+        'calculated' => '\StevenBuehner\ChurchTools\Model\InlineResponse200126Calculated'
     ];
 
     /**
@@ -81,18 +71,8 @@ class InlineResponse200126Data implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'name_translated' => null,
-        'sort_key' => null,
-        'color' => null,
-        'is_public' => null,
-        'is_private' => null,
-        'random_url' => null,
-        'i_cal_source_url' => null,
-        'campus_id' => null,
-        'event_template_id' => null,
-        'meta' => null
+        'base' => null,
+        'calculated' => null
     ];
 
     /**
@@ -122,18 +102,8 @@ class InlineResponse200126Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'name_translated' => 'nameTranslated',
-        'sort_key' => 'sortKey',
-        'color' => 'color',
-        'is_public' => 'isPublic',
-        'is_private' => 'isPrivate',
-        'random_url' => 'randomUrl',
-        'i_cal_source_url' => 'iCalSourceUrl',
-        'campus_id' => 'campusId',
-        'event_template_id' => 'eventTemplateId',
-        'meta' => 'meta'
+        'base' => 'base',
+        'calculated' => 'calculated'
     ];
 
     /**
@@ -142,18 +112,8 @@ class InlineResponse200126Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'name_translated' => 'setNameTranslated',
-        'sort_key' => 'setSortKey',
-        'color' => 'setColor',
-        'is_public' => 'setIsPublic',
-        'is_private' => 'setIsPrivate',
-        'random_url' => 'setRandomUrl',
-        'i_cal_source_url' => 'setICalSourceUrl',
-        'campus_id' => 'setCampusId',
-        'event_template_id' => 'setEventTemplateId',
-        'meta' => 'setMeta'
+        'base' => 'setBase',
+        'calculated' => 'setCalculated'
     ];
 
     /**
@@ -162,18 +122,8 @@ class InlineResponse200126Data implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'name_translated' => 'getNameTranslated',
-        'sort_key' => 'getSortKey',
-        'color' => 'getColor',
-        'is_public' => 'getIsPublic',
-        'is_private' => 'getIsPrivate',
-        'random_url' => 'getRandomUrl',
-        'i_cal_source_url' => 'getICalSourceUrl',
-        'campus_id' => 'getCampusId',
-        'event_template_id' => 'getEventTemplateId',
-        'meta' => 'getMeta'
+        'base' => 'getBase',
+        'calculated' => 'getCalculated'
     ];
 
     /**
@@ -233,18 +183,8 @@ class InlineResponse200126Data implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['color'] = $data['color'] ?? null;
-        $this->container['is_public'] = $data['is_public'] ?? null;
-        $this->container['is_private'] = $data['is_private'] ?? null;
-        $this->container['random_url'] = $data['random_url'] ?? null;
-        $this->container['i_cal_source_url'] = $data['i_cal_source_url'] ?? null;
-        $this->container['campus_id'] = $data['campus_id'] ?? null;
-        $this->container['event_template_id'] = $data['event_template_id'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['base'] = $data['base'] ?? null;
+        $this->container['calculated'] = $data['calculated'] ?? null;
     }
 
     /**
@@ -272,289 +212,49 @@ class InlineResponse200126Data implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets id
+     * Gets base
      *
-     * @return int|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200126Base|null
      */
-    public function getId()
+    public function getBase()
     {
-        return $this->container['id'];
+        return $this->container['base'];
     }
 
     /**
-     * Sets id
+     * Sets base
      *
-     * @param int|null $id id
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200126Base|null $base base
      *
      * @return self
      */
-    public function setId($id)
+    public function setBase($base)
     {
-        $this->container['id'] = $id;
+        $this->container['base'] = $base;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets calculated
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200126Calculated|null
      */
-    public function getName()
+    public function getCalculated()
     {
-        return $this->container['name'];
+        return $this->container['calculated'];
     }
 
     /**
-     * Sets name
+     * Sets calculated
      *
-     * @param string|null $name name
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200126Calculated|null $calculated calculated
      *
      * @return self
      */
-    public function setName($name)
+    public function setCalculated($calculated)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets name_translated
-     *
-     * @return string|null
-     */
-    public function getNameTranslated()
-    {
-        return $this->container['name_translated'];
-    }
-
-    /**
-     * Sets name_translated
-     *
-     * @param string|null $name_translated name_translated
-     *
-     * @return self
-     */
-    public function setNameTranslated($name_translated)
-    {
-        $this->container['name_translated'] = $name_translated;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort_key
-     *
-     * @return int|null
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param int|null $sort_key sort_key
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets color
-     *
-     * @return string|null
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /**
-     * Sets color
-     *
-     * @param string|null $color color
-     *
-     * @return self
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_public
-     *
-     * @return bool|null
-     */
-    public function getIsPublic()
-    {
-        return $this->container['is_public'];
-    }
-
-    /**
-     * Sets is_public
-     *
-     * @param bool|null $is_public is_public
-     *
-     * @return self
-     */
-    public function setIsPublic($is_public)
-    {
-        $this->container['is_public'] = $is_public;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_private
-     *
-     * @return bool|null
-     */
-    public function getIsPrivate()
-    {
-        return $this->container['is_private'];
-    }
-
-    /**
-     * Sets is_private
-     *
-     * @param bool|null $is_private is_private
-     *
-     * @return self
-     */
-    public function setIsPrivate($is_private)
-    {
-        $this->container['is_private'] = $is_private;
-
-        return $this;
-    }
-
-    /**
-     * Gets random_url
-     *
-     * @return string|null
-     */
-    public function getRandomUrl()
-    {
-        return $this->container['random_url'];
-    }
-
-    /**
-     * Sets random_url
-     *
-     * @param string|null $random_url random_url
-     *
-     * @return self
-     */
-    public function setRandomUrl($random_url)
-    {
-        $this->container['random_url'] = $random_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets i_cal_source_url
-     *
-     * @return string|null
-     */
-    public function getICalSourceUrl()
-    {
-        return $this->container['i_cal_source_url'];
-    }
-
-    /**
-     * Sets i_cal_source_url
-     *
-     * @param string|null $i_cal_source_url i_cal_source_url
-     *
-     * @return self
-     */
-    public function setICalSourceUrl($i_cal_source_url)
-    {
-        $this->container['i_cal_source_url'] = $i_cal_source_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets campus_id
-     *
-     * @return mixed|null
-     */
-    public function getCampusId()
-    {
-        return $this->container['campus_id'];
-    }
-
-    /**
-     * Sets campus_id
-     *
-     * @param mixed|null $campus_id campus_id
-     *
-     * @return self
-     */
-    public function setCampusId($campus_id)
-    {
-        $this->container['campus_id'] = $campus_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets event_template_id
-     *
-     * @return mixed|null
-     */
-    public function getEventTemplateId()
-    {
-        return $this->container['event_template_id'];
-    }
-
-    /**
-     * Sets event_template_id
-     *
-     * @param mixed|null $event_template_id event_template_id
-     *
-     * @return self
-     */
-    public function setEventTemplateId($event_template_id)
-    {
-        $this->container['event_template_id'] = $event_template_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse200125BaseMeta|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['calculated'] = $calculated;
 
         return $this;
     }

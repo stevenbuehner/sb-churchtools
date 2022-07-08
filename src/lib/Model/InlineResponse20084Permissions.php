@@ -59,7 +59,7 @@ class InlineResponse20084Permissions implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'can_edit' => 'bool'
+        'edit_master_data' => 'bool'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse20084Permissions implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'can_edit' => null
+        'edit_master_data' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse20084Permissions implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'can_edit' => 'canEdit'
+        'edit_master_data' => 'editMasterData'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse20084Permissions implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'can_edit' => 'setCanEdit'
+        'edit_master_data' => 'setEditMasterData'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse20084Permissions implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'can_edit' => 'getCanEdit'
+        'edit_master_data' => 'getEditMasterData'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse20084Permissions implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['can_edit'] = $data['can_edit'] ?? null;
+        $this->container['edit_master_data'] = $data['edit_master_data'] ?? null;
     }
 
     /**
@@ -206,25 +206,25 @@ class InlineResponse20084Permissions implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets can_edit
+     * Gets edit_master_data
      *
      * @return bool|null
      */
-    public function getCanEdit()
+    public function getEditMasterData()
     {
-        return $this->container['can_edit'];
+        return $this->container['edit_master_data'];
     }
 
     /**
-     * Sets can_edit
+     * Sets edit_master_data
      *
-     * @param bool|null $can_edit can_edit
+     * @param bool|null $edit_master_data edit_master_data
      *
      * @return self
      */
-    public function setCanEdit($can_edit)
+    public function setEditMasterData($edit_master_data)
     {
-        $this->container['can_edit'] = $can_edit;
+        $this->container['edit_master_data'] = $edit_master_data;
 
         return $this;
     }

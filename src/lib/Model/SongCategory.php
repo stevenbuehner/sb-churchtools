@@ -59,11 +59,11 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
         'name' => 'string',
         'name_translated' => 'string',
         'sort_key' => 'float',
-        'campus_id' => 'mixed'
+        'campus_id' => 'int'
     ];
 
     /**
@@ -232,7 +232,7 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getId()
     {
@@ -242,7 +242,7 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float|null $id id
+     * @param int|null $id id
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets campus_id
      *
-     * @return mixed|null
+     * @return int|null
      */
     public function getCampusId()
     {
@@ -338,7 +338,7 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets campus_id
      *
-     * @param mixed|null $campus_id campus_id
+     * @param int|null $campus_id campus_id
      *
      * @return self
      */

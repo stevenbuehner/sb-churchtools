@@ -35,7 +35,6 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * InlineResponse20080Data Class Doc Comment
  *
  * @category Class
- * @description A Conflict Can Have Multiple Key-Value Pairs as Additional Data
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,9 +59,9 @@ class InlineResponse20080Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'key' => 'string',
-        'value' => 'string'
+        'name' => 'string',
+        'total' => 'float',
+        'jobs' => '\StevenBuehner\ChurchTools\Model\InlineResponse20080Jobs'
     ];
 
     /**
@@ -73,9 +72,9 @@ class InlineResponse20080Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'key' => null,
-        'value' => null
+        'name' => null,
+        'total' => null,
+        'jobs' => null
     ];
 
     /**
@@ -105,9 +104,9 @@ class InlineResponse20080Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'key' => 'key',
-        'value' => 'value'
+        'name' => 'name',
+        'total' => 'total',
+        'jobs' => 'jobs'
     ];
 
     /**
@@ -116,9 +115,9 @@ class InlineResponse20080Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'key' => 'setKey',
-        'value' => 'setValue'
+        'name' => 'setName',
+        'total' => 'setTotal',
+        'jobs' => 'setJobs'
     ];
 
     /**
@@ -127,9 +126,9 @@ class InlineResponse20080Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'key' => 'getKey',
-        'value' => 'getValue'
+        'name' => 'getName',
+        'total' => 'getTotal',
+        'jobs' => 'getJobs'
     ];
 
     /**
@@ -189,9 +188,9 @@ class InlineResponse20080Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['key'] = $data['key'] ?? null;
-        $this->container['value'] = $data['value'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['jobs'] = $data['jobs'] ?? null;
     }
 
     /**
@@ -219,73 +218,73 @@ class InlineResponse20080Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets id
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Name of Job Group. `__single__` is For Jobs Which don't Belong to a Group
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
      *
      * @return float|null
      */
-    public function getId()
+    public function getTotal()
     {
-        return $this->container['id'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets id
+     * Sets total
      *
-     * @param float|null $id id
+     * @param float|null $total Total Jobs in Queue of This Job Group
      *
      * @return self
      */
-    public function setId($id)
+    public function setTotal($total)
     {
-        $this->container['id'] = $id;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets key
+     * Gets jobs
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20080Jobs|null
      */
-    public function getKey()
+    public function getJobs()
     {
-        return $this->container['key'];
+        return $this->container['jobs'];
     }
 
     /**
-     * Sets key
+     * Sets jobs
      *
-     * @param string|null $key key
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20080Jobs|null $jobs jobs
      *
      * @return self
      */
-    public function setKey($key)
+    public function setJobs($jobs)
     {
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets value
-     *
-     * @return string|null
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string|null $value value
-     *
-     * @return self
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
+        $this->container['jobs'] = $jobs;
 
         return $this;
     }

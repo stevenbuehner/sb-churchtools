@@ -64,7 +64,7 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
         'job_id' => 'string',
         'type' => 'string',
         'entity_mapping_id' => 'float',
-        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20080Data[]',
+        'data' => '\StevenBuehner\ChurchTools\Model\InlineResponse20081Data[]',
         'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
     ];
 
@@ -377,7 +377,7 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20080Data[]|null
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20081Data[]|null
      */
     public function getData()
     {
@@ -387,7 +387,7 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20080Data[]|null $data Array of relevant meta information
+     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20081Data[]|null $data Array of relevant meta information
      *
      * @return self
      */

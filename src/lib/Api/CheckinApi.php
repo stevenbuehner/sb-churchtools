@@ -126,7 +126,7 @@ class CheckinApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20024|\StevenBuehner\ChurchTools\Model\InlineResponse403
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20025|\StevenBuehner\ChurchTools\Model\InlineResponse403
      */
     public function checkin($group_id, $person_id, $inline_object11)
     {
@@ -145,7 +145,7 @@ class CheckinApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20024|\StevenBuehner\ChurchTools\Model\InlineResponse403, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20025|\StevenBuehner\ChurchTools\Model\InlineResponse403, HTTP status code, HTTP response headers (array of strings)
      */
     public function checkinWithHttpInfo($group_id, $person_id, $inline_object11)
     {
@@ -188,14 +188,14 @@ class CheckinApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20024' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20025' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20024', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20025', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -213,7 +213,7 @@ class CheckinApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20024';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20025';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -231,7 +231,7 @@ class CheckinApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20024',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20025',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -285,7 +285,7 @@ class CheckinApi
      */
     public function checkinAsyncWithHttpInfo($group_id, $person_id, $inline_object11)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20024';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20025';
         $request = $this->checkinRequest($group_id, $person_id, $inline_object11);
 
         return $this->client
@@ -457,7 +457,7 @@ class CheckinApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20023
+     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20024
      */
     public function getQRCodeCheckin($group_id, $person_id)
     {
@@ -475,7 +475,7 @@ class CheckinApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQRCodeCheckinWithHttpInfo($group_id, $person_id)
     {
@@ -518,20 +518,20 @@ class CheckinApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20023' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\InlineResponse20024' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20023', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\InlineResponse20024', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20023';
+            $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20024';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -549,7 +549,7 @@ class CheckinApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\InlineResponse20023',
+                        '\StevenBuehner\ChurchTools\Model\InlineResponse20024',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -593,7 +593,7 @@ class CheckinApi
      */
     public function getQRCodeCheckinAsyncWithHttpInfo($group_id, $person_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20023';
+        $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse20024';
         $request = $this->getQRCodeCheckinRequest($group_id, $person_id);
 
         return $this->client
@@ -747,15 +747,15 @@ class CheckinApi
      *
      * Create new person and add to group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 inline_object68 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2001|\StevenBuehner\ChurchTools\Model\InlineResponse4091
      */
-    public function postCheckinPersons($inline_object67 = null)
+    public function postCheckinPersons($inline_object68 = null)
     {
-        list($response) = $this->postCheckinPersonsWithHttpInfo($inline_object67);
+        list($response) = $this->postCheckinPersonsWithHttpInfo($inline_object68);
         return $response;
     }
 
@@ -764,15 +764,15 @@ class CheckinApi
      *
      * Create new person and add to group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2001|\StevenBuehner\ChurchTools\Model\InlineResponse4091, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCheckinPersonsWithHttpInfo($inline_object67 = null)
+    public function postCheckinPersonsWithHttpInfo($inline_object68 = null)
     {
-        $request = $this->postCheckinPersonsRequest($inline_object67);
+        $request = $this->postCheckinPersonsRequest($inline_object68);
 
         try {
             $options = $this->createHttpClientOption();
@@ -877,14 +877,14 @@ class CheckinApi
      *
      * Create new person and add to group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCheckinPersonsAsync($inline_object67 = null)
+    public function postCheckinPersonsAsync($inline_object68 = null)
     {
-        return $this->postCheckinPersonsAsyncWithHttpInfo($inline_object67)
+        return $this->postCheckinPersonsAsyncWithHttpInfo($inline_object68)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -897,15 +897,15 @@ class CheckinApi
      *
      * Create new person and add to group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCheckinPersonsAsyncWithHttpInfo($inline_object67 = null)
+    public function postCheckinPersonsAsyncWithHttpInfo($inline_object68 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2001';
-        $request = $this->postCheckinPersonsRequest($inline_object67);
+        $request = $this->postCheckinPersonsRequest($inline_object68);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -943,12 +943,12 @@ class CheckinApi
     /**
      * Create request for operation 'postCheckinPersons'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject68 $inline_object68 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postCheckinPersonsRequest($inline_object67 = null)
+    public function postCheckinPersonsRequest($inline_object68 = null)
     {
 
         $resourcePath = '/checkin/persons';
@@ -974,11 +974,11 @@ class CheckinApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object67)) {
+        if (isset($inline_object68)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object67));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object68));
             } else {
-                $httpBody = $inline_object67;
+                $httpBody = $inline_object68;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1035,15 +1035,15 @@ class CheckinApi
      *
      * Put existing person into group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 inline_object67 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\InlineResponse2001|\StevenBuehner\ChurchTools\Model\InlineResponse4091
      */
-    public function putCheckinPersons($inline_object66 = null)
+    public function putCheckinPersons($inline_object67 = null)
     {
-        list($response) = $this->putCheckinPersonsWithHttpInfo($inline_object66);
+        list($response) = $this->putCheckinPersonsWithHttpInfo($inline_object67);
         return $response;
     }
 
@@ -1052,15 +1052,15 @@ class CheckinApi
      *
      * Put existing person into group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\InlineResponse2001|\StevenBuehner\ChurchTools\Model\InlineResponse4091, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putCheckinPersonsWithHttpInfo($inline_object66 = null)
+    public function putCheckinPersonsWithHttpInfo($inline_object67 = null)
     {
-        $request = $this->putCheckinPersonsRequest($inline_object66);
+        $request = $this->putCheckinPersonsRequest($inline_object67);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1165,14 +1165,14 @@ class CheckinApi
      *
      * Put existing person into group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCheckinPersonsAsync($inline_object66 = null)
+    public function putCheckinPersonsAsync($inline_object67 = null)
     {
-        return $this->putCheckinPersonsAsyncWithHttpInfo($inline_object66)
+        return $this->putCheckinPersonsAsyncWithHttpInfo($inline_object67)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1185,15 +1185,15 @@ class CheckinApi
      *
      * Put existing person into group
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCheckinPersonsAsyncWithHttpInfo($inline_object66 = null)
+    public function putCheckinPersonsAsyncWithHttpInfo($inline_object67 = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\InlineResponse2001';
-        $request = $this->putCheckinPersonsRequest($inline_object66);
+        $request = $this->putCheckinPersonsRequest($inline_object67);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1231,12 +1231,12 @@ class CheckinApi
     /**
      * Create request for operation 'putCheckinPersons'
      *
-     * @param  \StevenBuehner\ChurchTools\Model\InlineObject66 $inline_object66 (optional)
+     * @param  \StevenBuehner\ChurchTools\Model\InlineObject67 $inline_object67 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putCheckinPersonsRequest($inline_object66 = null)
+    public function putCheckinPersonsRequest($inline_object67 = null)
     {
 
         $resourcePath = '/checkin/persons';
@@ -1262,11 +1262,11 @@ class CheckinApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object66)) {
+        if (isset($inline_object67)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object66));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object67));
             } else {
-                $httpBody = $inline_object66;
+                $httpBody = $inline_object67;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

@@ -59,7 +59,7 @@ class InlineResponse20074 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Device[]'
+        'group_homepage_hash' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse20074 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'group_homepage_hash' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class InlineResponse20074 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'group_homepage_hash' => 'groupHomepageHash'
     ];
 
     /**
@@ -109,7 +109,7 @@ class InlineResponse20074 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'group_homepage_hash' => 'setGroupHomepageHash'
     ];
 
     /**
@@ -118,7 +118,7 @@ class InlineResponse20074 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'group_homepage_hash' => 'getGroupHomepageHash'
     ];
 
     /**
@@ -178,7 +178,7 @@ class InlineResponse20074 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
+        $this->container['group_homepage_hash'] = $data['group_homepage_hash'] ?? null;
     }
 
     /**
@@ -206,25 +206,25 @@ class InlineResponse20074 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets data
+     * Gets group_homepage_hash
      *
-     * @return \StevenBuehner\ChurchTools\Model\Device[]|null
+     * @return string|null
      */
-    public function getData()
+    public function getGroupHomepageHash()
     {
-        return $this->container['data'];
+        return $this->container['group_homepage_hash'];
     }
 
     /**
-     * Sets data
+     * Sets group_homepage_hash
      *
-     * @param \StevenBuehner\ChurchTools\Model\Device[]|null $data data
+     * @param string|null $group_homepage_hash The hash of the group homepage. This allows the client to return to the group homepage.
      *
      * @return self
      */
-    public function setData($data)
+    public function setGroupHomepageHash($group_homepage_hash)
     {
-        $this->container['data'] = $data;
+        $this->container['group_homepage_hash'] = $group_homepage_hash;
 
         return $this;
     }

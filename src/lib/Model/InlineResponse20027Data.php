@@ -61,21 +61,10 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'service_group_id' => 'int',
-        'comment_on_confirmation' => 'bool',
         'sort_key' => 'int',
-        'allow_decline' => 'bool',
-        'allow_exchange' => 'bool',
-        'comment' => 'string',
-        'standard' => 'bool',
-        'hide_person_name' => 'bool',
-        'send_reminder_mails' => 'bool',
-        'send_service_request_emails' => 'bool',
-        'allow_control_live_agenda' => 'bool',
-        'group_ids' => 'string',
-        'tag_ids' => 'string',
-        'cal_text_template' => 'string',
-        'allow_chat' => 'bool'
+        'view_all' => 'bool',
+        'campus_id' => 'int',
+        'only_visible_in_campus_filter' => 'bool'
     ];
 
     /**
@@ -88,21 +77,10 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'service_group_id' => null,
-        'comment_on_confirmation' => null,
         'sort_key' => null,
-        'allow_decline' => null,
-        'allow_exchange' => null,
-        'comment' => null,
-        'standard' => null,
-        'hide_person_name' => null,
-        'send_reminder_mails' => null,
-        'send_service_request_emails' => null,
-        'allow_control_live_agenda' => null,
-        'group_ids' => null,
-        'tag_ids' => null,
-        'cal_text_template' => null,
-        'allow_chat' => null
+        'view_all' => null,
+        'campus_id' => null,
+        'only_visible_in_campus_filter' => null
     ];
 
     /**
@@ -134,21 +112,10 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'service_group_id' => 'serviceGroupId',
-        'comment_on_confirmation' => 'commentOnConfirmation',
         'sort_key' => 'sortKey',
-        'allow_decline' => 'allowDecline',
-        'allow_exchange' => 'allowExchange',
-        'comment' => 'comment',
-        'standard' => 'standard',
-        'hide_person_name' => 'hidePersonName',
-        'send_reminder_mails' => 'sendReminderMails',
-        'send_service_request_emails' => 'sendServiceRequestEmails',
-        'allow_control_live_agenda' => 'allowControlLiveAgenda',
-        'group_ids' => 'groupIds',
-        'tag_ids' => 'tagIds',
-        'cal_text_template' => 'calTextTemplate',
-        'allow_chat' => 'allowChat'
+        'view_all' => 'viewAll',
+        'campus_id' => 'campusId',
+        'only_visible_in_campus_filter' => 'onlyVisibleInCampusFilter'
     ];
 
     /**
@@ -159,21 +126,10 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'service_group_id' => 'setServiceGroupId',
-        'comment_on_confirmation' => 'setCommentOnConfirmation',
         'sort_key' => 'setSortKey',
-        'allow_decline' => 'setAllowDecline',
-        'allow_exchange' => 'setAllowExchange',
-        'comment' => 'setComment',
-        'standard' => 'setStandard',
-        'hide_person_name' => 'setHidePersonName',
-        'send_reminder_mails' => 'setSendReminderMails',
-        'send_service_request_emails' => 'setSendServiceRequestEmails',
-        'allow_control_live_agenda' => 'setAllowControlLiveAgenda',
-        'group_ids' => 'setGroupIds',
-        'tag_ids' => 'setTagIds',
-        'cal_text_template' => 'setCalTextTemplate',
-        'allow_chat' => 'setAllowChat'
+        'view_all' => 'setViewAll',
+        'campus_id' => 'setCampusId',
+        'only_visible_in_campus_filter' => 'setOnlyVisibleInCampusFilter'
     ];
 
     /**
@@ -184,21 +140,10 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'service_group_id' => 'getServiceGroupId',
-        'comment_on_confirmation' => 'getCommentOnConfirmation',
         'sort_key' => 'getSortKey',
-        'allow_decline' => 'getAllowDecline',
-        'allow_exchange' => 'getAllowExchange',
-        'comment' => 'getComment',
-        'standard' => 'getStandard',
-        'hide_person_name' => 'getHidePersonName',
-        'send_reminder_mails' => 'getSendReminderMails',
-        'send_service_request_emails' => 'getSendServiceRequestEmails',
-        'allow_control_live_agenda' => 'getAllowControlLiveAgenda',
-        'group_ids' => 'getGroupIds',
-        'tag_ids' => 'getTagIds',
-        'cal_text_template' => 'getCalTextTemplate',
-        'allow_chat' => 'getAllowChat'
+        'view_all' => 'getViewAll',
+        'campus_id' => 'getCampusId',
+        'only_visible_in_campus_filter' => 'getOnlyVisibleInCampusFilter'
     ];
 
     /**
@@ -260,21 +205,10 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['service_group_id'] = $data['service_group_id'] ?? null;
-        $this->container['comment_on_confirmation'] = $data['comment_on_confirmation'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['allow_decline'] = $data['allow_decline'] ?? null;
-        $this->container['allow_exchange'] = $data['allow_exchange'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['standard'] = $data['standard'] ?? null;
-        $this->container['hide_person_name'] = $data['hide_person_name'] ?? null;
-        $this->container['send_reminder_mails'] = $data['send_reminder_mails'] ?? null;
-        $this->container['send_service_request_emails'] = $data['send_service_request_emails'] ?? null;
-        $this->container['allow_control_live_agenda'] = $data['allow_control_live_agenda'] ?? null;
-        $this->container['group_ids'] = $data['group_ids'] ?? null;
-        $this->container['tag_ids'] = $data['tag_ids'] ?? null;
-        $this->container['cal_text_template'] = $data['cal_text_template'] ?? null;
-        $this->container['allow_chat'] = $data['allow_chat'] ?? null;
+        $this->container['view_all'] = $data['view_all'] ?? null;
+        $this->container['campus_id'] = $data['campus_id'] ?? null;
+        $this->container['only_visible_in_campus_filter'] = $data['only_visible_in_campus_filter'] ?? null;
     }
 
     /**
@@ -350,54 +284,6 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets service_group_id
-     *
-     * @return int|null
-     */
-    public function getServiceGroupId()
-    {
-        return $this->container['service_group_id'];
-    }
-
-    /**
-     * Sets service_group_id
-     *
-     * @param int|null $service_group_id service_group_id
-     *
-     * @return self
-     */
-    public function setServiceGroupId($service_group_id)
-    {
-        $this->container['service_group_id'] = $service_group_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment_on_confirmation
-     *
-     * @return bool|null
-     */
-    public function getCommentOnConfirmation()
-    {
-        return $this->container['comment_on_confirmation'];
-    }
-
-    /**
-     * Sets comment_on_confirmation
-     *
-     * @param bool|null $comment_on_confirmation comment_on_confirmation
-     *
-     * @return self
-     */
-    public function setCommentOnConfirmation($comment_on_confirmation)
-    {
-        $this->container['comment_on_confirmation'] = $comment_on_confirmation;
-
-        return $this;
-    }
-
-    /**
      * Gets sort_key
      *
      * @return int|null
@@ -422,289 +308,73 @@ class InlineResponse20027Data implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets allow_decline
+     * Gets view_all
      *
      * @return bool|null
      */
-    public function getAllowDecline()
+    public function getViewAll()
     {
-        return $this->container['allow_decline'];
+        return $this->container['view_all'];
     }
 
     /**
-     * Sets allow_decline
+     * Sets view_all
      *
-     * @param bool|null $allow_decline allow_decline
+     * @param bool|null $view_all view_all
      *
      * @return self
      */
-    public function setAllowDecline($allow_decline)
+    public function setViewAll($view_all)
     {
-        $this->container['allow_decline'] = $allow_decline;
+        $this->container['view_all'] = $view_all;
 
         return $this;
     }
 
     /**
-     * Gets allow_exchange
+     * Gets campus_id
+     *
+     * @return int|null
+     */
+    public function getCampusId()
+    {
+        return $this->container['campus_id'];
+    }
+
+    /**
+     * Sets campus_id
+     *
+     * @param int|null $campus_id campus_id
+     *
+     * @return self
+     */
+    public function setCampusId($campus_id)
+    {
+        $this->container['campus_id'] = $campus_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets only_visible_in_campus_filter
      *
      * @return bool|null
      */
-    public function getAllowExchange()
+    public function getOnlyVisibleInCampusFilter()
     {
-        return $this->container['allow_exchange'];
+        return $this->container['only_visible_in_campus_filter'];
     }
 
     /**
-     * Sets allow_exchange
+     * Sets only_visible_in_campus_filter
      *
-     * @param bool|null $allow_exchange allow_exchange
+     * @param bool|null $only_visible_in_campus_filter only_visible_in_campus_filter
      *
      * @return self
      */
-    public function setAllowExchange($allow_exchange)
+    public function setOnlyVisibleInCampusFilter($only_visible_in_campus_filter)
     {
-        $this->container['allow_exchange'] = $allow_exchange;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string|null
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string|null $comment comment
-     *
-     * @return self
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets standard
-     *
-     * @return bool|null
-     */
-    public function getStandard()
-    {
-        return $this->container['standard'];
-    }
-
-    /**
-     * Sets standard
-     *
-     * @param bool|null $standard standard
-     *
-     * @return self
-     */
-    public function setStandard($standard)
-    {
-        $this->container['standard'] = $standard;
-
-        return $this;
-    }
-
-    /**
-     * Gets hide_person_name
-     *
-     * @return bool|null
-     */
-    public function getHidePersonName()
-    {
-        return $this->container['hide_person_name'];
-    }
-
-    /**
-     * Sets hide_person_name
-     *
-     * @param bool|null $hide_person_name hide_person_name
-     *
-     * @return self
-     */
-    public function setHidePersonName($hide_person_name)
-    {
-        $this->container['hide_person_name'] = $hide_person_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets send_reminder_mails
-     *
-     * @return bool|null
-     */
-    public function getSendReminderMails()
-    {
-        return $this->container['send_reminder_mails'];
-    }
-
-    /**
-     * Sets send_reminder_mails
-     *
-     * @param bool|null $send_reminder_mails send_reminder_mails
-     *
-     * @return self
-     */
-    public function setSendReminderMails($send_reminder_mails)
-    {
-        $this->container['send_reminder_mails'] = $send_reminder_mails;
-
-        return $this;
-    }
-
-    /**
-     * Gets send_service_request_emails
-     *
-     * @return bool|null
-     */
-    public function getSendServiceRequestEmails()
-    {
-        return $this->container['send_service_request_emails'];
-    }
-
-    /**
-     * Sets send_service_request_emails
-     *
-     * @param bool|null $send_service_request_emails send_service_request_emails
-     *
-     * @return self
-     */
-    public function setSendServiceRequestEmails($send_service_request_emails)
-    {
-        $this->container['send_service_request_emails'] = $send_service_request_emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets allow_control_live_agenda
-     *
-     * @return bool|null
-     */
-    public function getAllowControlLiveAgenda()
-    {
-        return $this->container['allow_control_live_agenda'];
-    }
-
-    /**
-     * Sets allow_control_live_agenda
-     *
-     * @param bool|null $allow_control_live_agenda allow_control_live_agenda
-     *
-     * @return self
-     */
-    public function setAllowControlLiveAgenda($allow_control_live_agenda)
-    {
-        $this->container['allow_control_live_agenda'] = $allow_control_live_agenda;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_ids
-     *
-     * @return string|null
-     */
-    public function getGroupIds()
-    {
-        return $this->container['group_ids'];
-    }
-
-    /**
-     * Sets group_ids
-     *
-     * @param string|null $group_ids Comma separated list of group ids
-     *
-     * @return self
-     */
-    public function setGroupIds($group_ids)
-    {
-        $this->container['group_ids'] = $group_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag_ids
-     *
-     * @return string|null
-     */
-    public function getTagIds()
-    {
-        return $this->container['tag_ids'];
-    }
-
-    /**
-     * Sets tag_ids
-     *
-     * @param string|null $tag_ids Comma separated list of tag ids
-     *
-     * @return self
-     */
-    public function setTagIds($tag_ids)
-    {
-        $this->container['tag_ids'] = $tag_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets cal_text_template
-     *
-     * @return string|null
-     */
-    public function getCalTextTemplate()
-    {
-        return $this->container['cal_text_template'];
-    }
-
-    /**
-     * Sets cal_text_template
-     *
-     * @param string|null $cal_text_template cal_text_template
-     *
-     * @return self
-     */
-    public function setCalTextTemplate($cal_text_template)
-    {
-        $this->container['cal_text_template'] = $cal_text_template;
-
-        return $this;
-    }
-
-    /**
-     * Gets allow_chat
-     *
-     * @return bool|null
-     */
-    public function getAllowChat()
-    {
-        return $this->container['allow_chat'];
-    }
-
-    /**
-     * Sets allow_chat
-     *
-     * @param bool|null $allow_chat allow_chat
-     *
-     * @return self
-     */
-    public function setAllowChat($allow_chat)
-    {
-        $this->container['allow_chat'] = $allow_chat;
+        $this->container['only_visible_in_campus_filter'] = $only_visible_in_campus_filter;
 
         return $this;
     }

@@ -59,7 +59,8 @@ class InlineResponse20089Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'churchdb' => '\StevenBuehner\ChurchTools\Model\InlineResponse20089DataChurchdb'
+        'type' => 'string',
+        'field' => 'OneOfObject'
     ];
 
     /**
@@ -70,7 +71,8 @@ class InlineResponse20089Data implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'churchdb' => null
+        'type' => null,
+        'field' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class InlineResponse20089Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'churchdb' => 'churchdb'
+        'type' => 'type',
+        'field' => 'field'
     ];
 
     /**
@@ -109,7 +112,8 @@ class InlineResponse20089Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'churchdb' => 'setChurchdb'
+        'type' => 'setType',
+        'field' => 'setField'
     ];
 
     /**
@@ -118,7 +122,8 @@ class InlineResponse20089Data implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'churchdb' => 'getChurchdb'
+        'type' => 'getType',
+        'field' => 'getField'
     ];
 
     /**
@@ -178,7 +183,8 @@ class InlineResponse20089Data implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['churchdb'] = $data['churchdb'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['field'] = $data['field'] ?? null;
     }
 
     /**
@@ -206,25 +212,49 @@ class InlineResponse20089Data implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets churchdb
+     * Gets type
      *
-     * @return \StevenBuehner\ChurchTools\Model\InlineResponse20089DataChurchdb|null
+     * @return string|null
      */
-    public function getChurchdb()
+    public function getType()
     {
-        return $this->container['churchdb'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets churchdb
+     * Sets type
      *
-     * @param \StevenBuehner\ChurchTools\Model\InlineResponse20089DataChurchdb|null $churchdb churchdb
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setChurchdb($churchdb)
+    public function setType($type)
     {
-        $this->container['churchdb'] = $churchdb;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets field
+     *
+     * @return OneOfObject|null
+     */
+    public function getField()
+    {
+        return $this->container['field'];
+    }
+
+    /**
+     * Sets field
+     *
+     * @param OneOfObject|null $field field
+     *
+     * @return self
+     */
+    public function setField($field)
+    {
+        $this->container['field'] = $field;
 
         return $this;
     }
