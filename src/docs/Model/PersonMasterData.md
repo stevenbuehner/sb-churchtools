@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **group_statuses** | [**\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupStatusesInner[]**](GetMasterDataPerson200ResponseDataGroupStatusesInner.md) |  | [optional]
 **departments** | [**\StevenBuehner\ChurchTools\Model\GetAllDepartments200ResponseDataInner[]**](GetAllDepartments200ResponseDataInner.md) |  | [optional]
 **statuses** | [**\StevenBuehner\ChurchTools\Model\GetAllStatuses200ResponseDataInner[]**](GetAllStatuses200ResponseDataInner.md) |  | [optional]
-**campuses** | [**\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseData[]**](CreateNewCampus201ResponseData.md) |  | [optional]
+**campuses** | [**\StevenBuehner\ChurchTools\Model\PersonMasterDataCampusesInner[]**](PersonMasterDataCampusesInner.md) |  | [optional]
 **contact_labels** | [**\StevenBuehner\ChurchTools\Model\ContactLabel[]**](ContactLabel.md) |  | [optional]
 **grow_paths** | [**\StevenBuehner\ChurchTools\Model\GrowPath[]**](GrowPath.md) |  | [optional]
 **follow_ups** | [**\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpsInner[]**](GetMasterDataPerson200ResponseDataFollowUpsInner.md) |  | [optional]

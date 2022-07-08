@@ -18161,8 +18161,7 @@
                                     "nullable": true
                                   },
                                   "country": {
-                                    "type": "string",
-                                    "nullable": true
+                                    "type": "object"
                                   },
                                   "latitude": {
                                     "type": "string",
@@ -59910,8 +59909,7 @@
                       "nullable": true
                     },
                     "country": {
-                      "type": "string",
-                      "nullable": true
+                      "type": "object"
                     },
                     "latitude": {
                       "type": "string",

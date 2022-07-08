@@ -1,4 +1,4 @@
-# # GetMasterDataPerson200ResponseDataCampusesInner
+# # PersonMasterDataCampusesInner
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **shorty** | **string** |  |
 **slug** | **string** |  |
 **finder_url** | **string** |  |
-**sort_key** | **int** |  |
+**sort_key** | **float** |  |
 **is_published** | **bool** |  |
 **description** | **string** |  |
 **association** | **object** | Will be the same for all profiles. | [optional]

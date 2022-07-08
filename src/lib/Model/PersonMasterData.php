@@ -65,7 +65,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_statuses' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupStatusesInner[]',
         'departments' => '\StevenBuehner\ChurchTools\Model\GetAllDepartments200ResponseDataInner[]',
         'statuses' => '\StevenBuehner\ChurchTools\Model\GetAllStatuses200ResponseDataInner[]',
-        'campuses' => '\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseData[]',
+        'campuses' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataCampusesInner[]',
         'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]',
         'grow_paths' => '\StevenBuehner\ChurchTools\Model\GrowPath[]',
         'follow_ups' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpsInner[]',
@@ -470,7 +470,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets campuses
      *
-     * @return \StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseData[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataCampusesInner[]|null
      */
     public function getCampuses()
     {
@@ -480,7 +480,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets campuses
      *
-     * @param \StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseData[]|null $campuses campuses
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataCampusesInner[]|null $campuses campuses
      *
      * @return self
      */

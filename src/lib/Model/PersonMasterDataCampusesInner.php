@@ -1,6 +1,6 @@
 <?php
 /**
- * GetMasterDataPerson200ResponseDataCampusesInner
+ * PersonMasterDataCampusesInner
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * GetMasterDataPerson200ResponseDataCampusesInner Class Doc Comment
+ * PersonMasterDataCampusesInner Class Doc Comment
  *
  * @category Class
  * @description Profiles are representing campuses and the church itself.
@@ -41,7 +41,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class PersonMasterDataCampusesInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getMasterDataPerson_200_response_data_campuses_inner';
+    protected static $openAPIModelName = 'PersonMasterData_campuses_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -67,7 +67,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
         'shorty' => 'string',
         'slug' => 'string',
         'finder_url' => 'string',
-        'sort_key' => 'int',
+        'sort_key' => 'float',
         'is_published' => 'bool',
         'description' => 'string',
         'association' => 'object',
@@ -612,7 +612,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($guid) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $guid when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $guid when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['guid'] = $guid;
@@ -651,7 +651,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
         }
 
         if ((mb_strlen($profile_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $profile_type when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $profile_type when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['profile_type'] = $profile_type;
@@ -680,7 +680,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $name when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['name'] = $name;
@@ -709,7 +709,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($name_translated) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name_translated when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $name_translated when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['name_translated'] = $name_translated;
@@ -738,7 +738,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($short_name) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $short_name when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $short_name when calling PersonMasterDataCampusesInner., must be bigger than or equal to 0.');
         }
 
         $this->container['short_name'] = $short_name;
@@ -767,7 +767,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($shorty) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $shorty when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $shorty when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['shorty'] = $shorty;
@@ -796,7 +796,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($slug) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $slug when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $slug when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['slug'] = $slug;
@@ -825,7 +825,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($finder_url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $finder_url when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $finder_url when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['finder_url'] = $finder_url;
@@ -836,7 +836,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     /**
      * Gets sort_key
      *
-     * @return int
+     * @return float
      */
     public function getSortKey()
     {
@@ -846,7 +846,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     /**
      * Sets sort_key
      *
-     * @param int $sort_key sort_key
+     * @param float $sort_key sort_key
      *
      * @return self
      */
@@ -902,7 +902,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($description) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $description when calling PersonMasterDataCampusesInner., must be bigger than or equal to 0.');
         }
 
         $this->container['description'] = $description;
@@ -955,7 +955,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($website) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $website when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $website when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['website'] = $website;
@@ -984,7 +984,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($email) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $email when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['email'] = $email;
@@ -1013,7 +1013,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($phone) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $phone when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $phone when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['phone'] = $phone;
@@ -1091,7 +1091,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
 
 
         if ((count($groups) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $groups when calling GetMasterDataPerson200ResponseDataCampusesInner., number of items must be greater than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $groups when calling PersonMasterDataCampusesInner., number of items must be greater than or equal to 0.');
         }
         $this->container['groups'] = $groups;
 
@@ -1216,7 +1216,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
 
 
         if ((count($services) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $services when calling GetMasterDataPerson200ResponseDataCampusesInner., number of items must be greater than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $services when calling PersonMasterDataCampusesInner., number of items must be greater than or equal to 0.');
         }
         $this->container['services'] = $services;
 
@@ -1268,7 +1268,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($service_banner) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $service_banner when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $service_banner when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['service_banner'] = $service_banner;
@@ -1322,7 +1322,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
 
 
         if ((count($gallery) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $gallery when calling GetMasterDataPerson200ResponseDataCampusesInner., number of items must be greater than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $gallery when calling PersonMasterDataCampusesInner., number of items must be greater than or equal to 0.');
         }
         $this->container['gallery'] = $gallery;
 
@@ -1350,7 +1350,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
     {
 
         if ((mb_strlen($team_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $team_title when calling GetMasterDataPerson200ResponseDataCampusesInner., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $team_title when calling PersonMasterDataCampusesInner., must be bigger than or equal to 1.');
         }
 
         $this->container['team_title'] = $team_title;
@@ -1380,7 +1380,7 @@ class GetMasterDataPerson200ResponseDataCampusesInner implements ModelInterface,
 
 
         if ((count($team) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $team when calling GetMasterDataPerson200ResponseDataCampusesInner., number of items must be greater than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $team when calling PersonMasterDataCampusesInner., number of items must be greater than or equal to 0.');
         }
         $this->container['team'] = $team;
 

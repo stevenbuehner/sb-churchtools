@@ -324,6 +324,7 @@ docs/Model/GetMasterDataPerson200Response.md
 docs/Model/GetMasterDataPerson200ResponseData.md
 docs/Model/GetMasterDataPerson200ResponseDataAgeGroupsInner.md
 docs/Model/GetMasterDataPerson200ResponseDataCampusesInner.md
+docs/Model/GetMasterDataPerson200ResponseDataCampusesInnerAddress.md
 docs/Model/GetMasterDataPerson200ResponseDataFollowUpIntervalsInner.md
 docs/Model/GetMasterDataPerson200ResponseDataFollowUpsInner.md
 docs/Model/GetMasterDataPerson200ResponseDataGroupCategoriesInner.md
@@ -468,6 +469,7 @@ docs/Model/PersonDomainObjectDomainAttributes.md
 docs/Model/PersonEmail.md
 docs/Model/PersonEmail1.md
 docs/Model/PersonMasterData.md
+docs/Model/PersonMasterDataCampusesInner.md
 docs/Model/PersonRelationship.md
 docs/Model/PersonSetting.md
 docs/Model/PersonUpdateable.md
@@ -921,6 +923,7 @@ lib/Model/GetMasterDataPerson200Response.php
 lib/Model/GetMasterDataPerson200ResponseData.php
 lib/Model/GetMasterDataPerson200ResponseDataAgeGroupsInner.php
 lib/Model/GetMasterDataPerson200ResponseDataCampusesInner.php
+lib/Model/GetMasterDataPerson200ResponseDataCampusesInnerAddress.php
 lib/Model/GetMasterDataPerson200ResponseDataFollowUpIntervalsInner.php
 lib/Model/GetMasterDataPerson200ResponseDataFollowUpsInner.php
 lib/Model/GetMasterDataPerson200ResponseDataGroupCategoriesInner.php
@@ -1066,6 +1069,7 @@ lib/Model/PersonDomainObjectDomainAttributes.php
 lib/Model/PersonEmail.php
 lib/Model/PersonEmail1.php
 lib/Model/PersonMasterData.php
+lib/Model/PersonMasterDataCampusesInner.php
 lib/Model/PersonRelationship.php
 lib/Model/PersonSetting.php
 lib/Model/PersonUpdateable.php
@@ -1196,5 +1200,4 @@ lib/Model/WikiPage1Permissions.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/CreateNewCampus201ResponseDataAddressTest.php
-test/Model/GetMasterDataPerson200ResponseDataCampusesInnerTest.php
+test/Model/PersonMasterDataCampusesInnerTest.php
