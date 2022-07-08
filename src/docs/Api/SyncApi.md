@@ -32,7 +32,7 @@ Method | HTTP request | Description
 ## `createSyncMapping()`
 
 ```php
-createSyncMapping($inline_object49): \StevenBuehner\ChurchTools\Model\SyncEntityMapping
+createSyncMapping($create_sync_mapping_request): \StevenBuehner\ChurchTools\Model\SyncEntityMapping
 ```
 
 Create new mapping
@@ -58,10 +58,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object49 = new \StevenBuehner\ChurchTools\Model\InlineObject49(); // \StevenBuehner\ChurchTools\Model\InlineObject49
+$create_sync_mapping_request = new \StevenBuehner\ChurchTools\Model\CreateSyncMappingRequest(); // \StevenBuehner\ChurchTools\Model\CreateSyncMappingRequest | New Entity Mapping of a Person.
 
 try {
-    $result = $apiInstance->createSyncMapping($inline_object49);
+    $result = $apiInstance->createSyncMapping($create_sync_mapping_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->createSyncMapping: ', $e->getMessage(), PHP_EOL;
@@ -72,7 +72,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object49** | [**\StevenBuehner\ChurchTools\Model\InlineObject49**](../Model/InlineObject49.md)|  | [optional]
+ **create_sync_mapping_request** | [**\StevenBuehner\ChurchTools\Model\CreateSyncMappingRequest**](../Model/CreateSyncMappingRequest.md)| New Entity Mapping of a Person. | [optional]
 
 ### Return type
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 ## `getSyncConflict()`
 
 ```php
-getSyncConflict($id): \StevenBuehner\ChurchTools\Model\InlineResponse2013
+getSyncConflict($id): \StevenBuehner\ChurchTools\Model\SaveSyncConflict201Response
 ```
 
 Fetch One Conflict
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\StevenBuehner\ChurchTools\Model\SaveSyncConflict201Response**](../Model/SaveSyncConflict201Response.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 ## `getSyncConflicts()`
 
 ```php
-getSyncConflicts($types, $domain_types, $source_ids): \StevenBuehner\ChurchTools\Model\InlineResponse20081
+getSyncConflicts($types, $domain_types, $source_ids): \StevenBuehner\ChurchTools\Model\GetSyncConflicts200Response
 ```
 
 Fetch all conflicts
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20081**](../Model/InlineResponse20081.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncConflicts200Response**](../Model/GetSyncConflicts200Response.md)
 
 ### Authorization
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 ## `getSyncExecutions()`
 
 ```php
-getSyncExecutions($es_ids, $job_ids, $start_date, $end_date, $statuses, $page, $limit, $is_dry_run): \StevenBuehner\ChurchTools\Model\InlineResponse200114
+getSyncExecutions($es_ids, $job_ids, $start_date, $end_date, $statuses, $page, $limit, $is_dry_run): \StevenBuehner\ChurchTools\Model\GetSyncExecutions200Response
 ```
 
 Statistical Information about Sync Executions
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200114**](../Model/InlineResponse200114.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncExecutions200Response**](../Model/GetSyncExecutions200Response.md)
 
 ### Authorization
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 ## `getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()`
 
 ```php
-getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\InlineResponse200101
+getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response
 ```
 
 Fetch all entity filters for this job
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200101**](../Model/InlineResponse200101.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response**](../Model/GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response.md)
 
 ### Authorization
 
@@ -654,7 +654,7 @@ No authorization required
 ## `getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()`
 
 ```php
-getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\InlineResponse200100
+getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id): \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
 ```
 
 Fetch all Properties for This Job
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200100**](../Model/InlineResponse200100.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response**](../Model/GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response.md)
 
 ### Authorization
 
@@ -712,7 +712,7 @@ No authorization required
 ## `getSyncFieldMappings()`
 
 ```php
-getSyncFieldMappings($id, $domain_type): \StevenBuehner\ChurchTools\Model\InlineResponse200103
+getSyncFieldMappings($id, $domain_type): \StevenBuehner\ChurchTools\Model\GetSyncFieldMappings200Response
 ```
 
 Get Mapping for Domain Type
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200103**](../Model/InlineResponse200103.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncFieldMappings200Response**](../Model/GetSyncFieldMappings200Response.md)
 
 ### Authorization
 
@@ -776,7 +776,7 @@ Name | Type | Description  | Notes
 ## `getSyncLogs()`
 
 ```php
-getSyncLogs($page, $limit, $es_ids, $job_ids, $start_date, $end_date, $types, $query, $levels, $is_dry_run, $body): \StevenBuehner\ChurchTools\Model\InlineResponse200112
+getSyncLogs($page, $limit, $es_ids, $job_ids, $start_date, $end_date, $types, $query, $levels, $is_dry_run, $body): \StevenBuehner\ChurchTools\Model\GetSyncLogs200Response
 ```
 
 Get Sync Logs
@@ -840,7 +840,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200112**](../Model/InlineResponse200112.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncLogs200Response**](../Model/GetSyncLogs200Response.md)
 
 ### Authorization
 
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 ## `getSyncMappings()`
 
 ```php
-getSyncMappings($domain_type, $domain_id, $source_id): \StevenBuehner\ChurchTools\Model\InlineResponse20078
+getSyncMappings($domain_type, $domain_id, $source_id): \StevenBuehner\ChurchTools\Model\GetSyncMappings200Response
 ```
 
 Fetch all registered mappings
@@ -906,7 +906,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20078**](../Model/InlineResponse20078.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncMappings200Response**](../Model/GetSyncMappings200Response.md)
 
 ### Authorization
 
@@ -985,7 +985,7 @@ void (empty response body)
 ## `postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()`
 
 ```php
-postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object66)
+postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $post_sync_externalsystems_external_system_id_jobconfigs_job_id_start_request)
 ```
 
 Start Execution
@@ -1013,10 +1013,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string
 $job_id = 'job_id_example'; // string
-$inline_object66 = new \StevenBuehner\ChurchTools\Model\InlineObject66(); // \StevenBuehner\ChurchTools\Model\InlineObject66
+$post_sync_externalsystems_external_system_id_jobconfigs_job_id_start_request = new \StevenBuehner\ChurchTools\Model\PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest(); // \StevenBuehner\ChurchTools\Model\PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest
 
 try {
-    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $inline_object66);
+    $apiInstance->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart($external_system_id, $job_id, $post_sync_externalsystems_external_system_id_jobconfigs_job_id_start_request);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart: ', $e->getMessage(), PHP_EOL;
 }
@@ -1028,7 +1028,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**|  |
  **job_id** | **string**|  |
- **inline_object66** | [**\StevenBuehner\ChurchTools\Model\InlineObject66**](../Model/InlineObject66.md)|  | [optional]
+ **post_sync_externalsystems_external_system_id_jobconfigs_job_id_start_request** | [**\StevenBuehner\ChurchTools\Model\PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest**](../Model/PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1050,7 +1050,7 @@ void (empty response body)
 ## `postSyncLogs()`
 
 ```php
-postSyncLogs($inline_object65): \StevenBuehner\ChurchTools\Model\InlineResponse2017
+postSyncLogs($post_sync_logs_request): \StevenBuehner\ChurchTools\Model\PostSyncLogs201Response
 ```
 
 Save Sync Logs
@@ -1076,10 +1076,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object65 = new \StevenBuehner\ChurchTools\Model\InlineObject65(); // \StevenBuehner\ChurchTools\Model\InlineObject65
+$post_sync_logs_request = new \StevenBuehner\ChurchTools\Model\PostSyncLogsRequest(); // \StevenBuehner\ChurchTools\Model\PostSyncLogsRequest | 
 
 try {
-    $result = $apiInstance->postSyncLogs($inline_object65);
+    $result = $apiInstance->postSyncLogs($post_sync_logs_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->postSyncLogs: ', $e->getMessage(), PHP_EOL;
@@ -1090,11 +1090,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object65** | [**\StevenBuehner\ChurchTools\Model\InlineObject65**](../Model/InlineObject65.md)|  | [optional]
+ **post_sync_logs_request** | [**\StevenBuehner\ChurchTools\Model\PostSyncLogsRequest**](../Model/PostSyncLogsRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2017**](../Model/InlineResponse2017.md)
+[**\StevenBuehner\ChurchTools\Model\PostSyncLogs201Response**](../Model/PostSyncLogs201Response.md)
 
 ### Authorization
 
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 ## `putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()`
 
 ```php
-putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object58): \StevenBuehner\ChurchTools\Model\InlineResponse200102
+putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $put_sync_externalsystems_external_system_id_jobconfigs_job_id_filter_request): \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response
 ```
 
 Save entity filters
@@ -1134,10 +1134,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
-$inline_object58 = new \StevenBuehner\ChurchTools\Model\InlineObject58(); // \StevenBuehner\ChurchTools\Model\InlineObject58
+$put_sync_externalsystems_external_system_id_jobconfigs_job_id_filter_request = new \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest(); // \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest
 
 try {
-    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $inline_object58);
+    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter($external_system_id, $job_id, $put_sync_externalsystems_external_system_id_jobconfigs_job_id_filter_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter: ', $e->getMessage(), PHP_EOL;
@@ -1150,11 +1150,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**| External System ID |
  **job_id** | **string**| Job Configuration ID |
- **inline_object58** | [**\StevenBuehner\ChurchTools\Model\InlineObject58**](../Model/InlineObject58.md)|  | [optional]
+ **put_sync_externalsystems_external_system_id_jobconfigs_job_id_filter_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest**](../Model/PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200102**](../Model/InlineResponse200102.md)
+[**\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response**](../Model/PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response.md)
 
 ### Authorization
 
@@ -1172,7 +1172,7 @@ No authorization required
 ## `putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()`
 
 ```php
-putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object57): \StevenBuehner\ChurchTools\Model\InlineResponse200100
+putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $put_sync_externalsystems_external_system_id_jobconfigs_job_id_properties_request): \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
 ```
 
 Save Properties, Which Should Be Synced
@@ -1194,10 +1194,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $external_system_id = 'external_system_id_example'; // string | External System ID
 $job_id = 'job_id_example'; // string | Job Configuration ID
-$inline_object57 = new \StevenBuehner\ChurchTools\Model\InlineObject57(); // \StevenBuehner\ChurchTools\Model\InlineObject57
+$put_sync_externalsystems_external_system_id_jobconfigs_job_id_properties_request = new \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest(); // \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest
 
 try {
-    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $inline_object57);
+    $result = $apiInstance->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties($external_system_id, $job_id, $put_sync_externalsystems_external_system_id_jobconfigs_job_id_properties_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties: ', $e->getMessage(), PHP_EOL;
@@ -1210,11 +1210,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **external_system_id** | **string**| External System ID |
  **job_id** | **string**| Job Configuration ID |
- **inline_object57** | [**\StevenBuehner\ChurchTools\Model\InlineObject57**](../Model/InlineObject57.md)|  | [optional]
+ **put_sync_externalsystems_external_system_id_jobconfigs_job_id_properties_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest**](../Model/PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200100**](../Model/InlineResponse200100.md)
+[**\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response**](../Model/GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response.md)
 
 ### Authorization
 
@@ -1232,7 +1232,7 @@ No authorization required
 ## `putSyncFieldMappings()`
 
 ```php
-putSyncFieldMappings($id, $domain_type, $inline_object59): \StevenBuehner\ChurchTools\Model\InlineResponse200104
+putSyncFieldMappings($id, $domain_type, $put_sync_field_mappings_request): \StevenBuehner\ChurchTools\Model\PutSyncFieldMappings200Response
 ```
 
 Save Mapping for Domain Type
@@ -1260,10 +1260,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $id = 'id_example'; // string | ID of External System
 $domain_type = 'domain_type_example'; // string | Domatin Type
-$inline_object59 = new \StevenBuehner\ChurchTools\Model\InlineObject59(); // \StevenBuehner\ChurchTools\Model\InlineObject59
+$put_sync_field_mappings_request = {"domainType":"person","propertyMappingsMasterToES":[{"from":"lastName","to":"nachname"},{"from":"firstName","to":"vorname"},{"from":"sexId","to":"geschlecht","valueMapping":{"unbekannt":["0"],"männlich":["1"],"weiblich":["2"],"divers":["1"]}},{"from":"status","to":"kategorie","valueMapping":{"1":[1],"2":[2],"5":[3]},"others":[0,4]},{"from":"groups","fromAttributes":{"id":36},"to":"kategorie","valueMapping":{"15":[757],"16":[758]},"others":[null,759,760]}],"propertyMappingsESToMaster":[{"from":"nachname","to":"lastName"},{"from":"vorname","to":"firstName"},{"from":"geschlecht","to":"sexId","valueMapping":{"0":["unbekannt","divers"],"1":["männlich"],"2":["weiblich"]},"others":["alien","gott"]},{"from":"kategorie","to":"status","valueMapping":{"1":[1],"2":[2,4],"3":[5]},"others":[0,4]},{"from":"kategorie","to":"group","toAttributes":{"id":36},"valueMapping":{"757":[15],"758":[16]},"others":[null]}]}; // \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequest | 
 
 try {
-    $result = $apiInstance->putSyncFieldMappings($id, $domain_type, $inline_object59);
+    $result = $apiInstance->putSyncFieldMappings($id, $domain_type, $put_sync_field_mappings_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->putSyncFieldMappings: ', $e->getMessage(), PHP_EOL;
@@ -1276,11 +1276,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of External System |
  **domain_type** | **string**| Domatin Type |
- **inline_object59** | [**\StevenBuehner\ChurchTools\Model\InlineObject59**](../Model/InlineObject59.md)|  | [optional]
+ **put_sync_field_mappings_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequest**](../Model/PutSyncFieldMappingsRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200104**](../Model/InlineResponse200104.md)
+[**\StevenBuehner\ChurchTools\Model\PutSyncFieldMappings200Response**](../Model/PutSyncFieldMappings200Response.md)
 
 ### Authorization
 
@@ -1298,7 +1298,7 @@ Name | Type | Description  | Notes
 ## `saveSyncConflict()`
 
 ```php
-saveSyncConflict($inline_object51): \StevenBuehner\ChurchTools\Model\InlineResponse2013
+saveSyncConflict($save_sync_conflict_request): \StevenBuehner\ChurchTools\Model\SaveSyncConflict201Response
 ```
 
 Save new detected conflict
@@ -1324,10 +1324,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object51 = new \StevenBuehner\ChurchTools\Model\InlineObject51(); // \StevenBuehner\ChurchTools\Model\InlineObject51
+$save_sync_conflict_request = new \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest(); // \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest | 
 
 try {
-    $result = $apiInstance->saveSyncConflict($inline_object51);
+    $result = $apiInstance->saveSyncConflict($save_sync_conflict_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->saveSyncConflict: ', $e->getMessage(), PHP_EOL;
@@ -1338,11 +1338,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object51** | [**\StevenBuehner\ChurchTools\Model\InlineObject51**](../Model/InlineObject51.md)|  | [optional]
+ **save_sync_conflict_request** | [**\StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest**](../Model/SaveSyncConflictRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\StevenBuehner\ChurchTools\Model\SaveSyncConflict201Response**](../Model/SaveSyncConflict201Response.md)
 
 ### Authorization
 
@@ -1360,7 +1360,7 @@ Name | Type | Description  | Notes
 ## `updateEntityMapping()`
 
 ```php
-updateEntityMapping($id, $inline_object50): \StevenBuehner\ChurchTools\Model\SyncEntityMapping
+updateEntityMapping($id, $update_entity_mapping_request): \StevenBuehner\ChurchTools\Model\SyncEntityMapping
 ```
 
 Update or Create Mapping
@@ -1387,10 +1387,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     $config
 );
 $id = 'id_example'; // string
-$inline_object50 = new \StevenBuehner\ChurchTools\Model\InlineObject50(); // \StevenBuehner\ChurchTools\Model\InlineObject50
+$update_entity_mapping_request = new \StevenBuehner\ChurchTools\Model\UpdateEntityMappingRequest(); // \StevenBuehner\ChurchTools\Model\UpdateEntityMappingRequest | 
 
 try {
-    $result = $apiInstance->updateEntityMapping($id, $inline_object50);
+    $result = $apiInstance->updateEntityMapping($id, $update_entity_mapping_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->updateEntityMapping: ', $e->getMessage(), PHP_EOL;
@@ -1402,7 +1402,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **inline_object50** | [**\StevenBuehner\ChurchTools\Model\InlineObject50**](../Model/InlineObject50.md)|  | [optional]
+ **update_entity_mapping_request** | [**\StevenBuehner\ChurchTools\Model\UpdateEntityMappingRequest**](../Model/UpdateEntityMappingRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1424,7 +1424,7 @@ Name | Type | Description  | Notes
 ## `updateSyncConflict()`
 
 ```php
-updateSyncConflict($id, $inline_object52): \StevenBuehner\ChurchTools\Model\InlineResponse2013
+updateSyncConflict($id, $update_sync_conflict_request): \StevenBuehner\ChurchTools\Model\SaveSyncConflict201Response
 ```
 
 Update Conflict
@@ -1451,10 +1451,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     $config
 );
 $id = 'id_example'; // string
-$inline_object52 = new \StevenBuehner\ChurchTools\Model\InlineObject52(); // \StevenBuehner\ChurchTools\Model\InlineObject52
+$update_sync_conflict_request = new \StevenBuehner\ChurchTools\Model\UpdateSyncConflictRequest(); // \StevenBuehner\ChurchTools\Model\UpdateSyncConflictRequest
 
 try {
-    $result = $apiInstance->updateSyncConflict($id, $inline_object52);
+    $result = $apiInstance->updateSyncConflict($id, $update_sync_conflict_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SyncApi->updateSyncConflict: ', $e->getMessage(), PHP_EOL;
@@ -1466,11 +1466,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **inline_object52** | [**\StevenBuehner\ChurchTools\Model\InlineObject52**](../Model/InlineObject52.md)|  | [optional]
+ **update_sync_conflict_request** | [**\StevenBuehner\ChurchTools\Model\UpdateSyncConflictRequest**](../Model/UpdateSyncConflictRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\StevenBuehner\ChurchTools\Model\SaveSyncConflict201Response**](../Model/SaveSyncConflict201Response.md)
 
 ### Authorization
 

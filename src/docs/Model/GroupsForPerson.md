@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**group** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20016Group**](InlineResponse20016Group.md) |  | [optional]
+**group** | [**\StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroup**](GetAllGroupsForPerson200ResponseDataInnerGroup.md) |  | [optional]
 **group_type_role_id** | **int** |  | [optional]
 **comment** | **string** |  | [optional]
 **member_start_date** | **\DateTime** |  | [optional]

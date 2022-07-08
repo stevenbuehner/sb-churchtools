@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getTags()`
 
 ```php
-getTags($type): \StevenBuehner\ChurchTools\Model\InlineResponse2009Data[]
+getTags($type): \StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]
 ```
 
 Get all tags of a type
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2009Data[]**](../Model/InlineResponse2009Data.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]**](../Model/GetPersonTags200ResponseDataInner.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ## `saveTag()`
 
 ```php
-saveTag($inline_object12): \StevenBuehner\ChurchTools\Model\InlineResponse20029
+saveTag($save_tag_request): \StevenBuehner\ChurchTools\Model\SaveTag200Response
 ```
 
 Create new tag
@@ -97,10 +97,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\TagApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object12 = new \StevenBuehner\ChurchTools\Model\InlineObject12(); // \StevenBuehner\ChurchTools\Model\InlineObject12
+$save_tag_request = new \StevenBuehner\ChurchTools\Model\SaveTagRequest(); // \StevenBuehner\ChurchTools\Model\SaveTagRequest | Tax rate data
 
 try {
-    $result = $apiInstance->saveTag($inline_object12);
+    $result = $apiInstance->saveTag($save_tag_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->saveTag: ', $e->getMessage(), PHP_EOL;
@@ -111,11 +111,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object12** | [**\StevenBuehner\ChurchTools\Model\InlineObject12**](../Model/InlineObject12.md)|  |
+ **save_tag_request** | [**\StevenBuehner\ChurchTools\Model\SaveTagRequest**](../Model/SaveTagRequest.md)| Tax rate data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\StevenBuehner\ChurchTools\Model\SaveTag200Response**](../Model/SaveTag200Response.md)
 
 ### Authorization
 

@@ -1,0 +1,18 @@
+# # GetGroupsGroupIdMemberfields200ResponseDataField
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional]
+**group_id** | **int** |  | [optional]
+**field_name** | **string** |  | [optional]
+**sort_key** | **int** |  | [optional]
+**field_type_id** | **int** |  | [optional]
+**security_level** | **int** |  | [optional]
+**default_value** | **string** |  | [optional]
+**options** | **string[]** |  | [optional]
+**use_in_registration_form** | **bool** |  | [optional]
+**required_in_registration_form** | **bool** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

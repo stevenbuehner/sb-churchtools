@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **is_opening_balance_account** | **bool** |  | [optional]
 **taxe_rate_id** | **int** |  | [optional]
 **balance** | **float** | Current balance of account in cent. | [optional]
-**permissions** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20045DataPermissions1**](InlineResponse20045DataPermissions1.md) |  | [optional]
+**permissions** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInnerPermissions**](GetAllData200ResponseDataAccountsInnerPermissions.md) |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\EntityMetaData**](EntityMetaData.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

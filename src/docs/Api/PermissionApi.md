@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getGlobalPermissions()`
 
 ```php
-getGlobalPermissions(): \StevenBuehner\ChurchTools\Model\InlineResponse20082
+getGlobalPermissions(): \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200Response
 ```
 
 All Permissions for the Current User
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20082**](../Model/InlineResponse20082.md)
+[**\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200Response**](../Model/GetGlobalPermissions200Response.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 ## `getInternalPermissionsForPerson()`
 
 ```php
-getInternalPermissionsForPerson($person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20083
+getInternalPermissionsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetInternalPermissionsForPerson200Response
 ```
 
 Lookup Person-Related Group Internal Permissions
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20083**](../Model/InlineResponse20083.md)
+[**\StevenBuehner\ChurchTools\Model\GetInternalPermissionsForPerson200Response**](../Model/GetInternalPermissionsForPerson200Response.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ## `getPermissionsInternalGroupsGroupId()`
 
 ```php
-getPermissionsInternalGroupsGroupId($group_id): \StevenBuehner\ChurchTools\Model\InlineResponse20090
+getPermissionsInternalGroupsGroupId($group_id): \StevenBuehner\ChurchTools\Model\GetPermissionsInternalGroupsGroupId200Response
 ```
 
 Lookup Group-Related Group Internal Permissions
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20090**](../Model/InlineResponse20090.md)
+[**\StevenBuehner\ChurchTools\Model\GetPermissionsInternalGroupsGroupId200Response**](../Model/GetPermissionsInternalGroupsGroupId200Response.md)
 
 ### Authorization
 

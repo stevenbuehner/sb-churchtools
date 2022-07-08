@@ -81,7 +81,7 @@ void (empty response body)
 ## `getAllServiceGroups()`
 
 ```php
-getAllServiceGroups(): \StevenBuehner\ChurchTools\Model\InlineResponse20027
+getAllServiceGroups(): \StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response
 ```
 
 Get all service groups
@@ -122,7 +122,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response**](../Model/GetAllServiceGroups200Response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ This endpoint does not need any parameter.
 ## `getAllServices()`
 
 ```php
-getAllServices(): \StevenBuehner\ChurchTools\Model\InlineResponse20028
+getAllServices(): \StevenBuehner\ChurchTools\Model\GetAllServices200Response
 ```
 
 Get all services
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllServices200Response**](../Model/GetAllServices200Response.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ This endpoint does not need any parameter.
 ## `getOpenServiceRequestsForPerson()`
 
 ```php
-getOpenServiceRequestsForPerson($id): \StevenBuehner\ChurchTools\Model\InlineResponse20014
+getOpenServiceRequestsForPerson($id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
 ```
 
 Get all service requests for a person
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response**](../Model/GetOpenServiceRequestsForPerson200Response.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 ## `getServiceRequestById()`
 
 ```php
-getServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\InlineResponse20015
+getServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Get a specific service request for a person
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response**](../Model/GetServiceRequestById200Response.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 ## `undoServiceRequestById()`
 
 ```php
-undoServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\InlineResponse20015
+undoServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Undo last service request action
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response**](../Model/GetServiceRequestById200Response.md)
 
 ### Authorization
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 ## `updateServiceRequestById()`
 
 ```php
-updateServiceRequestById($id, $request_id, $inline_object7): \StevenBuehner\ChurchTools\Model\InlineResponse20015
+updateServiceRequestById($id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Agree to a service request for a person
@@ -417,10 +417,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
 );
 $id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
-$inline_object7 = new \StevenBuehner\ChurchTools\Model\InlineObject7(); // \StevenBuehner\ChurchTools\Model\InlineObject7
+$update_service_request_by_id_request = new \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest(); // \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest | Send the agreed state and optionally a comment.
 
 try {
-    $result = $apiInstance->updateServiceRequestById($id, $request_id, $inline_object7);
+    $result = $apiInstance->updateServiceRequestById($id, $request_id, $update_service_request_by_id_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceServiceGroupsApi->updateServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -433,11 +433,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
- **inline_object7** | [**\StevenBuehner\ChurchTools\Model\InlineObject7**](../Model/InlineObject7.md)|  |
+ **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response**](../Model/GetServiceRequestById200Response.md)
 
 ### Authorization
 

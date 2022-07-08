@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **person_id** | **int** |  | [optional]
-**person** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20018Person**](InlineResponse20018Person.md) |  | [optional]
+**person** | [**\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson**](GetAllGroupMembers200ResponseDataInnerPerson.md) |  | [optional]
 **group_type_role_id** | **int** |  | [optional]
 **comment** | **string** |  | [optional]
 **member_start_date** | **\DateTime** |  | [optional]

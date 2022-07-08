@@ -78,7 +78,7 @@ void (empty response body)
 ## `getGroupsAbsences()`
 
 ```php
-getGroupsAbsences($group_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\InlineResponse200108
+getGroupsAbsences($group_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response
 ```
 
 Fetch all absences for persons in a group
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200108**](../Model/InlineResponse200108.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response**](../Model/GetPersonsAbsences200Response.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 ## `getPersonsAbsence()`
 
 ```php
-getPersonsAbsence($person_id, $id): \StevenBuehner\ChurchTools\Model\InlineResponse2016
+getPersonsAbsence($person_id, $id): \StevenBuehner\ChurchTools\Model\PostPersonsAbsences201Response
 ```
 
 Fetch one absence
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2016**](../Model/InlineResponse2016.md)
+[**\StevenBuehner\ChurchTools\Model\PostPersonsAbsences201Response**](../Model/PostPersonsAbsences201Response.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 ## `getPersonsAbsences()`
 
 ```php
-getPersonsAbsences($person_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\InlineResponse200108
+getPersonsAbsences($person_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response
 ```
 
 Fetch all absences for a person
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200108**](../Model/InlineResponse200108.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response**](../Model/GetPersonsAbsences200Response.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 ## `postPersonsAbsences()`
 
 ```php
-postPersonsAbsences($person_id, $inline_object63): \StevenBuehner\ChurchTools\Model\InlineResponse2016
+postPersonsAbsences($person_id, $post_persons_absences_request): \StevenBuehner\ChurchTools\Model\PostPersonsAbsences201Response
 ```
 
 Create new absence for person
@@ -301,10 +301,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     $config
 );
 $person_id = 'person_id_example'; // string
-$inline_object63 = new \StevenBuehner\ChurchTools\Model\InlineObject63(); // \StevenBuehner\ChurchTools\Model\InlineObject63
+$post_persons_absences_request = new \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest(); // \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest | Absences can be all-day or with a specific time. Either `startDate`, `endDate`  or `startTime`, `endTime` MUST be present. If `*Time` is given, the `*Date` value will be ignored.
 
 try {
-    $result = $apiInstance->postPersonsAbsences($person_id, $inline_object63);
+    $result = $apiInstance->postPersonsAbsences($person_id, $post_persons_absences_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AbsenceApi->postPersonsAbsences: ', $e->getMessage(), PHP_EOL;
@@ -316,11 +316,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
- **inline_object63** | [**\StevenBuehner\ChurchTools\Model\InlineObject63**](../Model/InlineObject63.md)|  | [optional]
+ **post_persons_absences_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest**](../Model/PostPersonsAbsencesRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2016**](../Model/InlineResponse2016.md)
+[**\StevenBuehner\ChurchTools\Model\PostPersonsAbsences201Response**](../Model/PostPersonsAbsences201Response.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 ## `putPersonsAbsence()`
 
 ```php
-putPersonsAbsence($person_id, $id, $inline_object64): \StevenBuehner\ChurchTools\Model\InlineResponse2016
+putPersonsAbsence($person_id, $id, $put_persons_absence_request): \StevenBuehner\ChurchTools\Model\PostPersonsAbsences201Response
 ```
 
 Update absence
@@ -366,10 +366,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
 );
 $person_id = 'person_id_example'; // string
 $id = 'id_example'; // string
-$inline_object64 = new \StevenBuehner\ChurchTools\Model\InlineObject64(); // \StevenBuehner\ChurchTools\Model\InlineObject64
+$put_persons_absence_request = new \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest(); // \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest | Absences can be all-day or with a specific time. Either `startDate`, `endDate`  or `startTime`, `endTime` MUST be present. If `*Time` is given, the `*Date` value will be ignored.
 
 try {
-    $result = $apiInstance->putPersonsAbsence($person_id, $id, $inline_object64);
+    $result = $apiInstance->putPersonsAbsence($person_id, $id, $put_persons_absence_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AbsenceApi->putPersonsAbsence: ', $e->getMessage(), PHP_EOL;
@@ -382,11 +382,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
  **id** | **string**|  |
- **inline_object64** | [**\StevenBuehner\ChurchTools\Model\InlineObject64**](../Model/InlineObject64.md)|  | [optional]
+ **put_persons_absence_request** | [**\StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest**](../Model/PutPersonsAbsenceRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2016**](../Model/InlineResponse2016.md)
+[**\StevenBuehner\ChurchTools\Model\PostPersonsAbsences201Response**](../Model/PostPersonsAbsences201Response.md)
 
 ### Authorization
 

@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **key** | **string** |  | [optional]
 **module** | **string** |  | [optional]
 **updated** | **\DateTime** | Last updated | [optional]
-**translations** | [**\StevenBuehner\ChurchTools\Model\InlineResponse20040Translations**](InlineResponse20040Translations.md) |  | [optional]
+**translations** | [**\StevenBuehner\ChurchTools\Model\TranslationKeyTranslations**](TranslationKeyTranslations.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

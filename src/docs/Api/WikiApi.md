@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `getWikiCategories()`
 
 ```php
-getWikiCategories(): \StevenBuehner\ChurchTools\Model\InlineResponse20084
+getWikiCategories(): \StevenBuehner\ChurchTools\Model\GetWikiCategories200Response
 ```
 
 Get all wiki categories.
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20084**](../Model/InlineResponse20084.md)
+[**\StevenBuehner\ChurchTools\Model\GetWikiCategories200Response**](../Model/GetWikiCategories200Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ This endpoint does not need any parameter.
 ## `getWikiCategoriesWikiCategoryIdPages()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPages($wiki_category_id): \StevenBuehner\ChurchTools\Model\InlineResponse20087
+getWikiCategoriesWikiCategoryIdPages($wiki_category_id): \StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPages200Response
 ```
 
 Returns all Wiki Pages in the given Category.
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20087**](../Model/InlineResponse20087.md)
+[**\StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPages200Response**](../Model/GetWikiCategoriesWikiCategoryIdPages200Response.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdPagesIdentifier()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPagesIdentifier($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20085
+getWikiCategoriesWikiCategoryIdPagesIdentifier($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPagesIdentifier200Response
 ```
 
 Returns the latest version of the wiki page with the given identifier.
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20085**](../Model/InlineResponse20085.md)
+[**\StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPagesIdentifier200Response**](../Model/GetWikiCategoriesWikiCategoryIdPagesIdentifier200Response.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdPagesIdentifierVersions()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPagesIdentifierVersions($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20085
+getWikiCategoriesWikiCategoryIdPagesIdentifierVersions($wiki_category_id, $identifier): \StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPagesIdentifier200Response
 ```
 
 Returns all version of the wiki page for the given
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20085**](../Model/InlineResponse20085.md)
+[**\StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPagesIdentifier200Response**](../Model/GetWikiCategoriesWikiCategoryIdPagesIdentifier200Response.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdPagesVersionsVersion()`
 
 ```php
-getWikiCategoriesWikiCategoryIdPagesVersionsVersion($wiki_category_id, $version, $identifier): \StevenBuehner\ChurchTools\Model\InlineResponse20086
+getWikiCategoriesWikiCategoryIdPagesVersionsVersion($wiki_category_id, $version, $identifier): \StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response
 ```
 
 Returns the wiki page with the given identifier and version.
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20086**](../Model/InlineResponse20086.md)
+[**\StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response**](../Model/GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response.md)
 
 ### Authorization
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 ## `getWikiCategoriesWikiCategoryIdSearch()`
 
 ```php
-getWikiCategoriesWikiCategoryIdSearch($query, $wiki_category_ids): \StevenBuehner\ChurchTools\Model\InlineResponse20088
+getWikiCategoriesWikiCategoryIdSearch($query, $wiki_category_ids): \StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdSearch200Response
 ```
 
 Your GET endpoint
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20088**](../Model/InlineResponse20088.md)
+[**\StevenBuehner\ChurchTools\Model\GetWikiCategoriesWikiCategoryIdSearch200Response**](../Model/GetWikiCategoriesWikiCategoryIdSearch200Response.md)
 
 ### Authorization
 

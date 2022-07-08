@@ -44,7 +44,7 @@ Method | HTTP request | Description
 ## `checkin()`
 
 ```php
-checkin($group_id, $person_id, $inline_object11): \StevenBuehner\ChurchTools\Model\InlineResponse20025
+checkin($group_id, $person_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
 ```
 
 Checkin a person to a group
@@ -72,10 +72,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 $group_id = 42; // int | ID of group
 $person_id = 7; // int | ID of person
-$inline_object11 = new \StevenBuehner\ChurchTools\Model\InlineObject11(); // \StevenBuehner\ChurchTools\Model\InlineObject11
+$checkin_request = new \StevenBuehner\ChurchTools\Model\CheckinRequest(); // \StevenBuehner\ChurchTools\Model\CheckinRequest
 
 try {
-    $result = $apiInstance->checkin($group_id, $person_id, $inline_object11);
+    $result = $apiInstance->checkin($group_id, $person_id, $checkin_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->checkin: ', $e->getMessage(), PHP_EOL;
@@ -88,11 +88,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| ID of group |
  **person_id** | **int**| ID of person |
- **inline_object11** | [**\StevenBuehner\ChurchTools\Model\InlineObject11**](../Model/InlineObject11.md)|  |
+ **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\StevenBuehner\ChurchTools\Model\Checkin200Response**](../Model/Checkin200Response.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ## `createMeeting()`
 
 ```php
-createMeeting($id, $inline_object10): \StevenBuehner\ChurchTools\Model\InlineResponse20023
+createMeeting($id, $create_meeting_request): \StevenBuehner\ChurchTools\Model\CreateMeeting200Response
 ```
 
 Create a group meeting
@@ -137,10 +137,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     $config
 );
 $id = 42; // int | ID of group
-$inline_object10 = new \StevenBuehner\ChurchTools\Model\InlineObject10(); // \StevenBuehner\ChurchTools\Model\InlineObject10
+$create_meeting_request = new \StevenBuehner\ChurchTools\Model\CreateMeetingRequest(); // \StevenBuehner\ChurchTools\Model\CreateMeetingRequest
 
 try {
-    $result = $apiInstance->createMeeting($id, $inline_object10);
+    $result = $apiInstance->createMeeting($id, $create_meeting_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->createMeeting: ', $e->getMessage(), PHP_EOL;
@@ -152,11 +152,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of group |
- **inline_object10** | [**\StevenBuehner\ChurchTools\Model\InlineObject10**](../Model/InlineObject10.md)|  |
+ **create_meeting_request** | [**\StevenBuehner\ChurchTools\Model\CreateMeetingRequest**](../Model/CreateMeetingRequest.md)|  |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
+[**\StevenBuehner\ChurchTools\Model\CreateMeeting200Response**](../Model/CreateMeeting200Response.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 ## `createOrUpdateMember()`
 
 ```php
-createOrUpdateMember($id, $person_id, $inline_object9): \StevenBuehner\ChurchTools\Model\InlineResponse20019
+createOrUpdateMember($id, $person_id, $create_or_update_member_request): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response
 ```
 
 Create/Update a group member
@@ -202,10 +202,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 $id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
-$inline_object9 = new \StevenBuehner\ChurchTools\Model\InlineObject9(); // \StevenBuehner\ChurchTools\Model\InlineObject9
+$create_or_update_member_request = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
 
 try {
-    $result = $apiInstance->createOrUpdateMember($id, $person_id, $inline_object9);
+    $result = $apiInstance->createOrUpdateMember($id, $person_id, $create_or_update_member_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->createOrUpdateMember: ', $e->getMessage(), PHP_EOL;
@@ -218,11 +218,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of group |
  **person_id** | **int**| ID of person |
- **inline_object9** | [**\StevenBuehner\ChurchTools\Model\InlineObject9**](../Model/InlineObject9.md)|  |
+ **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response**](../Model/CreateOrUpdateMember200Response.md)
 
 ### Authorization
 
@@ -429,7 +429,7 @@ void (empty response body)
 ## `deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()`
 
 ```php
-deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id, $inline_object62)
+deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id, $delete_groups_group_id_meetings_meeting_id_members_member_id_request)
 ```
 
 Revoke checkin
@@ -458,10 +458,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 $group_id = 'group_id_example'; // string
 $meeting_id = 'meeting_id_example'; // string
 $member_id = 'member_id_example'; // string
-$inline_object62 = new \StevenBuehner\ChurchTools\Model\InlineObject62(); // \StevenBuehner\ChurchTools\Model\InlineObject62
+$delete_groups_group_id_meetings_meeting_id_members_member_id_request = new \StevenBuehner\ChurchTools\Model\DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest(); // \StevenBuehner\ChurchTools\Model\DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest
 
 try {
-    $apiInstance->deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id, $inline_object62);
+    $apiInstance->deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id, $delete_groups_group_id_meetings_meeting_id_members_member_id_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId: ', $e->getMessage(), PHP_EOL;
 }
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
  **group_id** | **string**|  |
  **meeting_id** | **string**|  |
  **member_id** | **string**|  |
- **inline_object62** | [**\StevenBuehner\ChurchTools\Model\InlineObject62**](../Model/InlineObject62.md)|  | [optional]
+ **delete_groups_group_id_meetings_meeting_id_members_member_id_request** | [**\StevenBuehner\ChurchTools\Model\DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest**](../Model/DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -559,7 +559,7 @@ void (empty response body)
 ## `getAllGroupMembers()`
 
 ```php
-getAllGroupMembers($id, $page, $limit, $role_ids, $allowed_chat_users_only, $query): \StevenBuehner\ChurchTools\Model\InlineResponse20018
+getAllGroupMembers($id, $page, $limit, $role_ids, $allowed_chat_users_only, $query): \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200Response
 ```
 
 Get all group members
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200Response**](../Model/GetAllGroupMembers200Response.md)
 
 ### Authorization
 
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 ## `getAllGroupsForPerson()`
 
 ```php
-getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups): \StevenBuehner\ChurchTools\Model\InlineResponse20016
+getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
 ```
 
 Get all groups a member is in
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response**](../Model/GetAllGroupsForPerson200Response.md)
 
 ### Authorization
 
@@ -697,7 +697,7 @@ Name | Type | Description  | Notes
 ## `getAllMeetings()`
 
 ```php
-getAllMeetings($id, $is_canceled, $is_completed): \StevenBuehner\ChurchTools\Model\InlineResponse20022
+getAllMeetings($id, $is_canceled, $is_completed): \StevenBuehner\ChurchTools\Model\GetAllMeetings200Response
 ```
 
 Get all group meetings for a specific group
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllMeetings200Response**](../Model/GetAllMeetings200Response.md)
 
 ### Authorization
 
@@ -763,7 +763,7 @@ Name | Type | Description  | Notes
 ## `getAutomaticEmail()`
 
 ```php
-getAutomaticEmail($group_id, $email_id): \StevenBuehner\ChurchTools\Model\InlineResponse200121
+getAutomaticEmail($group_id, $email_id): \StevenBuehner\ChurchTools\Model\GetAutomaticEmail200Response
 ```
 
 Get one automatic email
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200121**](../Model/InlineResponse200121.md)
+[**\StevenBuehner\ChurchTools\Model\GetAutomaticEmail200Response**](../Model/GetAutomaticEmail200Response.md)
 
 ### Authorization
 
@@ -825,10 +825,12 @@ Name | Type | Description  | Notes
 ## `getAutomaticEmails()`
 
 ```php
-getAutomaticEmails($group_id): \StevenBuehner\ChurchTools\Model\InlineResponse200120
+getAutomaticEmails($group_id): \StevenBuehner\ChurchTools\Model\GetAutomaticEmails200Response
 ```
 
 Get all automatic emails of a group
+
+
 
 ### Example
 
@@ -867,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200120**](../Model/InlineResponse200120.md)
+[**\StevenBuehner\ChurchTools\Model\GetAutomaticEmails200Response**](../Model/GetAutomaticEmails200Response.md)
 
 ### Authorization
 
@@ -943,7 +945,7 @@ No authorization required
 ## `getGroupHomepage()`
 
 ```php
-getGroupHomepage($hash): \StevenBuehner\ChurchTools\Model\InlineResponse20026
+getGroupHomepage($hash): \StevenBuehner\ChurchTools\Model\GetGroupHomepage200Response
 ```
 
 Get information about public groups with settings
@@ -987,7 +989,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupHomepage200Response**](../Model/GetGroupHomepage200Response.md)
 
 ### Authorization
 
@@ -1005,7 +1007,7 @@ Name | Type | Description  | Notes
 ## `getGroupStatistics()`
 
 ```php
-getGroupStatistics($group_id): \StevenBuehner\ChurchTools\Model\InlineResponse200117
+getGroupStatistics($group_id): \StevenBuehner\ChurchTools\Model\GetGroupStatistics200Response
 ```
 
 Fetch calculated facts about group
@@ -1047,7 +1049,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200117**](../Model/InlineResponse200117.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupStatistics200Response**](../Model/GetGroupStatistics200Response.md)
 
 ### Authorization
 
@@ -1065,7 +1067,7 @@ Name | Type | Description  | Notes
 ## `getGroups()`
 
 ```php
-getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20094
+getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit): \StevenBuehner\ChurchTools\Model\GetGroups200Response
 ```
 
 Get all groups
@@ -1141,7 +1143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20094**](../Model/InlineResponse20094.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroups200Response**](../Model/GetGroups200Response.md)
 
 ### Authorization
 
@@ -1159,7 +1161,7 @@ Name | Type | Description  | Notes
 ## `getGroupsGroupIdMemberfields()`
 
 ```php
-getGroupsGroupIdMemberfields($group_id): \StevenBuehner\ChurchTools\Model\InlineResponse20089
+getGroupsGroupIdMemberfields($group_id): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMemberfields200Response
 ```
 
 Get Group member fields
@@ -1203,7 +1205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20089**](../Model/InlineResponse20089.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMemberfields200Response**](../Model/GetGroupsGroupIdMemberfields200Response.md)
 
 ### Authorization
 
@@ -1221,7 +1223,7 @@ Name | Type | Description  | Notes
 ## `getGroupsGroupIdMembersStatistics()`
 
 ```php
-getGroupsGroupIdMembersStatistics($group_id, $group_type_role_ids, $person_fields, $group_member_fields): \StevenBuehner\ChurchTools\Model\InlineResponse200122
+getGroupsGroupIdMembersStatistics($group_id, $group_type_role_ids, $person_fields, $group_member_fields): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200Response
 ```
 
 Get statistics for group members
@@ -1248,7 +1250,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     $config
 );
 $group_id = 'group_id_example'; // string
-$group_type_role_ids = NULL; // array
+$group_type_role_ids = NULL; // array | 
 $person_fields = NULL; // array | person field keys
 $group_member_fields = NULL; // array | group member field ids
 
@@ -1271,7 +1273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200122**](../Model/InlineResponse200122.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200Response**](../Model/GetGroupsGroupIdMembersStatistics200Response.md)
 
 ### Authorization
 
@@ -1289,7 +1291,7 @@ Name | Type | Description  | Notes
 ## `getGroupsHierarchies()`
 
 ```php
-getGroupsHierarchies($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query): \StevenBuehner\ChurchTools\Model\InlineResponse20092
+getGroupsHierarchies($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query): \StevenBuehner\ChurchTools\Model\GetGroupsHierarchies200Response
 ```
 
 Get all group hierarchies
@@ -1361,7 +1363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20092**](../Model/InlineResponse20092.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupsHierarchies200Response**](../Model/GetGroupsHierarchies200Response.md)
 
 ### Authorization
 
@@ -1379,7 +1381,7 @@ Name | Type | Description  | Notes
 ## `getGroupsMembers()`
 
 ```php
-getGroupsMembers($ids, $with_deleted): \StevenBuehner\ChurchTools\Model\InlineResponse20093
+getGroupsMembers($ids, $with_deleted): \StevenBuehner\ChurchTools\Model\GetGroupsMembers200Response
 ```
 
 Get all group members
@@ -1425,7 +1427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20093**](../Model/InlineResponse20093.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupsMembers200Response**](../Model/GetGroupsMembers200Response.md)
 
 ### Authorization
 
@@ -1443,7 +1445,7 @@ Name | Type | Description  | Notes
 ## `getGrupsIdPlaces()`
 
 ```php
-getGrupsIdPlaces($id): \StevenBuehner\ChurchTools\Model\InlineResponse20021
+getGrupsIdPlaces($id): \StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200Response
 ```
 
 Get all places of a group
@@ -1487,7 +1489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200Response**](../Model/GetGrupsIdPlaces200Response.md)
 
 ### Authorization
 
@@ -1505,7 +1507,7 @@ Name | Type | Description  | Notes
 ## `getPublicgroupsGroupIdForm()`
 
 ```php
-getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20073
+getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200Response
 ```
 
 Get a Group Sign Up Form
@@ -1547,7 +1549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20073**](../Model/InlineResponse20073.md)
+[**\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200Response**](../Model/GetPublicgroupsGroupIdForm200Response.md)
 
 ### Authorization
 
@@ -1565,7 +1567,7 @@ No authorization required
 ## `getQRCodeCheckin()`
 
 ```php
-getQRCodeCheckin($group_id, $person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20024
+getQRCodeCheckin($group_id, $person_id): \StevenBuehner\ChurchTools\Model\GetQRCodeCheckin200Response
 ```
 
 Get link to QR-Code for CheckIn PDF
@@ -1611,7 +1613,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
+[**\StevenBuehner\ChurchTools\Model\GetQRCodeCheckin200Response**](../Model/GetQRCodeCheckin200Response.md)
 
 ### Authorization
 
@@ -1629,7 +1631,7 @@ Name | Type | Description  | Notes
 ## `groupsIdGet()`
 
 ```php
-groupsIdGet($id): \StevenBuehner\ChurchTools\Model\InlineResponse20017
+groupsIdGet($id): \StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response
 ```
 
 Get a group
@@ -1671,7 +1673,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+[**\StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response**](../Model/GroupsIdDelete200Response.md)
 
 ### Authorization
 
@@ -1689,7 +1691,7 @@ Name | Type | Description  | Notes
 ## `issueSignUpToken()`
 
 ```php
-issueSignUpToken($group_id, $inline_object45): \StevenBuehner\ChurchTools\Model\InlineResponse20072
+issueSignUpToken($group_id, $issue_sign_up_token_request): \StevenBuehner\ChurchTools\Model\IssueSignUpToken200Response
 ```
 
 Issue new sign up token.
@@ -1710,10 +1712,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client()
 );
 $group_id = 3.4; // float | Group id of public group
-$inline_object45 = new \StevenBuehner\ChurchTools\Model\InlineObject45(); // \StevenBuehner\ChurchTools\Model\InlineObject45
+$issue_sign_up_token_request = {"personId":1,"clicked":[1,2],"groupHomepageHash":"kukiOq4WofxbacqWFEa3FgbioX0kUr6p"}; // \StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest | You MUST provide either `personId` OR `email`. Both fields cannot be present at the same time.
 
 try {
-    $result = $apiInstance->issueSignUpToken($group_id, $inline_object45);
+    $result = $apiInstance->issueSignUpToken($group_id, $issue_sign_up_token_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->issueSignUpToken: ', $e->getMessage(), PHP_EOL;
@@ -1725,11 +1727,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **float**| Group id of public group |
- **inline_object45** | [**\StevenBuehner\ChurchTools\Model\InlineObject45**](../Model/InlineObject45.md)|  | [optional]
+ **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20072**](../Model/InlineResponse20072.md)
+[**\StevenBuehner\ChurchTools\Model\IssueSignUpToken200Response**](../Model/IssueSignUpToken200Response.md)
 
 ### Authorization
 
@@ -1747,7 +1749,7 @@ No authorization required
 ## `optIns()`
 
 ```php
-optIns($id): \StevenBuehner\ChurchTools\Model\InlineResponse20020
+optIns($id): \StevenBuehner\ChurchTools\Model\OptIns200Response
 ```
 
 Get Opt In status of group members
@@ -1789,7 +1791,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
+[**\StevenBuehner\ChurchTools\Model\OptIns200Response**](../Model/OptIns200Response.md)
 
 ### Authorization
 
@@ -1807,7 +1809,7 @@ Name | Type | Description  | Notes
 ## `postAutomaticEmail()`
 
 ```php
-postAutomaticEmail($group_id, $inline_object72): \StevenBuehner\ChurchTools\Model\InlineResponse2019
+postAutomaticEmail($group_id, $post_automatic_email_request): \StevenBuehner\ChurchTools\Model\PostAutomaticEmail201Response
 ```
 
 Save new automatic email for a group role
@@ -1832,10 +1834,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     $config
 );
 $group_id = 'group_id_example'; // string
-$inline_object72 = new \StevenBuehner\ChurchTools\Model\InlineObject72(); // \StevenBuehner\ChurchTools\Model\InlineObject72
+$post_automatic_email_request = new \StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest(); // \StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest
 
 try {
-    $result = $apiInstance->postAutomaticEmail($group_id, $inline_object72);
+    $result = $apiInstance->postAutomaticEmail($group_id, $post_automatic_email_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->postAutomaticEmail: ', $e->getMessage(), PHP_EOL;
@@ -1847,11 +1849,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**|  |
- **inline_object72** | [**\StevenBuehner\ChurchTools\Model\InlineObject72**](../Model/InlineObject72.md)|  | [optional]
+ **post_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest**](../Model/PostAutomaticEmailRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2019**](../Model/InlineResponse2019.md)
+[**\StevenBuehner\ChurchTools\Model\PostAutomaticEmail201Response**](../Model/PostAutomaticEmail201Response.md)
 
 ### Authorization
 
@@ -1869,7 +1871,7 @@ Name | Type | Description  | Notes
 ## `postGroups()`
 
 ```php
-postGroups($inline_object56): \StevenBuehner\ChurchTools\Model\InlineResponse20017
+postGroups($post_groups_request): \StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response
 ```
 
 Create Group
@@ -1895,10 +1897,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object56 = new \StevenBuehner\ChurchTools\Model\InlineObject56(); // \StevenBuehner\ChurchTools\Model\InlineObject56
+$post_groups_request = new \StevenBuehner\ChurchTools\Model\PostGroupsRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupsRequest
 
 try {
-    $result = $apiInstance->postGroups($inline_object56);
+    $result = $apiInstance->postGroups($post_groups_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->postGroups: ', $e->getMessage(), PHP_EOL;
@@ -1909,11 +1911,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object56** | [**\StevenBuehner\ChurchTools\Model\InlineObject56**](../Model/InlineObject56.md)|  | [optional]
+ **post_groups_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsRequest**](../Model/PostGroupsRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+[**\StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response**](../Model/GroupsIdDelete200Response.md)
 
 ### Authorization
 
@@ -1931,7 +1933,7 @@ Name | Type | Description  | Notes
 ## `postGroupsGroupIdMeetingsMeetingIdMembersMissing()`
 
 ```php
-postGroupsGroupIdMeetingsMeetingIdMembersMissing($group_id, $meeting_id, $inline_object75)
+postGroupsGroupIdMeetingsMeetingIdMembersMissing($group_id, $meeting_id, $post_groups_group_id_meetings_meeting_id_members_missing_request)
 ```
 
 
@@ -1959,10 +1961,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 $group_id = 'group_id_example'; // string
 $meeting_id = 'meeting_id_example'; // string
-$inline_object75 = new \StevenBuehner\ChurchTools\Model\InlineObject75(); // \StevenBuehner\ChurchTools\Model\InlineObject75
+$post_groups_group_id_meetings_meeting_id_members_missing_request = new \StevenBuehner\ChurchTools\Model\PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest
 
 try {
-    $apiInstance->postGroupsGroupIdMeetingsMeetingIdMembersMissing($group_id, $meeting_id, $inline_object75);
+    $apiInstance->postGroupsGroupIdMeetingsMeetingIdMembersMissing($group_id, $meeting_id, $post_groups_group_id_meetings_meeting_id_members_missing_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->postGroupsGroupIdMeetingsMeetingIdMembersMissing: ', $e->getMessage(), PHP_EOL;
 }
@@ -1974,7 +1976,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**|  |
  **meeting_id** | **string**|  |
- **inline_object75** | [**\StevenBuehner\ChurchTools\Model\InlineObject75**](../Model/InlineObject75.md)|  | [optional]
+ **post_groups_group_id_meetings_meeting_id_members_missing_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest**](../Model/PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1996,7 +1998,7 @@ void (empty response body)
 ## `postPublicgroupsGroupIdMailToLeaders()`
 
 ```php
-postPublicgroupsGroupIdMailToLeaders($group_id, $inline_object46)
+postPublicgroupsGroupIdMailToLeaders($group_id, $post_publicgroups_group_id_mail_to_leaders_request)
 ```
 
 Send a Mail to Public Group Leaders
@@ -2017,10 +2019,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client()
 );
 $group_id = 'group_id_example'; // string | Group ID of the public group
-$inline_object46 = new \StevenBuehner\ChurchTools\Model\InlineObject46(); // \StevenBuehner\ChurchTools\Model\InlineObject46
+$post_publicgroups_group_id_mail_to_leaders_request = new \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest(); // \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest
 
 try {
-    $apiInstance->postPublicgroupsGroupIdMailToLeaders($group_id, $inline_object46);
+    $apiInstance->postPublicgroupsGroupIdMailToLeaders($group_id, $post_publicgroups_group_id_mail_to_leaders_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->postPublicgroupsGroupIdMailToLeaders: ', $e->getMessage(), PHP_EOL;
 }
@@ -2031,7 +2033,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**| Group ID of the public group |
- **inline_object46** | [**\StevenBuehner\ChurchTools\Model\InlineObject46**](../Model/InlineObject46.md)|  | [optional]
+ **post_publicgroups_group_id_mail_to_leaders_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest**](../Model/PostPublicgroupsGroupIdMailToLeadersRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2053,7 +2055,7 @@ No authorization required
 ## `postPublicgroupsGroupIdSignup()`
 
 ```php
-postPublicgroupsGroupIdSignup($group_id, $inline_object47): \StevenBuehner\ChurchTools\Model\InlineResponse20074
+postPublicgroupsGroupIdSignup($group_id, $post_publicgroups_group_id_signup_request): \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignup200Response
 ```
 
 Send a Sign Up Form to Get Signed Up into a Public Group
@@ -2074,10 +2076,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client()
 );
 $group_id = 'group_id_example'; // string | Group ID of the public group
-$inline_object47 = new \StevenBuehner\ChurchTools\Model\InlineObject47(); // \StevenBuehner\ChurchTools\Model\InlineObject47
+$post_publicgroups_group_id_signup_request = new \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest(); // \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest
 
 try {
-    $result = $apiInstance->postPublicgroupsGroupIdSignup($group_id, $inline_object47);
+    $result = $apiInstance->postPublicgroupsGroupIdSignup($group_id, $post_publicgroups_group_id_signup_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->postPublicgroupsGroupIdSignup: ', $e->getMessage(), PHP_EOL;
@@ -2089,11 +2091,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**| Group ID of the public group |
- **inline_object47** | [**\StevenBuehner\ChurchTools\Model\InlineObject47**](../Model/InlineObject47.md)|  | [optional]
+ **post_publicgroups_group_id_signup_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest**](../Model/PostPublicgroupsGroupIdSignupRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20074**](../Model/InlineResponse20074.md)
+[**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignup200Response**](../Model/PostPublicgroupsGroupIdSignup200Response.md)
 
 ### Authorization
 
@@ -2111,7 +2113,7 @@ No authorization required
 ## `putAutomaticEmail()`
 
 ```php
-putAutomaticEmail($group_id, $email_id, $inline_object73)
+putAutomaticEmail($group_id, $email_id, $put_automatic_email_request)
 ```
 
 Update automatic email
@@ -2137,10 +2139,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 $group_id = 'group_id_example'; // string
 $email_id = 'email_id_example'; // string
-$inline_object73 = new \StevenBuehner\ChurchTools\Model\InlineObject73(); // \StevenBuehner\ChurchTools\Model\InlineObject73
+$put_automatic_email_request = new \StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest(); // \StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest
 
 try {
-    $apiInstance->putAutomaticEmail($group_id, $email_id, $inline_object73);
+    $apiInstance->putAutomaticEmail($group_id, $email_id, $put_automatic_email_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->putAutomaticEmail: ', $e->getMessage(), PHP_EOL;
 }
@@ -2152,7 +2154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**|  |
  **email_id** | **string**|  |
- **inline_object73** | [**\StevenBuehner\ChurchTools\Model\InlineObject73**](../Model/InlineObject73.md)|  | [optional]
+ **put_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest**](../Model/PutAutomaticEmailRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2174,7 +2176,7 @@ void (empty response body)
 ## `putGroupsGroupIdMeetingsMeetingId()`
 
 ```php
-putGroupsGroupIdMeetingsMeetingId($group_id, $meeting_id, $inline_object74)
+putGroupsGroupIdMeetingsMeetingId($group_id, $meeting_id, $put_groups_group_id_meetings_meeting_id_request)
 ```
 
 
@@ -2202,10 +2204,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 $group_id = 'group_id_example'; // string
 $meeting_id = 'meeting_id_example'; // string
-$inline_object74 = new \StevenBuehner\ChurchTools\Model\InlineObject74(); // \StevenBuehner\ChurchTools\Model\InlineObject74
+$put_groups_group_id_meetings_meeting_id_request = new \StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest(); // \StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest
 
 try {
-    $apiInstance->putGroupsGroupIdMeetingsMeetingId($group_id, $meeting_id, $inline_object74);
+    $apiInstance->putGroupsGroupIdMeetingsMeetingId($group_id, $meeting_id, $put_groups_group_id_meetings_meeting_id_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->putGroupsGroupIdMeetingsMeetingId: ', $e->getMessage(), PHP_EOL;
 }
@@ -2217,7 +2219,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**|  |
  **meeting_id** | **string**|  |
- **inline_object74** | [**\StevenBuehner\ChurchTools\Model\InlineObject74**](../Model/InlineObject74.md)|  | [optional]
+ **put_groups_group_id_meetings_meeting_id_request** | [**\StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest**](../Model/PutGroupsGroupIdMeetingsMeetingIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2239,7 +2241,7 @@ void (empty response body)
 ## `startStopGroupChat()`
 
 ```php
-startStopGroupChat($id, $inline_object8)
+startStopGroupChat($id, $start_stop_group_chat_request)
 ```
 
 Start or stop an event chat
@@ -2264,10 +2266,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     $config
 );
 $id = 42; // int | ID of group
-$inline_object8 = new \StevenBuehner\ChurchTools\Model\InlineObject8(); // \StevenBuehner\ChurchTools\Model\InlineObject8
+$start_stop_group_chat_request = new \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest(); // \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest
 
 try {
-    $apiInstance->startStopGroupChat($id, $inline_object8);
+    $apiInstance->startStopGroupChat($id, $start_stop_group_chat_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->startStopGroupChat: ', $e->getMessage(), PHP_EOL;
 }
@@ -2278,7 +2280,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of group |
- **inline_object8** | [**\StevenBuehner\ChurchTools\Model\InlineObject8**](../Model/InlineObject8.md)|  |
+ **start_stop_group_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest**](../Model/StartStopGroupChatRequest.md)|  |
 
 ### Return type
 

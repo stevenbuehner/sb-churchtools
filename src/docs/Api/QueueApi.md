@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getQueueJobGroupsStatus()`
 
 ```php
-getQueueJobGroupsStatus($queue, $job_groups): \StevenBuehner\ChurchTools\Model\InlineResponse20080
+getQueueJobGroupsStatus($queue, $job_groups): \StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200Response
 ```
 
 Status Information About Job Groups in Queue
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20080**](../Model/InlineResponse20080.md)
+[**\StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200Response**](../Model/GetQueueJobGroupsStatus200Response.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 ## `startQueueWorker()`
 
 ```php
-startQueueWorker($queue): \StevenBuehner\ChurchTools\Model\InlineResponse20079
+startQueueWorker($queue): \StevenBuehner\ChurchTools\Model\StartQueueWorker200Response
 ```
 
 Start Worker For Queue
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20079**](../Model/InlineResponse20079.md)
+[**\StevenBuehner\ChurchTools\Model\StartQueueWorker200Response**](../Model/StartQueueWorker200Response.md)
 
 ### Authorization
 

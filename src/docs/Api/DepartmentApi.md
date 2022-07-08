@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getAllDepartments()`
 
 ```php
-getAllDepartments(): \StevenBuehner\ChurchTools\Model\InlineResponse20030
+getAllDepartments(): \StevenBuehner\ChurchTools\Model\GetAllDepartments200Response
 ```
 
 Get all departments
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response**](../Model/GetAllDepartments200Response.md)
 
 ### Authorization
 

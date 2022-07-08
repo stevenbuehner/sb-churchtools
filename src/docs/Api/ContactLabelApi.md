@@ -75,7 +75,7 @@ void (empty response body)
 ## `getContactlabel()`
 
 ```php
-getContactlabel($id): \StevenBuehner\ChurchTools\Model\InlineResponse200106
+getContactlabel($id): \StevenBuehner\ChurchTools\Model\GetContactlabel200Response
 ```
 
 Get Contact Label
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200106**](../Model/InlineResponse200106.md)
+[**\StevenBuehner\ChurchTools\Model\GetContactlabel200Response**](../Model/GetContactlabel200Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 ## `getContactlabels()`
 
 ```php
-getContactlabels(): \StevenBuehner\ChurchTools\Model\InlineResponse200105
+getContactlabels(): \StevenBuehner\ChurchTools\Model\GetContactlabels200Response
 ```
 
 Get All Contact Labels
@@ -178,7 +178,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200105**](../Model/InlineResponse200105.md)
+[**\StevenBuehner\ChurchTools\Model\GetContactlabels200Response**](../Model/GetContactlabels200Response.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ This endpoint does not need any parameter.
 ## `postContactlabels()`
 
 ```php
-postContactlabels($inline_object60): \StevenBuehner\ChurchTools\Model\InlineResponse2015
+postContactlabels($post_contactlabels_request): \StevenBuehner\ChurchTools\Model\PostContactlabels201Response
 ```
 
 Create new Contact Label
@@ -222,10 +222,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ContactLabelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object60 = new \StevenBuehner\ChurchTools\Model\InlineObject60(); // \StevenBuehner\ChurchTools\Model\InlineObject60
+$post_contactlabels_request = new \StevenBuehner\ChurchTools\Model\PostContactlabelsRequest(); // \StevenBuehner\ChurchTools\Model\PostContactlabelsRequest | 
 
 try {
-    $result = $apiInstance->postContactlabels($inline_object60);
+    $result = $apiInstance->postContactlabels($post_contactlabels_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactLabelApi->postContactlabels: ', $e->getMessage(), PHP_EOL;
@@ -236,11 +236,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object60** | [**\StevenBuehner\ChurchTools\Model\InlineObject60**](../Model/InlineObject60.md)|  | [optional]
+ **post_contactlabels_request** | [**\StevenBuehner\ChurchTools\Model\PostContactlabelsRequest**](../Model/PostContactlabelsRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
+[**\StevenBuehner\ChurchTools\Model\PostContactlabels201Response**](../Model/PostContactlabels201Response.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ## `putContactlabel()`
 
 ```php
-putContactlabel($id, $inline_object61): \StevenBuehner\ChurchTools\Model\InlineResponse200106
+putContactlabel($id, $put_contactlabel_request): \StevenBuehner\ChurchTools\Model\GetContactlabel200Response
 ```
 
 Update Contact Label
@@ -285,10 +285,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ContactLabelApi(
     $config
 );
 $id = 'id_example'; // string | Contact Label ID
-$inline_object61 = new \StevenBuehner\ChurchTools\Model\InlineObject61(); // \StevenBuehner\ChurchTools\Model\InlineObject61
+$put_contactlabel_request = new \StevenBuehner\ChurchTools\Model\PutContactlabelRequest(); // \StevenBuehner\ChurchTools\Model\PutContactlabelRequest | 
 
 try {
-    $result = $apiInstance->putContactlabel($id, $inline_object61);
+    $result = $apiInstance->putContactlabel($id, $put_contactlabel_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactLabelApi->putContactlabel: ', $e->getMessage(), PHP_EOL;
@@ -300,11 +300,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Contact Label ID |
- **inline_object61** | [**\StevenBuehner\ChurchTools\Model\InlineObject61**](../Model/InlineObject61.md)|  | [optional]
+ **put_contactlabel_request** | [**\StevenBuehner\ChurchTools\Model\PutContactlabelRequest**](../Model/PutContactlabelRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200106**](../Model/InlineResponse200106.md)
+[**\StevenBuehner\ChurchTools\Model\GetContactlabel200Response**](../Model/GetContactlabel200Response.md)
 
 ### Authorization
 

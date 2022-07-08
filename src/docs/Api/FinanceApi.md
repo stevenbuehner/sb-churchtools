@@ -140,7 +140,7 @@ void (empty response body)
 ## `batchTransaction()`
 
 ```php
-batchTransaction($inline_object41): \StevenBuehner\ChurchTools\Model\InlineResponse20069
+batchTransaction($batch_transaction_request): \StevenBuehner\ChurchTools\Model\BatchTransaction200Response
 ```
 
 Transaction Batch Processing
@@ -166,10 +166,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object41 = new \StevenBuehner\ChurchTools\Model\InlineObject41(); // \StevenBuehner\ChurchTools\Model\InlineObject41
+$batch_transaction_request = new \StevenBuehner\ChurchTools\Model\BatchTransactionRequest(); // \StevenBuehner\ChurchTools\Model\BatchTransactionRequest | Batch information consists of changeset and filters.
 
 try {
-    $result = $apiInstance->batchTransaction($inline_object41);
+    $result = $apiInstance->batchTransaction($batch_transaction_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->batchTransaction: ', $e->getMessage(), PHP_EOL;
@@ -180,11 +180,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object41** | [**\StevenBuehner\ChurchTools\Model\InlineObject41**](../Model/InlineObject41.md)|  | [optional]
+ **batch_transaction_request** | [**\StevenBuehner\ChurchTools\Model\BatchTransactionRequest**](../Model/BatchTransactionRequest.md)| Batch information consists of changeset and filters. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20069**](../Model/InlineResponse20069.md)
+[**\StevenBuehner\ChurchTools\Model\BatchTransaction200Response**](../Model/BatchTransaction200Response.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 ## `createCashDiscount()`
 
 ```php
-createCashDiscount($inline_object32): \StevenBuehner\ChurchTools\Model\InlineResponse20058
+createCashDiscount($create_cash_discount_request): \StevenBuehner\ChurchTools\Model\CreateCashDiscount200Response
 ```
 
 Create new cash discout
@@ -226,10 +226,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object32 = new \StevenBuehner\ChurchTools\Model\InlineObject32(); // \StevenBuehner\ChurchTools\Model\InlineObject32
+$create_cash_discount_request = new \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest(); // \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest | Cash discount data
 
 try {
-    $result = $apiInstance->createCashDiscount($inline_object32);
+    $result = $apiInstance->createCashDiscount($create_cash_discount_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createCashDiscount: ', $e->getMessage(), PHP_EOL;
@@ -240,11 +240,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object32** | [**\StevenBuehner\ChurchTools\Model\InlineObject32**](../Model/InlineObject32.md)|  |
+ **create_cash_discount_request** | [**\StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest**](../Model/CreateCashDiscountRequest.md)| Cash discount data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
+[**\StevenBuehner\ChurchTools\Model\CreateCashDiscount200Response**](../Model/CreateCashDiscount200Response.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 ## `createCostCenter()`
 
 ```php
-createCostCenter($inline_object34): \StevenBuehner\ChurchTools\Model\InlineResponse20060
+createCostCenter($create_cost_center_request): \StevenBuehner\ChurchTools\Model\CreateCostCenter200Response
 ```
 
 Create new cost center
@@ -288,10 +288,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object34 = new \StevenBuehner\ChurchTools\Model\InlineObject34(); // \StevenBuehner\ChurchTools\Model\InlineObject34
+$create_cost_center_request = new \StevenBuehner\ChurchTools\Model\CreateCostCenterRequest(); // \StevenBuehner\ChurchTools\Model\CreateCostCenterRequest | cost center data
 
 try {
-    $result = $apiInstance->createCostCenter($inline_object34);
+    $result = $apiInstance->createCostCenter($create_cost_center_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createCostCenter: ', $e->getMessage(), PHP_EOL;
@@ -302,11 +302,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object34** | [**\StevenBuehner\ChurchTools\Model\InlineObject34**](../Model/InlineObject34.md)|  |
+ **create_cost_center_request** | [**\StevenBuehner\ChurchTools\Model\CreateCostCenterRequest**](../Model/CreateCostCenterRequest.md)| cost center data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20060**](../Model/InlineResponse20060.md)
+[**\StevenBuehner\ChurchTools\Model\CreateCostCenter200Response**](../Model/CreateCostCenter200Response.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 ## `createNewAccount()`
 
 ```php
-createNewAccount($inline_object24): \StevenBuehner\ChurchTools\Model\InlineResponse20049
+createNewAccount($create_new_account_request): \StevenBuehner\ChurchTools\Model\GetAllAccounts200Response
 ```
 
 Create new account
@@ -348,10 +348,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object24 = new \StevenBuehner\ChurchTools\Model\InlineObject24(); // \StevenBuehner\ChurchTools\Model\InlineObject24
+$create_new_account_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest | Account data
 
 try {
-    $result = $apiInstance->createNewAccount($inline_object24);
+    $result = $apiInstance->createNewAccount($create_new_account_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewAccount: ', $e->getMessage(), PHP_EOL;
@@ -362,11 +362,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object24** | [**\StevenBuehner\ChurchTools\Model\InlineObject24**](../Model/InlineObject24.md)|  |
+ **create_new_account_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountRequest**](../Model/CreateNewAccountRequest.md)| Account data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20049**](../Model/InlineResponse20049.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccounts200Response**](../Model/GetAllAccounts200Response.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 ## `createNewAccountClass()`
 
 ```php
-createNewAccountClass($inline_object28): \StevenBuehner\ChurchTools\Model\InlineResponse20053
+createNewAccountClass($create_new_account_class_request): \StevenBuehner\ChurchTools\Model\GetAllAccountClasses200Response
 ```
 
 Create new account class
@@ -408,10 +408,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object28 = new \StevenBuehner\ChurchTools\Model\InlineObject28(); // \StevenBuehner\ChurchTools\Model\InlineObject28
+$create_new_account_class_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest | Account classes sorted by sort key.
 
 try {
-    $result = $apiInstance->createNewAccountClass($inline_object28);
+    $result = $apiInstance->createNewAccountClass($create_new_account_class_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewAccountClass: ', $e->getMessage(), PHP_EOL;
@@ -422,11 +422,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object28** | [**\StevenBuehner\ChurchTools\Model\InlineObject28**](../Model/InlineObject28.md)|  |
+ **create_new_account_class_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest**](../Model/CreateNewAccountClassRequest.md)| Account classes sorted by sort key. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20053**](../Model/InlineResponse20053.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccountClasses200Response**](../Model/GetAllAccountClasses200Response.md)
 
 ### Authorization
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 ## `createNewAccountGroup()`
 
 ```php
-createNewAccountGroup($inline_object30): \StevenBuehner\ChurchTools\Model\InlineResponse20055
+createNewAccountGroup($create_new_account_group_request): \StevenBuehner\ChurchTools\Model\GetAllAccountGroups200Response
 ```
 
 Create new account group
@@ -468,10 +468,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object30 = new \StevenBuehner\ChurchTools\Model\InlineObject30(); // \StevenBuehner\ChurchTools\Model\InlineObject30
+$create_new_account_group_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest | Account groups sorted by sort key.
 
 try {
-    $result = $apiInstance->createNewAccountGroup($inline_object30);
+    $result = $apiInstance->createNewAccountGroup($create_new_account_group_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewAccountGroup: ', $e->getMessage(), PHP_EOL;
@@ -482,11 +482,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object30** | [**\StevenBuehner\ChurchTools\Model\InlineObject30**](../Model/InlineObject30.md)|  |
+ **create_new_account_group_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest**](../Model/CreateNewAccountGroupRequest.md)| Account groups sorted by sort key. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20055**](../Model/InlineResponse20055.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccountGroups200Response**](../Model/GetAllAccountGroups200Response.md)
 
 ### Authorization
 
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 ## `createNewAccountType()`
 
 ```php
-createNewAccountType($inline_object26): \StevenBuehner\ChurchTools\Model\InlineResponse20051
+createNewAccountType($create_new_account_type_request): \StevenBuehner\ChurchTools\Model\GetAllAccountTypes200Response
 ```
 
 Create new account type
@@ -528,10 +528,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object26 = new \StevenBuehner\ChurchTools\Model\InlineObject26(); // \StevenBuehner\ChurchTools\Model\InlineObject26
+$create_new_account_type_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest | Account Type data
 
 try {
-    $result = $apiInstance->createNewAccountType($inline_object26);
+    $result = $apiInstance->createNewAccountType($create_new_account_type_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewAccountType: ', $e->getMessage(), PHP_EOL;
@@ -542,11 +542,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object26** | [**\StevenBuehner\ChurchTools\Model\InlineObject26**](../Model/InlineObject26.md)|  |
+ **create_new_account_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest**](../Model/CreateNewAccountTypeRequest.md)| Account Type data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20051**](../Model/InlineResponse20051.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccountTypes200Response**](../Model/GetAllAccountTypes200Response.md)
 
 ### Authorization
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 ## `createNewAccountingPeriod()`
 
 ```php
-createNewAccountingPeriod($inline_object22): \StevenBuehner\ChurchTools\Model\InlineResponse2012
+createNewAccountingPeriod($create_new_accounting_period_request): \StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriod201Response
 ```
 
 Create new accounting period
@@ -588,10 +588,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object22 = new \StevenBuehner\ChurchTools\Model\InlineObject22(); // \StevenBuehner\ChurchTools\Model\InlineObject22
+$create_new_accounting_period_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriodRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriodRequest | Accounting period data
 
 try {
-    $result = $apiInstance->createNewAccountingPeriod($inline_object22);
+    $result = $apiInstance->createNewAccountingPeriod($create_new_accounting_period_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewAccountingPeriod: ', $e->getMessage(), PHP_EOL;
@@ -602,11 +602,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object22** | [**\StevenBuehner\ChurchTools\Model\InlineObject22**](../Model/InlineObject22.md)|  |
+ **create_new_accounting_period_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriodRequest**](../Model/CreateNewAccountingPeriodRequest.md)| Accounting period data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriod201Response**](../Model/CreateNewAccountingPeriod201Response.md)
 
 ### Authorization
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 ## `createNewClient()`
 
 ```php
-createNewClient($inline_object20): \StevenBuehner\ChurchTools\Model\InlineResponse20046
+createNewClient($create_new_client_request): \StevenBuehner\ChurchTools\Model\GetAllClients200Response
 ```
 
 Create new client
@@ -648,10 +648,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object20 = new \StevenBuehner\ChurchTools\Model\InlineObject20(); // \StevenBuehner\ChurchTools\Model\InlineObject20
+$create_new_client_request = new \StevenBuehner\ChurchTools\Model\CreateNewClientRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewClientRequest | Client data
 
 try {
-    $result = $apiInstance->createNewClient($inline_object20);
+    $result = $apiInstance->createNewClient($create_new_client_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewClient: ', $e->getMessage(), PHP_EOL;
@@ -662,11 +662,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object20** | [**\StevenBuehner\ChurchTools\Model\InlineObject20**](../Model/InlineObject20.md)|  |
+ **create_new_client_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewClientRequest**](../Model/CreateNewClientRequest.md)| Client data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20046**](../Model/InlineResponse20046.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllClients200Response**](../Model/GetAllClients200Response.md)
 
 ### Authorization
 
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 ## `createNewTransaction()`
 
 ```php
-createNewTransaction($inline_object40): \StevenBuehner\ChurchTools\Model\InlineResponse20068
+createNewTransaction($create_new_transaction_request): \StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response
 ```
 
 Create new transaction
@@ -708,10 +708,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object40 = new \StevenBuehner\ChurchTools\Model\InlineObject40(); // \StevenBuehner\ChurchTools\Model\InlineObject40
+$create_new_transaction_request = new \StevenBuehner\ChurchTools\Model\CreateNewTransactionRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewTransactionRequest | Transaction data
 
 try {
-    $result = $apiInstance->createNewTransaction($inline_object40);
+    $result = $apiInstance->createNewTransaction($create_new_transaction_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewTransaction: ', $e->getMessage(), PHP_EOL;
@@ -722,11 +722,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object40** | [**\StevenBuehner\ChurchTools\Model\InlineObject40**](../Model/InlineObject40.md)|  |
+ **create_new_transaction_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionRequest**](../Model/CreateNewTransactionRequest.md)| Transaction data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20068**](../Model/InlineResponse20068.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response**](../Model/CreateNewTransaction200Response.md)
 
 ### Authorization
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 ## `createNewTransactionPurpose()`
 
 ```php
-createNewTransactionPurpose($inline_object43): \StevenBuehner\ChurchTools\Model\InlineResponse20070
+createNewTransactionPurpose($create_new_transaction_purpose_request): \StevenBuehner\ChurchTools\Model\GetAllTransactionPurposes200Response
 ```
 
 Create new transaction purpose
@@ -768,10 +768,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object43 = new \StevenBuehner\ChurchTools\Model\InlineObject43(); // \StevenBuehner\ChurchTools\Model\InlineObject43
+$create_new_transaction_purpose_request = new \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest | Transaction purpose data
 
 try {
-    $result = $apiInstance->createNewTransactionPurpose($inline_object43);
+    $result = $apiInstance->createNewTransactionPurpose($create_new_transaction_purpose_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createNewTransactionPurpose: ', $e->getMessage(), PHP_EOL;
@@ -782,11 +782,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object43** | [**\StevenBuehner\ChurchTools\Model\InlineObject43**](../Model/InlineObject43.md)|  |
+ **create_new_transaction_purpose_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest**](../Model/CreateNewTransactionPurposeRequest.md)| Transaction purpose data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20070**](../Model/InlineResponse20070.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllTransactionPurposes200Response**](../Model/GetAllTransactionPurposes200Response.md)
 
 ### Authorization
 
@@ -804,7 +804,7 @@ Name | Type | Description  | Notes
 ## `createTaxRate()`
 
 ```php
-createTaxRate($inline_object38): \StevenBuehner\ChurchTools\Model\InlineResponse20066
+createTaxRate($create_tax_rate_request): \StevenBuehner\ChurchTools\Model\CreateTaxRate200Response
 ```
 
 Create new tax rate
@@ -828,10 +828,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object38 = new \StevenBuehner\ChurchTools\Model\InlineObject38(); // \StevenBuehner\ChurchTools\Model\InlineObject38
+$create_tax_rate_request = new \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest(); // \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest | Tax rate data
 
 try {
-    $result = $apiInstance->createTaxRate($inline_object38);
+    $result = $apiInstance->createTaxRate($create_tax_rate_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createTaxRate: ', $e->getMessage(), PHP_EOL;
@@ -842,11 +842,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object38** | [**\StevenBuehner\ChurchTools\Model\InlineObject38**](../Model/InlineObject38.md)|  |
+ **create_tax_rate_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxRateRequest**](../Model/CreateTaxRateRequest.md)| Tax rate data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20066**](../Model/InlineResponse20066.md)
+[**\StevenBuehner\ChurchTools\Model\CreateTaxRate200Response**](../Model/CreateTaxRate200Response.md)
 
 ### Authorization
 
@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 ## `createTaxType()`
 
 ```php
-createTaxType($inline_object36): \StevenBuehner\ChurchTools\Model\InlineResponse20064
+createTaxType($create_tax_type_request): \StevenBuehner\ChurchTools\Model\CreateTaxType200Response
 ```
 
 Create new tax type
@@ -888,10 +888,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object36 = new \StevenBuehner\ChurchTools\Model\InlineObject36(); // \StevenBuehner\ChurchTools\Model\InlineObject36
+$create_tax_type_request = new \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest(); // \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest | tax type data
 
 try {
-    $result = $apiInstance->createTaxType($inline_object36);
+    $result = $apiInstance->createTaxType($create_tax_type_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->createTaxType: ', $e->getMessage(), PHP_EOL;
@@ -902,11 +902,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object36** | [**\StevenBuehner\ChurchTools\Model\InlineObject36**](../Model/InlineObject36.md)|  |
+ **create_tax_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest**](../Model/CreateTaxTypeRequest.md)| tax type data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20064**](../Model/InlineResponse20064.md)
+[**\StevenBuehner\ChurchTools\Model\CreateTaxType200Response**](../Model/CreateTaxType200Response.md)
 
 ### Authorization
 
@@ -1776,7 +1776,7 @@ void (empty response body)
 ## `getAccountById()`
 
 ```php
-getAccountById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20050
+getAccountById($id): \StevenBuehner\ChurchTools\Model\GetAccountById200Response
 ```
 
 Get a account
@@ -1818,7 +1818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20050**](../Model/InlineResponse20050.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountById200Response**](../Model/GetAccountById200Response.md)
 
 ### Authorization
 
@@ -1836,7 +1836,7 @@ Name | Type | Description  | Notes
 ## `getAccountClassById()`
 
 ```php
-getAccountClassById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20054
+getAccountClassById($id): \StevenBuehner\ChurchTools\Model\GetAccountClassById200Response
 ```
 
 Get a account class
@@ -1878,7 +1878,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20054**](../Model/InlineResponse20054.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountClassById200Response**](../Model/GetAccountClassById200Response.md)
 
 ### Authorization
 
@@ -1896,7 +1896,7 @@ Name | Type | Description  | Notes
 ## `getAccountGroupById()`
 
 ```php
-getAccountGroupById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20056
+getAccountGroupById($id): \StevenBuehner\ChurchTools\Model\GetAccountGroupById200Response
 ```
 
 Get a account group
@@ -1938,7 +1938,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20056**](../Model/InlineResponse20056.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountGroupById200Response**](../Model/GetAccountGroupById200Response.md)
 
 ### Authorization
 
@@ -1956,7 +1956,7 @@ Name | Type | Description  | Notes
 ## `getAccountTypeById()`
 
 ```php
-getAccountTypeById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20052
+getAccountTypeById($id): \StevenBuehner\ChurchTools\Model\GetAccountTypeById200Response
 ```
 
 Get a account type
@@ -1998,7 +1998,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20052**](../Model/InlineResponse20052.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountTypeById200Response**](../Model/GetAccountTypeById200Response.md)
 
 ### Authorization
 
@@ -2016,7 +2016,7 @@ Name | Type | Description  | Notes
 ## `getAccountingPeriodById()`
 
 ```php
-getAccountingPeriodById($id): \StevenBuehner\ChurchTools\Model\InlineResponse2012
+getAccountingPeriodById($id): \StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriod201Response
 ```
 
 Get a accounting period
@@ -2058,7 +2058,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriod201Response**](../Model/CreateNewAccountingPeriod201Response.md)
 
 ### Authorization
 
@@ -2076,7 +2076,7 @@ Name | Type | Description  | Notes
 ## `getAllAccountClasses()`
 
 ```php
-getAllAccountClasses(): \StevenBuehner\ChurchTools\Model\InlineResponse20053
+getAllAccountClasses(): \StevenBuehner\ChurchTools\Model\GetAllAccountClasses200Response
 ```
 
 Get all account classes ordered by id
@@ -2115,7 +2115,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20053**](../Model/InlineResponse20053.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccountClasses200Response**](../Model/GetAllAccountClasses200Response.md)
 
 ### Authorization
 
@@ -2133,7 +2133,7 @@ This endpoint does not need any parameter.
 ## `getAllAccountGroups()`
 
 ```php
-getAllAccountGroups(): \StevenBuehner\ChurchTools\Model\InlineResponse20055
+getAllAccountGroups(): \StevenBuehner\ChurchTools\Model\GetAllAccountGroups200Response
 ```
 
 Get all account groups ordered by id
@@ -2172,7 +2172,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20055**](../Model/InlineResponse20055.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccountGroups200Response**](../Model/GetAllAccountGroups200Response.md)
 
 ### Authorization
 
@@ -2190,7 +2190,7 @@ This endpoint does not need any parameter.
 ## `getAllAccountTypes()`
 
 ```php
-getAllAccountTypes(): \StevenBuehner\ChurchTools\Model\InlineResponse20051
+getAllAccountTypes(): \StevenBuehner\ChurchTools\Model\GetAllAccountTypes200Response
 ```
 
 Get all account types ordered by id
@@ -2229,7 +2229,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20051**](../Model/InlineResponse20051.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccountTypes200Response**](../Model/GetAllAccountTypes200Response.md)
 
 ### Authorization
 
@@ -2247,7 +2247,7 @@ This endpoint does not need any parameter.
 ## `getAllAccountingPeriods()`
 
 ```php
-getAllAccountingPeriods(): \StevenBuehner\ChurchTools\Model\InlineResponse20048
+getAllAccountingPeriods(): \StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200Response
 ```
 
 Get all accounting periods
@@ -2286,7 +2286,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20048**](../Model/InlineResponse20048.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200Response**](../Model/GetAllAccountingPeriods200Response.md)
 
 ### Authorization
 
@@ -2304,7 +2304,7 @@ This endpoint does not need any parameter.
 ## `getAllAccounts()`
 
 ```php
-getAllAccounts($accounting_period_id, $calculate_balance): \StevenBuehner\ChurchTools\Model\InlineResponse20049
+getAllAccounts($accounting_period_id, $calculate_balance): \StevenBuehner\ChurchTools\Model\GetAllAccounts200Response
 ```
 
 Get all accounts ordered by accounting period and number
@@ -2348,7 +2348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20049**](../Model/InlineResponse20049.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllAccounts200Response**](../Model/GetAllAccounts200Response.md)
 
 ### Authorization
 
@@ -2366,7 +2366,7 @@ Name | Type | Description  | Notes
 ## `getAllCashDiscounts()`
 
 ```php
-getAllCashDiscounts($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20057
+getAllCashDiscounts($accounting_period_id): \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200Response
 ```
 
 Get all cash discounts ordered by id
@@ -2408,7 +2408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20057**](../Model/InlineResponse20057.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200Response**](../Model/GetAllCashDiscounts200Response.md)
 
 ### Authorization
 
@@ -2426,7 +2426,7 @@ Name | Type | Description  | Notes
 ## `getAllClients()`
 
 ```php
-getAllClients(): \StevenBuehner\ChurchTools\Model\InlineResponse20046
+getAllClients(): \StevenBuehner\ChurchTools\Model\GetAllClients200Response
 ```
 
 Get all clients
@@ -2465,7 +2465,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20046**](../Model/InlineResponse20046.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllClients200Response**](../Model/GetAllClients200Response.md)
 
 ### Authorization
 
@@ -2483,7 +2483,7 @@ This endpoint does not need any parameter.
 ## `getAllCostCenters()`
 
 ```php
-getAllCostCenters($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20059
+getAllCostCenters($accounting_period_id): \StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response
 ```
 
 Get all cost centers ordered by accounting period and number ascending
@@ -2527,7 +2527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20059**](../Model/InlineResponse20059.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response**](../Model/GetAllCostCenters200Response.md)
 
 ### Authorization
 
@@ -2545,7 +2545,7 @@ Name | Type | Description  | Notes
 ## `getAllDonators()`
 
 ```php
-getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20061
+getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\GetAllDonators200Response
 ```
 
 Get all donators including their donation information (e.g. donation amount)
@@ -2595,7 +2595,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20061**](../Model/InlineResponse20061.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllDonators200Response**](../Model/GetAllDonators200Response.md)
 
 ### Authorization
 
@@ -2613,7 +2613,7 @@ Name | Type | Description  | Notes
 ## `getAllFinanceTemplates()`
 
 ```php
-getAllFinanceTemplates(): \StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]
+getAllFinanceTemplates(): \StevenBuehner\ChurchTools\Model\UploadFiles200ResponseDataInner[]
 ```
 
 Get all finance templates
@@ -2652,7 +2652,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20031Data[]**](../Model/InlineResponse20031Data.md)
+[**\StevenBuehner\ChurchTools\Model\UploadFiles200ResponseDataInner[]**](../Model/UploadFiles200ResponseDataInner.md)
 
 ### Authorization
 
@@ -2670,7 +2670,7 @@ This endpoint does not need any parameter.
 ## `getAllTaxRates()`
 
 ```php
-getAllTaxRates($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20065
+getAllTaxRates($accounting_period_id): \StevenBuehner\ChurchTools\Model\GetAllTaxRates200Response
 ```
 
 Get all tax rates ordered by id
@@ -2712,7 +2712,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20065**](../Model/InlineResponse20065.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllTaxRates200Response**](../Model/GetAllTaxRates200Response.md)
 
 ### Authorization
 
@@ -2730,7 +2730,7 @@ Name | Type | Description  | Notes
 ## `getAllTaxTypes()`
 
 ```php
-getAllTaxTypes(): \StevenBuehner\ChurchTools\Model\InlineResponse20063
+getAllTaxTypes(): \StevenBuehner\ChurchTools\Model\GetAllTaxTypes200Response
 ```
 
 Get all tax types
@@ -2769,7 +2769,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20063**](../Model/InlineResponse20063.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllTaxTypes200Response**](../Model/GetAllTaxTypes200Response.md)
 
 ### Authorization
 
@@ -2787,7 +2787,7 @@ This endpoint does not need any parameter.
 ## `getAllTransactionPurposes()`
 
 ```php
-getAllTransactionPurposes(): \StevenBuehner\ChurchTools\Model\InlineResponse20070
+getAllTransactionPurposes(): \StevenBuehner\ChurchTools\Model\GetAllTransactionPurposes200Response
 ```
 
 Get all transaction purposes
@@ -2826,7 +2826,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20070**](../Model/InlineResponse20070.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllTransactionPurposes200Response**](../Model/GetAllTransactionPurposes200Response.md)
 
 ### Authorization
 
@@ -2844,7 +2844,7 @@ This endpoint does not need any parameter.
 ## `getAllTransactions()`
 
 ```php
-getAllTransactions($accounting_period_id, $created_pid, $cost_center_ids, $donator_ids, $account_ids, $is_donation, $is_income, $start_date, $end_date, $is_immutable, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20067
+getAllTransactions($accounting_period_id, $created_pid, $cost_center_ids, $donator_ids, $account_ids, $is_donation, $is_income, $start_date, $end_date, $is_immutable, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\GetAllTransactions200Response
 ```
 
 Get all transaction
@@ -2912,7 +2912,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20067**](../Model/InlineResponse20067.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllTransactions200Response**](../Model/GetAllTransactions200Response.md)
 
 ### Authorization
 
@@ -2930,7 +2930,7 @@ Name | Type | Description  | Notes
 ## `getCashDiscount()`
 
 ```php
-getCashDiscount($id): \StevenBuehner\ChurchTools\Model\InlineResponse20058
+getCashDiscount($id): \StevenBuehner\ChurchTools\Model\CreateCashDiscount200Response
 ```
 
 Get a cash discount
@@ -2972,7 +2972,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
+[**\StevenBuehner\ChurchTools\Model\CreateCashDiscount200Response**](../Model/CreateCashDiscount200Response.md)
 
 ### Authorization
 
@@ -2990,7 +2990,7 @@ Name | Type | Description  | Notes
 ## `getClientById()`
 
 ```php
-getClientById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20047
+getClientById($id): \StevenBuehner\ChurchTools\Model\GetClientById200Response
 ```
 
 Get a client
@@ -3032,7 +3032,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20047**](../Model/InlineResponse20047.md)
+[**\StevenBuehner\ChurchTools\Model\GetClientById200Response**](../Model/GetClientById200Response.md)
 
 ### Authorization
 
@@ -3050,7 +3050,7 @@ Name | Type | Description  | Notes
 ## `getCostCenter()`
 
 ```php
-getCostCenter($id): \StevenBuehner\ChurchTools\Model\InlineResponse20060
+getCostCenter($id): \StevenBuehner\ChurchTools\Model\CreateCostCenter200Response
 ```
 
 Get a cost center
@@ -3094,7 +3094,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20060**](../Model/InlineResponse20060.md)
+[**\StevenBuehner\ChurchTools\Model\CreateCostCenter200Response**](../Model/CreateCostCenter200Response.md)
 
 ### Authorization
 
@@ -3112,7 +3112,7 @@ Name | Type | Description  | Notes
 ## `getDonationReceipt()`
 
 ```php
-getDonationReceipt($accounting_period_id, $donator_id, $donator_spouse_id): \StevenBuehner\ChurchTools\Model\InlineResponse20062
+getDonationReceipt($accounting_period_id, $donator_id, $donator_spouse_id): \StevenBuehner\ChurchTools\Model\GetDonationReceipt200Response
 ```
 
 Get donation receipt PDFs (cover letter and attachment)
@@ -3158,7 +3158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20062**](../Model/InlineResponse20062.md)
+[**\StevenBuehner\ChurchTools\Model\GetDonationReceipt200Response**](../Model/GetDonationReceipt200Response.md)
 
 ### Authorization
 
@@ -3237,7 +3237,7 @@ void (empty response body)
 ## `getTaxRate()`
 
 ```php
-getTaxRate($id): \StevenBuehner\ChurchTools\Model\InlineResponse20066
+getTaxRate($id): \StevenBuehner\ChurchTools\Model\CreateTaxRate200Response
 ```
 
 Get a tax rate
@@ -3279,7 +3279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20066**](../Model/InlineResponse20066.md)
+[**\StevenBuehner\ChurchTools\Model\CreateTaxRate200Response**](../Model/CreateTaxRate200Response.md)
 
 ### Authorization
 
@@ -3297,7 +3297,7 @@ Name | Type | Description  | Notes
 ## `getTaxType()`
 
 ```php
-getTaxType($id): \StevenBuehner\ChurchTools\Model\InlineResponse20064
+getTaxType($id): \StevenBuehner\ChurchTools\Model\CreateTaxType200Response
 ```
 
 Get a tax type
@@ -3339,7 +3339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20064**](../Model/InlineResponse20064.md)
+[**\StevenBuehner\ChurchTools\Model\CreateTaxType200Response**](../Model/CreateTaxType200Response.md)
 
 ### Authorization
 
@@ -3357,7 +3357,7 @@ Name | Type | Description  | Notes
 ## `getTransactionById()`
 
 ```php
-getTransactionById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20068
+getTransactionById($id): \StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response
 ```
 
 Get a transaction
@@ -3399,7 +3399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20068**](../Model/InlineResponse20068.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response**](../Model/CreateNewTransaction200Response.md)
 
 ### Authorization
 
@@ -3417,7 +3417,7 @@ Name | Type | Description  | Notes
 ## `getTransactionPurposeById()`
 
 ```php
-getTransactionPurposeById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20071
+getTransactionPurposeById($id): \StevenBuehner\ChurchTools\Model\GetTransactionPurposeById200Response
 ```
 
 Get a transaction purpose
@@ -3459,7 +3459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20071**](../Model/InlineResponse20071.md)
+[**\StevenBuehner\ChurchTools\Model\GetTransactionPurposeById200Response**](../Model/GetTransactionPurposeById200Response.md)
 
 ### Authorization
 
@@ -3477,10 +3477,12 @@ Name | Type | Description  | Notes
 ## `postFinanceCostcentersBulkcreate()`
 
 ```php
-postFinanceCostcentersBulkcreate($inline_object77): \StevenBuehner\ChurchTools\Model\InlineResponse20059
+postFinanceCostcentersBulkcreate($post_finance_costcenters_bulkcreate_request): \StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response
 ```
 
 Import many cost centers
+
+
 
 ### Example
 
@@ -3501,10 +3503,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object77 = new \StevenBuehner\ChurchTools\Model\InlineObject77(); // \StevenBuehner\ChurchTools\Model\InlineObject77
+$post_finance_costcenters_bulkcreate_request = new \StevenBuehner\ChurchTools\Model\PostFinanceCostcentersBulkcreateRequest(); // \StevenBuehner\ChurchTools\Model\PostFinanceCostcentersBulkcreateRequest
 
 try {
-    $result = $apiInstance->postFinanceCostcentersBulkcreate($inline_object77);
+    $result = $apiInstance->postFinanceCostcentersBulkcreate($post_finance_costcenters_bulkcreate_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->postFinanceCostcentersBulkcreate: ', $e->getMessage(), PHP_EOL;
@@ -3515,11 +3517,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object77** | [**\StevenBuehner\ChurchTools\Model\InlineObject77**](../Model/InlineObject77.md)|  | [optional]
+ **post_finance_costcenters_bulkcreate_request** | [**\StevenBuehner\ChurchTools\Model\PostFinanceCostcentersBulkcreateRequest**](../Model/PostFinanceCostcentersBulkcreateRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20059**](../Model/InlineResponse20059.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response**](../Model/GetAllCostCenters200Response.md)
 
 ### Authorization
 
@@ -3537,7 +3539,7 @@ Name | Type | Description  | Notes
 ## `postFinanceReports()`
 
 ```php
-postFinanceReports($report_type, $inline_object55): \StevenBuehner\ChurchTools\Model\InlineResponse20091
+postFinanceReports($report_type, $post_finance_reports_request): \StevenBuehner\ChurchTools\Model\PostFinanceReports200Response
 ```
 
 Issue new Finance Report
@@ -3564,10 +3566,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $report_type = balance; // string | Report Key
-$inline_object55 = new \StevenBuehner\ChurchTools\Model\InlineObject55(); // \StevenBuehner\ChurchTools\Model\InlineObject55
+$post_finance_reports_request = new \StevenBuehner\ChurchTools\Model\PostFinanceReportsRequest(); // \StevenBuehner\ChurchTools\Model\PostFinanceReportsRequest | 
 
 try {
-    $result = $apiInstance->postFinanceReports($report_type, $inline_object55);
+    $result = $apiInstance->postFinanceReports($report_type, $post_finance_reports_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->postFinanceReports: ', $e->getMessage(), PHP_EOL;
@@ -3579,11 +3581,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_type** | **string**| Report Key |
- **inline_object55** | [**\StevenBuehner\ChurchTools\Model\InlineObject55**](../Model/InlineObject55.md)|  | [optional]
+ **post_finance_reports_request** | [**\StevenBuehner\ChurchTools\Model\PostFinanceReportsRequest**](../Model/PostFinanceReportsRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20091**](../Model/InlineResponse20091.md)
+[**\StevenBuehner\ChurchTools\Model\PostFinanceReports200Response**](../Model/PostFinanceReports200Response.md)
 
 ### Authorization
 
@@ -3601,7 +3603,7 @@ Name | Type | Description  | Notes
 ## `updateAccount()`
 
 ```php
-updateAccount($id, $inline_object25): \StevenBuehner\ChurchTools\Model\InlineResponse20050
+updateAccount($id, $create_new_account_request): \StevenBuehner\ChurchTools\Model\GetAccountById200Response
 ```
 
 Update account
@@ -3626,10 +3628,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of account
-$inline_object25 = new \StevenBuehner\ChurchTools\Model\InlineObject25(); // \StevenBuehner\ChurchTools\Model\InlineObject25
+$create_new_account_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest | Account data
 
 try {
-    $result = $apiInstance->updateAccount($id, $inline_object25);
+    $result = $apiInstance->updateAccount($id, $create_new_account_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateAccount: ', $e->getMessage(), PHP_EOL;
@@ -3641,11 +3643,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of account |
- **inline_object25** | [**\StevenBuehner\ChurchTools\Model\InlineObject25**](../Model/InlineObject25.md)|  |
+ **create_new_account_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountRequest**](../Model/CreateNewAccountRequest.md)| Account data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20050**](../Model/InlineResponse20050.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountById200Response**](../Model/GetAccountById200Response.md)
 
 ### Authorization
 
@@ -3663,7 +3665,7 @@ Name | Type | Description  | Notes
 ## `updateAccountClass()`
 
 ```php
-updateAccountClass($id, $inline_object29): \StevenBuehner\ChurchTools\Model\InlineResponse20054
+updateAccountClass($id, $create_new_account_class_request): \StevenBuehner\ChurchTools\Model\GetAccountClassById200Response
 ```
 
 Update account class
@@ -3688,10 +3690,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of account class
-$inline_object29 = new \StevenBuehner\ChurchTools\Model\InlineObject29(); // \StevenBuehner\ChurchTools\Model\InlineObject29
+$create_new_account_class_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest | Account Class data
 
 try {
-    $result = $apiInstance->updateAccountClass($id, $inline_object29);
+    $result = $apiInstance->updateAccountClass($id, $create_new_account_class_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateAccountClass: ', $e->getMessage(), PHP_EOL;
@@ -3703,11 +3705,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of account class |
- **inline_object29** | [**\StevenBuehner\ChurchTools\Model\InlineObject29**](../Model/InlineObject29.md)|  |
+ **create_new_account_class_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest**](../Model/CreateNewAccountClassRequest.md)| Account Class data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20054**](../Model/InlineResponse20054.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountClassById200Response**](../Model/GetAccountClassById200Response.md)
 
 ### Authorization
 
@@ -3725,7 +3727,7 @@ Name | Type | Description  | Notes
 ## `updateAccountGroup()`
 
 ```php
-updateAccountGroup($id, $inline_object31): \StevenBuehner\ChurchTools\Model\InlineResponse20056
+updateAccountGroup($id, $create_new_account_group_request): \StevenBuehner\ChurchTools\Model\GetAccountGroupById200Response
 ```
 
 Update account group
@@ -3750,10 +3752,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of account group
-$inline_object31 = new \StevenBuehner\ChurchTools\Model\InlineObject31(); // \StevenBuehner\ChurchTools\Model\InlineObject31
+$create_new_account_group_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest | Account Group data
 
 try {
-    $result = $apiInstance->updateAccountGroup($id, $inline_object31);
+    $result = $apiInstance->updateAccountGroup($id, $create_new_account_group_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateAccountGroup: ', $e->getMessage(), PHP_EOL;
@@ -3765,11 +3767,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of account group |
- **inline_object31** | [**\StevenBuehner\ChurchTools\Model\InlineObject31**](../Model/InlineObject31.md)|  |
+ **create_new_account_group_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest**](../Model/CreateNewAccountGroupRequest.md)| Account Group data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20056**](../Model/InlineResponse20056.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountGroupById200Response**](../Model/GetAccountGroupById200Response.md)
 
 ### Authorization
 
@@ -3787,7 +3789,7 @@ Name | Type | Description  | Notes
 ## `updateAccountType()`
 
 ```php
-updateAccountType($id, $inline_object27): \StevenBuehner\ChurchTools\Model\InlineResponse20052
+updateAccountType($id, $create_new_account_type_request): \StevenBuehner\ChurchTools\Model\GetAccountTypeById200Response
 ```
 
 Update account type
@@ -3812,10 +3814,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of account type
-$inline_object27 = new \StevenBuehner\ChurchTools\Model\InlineObject27(); // \StevenBuehner\ChurchTools\Model\InlineObject27
+$create_new_account_type_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest | Account Type data
 
 try {
-    $result = $apiInstance->updateAccountType($id, $inline_object27);
+    $result = $apiInstance->updateAccountType($id, $create_new_account_type_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateAccountType: ', $e->getMessage(), PHP_EOL;
@@ -3827,11 +3829,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of account type |
- **inline_object27** | [**\StevenBuehner\ChurchTools\Model\InlineObject27**](../Model/InlineObject27.md)|  |
+ **create_new_account_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest**](../Model/CreateNewAccountTypeRequest.md)| Account Type data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20052**](../Model/InlineResponse20052.md)
+[**\StevenBuehner\ChurchTools\Model\GetAccountTypeById200Response**](../Model/GetAccountTypeById200Response.md)
 
 ### Authorization
 
@@ -3849,7 +3851,7 @@ Name | Type | Description  | Notes
 ## `updateAccountingPeriod()`
 
 ```php
-updateAccountingPeriod($id, $inline_object23): \StevenBuehner\ChurchTools\Model\InlineResponse2012
+updateAccountingPeriod($id, $update_accounting_period_request): \StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriod201Response
 ```
 
 Update accounting period
@@ -3874,10 +3876,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of accounting period
-$inline_object23 = new \StevenBuehner\ChurchTools\Model\InlineObject23(); // \StevenBuehner\ChurchTools\Model\InlineObject23
+$update_accounting_period_request = new \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest(); // \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest | Accounting period data
 
 try {
-    $result = $apiInstance->updateAccountingPeriod($id, $inline_object23);
+    $result = $apiInstance->updateAccountingPeriod($id, $update_accounting_period_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateAccountingPeriod: ', $e->getMessage(), PHP_EOL;
@@ -3889,11 +3891,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of accounting period |
- **inline_object23** | [**\StevenBuehner\ChurchTools\Model\InlineObject23**](../Model/InlineObject23.md)|  |
+ **update_accounting_period_request** | [**\StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest**](../Model/UpdateAccountingPeriodRequest.md)| Accounting period data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriod201Response**](../Model/CreateNewAccountingPeriod201Response.md)
 
 ### Authorization
 
@@ -3911,7 +3913,7 @@ Name | Type | Description  | Notes
 ## `updateCashDiscount()`
 
 ```php
-updateCashDiscount($id, $inline_object33): \StevenBuehner\ChurchTools\Model\InlineResponse20058
+updateCashDiscount($id, $create_cash_discount_request): \StevenBuehner\ChurchTools\Model\CreateCashDiscount200Response
 ```
 
 Update cash discount
@@ -3936,10 +3938,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of cash discount
-$inline_object33 = new \StevenBuehner\ChurchTools\Model\InlineObject33(); // \StevenBuehner\ChurchTools\Model\InlineObject33
+$create_cash_discount_request = new \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest(); // \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest | cash discount data
 
 try {
-    $result = $apiInstance->updateCashDiscount($id, $inline_object33);
+    $result = $apiInstance->updateCashDiscount($id, $create_cash_discount_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateCashDiscount: ', $e->getMessage(), PHP_EOL;
@@ -3951,11 +3953,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of cash discount |
- **inline_object33** | [**\StevenBuehner\ChurchTools\Model\InlineObject33**](../Model/InlineObject33.md)|  |
+ **create_cash_discount_request** | [**\StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest**](../Model/CreateCashDiscountRequest.md)| cash discount data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20058**](../Model/InlineResponse20058.md)
+[**\StevenBuehner\ChurchTools\Model\CreateCashDiscount200Response**](../Model/CreateCashDiscount200Response.md)
 
 ### Authorization
 
@@ -3973,7 +3975,7 @@ Name | Type | Description  | Notes
 ## `updateClient()`
 
 ```php
-updateClient($id, $inline_object21): \StevenBuehner\ChurchTools\Model\InlineResponse20047
+updateClient($id, $create_new_client_request): \StevenBuehner\ChurchTools\Model\GetClientById200Response
 ```
 
 Update client
@@ -3998,10 +4000,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of client
-$inline_object21 = new \StevenBuehner\ChurchTools\Model\InlineObject21(); // \StevenBuehner\ChurchTools\Model\InlineObject21
+$create_new_client_request = new \StevenBuehner\ChurchTools\Model\CreateNewClientRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewClientRequest | Client data
 
 try {
-    $result = $apiInstance->updateClient($id, $inline_object21);
+    $result = $apiInstance->updateClient($id, $create_new_client_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateClient: ', $e->getMessage(), PHP_EOL;
@@ -4013,11 +4015,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of client |
- **inline_object21** | [**\StevenBuehner\ChurchTools\Model\InlineObject21**](../Model/InlineObject21.md)|  |
+ **create_new_client_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewClientRequest**](../Model/CreateNewClientRequest.md)| Client data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20047**](../Model/InlineResponse20047.md)
+[**\StevenBuehner\ChurchTools\Model\GetClientById200Response**](../Model/GetClientById200Response.md)
 
 ### Authorization
 
@@ -4035,7 +4037,7 @@ Name | Type | Description  | Notes
 ## `updateCostCenter()`
 
 ```php
-updateCostCenter($id, $inline_object35): \StevenBuehner\ChurchTools\Model\InlineResponse20060
+updateCostCenter($id, $update_cost_center_request): \StevenBuehner\ChurchTools\Model\CreateCostCenter200Response
 ```
 
 Update cost center
@@ -4062,10 +4064,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of cost center
-$inline_object35 = new \StevenBuehner\ChurchTools\Model\InlineObject35(); // \StevenBuehner\ChurchTools\Model\InlineObject35
+$update_cost_center_request = new \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest(); // \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest | cost center data
 
 try {
-    $result = $apiInstance->updateCostCenter($id, $inline_object35);
+    $result = $apiInstance->updateCostCenter($id, $update_cost_center_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateCostCenter: ', $e->getMessage(), PHP_EOL;
@@ -4077,11 +4079,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of cost center |
- **inline_object35** | [**\StevenBuehner\ChurchTools\Model\InlineObject35**](../Model/InlineObject35.md)|  |
+ **update_cost_center_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest**](../Model/UpdateCostCenterRequest.md)| cost center data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20060**](../Model/InlineResponse20060.md)
+[**\StevenBuehner\ChurchTools\Model\CreateCostCenter200Response**](../Model/CreateCostCenter200Response.md)
 
 ### Authorization
 
@@ -4099,7 +4101,7 @@ Name | Type | Description  | Notes
 ## `updateTaxRate()`
 
 ```php
-updateTaxRate($id, $inline_object39): \StevenBuehner\ChurchTools\Model\InlineResponse20066
+updateTaxRate($id, $create_tax_rate_request): \StevenBuehner\ChurchTools\Model\CreateTaxRate200Response
 ```
 
 Update tax rate
@@ -4124,10 +4126,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of tax rate
-$inline_object39 = new \StevenBuehner\ChurchTools\Model\InlineObject39(); // \StevenBuehner\ChurchTools\Model\InlineObject39
+$create_tax_rate_request = new \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest(); // \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest | Tax rate data
 
 try {
-    $result = $apiInstance->updateTaxRate($id, $inline_object39);
+    $result = $apiInstance->updateTaxRate($id, $create_tax_rate_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateTaxRate: ', $e->getMessage(), PHP_EOL;
@@ -4139,11 +4141,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of tax rate |
- **inline_object39** | [**\StevenBuehner\ChurchTools\Model\InlineObject39**](../Model/InlineObject39.md)|  |
+ **create_tax_rate_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxRateRequest**](../Model/CreateTaxRateRequest.md)| Tax rate data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20066**](../Model/InlineResponse20066.md)
+[**\StevenBuehner\ChurchTools\Model\CreateTaxRate200Response**](../Model/CreateTaxRate200Response.md)
 
 ### Authorization
 
@@ -4161,7 +4163,7 @@ Name | Type | Description  | Notes
 ## `updateTaxType()`
 
 ```php
-updateTaxType($id, $inline_object37): \StevenBuehner\ChurchTools\Model\InlineResponse20064
+updateTaxType($id, $create_tax_type_request): \StevenBuehner\ChurchTools\Model\CreateTaxType200Response
 ```
 
 Update tax type
@@ -4186,10 +4188,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of tax type
-$inline_object37 = new \StevenBuehner\ChurchTools\Model\InlineObject37(); // \StevenBuehner\ChurchTools\Model\InlineObject37
+$create_tax_type_request = new \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest(); // \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest | tax type data
 
 try {
-    $result = $apiInstance->updateTaxType($id, $inline_object37);
+    $result = $apiInstance->updateTaxType($id, $create_tax_type_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateTaxType: ', $e->getMessage(), PHP_EOL;
@@ -4201,11 +4203,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of tax type |
- **inline_object37** | [**\StevenBuehner\ChurchTools\Model\InlineObject37**](../Model/InlineObject37.md)|  |
+ **create_tax_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest**](../Model/CreateTaxTypeRequest.md)| tax type data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20064**](../Model/InlineResponse20064.md)
+[**\StevenBuehner\ChurchTools\Model\CreateTaxType200Response**](../Model/CreateTaxType200Response.md)
 
 ### Authorization
 
@@ -4223,7 +4225,7 @@ Name | Type | Description  | Notes
 ## `updateTransaction()`
 
 ```php
-updateTransaction($id, $inline_object42): \StevenBuehner\ChurchTools\Model\InlineResponse20068
+updateTransaction($id, $update_transaction_request): \StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response
 ```
 
 Update transaction
@@ -4248,10 +4250,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of transaction
-$inline_object42 = new \StevenBuehner\ChurchTools\Model\InlineObject42(); // \StevenBuehner\ChurchTools\Model\InlineObject42
+$update_transaction_request = new \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest(); // \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest | Transaction data
 
 try {
-    $result = $apiInstance->updateTransaction($id, $inline_object42);
+    $result = $apiInstance->updateTransaction($id, $update_transaction_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateTransaction: ', $e->getMessage(), PHP_EOL;
@@ -4263,11 +4265,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of transaction |
- **inline_object42** | [**\StevenBuehner\ChurchTools\Model\InlineObject42**](../Model/InlineObject42.md)|  |
+ **update_transaction_request** | [**\StevenBuehner\ChurchTools\Model\UpdateTransactionRequest**](../Model/UpdateTransactionRequest.md)| Transaction data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20068**](../Model/InlineResponse20068.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response**](../Model/CreateNewTransaction200Response.md)
 
 ### Authorization
 
@@ -4285,7 +4287,7 @@ Name | Type | Description  | Notes
 ## `updateTransactionPurpose()`
 
 ```php
-updateTransactionPurpose($id, $inline_object44): \StevenBuehner\ChurchTools\Model\InlineResponse20071
+updateTransactionPurpose($id, $create_new_transaction_purpose_request): \StevenBuehner\ChurchTools\Model\GetTransactionPurposeById200Response
 ```
 
 Update transaction purpose
@@ -4310,10 +4312,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     $config
 );
 $id = 1; // int | ID of transaction purpose
-$inline_object44 = new \StevenBuehner\ChurchTools\Model\InlineObject44(); // \StevenBuehner\ChurchTools\Model\InlineObject44
+$create_new_transaction_purpose_request = new \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest | transaction purpose data
 
 try {
-    $result = $apiInstance->updateTransactionPurpose($id, $inline_object44);
+    $result = $apiInstance->updateTransactionPurpose($id, $create_new_transaction_purpose_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->updateTransactionPurpose: ', $e->getMessage(), PHP_EOL;
@@ -4325,11 +4327,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of transaction purpose |
- **inline_object44** | [**\StevenBuehner\ChurchTools\Model\InlineObject44**](../Model/InlineObject44.md)|  |
+ **create_new_transaction_purpose_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest**](../Model/CreateNewTransactionPurposeRequest.md)| transaction purpose data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20071**](../Model/InlineResponse20071.md)
+[**\StevenBuehner\ChurchTools\Model\GetTransactionPurposeById200Response**](../Model/GetTransactionPurposeById200Response.md)
 
 ### Authorization
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getGroupsGroupIdTags()`
 
 ```php
-getGroupsGroupIdTags($group_id): \StevenBuehner\ChurchTools\Model\InlineResponse200119
+getGroupsGroupIdTags($group_id): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response
 ```
 
 Fetch group tags
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200119**](../Model/InlineResponse200119.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response**](../Model/GetGroupsGroupIdTags200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ## `getPublicgroupsGroupIdPossiblerequesters()`
 
 ```php
-getPublicgroupsGroupIdPossiblerequesters($group_id, $token): \StevenBuehner\ChurchTools\Model\InlineResponse200118
+getPublicgroupsGroupIdPossiblerequesters($group_id, $token): \StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdPossiblerequesters200Response
 ```
 
 Your GET endpoint
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200118**](../Model/InlineResponse200118.md)
+[**\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdPossiblerequesters200Response**](../Model/GetPublicgroupsGroupIdPossiblerequesters200Response.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 ## `patchGroupsGroupIdRolesRoleId()`
 
 ```php
-patchGroupsGroupIdRolesRoleId($group_id, $role_id, $inline_object71)
+patchGroupsGroupIdRolesRoleId($group_id, $role_id, $patch_groups_group_id_roles_role_id_request)
 ```
 
 
@@ -162,10 +162,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\DefaultApi(
 );
 $group_id = 'group_id_example'; // string
 $role_id = 'role_id_example'; // string
-$inline_object71 = new \StevenBuehner\ChurchTools\Model\InlineObject71(); // \StevenBuehner\ChurchTools\Model\InlineObject71
+$patch_groups_group_id_roles_role_id_request = new \StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest(); // \StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest
 
 try {
-    $apiInstance->patchGroupsGroupIdRolesRoleId($group_id, $role_id, $inline_object71);
+    $apiInstance->patchGroupsGroupIdRolesRoleId($group_id, $role_id, $patch_groups_group_id_roles_role_id_request);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->patchGroupsGroupIdRolesRoleId: ', $e->getMessage(), PHP_EOL;
 }
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**|  |
  **role_id** | **string**|  |
- **inline_object71** | [**\StevenBuehner\ChurchTools\Model\InlineObject71**](../Model/InlineObject71.md)|  | [optional]
+ **patch_groups_group_id_roles_role_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest**](../Model/PatchGroupsGroupIdRolesRoleIdRequest.md)|  | [optional]
 
 ### Return type
 

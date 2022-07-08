@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modified_date** | **string** |  | [optional]
-**modified_pid** | [**\StevenBuehner\ChurchTools\Model\Agenda1MetaModifiedPid**](Agenda1MetaModifiedPid.md) |  | [optional]
+**modified_date** | **string** | Last change of that agenda | [optional]
+**modified_person** | [**\StevenBuehner\ChurchTools\Model\Agenda1MetaModifiedPerson**](Agenda1MetaModifiedPerson.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

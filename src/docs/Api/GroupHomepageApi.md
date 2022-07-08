@@ -73,7 +73,7 @@ No authorization required
 ## `getGroupHomepage()`
 
 ```php
-getGroupHomepage($hash): \StevenBuehner\ChurchTools\Model\InlineResponse20026
+getGroupHomepage($hash): \StevenBuehner\ChurchTools\Model\GetGroupHomepage200Response
 ```
 
 Get information about public groups with settings
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupHomepage200Response**](../Model/GetGroupHomepage200Response.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 ## `getPublicgroupsGroupIdForm()`
 
 ```php
-getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20073
+getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200Response
 ```
 
 Get a Group Sign Up Form
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20073**](../Model/InlineResponse20073.md)
+[**\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200Response**](../Model/GetPublicgroupsGroupIdForm200Response.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ No authorization required
 ## `issueSignUpToken()`
 
 ```php
-issueSignUpToken($group_id, $inline_object45): \StevenBuehner\ChurchTools\Model\InlineResponse20072
+issueSignUpToken($group_id, $issue_sign_up_token_request): \StevenBuehner\ChurchTools\Model\IssueSignUpToken200Response
 ```
 
 Issue new sign up token.
@@ -216,10 +216,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
     new GuzzleHttp\Client()
 );
 $group_id = 3.4; // float | Group id of public group
-$inline_object45 = new \StevenBuehner\ChurchTools\Model\InlineObject45(); // \StevenBuehner\ChurchTools\Model\InlineObject45
+$issue_sign_up_token_request = {"personId":1,"clicked":[1,2],"groupHomepageHash":"kukiOq4WofxbacqWFEa3FgbioX0kUr6p"}; // \StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest | You MUST provide either `personId` OR `email`. Both fields cannot be present at the same time.
 
 try {
-    $result = $apiInstance->issueSignUpToken($group_id, $inline_object45);
+    $result = $apiInstance->issueSignUpToken($group_id, $issue_sign_up_token_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupHomepageApi->issueSignUpToken: ', $e->getMessage(), PHP_EOL;
@@ -231,11 +231,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **float**| Group id of public group |
- **inline_object45** | [**\StevenBuehner\ChurchTools\Model\InlineObject45**](../Model/InlineObject45.md)|  | [optional]
+ **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20072**](../Model/InlineResponse20072.md)
+[**\StevenBuehner\ChurchTools\Model\IssueSignUpToken200Response**](../Model/IssueSignUpToken200Response.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ No authorization required
 ## `postPublicgroupsGroupIdMailToLeaders()`
 
 ```php
-postPublicgroupsGroupIdMailToLeaders($group_id, $inline_object46)
+postPublicgroupsGroupIdMailToLeaders($group_id, $post_publicgroups_group_id_mail_to_leaders_request)
 ```
 
 Send a Mail to Public Group Leaders
@@ -274,10 +274,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
     new GuzzleHttp\Client()
 );
 $group_id = 'group_id_example'; // string | Group ID of the public group
-$inline_object46 = new \StevenBuehner\ChurchTools\Model\InlineObject46(); // \StevenBuehner\ChurchTools\Model\InlineObject46
+$post_publicgroups_group_id_mail_to_leaders_request = new \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest(); // \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest
 
 try {
-    $apiInstance->postPublicgroupsGroupIdMailToLeaders($group_id, $inline_object46);
+    $apiInstance->postPublicgroupsGroupIdMailToLeaders($group_id, $post_publicgroups_group_id_mail_to_leaders_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupHomepageApi->postPublicgroupsGroupIdMailToLeaders: ', $e->getMessage(), PHP_EOL;
 }
@@ -288,7 +288,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**| Group ID of the public group |
- **inline_object46** | [**\StevenBuehner\ChurchTools\Model\InlineObject46**](../Model/InlineObject46.md)|  | [optional]
+ **post_publicgroups_group_id_mail_to_leaders_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest**](../Model/PostPublicgroupsGroupIdMailToLeadersRequest.md)|  | [optional]
 
 ### Return type
 
@@ -310,7 +310,7 @@ No authorization required
 ## `postPublicgroupsGroupIdSignup()`
 
 ```php
-postPublicgroupsGroupIdSignup($group_id, $inline_object47): \StevenBuehner\ChurchTools\Model\InlineResponse20074
+postPublicgroupsGroupIdSignup($group_id, $post_publicgroups_group_id_signup_request): \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignup200Response
 ```
 
 Send a Sign Up Form to Get Signed Up into a Public Group
@@ -331,10 +331,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
     new GuzzleHttp\Client()
 );
 $group_id = 'group_id_example'; // string | Group ID of the public group
-$inline_object47 = new \StevenBuehner\ChurchTools\Model\InlineObject47(); // \StevenBuehner\ChurchTools\Model\InlineObject47
+$post_publicgroups_group_id_signup_request = new \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest(); // \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest
 
 try {
-    $result = $apiInstance->postPublicgroupsGroupIdSignup($group_id, $inline_object47);
+    $result = $apiInstance->postPublicgroupsGroupIdSignup($group_id, $post_publicgroups_group_id_signup_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupHomepageApi->postPublicgroupsGroupIdSignup: ', $e->getMessage(), PHP_EOL;
@@ -346,11 +346,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **string**| Group ID of the public group |
- **inline_object47** | [**\StevenBuehner\ChurchTools\Model\InlineObject47**](../Model/InlineObject47.md)|  | [optional]
+ **post_publicgroups_group_id_signup_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest**](../Model/PostPublicgroupsGroupIdSignupRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20074**](../Model/InlineResponse20074.md)
+[**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignup200Response**](../Model/PostPublicgroupsGroupIdSignup200Response.md)
 
 ### Authorization
 

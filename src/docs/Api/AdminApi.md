@@ -141,7 +141,7 @@ void (empty response body)
 ## `getAllLogs()`
 
 ```php
-getAllLogs($message, $levels, $before, $after, $person_id, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20032
+getAllLogs($message, $levels, $before, $after, $person_id, $page, $limit): \StevenBuehner\ChurchTools\Model\GetAllLogs200Response
 ```
 
 Get all log messages
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20032**](../Model/InlineResponse20032.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllLogs200Response**](../Model/GetAllLogs200Response.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 ## `getLogById()`
 
 ```php
-getLogById($id): \StevenBuehner\ChurchTools\Model\InlineResponse20033
+getLogById($id): \StevenBuehner\ChurchTools\Model\GetLogById200Response
 ```
 
 Get a log message
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20033**](../Model/InlineResponse20033.md)
+[**\StevenBuehner\ChurchTools\Model\GetLogById200Response**](../Model/GetLogById200Response.md)
 
 ### Authorization
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 ## `getLoginStatistics()`
 
 ```php
-getLoginStatistics($order_by, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse20034
+getLoginStatistics($order_by, $page, $limit): \StevenBuehner\ChurchTools\Model\GetLoginStatistics200Response
 ```
 
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20034**](../Model/InlineResponse20034.md)
+[**\StevenBuehner\ChurchTools\Model\GetLoginStatistics200Response**](../Model/GetLoginStatistics200Response.md)
 
 ### Authorization
 
@@ -404,7 +404,7 @@ void (empty response body)
 ## `getSecuritylevels()`
 
 ```php
-getSecuritylevels(): \StevenBuehner\ChurchTools\Model\InlineResponse200131
+getSecuritylevels(): \StevenBuehner\ChurchTools\Model\GetSecuritylevels200Response
 ```
 
 get all securitylevels
@@ -443,7 +443,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200131**](../Model/InlineResponse200131.md)
+[**\StevenBuehner\ChurchTools\Model\GetSecuritylevels200Response**](../Model/GetSecuritylevels200Response.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ This endpoint does not need any parameter.
 ## `patchFilesId()`
 
 ```php
-patchFilesId($id): \StevenBuehner\ChurchTools\Model\InlineResponse204
+patchFilesId($id): \StevenBuehner\ChurchTools\Model\PatchFilesId204Response
 ```
 
 
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse204**](../Model/InlineResponse204.md)
+[**\StevenBuehner\ChurchTools\Model\PatchFilesId204Response**](../Model/PatchFilesId204Response.md)
 
 ### Authorization
 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 ## `patchSecuritylevelId()`
 
 ```php
-patchSecuritylevelId($id, $forcereorder, $inline_object79): \StevenBuehner\ChurchTools\Model\InlineResponse200130
+patchSecuritylevelId($id, $forcereorder, $patch_securitylevel_id_request): \StevenBuehner\ChurchTools\Model\PostSecuritylevelId200Response
 ```
 
 Update the security level
@@ -551,10 +551,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
 );
 $id = 'id_example'; // string | Id of a particular security level
 $forcereorder = True; // bool | Need to be true, if securitylevel shall be reordered
-$inline_object79 = new \StevenBuehner\ChurchTools\Model\InlineObject79(); // \StevenBuehner\ChurchTools\Model\InlineObject79
+$patch_securitylevel_id_request = new \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest(); // \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest | Information to patch the security level
 
 try {
-    $result = $apiInstance->patchSecuritylevelId($id, $forcereorder, $inline_object79);
+    $result = $apiInstance->patchSecuritylevelId($id, $forcereorder, $patch_securitylevel_id_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdminApi->patchSecuritylevelId: ', $e->getMessage(), PHP_EOL;
@@ -567,11 +567,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Id of a particular security level |
  **forcereorder** | **bool**| Need to be true, if securitylevel shall be reordered | [optional]
- **inline_object79** | [**\StevenBuehner\ChurchTools\Model\InlineObject79**](../Model/InlineObject79.md)|  | [optional]
+ **patch_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest**](../Model/PatchSecuritylevelIdRequest.md)| Information to patch the security level | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200130**](../Model/InlineResponse200130.md)
+[**\StevenBuehner\ChurchTools\Model\PostSecuritylevelId200Response**](../Model/PostSecuritylevelId200Response.md)
 
 ### Authorization
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 ## `postSecuritylevelId()`
 
 ```php
-postSecuritylevelId($id, $inline_object78): \StevenBuehner\ChurchTools\Model\InlineResponse200130
+postSecuritylevelId($id, $post_securitylevel_id_request): \StevenBuehner\ChurchTools\Model\PostSecuritylevelId200Response
 ```
 
 Create a new security Level
@@ -616,10 +616,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     $config
 );
 $id = 'id_example'; // string | Id of a particular security level
-$inline_object78 = new \StevenBuehner\ChurchTools\Model\InlineObject78(); // \StevenBuehner\ChurchTools\Model\InlineObject78
+$post_securitylevel_id_request = {"name":"Name des neuen Security levels"}; // \StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest
 
 try {
-    $result = $apiInstance->postSecuritylevelId($id, $inline_object78);
+    $result = $apiInstance->postSecuritylevelId($id, $post_securitylevel_id_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdminApi->postSecuritylevelId: ', $e->getMessage(), PHP_EOL;
@@ -631,11 +631,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Id of a particular security level |
- **inline_object78** | [**\StevenBuehner\ChurchTools\Model\InlineObject78**](../Model/InlineObject78.md)|  | [optional]
+ **post_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest**](../Model/PostSecuritylevelIdRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200130**](../Model/InlineResponse200130.md)
+[**\StevenBuehner\ChurchTools\Model\PostSecuritylevelId200Response**](../Model/PostSecuritylevelId200Response.md)
 
 ### Authorization
 

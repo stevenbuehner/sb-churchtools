@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `checkin()`
 
 ```php
-checkin($group_id, $person_id, $inline_object11): \StevenBuehner\ChurchTools\Model\InlineResponse20025
+checkin($group_id, $person_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
 ```
 
 Checkin a person to a group
@@ -41,10 +41,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CheckinApi(
 );
 $group_id = 42; // int | ID of group
 $person_id = 7; // int | ID of person
-$inline_object11 = new \StevenBuehner\ChurchTools\Model\InlineObject11(); // \StevenBuehner\ChurchTools\Model\InlineObject11
+$checkin_request = new \StevenBuehner\ChurchTools\Model\CheckinRequest(); // \StevenBuehner\ChurchTools\Model\CheckinRequest
 
 try {
-    $result = $apiInstance->checkin($group_id, $person_id, $inline_object11);
+    $result = $apiInstance->checkin($group_id, $person_id, $checkin_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckinApi->checkin: ', $e->getMessage(), PHP_EOL;
@@ -57,11 +57,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| ID of group |
  **person_id** | **int**| ID of person |
- **inline_object11** | [**\StevenBuehner\ChurchTools\Model\InlineObject11**](../Model/InlineObject11.md)|  |
+ **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\StevenBuehner\ChurchTools\Model\Checkin200Response**](../Model/Checkin200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ## `getQRCodeCheckin()`
 
 ```php
-getQRCodeCheckin($group_id, $person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20024
+getQRCodeCheckin($group_id, $person_id): \StevenBuehner\ChurchTools\Model\GetQRCodeCheckin200Response
 ```
 
 Get link to QR-Code for CheckIn PDF
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
+[**\StevenBuehner\ChurchTools\Model\GetQRCodeCheckin200Response**](../Model/GetQRCodeCheckin200Response.md)
 
 ### Authorization
 
@@ -143,10 +143,12 @@ Name | Type | Description  | Notes
 ## `postCheckinPersons()`
 
 ```php
-postCheckinPersons($inline_object68): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+postCheckinPersons($post_checkin_persons_request): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
 ```
 
 Create new person and add to group
+
+
 
 ### Example
 
@@ -167,10 +169,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CheckinApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object68 = new \StevenBuehner\ChurchTools\Model\InlineObject68(); // \StevenBuehner\ChurchTools\Model\InlineObject68
+$post_checkin_persons_request = new \StevenBuehner\ChurchTools\Model\PostCheckinPersonsRequest(); // \StevenBuehner\ChurchTools\Model\PostCheckinPersonsRequest | 
 
 try {
-    $result = $apiInstance->postCheckinPersons($inline_object68);
+    $result = $apiInstance->postCheckinPersons($post_checkin_persons_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckinApi->postCheckinPersons: ', $e->getMessage(), PHP_EOL;
@@ -181,11 +183,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object68** | [**\StevenBuehner\ChurchTools\Model\InlineObject68**](../Model/InlineObject68.md)|  | [optional]
+ **post_checkin_persons_request** | [**\StevenBuehner\ChurchTools\Model\PostCheckinPersonsRequest**](../Model/PostCheckinPersonsRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
 
 ### Authorization
 
@@ -203,7 +205,7 @@ Name | Type | Description  | Notes
 ## `putCheckinPersons()`
 
 ```php
-putCheckinPersons($inline_object67): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+putCheckinPersons($put_checkin_persons_request): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
 ```
 
 Put existing person into group
@@ -227,10 +229,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CheckinApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object67 = new \StevenBuehner\ChurchTools\Model\InlineObject67(); // \StevenBuehner\ChurchTools\Model\InlineObject67
+$put_checkin_persons_request = new \StevenBuehner\ChurchTools\Model\PutCheckinPersonsRequest(); // \StevenBuehner\ChurchTools\Model\PutCheckinPersonsRequest | 
 
 try {
-    $result = $apiInstance->putCheckinPersons($inline_object67);
+    $result = $apiInstance->putCheckinPersons($put_checkin_persons_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckinApi->putCheckinPersons: ', $e->getMessage(), PHP_EOL;
@@ -241,11 +243,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object67** | [**\StevenBuehner\ChurchTools\Model\InlineObject67**](../Model/InlineObject67.md)|  | [optional]
+ **put_checkin_persons_request** | [**\StevenBuehner\ChurchTools\Model\PutCheckinPersonsRequest**](../Model/PutCheckinPersonsRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
 
 ### Authorization
 

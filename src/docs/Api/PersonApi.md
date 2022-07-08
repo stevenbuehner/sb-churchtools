@@ -41,7 +41,7 @@ Method | HTTP request | Description
 ## `createPerson()`
 
 ```php
-createPerson($inline_object4, $force, $without_privacy_policy_agreement): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+createPerson($create_person_request, $force, $without_privacy_policy_agreement): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
 ```
 
 Create new person
@@ -67,12 +67,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object4 = new \StevenBuehner\ChurchTools\Model\InlineObject4(); // \StevenBuehner\ChurchTools\Model\InlineObject4
+$create_person_request = new \StevenBuehner\ChurchTools\Model\CreatePersonRequest(); // \StevenBuehner\ChurchTools\Model\CreatePersonRequest | Include those fields you want to add and are allowed to write.
 $force = true; // bool | Force the action, which would otherwise fail.
 $without_privacy_policy_agreement = false; // bool | If given fields for privacy policy agreements are not mandotory. Can only be used if setting is allowed in admin settings.
 
 try {
-    $result = $apiInstance->createPerson($inline_object4, $force, $without_privacy_policy_agreement);
+    $result = $apiInstance->createPerson($create_person_request, $force, $without_privacy_policy_agreement);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->createPerson: ', $e->getMessage(), PHP_EOL;
@@ -83,13 +83,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object4** | [**\StevenBuehner\ChurchTools\Model\InlineObject4**](../Model/InlineObject4.md)|  |
+ **create_person_request** | [**\StevenBuehner\ChurchTools\Model\CreatePersonRequest**](../Model/CreatePersonRequest.md)| Include those fields you want to add and are allowed to write. |
  **force** | **bool**| Force the action, which would otherwise fail. | [optional]
  **without_privacy_policy_agreement** | **bool**| If given fields for privacy policy agreements are not mandotory. Can only be used if setting is allowed in admin settings. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 3.4; // float
+$person_id = 3.4; // float | 
 $device_id = 'device_id_example'; // string
 
 try {
@@ -422,7 +422,7 @@ void (empty response body)
 ## `getAllGroupsForPerson()`
 
 ```php
-getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups): \StevenBuehner\ChurchTools\Model\InlineResponse20016
+getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
 ```
 
 Get all groups a member is in
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response**](../Model/GetAllGroupsForPerson200Response.md)
 
 ### Authorization
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 ## `getAllPersonSettings()`
 
 ```php
-getAllPersonSettings($id): \StevenBuehner\ChurchTools\Model\InlineResponse20011
+getAllPersonSettings($id): \StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response
 ```
 
 Get all person settings
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response**](../Model/GetAllPersonSettings200Response.md)
 
 ### Authorization
 
@@ -550,7 +550,7 @@ Name | Type | Description  | Notes
 ## `getAllPersons()`
 
 ```php
-getAllPersons($ids, $status_ids, $campus_ids, $birthday_before, $birthday_after, $is_archived, $page, $limit): \StevenBuehner\ChurchTools\Model\InlineResponse2007
+getAllPersons($ids, $status_ids, $campus_ids, $birthday_before, $birthday_after, $is_archived, $page, $limit): \StevenBuehner\ChurchTools\Model\GetAllPersons200Response
 ```
 
 Get all persons
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllPersons200Response**](../Model/GetAllPersons200Response.md)
 
 ### Authorization
 
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 ## `getDeviceForPerson()`
 
 ```php
-getDeviceForPerson($person_id, $device_id): \StevenBuehner\ChurchTools\Model\InlineResponse20076
+getDeviceForPerson($person_id, $device_id): \StevenBuehner\ChurchTools\Model\GetDeviceForPerson200Response
 ```
 
 Fetch one device
@@ -652,7 +652,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 3.4; // float
+$person_id = 3.4; // float | 
 $device_id = 'device_id_example'; // string
 
 try {
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20076**](../Model/InlineResponse20076.md)
+[**\StevenBuehner\ChurchTools\Model\GetDeviceForPerson200Response**](../Model/GetDeviceForPerson200Response.md)
 
 ### Authorization
 
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 ## `getOpenServiceRequestsForPerson()`
 
 ```php
-getOpenServiceRequestsForPerson($id): \StevenBuehner\ChurchTools\Model\InlineResponse20014
+getOpenServiceRequestsForPerson($id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
 ```
 
 Get all service requests for a person
@@ -734,7 +734,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response**](../Model/GetOpenServiceRequestsForPerson200Response.md)
 
 ### Authorization
 
@@ -752,7 +752,7 @@ Name | Type | Description  | Notes
 ## `getPersonById()`
 
 ```php
-getPersonById($id): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+getPersonById($id): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
 ```
 
 Get a person by ID or GUID
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
 
 ### Authorization
 
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 ## `getPersonDevices()`
 
 ```php
-getPersonDevices($person_id): \StevenBuehner\ChurchTools\Model\InlineResponse20075
+getPersonDevices($person_id): \StevenBuehner\ChurchTools\Model\GetPersonDevices200Response
 ```
 
 Fetch all registered devices for person
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20075**](../Model/InlineResponse20075.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonDevices200Response**](../Model/GetPersonDevices200Response.md)
 
 ### Authorization
 
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 ## `getPersonEvents()`
 
 ```php
-getPersonEvents($id, $from): \StevenBuehner\ChurchTools\Model\InlineResponse20013
+getPersonEvents($id, $from): \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response
 ```
 
 Get events that person is involved with
@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response**](../Model/GetPersonEvents200Response.md)
 
 ### Authorization
 
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 ## `getPersonModuleSettings()`
 
 ```php
-getPersonModuleSettings($id, $module): \StevenBuehner\ChurchTools\Model\InlineResponse20011
+getPersonModuleSettings($id, $module): \StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response
 ```
 
 Get all person settings of a module
@@ -986,7 +986,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response**](../Model/GetAllPersonSettings200Response.md)
 
 ### Authorization
 
@@ -1004,7 +1004,7 @@ Name | Type | Description  | Notes
 ## `getPersonProperties()`
 
 ```php
-getPersonProperties($inline_object5): \StevenBuehner\ChurchTools\Model\InlineResponse2008
+getPersonProperties($get_person_properties_request): \StevenBuehner\ChurchTools\Model\GetPersonProperties200Response
 ```
 
 Retrieve people's properties, whether they own an email adress
@@ -1028,10 +1028,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object5 = new \StevenBuehner\ChurchTools\Model\InlineObject5(); // \StevenBuehner\ChurchTools\Model\InlineObject5
+$get_person_properties_request = new \StevenBuehner\ChurchTools\Model\GetPersonPropertiesRequest(); // \StevenBuehner\ChurchTools\Model\GetPersonPropertiesRequest | List all person IDs for which you want the property information. If empty, all person IDs are used
 
 try {
-    $result = $apiInstance->getPersonProperties($inline_object5);
+    $result = $apiInstance->getPersonProperties($get_person_properties_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonProperties: ', $e->getMessage(), PHP_EOL;
@@ -1042,11 +1042,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object5** | [**\StevenBuehner\ChurchTools\Model\InlineObject5**](../Model/InlineObject5.md)|  | [optional]
+ **get_person_properties_request** | [**\StevenBuehner\ChurchTools\Model\GetPersonPropertiesRequest**](../Model/GetPersonPropertiesRequest.md)| List all person IDs for which you want the property information. If empty, all person IDs are used | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonProperties200Response**](../Model/GetPersonProperties200Response.md)
 
 ### Authorization
 
@@ -1064,7 +1064,7 @@ Name | Type | Description  | Notes
 ## `getPersonRelationships()`
 
 ```php
-getPersonRelationships($id): \StevenBuehner\ChurchTools\Model\InlineResponse20010
+getPersonRelationships($id): \StevenBuehner\ChurchTools\Model\GetPersonRelationships200Response
 ```
 
 Get all relationships linked to this person
@@ -1108,7 +1108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonRelationships200Response**](../Model/GetPersonRelationships200Response.md)
 
 ### Authorization
 
@@ -1126,7 +1126,7 @@ Name | Type | Description  | Notes
 ## `getPersonSetting()`
 
 ```php
-getPersonSetting($id, $module, $attribute): \StevenBuehner\ChurchTools\Model\InlineResponse20012
+getPersonSetting($id, $module, $attribute): \StevenBuehner\ChurchTools\Model\GetPersonSetting200Response
 ```
 
 Get person setting
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonSetting200Response**](../Model/GetPersonSetting200Response.md)
 
 ### Authorization
 
@@ -1192,7 +1192,7 @@ Name | Type | Description  | Notes
 ## `getPersonTags()`
 
 ```php
-getPersonTags($id): \StevenBuehner\ChurchTools\Model\InlineResponse2009
+getPersonTags($id): \StevenBuehner\ChurchTools\Model\GetPersonTags200Response
 ```
 
 Get all tags attached to a person
@@ -1234,7 +1234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonTags200Response**](../Model/GetPersonTags200Response.md)
 
 ### Authorization
 
@@ -1252,7 +1252,7 @@ Name | Type | Description  | Notes
 ## `getPersonsBirthdays()`
 
 ```php
-getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body): \StevenBuehner\ChurchTools\Model\InlineResponse200115
+getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body): \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200Response
 ```
 
 Fetch Birthdays
@@ -1306,7 +1306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200115**](../Model/InlineResponse200115.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200Response**](../Model/GetPersonsBirthdays200Response.md)
 
 ### Authorization
 
@@ -1324,7 +1324,7 @@ Name | Type | Description  | Notes
 ## `getPersonsDuplicates()`
 
 ```php
-getPersonsDuplicates($tolerance, $relation_name_for_duplicates): \StevenBuehner\ChurchTools\Model\InlineResponse200129
+getPersonsDuplicates($tolerance, $relation_name_for_duplicates): \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200Response
 ```
 
 get potential duplicates of persons
@@ -1370,7 +1370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200129**](../Model/InlineResponse200129.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200Response**](../Model/GetPersonsDuplicates200Response.md)
 
 ### Authorization
 
@@ -1388,7 +1388,7 @@ Name | Type | Description  | Notes
 ## `getPersonsIdLogintoken()`
 
 ```php
-getPersonsIdLogintoken($id): \StevenBuehner\ChurchTools\Model\InlineResponse200116
+getPersonsIdLogintoken($id): \StevenBuehner\ChurchTools\Model\GetPersonsIdLogintoken200Response
 ```
 
 Fetch Login Token
@@ -1432,7 +1432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200116**](../Model/InlineResponse200116.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonsIdLogintoken200Response**](../Model/GetPersonsIdLogintoken200Response.md)
 
 ### Authorization
 
@@ -1513,7 +1513,7 @@ void (empty response body)
 ## `getServiceRequestById()`
 
 ```php
-getServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\InlineResponse20015
+getServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Get a specific service request for a person
@@ -1559,7 +1559,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response**](../Model/GetServiceRequestById200Response.md)
 
 ### Authorization
 
@@ -1640,7 +1640,7 @@ void (empty response body)
 ## `patchPerson()`
 
 ```php
-patchPerson($id, $inline_object6): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+patchPerson($id, $patch_person_request): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
 ```
 
 Updates a person
@@ -1667,10 +1667,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $id = 42; // int | ID of person
-$inline_object6 = new \StevenBuehner\ChurchTools\Model\InlineObject6(); // \StevenBuehner\ChurchTools\Model\InlineObject6
+$patch_person_request = new \StevenBuehner\ChurchTools\Model\PatchPersonRequest(); // \StevenBuehner\ChurchTools\Model\PatchPersonRequest | Include those fields you want to update and are allowed to write.
 
 try {
-    $result = $apiInstance->patchPerson($id, $inline_object6);
+    $result = $apiInstance->patchPerson($id, $patch_person_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->patchPerson: ', $e->getMessage(), PHP_EOL;
@@ -1682,11 +1682,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of person |
- **inline_object6** | [**\StevenBuehner\ChurchTools\Model\InlineObject6**](../Model/InlineObject6.md)|  |
+ **patch_person_request** | [**\StevenBuehner\ChurchTools\Model\PatchPersonRequest**](../Model/PatchPersonRequest.md)| Include those fields you want to update and are allowed to write. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
 
 ### Authorization
 
@@ -1704,7 +1704,7 @@ Name | Type | Description  | Notes
 ## `patchPersonsPersonidMergeDuplicateid()`
 
 ```php
-patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicate, $inline_object53)
+patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicate, $patch_persons_personid_merge_duplicateid_request)
 ```
 
 Merge two person records
@@ -1733,10 +1733,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
 $duplicate_id = 100; // string | Id of the doublette person
 $person_id = 'person_id_example'; // string | id of the original person
 $delete_duplicate = True; // bool | Flag to delete the doublette
-$inline_object53 = new \StevenBuehner\ChurchTools\Model\InlineObject53(); // \StevenBuehner\ChurchTools\Model\InlineObject53
+$patch_persons_personid_merge_duplicateid_request = {}; // \StevenBuehner\ChurchTools\Model\PatchPersonsPersonidMergeDuplicateidRequest | * the fields to be changed in the original person * see also `Patch: updatePerson`
 
 try {
-    $apiInstance->patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicate, $inline_object53);
+    $apiInstance->patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicate, $patch_persons_personid_merge_duplicateid_request);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->patchPersonsPersonidMergeDuplicateid: ', $e->getMessage(), PHP_EOL;
 }
@@ -1749,7 +1749,7 @@ Name | Type | Description  | Notes
  **duplicate_id** | **string**| Id of the doublette person |
  **person_id** | **string**| id of the original person |
  **delete_duplicate** | **bool**| Flag to delete the doublette | [optional]
- **inline_object53** | [**\StevenBuehner\ChurchTools\Model\InlineObject53**](../Model/InlineObject53.md)|  | [optional]
+ **patch_persons_personid_merge_duplicateid_request** | [**\StevenBuehner\ChurchTools\Model\PatchPersonsPersonidMergeDuplicateidRequest**](../Model/PatchPersonsPersonidMergeDuplicateidRequest.md)| * the fields to be changed in the original person * see also &#x60;Patch: updatePerson&#x60; | [optional]
 
 ### Return type
 
@@ -1771,7 +1771,7 @@ void (empty response body)
 ## `postPersonsPersonIdArchive()`
 
 ```php
-postPersonsPersonIdArchive($person_id, $inline_object69)
+postPersonsPersonIdArchive($person_id, $post_persons_person_id_archive_request)
 ```
 
 
@@ -1798,10 +1798,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $person_id = 'person_id_example'; // string
-$inline_object69 = new \StevenBuehner\ChurchTools\Model\InlineObject69(); // \StevenBuehner\ChurchTools\Model\InlineObject69
+$post_persons_person_id_archive_request = new \StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest(); // \StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest
 
 try {
-    $apiInstance->postPersonsPersonIdArchive($person_id, $inline_object69);
+    $apiInstance->postPersonsPersonIdArchive($person_id, $post_persons_person_id_archive_request);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->postPersonsPersonIdArchive: ', $e->getMessage(), PHP_EOL;
 }
@@ -1812,7 +1812,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **string**|  |
- **inline_object69** | [**\StevenBuehner\ChurchTools\Model\InlineObject69**](../Model/InlineObject69.md)|  | [optional]
+ **post_persons_person_id_archive_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest**](../Model/PostPersonsPersonIdArchiveRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1834,7 +1834,7 @@ void (empty response body)
 ## `undoServiceRequestById()`
 
 ```php
-undoServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\InlineResponse20015
+undoServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Undo last service request action
@@ -1880,7 +1880,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response**](../Model/GetServiceRequestById200Response.md)
 
 ### Authorization
 
@@ -1898,7 +1898,7 @@ Name | Type | Description  | Notes
 ## `updateDeviceForPerson()`
 
 ```php
-updateDeviceForPerson($person_id, $device_id, $inline_object48): \StevenBuehner\ChurchTools\Model\InlineResponse20077
+updateDeviceForPerson($person_id, $device_id, $update_device_for_person_request): \StevenBuehner\ChurchTools\Model\UpdateDeviceForPerson200Response
 ```
 
 Create / Update new device for person
@@ -1924,12 +1924,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 3.4; // float
+$person_id = 3.4; // float | 
 $device_id = 'device_id_example'; // string
-$inline_object48 = new \StevenBuehner\ChurchTools\Model\InlineObject48(); // \StevenBuehner\ChurchTools\Model\InlineObject48
+$update_device_for_person_request = {"type":"Android"}; // \StevenBuehner\ChurchTools\Model\UpdateDeviceForPersonRequest | Device information.
 
 try {
-    $result = $apiInstance->updateDeviceForPerson($person_id, $device_id, $inline_object48);
+    $result = $apiInstance->updateDeviceForPerson($person_id, $device_id, $update_device_for_person_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->updateDeviceForPerson: ', $e->getMessage(), PHP_EOL;
@@ -1942,11 +1942,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **person_id** | **float**|  |
  **device_id** | **string**|  |
- **inline_object48** | [**\StevenBuehner\ChurchTools\Model\InlineObject48**](../Model/InlineObject48.md)|  | [optional]
+ **update_device_for_person_request** | [**\StevenBuehner\ChurchTools\Model\UpdateDeviceForPersonRequest**](../Model/UpdateDeviceForPersonRequest.md)| Device information. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20077**](../Model/InlineResponse20077.md)
+[**\StevenBuehner\ChurchTools\Model\UpdateDeviceForPerson200Response**](../Model/UpdateDeviceForPerson200Response.md)
 
 ### Authorization
 
@@ -1964,7 +1964,7 @@ Name | Type | Description  | Notes
 ## `updatePersonSetting()`
 
 ```php
-updatePersonSetting($id, $module, $attribute): \StevenBuehner\ChurchTools\Model\InlineResponse20012
+updatePersonSetting($id, $module, $attribute): \StevenBuehner\ChurchTools\Model\GetPersonSetting200Response
 ```
 
 Create/Update person setting
@@ -2012,7 +2012,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonSetting200Response**](../Model/GetPersonSetting200Response.md)
 
 ### Authorization
 
@@ -2030,7 +2030,7 @@ Name | Type | Description  | Notes
 ## `updateServiceRequestById()`
 
 ```php
-updateServiceRequestById($id, $request_id, $inline_object7): \StevenBuehner\ChurchTools\Model\InlineResponse20015
+updateServiceRequestById($id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Agree to a service request for a person
@@ -2058,10 +2058,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
 );
 $id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
-$inline_object7 = new \StevenBuehner\ChurchTools\Model\InlineObject7(); // \StevenBuehner\ChurchTools\Model\InlineObject7
+$update_service_request_by_id_request = new \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest(); // \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest | Send the agreed state and optionally a comment.
 
 try {
-    $result = $apiInstance->updateServiceRequestById($id, $request_id, $inline_object7);
+    $result = $apiInstance->updateServiceRequestById($id, $request_id, $update_service_request_by_id_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->updateServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -2074,11 +2074,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
- **inline_object7** | [**\StevenBuehner\ChurchTools\Model\InlineObject7**](../Model/InlineObject7.md)|  |
+ **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response**](../Model/GetServiceRequestById200Response.md)
 
 ### Authorization
 

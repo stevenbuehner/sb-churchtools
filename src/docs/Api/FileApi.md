@@ -72,7 +72,7 @@ void (empty response body)
 ## `uploadFiles()`
 
 ```php
-uploadFiles($domain_type, $domain_identifier, $files): \StevenBuehner\ChurchTools\Model\InlineResponse20031
+uploadFiles($domain_type, $domain_identifier, $files): \StevenBuehner\ChurchTools\Model\UploadFiles200Response
 ```
 
 Upload files
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\StevenBuehner\ChurchTools\Model\UploadFiles200Response**](../Model/UploadFiles200Response.md)
 
 ### Authorization
 

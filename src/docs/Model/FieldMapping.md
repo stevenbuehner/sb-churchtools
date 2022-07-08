@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  |
-**external_system** | [**\StevenBuehner\ChurchTools\Model\ExternalSystem3**](ExternalSystem3.md) |  |
+**external_system** | [**\StevenBuehner\ChurchTools\Model\ExternalSystem2**](ExternalSystem2.md) |  |
 **domain_type** | **string** |  |
 **entries** | [**\StevenBuehner\ChurchTools\Model\FieldMappingEntries**](FieldMappingEntries.md) |  |
 

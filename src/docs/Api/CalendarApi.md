@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createTemplate()`
 
 ```php
-createTemplate($inline_object14): \StevenBuehner\ChurchTools\Model\InlineResponse20035
+createTemplate($create_template_request): \StevenBuehner\ChurchTools\Model\GetAllTemplates200Response
 ```
 
 Create new appointment template
@@ -43,10 +43,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CalendarApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object14 = new \StevenBuehner\ChurchTools\Model\InlineObject14(); // \StevenBuehner\ChurchTools\Model\InlineObject14
+$create_template_request = new \StevenBuehner\ChurchTools\Model\CreateTemplateRequest(); // \StevenBuehner\ChurchTools\Model\CreateTemplateRequest | appointment template data
 
 try {
-    $result = $apiInstance->createTemplate($inline_object14);
+    $result = $apiInstance->createTemplate($create_template_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarApi->createTemplate: ', $e->getMessage(), PHP_EOL;
@@ -57,11 +57,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object14** | [**\StevenBuehner\ChurchTools\Model\InlineObject14**](../Model/InlineObject14.md)|  |
+ **create_template_request** | [**\StevenBuehner\ChurchTools\Model\CreateTemplateRequest**](../Model/CreateTemplateRequest.md)| appointment template data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllTemplates200Response**](../Model/GetAllTemplates200Response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ void (empty response body)
 ## `getAllTemplates()`
 
 ```php
-getAllTemplates(): \StevenBuehner\ChurchTools\Model\InlineResponse20035
+getAllTemplates(): \StevenBuehner\ChurchTools\Model\GetAllTemplates200Response
 ```
 
 get all appointment templates
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllTemplates200Response**](../Model/GetAllTemplates200Response.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ This endpoint does not need any parameter.
 ## `getCalendars()`
 
 ```php
-getCalendars(): \StevenBuehner\ChurchTools\Model\InlineResponse200127
+getCalendars(): \StevenBuehner\ChurchTools\Model\GetCalendars200Response
 ```
 
 Your GET endpoint
@@ -238,7 +238,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200127**](../Model/InlineResponse200127.md)
+[**\StevenBuehner\ChurchTools\Model\GetCalendars200Response**](../Model/GetCalendars200Response.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ This endpoint does not need any parameter.
 ## `getCalendarsAppointments()`
 
 ```php
-getCalendarsAppointments($calendar_ids, $from, $to): \StevenBuehner\ChurchTools\Model\InlineResponse200126
+getCalendarsAppointments($calendar_ids, $from, $to): \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200Response
 ```
 
 Your GET endpoint
@@ -281,7 +281,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CalendarApi(
     $config
 );
 $calendar_ids = NULL; // array
-$from = Sat Jan 01 01:00:00 CET 2022; // \DateTime
+$from = Sat Jan 01 01:00:00 CET 2022; // \DateTime | 
 $to = Wed Mar 30 02:00:00 CEST 2022; // \DateTime
 
 try {
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200126**](../Model/InlineResponse200126.md)
+[**\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200Response**](../Model/GetCalendarsAppointments200Response.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 ## `getCalendarsCalendarIdAppointmentsAppointmentIdStartDate()`
 
 ```php
-getCalendarsCalendarIdAppointmentsAppointmentIdStartDate($calendar_id, $appointment_id, $start_date): \StevenBuehner\ChurchTools\Model\InlineResponse200128
+getCalendarsCalendarIdAppointmentsAppointmentIdStartDate($calendar_id, $appointment_id, $start_date): \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200Response
 ```
 
 Your GET endpoint
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200128**](../Model/InlineResponse200128.md)
+[**\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200Response**](../Model/GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200Response.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 ## `getTemplateById()`
 
 ```php
-getTemplateById($template_id): \StevenBuehner\ChurchTools\Model\InlineResponse20036
+getTemplateById($template_id): \StevenBuehner\ChurchTools\Model\GetTemplateById200Response
 ```
 
 get a appointment template
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
+[**\StevenBuehner\ChurchTools\Model\GetTemplateById200Response**](../Model/GetTemplateById200Response.md)
 
 ### Authorization
 
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 ## `updateTemplate()`
 
 ```php
-updateTemplate($template_id, $inline_object15): \StevenBuehner\ChurchTools\Model\InlineResponse20036
+updateTemplate($template_id, $create_template_request): \StevenBuehner\ChurchTools\Model\GetTemplateById200Response
 ```
 
 update a appointment template identified by id
@@ -473,10 +473,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CalendarApi(
     $config
 );
 $template_id = 1; // int | ID of appointment template
-$inline_object15 = new \StevenBuehner\ChurchTools\Model\InlineObject15(); // \StevenBuehner\ChurchTools\Model\InlineObject15
+$create_template_request = new \StevenBuehner\ChurchTools\Model\CreateTemplateRequest(); // \StevenBuehner\ChurchTools\Model\CreateTemplateRequest | appointment template data
 
 try {
-    $result = $apiInstance->updateTemplate($template_id, $inline_object15);
+    $result = $apiInstance->updateTemplate($template_id, $create_template_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarApi->updateTemplate: ', $e->getMessage(), PHP_EOL;
@@ -488,11 +488,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **int**| ID of appointment template |
- **inline_object15** | [**\StevenBuehner\ChurchTools\Model\InlineObject15**](../Model/InlineObject15.md)|  |
+ **create_template_request** | [**\StevenBuehner\ChurchTools\Model\CreateTemplateRequest**](../Model/CreateTemplateRequest.md)| appointment template data |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
+[**\StevenBuehner\ChurchTools\Model\GetTemplateById200Response**](../Model/GetTemplateById200Response.md)
 
 ### Authorization
 

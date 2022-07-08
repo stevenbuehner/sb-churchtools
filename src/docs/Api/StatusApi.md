@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createNewStatus()`
 
 ```php
-createNewStatus($inline_object2): \StevenBuehner\ChurchTools\Model\InlineResponse2011
+createNewStatus($create_new_status_request): \StevenBuehner\ChurchTools\Model\CreateNewStatus201Response
 ```
 
 Save new status
@@ -38,10 +38,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\StatusApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object2 = new \StevenBuehner\ChurchTools\Model\InlineObject2(); // \StevenBuehner\ChurchTools\Model\InlineObject2
+$create_new_status_request = new \StevenBuehner\ChurchTools\Model\CreateNewStatusRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewStatusRequest | Status to add
 
 try {
-    $result = $apiInstance->createNewStatus($inline_object2);
+    $result = $apiInstance->createNewStatus($create_new_status_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StatusApi->createNewStatus: ', $e->getMessage(), PHP_EOL;
@@ -52,11 +52,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object2** | [**\StevenBuehner\ChurchTools\Model\InlineObject2**](../Model/InlineObject2.md)|  |
+ **create_new_status_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewStatusRequest**](../Model/CreateNewStatusRequest.md)| Status to add |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewStatus201Response**](../Model/CreateNewStatus201Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 ## `getAllStatuses()`
 
 ```php
-getAllStatuses(): \StevenBuehner\ChurchTools\Model\InlineResponse2005
+getAllStatuses(): \StevenBuehner\ChurchTools\Model\GetAllStatuses200Response
 ```
 
 Get all statuses
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllStatuses200Response**](../Model/GetAllStatuses200Response.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ void (empty response body)
 ## `statusesIdGet()`
 
 ```php
-statusesIdGet($id): \StevenBuehner\ChurchTools\Model\InlineResponse2006
+statusesIdGet($id): \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response
 ```
 
 Get a specific status
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response**](../Model/StatusesIdDelete200Response.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 ## `statusesIdPut()`
 
 ```php
-statusesIdPut($id, $inline_object3): \StevenBuehner\ChurchTools\Model\InlineResponse2006
+statusesIdPut($id, $statuses_id_delete_request): \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response
 ```
 
 Update status
@@ -277,10 +277,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\StatusApi(
     $config
 );
 $id = 1; // int | ID of status
-$inline_object3 = new \StevenBuehner\ChurchTools\Model\InlineObject3(); // \StevenBuehner\ChurchTools\Model\InlineObject3
+$statuses_id_delete_request = new \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest(); // \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest | New values for status
 
 try {
-    $result = $apiInstance->statusesIdPut($id, $inline_object3);
+    $result = $apiInstance->statusesIdPut($id, $statuses_id_delete_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StatusApi->statusesIdPut: ', $e->getMessage(), PHP_EOL;
@@ -292,11 +292,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of status |
- **inline_object3** | [**\StevenBuehner\ChurchTools\Model\InlineObject3**](../Model/InlineObject3.md)|  |
+ **statuses_id_delete_request** | [**\StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest**](../Model/StatusesIdDeleteRequest.md)| New values for status |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response**](../Model/StatusesIdDelete200Response.md)
 
 ### Authorization
 

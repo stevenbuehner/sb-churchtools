@@ -73,7 +73,7 @@ void (empty response body)
 ## `getAllData()`
 
 ```php
-getAllData($accounting_period_id): \StevenBuehner\ChurchTools\Model\InlineResponse20045
+getAllData($accounting_period_id): \StevenBuehner\ChurchTools\Model\GetAllData200Response
 ```
 
 Get a master data for finance module
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20045**](../Model/InlineResponse20045.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllData200Response**](../Model/GetAllData200Response.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ## `getAllGroupTypeRoles()`
 
 ```php
-getAllGroupTypeRoles(): \StevenBuehner\ChurchTools\Model\InlineResponse20042
+getAllGroupTypeRoles(): \StevenBuehner\ChurchTools\Model\GetAllGroupTypeRoles200Response
 ```
 
 Get all group type roles
@@ -174,7 +174,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20042**](../Model/InlineResponse20042.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllGroupTypeRoles200Response**](../Model/GetAllGroupTypeRoles200Response.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ This endpoint does not need any parameter.
 ## `getMasterDataPerson()`
 
 ```php
-getMasterDataPerson(): \StevenBuehner\ChurchTools\Model\InlineResponse20044
+getMasterDataPerson(): \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response
 ```
 
 Fetch all master data for the module \"People & Groups\"
@@ -292,7 +292,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20044**](../Model/InlineResponse20044.md)
+[**\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response**](../Model/GetMasterDataPerson200Response.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ This endpoint does not need any parameter.
 ## `masterdataPersonRolesRoleIdGet()`
 
 ```php
-masterdataPersonRolesRoleIdGet($role_id): \StevenBuehner\ChurchTools\Model\InlineResponse20043
+masterdataPersonRolesRoleIdGet($role_id): \StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response
 ```
 
 Get a group type role
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20043**](../Model/InlineResponse20043.md)
+[**\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response**](../Model/MasterdataPersonRolesRoleIdGet200Response.md)
 
 ### Authorization
 

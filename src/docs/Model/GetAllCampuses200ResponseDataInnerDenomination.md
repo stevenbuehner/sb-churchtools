@@ -1,0 +1,11 @@
+# # GetAllCampuses200ResponseDataInnerDenomination
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **string** |  |
+**name_translated** | **string** |  |
+**key** | **string** |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

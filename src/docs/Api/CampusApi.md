@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createNewCampus()`
 
 ```php
-createNewCampus($inline_object): \StevenBuehner\ChurchTools\Model\InlineResponse201
+createNewCampus($create_new_campus_request): \StevenBuehner\ChurchTools\Model\CreateNewCampus201Response
 ```
 
 
@@ -40,10 +40,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CampusApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object = new \StevenBuehner\ChurchTools\Model\InlineObject(); // \StevenBuehner\ChurchTools\Model\InlineObject
+$create_new_campus_request = new \StevenBuehner\ChurchTools\Model\CreateNewCampusRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewCampusRequest
 
 try {
-    $result = $apiInstance->createNewCampus($inline_object);
+    $result = $apiInstance->createNewCampus($create_new_campus_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampusApi->createNewCampus: ', $e->getMessage(), PHP_EOL;
@@ -54,11 +54,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object** | [**\StevenBuehner\ChurchTools\Model\InlineObject**](../Model/InlineObject.md)|  | [optional]
+ **create_new_campus_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewCampusRequest**](../Model/CreateNewCampusRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\StevenBuehner\ChurchTools\Model\CreateNewCampus201Response**](../Model/CreateNewCampus201Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ void (empty response body)
 ## `getAllCampuses()`
 
 ```php
-getAllCampuses(): \StevenBuehner\ChurchTools\Model\InlineResponse2002
+getAllCampuses(): \StevenBuehner\ChurchTools\Model\GetAllCampuses200Response
 ```
 
 Get all campuses
@@ -178,7 +178,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllCampuses200Response**](../Model/GetAllCampuses200Response.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ This endpoint does not need any parameter.
 ## `getCampus()`
 
 ```php
-getCampus($id): \StevenBuehner\ChurchTools\Model\InlineResponse2003
+getCampus($id): \StevenBuehner\ChurchTools\Model\GetCampus200Response
 ```
 
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\StevenBuehner\ChurchTools\Model\GetCampus200Response**](../Model/GetCampus200Response.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ## `updateCampus()`
 
 ```php
-updateCampus($id, $inline_object1): \StevenBuehner\ChurchTools\Model\InlineResponse2003
+updateCampus($id, $update_campus_request): \StevenBuehner\ChurchTools\Model\GetCampus200Response
 ```
 
 
@@ -285,10 +285,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CampusApi(
     $config
 );
 $id = 1; // int | ID of campus
-$inline_object1 = new \StevenBuehner\ChurchTools\Model\InlineObject1(); // \StevenBuehner\ChurchTools\Model\InlineObject1
+$update_campus_request = new \StevenBuehner\ChurchTools\Model\UpdateCampusRequest(); // \StevenBuehner\ChurchTools\Model\UpdateCampusRequest | New values for campus
 
 try {
-    $result = $apiInstance->updateCampus($id, $inline_object1);
+    $result = $apiInstance->updateCampus($id, $update_campus_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampusApi->updateCampus: ', $e->getMessage(), PHP_EOL;
@@ -300,11 +300,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of campus |
- **inline_object1** | [**\StevenBuehner\ChurchTools\Model\InlineObject1**](../Model/InlineObject1.md)|  |
+ **update_campus_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequest**](../Model/UpdateCampusRequest.md)| New values for campus |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\StevenBuehner\ChurchTools\Model\GetCampus200Response**](../Model/GetCampus200Response.md)
 
 ### Authorization
 

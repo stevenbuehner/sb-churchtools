@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ## `getAgendaForEvent()`
 
 ```php
-getAgendaForEvent($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse20038
+getAgendaForEvent($event_id): \StevenBuehner\ChurchTools\Model\GetAgendaForEvent200Response
 ```
 
 Get agenda for event
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
+[**\StevenBuehner\ChurchTools\Model\GetAgendaForEvent200Response**](../Model/GetAgendaForEvent200Response.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 ## `getAllEvents()`
 
 ```php
-getAllEvents($from, $to, $canceled): \StevenBuehner\ChurchTools\Model\InlineResponse20037
+getAllEvents($from, $to, $canceled): \StevenBuehner\ChurchTools\Model\GetAllEvents200Response
 ```
 
 Get all events
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllEvents200Response**](../Model/GetAllEvents200Response.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 ## `getEvent()`
 
 ```php
-getEvent($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse20013
+getEvent($event_id): \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response
 ```
 
 Get a single event
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response**](../Model/GetPersonEvents200Response.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ This endpoint does not need any parameter.
 ## `getPersonEvents()`
 
 ```php
-getPersonEvents($id, $from): \StevenBuehner\ChurchTools\Model\InlineResponse20013
+getPersonEvents($id, $from): \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response
 ```
 
 Get events that person is involved with
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response**](../Model/GetPersonEvents200Response.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 ## `getSongsOfAgenda()`
 
 ```php
-getSongsOfAgenda($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse200111
+getSongsOfAgenda($event_id): \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response
 ```
 
 Get All Songs of Agenda
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200111**](../Model/InlineResponse200111.md)
+[**\StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response**](../Model/GetSongsOfAgenda200Response.md)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 ## `sendAgendaEmail()`
 
 ```php
-sendAgendaEmail($inline_object17): \StevenBuehner\ChurchTools\Model\InlineResponse20039
+sendAgendaEmail($send_agenda_email_request): \StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response
 ```
 
 Send agenda email to recipients
@@ -419,10 +419,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object17 = new \StevenBuehner\ChurchTools\Model\InlineObject17(); // \StevenBuehner\ChurchTools\Model\InlineObject17
+$send_agenda_email_request = new \StevenBuehner\ChurchTools\Model\SendAgendaEmailRequest(); // \StevenBuehner\ChurchTools\Model\SendAgendaEmailRequest | E-Mail information and recipients
 
 try {
-    $result = $apiInstance->sendAgendaEmail($inline_object17);
+    $result = $apiInstance->sendAgendaEmail($send_agenda_email_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->sendAgendaEmail: ', $e->getMessage(), PHP_EOL;
@@ -433,11 +433,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object17** | [**\StevenBuehner\ChurchTools\Model\InlineObject17**](../Model/InlineObject17.md)|  |
+ **send_agenda_email_request** | [**\StevenBuehner\ChurchTools\Model\SendAgendaEmailRequest**](../Model/SendAgendaEmailRequest.md)| E-Mail information and recipients |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
+[**\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response**](../Model/SendAgendaEmail200Response.md)
 
 ### Authorization
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 ## `sendEventEmail()`
 
 ```php
-sendEventEmail($inline_object54): \StevenBuehner\ChurchTools\Model\InlineResponse20039
+sendEventEmail($send_event_email_request): \StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response
 ```
 
 Send Mail to Event Participants
@@ -481,10 +481,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object54 = new \StevenBuehner\ChurchTools\Model\InlineObject54(); // \StevenBuehner\ChurchTools\Model\InlineObject54
+$send_event_email_request = {"eventIds":[31,32],"recipients":[40,41,116],"files":[0],"sendCopyToMe":true,"appendAgendaButton":false,"subject":"Agenda Updated","body":"I have a updated the agenda for the upcoming service. Please review the changes."}; // \StevenBuehner\ChurchTools\Model\SendEventEmailRequest | E-Mail information and recipients
 
 try {
-    $result = $apiInstance->sendEventEmail($inline_object54);
+    $result = $apiInstance->sendEventEmail($send_event_email_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->sendEventEmail: ', $e->getMessage(), PHP_EOL;
@@ -495,11 +495,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object54** | [**\StevenBuehner\ChurchTools\Model\InlineObject54**](../Model/InlineObject54.md)|  |
+ **send_event_email_request** | [**\StevenBuehner\ChurchTools\Model\SendEventEmailRequest**](../Model/SendEventEmailRequest.md)| E-Mail information and recipients |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
+[**\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response**](../Model/SendAgendaEmail200Response.md)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 ## `startStopEventChat()`
 
 ```php
-startStopEventChat($event_id, $inline_object16)
+startStopEventChat($event_id, $start_stop_group_chat_request)
 ```
 
 Start or stop an event chat
@@ -542,10 +542,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     $config
 );
 $event_id = 42; // int | ID of event
-$inline_object16 = new \StevenBuehner\ChurchTools\Model\InlineObject16(); // \StevenBuehner\ChurchTools\Model\InlineObject16
+$start_stop_group_chat_request = new \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest(); // \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest
 
 try {
-    $apiInstance->startStopEventChat($event_id, $inline_object16);
+    $apiInstance->startStopEventChat($event_id, $start_stop_group_chat_request);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->startStopEventChat: ', $e->getMessage(), PHP_EOL;
 }
@@ -556,7 +556,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **event_id** | **int**| ID of event |
- **inline_object16** | [**\StevenBuehner\ChurchTools\Model\InlineObject16**](../Model/InlineObject16.md)|  |
+ **start_stop_group_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest**](../Model/StartStopGroupChatRequest.md)|  |
 
 ### Return type
 

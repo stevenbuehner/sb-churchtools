@@ -72,7 +72,7 @@ void (empty response body)
 ## `createNewChat()`
 
 ```php
-createNewChat($inline_object18): \StevenBuehner\ChurchTools\Model\InlineResponse20041
+createNewChat($create_new_chat_request): \StevenBuehner\ChurchTools\Model\GetAllChats200Response
 ```
 
 Start new chat
@@ -96,10 +96,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ChatApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inline_object18 = new \StevenBuehner\ChurchTools\Model\InlineObject18(); // \StevenBuehner\ChurchTools\Model\InlineObject18
+$create_new_chat_request = new \StevenBuehner\ChurchTools\Model\CreateNewChatRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewChatRequest | Chat to start
 
 try {
-    $result = $apiInstance->createNewChat($inline_object18);
+    $result = $apiInstance->createNewChat($create_new_chat_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChatApi->createNewChat: ', $e->getMessage(), PHP_EOL;
@@ -110,11 +110,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object18** | [**\StevenBuehner\ChurchTools\Model\InlineObject18**](../Model/InlineObject18.md)|  |
+ **create_new_chat_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewChatRequest**](../Model/CreateNewChatRequest.md)| Chat to start |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllChats200Response**](../Model/GetAllChats200Response.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 ## `getAllChats()`
 
 ```php
-getAllChats(): \StevenBuehner\ChurchTools\Model\InlineResponse20041
+getAllChats(): \StevenBuehner\ChurchTools\Model\GetAllChats200Response
 ```
 
 Get all chats
@@ -173,7 +173,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllChats200Response**](../Model/GetAllChats200Response.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ This endpoint does not need any parameter.
 ## `updateChat()`
 
 ```php
-updateChat($guid, $inline_object19): \StevenBuehner\ChurchTools\Model\InlineResponse20041
+updateChat($guid, $update_chat_request): \StevenBuehner\ChurchTools\Model\GetAllChats200Response
 ```
 
 Update a chat
@@ -216,10 +216,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ChatApi(
     $config
 );
 $guid = 681F54E3-2EB7-40A4-84F0-EFF8E8F05727; // string | chat GUID
-$inline_object19 = new \StevenBuehner\ChurchTools\Model\InlineObject19(); // \StevenBuehner\ChurchTools\Model\InlineObject19
+$update_chat_request = new \StevenBuehner\ChurchTools\Model\UpdateChatRequest(); // \StevenBuehner\ChurchTools\Model\UpdateChatRequest | data to update
 
 try {
-    $result = $apiInstance->updateChat($guid, $inline_object19);
+    $result = $apiInstance->updateChat($guid, $update_chat_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChatApi->updateChat: ', $e->getMessage(), PHP_EOL;
@@ -231,11 +231,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **string**| chat GUID |
- **inline_object19** | [**\StevenBuehner\ChurchTools\Model\InlineObject19**](../Model/InlineObject19.md)|  |
+ **update_chat_request** | [**\StevenBuehner\ChurchTools\Model\UpdateChatRequest**](../Model/UpdateChatRequest.md)| data to update |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllChats200Response**](../Model/GetAllChats200Response.md)
 
 ### Authorization
 

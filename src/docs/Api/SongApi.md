@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getSong()`
 
 ```php
-getSong($song_id): \StevenBuehner\ChurchTools\Model\InlineResponse200110
+getSong($song_id): \StevenBuehner\ChurchTools\Model\GetSong200Response
 ```
 
 Get Song
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200110**](../Model/InlineResponse200110.md)
+[**\StevenBuehner\ChurchTools\Model\GetSong200Response**](../Model/GetSong200Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 ## `getSongs()`
 
 ```php
-getSongs($song_category_ids, $ids, $practice, $key_of_arrangement, $name): \StevenBuehner\ChurchTools\Model\InlineResponse200109
+getSongs($song_category_ids, $ids, $practice, $key_of_arrangement, $name): \StevenBuehner\ChurchTools\Model\GetSongs200Response
 ```
 
 Get All Songs
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200109**](../Model/InlineResponse200109.md)
+[**\StevenBuehner\ChurchTools\Model\GetSongs200Response**](../Model/GetSongs200Response.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 ## `getSongsOfAgenda()`
 
 ```php
-getSongsOfAgenda($event_id): \StevenBuehner\ChurchTools\Model\InlineResponse200111
+getSongsOfAgenda($event_id): \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response
 ```
 
 Get All Songs of Agenda
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200111**](../Model/InlineResponse200111.md)
+[**\StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response**](../Model/GetSongsOfAgenda200Response.md)
 
 ### Authorization
 

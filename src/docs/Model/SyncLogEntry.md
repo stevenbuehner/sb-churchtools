@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  |
 **date** | **\DateTime** |  |
-**job** | [**\StevenBuehner\ChurchTools\Model\InlineResponse200112Job**](InlineResponse200112Job.md) |  |
+**job** | [**\StevenBuehner\ChurchTools\Model\SyncLogEntryJob**](SyncLogEntryJob.md) |  |
 **type** | **string** |  |
 **level** | **string** |  |
 **message_i18n** | **string** |  | [optional]

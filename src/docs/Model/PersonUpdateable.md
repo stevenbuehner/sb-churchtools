@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **string** |  | [optional] [default to 'null']
+**title** | **string** |  | [optional]
 **first_name** | **string** |  | [optional]
 **last_name** | **string** |  | [optional]
 **nickname** | **string** |  | [optional]
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **emails** | [**\StevenBuehner\ChurchTools\Model\PersonEmail1[]**](PersonEmail1.md) | Save many eMail addresses for person. If &#x60;emails&#x60; is present in request &#x60;email&#x60; is ignored. | [optional]
 **cms_user_id** | **string** |  | [optional]
 **optigem_id** | **int** |  | [optional]
-**privacy_policy_agreement** | [**\StevenBuehner\ChurchTools\Model\PersonsPrivacyPolicyAgreement**](PersonsPrivacyPolicyAgreement.md) |  | [optional]
+**privacy_policy_agreement** | [**\StevenBuehner\ChurchTools\Model\CreatePersonRequestPrivacyPolicyAgreement**](CreatePersonRequestPrivacyPolicyAgreement.md) |  | [optional]
 **nationality_id** | **int** |  | [optional]
 **family_status_id** | **int** |  | [optional]
 **wedding_date** | **\DateTime** |  | [optional]

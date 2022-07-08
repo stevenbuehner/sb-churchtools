@@ -20,20 +20,20 @@ Name | Type | Description | Notes
 **website** | **string** |  |
 **email** | **string** |  |
 **phone** | **string** |  |
-**denomination** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Denomination**](InlineResponse2002Denomination.md) |  |
-**address** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Address**](InlineResponse2002Address.md) |  |
-**groups** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Groups[]**](InlineResponse2002Groups.md) |  |
-**logo** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo**](InlineResponse2002Logo.md) |  |
-**banner** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo**](InlineResponse2002Logo.md) |  |
-**social_media** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002SocialMedia**](InlineResponse2002SocialMedia.md) |  |
-**tags** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Tags[]**](InlineResponse2002Tags.md) |  |
-**services** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Services[]**](InlineResponse2002Services.md) |  |
+**denomination** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerDenomination**](GetAllCampuses200ResponseDataInnerDenomination.md) |  |
+**address** | [**\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataAddress**](CreateNewCampus201ResponseDataAddress.md) |  |
+**groups** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInner[]**](GetAllCampuses200ResponseDataInnerGroupsInner.md) |  |
+**logo** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo**](GetAllCampuses200ResponseDataInnerLogo.md) |  |
+**banner** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo**](GetAllCampuses200ResponseDataInnerLogo.md) |  |
+**social_media** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSocialMedia**](GetAllCampuses200ResponseDataInnerSocialMedia.md) |  |
+**tags** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTagsInner[]**](GetAllCampuses200ResponseDataInnerTagsInner.md) |  |
+**services** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[]**](GetAllCampuses200ResponseDataInnerServicesInner.md) |  |
 **visitors** | **int** |  |
 **service_banner** | **string** |  |
 **sign_up_group** | [**\StevenBuehner\ChurchTools\Model\GroupDomainObject1**](GroupDomainObject1.md) |  | [optional]
-**gallery** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Logo[]**](InlineResponse2002Logo.md) |  |
+**gallery** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo[]**](GetAllCampuses200ResponseDataInnerLogo.md) |  |
 **team_title** | **string** |  |
-**team** | [**\StevenBuehner\ChurchTools\Model\InlineResponse2002Team[]**](InlineResponse2002Team.md) |  |
+**team** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInner[]**](GetAllCampuses200ResponseDataInnerTeamInner.md) |  |
 **meta** | [**\StevenBuehner\ChurchTools\Model\Meta**](Meta.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getApiInfo()`
 
 ```php
-getApiInfo(): \StevenBuehner\ChurchTools\Model\InlineResponse200
+getApiInfo(): \StevenBuehner\ChurchTools\Model\GetApiInfo200Response
 ```
 
 Information about API
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\StevenBuehner\ChurchTools\Model\GetApiInfo200Response**](../Model/GetApiInfo200Response.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 ## `getCurrentUser()`
 
 ```php
-getCurrentUser($only_allow_authenticated): \StevenBuehner\ChurchTools\Model\InlineResponse2001
+getCurrentUser($only_allow_authenticated): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
 ```
 
 Currently logged in user.
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
 
 ### Authorization
 

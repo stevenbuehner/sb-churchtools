@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getAllFields()`
 
 ```php
-getAllFields(): \StevenBuehner\ChurchTools\Model\InlineResponse2004
+getAllFields(): \StevenBuehner\ChurchTools\Model\GetAllFields200Response
 ```
 
 Get all fields
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\StevenBuehner\ChurchTools\Model\GetAllFields200Response**](../Model/GetAllFields200Response.md)
 
 ### Authorization
 
