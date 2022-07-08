@@ -40331,7 +40331,7 @@
                                 "type": "number"
                               },
                               "campusId": {
-                                "type": "number"
+                                "type": "integer"
                               }
                             }
                           }
@@ -41043,7 +41043,7 @@
                                 "type": "number"
                               },
                               "campusId": {
-                                "type": "number"
+                                "type": "integer"
                               }
                             }
                           },
@@ -41477,7 +41477,7 @@
                               "type": "number"
                             },
                             "campusId": {
-                              "type": "number"
+                              "type": "integer"
                             }
                           }
                         },
@@ -41829,7 +41829,7 @@
                                 "type": "number"
                               },
                               "campusId": {
-                                "type": "number"
+                                "type": "integer"
                               }
                             }
                           },
@@ -60875,7 +60875,7 @@
                       "type": "number"
                     },
                     "campusId": {
-                      "type": "number"
+                      "type": "integer"
                     }
                   }
                 }
@@ -61023,7 +61023,7 @@
                 "type": "number"
               },
               "campusId": {
-                "type": "number"
+                "type": "integer"
               }
             }
           },
@@ -61310,7 +61310,7 @@
             "type": "number"
           },
           "campusId": {
-            "type": "number"
+            "type": "integer"
           }
         }
       },
