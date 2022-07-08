@@ -825,7 +825,7 @@
                                 "nullable": true
                               },
                               "country": {
-                                "type": "string",
+                                "type": "object",
                                 "nullable": true
                               },
                               "latitude": {
