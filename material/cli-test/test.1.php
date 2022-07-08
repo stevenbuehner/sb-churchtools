@@ -6,6 +6,7 @@ use GuzzleHttp\Cookie\CookieJar;
 use StevenBuehner\ChurchTools\Api\CalendarApi;
 use StevenBuehner\ChurchTools\Api\CampusApi;
 use StevenBuehner\ChurchTools\Api\GroupApi;
+use StevenBuehner\ChurchTools\Api\MasterDataApi;
 use StevenBuehner\ChurchTools\Api\PersonApi;
 use StevenBuehner\ChurchTools\Configuration;
 use StevenBuehner\ChurchToolsApi\ChurchToolsUserAuthenticatedClient;
@@ -56,6 +57,10 @@ foreach ($campusApi->getAllCampuses()->getData() as $c) {
 	$camps[] = $c->getName() . '(' . $c->getId() . ')';
 }
 echo join(', ', $camps) . "\n\n";
+
+
+$masterDataApi = new MasterDataApi($client, $config);
+$master = $masterDataApi->getMasterDataPerson()->getData();
 
 
 $done = '';
