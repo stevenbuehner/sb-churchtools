@@ -1220,7 +1220,7 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  array $calendar_ids calendar_ids (optional)
+     * @param  int[] $calendar_ids calendar_ids (required)
      * @param  \DateTime $from  (optional)
      * @param  \DateTime $to to (optional)
      *
@@ -1228,7 +1228,7 @@ class CalendarApi
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200Response
      */
-    public function getCalendarsAppointments($calendar_ids = null, $from = null, $to = null)
+    public function getCalendarsAppointments($calendar_ids, $from = null, $to = null)
     {
         list($response) = $this->getCalendarsAppointmentsWithHttpInfo($calendar_ids, $from, $to);
         return $response;
@@ -1239,7 +1239,7 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  array $calendar_ids (optional)
+     * @param  int[] $calendar_ids (required)
      * @param  \DateTime $from  (optional)
      * @param  \DateTime $to (optional)
      *
@@ -1247,7 +1247,7 @@ class CalendarApi
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCalendarsAppointmentsWithHttpInfo($calendar_ids = null, $from = null, $to = null)
+    public function getCalendarsAppointmentsWithHttpInfo($calendar_ids, $from = null, $to = null)
     {
         $request = $this->getCalendarsAppointmentsRequest($calendar_ids, $from, $to);
 
@@ -1340,14 +1340,14 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  array $calendar_ids (optional)
+     * @param  int[] $calendar_ids (required)
      * @param  \DateTime $from  (optional)
      * @param  \DateTime $to (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarsAppointmentsAsync($calendar_ids = null, $from = null, $to = null)
+    public function getCalendarsAppointmentsAsync($calendar_ids, $from = null, $to = null)
     {
         return $this->getCalendarsAppointmentsAsyncWithHttpInfo($calendar_ids, $from, $to)
             ->then(
@@ -1362,14 +1362,14 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  array $calendar_ids (optional)
+     * @param  int[] $calendar_ids (required)
      * @param  \DateTime $from  (optional)
      * @param  \DateTime $to (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarsAppointmentsAsyncWithHttpInfo($calendar_ids = null, $from = null, $to = null)
+    public function getCalendarsAppointmentsAsyncWithHttpInfo($calendar_ids, $from = null, $to = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200Response';
         $request = $this->getCalendarsAppointmentsRequest($calendar_ids, $from, $to);
@@ -1413,15 +1413,21 @@ class CalendarApi
     /**
      * Create request for operation 'getCalendarsAppointments'
      *
-     * @param  array $calendar_ids (optional)
+     * @param  int[] $calendar_ids (required)
      * @param  \DateTime $from  (optional)
      * @param  \DateTime $to (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCalendarsAppointmentsRequest($calendar_ids = null, $from = null, $to = null)
+    public function getCalendarsAppointmentsRequest($calendar_ids, $from = null, $to = null)
     {
+        // verify the required parameter 'calendar_ids' is set
+        if ($calendar_ids === null || (is_array($calendar_ids) && count($calendar_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $calendar_ids when calling getCalendarsAppointments'
+            );
+        }
 
         $resourcePath = '/calendars/appointments';
         $formParams = [];
@@ -1437,7 +1443,7 @@ class CalendarApi
             'array', // openApiType
             'form', // style
             true, // explode
-            false // required
+            true // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
@@ -1528,7 +1534,7 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  string $calendar_id calendar_id (required)
+     * @param  int $calendar_id ID of Calendar (required)
      * @param  string $appointment_id appointment_id (required)
      * @param  string $start_date start_date (required)
      *
@@ -1547,7 +1553,7 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  string $calendar_id (required)
+     * @param  int $calendar_id ID of Calendar (required)
      * @param  string $appointment_id (required)
      * @param  string $start_date (required)
      *
@@ -1648,7 +1654,7 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  string $calendar_id (required)
+     * @param  int $calendar_id ID of Calendar (required)
      * @param  string $appointment_id (required)
      * @param  string $start_date (required)
      *
@@ -1670,7 +1676,7 @@ class CalendarApi
      *
      * Your GET endpoint
      *
-     * @param  string $calendar_id (required)
+     * @param  int $calendar_id ID of Calendar (required)
      * @param  string $appointment_id (required)
      * @param  string $start_date (required)
      *
@@ -1721,7 +1727,7 @@ class CalendarApi
     /**
      * Create request for operation 'getCalendarsCalendarIdAppointmentsAppointmentIdStartDate'
      *
-     * @param  string $calendar_id (required)
+     * @param  int $calendar_id ID of Calendar (required)
      * @param  string $appointment_id (required)
      * @param  string $start_date (required)
      *
@@ -2148,6 +2154,248 @@ class CalendarApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postCalendarsCalendarIdAppointments
+     *
+     * 
+     *
+     * @param  int $calendar_id ID of Calendar (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PostCalendarsCalendarIdAppointmentsRequest $post_calendars_calendar_id_appointments_request post_calendars_calendar_id_appointments_request (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function postCalendarsCalendarIdAppointments($calendar_id, $post_calendars_calendar_id_appointments_request = null)
+    {
+        $this->postCalendarsCalendarIdAppointmentsWithHttpInfo($calendar_id, $post_calendars_calendar_id_appointments_request);
+    }
+
+    /**
+     * Operation postCalendarsCalendarIdAppointmentsWithHttpInfo
+     *
+     * 
+     *
+     * @param  int $calendar_id ID of Calendar (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PostCalendarsCalendarIdAppointmentsRequest $post_calendars_calendar_id_appointments_request (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postCalendarsCalendarIdAppointmentsWithHttpInfo($calendar_id, $post_calendars_calendar_id_appointments_request = null)
+    {
+        $request = $this->postCalendarsCalendarIdAppointmentsRequest($calendar_id, $post_calendars_calendar_id_appointments_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postCalendarsCalendarIdAppointmentsAsync
+     *
+     * 
+     *
+     * @param  int $calendar_id ID of Calendar (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PostCalendarsCalendarIdAppointmentsRequest $post_calendars_calendar_id_appointments_request (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postCalendarsCalendarIdAppointmentsAsync($calendar_id, $post_calendars_calendar_id_appointments_request = null)
+    {
+        return $this->postCalendarsCalendarIdAppointmentsAsyncWithHttpInfo($calendar_id, $post_calendars_calendar_id_appointments_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postCalendarsCalendarIdAppointmentsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  int $calendar_id ID of Calendar (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PostCalendarsCalendarIdAppointmentsRequest $post_calendars_calendar_id_appointments_request (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postCalendarsCalendarIdAppointmentsAsyncWithHttpInfo($calendar_id, $post_calendars_calendar_id_appointments_request = null)
+    {
+        $returnType = '';
+        $request = $this->postCalendarsCalendarIdAppointmentsRequest($calendar_id, $post_calendars_calendar_id_appointments_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postCalendarsCalendarIdAppointments'
+     *
+     * @param  int $calendar_id ID of Calendar (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PostCalendarsCalendarIdAppointmentsRequest $post_calendars_calendar_id_appointments_request (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postCalendarsCalendarIdAppointmentsRequest($calendar_id, $post_calendars_calendar_id_appointments_request = null)
+    {
+        // verify the required parameter 'calendar_id' is set
+        if ($calendar_id === null || (is_array($calendar_id) && count($calendar_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $calendar_id when calling postCalendarsCalendarIdAppointments'
+            );
+        }
+
+        $resourcePath = '/calendars/{calendarId}/appointments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($calendar_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'calendarId' . '}',
+                ObjectSerializer::toPathValue($calendar_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($post_calendars_calendar_id_appointments_request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($post_calendars_calendar_id_appointments_request));
+            } else {
+                $httpBody = $post_calendars_calendar_id_appointments_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

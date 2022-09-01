@@ -57,9 +57,9 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
+        'domain_id' => 'int',
         'guid' => 'string',
-        'prefix' => 'string',
-        'domain_id' => 'int'
+        'prefix' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'domain_id' => null,
         'guid' => null,
-        'prefix' => null,
-        'domain_id' => null
+        'prefix' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
+        'domain_id' => 'domainId',
         'guid' => 'guid',
-        'prefix' => 'prefix',
-        'domain_id' => 'domainId'
+        'prefix' => 'prefix'
     ];
 
     /**
@@ -113,9 +113,9 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
+        'domain_id' => 'setDomainId',
         'guid' => 'setGuid',
-        'prefix' => 'setPrefix',
-        'domain_id' => 'setDomainId'
+        'prefix' => 'setPrefix'
     ];
 
     /**
@@ -124,9 +124,9 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
+        'domain_id' => 'getDomainId',
         'guid' => 'getGuid',
-        'prefix' => 'getPrefix',
-        'domain_id' => 'getDomainId'
+        'prefix' => 'getPrefix'
     ];
 
     /**
@@ -186,9 +186,9 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
+        $this->container['domain_id'] = $data['domain_id'] ?? null;
         $this->container['guid'] = $data['guid'] ?? null;
         $this->container['prefix'] = $data['prefix'] ?? null;
-        $this->container['domain_id'] = $data['domain_id'] ?? null;
     }
 
     /**
@@ -200,14 +200,14 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
+        if ($this->container['domain_id'] === null) {
+            $invalidProperties[] = "'domain_id' can't be null";
+        }
         if ($this->container['guid'] === null) {
             $invalidProperties[] = "'guid' can't be null";
         }
         if ($this->container['prefix'] === null) {
             $invalidProperties[] = "'prefix' can't be null";
-        }
-        if ($this->container['domain_id'] === null) {
-            $invalidProperties[] = "'domain_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,6 +223,30 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets domain_id
+     *
+     * @return int
+     */
+    public function getDomainId()
+    {
+        return $this->container['domain_id'];
+    }
+
+    /**
+     * Sets domain_id
+     *
+     * @param int $domain_id domain_id
+     *
+     * @return self
+     */
+    public function setDomainId($domain_id)
+    {
+        $this->container['domain_id'] = $domain_id;
+
+        return $this;
+    }
 
     /**
      * Gets guid
@@ -268,30 +292,6 @@ class CreateNewChatRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setPrefix($prefix)
     {
         $this->container['prefix'] = $prefix;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_id
-     *
-     * @return int
-     */
-    public function getDomainId()
-    {
-        return $this->container['domain_id'];
-    }
-
-    /**
-     * Sets domain_id
-     *
-     * @param int $domain_id domain_id
-     *
-     * @return self
-     */
-    public function setDomainId($domain_id)
-    {
-        $this->container['domain_id'] = $domain_id;
 
         return $this;
     }

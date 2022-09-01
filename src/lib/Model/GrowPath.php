@@ -35,7 +35,6 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * GrowPath Class Doc Comment
  *
  * @category Class
- * @description 
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -50,7 +49,7 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Grow_Path';
+    protected static $openAPIModelName = 'GrowPath';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +57,11 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'color' => 'string',
+        'id' => 'int',
         'name' => 'string',
-        'sort_key' => 'int',
-        'color' => 'string'
+        'name_translated' => 'string',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -72,10 +72,11 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'color' => null,
         'id' => null,
         'name' => null,
-        'sort_key' => null,
-        'color' => null
+        'name_translated' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -105,10 +106,11 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'color' => 'color',
         'id' => 'id',
         'name' => 'name',
-        'sort_key' => 'sortKey',
-        'color' => 'color'
+        'name_translated' => 'nameTranslated',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -117,10 +119,11 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'color' => 'setColor',
         'id' => 'setId',
         'name' => 'setName',
-        'sort_key' => 'setSortKey',
-        'color' => 'setColor'
+        'name_translated' => 'setNameTranslated',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -129,10 +132,11 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'color' => 'getColor',
         'id' => 'getId',
         'name' => 'getName',
-        'sort_key' => 'getSortKey',
-        'color' => 'getColor'
+        'name_translated' => 'getNameTranslated',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -192,10 +196,11 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['color'] = $data['color'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['color'] = $data['color'] ?? null;
     }
 
     /**
@@ -223,9 +228,33 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets color
+     *
+     * @return string|null
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     * @param string|null $color color
+     *
+     * @return self
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getId()
     {
@@ -235,7 +264,7 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float|null $id id
+     * @param int|null $id id
      *
      * @return self
      */
@@ -271,6 +300,30 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets name_translated
+     *
+     * @return string|null
+     */
+    public function getNameTranslated()
+    {
+        return $this->container['name_translated'];
+    }
+
+    /**
+     * Sets name_translated
+     *
+     * @param string|null $name_translated name_translated
+     *
+     * @return self
+     */
+    public function setNameTranslated($name_translated)
+    {
+        $this->container['name_translated'] = $name_translated;
+
+        return $this;
+    }
+
+    /**
      * Gets sort_key
      *
      * @return int|null
@@ -290,30 +343,6 @@ class GrowPath implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets color
-     *
-     * @return string|null
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /**
-     * Sets color
-     *
-     * @param string|null $color color
-     *
-     * @return self
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
 
         return $this;
     }

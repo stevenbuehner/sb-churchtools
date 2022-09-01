@@ -58,8 +58,8 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'view_birthdaylist' => 'bool',
-        'security_level_person' => 'float[]'
+        'security_level_person' => 'int[]',
+        'view_birthdaylist' => 'bool'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'view_birthdaylist' => null,
-        'security_level_person' => null
+        'security_level_person' => null,
+        'view_birthdaylist' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'view_birthdaylist' => 'view birthdaylist',
-        'security_level_person' => 'security level person'
+        'security_level_person' => 'security level person',
+        'view_birthdaylist' => 'view birthdaylist'
     ];
 
     /**
@@ -111,8 +111,8 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'view_birthdaylist' => 'setViewBirthdaylist',
-        'security_level_person' => 'setSecurityLevelPerson'
+        'security_level_person' => 'setSecurityLevelPerson',
+        'view_birthdaylist' => 'setViewBirthdaylist'
     ];
 
     /**
@@ -121,8 +121,8 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'view_birthdaylist' => 'getViewBirthdaylist',
-        'security_level_person' => 'getSecurityLevelPerson'
+        'security_level_person' => 'getSecurityLevelPerson',
+        'view_birthdaylist' => 'getViewBirthdaylist'
     ];
 
     /**
@@ -182,8 +182,8 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['view_birthdaylist'] = $data['view_birthdaylist'] ?? null;
         $this->container['security_level_person'] = $data['security_level_person'] ?? null;
+        $this->container['view_birthdaylist'] = $data['view_birthdaylist'] ?? null;
     }
 
     /**
@@ -211,6 +211,30 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
 
 
     /**
+     * Gets security_level_person
+     *
+     * @return int[]|null
+     */
+    public function getSecurityLevelPerson()
+    {
+        return $this->container['security_level_person'];
+    }
+
+    /**
+     * Sets security_level_person
+     *
+     * @param int[]|null $security_level_person security_level_person
+     *
+     * @return self
+     */
+    public function setSecurityLevelPerson($security_level_person)
+    {
+        $this->container['security_level_person'] = $security_level_person;
+
+        return $this;
+    }
+
+    /**
      * Gets view_birthdaylist
      *
      * @return bool|null
@@ -230,30 +254,6 @@ class GetGlobalPermissions200ResponseDataChurchdb implements ModelInterface, Arr
     public function setViewBirthdaylist($view_birthdaylist)
     {
         $this->container['view_birthdaylist'] = $view_birthdaylist;
-
-        return $this;
-    }
-
-    /**
-     * Gets security_level_person
-     *
-     * @return float[]|null
-     */
-    public function getSecurityLevelPerson()
-    {
-        return $this->container['security_level_person'];
-    }
-
-    /**
-     * Sets security_level_person
-     *
-     * @param float[]|null $security_level_person security_level_person
-     *
-     * @return self
-     */
-    public function setSecurityLevelPerson($security_level_person)
-    {
-        $this->container['security_level_person'] = $security_level_person;
 
         return $this;
     }

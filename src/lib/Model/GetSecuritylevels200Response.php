@@ -57,8 +57,8 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseMeta',
-        'data' => '\StevenBuehner\ChurchTools\Model\GetSecuritylevels200ResponseDataInner[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetSecuritylevels200ResponseDataInner[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'meta' => null,
-        'data' => null
+        'data' => null,
+        'meta' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'meta' => 'meta',
-        'data' => 'data'
+        'data' => 'data',
+        'meta' => 'meta'
     ];
 
     /**
@@ -110,8 +110,8 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'meta' => 'setMeta',
-        'data' => 'setData'
+        'data' => 'setData',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -120,8 +120,8 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'meta' => 'getMeta',
-        'data' => 'getData'
+        'data' => 'getData',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -181,8 +181,8 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['meta'] = $data['meta'] ?? null;
         $this->container['data'] = $data['data'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseMeta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseMeta|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
-
-        return $this;
-    }
-
-    /**
      * Gets data
      *
      * @return \StevenBuehner\ChurchTools\Model\GetSecuritylevels200ResponseDataInner[]|null
@@ -253,6 +229,30 @@ class GetSecuritylevels200Response implements ModelInterface, ArrayAccess, \Json
     public function setData($data)
     {
         $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

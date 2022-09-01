@@ -57,11 +57,11 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'signup_group_type_id' => 'int',
-        'signup_template_group_id' => 'int',
         'signup_days_archive_group_no' => 'int',
-        'singup_days_forward_no' => 'int',
-        'signup_set_completion_date' => 'bool'
+        'signup_group_type_id' => 'int',
+        'signup_set_completion_date' => 'bool',
+        'signup_template_group_id' => 'int',
+        'singup_days_forward_no' => 'int'
     ];
 
     /**
@@ -72,11 +72,11 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'signup_group_type_id' => null,
-        'signup_template_group_id' => null,
         'signup_days_archive_group_no' => null,
-        'singup_days_forward_no' => null,
-        'signup_set_completion_date' => null
+        'signup_group_type_id' => null,
+        'signup_set_completion_date' => null,
+        'signup_template_group_id' => null,
+        'singup_days_forward_no' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
      * @var string[]
      */
     protected static $attributeMap = [
-        'signup_group_type_id' => 'signupGroupTypeId',
-        'signup_template_group_id' => 'signupTemplateGroupId',
         'signup_days_archive_group_no' => 'signupDaysArchiveGroupNo',
-        'singup_days_forward_no' => 'singupDaysForwardNo',
-        'signup_set_completion_date' => 'signupSetCompletionDate'
+        'signup_group_type_id' => 'signupGroupTypeId',
+        'signup_set_completion_date' => 'signupSetCompletionDate',
+        'signup_template_group_id' => 'signupTemplateGroupId',
+        'singup_days_forward_no' => 'singupDaysForwardNo'
     ];
 
     /**
@@ -119,11 +119,11 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-        'signup_group_type_id' => 'setSignupGroupTypeId',
-        'signup_template_group_id' => 'setSignupTemplateGroupId',
         'signup_days_archive_group_no' => 'setSignupDaysArchiveGroupNo',
-        'singup_days_forward_no' => 'setSingupDaysForwardNo',
-        'signup_set_completion_date' => 'setSignupSetCompletionDate'
+        'signup_group_type_id' => 'setSignupGroupTypeId',
+        'signup_set_completion_date' => 'setSignupSetCompletionDate',
+        'signup_template_group_id' => 'setSignupTemplateGroupId',
+        'singup_days_forward_no' => 'setSingupDaysForwardNo'
     ];
 
     /**
@@ -132,11 +132,11 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
      * @var string[]
      */
     protected static $getters = [
-        'signup_group_type_id' => 'getSignupGroupTypeId',
-        'signup_template_group_id' => 'getSignupTemplateGroupId',
         'signup_days_archive_group_no' => 'getSignupDaysArchiveGroupNo',
-        'singup_days_forward_no' => 'getSingupDaysForwardNo',
-        'signup_set_completion_date' => 'getSignupSetCompletionDate'
+        'signup_group_type_id' => 'getSignupGroupTypeId',
+        'signup_set_completion_date' => 'getSignupSetCompletionDate',
+        'signup_template_group_id' => 'getSignupTemplateGroupId',
+        'singup_days_forward_no' => 'getSingupDaysForwardNo'
     ];
 
     /**
@@ -196,11 +196,11 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
      */
     public function __construct(array $data = null)
     {
-        $this->container['signup_group_type_id'] = $data['signup_group_type_id'] ?? null;
-        $this->container['signup_template_group_id'] = $data['signup_template_group_id'] ?? null;
         $this->container['signup_days_archive_group_no'] = $data['signup_days_archive_group_no'] ?? null;
-        $this->container['singup_days_forward_no'] = $data['singup_days_forward_no'] ?? null;
+        $this->container['signup_group_type_id'] = $data['signup_group_type_id'] ?? null;
         $this->container['signup_set_completion_date'] = $data['signup_set_completion_date'] ?? null;
+        $this->container['signup_template_group_id'] = $data['signup_template_group_id'] ?? null;
+        $this->container['singup_days_forward_no'] = $data['singup_days_forward_no'] ?? null;
     }
 
     /**
@@ -228,6 +228,30 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
 
 
     /**
+     * Gets signup_days_archive_group_no
+     *
+     * @return int|null
+     */
+    public function getSignupDaysArchiveGroupNo()
+    {
+        return $this->container['signup_days_archive_group_no'];
+    }
+
+    /**
+     * Sets signup_days_archive_group_no
+     *
+     * @param int|null $signup_days_archive_group_no signup_days_archive_group_no
+     *
+     * @return self
+     */
+    public function setSignupDaysArchiveGroupNo($signup_days_archive_group_no)
+    {
+        $this->container['signup_days_archive_group_no'] = $signup_days_archive_group_no;
+
+        return $this;
+    }
+
+    /**
      * Gets signup_group_type_id
      *
      * @return int|null
@@ -247,6 +271,30 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
     public function setSignupGroupTypeId($signup_group_type_id)
     {
         $this->container['signup_group_type_id'] = $signup_group_type_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets signup_set_completion_date
+     *
+     * @return bool|null
+     */
+    public function getSignupSetCompletionDate()
+    {
+        return $this->container['signup_set_completion_date'];
+    }
+
+    /**
+     * Sets signup_set_completion_date
+     *
+     * @param bool|null $signup_set_completion_date signup_set_completion_date
+     *
+     * @return self
+     */
+    public function setSignupSetCompletionDate($signup_set_completion_date)
+    {
+        $this->container['signup_set_completion_date'] = $signup_set_completion_date;
 
         return $this;
     }
@@ -276,30 +324,6 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
     }
 
     /**
-     * Gets signup_days_archive_group_no
-     *
-     * @return int|null
-     */
-    public function getSignupDaysArchiveGroupNo()
-    {
-        return $this->container['signup_days_archive_group_no'];
-    }
-
-    /**
-     * Sets signup_days_archive_group_no
-     *
-     * @param int|null $signup_days_archive_group_no signup_days_archive_group_no
-     *
-     * @return self
-     */
-    public function setSignupDaysArchiveGroupNo($signup_days_archive_group_no)
-    {
-        $this->container['signup_days_archive_group_no'] = $signup_days_archive_group_no;
-
-        return $this;
-    }
-
-    /**
      * Gets singup_days_forward_no
      *
      * @return int|null
@@ -319,30 +343,6 @@ class GetCalendarsAppointments200ResponseDataInnerBaseSignup implements ModelInt
     public function setSingupDaysForwardNo($singup_days_forward_no)
     {
         $this->container['singup_days_forward_no'] = $singup_days_forward_no;
-
-        return $this;
-    }
-
-    /**
-     * Gets signup_set_completion_date
-     *
-     * @return bool|null
-     */
-    public function getSignupSetCompletionDate()
-    {
-        return $this->container['signup_set_completion_date'];
-    }
-
-    /**
-     * Sets signup_set_completion_date
-     *
-     * @param bool|null $signup_set_completion_date signup_set_completion_date
-     *
-     * @return self
-     */
-    public function setSignupSetCompletionDate($signup_set_completion_date)
-    {
-        $this->container['signup_set_completion_date'] = $signup_set_completion_date;
 
         return $this;
     }

@@ -57,9 +57,9 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'name' => 'string',
-        'external_system' => '\StevenBuehner\ChurchTools\Model\SyncLogEntryJobExternalSystem'
+        'external_system' => '\StevenBuehner\ChurchTools\Model\SyncLogEntryJobExternalSystem',
+        'id' => 'int',
+        'name' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'external_system' => null,
         'id' => null,
-        'name' => null,
-        'external_system' => null
+        'name' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'external_system' => 'externalSystem',
         'id' => 'id',
-        'name' => 'name',
-        'external_system' => 'externalSystem'
+        'name' => 'name'
     ];
 
     /**
@@ -113,9 +113,9 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'external_system' => 'setExternalSystem',
         'id' => 'setId',
-        'name' => 'setName',
-        'external_system' => 'setExternalSystem'
+        'name' => 'setName'
     ];
 
     /**
@@ -124,9 +124,9 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'external_system' => 'getExternalSystem',
         'id' => 'getId',
-        'name' => 'getName',
-        'external_system' => 'getExternalSystem'
+        'name' => 'getName'
     ];
 
     /**
@@ -186,9 +186,9 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['external_system'] = $data['external_system'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['external_system'] = $data['external_system'] ?? null;
     }
 
     /**
@@ -200,6 +200,9 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['external_system'] === null) {
+            $invalidProperties[] = "'external_system' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -210,9 +213,6 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['external_system'] === null) {
-            $invalidProperties[] = "'external_system' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -229,9 +229,33 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets external_system
+     *
+     * @return \StevenBuehner\ChurchTools\Model\SyncLogEntryJobExternalSystem
+     */
+    public function getExternalSystem()
+    {
+        return $this->container['external_system'];
+    }
+
+    /**
+     * Sets external_system
+     *
+     * @param \StevenBuehner\ChurchTools\Model\SyncLogEntryJobExternalSystem $external_system external_system
+     *
+     * @return self
+     */
+    public function setExternalSystem($external_system)
+    {
+        $this->container['external_system'] = $external_system;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -241,7 +265,7 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */
@@ -277,30 +301,6 @@ class SyncLogEntryJob implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets external_system
-     *
-     * @return \StevenBuehner\ChurchTools\Model\SyncLogEntryJobExternalSystem
-     */
-    public function getExternalSystem()
-    {
-        return $this->container['external_system'];
-    }
-
-    /**
-     * Sets external_system
-     *
-     * @param \StevenBuehner\ChurchTools\Model\SyncLogEntryJobExternalSystem $external_system external_system
-     *
-     * @return self
-     */
-    public function setExternalSystem($external_system)
-    {
-        $this->container['external_system'] = $external_system;
 
         return $this;
     }

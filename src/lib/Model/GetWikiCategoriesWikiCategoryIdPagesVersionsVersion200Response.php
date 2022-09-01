@@ -57,7 +57,7 @@ class GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response implements 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\WikiPage1'
+        'data' => '\StevenBuehner\ChurchTools\Model\WikiPage2'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response implements 
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\WikiPage1|null
+     * @return \StevenBuehner\ChurchTools\Model\WikiPage2|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response implements 
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\WikiPage1|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\WikiPage2|null $data data
      *
      * @return self
      */

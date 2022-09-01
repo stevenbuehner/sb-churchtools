@@ -58,12 +58,12 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'domain_type' => 'string',
         'domain_id' => 'string',
-        'name' => 'string',
-        'filename' => 'string',
+        'domain_type' => 'string',
         'file_url' => 'string',
-        'meta' => '\StevenBuehner\ChurchTools\Model\FileOrLinkMeta'
+        'filename' => 'string',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta',
+        'name' => 'string'
     ];
 
     /**
@@ -74,12 +74,12 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'domain_type' => null,
         'domain_id' => null,
-        'name' => null,
-        'filename' => null,
+        'domain_type' => null,
         'file_url' => null,
-        'meta' => null
+        'filename' => null,
+        'meta' => null,
+        'name' => null
     ];
 
     /**
@@ -109,12 +109,12 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'domain_type' => 'domainType',
         'domain_id' => 'domainId',
-        'name' => 'name',
-        'filename' => 'filename',
+        'domain_type' => 'domainType',
         'file_url' => 'fileUrl',
-        'meta' => 'meta'
+        'filename' => 'filename',
+        'meta' => 'meta',
+        'name' => 'name'
     ];
 
     /**
@@ -123,12 +123,12 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'domain_type' => 'setDomainType',
         'domain_id' => 'setDomainId',
-        'name' => 'setName',
-        'filename' => 'setFilename',
+        'domain_type' => 'setDomainType',
         'file_url' => 'setFileUrl',
-        'meta' => 'setMeta'
+        'filename' => 'setFilename',
+        'meta' => 'setMeta',
+        'name' => 'setName'
     ];
 
     /**
@@ -137,12 +137,12 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'domain_type' => 'getDomainType',
         'domain_id' => 'getDomainId',
-        'name' => 'getName',
-        'filename' => 'getFilename',
+        'domain_type' => 'getDomainType',
         'file_url' => 'getFileUrl',
-        'meta' => 'getMeta'
+        'filename' => 'getFilename',
+        'meta' => 'getMeta',
+        'name' => 'getName'
     ];
 
     /**
@@ -202,12 +202,12 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['filename'] = $data['filename'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['file_url'] = $data['file_url'] ?? null;
+        $this->container['filename'] = $data['filename'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -235,30 +235,6 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets domain_type
-     *
-     * @return string|null
-     */
-    public function getDomainType()
-    {
-        return $this->container['domain_type'];
-    }
-
-    /**
-     * Sets domain_type
-     *
-     * @param string|null $domain_type ChurchTools Domain Type. Where does this file belong to?
-     *
-     * @return self
-     */
-    public function setDomainType($domain_type)
-    {
-        $this->container['domain_type'] = $domain_type;
-
-        return $this;
-    }
-
-    /**
      * Gets domain_id
      *
      * @return string|null
@@ -283,49 +259,25 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets name
+     * Gets domain_type
      *
      * @return string|null
      */
-    public function getName()
+    public function getDomainType()
     {
-        return $this->container['name'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets name
+     * Sets domain_type
      *
-     * @param string|null $name Name of that file, when it's been uploaded
+     * @param string|null $domain_type ChurchTools Domain Type. Where does this file belong to?
      *
      * @return self
      */
-    public function setName($name)
+    public function setDomainType($domain_type)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets filename
-     *
-     * @return string|null
-     */
-    public function getFilename()
-    {
-        return $this->container['filename'];
-    }
-
-    /**
-     * Sets filename
-     *
-     * @param string|null $filename Filename of uploaded file or name of the link
-     *
-     * @return self
-     */
-    public function setFilename($filename)
-    {
-        $this->container['filename'] = $filename;
+        $this->container['domain_type'] = $domain_type;
 
         return $this;
     }
@@ -355,9 +307,33 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets filename
+     *
+     * @return string|null
+     */
+    public function getFilename()
+    {
+        return $this->container['filename'];
+    }
+
+    /**
+     * Sets filename
+     *
+     * @param string|null $filename Filename of uploaded file or name of the link
+     *
+     * @return self
+     */
+    public function setFilename($filename)
+    {
+        $this->container['filename'] = $filename;
+
+        return $this;
+    }
+
+    /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\FileOrLinkMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null
      */
     public function getMeta()
     {
@@ -367,13 +343,37 @@ class FileOrLink implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\FileOrLinkMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null $meta meta
      *
      * @return self
      */
     public function setMeta($meta)
     {
         $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Name of that file, when it's been uploaded
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

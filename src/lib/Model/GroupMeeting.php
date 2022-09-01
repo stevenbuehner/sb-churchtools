@@ -57,16 +57,16 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'comment' => 'string',
         'date_from' => '\DateTime',
         'date_to' => '\DateTime',
-        'is_completed' => 'bool',
+        'id' => 'int',
         'is_canceled' => 'bool',
+        'is_completed' => 'bool',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
         'num_guests' => 'int',
-        'comment' => 'string',
         'poll_result' => 'object',
-        'statistics' => '\StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInnerStatistics',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'statistics' => '\StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeetingStatistics'
     ];
 
     /**
@@ -77,16 +77,16 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'comment' => null,
         'date_from' => 'date-time',
         'date_to' => 'date-time',
-        'is_completed' => null,
+        'id' => null,
         'is_canceled' => null,
+        'is_completed' => null,
+        'meta' => null,
         'num_guests' => null,
-        'comment' => null,
         'poll_result' => null,
-        'statistics' => null,
-        'meta' => null
+        'statistics' => null
     ];
 
     /**
@@ -116,16 +116,16 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'comment' => 'comment',
         'date_from' => 'dateFrom',
         'date_to' => 'dateTo',
-        'is_completed' => 'isCompleted',
+        'id' => 'id',
         'is_canceled' => 'isCanceled',
+        'is_completed' => 'isCompleted',
+        'meta' => 'meta',
         'num_guests' => 'numGuests',
-        'comment' => 'comment',
         'poll_result' => 'pollResult',
-        'statistics' => 'statistics',
-        'meta' => 'meta'
+        'statistics' => 'statistics'
     ];
 
     /**
@@ -134,16 +134,16 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'comment' => 'setComment',
         'date_from' => 'setDateFrom',
         'date_to' => 'setDateTo',
-        'is_completed' => 'setIsCompleted',
+        'id' => 'setId',
         'is_canceled' => 'setIsCanceled',
+        'is_completed' => 'setIsCompleted',
+        'meta' => 'setMeta',
         'num_guests' => 'setNumGuests',
-        'comment' => 'setComment',
         'poll_result' => 'setPollResult',
-        'statistics' => 'setStatistics',
-        'meta' => 'setMeta'
+        'statistics' => 'setStatistics'
     ];
 
     /**
@@ -152,16 +152,16 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'comment' => 'getComment',
         'date_from' => 'getDateFrom',
         'date_to' => 'getDateTo',
-        'is_completed' => 'getIsCompleted',
+        'id' => 'getId',
         'is_canceled' => 'getIsCanceled',
+        'is_completed' => 'getIsCompleted',
+        'meta' => 'getMeta',
         'num_guests' => 'getNumGuests',
-        'comment' => 'getComment',
         'poll_result' => 'getPollResult',
-        'statistics' => 'getStatistics',
-        'meta' => 'getMeta'
+        'statistics' => 'getStatistics'
     ];
 
     /**
@@ -221,16 +221,16 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['date_from'] = $data['date_from'] ?? null;
         $this->container['date_to'] = $data['date_to'] ?? null;
-        $this->container['is_completed'] = $data['is_completed'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_canceled'] = $data['is_canceled'] ?? null;
+        $this->container['is_completed'] = $data['is_completed'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
         $this->container['num_guests'] = $data['num_guests'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['poll_result'] = $data['poll_result'] ?? null;
         $this->container['statistics'] = $data['statistics'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -258,25 +258,25 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets comment
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getId()
+    public function getComment()
     {
-        return $this->container['id'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets id
+     * Sets comment
      *
-     * @param int|null $id id
+     * @param string|null $comment comment
      *
      * @return self
      */
-    public function setId($id)
+    public function setComment($comment)
     {
-        $this->container['id'] = $id;
+        $this->container['comment'] = $comment;
 
         return $this;
     }
@@ -330,25 +330,25 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_completed
+     * Gets id
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getIsCompleted()
+    public function getId()
     {
-        return $this->container['is_completed'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets is_completed
+     * Sets id
      *
-     * @param bool|null $is_completed is_completed
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setIsCompleted($is_completed)
+    public function setId($id)
     {
-        $this->container['is_completed'] = $is_completed;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -378,6 +378,54 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets is_completed
+     *
+     * @return bool|null
+     */
+    public function getIsCompleted()
+    {
+        return $this->container['is_completed'];
+    }
+
+    /**
+     * Sets is_completed
+     *
+     * @param bool|null $is_completed is_completed
+     *
+     * @return self
+     */
+    public function setIsCompleted($is_completed)
+    {
+        $this->container['is_completed'] = $is_completed;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
      * Gets num_guests
      *
      * @return int|null
@@ -397,30 +445,6 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNumGuests($num_guests)
     {
         $this->container['num_guests'] = $num_guests;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string|null
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string|null $comment comment
-     *
-     * @return self
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }
@@ -452,7 +476,7 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets statistics
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInnerStatistics|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeetingStatistics|null
      */
     public function getStatistics()
     {
@@ -462,37 +486,13 @@ class GroupMeeting implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets statistics
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInnerStatistics|null $statistics statistics
+     * @param \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeetingStatistics|null $statistics statistics
      *
      * @return self
      */
     public function setStatistics($statistics)
     {
         $this->container['statistics'] = $statistics;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

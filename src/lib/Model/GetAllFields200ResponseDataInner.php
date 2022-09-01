@@ -57,23 +57,23 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'key' => 'string',
-        'name' => 'string',
-        'name_translated' => 'string',
-        'shorty' => 'string',
+        'delete_on_archive' => 'bool',
         'field_category_code' => 'string',
         'field_type_code' => 'string',
+        'hide_in_frontend' => 'bool',
+        'id' => 'int',
         'is_active' => 'bool',
         'is_new_person_field' => 'bool',
-        'line_ending' => 'string',
-        'sec_level' => 'int',
+        'key' => 'string',
         'length' => 'int',
-        'delete_on_archive' => 'bool',
+        'line_ending' => 'string',
+        'name' => 'string',
+        'name_translated' => 'string',
         'nullable' => 'bool',
-        'sort_key' => 'int',
-        'hide_in_frontend' => 'bool',
-        'options' => '\StevenBuehner\ChurchTools\Model\GetAllFields200ResponseDataInnerOptionsInner[]'
+        'options' => '\StevenBuehner\ChurchTools\Model\GetAllFields200ResponseDataInnerOptionsInner[]',
+        'sec_level' => 'int',
+        'shorty' => 'string',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -84,23 +84,23 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'key' => null,
-        'name' => null,
-        'name_translated' => null,
-        'shorty' => null,
+        'delete_on_archive' => null,
         'field_category_code' => null,
         'field_type_code' => null,
+        'hide_in_frontend' => null,
+        'id' => null,
         'is_active' => null,
         'is_new_person_field' => null,
-        'line_ending' => null,
-        'sec_level' => null,
+        'key' => null,
         'length' => null,
-        'delete_on_archive' => null,
+        'line_ending' => null,
+        'name' => null,
+        'name_translated' => null,
         'nullable' => null,
-        'sort_key' => null,
-        'hide_in_frontend' => null,
-        'options' => null
+        'options' => null,
+        'sec_level' => null,
+        'shorty' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -130,23 +130,23 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'key' => 'key',
-        'name' => 'name',
-        'name_translated' => 'nameTranslated',
-        'shorty' => 'shorty',
+        'delete_on_archive' => 'deleteOnArchive',
         'field_category_code' => 'fieldCategoryCode',
         'field_type_code' => 'fieldTypeCode',
+        'hide_in_frontend' => 'hideInFrontend',
+        'id' => 'id',
         'is_active' => 'isActive',
         'is_new_person_field' => 'isNewPersonField',
-        'line_ending' => 'lineEnding',
-        'sec_level' => 'secLevel',
+        'key' => 'key',
         'length' => 'length',
-        'delete_on_archive' => 'deleteOnArchive',
+        'line_ending' => 'lineEnding',
+        'name' => 'name',
+        'name_translated' => 'nameTranslated',
         'nullable' => 'nullable',
-        'sort_key' => 'sortKey',
-        'hide_in_frontend' => 'hideInFrontend',
-        'options' => 'options'
+        'options' => 'options',
+        'sec_level' => 'secLevel',
+        'shorty' => 'shorty',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -155,23 +155,23 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'key' => 'setKey',
-        'name' => 'setName',
-        'name_translated' => 'setNameTranslated',
-        'shorty' => 'setShorty',
+        'delete_on_archive' => 'setDeleteOnArchive',
         'field_category_code' => 'setFieldCategoryCode',
         'field_type_code' => 'setFieldTypeCode',
+        'hide_in_frontend' => 'setHideInFrontend',
+        'id' => 'setId',
         'is_active' => 'setIsActive',
         'is_new_person_field' => 'setIsNewPersonField',
-        'line_ending' => 'setLineEnding',
-        'sec_level' => 'setSecLevel',
+        'key' => 'setKey',
         'length' => 'setLength',
-        'delete_on_archive' => 'setDeleteOnArchive',
+        'line_ending' => 'setLineEnding',
+        'name' => 'setName',
+        'name_translated' => 'setNameTranslated',
         'nullable' => 'setNullable',
-        'sort_key' => 'setSortKey',
-        'hide_in_frontend' => 'setHideInFrontend',
-        'options' => 'setOptions'
+        'options' => 'setOptions',
+        'sec_level' => 'setSecLevel',
+        'shorty' => 'setShorty',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -180,23 +180,23 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'key' => 'getKey',
-        'name' => 'getName',
-        'name_translated' => 'getNameTranslated',
-        'shorty' => 'getShorty',
+        'delete_on_archive' => 'getDeleteOnArchive',
         'field_category_code' => 'getFieldCategoryCode',
         'field_type_code' => 'getFieldTypeCode',
+        'hide_in_frontend' => 'getHideInFrontend',
+        'id' => 'getId',
         'is_active' => 'getIsActive',
         'is_new_person_field' => 'getIsNewPersonField',
-        'line_ending' => 'getLineEnding',
-        'sec_level' => 'getSecLevel',
+        'key' => 'getKey',
         'length' => 'getLength',
-        'delete_on_archive' => 'getDeleteOnArchive',
+        'line_ending' => 'getLineEnding',
+        'name' => 'getName',
+        'name_translated' => 'getNameTranslated',
         'nullable' => 'getNullable',
-        'sort_key' => 'getSortKey',
-        'hide_in_frontend' => 'getHideInFrontend',
-        'options' => 'getOptions'
+        'options' => 'getOptions',
+        'sec_level' => 'getSecLevel',
+        'shorty' => 'getShorty',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -256,23 +256,23 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['key'] = $data['key'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['shorty'] = $data['shorty'] ?? null;
+        $this->container['delete_on_archive'] = $data['delete_on_archive'] ?? null;
         $this->container['field_category_code'] = $data['field_category_code'] ?? null;
         $this->container['field_type_code'] = $data['field_type_code'] ?? null;
+        $this->container['hide_in_frontend'] = $data['hide_in_frontend'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['is_new_person_field'] = $data['is_new_person_field'] ?? null;
-        $this->container['line_ending'] = $data['line_ending'] ?? null;
-        $this->container['sec_level'] = $data['sec_level'] ?? null;
+        $this->container['key'] = $data['key'] ?? null;
         $this->container['length'] = $data['length'] ?? null;
-        $this->container['delete_on_archive'] = $data['delete_on_archive'] ?? null;
+        $this->container['line_ending'] = $data['line_ending'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['nullable'] = $data['nullable'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['hide_in_frontend'] = $data['hide_in_frontend'] ?? null;
         $this->container['options'] = $data['options'] ?? null;
+        $this->container['sec_level'] = $data['sec_level'] ?? null;
+        $this->container['shorty'] = $data['shorty'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
     /**
@@ -300,121 +300,25 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets id
+     * Gets delete_on_archive
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getId()
+    public function getDeleteOnArchive()
     {
-        return $this->container['id'];
+        return $this->container['delete_on_archive'];
     }
 
     /**
-     * Sets id
+     * Sets delete_on_archive
      *
-     * @param int|null $id ID of field
+     * @param bool|null $delete_on_archive Whether the field should be deleted on person archive or not
      *
      * @return self
      */
-    public function setId($id)
+    public function setDeleteOnArchive($delete_on_archive)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets key
-     *
-     * @return string|null
-     */
-    public function getKey()
-    {
-        return $this->container['key'];
-    }
-
-    /**
-     * Sets key
-     *
-     * @param string|null $key The key of the field. This is the name that is also used when using the person or group api
-     *
-     * @return self
-     */
-    public function setKey($key)
-    {
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Field name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets name_translated
-     *
-     * @return string|null
-     */
-    public function getNameTranslated()
-    {
-        return $this->container['name_translated'];
-    }
-
-    /**
-     * Sets name_translated
-     *
-     * @param string|null $name_translated Field name translated
-     *
-     * @return self
-     */
-    public function setNameTranslated($name_translated)
-    {
-        $this->container['name_translated'] = $name_translated;
-
-        return $this;
-    }
-
-    /**
-     * Gets shorty
-     *
-     * @return string|null
-     */
-    public function getShorty()
-    {
-        return $this->container['shorty'];
-    }
-
-    /**
-     * Sets shorty
-     *
-     * @param string|null $shorty Abbreviation
-     *
-     * @return self
-     */
-    public function setShorty($shorty)
-    {
-        $this->container['shorty'] = $shorty;
+        $this->container['delete_on_archive'] = $delete_on_archive;
 
         return $this;
     }
@@ -468,6 +372,54 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
     }
 
     /**
+     * Gets hide_in_frontend
+     *
+     * @return bool|null
+     */
+    public function getHideInFrontend()
+    {
+        return $this->container['hide_in_frontend'];
+    }
+
+    /**
+     * Sets hide_in_frontend
+     *
+     * @param bool|null $hide_in_frontend Should be hidden in frontend
+     *
+     * @return self
+     */
+    public function setHideInFrontend($hide_in_frontend)
+    {
+        $this->container['hide_in_frontend'] = $hide_in_frontend;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id ID of field
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets is_active
      *
      * @return bool|null
@@ -516,49 +468,25 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets line_ending
+     * Gets key
      *
      * @return string|null
      */
-    public function getLineEnding()
+    public function getKey()
     {
-        return $this->container['line_ending'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets line_ending
+     * Sets key
      *
-     * @param string|null $line_ending The line ending that should be used when displaying the field
+     * @param string|null $key The key of the field. This is the name that is also used when using the person or group api
      *
      * @return self
      */
-    public function setLineEnding($line_ending)
+    public function setKey($key)
     {
-        $this->container['line_ending'] = $line_ending;
-
-        return $this;
-    }
-
-    /**
-     * Gets sec_level
-     *
-     * @return int|null
-     */
-    public function getSecLevel()
-    {
-        return $this->container['sec_level'];
-    }
-
-    /**
-     * Sets sec_level
-     *
-     * @param int|null $sec_level The security level necessary to see this field
-     *
-     * @return self
-     */
-    public function setSecLevel($sec_level)
-    {
-        $this->container['sec_level'] = $sec_level;
+        $this->container['key'] = $key;
 
         return $this;
     }
@@ -588,25 +516,73 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets delete_on_archive
+     * Gets line_ending
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getDeleteOnArchive()
+    public function getLineEnding()
     {
-        return $this->container['delete_on_archive'];
+        return $this->container['line_ending'];
     }
 
     /**
-     * Sets delete_on_archive
+     * Sets line_ending
      *
-     * @param bool|null $delete_on_archive Whether the field should be deleted on person archive or not
+     * @param string|null $line_ending The line ending that should be used when displaying the field
      *
      * @return self
      */
-    public function setDeleteOnArchive($delete_on_archive)
+    public function setLineEnding($line_ending)
     {
-        $this->container['delete_on_archive'] = $delete_on_archive;
+        $this->container['line_ending'] = $line_ending;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Field name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_translated
+     *
+     * @return string|null
+     */
+    public function getNameTranslated()
+    {
+        return $this->container['name_translated'];
+    }
+
+    /**
+     * Sets name_translated
+     *
+     * @param string|null $name_translated Field name translated
+     *
+     * @return self
+     */
+    public function setNameTranslated($name_translated)
+    {
+        $this->container['name_translated'] = $name_translated;
 
         return $this;
     }
@@ -636,54 +612,6 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets sort_key
-     *
-     * @return int|null
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param int|null $sort_key Used to sort all campuses
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets hide_in_frontend
-     *
-     * @return bool|null
-     */
-    public function getHideInFrontend()
-    {
-        return $this->container['hide_in_frontend'];
-    }
-
-    /**
-     * Sets hide_in_frontend
-     *
-     * @param bool|null $hide_in_frontend Should be hidden in frontend
-     *
-     * @return self
-     */
-    public function setHideInFrontend($hide_in_frontend)
-    {
-        $this->container['hide_in_frontend'] = $hide_in_frontend;
-
-        return $this;
-    }
-
-    /**
      * Gets options
      *
      * @return \StevenBuehner\ChurchTools\Model\GetAllFields200ResponseDataInnerOptionsInner[]|null
@@ -703,6 +631,78 @@ class GetAllFields200ResponseDataInner implements ModelInterface, ArrayAccess, \
     public function setOptions($options)
     {
         $this->container['options'] = $options;
+
+        return $this;
+    }
+
+    /**
+     * Gets sec_level
+     *
+     * @return int|null
+     */
+    public function getSecLevel()
+    {
+        return $this->container['sec_level'];
+    }
+
+    /**
+     * Sets sec_level
+     *
+     * @param int|null $sec_level The security level necessary to see this field
+     *
+     * @return self
+     */
+    public function setSecLevel($sec_level)
+    {
+        $this->container['sec_level'] = $sec_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets shorty
+     *
+     * @return string|null
+     */
+    public function getShorty()
+    {
+        return $this->container['shorty'];
+    }
+
+    /**
+     * Sets shorty
+     *
+     * @param string|null $shorty Abbreviation
+     *
+     * @return self
+     */
+    public function setShorty($shorty)
+    {
+        $this->container['shorty'] = $shorty;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int|null
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int|null $sort_key Used to sort all campuses
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

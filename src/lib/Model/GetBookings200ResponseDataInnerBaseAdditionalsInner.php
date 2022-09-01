@@ -57,8 +57,8 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'date' => '\DateTime',
+        'id' => 'int',
         'is_repeated' => 'string',
         'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta'
     ];
@@ -71,8 +71,8 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'date' => 'date-time',
+        'id' => null,
         'is_repeated' => null,
         'meta' => null
     ];
@@ -104,8 +104,8 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'date' => 'date',
+        'id' => 'id',
         'is_repeated' => 'isRepeated',
         'meta' => 'meta'
     ];
@@ -116,8 +116,8 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'date' => 'setDate',
+        'id' => 'setId',
         'is_repeated' => 'setIsRepeated',
         'meta' => 'setMeta'
     ];
@@ -128,8 +128,8 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'date' => 'getDate',
+        'id' => 'getId',
         'is_repeated' => 'getIsRepeated',
         'meta' => 'getMeta'
     ];
@@ -191,8 +191,8 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['date'] = $data['date'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_repeated'] = $data['is_repeated'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
     }
@@ -222,30 +222,6 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets date
      *
      * @return \DateTime|null
@@ -265,6 +241,30 @@ class GetBookings200ResponseDataInnerBaseAdditionalsInner implements ModelInterf
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

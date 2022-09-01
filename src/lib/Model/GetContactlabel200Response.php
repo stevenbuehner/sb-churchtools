@@ -57,7 +57,7 @@ class GetContactlabel200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\ContactLabel'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetContactlabels200ResponseDataInner'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetContactlabel200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\ContactLabel|null
+     * @return \StevenBuehner\ChurchTools\Model\GetContactlabels200ResponseDataInner|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetContactlabel200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\ContactLabel|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetContactlabels200ResponseDataInner|null $data data
      *
      * @return self
      */

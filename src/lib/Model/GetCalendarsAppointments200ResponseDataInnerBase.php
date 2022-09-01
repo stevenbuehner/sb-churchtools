@@ -57,24 +57,24 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'caption' => 'string',
-        'note' => 'string',
-        'version' => 'int',
-        'calendar' => '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourceTypesInner',
-        'information' => 'string',
-        'link' => 'string',
-        'is_internal' => 'bool',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'repeat_id' => 'int',
-        'repeat_frequency' => 'int',
-        'repeat_until' => '\DateTime',
-        'repeat_option' => 'int',
         'additions' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner[]',
+        'calendar' => '\StevenBuehner\ChurchTools\Model\GetCalendars200ResponseDataInner',
+        'caption' => 'string',
+        'end_date' => '\DateTime',
         'exceptions' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner[]',
+        'id' => 'int',
+        'information' => 'string',
+        'is_internal' => 'bool',
+        'link' => 'string',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
+        'note' => 'string',
+        'repeat_frequency' => 'int',
+        'repeat_id' => 'int',
+        'repeat_option' => 'int',
+        'repeat_until' => '\DateTime',
         'signup' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseSignup',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseMeta'
+        'start_date' => '\DateTime',
+        'version' => 'int'
     ];
 
     /**
@@ -85,24 +85,24 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'caption' => null,
-        'note' => null,
-        'version' => null,
-        'calendar' => null,
-        'information' => null,
-        'link' => null,
-        'is_internal' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
-        'repeat_id' => null,
-        'repeat_frequency' => null,
-        'repeat_until' => 'date-time',
-        'repeat_option' => null,
         'additions' => null,
+        'calendar' => null,
+        'caption' => null,
+        'end_date' => 'date-time',
         'exceptions' => null,
+        'id' => null,
+        'information' => null,
+        'is_internal' => null,
+        'link' => null,
+        'meta' => null,
+        'note' => null,
+        'repeat_frequency' => null,
+        'repeat_id' => null,
+        'repeat_option' => null,
+        'repeat_until' => 'date-time',
         'signup' => null,
-        'meta' => null
+        'start_date' => 'date-time',
+        'version' => null
     ];
 
     /**
@@ -132,24 +132,24 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'caption' => 'caption',
-        'note' => 'note',
-        'version' => 'version',
-        'calendar' => 'calendar',
-        'information' => 'information',
-        'link' => 'link',
-        'is_internal' => 'isInternal',
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'repeat_id' => 'repeatId',
-        'repeat_frequency' => 'repeatFrequency',
-        'repeat_until' => 'repeatUntil',
-        'repeat_option' => 'repeatOption',
         'additions' => 'additions',
+        'calendar' => 'calendar',
+        'caption' => 'caption',
+        'end_date' => 'endDate',
         'exceptions' => 'exceptions',
+        'id' => 'id',
+        'information' => 'information',
+        'is_internal' => 'isInternal',
+        'link' => 'link',
+        'meta' => 'meta',
+        'note' => 'note',
+        'repeat_frequency' => 'repeatFrequency',
+        'repeat_id' => 'repeatId',
+        'repeat_option' => 'repeatOption',
+        'repeat_until' => 'repeatUntil',
         'signup' => 'signup',
-        'meta' => 'meta'
+        'start_date' => 'startDate',
+        'version' => 'version'
     ];
 
     /**
@@ -158,24 +158,24 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'caption' => 'setCaption',
-        'note' => 'setNote',
-        'version' => 'setVersion',
-        'calendar' => 'setCalendar',
-        'information' => 'setInformation',
-        'link' => 'setLink',
-        'is_internal' => 'setIsInternal',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'repeat_id' => 'setRepeatId',
-        'repeat_frequency' => 'setRepeatFrequency',
-        'repeat_until' => 'setRepeatUntil',
-        'repeat_option' => 'setRepeatOption',
         'additions' => 'setAdditions',
+        'calendar' => 'setCalendar',
+        'caption' => 'setCaption',
+        'end_date' => 'setEndDate',
         'exceptions' => 'setExceptions',
+        'id' => 'setId',
+        'information' => 'setInformation',
+        'is_internal' => 'setIsInternal',
+        'link' => 'setLink',
+        'meta' => 'setMeta',
+        'note' => 'setNote',
+        'repeat_frequency' => 'setRepeatFrequency',
+        'repeat_id' => 'setRepeatId',
+        'repeat_option' => 'setRepeatOption',
+        'repeat_until' => 'setRepeatUntil',
         'signup' => 'setSignup',
-        'meta' => 'setMeta'
+        'start_date' => 'setStartDate',
+        'version' => 'setVersion'
     ];
 
     /**
@@ -184,24 +184,24 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'caption' => 'getCaption',
-        'note' => 'getNote',
-        'version' => 'getVersion',
-        'calendar' => 'getCalendar',
-        'information' => 'getInformation',
-        'link' => 'getLink',
-        'is_internal' => 'getIsInternal',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'repeat_id' => 'getRepeatId',
-        'repeat_frequency' => 'getRepeatFrequency',
-        'repeat_until' => 'getRepeatUntil',
-        'repeat_option' => 'getRepeatOption',
         'additions' => 'getAdditions',
+        'calendar' => 'getCalendar',
+        'caption' => 'getCaption',
+        'end_date' => 'getEndDate',
         'exceptions' => 'getExceptions',
+        'id' => 'getId',
+        'information' => 'getInformation',
+        'is_internal' => 'getIsInternal',
+        'link' => 'getLink',
+        'meta' => 'getMeta',
+        'note' => 'getNote',
+        'repeat_frequency' => 'getRepeatFrequency',
+        'repeat_id' => 'getRepeatId',
+        'repeat_option' => 'getRepeatOption',
+        'repeat_until' => 'getRepeatUntil',
         'signup' => 'getSignup',
-        'meta' => 'getMeta'
+        'start_date' => 'getStartDate',
+        'version' => 'getVersion'
     ];
 
     /**
@@ -261,24 +261,24 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['caption'] = $data['caption'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['version'] = $data['version'] ?? null;
-        $this->container['calendar'] = $data['calendar'] ?? null;
-        $this->container['information'] = $data['information'] ?? null;
-        $this->container['link'] = $data['link'] ?? null;
-        $this->container['is_internal'] = $data['is_internal'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
-        $this->container['repeat_frequency'] = $data['repeat_frequency'] ?? null;
-        $this->container['repeat_until'] = $data['repeat_until'] ?? null;
-        $this->container['repeat_option'] = $data['repeat_option'] ?? null;
         $this->container['additions'] = $data['additions'] ?? null;
+        $this->container['calendar'] = $data['calendar'] ?? null;
+        $this->container['caption'] = $data['caption'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['exceptions'] = $data['exceptions'] ?? null;
-        $this->container['signup'] = $data['signup'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['information'] = $data['information'] ?? null;
+        $this->container['is_internal'] = $data['is_internal'] ?? null;
+        $this->container['link'] = $data['link'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['repeat_frequency'] = $data['repeat_frequency'] ?? null;
+        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
+        $this->container['repeat_option'] = $data['repeat_option'] ?? null;
+        $this->container['repeat_until'] = $data['repeat_until'] ?? null;
+        $this->container['signup'] = $data['signup'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['version'] = $data['version'] ?? null;
     }
 
     /**
@@ -306,25 +306,49 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
 
 
     /**
-     * Gets id
+     * Gets additions
      *
-     * @return int|null
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner[]|null
      */
-    public function getId()
+    public function getAdditions()
     {
-        return $this->container['id'];
+        return $this->container['additions'];
     }
 
     /**
-     * Sets id
+     * Sets additions
      *
-     * @param int|null $id id
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner[]|null $additions additions
      *
      * @return self
      */
-    public function setId($id)
+    public function setAdditions($additions)
     {
-        $this->container['id'] = $id;
+        $this->container['additions'] = $additions;
+
+        return $this;
+    }
+
+    /**
+     * Gets calendar
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendars200ResponseDataInner|null
+     */
+    public function getCalendar()
+    {
+        return $this->container['calendar'];
+    }
+
+    /**
+     * Sets calendar
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendars200ResponseDataInner|null $calendar calendar
+     *
+     * @return self
+     */
+    public function setCalendar($calendar)
+    {
+        $this->container['calendar'] = $calendar;
 
         return $this;
     }
@@ -354,174 +378,6 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
     }
 
     /**
-     * Gets note
-     *
-     * @return string|null
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string|null $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
-     * Gets version
-     *
-     * @return int|null
-     */
-    public function getVersion()
-    {
-        return $this->container['version'];
-    }
-
-    /**
-     * Sets version
-     *
-     * @param int|null $version version
-     *
-     * @return self
-     */
-    public function setVersion($version)
-    {
-        $this->container['version'] = $version;
-
-        return $this;
-    }
-
-    /**
-     * Gets calendar
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourceTypesInner|null
-     */
-    public function getCalendar()
-    {
-        return $this->container['calendar'];
-    }
-
-    /**
-     * Sets calendar
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourceTypesInner|null $calendar calendar
-     *
-     * @return self
-     */
-    public function setCalendar($calendar)
-    {
-        $this->container['calendar'] = $calendar;
-
-        return $this;
-    }
-
-    /**
-     * Gets information
-     *
-     * @return string|null
-     */
-    public function getInformation()
-    {
-        return $this->container['information'];
-    }
-
-    /**
-     * Sets information
-     *
-     * @param string|null $information information
-     *
-     * @return self
-     */
-    public function setInformation($information)
-    {
-        $this->container['information'] = $information;
-
-        return $this;
-    }
-
-    /**
-     * Gets link
-     *
-     * @return string|null
-     */
-    public function getLink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     * @param string|null $link link
-     *
-     * @return self
-     */
-    public function setLink($link)
-    {
-        $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_internal
-     *
-     * @return bool|null
-     */
-    public function getIsInternal()
-    {
-        return $this->container['is_internal'];
-    }
-
-    /**
-     * Sets is_internal
-     *
-     * @param bool|null $is_internal is_internal
-     *
-     * @return self
-     */
-    public function setIsInternal($is_internal)
-    {
-        $this->container['is_internal'] = $is_internal;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
      * Gets end_date
      *
      * @return \DateTime|null
@@ -541,126 +397,6 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat_id
-     *
-     * @return int|null
-     */
-    public function getRepeatId()
-    {
-        return $this->container['repeat_id'];
-    }
-
-    /**
-     * Sets repeat_id
-     *
-     * @param int|null $repeat_id repeat_id
-     *
-     * @return self
-     */
-    public function setRepeatId($repeat_id)
-    {
-        $this->container['repeat_id'] = $repeat_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat_frequency
-     *
-     * @return int|null
-     */
-    public function getRepeatFrequency()
-    {
-        return $this->container['repeat_frequency'];
-    }
-
-    /**
-     * Sets repeat_frequency
-     *
-     * @param int|null $repeat_frequency repeat_frequency
-     *
-     * @return self
-     */
-    public function setRepeatFrequency($repeat_frequency)
-    {
-        $this->container['repeat_frequency'] = $repeat_frequency;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat_until
-     *
-     * @return \DateTime|null
-     */
-    public function getRepeatUntil()
-    {
-        return $this->container['repeat_until'];
-    }
-
-    /**
-     * Sets repeat_until
-     *
-     * @param \DateTime|null $repeat_until repeat_until
-     *
-     * @return self
-     */
-    public function setRepeatUntil($repeat_until)
-    {
-        $this->container['repeat_until'] = $repeat_until;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat_option
-     *
-     * @return int|null
-     */
-    public function getRepeatOption()
-    {
-        return $this->container['repeat_option'];
-    }
-
-    /**
-     * Sets repeat_option
-     *
-     * @param int|null $repeat_option repeat_option
-     *
-     * @return self
-     */
-    public function setRepeatOption($repeat_option)
-    {
-        $this->container['repeat_option'] = $repeat_option;
-
-        return $this;
-    }
-
-    /**
-     * Gets additions
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner[]|null
-     */
-    public function getAdditions()
-    {
-        return $this->container['additions'];
-    }
-
-    /**
-     * Sets additions
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner[]|null $additions additions
-     *
-     * @return self
-     */
-    public function setAdditions($additions)
-    {
-        $this->container['additions'] = $additions;
 
         return $this;
     }
@@ -690,6 +426,246 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
     }
 
     /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets information
+     *
+     * @return string|null
+     */
+    public function getInformation()
+    {
+        return $this->container['information'];
+    }
+
+    /**
+     * Sets information
+     *
+     * @param string|null $information information
+     *
+     * @return self
+     */
+    public function setInformation($information)
+    {
+        $this->container['information'] = $information;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_internal
+     *
+     * @return bool|null
+     */
+    public function getIsInternal()
+    {
+        return $this->container['is_internal'];
+    }
+
+    /**
+     * Sets is_internal
+     *
+     * @param bool|null $is_internal is_internal
+     *
+     * @return self
+     */
+    public function setIsInternal($is_internal)
+    {
+        $this->container['is_internal'] = $is_internal;
+
+        return $this;
+    }
+
+    /**
+     * Gets link
+     *
+     * @return string|null
+     */
+    public function getLink()
+    {
+        return $this->container['link'];
+    }
+
+    /**
+     * Sets link
+     *
+     * @param string|null $link link
+     *
+     * @return self
+     */
+    public function setLink($link)
+    {
+        $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string|null
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string|null $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_frequency
+     *
+     * @return int|null
+     */
+    public function getRepeatFrequency()
+    {
+        return $this->container['repeat_frequency'];
+    }
+
+    /**
+     * Sets repeat_frequency
+     *
+     * @param int|null $repeat_frequency repeat_frequency
+     *
+     * @return self
+     */
+    public function setRepeatFrequency($repeat_frequency)
+    {
+        $this->container['repeat_frequency'] = $repeat_frequency;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_id
+     *
+     * @return int|null
+     */
+    public function getRepeatId()
+    {
+        return $this->container['repeat_id'];
+    }
+
+    /**
+     * Sets repeat_id
+     *
+     * @param int|null $repeat_id repeat_id
+     *
+     * @return self
+     */
+    public function setRepeatId($repeat_id)
+    {
+        $this->container['repeat_id'] = $repeat_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_option
+     *
+     * @return int|null
+     */
+    public function getRepeatOption()
+    {
+        return $this->container['repeat_option'];
+    }
+
+    /**
+     * Sets repeat_option
+     *
+     * @param int|null $repeat_option repeat_option
+     *
+     * @return self
+     */
+    public function setRepeatOption($repeat_option)
+    {
+        $this->container['repeat_option'] = $repeat_option;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_until
+     *
+     * @return \DateTime|null
+     */
+    public function getRepeatUntil()
+    {
+        return $this->container['repeat_until'];
+    }
+
+    /**
+     * Sets repeat_until
+     *
+     * @param \DateTime|null $repeat_until repeat_until
+     *
+     * @return self
+     */
+    public function setRepeatUntil($repeat_until)
+    {
+        $this->container['repeat_until'] = $repeat_until;
+
+        return $this;
+    }
+
+    /**
      * Gets signup
      *
      * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseSignup|null
@@ -714,25 +690,49 @@ class GetCalendarsAppointments200ResponseDataInnerBase implements ModelInterface
     }
 
     /**
-     * Gets meta
+     * Gets start_date
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseMeta|null
+     * @return \DateTime|null
      */
-    public function getMeta()
+    public function getStartDate()
     {
-        return $this->container['meta'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets meta
+     * Sets start_date
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseMeta|null $meta meta
+     * @param \DateTime|null $start_date start_date
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setStartDate($start_date)
     {
-        $this->container['meta'] = $meta;
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return int|null
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param int|null $version version
+     *
+     * @return self
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }

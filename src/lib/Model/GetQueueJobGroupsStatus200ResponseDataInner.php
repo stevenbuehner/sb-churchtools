@@ -57,9 +57,9 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
+        'jobs' => '\StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200ResponseDataInnerJobs',
         'name' => 'string',
-        'total' => 'float',
-        'jobs' => '\StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200ResponseDataInnerJobs'
+        'total' => 'int'
     ];
 
     /**
@@ -70,9 +70,9 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'jobs' => null,
         'name' => null,
-        'total' => null,
-        'jobs' => null
+        'total' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
+        'jobs' => 'jobs',
         'name' => 'name',
-        'total' => 'total',
-        'jobs' => 'jobs'
+        'total' => 'total'
     ];
 
     /**
@@ -113,9 +113,9 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
+        'jobs' => 'setJobs',
         'name' => 'setName',
-        'total' => 'setTotal',
-        'jobs' => 'setJobs'
+        'total' => 'setTotal'
     ];
 
     /**
@@ -124,9 +124,9 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
+        'jobs' => 'getJobs',
         'name' => 'getName',
-        'total' => 'getTotal',
-        'jobs' => 'getJobs'
+        'total' => 'getTotal'
     ];
 
     /**
@@ -186,9 +186,9 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
+        $this->container['jobs'] = $data['jobs'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['total'] = $data['total'] ?? null;
-        $this->container['jobs'] = $data['jobs'] ?? null;
     }
 
     /**
@@ -214,6 +214,30 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets jobs
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200ResponseDataInnerJobs|null
+     */
+    public function getJobs()
+    {
+        return $this->container['jobs'];
+    }
+
+    /**
+     * Sets jobs
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200ResponseDataInnerJobs|null $jobs jobs
+     *
+     * @return self
+     */
+    public function setJobs($jobs)
+    {
+        $this->container['jobs'] = $jobs;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -242,7 +266,7 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
     /**
      * Gets total
      *
-     * @return float|null
+     * @return int|null
      */
     public function getTotal()
     {
@@ -252,37 +276,13 @@ class GetQueueJobGroupsStatus200ResponseDataInner implements ModelInterface, Arr
     /**
      * Sets total
      *
-     * @param float|null $total Total Jobs in Queue of This Job Group
+     * @param int|null $total Total Jobs in Queue of This Job Group
      *
      * @return self
      */
     public function setTotal($total)
     {
         $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets jobs
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200ResponseDataInnerJobs|null
-     */
-    public function getJobs()
-    {
-        return $this->container['jobs'];
-    }
-
-    /**
-     * Sets jobs
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetQueueJobGroupsStatus200ResponseDataInnerJobs|null $jobs jobs
-     *
-     * @return self
-     */
-    public function setJobs($jobs)
-    {
-        $this->container['jobs'] = $jobs;
 
         return $this;
     }

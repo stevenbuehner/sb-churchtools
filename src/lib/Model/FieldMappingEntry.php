@@ -57,14 +57,14 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'system' => 'string',
         'from' => 'string',
-        'to' => 'string',
         'from_filter' => 'string',
+        'id' => 'int',
+        'others' => 'mixed[]',
+        'system' => 'string',
+        'to' => 'string',
         'to_filter' => 'string',
-        'value_mapping' => 'mixed[]',
-        'others' => 'mixed[]'
+        'value_mapping' => 'mixed[]'
     ];
 
     /**
@@ -75,14 +75,14 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'system' => null,
         'from' => null,
-        'to' => null,
         'from_filter' => null,
+        'id' => null,
+        'others' => null,
+        'system' => null,
+        'to' => null,
         'to_filter' => null,
-        'value_mapping' => null,
-        'others' => null
+        'value_mapping' => null
     ];
 
     /**
@@ -112,14 +112,14 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'system' => 'system',
         'from' => 'from',
-        'to' => 'to',
         'from_filter' => 'fromFilter',
+        'id' => 'id',
+        'others' => 'others',
+        'system' => 'system',
+        'to' => 'to',
         'to_filter' => 'toFilter',
-        'value_mapping' => 'valueMapping',
-        'others' => 'others'
+        'value_mapping' => 'valueMapping'
     ];
 
     /**
@@ -128,14 +128,14 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'system' => 'setSystem',
         'from' => 'setFrom',
-        'to' => 'setTo',
         'from_filter' => 'setFromFilter',
+        'id' => 'setId',
+        'others' => 'setOthers',
+        'system' => 'setSystem',
+        'to' => 'setTo',
         'to_filter' => 'setToFilter',
-        'value_mapping' => 'setValueMapping',
-        'others' => 'setOthers'
+        'value_mapping' => 'setValueMapping'
     ];
 
     /**
@@ -144,14 +144,14 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'system' => 'getSystem',
         'from' => 'getFrom',
-        'to' => 'getTo',
         'from_filter' => 'getFromFilter',
+        'id' => 'getId',
+        'others' => 'getOthers',
+        'system' => 'getSystem',
+        'to' => 'getTo',
         'to_filter' => 'getToFilter',
-        'value_mapping' => 'getValueMapping',
-        'others' => 'getOthers'
+        'value_mapping' => 'getValueMapping'
     ];
 
     /**
@@ -226,14 +226,14 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['system'] = $data['system'] ?? null;
         $this->container['from'] = $data['from'] ?? null;
-        $this->container['to'] = $data['to'] ?? null;
         $this->container['from_filter'] = $data['from_filter'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['others'] = $data['others'] ?? null;
+        $this->container['system'] = $data['system'] ?? null;
+        $this->container['to'] = $data['to'] ?? null;
         $this->container['to_filter'] = $data['to_filter'] ?? null;
         $this->container['value_mapping'] = $data['value_mapping'] ?? null;
-        $this->container['others'] = $data['others'] ?? null;
     }
 
     /**
@@ -245,6 +245,9 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
+        if ($this->container['from'] === null) {
+            $invalidProperties[] = "'from' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -260,9 +263,6 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
             );
         }
 
-        if ($this->container['from'] === null) {
-            $invalidProperties[] = "'from' can't be null";
-        }
         if ($this->container['to'] === null) {
             $invalidProperties[] = "'to' can't be null";
         }
@@ -282,9 +282,57 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
+     * Gets from
+     *
+     * @return string
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     *
+     * @param string $from from
+     *
+     * @return self
+     */
+    public function setFrom($from)
+    {
+        $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets from_filter
+     *
+     * @return string|null
+     */
+    public function getFromFilter()
+    {
+        return $this->container['from_filter'];
+    }
+
+    /**
+     * Sets from_filter
+     *
+     * @param string|null $from_filter from_filter
+     *
+     * @return self
+     */
+    public function setFromFilter($from_filter)
+    {
+        $this->container['from_filter'] = $from_filter;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -294,13 +342,37 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets others
+     *
+     * @return mixed[]|null
+     */
+    public function getOthers()
+    {
+        return $this->container['others'];
+    }
+
+    /**
+     * Sets others
+     *
+     * @param mixed[]|null $others others
+     *
+     * @return self
+     */
+    public function setOthers($others)
+    {
+        $this->container['others'] = $others;
 
         return $this;
     }
@@ -340,30 +412,6 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets from
-     *
-     * @return string
-     */
-    public function getFrom()
-    {
-        return $this->container['from'];
-    }
-
-    /**
-     * Sets from
-     *
-     * @param string $from from
-     *
-     * @return self
-     */
-    public function setFrom($from)
-    {
-        $this->container['from'] = $from;
-
-        return $this;
-    }
-
-    /**
      * Gets to
      *
      * @return string
@@ -383,30 +431,6 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setTo($to)
     {
         $this->container['to'] = $to;
-
-        return $this;
-    }
-
-    /**
-     * Gets from_filter
-     *
-     * @return string|null
-     */
-    public function getFromFilter()
-    {
-        return $this->container['from_filter'];
-    }
-
-    /**
-     * Sets from_filter
-     *
-     * @param string|null $from_filter from_filter
-     *
-     * @return self
-     */
-    public function setFromFilter($from_filter)
-    {
-        $this->container['from_filter'] = $from_filter;
 
         return $this;
     }
@@ -455,30 +479,6 @@ class FieldMappingEntry implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setValueMapping($value_mapping)
     {
         $this->container['value_mapping'] = $value_mapping;
-
-        return $this;
-    }
-
-    /**
-     * Gets others
-     *
-     * @return mixed[]|null
-     */
-    public function getOthers()
-    {
-        return $this->container['others'];
-    }
-
-    /**
-     * Sets others
-     *
-     * @param mixed[]|null $others others
-     *
-     * @return self
-     */
-    public function setOthers($others)
-    {
-        $this->container['others'] = $others;
 
         return $this;
     }

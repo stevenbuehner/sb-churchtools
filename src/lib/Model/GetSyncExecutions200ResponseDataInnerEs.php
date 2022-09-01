@@ -57,9 +57,9 @@ class GetSyncExecutions200ResponseDataInnerEs implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'create' => 'float',
-        'delete' => 'float',
-        'update' => 'float'
+        'create' => 'int',
+        'delete' => 'int',
+        'update' => 'int'
     ];
 
     /**
@@ -227,7 +227,7 @@ class GetSyncExecutions200ResponseDataInnerEs implements ModelInterface, ArrayAc
     /**
      * Gets create
      *
-     * @return float
+     * @return int
      */
     public function getCreate()
     {
@@ -237,7 +237,7 @@ class GetSyncExecutions200ResponseDataInnerEs implements ModelInterface, ArrayAc
     /**
      * Sets create
      *
-     * @param float $create create
+     * @param int $create create
      *
      * @return self
      */
@@ -251,7 +251,7 @@ class GetSyncExecutions200ResponseDataInnerEs implements ModelInterface, ArrayAc
     /**
      * Gets delete
      *
-     * @return float
+     * @return int
      */
     public function getDelete()
     {
@@ -261,7 +261,7 @@ class GetSyncExecutions200ResponseDataInnerEs implements ModelInterface, ArrayAc
     /**
      * Sets delete
      *
-     * @param float $delete delete
+     * @param int $delete delete
      *
      * @return self
      */
@@ -275,7 +275,7 @@ class GetSyncExecutions200ResponseDataInnerEs implements ModelInterface, ArrayAc
     /**
      * Gets update
      *
-     * @return float
+     * @return int
      */
     public function getUpdate()
     {
@@ -285,7 +285,7 @@ class GetSyncExecutions200ResponseDataInnerEs implements ModelInterface, ArrayAc
     /**
      * Sets update
      *
-     * @param float $update update
+     * @param int $update update
      *
      * @return self
      */

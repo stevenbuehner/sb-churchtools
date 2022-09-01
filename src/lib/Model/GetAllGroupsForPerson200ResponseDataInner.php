@@ -57,10 +57,10 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'group' => '\StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroup',
+        'group' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup',
         'group_type_role_id' => 'int',
-        'member_start_date' => '\DateTime',
-        'member_end_date' => '\DateTime'
+        'member_end_date' => '\DateTime',
+        'member_start_date' => '\DateTime'
     ];
 
     /**
@@ -73,8 +73,8 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     protected static $openAPIFormats = [
         'group' => null,
         'group_type_role_id' => null,
-        'member_start_date' => 'date',
-        'member_end_date' => 'date'
+        'member_end_date' => 'date',
+        'member_start_date' => 'date'
     ];
 
     /**
@@ -106,8 +106,8 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     protected static $attributeMap = [
         'group' => 'group',
         'group_type_role_id' => 'groupTypeRoleId',
-        'member_start_date' => 'memberStartDate',
-        'member_end_date' => 'memberEndDate'
+        'member_end_date' => 'memberEndDate',
+        'member_start_date' => 'memberStartDate'
     ];
 
     /**
@@ -118,8 +118,8 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     protected static $setters = [
         'group' => 'setGroup',
         'group_type_role_id' => 'setGroupTypeRoleId',
-        'member_start_date' => 'setMemberStartDate',
-        'member_end_date' => 'setMemberEndDate'
+        'member_end_date' => 'setMemberEndDate',
+        'member_start_date' => 'setMemberStartDate'
     ];
 
     /**
@@ -130,8 +130,8 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     protected static $getters = [
         'group' => 'getGroup',
         'group_type_role_id' => 'getGroupTypeRoleId',
-        'member_start_date' => 'getMemberStartDate',
-        'member_end_date' => 'getMemberEndDate'
+        'member_end_date' => 'getMemberEndDate',
+        'member_start_date' => 'getMemberStartDate'
     ];
 
     /**
@@ -193,8 +193,8 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     {
         $this->container['group'] = $data['group'] ?? null;
         $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
-        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
         $this->container['member_end_date'] = $data['member_end_date'] ?? null;
+        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
     }
 
     /**
@@ -224,7 +224,7 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroup|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup|null
      */
     public function getGroup()
     {
@@ -234,7 +234,7 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroup|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup|null $group group
      *
      * @return self
      */
@@ -270,30 +270,6 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     }
 
     /**
-     * Gets member_start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getMemberStartDate()
-    {
-        return $this->container['member_start_date'];
-    }
-
-    /**
-     * Sets member_start_date
-     *
-     * @param \DateTime|null $member_start_date member_start_date
-     *
-     * @return self
-     */
-    public function setMemberStartDate($member_start_date)
-    {
-        $this->container['member_start_date'] = $member_start_date;
-
-        return $this;
-    }
-
-    /**
      * Gets member_end_date
      *
      * @return \DateTime|null
@@ -313,6 +289,30 @@ class GetAllGroupsForPerson200ResponseDataInner implements ModelInterface, Array
     public function setMemberEndDate($member_end_date)
     {
         $this->container['member_end_date'] = $member_end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets member_start_date
+     *
+     * @return \DateTime|null
+     */
+    public function getMemberStartDate()
+    {
+        return $this->container['member_start_date'];
+    }
+
+    /**
+     * Sets member_start_date
+     *
+     * @param \DateTime|null $member_start_date member_start_date
+     *
+     * @return self
+     */
+    public function setMemberStartDate($member_start_date)
+    {
+        $this->container['member_start_date'] = $member_start_date;
 
         return $this;
     }

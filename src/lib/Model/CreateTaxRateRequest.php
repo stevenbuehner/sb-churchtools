@@ -57,10 +57,10 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tax_type_id' => 'int',
-        'rate' => 'float',
+        'account_id' => 'int',
         'note' => 'string',
-        'account_id' => 'int'
+        'rate' => 'float',
+        'tax_type_id' => 'int'
     ];
 
     /**
@@ -71,10 +71,10 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tax_type_id' => null,
-        'rate' => 'float',
+        'account_id' => null,
         'note' => null,
-        'account_id' => null
+        'rate' => 'float',
+        'tax_type_id' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'tax_type_id' => 'taxTypeId',
-        'rate' => 'rate',
+        'account_id' => 'accountId',
         'note' => 'note',
-        'account_id' => 'accountId'
+        'rate' => 'rate',
+        'tax_type_id' => 'taxTypeId'
     ];
 
     /**
@@ -116,10 +116,10 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'tax_type_id' => 'setTaxTypeId',
-        'rate' => 'setRate',
+        'account_id' => 'setAccountId',
         'note' => 'setNote',
-        'account_id' => 'setAccountId'
+        'rate' => 'setRate',
+        'tax_type_id' => 'setTaxTypeId'
     ];
 
     /**
@@ -128,10 +128,10 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'tax_type_id' => 'getTaxTypeId',
-        'rate' => 'getRate',
+        'account_id' => 'getAccountId',
         'note' => 'getNote',
-        'account_id' => 'getAccountId'
+        'rate' => 'getRate',
+        'tax_type_id' => 'getTaxTypeId'
     ];
 
     /**
@@ -191,10 +191,10 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['tax_type_id'] = $data['tax_type_id'] ?? null;
-        $this->container['rate'] = $data['rate'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
         $this->container['account_id'] = $data['account_id'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['rate'] = $data['rate'] ?? null;
+        $this->container['tax_type_id'] = $data['tax_type_id'] ?? null;
     }
 
     /**
@@ -206,17 +206,17 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['tax_type_id'] === null) {
-            $invalidProperties[] = "'tax_type_id' can't be null";
-        }
-        if ($this->container['rate'] === null) {
-            $invalidProperties[] = "'rate' can't be null";
+        if ($this->container['account_id'] === null) {
+            $invalidProperties[] = "'account_id' can't be null";
         }
         if ($this->container['note'] === null) {
             $invalidProperties[] = "'note' can't be null";
         }
-        if ($this->container['account_id'] === null) {
-            $invalidProperties[] = "'account_id' can't be null";
+        if ($this->container['rate'] === null) {
+            $invalidProperties[] = "'rate' can't be null";
+        }
+        if ($this->container['tax_type_id'] === null) {
+            $invalidProperties[] = "'tax_type_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -234,49 +234,25 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets tax_type_id
+     * Gets account_id
      *
      * @return int
      */
-    public function getTaxTypeId()
+    public function getAccountId()
     {
-        return $this->container['tax_type_id'];
+        return $this->container['account_id'];
     }
 
     /**
-     * Sets tax_type_id
+     * Sets account_id
      *
-     * @param int $tax_type_id tax_type_id
+     * @param int $account_id account_id
      *
      * @return self
      */
-    public function setTaxTypeId($tax_type_id)
+    public function setAccountId($account_id)
     {
-        $this->container['tax_type_id'] = $tax_type_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets rate
-     *
-     * @return float
-     */
-    public function getRate()
-    {
-        return $this->container['rate'];
-    }
-
-    /**
-     * Sets rate
-     *
-     * @param float $rate rate
-     *
-     * @return self
-     */
-    public function setRate($rate)
-    {
-        $this->container['rate'] = $rate;
+        $this->container['account_id'] = $account_id;
 
         return $this;
     }
@@ -306,25 +282,49 @@ class CreateTaxRateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets account_id
+     * Gets rate
      *
-     * @return int
+     * @return float
      */
-    public function getAccountId()
+    public function getRate()
     {
-        return $this->container['account_id'];
+        return $this->container['rate'];
     }
 
     /**
-     * Sets account_id
+     * Sets rate
      *
-     * @param int $account_id account_id
+     * @param float $rate rate
      *
      * @return self
      */
-    public function setAccountId($account_id)
+    public function setRate($rate)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['rate'] = $rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_type_id
+     *
+     * @return int
+     */
+    public function getTaxTypeId()
+    {
+        return $this->container['tax_type_id'];
+    }
+
+    /**
+     * Sets tax_type_id
+     *
+     * @param int $tax_type_id tax_type_id
+     *
+     * @return self
+     */
+    public function setTaxTypeId($tax_type_id)
+    {
+        $this->container['tax_type_id'] = $tax_type_id;
 
         return $this;
     }

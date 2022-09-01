@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**has_email** | **bool** |  | [optional]
 **can_chat** | **bool** |  | [optional]
+**has_email** | **bool** |  | [optional]
 **invitation_status** | **string** |  | [optional]
 **is_saml_user** | **bool** |  | [optional]
 

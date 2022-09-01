@@ -57,18 +57,18 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
+        'campus_id' => 'int',
+        'color' => 'string',
+        'event_template_id' => 'int',
+        'i_cal_source_url' => 'string',
         'id' => 'int',
+        'is_private' => 'bool',
+        'is_public' => 'bool',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta',
         'name' => 'string',
         'name_translated' => 'string',
-        'sort_key' => 'int',
-        'color' => 'string',
-        'is_public' => 'bool',
-        'is_private' => 'bool',
         'random_url' => 'string',
-        'i_cal_source_url' => 'string',
-        'campus_id' => 'int',
-        'event_template_id' => 'int',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta'
+        'sort_key' => 'int'
     ];
 
     /**
@@ -79,18 +79,18 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'campus_id' => null,
+        'color' => null,
+        'event_template_id' => null,
+        'i_cal_source_url' => null,
         'id' => null,
+        'is_private' => null,
+        'is_public' => null,
+        'meta' => null,
         'name' => null,
         'name_translated' => null,
-        'sort_key' => null,
-        'color' => null,
-        'is_public' => null,
-        'is_private' => null,
         'random_url' => null,
-        'i_cal_source_url' => null,
-        'campus_id' => null,
-        'event_template_id' => null,
-        'meta' => null
+        'sort_key' => null
     ];
 
     /**
@@ -120,18 +120,18 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
+        'campus_id' => 'campusId',
+        'color' => 'color',
+        'event_template_id' => 'eventTemplateId',
+        'i_cal_source_url' => 'iCalSourceUrl',
         'id' => 'id',
+        'is_private' => 'isPrivate',
+        'is_public' => 'isPublic',
+        'meta' => 'meta',
         'name' => 'name',
         'name_translated' => 'nameTranslated',
-        'sort_key' => 'sortKey',
-        'color' => 'color',
-        'is_public' => 'isPublic',
-        'is_private' => 'isPrivate',
         'random_url' => 'randomUrl',
-        'i_cal_source_url' => 'iCalSourceUrl',
-        'campus_id' => 'campusId',
-        'event_template_id' => 'eventTemplateId',
-        'meta' => 'meta'
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -140,18 +140,18 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
+        'campus_id' => 'setCampusId',
+        'color' => 'setColor',
+        'event_template_id' => 'setEventTemplateId',
+        'i_cal_source_url' => 'setICalSourceUrl',
         'id' => 'setId',
+        'is_private' => 'setIsPrivate',
+        'is_public' => 'setIsPublic',
+        'meta' => 'setMeta',
         'name' => 'setName',
         'name_translated' => 'setNameTranslated',
-        'sort_key' => 'setSortKey',
-        'color' => 'setColor',
-        'is_public' => 'setIsPublic',
-        'is_private' => 'setIsPrivate',
         'random_url' => 'setRandomUrl',
-        'i_cal_source_url' => 'setICalSourceUrl',
-        'campus_id' => 'setCampusId',
-        'event_template_id' => 'setEventTemplateId',
-        'meta' => 'setMeta'
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -160,18 +160,18 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
+        'campus_id' => 'getCampusId',
+        'color' => 'getColor',
+        'event_template_id' => 'getEventTemplateId',
+        'i_cal_source_url' => 'getICalSourceUrl',
         'id' => 'getId',
+        'is_private' => 'getIsPrivate',
+        'is_public' => 'getIsPublic',
+        'meta' => 'getMeta',
         'name' => 'getName',
         'name_translated' => 'getNameTranslated',
-        'sort_key' => 'getSortKey',
-        'color' => 'getColor',
-        'is_public' => 'getIsPublic',
-        'is_private' => 'getIsPrivate',
         'random_url' => 'getRandomUrl',
-        'i_cal_source_url' => 'getICalSourceUrl',
-        'campus_id' => 'getCampusId',
-        'event_template_id' => 'getEventTemplateId',
-        'meta' => 'getMeta'
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -231,18 +231,18 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
+        $this->container['campus_id'] = $data['campus_id'] ?? null;
+        $this->container['color'] = $data['color'] ?? null;
+        $this->container['event_template_id'] = $data['event_template_id'] ?? null;
+        $this->container['i_cal_source_url'] = $data['i_cal_source_url'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_private'] = $data['is_private'] ?? null;
+        $this->container['is_public'] = $data['is_public'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['color'] = $data['color'] ?? null;
-        $this->container['is_public'] = $data['is_public'] ?? null;
-        $this->container['is_private'] = $data['is_private'] ?? null;
         $this->container['random_url'] = $data['random_url'] ?? null;
-        $this->container['i_cal_source_url'] = $data['i_cal_source_url'] ?? null;
-        $this->container['campus_id'] = $data['campus_id'] ?? null;
-        $this->container['event_template_id'] = $data['event_template_id'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
     /**
@@ -270,6 +270,102 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
 
 
     /**
+     * Gets campus_id
+     *
+     * @return int|null
+     */
+    public function getCampusId()
+    {
+        return $this->container['campus_id'];
+    }
+
+    /**
+     * Sets campus_id
+     *
+     * @param int|null $campus_id campus_id
+     *
+     * @return self
+     */
+    public function setCampusId($campus_id)
+    {
+        $this->container['campus_id'] = $campus_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets color
+     *
+     * @return string|null
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     * @param string|null $color color
+     *
+     * @return self
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
+
+        return $this;
+    }
+
+    /**
+     * Gets event_template_id
+     *
+     * @return int|null
+     */
+    public function getEventTemplateId()
+    {
+        return $this->container['event_template_id'];
+    }
+
+    /**
+     * Sets event_template_id
+     *
+     * @param int|null $event_template_id event_template_id
+     *
+     * @return self
+     */
+    public function setEventTemplateId($event_template_id)
+    {
+        $this->container['event_template_id'] = $event_template_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets i_cal_source_url
+     *
+     * @return string|null
+     */
+    public function getICalSourceUrl()
+    {
+        return $this->container['i_cal_source_url'];
+    }
+
+    /**
+     * Sets i_cal_source_url
+     *
+     * @param string|null $i_cal_source_url i_cal_source_url
+     *
+     * @return self
+     */
+    public function setICalSourceUrl($i_cal_source_url)
+    {
+        $this->container['i_cal_source_url'] = $i_cal_source_url;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -289,6 +385,78 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_private
+     *
+     * @return bool|null
+     */
+    public function getIsPrivate()
+    {
+        return $this->container['is_private'];
+    }
+
+    /**
+     * Sets is_private
+     *
+     * @param bool|null $is_private is_private
+     *
+     * @return self
+     */
+    public function setIsPrivate($is_private)
+    {
+        $this->container['is_private'] = $is_private;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_public
+     *
+     * @return bool|null
+     */
+    public function getIsPublic()
+    {
+        return $this->container['is_public'];
+    }
+
+    /**
+     * Sets is_public
+     *
+     * @param bool|null $is_public is_public
+     *
+     * @return self
+     */
+    public function setIsPublic($is_public)
+    {
+        $this->container['is_public'] = $is_public;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -342,102 +510,6 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets sort_key
-     *
-     * @return int|null
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param int|null $sort_key sort_key
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets color
-     *
-     * @return string|null
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /**
-     * Sets color
-     *
-     * @param string|null $color color
-     *
-     * @return self
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_public
-     *
-     * @return bool|null
-     */
-    public function getIsPublic()
-    {
-        return $this->container['is_public'];
-    }
-
-    /**
-     * Sets is_public
-     *
-     * @param bool|null $is_public is_public
-     *
-     * @return self
-     */
-    public function setIsPublic($is_public)
-    {
-        $this->container['is_public'] = $is_public;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_private
-     *
-     * @return bool|null
-     */
-    public function getIsPrivate()
-    {
-        return $this->container['is_private'];
-    }
-
-    /**
-     * Sets is_private
-     *
-     * @param bool|null $is_private is_private
-     *
-     * @return self
-     */
-    public function setIsPrivate($is_private)
-    {
-        $this->container['is_private'] = $is_private;
-
-        return $this;
-    }
-
-    /**
      * Gets random_url
      *
      * @return string|null
@@ -462,97 +534,25 @@ class GetCalendars200ResponseDataInner implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets i_cal_source_url
-     *
-     * @return string|null
-     */
-    public function getICalSourceUrl()
-    {
-        return $this->container['i_cal_source_url'];
-    }
-
-    /**
-     * Sets i_cal_source_url
-     *
-     * @param string|null $i_cal_source_url i_cal_source_url
-     *
-     * @return self
-     */
-    public function setICalSourceUrl($i_cal_source_url)
-    {
-        $this->container['i_cal_source_url'] = $i_cal_source_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets campus_id
+     * Gets sort_key
      *
      * @return int|null
      */
-    public function getCampusId()
+    public function getSortKey()
     {
-        return $this->container['campus_id'];
+        return $this->container['sort_key'];
     }
 
     /**
-     * Sets campus_id
+     * Sets sort_key
      *
-     * @param int|null $campus_id campus_id
+     * @param int|null $sort_key sort_key
      *
      * @return self
      */
-    public function setCampusId($campus_id)
+    public function setSortKey($sort_key)
     {
-        $this->container['campus_id'] = $campus_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets event_template_id
-     *
-     * @return int|null
-     */
-    public function getEventTemplateId()
-    {
-        return $this->container['event_template_id'];
-    }
-
-    /**
-     * Sets event_template_id
-     *
-     * @param int|null $event_template_id event_template_id
-     *
-     * @return self
-     */
-    public function setEventTemplateId($event_template_id)
-    {
-        $this->container['event_template_id'] = $event_template_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

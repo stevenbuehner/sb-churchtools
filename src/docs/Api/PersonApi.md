@@ -5,43 +5,44 @@ All URIs are relative to /api.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createPerson()**](PersonApi.md#createPerson) | **POST** /persons | Create new person
-[**declineServiceRequestById()**](PersonApi.md#declineServiceRequestById) | **DELETE** /persons/{id}/servicerequests/{requestId} | Decline a service request for a person
+[**declineServiceRequestById()**](PersonApi.md#declineServiceRequestById) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person
 [**deleteDeviceForPerson()**](PersonApi.md#deleteDeviceForPerson) | **DELETE** /persons/{personId}/devices/{deviceId} | Remove device for person
-[**deletePerson()**](PersonApi.md#deletePerson) | **DELETE** /persons/{id} | Delete person
-[**deletePersonSetting()**](PersonApi.md#deletePersonSetting) | **DELETE** /persons/{id}/settings/{module}/{attribute} | Delete a person setting
-[**deleteSecuritylevelId()**](PersonApi.md#deleteSecuritylevelId) | **DELETE** /securitylevels/{id} | Delete the Security Level
-[**getAllGroupsForPerson()**](PersonApi.md#getAllGroupsForPerson) | **GET** /persons/{id}/groups | Get all groups a member is in
-[**getAllPersonSettings()**](PersonApi.md#getAllPersonSettings) | **GET** /persons/{id}/settings | Get all person settings
+[**deletePerson()**](PersonApi.md#deletePerson) | **DELETE** /persons/{personId} | Delete person
+[**deletePersonSetting()**](PersonApi.md#deletePersonSetting) | **DELETE** /persons/{personId}/settings/{module}/{attribute} | Delete a person setting
+[**getAllGroupsForPerson()**](PersonApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in
+[**getAllPersonSettings()**](PersonApi.md#getAllPersonSettings) | **GET** /persons/{personId}/settings | Get all person settings
 [**getAllPersons()**](PersonApi.md#getAllPersons) | **GET** /persons | Get all persons
 [**getDeviceForPerson()**](PersonApi.md#getDeviceForPerson) | **GET** /persons/{personId}/devices/{deviceId} | Fetch one device
-[**getOpenServiceRequestsForPerson()**](PersonApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{id}/servicerequests | Get all service requests for a person
-[**getPersonById()**](PersonApi.md#getPersonById) | **GET** /persons/{id} | Get a person by ID or GUID
+[**getOpenServiceRequestsForPerson()**](PersonApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person
+[**getPersonById()**](PersonApi.md#getPersonById) | **GET** /persons/{personId} | Get a person by ID or GUID
 [**getPersonDevices()**](PersonApi.md#getPersonDevices) | **GET** /persons/{personId}/devices | Fetch all registered devices for person
-[**getPersonEvents()**](PersonApi.md#getPersonEvents) | **GET** /persons/{id}/events | Get events that person is involved with
-[**getPersonModuleSettings()**](PersonApi.md#getPersonModuleSettings) | **GET** /persons/{id}/settings/{module} | Get all person settings of a module
+[**getPersonEvents()**](PersonApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with
+[**getPersonInformation()**](PersonApi.md#getPersonInformation) | **GET** /person/{personId}/information | Get PDF with privacy-information
+[**getPersonMasterdata()**](PersonApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
+[**getPersonModuleSettings()**](PersonApi.md#getPersonModuleSettings) | **GET** /persons/{personId}/settings/{module} | Get all person settings of a module
 [**getPersonProperties()**](PersonApi.md#getPersonProperties) | **POST** /persons/properties | Retrieve people&#39;s properties, whether they own an email adress
-[**getPersonRelationships()**](PersonApi.md#getPersonRelationships) | **GET** /persons/{id}/relationships | Get all relationships linked to this person
-[**getPersonSetting()**](PersonApi.md#getPersonSetting) | **GET** /persons/{id}/settings/{module}/{attribute} | Get person setting
-[**getPersonTags()**](PersonApi.md#getPersonTags) | **GET** /persons/{id}/tags | Get all tags attached to a person
+[**getPersonRelationships()**](PersonApi.md#getPersonRelationships) | **GET** /persons/{personId}/relationships | Get all relationships linked to this person
+[**getPersonSetting()**](PersonApi.md#getPersonSetting) | **GET** /persons/{personId}/settings/{module}/{attribute} | Get person setting
+[**getPersonTags()**](PersonApi.md#getPersonTags) | **GET** /persons/{personId}/tags | Get all tags attached to a person
 [**getPersonsBirthdays()**](PersonApi.md#getPersonsBirthdays) | **GET** /persons/birthdays | Fetch Birthdays
 [**getPersonsDuplicates()**](PersonApi.md#getPersonsDuplicates) | **GET** /persons/duplicates | get potential duplicates of persons
-[**getPersonsIdLogintoken()**](PersonApi.md#getPersonsIdLogintoken) | **GET** /persons/{id}/logintoken | Fetch Login Token
+[**getPersonsIdLogintoken()**](PersonApi.md#getPersonsIdLogintoken) | **GET** /persons/{personId}/logintoken | Fetch Login Token
 [**getPersonsPersonidMergeDuplicateid()**](PersonApi.md#getPersonsPersonidMergeDuplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a  merge
-[**getServiceRequestById()**](PersonApi.md#getServiceRequestById) | **GET** /persons/{id}/servicerequests/{requestId} | Get a specific service request for a person
+[**getServiceRequestById()**](PersonApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person
 [**invitePerson()**](PersonApi.md#invitePerson) | **POST** /persons/{personId}/invite | Invite Person to ChurchTools
-[**patchPerson()**](PersonApi.md#patchPerson) | **PATCH** /persons/{id} | Updates a person
+[**patchPerson()**](PersonApi.md#patchPerson) | **PATCH** /persons/{personId} | Updates a person
 [**patchPersonsPersonidMergeDuplicateid()**](PersonApi.md#patchPersonsPersonidMergeDuplicateid) | **PATCH** /persons/{personId}/merge/{duplicateId} | Merge two person records
 [**postPersonsPersonIdArchive()**](PersonApi.md#postPersonsPersonIdArchive) | **POST** /persons/{personId}/archive | 
-[**undoServiceRequestById()**](PersonApi.md#undoServiceRequestById) | **POST** /persons/{id}/servicerequests/{requestId}/undo | Undo last service request action
+[**undoServiceRequestById()**](PersonApi.md#undoServiceRequestById) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action
 [**updateDeviceForPerson()**](PersonApi.md#updateDeviceForPerson) | **PUT** /persons/{personId}/devices/{deviceId} | Create / Update new device for person
-[**updatePersonSetting()**](PersonApi.md#updatePersonSetting) | **PUT** /persons/{id}/settings/{module}/{attribute} | Create/Update person setting
-[**updateServiceRequestById()**](PersonApi.md#updateServiceRequestById) | **PUT** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
+[**updatePersonSetting()**](PersonApi.md#updatePersonSetting) | **PUT** /persons/{personId}/settings/{module}/{attribute} | Create/Update person setting
+[**updateServiceRequestById()**](PersonApi.md#updateServiceRequestById) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person
 
 
 ## `createPerson()`
 
 ```php
-createPerson($create_person_request, $force, $without_privacy_policy_agreement): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
+createPerson($create_person_request, $force, $without_privacy_policy_agreement): \StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response
 ```
 
 Create new person
@@ -55,7 +56,7 @@ Endpoint to save a new person in ChurchTools. Generally, you can provide any inf
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -89,11 +90,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
+[**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response**](../Model/PutCheckinPersons200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -107,7 +108,7 @@ Name | Type | Description  | Notes
 ## `declineServiceRequestById()`
 
 ```php
-declineServiceRequestById($id, $request_id, $comment)
+declineServiceRequestById($person_id, $request_id, $comment)
 ```
 
 Decline a service request for a person
@@ -121,7 +122,7 @@ Use this endpoint to decline a service request.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -133,12 +134,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 $comment = ; // string | Comment
 
 try {
-    $apiInstance->declineServiceRequestById($id, $request_id, $comment);
+    $apiInstance->declineServiceRequestById($person_id, $request_id, $comment);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->declineServiceRequestById: ', $e->getMessage(), PHP_EOL;
 }
@@ -148,7 +149,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
  **comment** | **string**| Comment | [optional]
 
@@ -158,7 +159,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -186,7 +187,7 @@ Remove a device from ChurchTools.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -198,7 +199,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 3.4; // float | 
+$person_id = 42; // int | ID of person
 $device_id = 'device_id_example'; // string
 
 try {
@@ -212,7 +213,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **float**|  |
+ **person_id** | **int**| ID of person |
  **device_id** | **string**|  |
 
 ### Return type
@@ -221,7 +222,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -235,7 +236,7 @@ void (empty response body)
 ## `deletePerson()`
 
 ```php
-deletePerson($id)
+deletePerson($person_id)
 ```
 
 Delete person
@@ -249,7 +250,7 @@ Delete the Person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -261,10 +262,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 
 try {
-    $apiInstance->deletePerson($id);
+    $apiInstance->deletePerson($person_id);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->deletePerson: ', $e->getMessage(), PHP_EOL;
 }
@@ -274,7 +275,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -282,7 +283,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -296,7 +297,7 @@ void (empty response body)
 ## `deletePersonSetting()`
 
 ```php
-deletePersonSetting($id, $module, $attribute)
+deletePersonSetting($person_id, $attribute, $module)
 ```
 
 Delete a person setting
@@ -310,7 +311,7 @@ Deleting settings is sometimes useful or necessary. This endpoint can be used to
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -322,12 +323,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
-$module = 'module_example'; // string | Module name like `churchdb` or `churchservice`
+$person_id = 42; // int | ID of person
 $attribute = 'attribute_example'; // string | Attribute name of setting
+$module = 'module_example'; // string | Module name like `churchdb` or `churchservice`
 
 try {
-    $apiInstance->deletePersonSetting($id, $module, $attribute);
+    $apiInstance->deletePersonSetting($person_id, $attribute, $module);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->deletePersonSetting: ', $e->getMessage(), PHP_EOL;
 }
@@ -337,9 +338,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
- **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
+ **person_id** | **int**| ID of person |
  **attribute** | **string**| Attribute name of setting |
+ **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
 
 ### Return type
 
@@ -347,7 +348,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -358,71 +359,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteSecuritylevelId()`
-
-```php
-deleteSecuritylevelId($id)
-```
-
-Delete the Security Level
-
-Delete a security level
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = 'id_example'; // string | Id of a particular security level
-
-try {
-    $apiInstance->deleteSecuritylevelId($id);
-} catch (Exception $e) {
-    echo 'Exception when calling PersonApi->deleteSecuritylevelId: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Id of a particular security level |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `getAllGroupsForPerson()`
 
 ```php
-getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
+getAllGroupsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
 ```
 
 Get all groups a member is in
@@ -436,7 +376,7 @@ This endpoint returns an array with all groups the user is in.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -448,12 +388,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
-$show_overdue_groups = True; // bool | Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person & groups
-$show_inactive_groups = True; // bool | Determines if inactive groups should be returned
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups);
+    $result = $apiInstance->getAllGroupsForPerson($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getAllGroupsForPerson: ', $e->getMessage(), PHP_EOL;
@@ -464,9 +402,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
- **show_overdue_groups** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups | [optional]
- **show_inactive_groups** | **bool**| Determines if inactive groups should be returned | [optional]
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -474,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -488,7 +424,7 @@ Name | Type | Description  | Notes
 ## `getAllPersonSettings()`
 
 ```php
-getAllPersonSettings($id): \StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response
+getAllPersonSettings($person_id): \StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response
 ```
 
 Get all person settings
@@ -502,7 +438,7 @@ Use this endpoint to get all person settings for this user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -514,10 +450,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getAllPersonSettings($id);
+    $result = $apiInstance->getAllPersonSettings($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getAllPersonSettings: ', $e->getMessage(), PHP_EOL;
@@ -528,7 +464,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -536,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -564,7 +500,7 @@ This endpoint gives you all the people you are allowed to see. Each person objec
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -612,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -640,7 +576,7 @@ If person ID and device ID are know you can fetch all information about one devi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -652,7 +588,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 3.4; // float | 
+$person_id = 42; // int | ID of person
 $device_id = 'device_id_example'; // string
 
 try {
@@ -667,7 +603,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **float**|  |
+ **person_id** | **int**| ID of person |
  **device_id** | **string**|  |
 
 ### Return type
@@ -676,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -690,7 +626,7 @@ Name | Type | Description  | Notes
 ## `getOpenServiceRequestsForPerson()`
 
 ```php
-getOpenServiceRequestsForPerson($id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
+getOpenServiceRequestsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
 ```
 
 Get all service requests for a person
@@ -704,7 +640,7 @@ Use this endpoint to get all service requests for this user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -716,10 +652,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getOpenServiceRequestsForPerson($id);
+    $result = $apiInstance->getOpenServiceRequestsForPerson($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getOpenServiceRequestsForPerson: ', $e->getMessage(), PHP_EOL;
@@ -730,7 +666,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -738,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -752,7 +688,7 @@ Name | Type | Description  | Notes
 ## `getPersonById()`
 
 ```php
-getPersonById($id): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
+getPersonById($person_id): \StevenBuehner\ChurchTools\Model\GetPersonById200Response
 ```
 
 Get a person by ID or GUID
@@ -766,7 +702,7 @@ Each person as a unique numeric ID in ChurchTools. This ID is used all over in C
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -778,10 +714,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // string | ID or GUID of person
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getPersonById($id);
+    $result = $apiInstance->getPersonById($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonById: ', $e->getMessage(), PHP_EOL;
@@ -792,15 +728,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID or GUID of person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonById200Response**](../Model/GetPersonById200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -819,8 +755,6 @@ getPersonDevices($person_id): \StevenBuehner\ChurchTools\Model\GetPersonDevices2
 
 Fetch all registered devices for person
 
-This endpoint returns all in ChurchTools registered devices (Smartphones or Tablets with CT App) for a person.
-
 ### Example
 
 ```php
@@ -828,7 +762,7 @@ This endpoint returns all in ChurchTools registered devices (Smartphones or Tabl
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -840,7 +774,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 3.4; // float | ID of Person
+$person_id = 42; // int | ID of person
 
 try {
     $result = $apiInstance->getPersonDevices($person_id);
@@ -854,7 +788,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **float**| ID of Person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -862,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -876,7 +810,7 @@ Name | Type | Description  | Notes
 ## `getPersonEvents()`
 
 ```php
-getPersonEvents($id, $from): \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response
+getPersonEvents($person_id): \StevenBuehner\ChurchTools\Model\GetEvent200Response
 ```
 
 Get events that person is involved with
@@ -890,7 +824,7 @@ Gets a list of all events that a person is involved
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -902,11 +836,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
-$from = Thu Aug 08 02:00:00 CEST 2019; // \DateTime | Start date from when events are returned. Default value: today
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getPersonEvents($id, $from);
+    $result = $apiInstance->getPersonEvents($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonEvents: ', $e->getMessage(), PHP_EOL;
@@ -917,16 +850,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
- **from** | **\DateTime**| Start date from when events are returned. Default value: today | [optional]
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response**](../Model/GetPersonEvents200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetEvent200Response**](../Model/GetEvent200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -937,10 +869,129 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPersonInformation()`
+
+```php
+getPersonInformation($person_id): \StevenBuehner\ChurchTools\Model\GetPersonInformation200Response
+```
+
+Get PDF with privacy-information
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 'person_id_example'; // string
+
+try {
+    $result = $apiInstance->getPersonInformation($person_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonApi->getPersonInformation: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **person_id** | **string**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetPersonInformation200Response**](../Model/GetPersonInformation200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPersonMasterdata()`
+
+```php
+getPersonMasterdata(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
+```
+
+Get person & groups masterdata
+
+Endpoint for getting all relevant masterdata for persons and groups.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getPersonMasterdata();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonApi->getPersonMasterdata: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response**](../Model/GetPersonMasterdata200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getPersonModuleSettings()`
 
 ```php
-getPersonModuleSettings($id, $module): \StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response
+getPersonModuleSettings($person_id, $module): \StevenBuehner\ChurchTools\Model\GetAllPersonSettings200Response
 ```
 
 Get all person settings of a module
@@ -954,7 +1005,7 @@ Person settings are grouped per module. This endpoint returns an array of all us
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -966,11 +1017,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $module = 'module_example'; // string | Module name like `churchdb` or `churchservice`
 
 try {
-    $result = $apiInstance->getPersonModuleSettings($id, $module);
+    $result = $apiInstance->getPersonModuleSettings($person_id, $module);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonModuleSettings: ', $e->getMessage(), PHP_EOL;
@@ -981,7 +1032,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
 
 ### Return type
@@ -990,7 +1041,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1016,7 +1067,7 @@ Retrieve people's properties, whether they own an email adress
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1050,7 +1101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1064,7 +1115,7 @@ Name | Type | Description  | Notes
 ## `getPersonRelationships()`
 
 ```php
-getPersonRelationships($id): \StevenBuehner\ChurchTools\Model\GetPersonRelationships200Response
+getPersonRelationships($person_id): \StevenBuehner\ChurchTools\Model\GetPersonRelationships200Response
 ```
 
 Get all relationships linked to this person
@@ -1078,7 +1129,7 @@ This endpoint returns all relationships of this person. The result is sorted by 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1090,10 +1141,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getPersonRelationships($id);
+    $result = $apiInstance->getPersonRelationships($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonRelationships: ', $e->getMessage(), PHP_EOL;
@@ -1104,7 +1155,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -1112,7 +1163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1126,7 +1177,7 @@ Name | Type | Description  | Notes
 ## `getPersonSetting()`
 
 ```php
-getPersonSetting($id, $module, $attribute): \StevenBuehner\ChurchTools\Model\GetPersonSetting200Response
+getPersonSetting($person_id, $attribute, $module): \StevenBuehner\ChurchTools\Model\GetPersonSetting200Response
 ```
 
 Get person setting
@@ -1140,7 +1191,7 @@ To retrieve a specific person setting, use this endpoint. A setting is identifie
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1152,12 +1203,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
-$module = 'module_example'; // string | Module name like `churchdb` or `churchservice`
+$person_id = 42; // int | ID of person
 $attribute = 'attribute_example'; // string | Attribute name of setting
+$module = 'module_example'; // string | Module name like `churchdb` or `churchservice`
 
 try {
-    $result = $apiInstance->getPersonSetting($id, $module, $attribute);
+    $result = $apiInstance->getPersonSetting($person_id, $attribute, $module);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonSetting: ', $e->getMessage(), PHP_EOL;
@@ -1168,9 +1219,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
- **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
+ **person_id** | **int**| ID of person |
  **attribute** | **string**| Attribute name of setting |
+ **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
 
 ### Return type
 
@@ -1178,7 +1229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1192,7 +1243,7 @@ Name | Type | Description  | Notes
 ## `getPersonTags()`
 
 ```php
-getPersonTags($id): \StevenBuehner\ChurchTools\Model\GetPersonTags200Response
+getPersonTags($person_id): \StevenBuehner\ChurchTools\Model\GetPersonTags200Response
 ```
 
 Get all tags attached to a person
@@ -1204,7 +1255,7 @@ Get all tags attached to a person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1216,10 +1267,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getPersonTags($id);
+    $result = $apiInstance->getPersonTags($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonTags: ', $e->getMessage(), PHP_EOL;
@@ -1230,7 +1281,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -1238,7 +1289,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1252,7 +1303,7 @@ Name | Type | Description  | Notes
 ## `getPersonsBirthdays()`
 
 ```php
-getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body): \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200Response
+getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids): \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200Response
 ```
 
 Fetch Birthdays
@@ -1266,7 +1317,7 @@ This endpoint returns Birthdays within a specific time interval. The returned ob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1280,13 +1331,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
 );
 $start_date = Sat Jan 01 01:00:00 CET 2000; // \DateTime | Birthdays from that date on defaults to yesterday
 $end_date = Sun Dec 31 01:00:00 CET 2000; // \DateTime | Birthdays up to that date, defaults to 30 deays from now
-$campus_ids = NULL; // array | filter by campus ids
+$campus_ids = array(56); // int[] | filter by campus ids
 $my_groups = True; // bool | filter by people in my groups
-$group_ids = NULL; // array | filter by group ids
-$body = array('key' => new \stdClass); // object
+$group_ids = array(56); // int[] | filter by group ids
 
 try {
-    $result = $apiInstance->getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids, $body);
+    $result = $apiInstance->getPersonsBirthdays($start_date, $end_date, $campus_ids, $my_groups, $group_ids);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonsBirthdays: ', $e->getMessage(), PHP_EOL;
@@ -1299,10 +1349,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_date** | **\DateTime**| Birthdays from that date on defaults to yesterday | [optional]
  **end_date** | **\DateTime**| Birthdays up to that date, defaults to 30 deays from now | [optional]
- **campus_ids** | [**array**](../Model/.md)| filter by campus ids | [optional]
+ **campus_ids** | [**int[]**](../Model/int.md)| filter by campus ids | [optional]
  **my_groups** | **bool**| filter by people in my groups | [optional]
- **group_ids** | [**array**](../Model/.md)| filter by group ids | [optional]
- **body** | **object**|  | [optional]
+ **group_ids** | [**int[]**](../Model/int.md)| filter by group ids | [optional]
 
 ### Return type
 
@@ -1310,11 +1359,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -1324,7 +1373,7 @@ Name | Type | Description  | Notes
 ## `getPersonsDuplicates()`
 
 ```php
-getPersonsDuplicates($tolerance, $relation_name_for_duplicates): \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200Response
+getPersonsDuplicates($tolerance, $relation_name_for_duplicate): \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200Response
 ```
 
 get potential duplicates of persons
@@ -1338,7 +1387,7 @@ get potential duplicates of persons
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1351,10 +1400,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $tolerance = 30; // int | Tolerance for matching; defaults to 30
-$relation_name_for_duplicates = 'relation_name_for_duplicates_example'; // string | Name of `Duplicate` Relationship; Persons with this relationship will never be reported as duplicates.
+$relation_name_for_duplicate = 'relation_name_for_duplicate_example'; // string | Name of `Duplicate` Relationship; Persons with this relationship will never be reported as duplicates.
 
 try {
-    $result = $apiInstance->getPersonsDuplicates($tolerance, $relation_name_for_duplicates);
+    $result = $apiInstance->getPersonsDuplicates($tolerance, $relation_name_for_duplicate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonsDuplicates: ', $e->getMessage(), PHP_EOL;
@@ -1366,7 +1415,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tolerance** | **int**| Tolerance for matching; defaults to 30 | [optional] [default to 30]
- **relation_name_for_duplicates** | **string**| Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. | [optional]
+ **relation_name_for_duplicate** | **string**| Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. | [optional]
 
 ### Return type
 
@@ -1374,7 +1423,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1388,7 +1437,7 @@ Name | Type | Description  | Notes
 ## `getPersonsIdLogintoken()`
 
 ```php
-getPersonsIdLogintoken($id): \StevenBuehner\ChurchTools\Model\GetPersonsIdLogintoken200Response
+getPersonsIdLogintoken($person_id): \StevenBuehner\ChurchTools\Model\GetPersonsIdLogintoken200Response
 ```
 
 Fetch Login Token
@@ -1402,7 +1451,7 @@ Fetch login token for person. If a token does not yet exists, a new one is creat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1414,10 +1463,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getPersonsIdLogintoken($id);
+    $result = $apiInstance->getPersonsIdLogintoken($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonsIdLogintoken: ', $e->getMessage(), PHP_EOL;
@@ -1428,7 +1477,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -1436,7 +1485,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1464,7 +1513,7 @@ Get information to compare two person records in order to prepare a  merge
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1499,7 +1548,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1513,7 +1562,7 @@ void (empty response body)
 ## `getServiceRequestById()`
 
 ```php
-getServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+getServiceRequestById($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Get a specific service request for a person
@@ -1527,7 +1576,7 @@ Use this endpoint to get a specific service request for this user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1539,11 +1588,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 
 try {
-    $result = $apiInstance->getServiceRequestById($id, $request_id);
+    $result = $apiInstance->getServiceRequestById($person_id, $request_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -1554,7 +1603,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
 
 ### Return type
@@ -1563,7 +1612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1591,7 +1640,7 @@ Invite person to ChurchTools. Calling this API will send an invitation Mail to t
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1603,7 +1652,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 'person_id_example'; // string
+$person_id = 42; // int | ID of person
 $set_password_url_template = 'set_password_url_template_example'; // string | Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId
 
 try {
@@ -1617,7 +1666,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
+ **person_id** | **int**| ID of person |
  **set_password_url_template** | **string**| Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId | [optional]
 
 ### Return type
@@ -1626,7 +1675,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1640,7 +1689,7 @@ void (empty response body)
 ## `patchPerson()`
 
 ```php
-patchPerson($id, $patch_person_request): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
+patchPerson($person_id, $patch_person_request): \StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response
 ```
 
 Updates a person
@@ -1654,7 +1703,7 @@ Endpoint to update a person in ChurchTools. Generally, you can provide any infor
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1666,11 +1715,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $patch_person_request = new \StevenBuehner\ChurchTools\Model\PatchPersonRequest(); // \StevenBuehner\ChurchTools\Model\PatchPersonRequest | Include those fields you want to update and are allowed to write.
 
 try {
-    $result = $apiInstance->patchPerson($id, $patch_person_request);
+    $result = $apiInstance->patchPerson($person_id, $patch_person_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->patchPerson: ', $e->getMessage(), PHP_EOL;
@@ -1681,16 +1730,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **patch_person_request** | [**\StevenBuehner\ChurchTools\Model\PatchPersonRequest**](../Model/PatchPersonRequest.md)| Include those fields you want to update and are allowed to write. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
+[**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response**](../Model/PutCheckinPersons200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1718,7 +1767,7 @@ Merge two person records
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1757,7 +1806,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1785,7 +1834,7 @@ archives or undos an archive of a person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1797,7 +1846,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 'person_id_example'; // string
+$person_id = 42; // int | ID of person
 $post_persons_person_id_archive_request = new \StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest(); // \StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest
 
 try {
@@ -1811,7 +1860,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
+ **person_id** | **int**| ID of person |
  **post_persons_person_id_archive_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest**](../Model/PostPersonsPersonIdArchiveRequest.md)|  | [optional]
 
 ### Return type
@@ -1820,7 +1869,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1834,7 +1883,7 @@ void (empty response body)
 ## `undoServiceRequestById()`
 
 ```php
-undoServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+undoServiceRequestById($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Undo last service request action
@@ -1848,7 +1897,7 @@ This endpoint can undo either a declination or an acceptance. Only the requested
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1860,11 +1909,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 
 try {
-    $result = $apiInstance->undoServiceRequestById($id, $request_id);
+    $result = $apiInstance->undoServiceRequestById($person_id, $request_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->undoServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -1875,7 +1924,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
 
 ### Return type
@@ -1884,7 +1933,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1912,7 +1961,7 @@ Save a new device or update an existing using this endpoint. This endpoint is us
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1924,7 +1973,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 3.4; // float | 
+$person_id = 42; // int | ID of person
 $device_id = 'device_id_example'; // string
 $update_device_for_person_request = {"type":"Android"}; // \StevenBuehner\ChurchTools\Model\UpdateDeviceForPersonRequest | Device information.
 
@@ -1940,7 +1989,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **float**|  |
+ **person_id** | **int**| ID of person |
  **device_id** | **string**|  |
  **update_device_for_person_request** | [**\StevenBuehner\ChurchTools\Model\UpdateDeviceForPersonRequest**](../Model/UpdateDeviceForPersonRequest.md)| Device information. | [optional]
 
@@ -1950,7 +1999,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1964,7 +2013,7 @@ Name | Type | Description  | Notes
 ## `updatePersonSetting()`
 
 ```php
-updatePersonSetting($id, $module, $attribute): \StevenBuehner\ChurchTools\Model\GetPersonSetting200Response
+updatePersonSetting($person_id, $attribute, $module): \StevenBuehner\ChurchTools\Model\GetPersonSetting200Response
 ```
 
 Create/Update person setting
@@ -1978,7 +2027,7 @@ Create/Update person setting
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1990,12 +2039,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
-$module = 'module_example'; // string | Module name like `churchdb` or `churchservice`
+$person_id = 42; // int | ID of person
 $attribute = 'attribute_example'; // string | Attribute name of setting
+$module = 'module_example'; // string | Module name like `churchdb` or `churchservice`
 
 try {
-    $result = $apiInstance->updatePersonSetting($id, $module, $attribute);
+    $result = $apiInstance->updatePersonSetting($person_id, $attribute, $module);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->updatePersonSetting: ', $e->getMessage(), PHP_EOL;
@@ -2006,9 +2055,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
- **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
+ **person_id** | **int**| ID of person |
  **attribute** | **string**| Attribute name of setting |
+ **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
 
 ### Return type
 
@@ -2016,7 +2065,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2030,7 +2079,7 @@ Name | Type | Description  | Notes
 ## `updateServiceRequestById()`
 
 ```php
-updateServiceRequestById($id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+updateServiceRequestById($person_id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Agree to a service request for a person
@@ -2044,7 +2093,7 @@ Use this endpoint to agree to a service request. To decline a service request, u
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2056,12 +2105,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 $update_service_request_by_id_request = new \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest(); // \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest | Send the agreed state and optionally a comment.
 
 try {
-    $result = $apiInstance->updateServiceRequestById($id, $request_id, $update_service_request_by_id_request);
+    $result = $apiInstance->updateServiceRequestById($person_id, $request_id, $update_service_request_by_id_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->updateServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -2072,7 +2121,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
  **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. |
 
@@ -2082,7 +2131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

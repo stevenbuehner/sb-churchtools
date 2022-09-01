@@ -57,8 +57,8 @@ class GetAllPersons200Response implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Person1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMeta'
+        'data' => '\StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta'
     ];
 
     /**
@@ -212,7 +212,7 @@ class GetAllPersons200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Person1[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData[]|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class GetAllPersons200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Person1[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData[]|null $data data
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class GetAllPersons200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetAllPersons200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null $meta meta
      *
      * @return self
      */

@@ -4,78 +4,15 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFilesId()**](AdminApi.md#deleteFilesId) | **DELETE** /files/{id} | 
 [**deleteSecuritylevelId()**](AdminApi.md#deleteSecuritylevelId) | **DELETE** /securitylevels/{id} | Delete the Security Level
 [**getAllLogs()**](AdminApi.md#getAllLogs) | **GET** /logs | Get all log messages
 [**getLogById()**](AdminApi.md#getLogById) | **GET** /logs/{id} | Get a log message
 [**getLoginStatistics()**](AdminApi.md#getLoginStatistics) | **GET** /logs/statistics/login | 
 [**getSecuritylevelId()**](AdminApi.md#getSecuritylevelId) | **GET** /securitylevels/{id} | Get a particular security level
 [**getSecuritylevels()**](AdminApi.md#getSecuritylevels) | **GET** /securitylevels | get all securitylevels
-[**patchFilesId()**](AdminApi.md#patchFilesId) | **PATCH** /files/{id} | 
 [**patchSecuritylevelId()**](AdminApi.md#patchSecuritylevelId) | **PATCH** /securitylevels/{id} | Update the security level
 [**postSecuritylevelId()**](AdminApi.md#postSecuritylevelId) | **POST** /securitylevels/{id} | Create a new security Level
 
-
-## `deleteFilesId()`
-
-```php
-deleteFilesId($id)
-```
-
-
-
-delete file by id
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = 56; // int | file id
-
-try {
-    $apiInstance->deleteFilesId($id);
-} catch (Exception $e) {
-    echo 'Exception when calling AdminApi->deleteFilesId: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| file id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
 
 ## `deleteSecuritylevelId()`
 
@@ -94,7 +31,7 @@ Delete a security level
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -106,7 +43,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | Id of a particular security level
+$id = 1; // int | ID of Entity
 
 try {
     $apiInstance->deleteSecuritylevelId($id);
@@ -119,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Id of a particular security level |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -127,7 +64,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -155,7 +92,7 @@ The response is a collection of all log messages you may see and is limited to a
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -168,7 +105,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     $config
 );
 $message = Person updated; // string | Filter by text
-$levels = NULL; // array | Filter by log level ID
+$levels = array('levels_example'); // string[] | Filter by log level ID
 $before = 2019-04-16T10:57:09Z; // \DateTime | Filter log messages before that date. (Use ISO-Format)
 $after = 2019-04-16T10:57:09Z; // \DateTime | Filter log messages after that date. (Use ISO-Format)
 $person_id = 56; // int | Filter by person
@@ -188,7 +125,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message** | **string**| Filter by text | [optional]
- **levels** | [**array**](../Model/.md)| Filter by log level ID | [optional]
+ **levels** | [**string[]**](../Model/string.md)| Filter by log level ID | [optional]
  **before** | **\DateTime**| Filter log messages before that date. (Use ISO-Format) | [optional]
  **after** | **\DateTime**| Filter log messages after that date. (Use ISO-Format) | [optional]
  **person_id** | **int**| Filter by person | [optional]
@@ -201,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -229,7 +166,7 @@ Fetch one specific log message by its ID.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -241,7 +178,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 12; // int | ID of log
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getLogById($id);
@@ -255,7 +192,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of log |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -263,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -291,7 +228,7 @@ Get statistics about login counts of users.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -329,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -357,7 +294,7 @@ Get a particular Security Level
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -369,7 +306,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | Id of a particular security level
+$id = 1; // int | ID of Entity
 
 try {
     $apiInstance->getSecuritylevelId($id);
@@ -382,7 +319,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Id of a particular security level |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -390,7 +327,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -416,7 +353,7 @@ get all securitylevels
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -447,69 +384,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `patchFilesId()`
-
-```php
-patchFilesId($id): \StevenBuehner\ChurchTools\Model\PatchFilesId204Response
-```
-
-
-
-rename name of a file by id
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = 56; // int | file id
-
-try {
-    $result = $apiInstance->patchFilesId($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AdminApi->patchFilesId: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| file id |
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\PatchFilesId204Response**](../Model/PatchFilesId204Response.md)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -537,7 +412,7 @@ Change the Security Level
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -549,7 +424,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | Id of a particular security level
+$id = 1; // int | ID of Entity
 $forcereorder = True; // bool | Need to be true, if securitylevel shall be reordered
 $patch_securitylevel_id_request = new \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest(); // \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest | Information to patch the security level
 
@@ -565,7 +440,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Id of a particular security level |
+ **id** | **int**| ID of Entity |
  **forcereorder** | **bool**| Need to be true, if securitylevel shall be reordered | [optional]
  **patch_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest**](../Model/PatchSecuritylevelIdRequest.md)| Information to patch the security level | [optional]
 
@@ -575,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -603,7 +478,7 @@ Create a new Security level
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -615,7 +490,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AdminApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | Id of a particular security level
+$id = 1; // int | ID of Entity
 $post_securitylevel_id_request = {"name":"Name des neuen Security levels"}; // \StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest
 
 try {
@@ -630,7 +505,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Id of a particular security level |
+ **id** | **int**| ID of Entity |
  **post_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest**](../Model/PostSecuritylevelIdRequest.md)|  | [optional]
 
 ### Return type
@@ -639,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

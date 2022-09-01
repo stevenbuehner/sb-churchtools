@@ -58,13 +58,13 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'role_id' => 'float',
-        'is_for_waitinglist' => 'bool',
+        'body' => 'string',
+        'id' => 'int',
         'is_active' => 'bool',
-        'sender' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject',
-        'subject' => 'string',
-        'body' => 'string'
+        'is_for_waitinglist' => 'bool',
+        'role_id' => 'int',
+        'sender' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
+        'subject' => 'string'
     ];
 
     /**
@@ -75,13 +75,13 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'body' => null,
         'id' => null,
-        'role_id' => null,
-        'is_for_waitinglist' => null,
         'is_active' => null,
+        'is_for_waitinglist' => null,
+        'role_id' => null,
         'sender' => null,
-        'subject' => null,
-        'body' => null
+        'subject' => null
     ];
 
     /**
@@ -111,13 +111,13 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'body' => 'body',
         'id' => 'id',
-        'role_id' => 'roleId',
-        'is_for_waitinglist' => 'isForWaitinglist',
         'is_active' => 'isActive',
+        'is_for_waitinglist' => 'isForWaitinglist',
+        'role_id' => 'roleId',
         'sender' => 'sender',
-        'subject' => 'subject',
-        'body' => 'body'
+        'subject' => 'subject'
     ];
 
     /**
@@ -126,13 +126,13 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'body' => 'setBody',
         'id' => 'setId',
-        'role_id' => 'setRoleId',
-        'is_for_waitinglist' => 'setIsForWaitinglist',
         'is_active' => 'setIsActive',
+        'is_for_waitinglist' => 'setIsForWaitinglist',
+        'role_id' => 'setRoleId',
         'sender' => 'setSender',
-        'subject' => 'setSubject',
-        'body' => 'setBody'
+        'subject' => 'setSubject'
     ];
 
     /**
@@ -141,13 +141,13 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'body' => 'getBody',
         'id' => 'getId',
-        'role_id' => 'getRoleId',
-        'is_for_waitinglist' => 'getIsForWaitinglist',
         'is_active' => 'getIsActive',
+        'is_for_waitinglist' => 'getIsForWaitinglist',
+        'role_id' => 'getRoleId',
         'sender' => 'getSender',
-        'subject' => 'getSubject',
-        'body' => 'getBody'
+        'subject' => 'getSubject'
     ];
 
     /**
@@ -207,13 +207,13 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['body'] = $data['body'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['role_id'] = $data['role_id'] ?? null;
-        $this->container['is_for_waitinglist'] = $data['is_for_waitinglist'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
+        $this->container['is_for_waitinglist'] = $data['is_for_waitinglist'] ?? null;
+        $this->container['role_id'] = $data['role_id'] ?? null;
         $this->container['sender'] = $data['sender'] ?? null;
         $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['body'] = $data['body'] ?? null;
     }
 
     /**
@@ -225,17 +225,24 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
+        if ((mb_strlen($this->container['body']) < 1)) {
+            $invalidProperties[] = "invalid value for 'body', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['role_id'] === null) {
-            $invalidProperties[] = "'role_id' can't be null";
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['is_for_waitinglist'] === null) {
             $invalidProperties[] = "'is_for_waitinglist' can't be null";
         }
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
+        if ($this->container['role_id'] === null) {
+            $invalidProperties[] = "'role_id' can't be null";
         }
         if ($this->container['sender'] === null) {
             $invalidProperties[] = "'sender' can't be null";
@@ -245,13 +252,6 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($this->container['subject']) < 1)) {
             $invalidProperties[] = "invalid value for 'subject', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['body'] === null) {
-            $invalidProperties[] = "'body' can't be null";
-        }
-        if ((mb_strlen($this->container['body']) < 1)) {
-            $invalidProperties[] = "invalid value for 'body', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -270,9 +270,38 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets body
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->container['body'];
+    }
+
+    /**
+     * Sets body
+     *
+     * @param string $body body
+     *
+     * @return self
+     */
+    public function setBody($body)
+    {
+
+        if ((mb_strlen($body) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $body when calling AutomaticEmail., must be bigger than or equal to 1.');
+        }
+
+        $this->container['body'] = $body;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -282,61 +311,13 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets role_id
-     *
-     * @return float
-     */
-    public function getRoleId()
-    {
-        return $this->container['role_id'];
-    }
-
-    /**
-     * Sets role_id
-     *
-     * @param float $role_id role_id
-     *
-     * @return self
-     */
-    public function setRoleId($role_id)
-    {
-        $this->container['role_id'] = $role_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_for_waitinglist
-     *
-     * @return bool
-     */
-    public function getIsForWaitinglist()
-    {
-        return $this->container['is_for_waitinglist'];
-    }
-
-    /**
-     * Sets is_for_waitinglist
-     *
-     * @param bool $is_for_waitinglist is_for_waitinglist
-     *
-     * @return self
-     */
-    public function setIsForWaitinglist($is_for_waitinglist)
-    {
-        $this->container['is_for_waitinglist'] = $is_for_waitinglist;
 
         return $this;
     }
@@ -366,9 +347,57 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets is_for_waitinglist
+     *
+     * @return bool
+     */
+    public function getIsForWaitinglist()
+    {
+        return $this->container['is_for_waitinglist'];
+    }
+
+    /**
+     * Sets is_for_waitinglist
+     *
+     * @param bool $is_for_waitinglist is_for_waitinglist
+     *
+     * @return self
+     */
+    public function setIsForWaitinglist($is_for_waitinglist)
+    {
+        $this->container['is_for_waitinglist'] = $is_for_waitinglist;
+
+        return $this;
+    }
+
+    /**
+     * Gets role_id
+     *
+     * @return int
+     */
+    public function getRoleId()
+    {
+        return $this->container['role_id'];
+    }
+
+    /**
+     * Sets role_id
+     *
+     * @param int $role_id role_id
+     *
+     * @return self
+     */
+    public function setRoleId($role_id)
+    {
+        $this->container['role_id'] = $role_id;
+
+        return $this;
+    }
+
+    /**
      * Gets sender
      *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson
      */
     public function getSender()
     {
@@ -378,7 +407,7 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sender
      *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject $sender sender
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson $sender sender
      *
      * @return self
      */
@@ -414,35 +443,6 @@ class AutomaticEmail implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets body
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     *
-     * @param string $body body
-     *
-     * @return self
-     */
-    public function setBody($body)
-    {
-
-        if ((mb_strlen($body) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $body when calling AutomaticEmail., must be bigger than or equal to 1.');
-        }
-
-        $this->container['body'] = $body;
 
         return $this;
     }

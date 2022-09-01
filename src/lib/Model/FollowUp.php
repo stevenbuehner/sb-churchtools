@@ -35,7 +35,6 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * FollowUp Class Doc Comment
  *
  * @category Class
- * @description 
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -58,10 +57,10 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'comment_viewer_id' => 'int',
+        'id' => 'int',
         'name' => 'string',
-        'name_translated' => 'string',
-        'comment_viewer_id' => 'float'
+        'name_translated' => 'string'
     ];
 
     /**
@@ -72,10 +71,10 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'comment_viewer_id' => null,
         'id' => null,
         'name' => null,
-        'name_translated' => null,
-        'comment_viewer_id' => null
+        'name_translated' => null
     ];
 
     /**
@@ -105,10 +104,10 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'comment_viewer_id' => 'commentViewerId',
         'id' => 'id',
         'name' => 'name',
-        'name_translated' => 'nameTranslated',
-        'comment_viewer_id' => 'commentViewerId'
+        'name_translated' => 'nameTranslated'
     ];
 
     /**
@@ -117,10 +116,10 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'comment_viewer_id' => 'setCommentViewerId',
         'id' => 'setId',
         'name' => 'setName',
-        'name_translated' => 'setNameTranslated',
-        'comment_viewer_id' => 'setCommentViewerId'
+        'name_translated' => 'setNameTranslated'
     ];
 
     /**
@@ -129,10 +128,10 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'comment_viewer_id' => 'getCommentViewerId',
         'id' => 'getId',
         'name' => 'getName',
-        'name_translated' => 'getNameTranslated',
-        'comment_viewer_id' => 'getCommentViewerId'
+        'name_translated' => 'getNameTranslated'
     ];
 
     /**
@@ -192,10 +191,10 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['comment_viewer_id'] = $data['comment_viewer_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['comment_viewer_id'] = $data['comment_viewer_id'] ?? null;
     }
 
     /**
@@ -207,26 +206,6 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ((mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['name_translated'] === null) {
-            $invalidProperties[] = "'name_translated' can't be null";
-        }
-        if ((mb_strlen($this->container['name_translated']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name_translated', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['comment_viewer_id'] === null) {
-            $invalidProperties[] = "'comment_viewer_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -243,9 +222,33 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets comment_viewer_id
+     *
+     * @return int|null
+     */
+    public function getCommentViewerId()
+    {
+        return $this->container['comment_viewer_id'];
+    }
+
+    /**
+     * Sets comment_viewer_id
+     *
+     * @param int|null $comment_viewer_id comment_viewer_id
+     *
+     * @return self
+     */
+    public function setCommentViewerId($comment_viewer_id)
+    {
+        $this->container['comment_viewer_id'] = $comment_viewer_id;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float
+     * @return int|null
      */
     public function getId()
     {
@@ -255,7 +258,7 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int|null $id id
      *
      * @return self
      */
@@ -269,7 +272,7 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -279,17 +282,12 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string|null $name name
      *
      * @return self
      */
     public function setName($name)
     {
-
-        if ((mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling FollowUp., must be bigger than or equal to 1.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -298,7 +296,7 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name_translated
      *
-     * @return string
+     * @return string|null
      */
     public function getNameTranslated()
     {
@@ -308,42 +306,13 @@ class FollowUp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name_translated
      *
-     * @param string $name_translated name_translated
+     * @param string|null $name_translated name_translated
      *
      * @return self
      */
     public function setNameTranslated($name_translated)
     {
-
-        if ((mb_strlen($name_translated) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name_translated when calling FollowUp., must be bigger than or equal to 1.');
-        }
-
         $this->container['name_translated'] = $name_translated;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment_viewer_id
-     *
-     * @return float
-     */
-    public function getCommentViewerId()
-    {
-        return $this->container['comment_viewer_id'];
-    }
-
-    /**
-     * Sets comment_viewer_id
-     *
-     * @param float $comment_viewer_id comment_viewer_id
-     *
-     * @return self
-     */
-    public function setCommentViewerId($comment_viewer_id)
-    {
-        $this->container['comment_viewer_id'] = $comment_viewer_id;
 
         return $this;
     }

@@ -57,8 +57,8 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'queue' => 'string',
-        'messages' => 'string[]'
+        'messages' => 'string[]',
+        'queue' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'queue' => null,
-        'messages' => null
+        'messages' => null,
+        'queue' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'queue' => 'queue',
-        'messages' => 'messages'
+        'messages' => 'messages',
+        'queue' => 'queue'
     ];
 
     /**
@@ -110,8 +110,8 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'queue' => 'setQueue',
-        'messages' => 'setMessages'
+        'messages' => 'setMessages',
+        'queue' => 'setQueue'
     ];
 
     /**
@@ -120,8 +120,8 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'queue' => 'getQueue',
-        'messages' => 'getMessages'
+        'messages' => 'getMessages',
+        'queue' => 'getQueue'
     ];
 
     /**
@@ -181,8 +181,8 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['queue'] = $data['queue'] ?? null;
         $this->container['messages'] = $data['messages'] ?? null;
+        $this->container['queue'] = $data['queue'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets queue
-     *
-     * @return string|null
-     */
-    public function getQueue()
-    {
-        return $this->container['queue'];
-    }
-
-    /**
-     * Sets queue
-     *
-     * @param string|null $queue Name of Queue
-     *
-     * @return self
-     */
-    public function setQueue($queue)
-    {
-        $this->container['queue'] = $queue;
-
-        return $this;
-    }
-
-    /**
      * Gets messages
      *
      * @return string[]|null
@@ -253,6 +229,30 @@ class StartQueueWorker200ResponseData implements ModelInterface, ArrayAccess, \J
     public function setMessages($messages)
     {
         $this->container['messages'] = $messages;
+
+        return $this;
+    }
+
+    /**
+     * Gets queue
+     *
+     * @return string|null
+     */
+    public function getQueue()
+    {
+        return $this->container['queue'];
+    }
+
+    /**
+     * Sets queue
+     *
+     * @param string|null $queue Name of Queue
+     *
+     * @return self
+     */
+    public function setQueue($queue)
+    {
+        $this->container['queue'] = $queue;
 
         return $this;
     }

@@ -57,16 +57,16 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'group_id' => 'int',
-        'field_name' => 'string',
-        'sort_key' => 'int',
-        'field_type_id' => 'int',
-        'security_level' => 'int',
         'default_value' => 'string',
+        'field_name' => 'string',
+        'field_type_id' => 'int',
+        'group_id' => 'int',
+        'id' => 'int',
         'options' => 'string[]',
-        'use_in_registration_form' => 'bool',
-        'required_in_registration_form' => 'bool'
+        'required_in_registration_form' => 'bool',
+        'security_level' => 'int',
+        'sort_key' => 'int',
+        'use_in_registration_form' => 'bool'
     ];
 
     /**
@@ -77,16 +77,16 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'group_id' => null,
-        'field_name' => null,
-        'sort_key' => null,
-        'field_type_id' => null,
-        'security_level' => null,
         'default_value' => null,
+        'field_name' => null,
+        'field_type_id' => null,
+        'group_id' => null,
+        'id' => null,
         'options' => null,
-        'use_in_registration_form' => null,
-        'required_in_registration_form' => null
+        'required_in_registration_form' => null,
+        'security_level' => null,
+        'sort_key' => null,
+        'use_in_registration_form' => null
     ];
 
     /**
@@ -116,16 +116,16 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'group_id' => 'groupId',
-        'field_name' => 'fieldName',
-        'sort_key' => 'sortKey',
-        'field_type_id' => 'fieldTypeId',
-        'security_level' => 'securityLevel',
         'default_value' => 'defaultValue',
+        'field_name' => 'fieldName',
+        'field_type_id' => 'fieldTypeId',
+        'group_id' => 'groupId',
+        'id' => 'id',
         'options' => 'options',
-        'use_in_registration_form' => 'useInRegistrationForm',
-        'required_in_registration_form' => 'requiredInRegistrationForm'
+        'required_in_registration_form' => 'requiredInRegistrationForm',
+        'security_level' => 'securityLevel',
+        'sort_key' => 'sortKey',
+        'use_in_registration_form' => 'useInRegistrationForm'
     ];
 
     /**
@@ -134,16 +134,16 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'group_id' => 'setGroupId',
-        'field_name' => 'setFieldName',
-        'sort_key' => 'setSortKey',
-        'field_type_id' => 'setFieldTypeId',
-        'security_level' => 'setSecurityLevel',
         'default_value' => 'setDefaultValue',
+        'field_name' => 'setFieldName',
+        'field_type_id' => 'setFieldTypeId',
+        'group_id' => 'setGroupId',
+        'id' => 'setId',
         'options' => 'setOptions',
-        'use_in_registration_form' => 'setUseInRegistrationForm',
-        'required_in_registration_form' => 'setRequiredInRegistrationForm'
+        'required_in_registration_form' => 'setRequiredInRegistrationForm',
+        'security_level' => 'setSecurityLevel',
+        'sort_key' => 'setSortKey',
+        'use_in_registration_form' => 'setUseInRegistrationForm'
     ];
 
     /**
@@ -152,16 +152,16 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'group_id' => 'getGroupId',
-        'field_name' => 'getFieldName',
-        'sort_key' => 'getSortKey',
-        'field_type_id' => 'getFieldTypeId',
-        'security_level' => 'getSecurityLevel',
         'default_value' => 'getDefaultValue',
+        'field_name' => 'getFieldName',
+        'field_type_id' => 'getFieldTypeId',
+        'group_id' => 'getGroupId',
+        'id' => 'getId',
         'options' => 'getOptions',
-        'use_in_registration_form' => 'getUseInRegistrationForm',
-        'required_in_registration_form' => 'getRequiredInRegistrationForm'
+        'required_in_registration_form' => 'getRequiredInRegistrationForm',
+        'security_level' => 'getSecurityLevel',
+        'sort_key' => 'getSortKey',
+        'use_in_registration_form' => 'getUseInRegistrationForm'
     ];
 
     /**
@@ -221,16 +221,16 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['group_id'] = $data['group_id'] ?? null;
-        $this->container['field_name'] = $data['field_name'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['field_type_id'] = $data['field_type_id'] ?? null;
-        $this->container['security_level'] = $data['security_level'] ?? null;
         $this->container['default_value'] = $data['default_value'] ?? null;
+        $this->container['field_name'] = $data['field_name'] ?? null;
+        $this->container['field_type_id'] = $data['field_type_id'] ?? null;
+        $this->container['group_id'] = $data['group_id'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['options'] = $data['options'] ?? null;
-        $this->container['use_in_registration_form'] = $data['use_in_registration_form'] ?? null;
         $this->container['required_in_registration_form'] = $data['required_in_registration_form'] ?? null;
+        $this->container['security_level'] = $data['security_level'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['use_in_registration_form'] = $data['use_in_registration_form'] ?? null;
     }
 
     /**
@@ -258,49 +258,25 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
 
 
     /**
-     * Gets id
+     * Gets default_value
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getId()
+    public function getDefaultValue()
     {
-        return $this->container['id'];
+        return $this->container['default_value'];
     }
 
     /**
-     * Sets id
+     * Sets default_value
      *
-     * @param int|null $id id
+     * @param string|null $default_value default_value
      *
      * @return self
      */
-    public function setId($id)
+    public function setDefaultValue($default_value)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_id
-     *
-     * @return int|null
-     */
-    public function getGroupId()
-    {
-        return $this->container['group_id'];
-    }
-
-    /**
-     * Sets group_id
-     *
-     * @param int|null $group_id group_id
-     *
-     * @return self
-     */
-    public function setGroupId($group_id)
-    {
-        $this->container['group_id'] = $group_id;
+        $this->container['default_value'] = $default_value;
 
         return $this;
     }
@@ -330,30 +306,6 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
     }
 
     /**
-     * Gets sort_key
-     *
-     * @return int|null
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param int|null $sort_key sort_key
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
      * Gets field_type_id
      *
      * @return int|null
@@ -378,49 +330,49 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
     }
 
     /**
-     * Gets security_level
+     * Gets group_id
      *
      * @return int|null
      */
-    public function getSecurityLevel()
+    public function getGroupId()
     {
-        return $this->container['security_level'];
+        return $this->container['group_id'];
     }
 
     /**
-     * Sets security_level
+     * Sets group_id
      *
-     * @param int|null $security_level security_level
+     * @param int|null $group_id group_id
      *
      * @return self
      */
-    public function setSecurityLevel($security_level)
+    public function setGroupId($group_id)
     {
-        $this->container['security_level'] = $security_level;
+        $this->container['group_id'] = $group_id;
 
         return $this;
     }
 
     /**
-     * Gets default_value
+     * Gets id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getDefaultValue()
+    public function getId()
     {
-        return $this->container['default_value'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets default_value
+     * Sets id
      *
-     * @param string|null $default_value default_value
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setDefaultValue($default_value)
+    public function setId($id)
     {
-        $this->container['default_value'] = $default_value;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -450,30 +402,6 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
     }
 
     /**
-     * Gets use_in_registration_form
-     *
-     * @return bool|null
-     */
-    public function getUseInRegistrationForm()
-    {
-        return $this->container['use_in_registration_form'];
-    }
-
-    /**
-     * Sets use_in_registration_form
-     *
-     * @param bool|null $use_in_registration_form use_in_registration_form
-     *
-     * @return self
-     */
-    public function setUseInRegistrationForm($use_in_registration_form)
-    {
-        $this->container['use_in_registration_form'] = $use_in_registration_form;
-
-        return $this;
-    }
-
-    /**
      * Gets required_in_registration_form
      *
      * @return bool|null
@@ -493,6 +421,78 @@ class GetGroupsGroupIdMemberfields200ResponseDataField implements ModelInterface
     public function setRequiredInRegistrationForm($required_in_registration_form)
     {
         $this->container['required_in_registration_form'] = $required_in_registration_form;
+
+        return $this;
+    }
+
+    /**
+     * Gets security_level
+     *
+     * @return int|null
+     */
+    public function getSecurityLevel()
+    {
+        return $this->container['security_level'];
+    }
+
+    /**
+     * Sets security_level
+     *
+     * @param int|null $security_level security_level
+     *
+     * @return self
+     */
+    public function setSecurityLevel($security_level)
+    {
+        $this->container['security_level'] = $security_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int|null
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int|null $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets use_in_registration_form
+     *
+     * @return bool|null
+     */
+    public function getUseInRegistrationForm()
+    {
+        return $this->container['use_in_registration_form'];
+    }
+
+    /**
+     * Sets use_in_registration_form
+     *
+     * @param bool|null $use_in_registration_form use_in_registration_form
+     *
+     * @return self
+     */
+    public function setUseInRegistrationForm($use_in_registration_form)
+    {
+        $this->container['use_in_registration_form'] = $use_in_registration_form;
 
         return $this;
     }

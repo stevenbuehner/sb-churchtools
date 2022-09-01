@@ -57,8 +57,8 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseData',
-        'count' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseCount'
+        'count' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseCount',
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseData'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'count' => null
+        'count' => null,
+        'data' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'count' => 'count'
+        'count' => 'count',
+        'data' => 'data'
     ];
 
     /**
@@ -110,8 +110,8 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'count' => 'setCount'
+        'count' => 'setCount',
+        'data' => 'setData'
     ];
 
     /**
@@ -120,8 +120,8 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'count' => 'getCount'
+        'count' => 'getCount',
+        'data' => 'getData'
     ];
 
     /**
@@ -181,8 +181,8 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
         $this->container['count'] = $data['count'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets data
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseData|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseData|null $data data
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
      * Gets count
      *
      * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseCount|null
@@ -253,6 +229,30 @@ class GetAllData200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setCount($count)
     {
         $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseData|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseData|null $data data
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
 
         return $this;
     }

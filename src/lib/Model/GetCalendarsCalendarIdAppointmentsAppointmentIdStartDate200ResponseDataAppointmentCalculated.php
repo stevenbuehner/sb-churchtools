@@ -57,8 +57,8 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'end_date' => '\DateTime',
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start_date' => 'date-time',
-        'end_date' => 'date-time'
+        'end_date' => 'date-time',
+        'start_date' => 'date-time'
     ];
 
     /**
@@ -100,8 +100,8 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      * @var string[]
      */
     protected static $attributeMap = [
-        'start_date' => 'startDate',
-        'end_date' => 'endDate'
+        'end_date' => 'endDate',
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -110,8 +110,8 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      * @var string[]
      */
     protected static $setters = [
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -120,8 +120,8 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      * @var string[]
      */
     protected static $getters = [
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -181,8 +181,8 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -194,17 +194,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
     {
         $invalidProperties = [];
 
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
-        if ((mb_strlen($this->container['start_date']) < 1)) {
-            $invalidProperties[] = "invalid value for 'start_date', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!preg_match("/2022-03-16T18:00:00.000000Z/", $this->container['start_date'])) {
-            $invalidProperties[] = "invalid value for 'start_date', must be conform to the pattern /2022-03-16T18:00:00.000000Z/.";
-        }
-
         if ($this->container['end_date'] === null) {
             $invalidProperties[] = "'end_date' can't be null";
         }
@@ -212,8 +201,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
             $invalidProperties[] = "invalid value for 'end_date', the character length must be bigger than or equal to 1.";
         }
 
-        if (!preg_match("/2022-03-16T18:00:00.000000Z/", $this->container['end_date'])) {
-            $invalidProperties[] = "invalid value for 'end_date', must be conform to the pattern /2022-03-16T18:00:00.000000Z/.";
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
+        }
+        if ((mb_strlen($this->container['start_date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'start_date', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -230,38 +222,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-
-        if ((mb_strlen($start_date) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $start_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated., must be bigger than or equal to 1.');
-        }
-        if ((!preg_match("/2022-03-16T18:00:00.000000Z/", $start_date))) {
-            throw new \InvalidArgumentException("invalid value for $start_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated., must conform to the pattern /2022-03-16T18:00:00.000000Z/.");
-        }
-
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
 
     /**
      * Gets end_date
@@ -286,11 +246,37 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
         if ((mb_strlen($end_date) < 1)) {
             throw new \InvalidArgumentException('invalid length for $end_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated., must be bigger than or equal to 1.');
         }
-        if ((!preg_match("/2022-03-16T18:00:00.000000Z/", $end_date))) {
-            throw new \InvalidArgumentException("invalid value for $end_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated., must conform to the pattern /2022-03-16T18:00:00.000000Z/.");
-        }
 
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+
+        if ((mb_strlen($start_date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $start_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated., must be bigger than or equal to 1.');
+        }
+
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

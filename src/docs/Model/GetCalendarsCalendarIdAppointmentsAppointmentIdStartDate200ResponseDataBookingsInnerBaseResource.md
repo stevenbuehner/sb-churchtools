@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  |
+**admin_ids** | **mixed** |  | [optional]
+**does_require_cal_entry** | **bool** |  |
+**i_cal_location** | **string** |  |
+**id** | **int** |  |
+**is_auto_accept** | **bool** |  |
+**is_virtual** | **bool** |  |
+**location** | **string** |  |
 **name** | **string** |  |
 **name_translated** | **string** |  |
-**sort_key** | **int** |  |
-**resource_type_id** | **float** |  |
-**location** | **string** |  |
-**i_cal_location** | **string** |  |
-**is_auto_accept** | **bool** |  |
-**does_require_cal_entry** | **bool** |  |
-**is_virtual** | **bool** |  |
-**admin_ids** | **mixed** |  | [optional]
 **random_string** | **string** |  |
+**resource_type_id** | **int** |  |
+**sort_key** | **int** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

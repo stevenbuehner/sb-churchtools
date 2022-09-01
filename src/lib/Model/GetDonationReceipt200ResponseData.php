@@ -57,8 +57,8 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cover_letter' => 'string',
-        'attachment' => 'string'
+        'attachment' => 'string',
+        'cover_letter' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cover_letter' => null,
-        'attachment' => null
+        'attachment' => null,
+        'cover_letter' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'cover_letter' => 'coverLetter',
-        'attachment' => 'attachment'
+        'attachment' => 'attachment',
+        'cover_letter' => 'coverLetter'
     ];
 
     /**
@@ -110,8 +110,8 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'cover_letter' => 'setCoverLetter',
-        'attachment' => 'setAttachment'
+        'attachment' => 'setAttachment',
+        'cover_letter' => 'setCoverLetter'
     ];
 
     /**
@@ -120,8 +120,8 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'cover_letter' => 'getCoverLetter',
-        'attachment' => 'getAttachment'
+        'attachment' => 'getAttachment',
+        'cover_letter' => 'getCoverLetter'
     ];
 
     /**
@@ -181,8 +181,8 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['cover_letter'] = $data['cover_letter'] ?? null;
         $this->container['attachment'] = $data['attachment'] ?? null;
+        $this->container['cover_letter'] = $data['cover_letter'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets cover_letter
-     *
-     * @return string|null
-     */
-    public function getCoverLetter()
-    {
-        return $this->container['cover_letter'];
-    }
-
-    /**
-     * Sets cover_letter
-     *
-     * @param string|null $cover_letter URL to the cover letter of the donation receipt
-     *
-     * @return self
-     */
-    public function setCoverLetter($cover_letter)
-    {
-        $this->container['cover_letter'] = $cover_letter;
-
-        return $this;
-    }
-
-    /**
      * Gets attachment
      *
      * @return string|null
@@ -253,6 +229,30 @@ class GetDonationReceipt200ResponseData implements ModelInterface, ArrayAccess, 
     public function setAttachment($attachment)
     {
         $this->container['attachment'] = $attachment;
+
+        return $this;
+    }
+
+    /**
+     * Gets cover_letter
+     *
+     * @return string|null
+     */
+    public function getCoverLetter()
+    {
+        return $this->container['cover_letter'];
+    }
+
+    /**
+     * Sets cover_letter
+     *
+     * @param string|null $cover_letter URL to the cover letter of the donation receipt
+     *
+     * @return self
+     */
+    public function setCoverLetter($cover_letter)
+    {
+        $this->container['cover_letter'] = $cover_letter;
 
         return $this;
     }

@@ -58,18 +58,18 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
         'date' => '\DateTime',
-        'job' => '\StevenBuehner\ChurchTools\Model\SyncLogEntryJob',
-        'type' => 'string',
-        'level' => 'string',
-        'message_i18n' => 'string',
-        'message_args' => 'object',
-        'is_dry_run' => 'bool',
-        'domain_type' => 'string',
         'domain_id' => 'string',
+        'domain_type' => 'string',
+        'id' => 'int',
+        'is_dry_run' => 'bool',
+        'job' => '\StevenBuehner\ChurchTools\Model\SyncLogEntryJob',
+        'level' => 'string',
+        'message_args' => 'object',
+        'message_i18n' => 'string',
         'source_entity_id' => 'string',
-        'system' => 'string'
+        'system' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -80,18 +80,18 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'date' => 'date-time',
-        'job' => null,
-        'type' => null,
-        'level' => null,
-        'message_i18n' => null,
-        'message_args' => null,
-        'is_dry_run' => null,
-        'domain_type' => null,
         'domain_id' => null,
+        'domain_type' => null,
+        'id' => null,
+        'is_dry_run' => null,
+        'job' => null,
+        'level' => null,
+        'message_args' => null,
+        'message_i18n' => null,
         'source_entity_id' => null,
-        'system' => null
+        'system' => null,
+        'type' => null
     ];
 
     /**
@@ -121,18 +121,18 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'date' => 'date',
-        'job' => 'job',
-        'type' => 'type',
-        'level' => 'level',
-        'message_i18n' => 'messageI18n',
-        'message_args' => 'messageArgs',
-        'is_dry_run' => 'isDryRun',
-        'domain_type' => 'domainType',
         'domain_id' => 'domainId',
+        'domain_type' => 'domainType',
+        'id' => 'id',
+        'is_dry_run' => 'isDryRun',
+        'job' => 'job',
+        'level' => 'level',
+        'message_args' => 'messageArgs',
+        'message_i18n' => 'messageI18n',
         'source_entity_id' => 'sourceEntityId',
-        'system' => 'system'
+        'system' => 'system',
+        'type' => 'type'
     ];
 
     /**
@@ -141,18 +141,18 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'date' => 'setDate',
-        'job' => 'setJob',
-        'type' => 'setType',
-        'level' => 'setLevel',
-        'message_i18n' => 'setMessageI18n',
-        'message_args' => 'setMessageArgs',
-        'is_dry_run' => 'setIsDryRun',
-        'domain_type' => 'setDomainType',
         'domain_id' => 'setDomainId',
+        'domain_type' => 'setDomainType',
+        'id' => 'setId',
+        'is_dry_run' => 'setIsDryRun',
+        'job' => 'setJob',
+        'level' => 'setLevel',
+        'message_args' => 'setMessageArgs',
+        'message_i18n' => 'setMessageI18n',
         'source_entity_id' => 'setSourceEntityId',
-        'system' => 'setSystem'
+        'system' => 'setSystem',
+        'type' => 'setType'
     ];
 
     /**
@@ -161,18 +161,18 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'date' => 'getDate',
-        'job' => 'getJob',
-        'type' => 'getType',
-        'level' => 'getLevel',
-        'message_i18n' => 'getMessageI18n',
-        'message_args' => 'getMessageArgs',
-        'is_dry_run' => 'getIsDryRun',
-        'domain_type' => 'getDomainType',
         'domain_id' => 'getDomainId',
+        'domain_type' => 'getDomainType',
+        'id' => 'getId',
+        'is_dry_run' => 'getIsDryRun',
+        'job' => 'getJob',
+        'level' => 'getLevel',
+        'message_args' => 'getMessageArgs',
+        'message_i18n' => 'getMessageI18n',
         'source_entity_id' => 'getSourceEntityId',
-        'system' => 'getSystem'
+        'system' => 'getSystem',
+        'type' => 'getType'
     ];
 
     /**
@@ -232,18 +232,18 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['date'] = $data['date'] ?? null;
-        $this->container['job'] = $data['job'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['level'] = $data['level'] ?? null;
-        $this->container['message_i18n'] = $data['message_i18n'] ?? null;
-        $this->container['message_args'] = $data['message_args'] ?? null;
-        $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
+        $this->container['job'] = $data['job'] ?? null;
+        $this->container['level'] = $data['level'] ?? null;
+        $this->container['message_args'] = $data['message_args'] ?? null;
+        $this->container['message_i18n'] = $data['message_i18n'] ?? null;
         $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
         $this->container['system'] = $data['system'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -255,9 +255,6 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
         }
@@ -265,16 +262,29 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'date', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['domain_id'] === null) {
+            $invalidProperties[] = "'domain_id' can't be null";
+        }
+        if ((mb_strlen($this->container['domain_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'domain_id', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['domain_type'] === null) {
+            $invalidProperties[] = "'domain_type' can't be null";
+        }
+        if ((mb_strlen($this->container['domain_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['is_dry_run'] === null) {
+            $invalidProperties[] = "'is_dry_run' can't be null";
+        }
         if ($this->container['job'] === null) {
             $invalidProperties[] = "'job' can't be null";
         }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ((mb_strlen($this->container['type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['level'] === null) {
             $invalidProperties[] = "'level' can't be null";
         }
@@ -284,23 +294,6 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['message_i18n']) && (mb_strlen($this->container['message_i18n']) < 1)) {
             $invalidProperties[] = "invalid value for 'message_i18n', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['is_dry_run'] === null) {
-            $invalidProperties[] = "'is_dry_run' can't be null";
-        }
-        if ($this->container['domain_type'] === null) {
-            $invalidProperties[] = "'domain_type' can't be null";
-        }
-        if ((mb_strlen($this->container['domain_type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['domain_id'] === null) {
-            $invalidProperties[] = "'domain_id' can't be null";
-        }
-        if ((mb_strlen($this->container['domain_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'domain_id', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['source_entity_id'] === null) {
@@ -317,6 +310,13 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'system', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        if ((mb_strlen($this->container['type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -331,30 +331,6 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return float
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param float $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
 
     /**
      * Gets date
@@ -386,160 +362,30 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets job
-     *
-     * @return \StevenBuehner\ChurchTools\Model\SyncLogEntryJob
-     */
-    public function getJob()
-    {
-        return $this->container['job'];
-    }
-
-    /**
-     * Sets job
-     *
-     * @param \StevenBuehner\ChurchTools\Model\SyncLogEntryJob $job job
-     *
-     * @return self
-     */
-    public function setJob($job)
-    {
-        $this->container['job'] = $job;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
+     * Gets domain_id
      *
      * @return string
      */
-    public function getType()
+    public function getDomainId()
     {
-        return $this->container['type'];
+        return $this->container['domain_id'];
     }
 
     /**
-     * Sets type
+     * Sets domain_id
      *
-     * @param string $type type
+     * @param string $domain_id domain_id
      *
      * @return self
      */
-    public function setType($type)
+    public function setDomainId($domain_id)
     {
 
-        if ((mb_strlen($type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling SyncLog., must be bigger than or equal to 1.');
+        if ((mb_strlen($domain_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $domain_id when calling SyncLog., must be bigger than or equal to 1.');
         }
 
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets level
-     *
-     * @return string
-     */
-    public function getLevel()
-    {
-        return $this->container['level'];
-    }
-
-    /**
-     * Sets level
-     *
-     * @param string $level level
-     *
-     * @return self
-     */
-    public function setLevel($level)
-    {
-
-        if ((mb_strlen($level) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $level when calling SyncLog., must be bigger than or equal to 1.');
-        }
-
-        $this->container['level'] = $level;
-
-        return $this;
-    }
-
-    /**
-     * Gets message_i18n
-     *
-     * @return string|null
-     */
-    public function getMessageI18n()
-    {
-        return $this->container['message_i18n'];
-    }
-
-    /**
-     * Sets message_i18n
-     *
-     * @param string|null $message_i18n message_i18n
-     *
-     * @return self
-     */
-    public function setMessageI18n($message_i18n)
-    {
-
-        if (!is_null($message_i18n) && (mb_strlen($message_i18n) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $message_i18n when calling SyncLog., must be bigger than or equal to 1.');
-        }
-
-        $this->container['message_i18n'] = $message_i18n;
-
-        return $this;
-    }
-
-    /**
-     * Gets message_args
-     *
-     * @return object|null
-     */
-    public function getMessageArgs()
-    {
-        return $this->container['message_args'];
-    }
-
-    /**
-     * Sets message_args
-     *
-     * @param object|null $message_args message_args
-     *
-     * @return self
-     */
-    public function setMessageArgs($message_args)
-    {
-        $this->container['message_args'] = $message_args;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_dry_run
-     *
-     * @return bool
-     */
-    public function getIsDryRun()
-    {
-        return $this->container['is_dry_run'];
-    }
-
-    /**
-     * Sets is_dry_run
-     *
-     * @param bool $is_dry_run is_dry_run
-     *
-     * @return self
-     */
-    public function setIsDryRun($is_dry_run)
-    {
-        $this->container['is_dry_run'] = $is_dry_run;
+        $this->container['domain_id'] = $domain_id;
 
         return $this;
     }
@@ -574,30 +420,155 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets domain_id
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getDomainId()
+    public function getId()
     {
-        return $this->container['domain_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets domain_id
+     * Sets id
      *
-     * @param string $domain_id domain_id
+     * @param int $id id
      *
      * @return self
      */
-    public function setDomainId($domain_id)
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_dry_run
+     *
+     * @return bool
+     */
+    public function getIsDryRun()
+    {
+        return $this->container['is_dry_run'];
+    }
+
+    /**
+     * Sets is_dry_run
+     *
+     * @param bool $is_dry_run is_dry_run
+     *
+     * @return self
+     */
+    public function setIsDryRun($is_dry_run)
+    {
+        $this->container['is_dry_run'] = $is_dry_run;
+
+        return $this;
+    }
+
+    /**
+     * Gets job
+     *
+     * @return \StevenBuehner\ChurchTools\Model\SyncLogEntryJob
+     */
+    public function getJob()
+    {
+        return $this->container['job'];
+    }
+
+    /**
+     * Sets job
+     *
+     * @param \StevenBuehner\ChurchTools\Model\SyncLogEntryJob $job job
+     *
+     * @return self
+     */
+    public function setJob($job)
+    {
+        $this->container['job'] = $job;
+
+        return $this;
+    }
+
+    /**
+     * Gets level
+     *
+     * @return string
+     */
+    public function getLevel()
+    {
+        return $this->container['level'];
+    }
+
+    /**
+     * Sets level
+     *
+     * @param string $level level
+     *
+     * @return self
+     */
+    public function setLevel($level)
     {
 
-        if ((mb_strlen($domain_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $domain_id when calling SyncLog., must be bigger than or equal to 1.');
+        if ((mb_strlen($level) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $level when calling SyncLog., must be bigger than or equal to 1.');
         }
 
-        $this->container['domain_id'] = $domain_id;
+        $this->container['level'] = $level;
+
+        return $this;
+    }
+
+    /**
+     * Gets message_args
+     *
+     * @return object|null
+     */
+    public function getMessageArgs()
+    {
+        return $this->container['message_args'];
+    }
+
+    /**
+     * Sets message_args
+     *
+     * @param object|null $message_args message_args
+     *
+     * @return self
+     */
+    public function setMessageArgs($message_args)
+    {
+        $this->container['message_args'] = $message_args;
+
+        return $this;
+    }
+
+    /**
+     * Gets message_i18n
+     *
+     * @return string|null
+     */
+    public function getMessageI18n()
+    {
+        return $this->container['message_i18n'];
+    }
+
+    /**
+     * Sets message_i18n
+     *
+     * @param string|null $message_i18n message_i18n
+     *
+     * @return self
+     */
+    public function setMessageI18n($message_i18n)
+    {
+
+        if (!is_null($message_i18n) && (mb_strlen($message_i18n) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $message_i18n when calling SyncLog., must be bigger than or equal to 1.');
+        }
+
+        $this->container['message_i18n'] = $message_i18n;
 
         return $this;
     }
@@ -656,6 +627,35 @@ class SyncLog implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['system'] = $system;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+
+        if ((mb_strlen($type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $type when calling SyncLog., must be bigger than or equal to 1.');
+        }
+
+        $this->container['type'] = $type;
 
         return $this;
     }

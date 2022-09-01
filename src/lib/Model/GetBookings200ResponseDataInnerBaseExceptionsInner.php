@@ -57,9 +57,9 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'end_date' => 'string',
         'id' => 'string',
         'start_date' => 'string',
-        'end_date' => 'string',
         'user_id' => 'string'
     ];
 
@@ -71,9 +71,9 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'end_date' => null,
         'id' => null,
         'start_date' => null,
-        'end_date' => null,
         'user_id' => null
     ];
 
@@ -104,9 +104,9 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
+        'end_date' => 'endDate',
         'id' => 'id',
         'start_date' => 'startDate',
-        'end_date' => 'endDate',
         'user_id' => 'userId'
     ];
 
@@ -116,9 +116,9 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
+        'end_date' => 'setEndDate',
         'id' => 'setId',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
         'user_id' => 'setUserId'
     ];
 
@@ -128,9 +128,9 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
+        'end_date' => 'getEndDate',
         'id' => 'getId',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
         'user_id' => 'getUserId'
     ];
 
@@ -191,9 +191,9 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
+        $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['user_id'] = $data['user_id'] ?? null;
     }
 
@@ -220,6 +220,30 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets end_date
+     *
+     * @return string|null
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param string|null $end_date end_date
+     *
+     * @return self
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -265,30 +289,6 @@ class GetBookings200ResponseDataInnerBaseExceptionsInner implements ModelInterfa
     public function setStartDate($start_date)
     {
         $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_date
-     *
-     * @return string|null
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param string|null $end_date end_date
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
 
         return $this;
     }

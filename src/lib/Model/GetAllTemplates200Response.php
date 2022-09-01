@@ -57,7 +57,7 @@ class GetAllTemplates200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\AppointmentTemplate1[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllTemplates200ResponseDataInner[]'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetAllTemplates200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\AppointmentTemplate1[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllTemplates200ResponseDataInner[]|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetAllTemplates200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\AppointmentTemplate1[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllTemplates200ResponseDataInner[]|null $data data
      *
      * @return self
      */

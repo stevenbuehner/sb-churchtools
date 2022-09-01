@@ -58,8 +58,8 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'view' => 'bool',
-        'edit_masterdata' => 'bool'
+        'edit_masterdata' => 'bool',
+        'view' => 'bool'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'view' => null,
-        'edit_masterdata' => null
+        'edit_masterdata' => null,
+        'view' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'view' => 'view',
-        'edit_masterdata' => 'edit masterdata'
+        'edit_masterdata' => 'edit masterdata',
+        'view' => 'view'
     ];
 
     /**
@@ -111,8 +111,8 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'view' => 'setView',
-        'edit_masterdata' => 'setEditMasterdata'
+        'edit_masterdata' => 'setEditMasterdata',
+        'view' => 'setView'
     ];
 
     /**
@@ -121,8 +121,8 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'view' => 'getView',
-        'edit_masterdata' => 'getEditMasterdata'
+        'edit_masterdata' => 'getEditMasterdata',
+        'view' => 'getView'
     ];
 
     /**
@@ -182,8 +182,8 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['view'] = $data['view'] ?? null;
         $this->container['edit_masterdata'] = $data['edit_masterdata'] ?? null;
+        $this->container['view'] = $data['view'] ?? null;
     }
 
     /**
@@ -211,30 +211,6 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
 
 
     /**
-     * Gets view
-     *
-     * @return bool|null
-     */
-    public function getView()
-    {
-        return $this->container['view'];
-    }
-
-    /**
-     * Sets view
-     *
-     * @param bool|null $view view
-     *
-     * @return self
-     */
-    public function setView($view)
-    {
-        $this->container['view'] = $view;
-
-        return $this;
-    }
-
-    /**
      * Gets edit_masterdata
      *
      * @return bool|null
@@ -254,6 +230,30 @@ class GetGlobalPermissions200ResponseDataChurchfinance implements ModelInterface
     public function setEditMasterdata($edit_masterdata)
     {
         $this->container['edit_masterdata'] = $edit_masterdata;
+
+        return $this;
+    }
+
+    /**
+     * Gets view
+     *
+     * @return bool|null
+     */
+    public function getView()
+    {
+        return $this->container['view'];
+    }
+
+    /**
+     * Sets view
+     *
+     * @param bool|null $view view
+     *
+     * @return self
+     */
+    public function setView($view)
+    {
+        $this->container['view'] = $view;
 
         return $this;
     }

@@ -57,8 +57,8 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
         'balance_type' => 'string',
+        'name' => 'string',
         'sort_key' => 'int'
     ];
 
@@ -70,8 +70,8 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
         'balance_type' => null,
+        'name' => null,
         'sort_key' => null
     ];
 
@@ -102,8 +102,8 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'balance_type' => 'balanceType',
+        'name' => 'name',
         'sort_key' => 'sortKey'
     ];
 
@@ -113,8 +113,8 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'balance_type' => 'setBalanceType',
+        'name' => 'setName',
         'sort_key' => 'setSortKey'
     ];
 
@@ -124,8 +124,8 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'balance_type' => 'getBalanceType',
+        'name' => 'getName',
         'sort_key' => 'getSortKey'
     ];
 
@@ -201,8 +201,8 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['balance_type'] = $data['balance_type'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? 0;
     }
 
@@ -215,9 +215,6 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['balance_type'] === null) {
             $invalidProperties[] = "'balance_type' can't be null";
         }
@@ -230,6 +227,9 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
             );
         }
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -244,30 +244,6 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets balance_type
@@ -299,6 +275,30 @@ class CreateNewAccountTypeRequest implements ModelInterface, ArrayAccess, \JsonS
             );
         }
         $this->container['balance_type'] = $balance_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

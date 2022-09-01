@@ -57,7 +57,7 @@ class SyncLogEntryJobExternalSystem implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
         'name' => 'string'
     ];
 
@@ -222,7 +222,7 @@ class SyncLogEntryJobExternalSystem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -232,7 +232,7 @@ class SyncLogEntryJobExternalSystem implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */

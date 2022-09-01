@@ -57,21 +57,21 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'external_system' => '\StevenBuehner\ChurchTools\Model\ExternalSystem1',
-        'domain_type' => 'string',
         'auto_schedule_enabled' => 'bool',
-        'create_behavior_master' => 'string',
         'create_behavior_es' => 'string',
-        'create_defaults_master' => 'object',
+        'create_behavior_master' => 'string',
         'create_defaults_es' => 'object',
+        'create_defaults_master' => 'object',
+        'delete_behavior_es' => 'string',
+        'delete_behavior_master' => 'string',
+        'domain_type' => 'string',
+        'external_system' => '\StevenBuehner\ChurchTools\Model\ExternalSystem1',
+        'id' => 'int',
         'link_behavior' => 'string',
         'link_data' => 'string',
+        'name' => 'string',
         'update_behavior' => 'string',
-        'update_data' => 'string',
-        'delete_behavior_master' => 'string',
-        'delete_behavior_es' => 'string'
+        'update_data' => 'string'
     ];
 
     /**
@@ -82,21 +82,21 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'external_system' => null,
-        'domain_type' => null,
         'auto_schedule_enabled' => null,
-        'create_behavior_master' => null,
         'create_behavior_es' => null,
-        'create_defaults_master' => null,
+        'create_behavior_master' => null,
         'create_defaults_es' => null,
+        'create_defaults_master' => null,
+        'delete_behavior_es' => null,
+        'delete_behavior_master' => null,
+        'domain_type' => null,
+        'external_system' => null,
+        'id' => null,
         'link_behavior' => null,
         'link_data' => null,
+        'name' => null,
         'update_behavior' => null,
-        'update_data' => null,
-        'delete_behavior_master' => null,
-        'delete_behavior_es' => null
+        'update_data' => null
     ];
 
     /**
@@ -126,21 +126,21 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'external_system' => 'externalSystem',
-        'domain_type' => 'domainType',
         'auto_schedule_enabled' => 'autoScheduleEnabled',
-        'create_behavior_master' => 'createBehaviorMaster',
         'create_behavior_es' => 'createBehaviorES',
-        'create_defaults_master' => 'createDefaultsMaster',
+        'create_behavior_master' => 'createBehaviorMaster',
         'create_defaults_es' => 'createDefaultsES',
+        'create_defaults_master' => 'createDefaultsMaster',
+        'delete_behavior_es' => 'deleteBehaviorES',
+        'delete_behavior_master' => 'deleteBehaviorMaster',
+        'domain_type' => 'domainType',
+        'external_system' => 'externalSystem',
+        'id' => 'id',
         'link_behavior' => 'linkBehavior',
         'link_data' => 'linkData',
+        'name' => 'name',
         'update_behavior' => 'updateBehavior',
-        'update_data' => 'updateData',
-        'delete_behavior_master' => 'deleteBehaviorMaster',
-        'delete_behavior_es' => 'deleteBehaviorES'
+        'update_data' => 'updateData'
     ];
 
     /**
@@ -149,21 +149,21 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'external_system' => 'setExternalSystem',
-        'domain_type' => 'setDomainType',
         'auto_schedule_enabled' => 'setAutoScheduleEnabled',
-        'create_behavior_master' => 'setCreateBehaviorMaster',
         'create_behavior_es' => 'setCreateBehaviorEs',
-        'create_defaults_master' => 'setCreateDefaultsMaster',
+        'create_behavior_master' => 'setCreateBehaviorMaster',
         'create_defaults_es' => 'setCreateDefaultsEs',
+        'create_defaults_master' => 'setCreateDefaultsMaster',
+        'delete_behavior_es' => 'setDeleteBehaviorEs',
+        'delete_behavior_master' => 'setDeleteBehaviorMaster',
+        'domain_type' => 'setDomainType',
+        'external_system' => 'setExternalSystem',
+        'id' => 'setId',
         'link_behavior' => 'setLinkBehavior',
         'link_data' => 'setLinkData',
+        'name' => 'setName',
         'update_behavior' => 'setUpdateBehavior',
-        'update_data' => 'setUpdateData',
-        'delete_behavior_master' => 'setDeleteBehaviorMaster',
-        'delete_behavior_es' => 'setDeleteBehaviorEs'
+        'update_data' => 'setUpdateData'
     ];
 
     /**
@@ -172,21 +172,21 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'external_system' => 'getExternalSystem',
-        'domain_type' => 'getDomainType',
         'auto_schedule_enabled' => 'getAutoScheduleEnabled',
-        'create_behavior_master' => 'getCreateBehaviorMaster',
         'create_behavior_es' => 'getCreateBehaviorEs',
-        'create_defaults_master' => 'getCreateDefaultsMaster',
+        'create_behavior_master' => 'getCreateBehaviorMaster',
         'create_defaults_es' => 'getCreateDefaultsEs',
+        'create_defaults_master' => 'getCreateDefaultsMaster',
+        'delete_behavior_es' => 'getDeleteBehaviorEs',
+        'delete_behavior_master' => 'getDeleteBehaviorMaster',
+        'domain_type' => 'getDomainType',
+        'external_system' => 'getExternalSystem',
+        'id' => 'getId',
         'link_behavior' => 'getLinkBehavior',
         'link_data' => 'getLinkData',
+        'name' => 'getName',
         'update_behavior' => 'getUpdateBehavior',
-        'update_data' => 'getUpdateData',
-        'delete_behavior_master' => 'getDeleteBehaviorMaster',
-        'delete_behavior_es' => 'getDeleteBehaviorEs'
+        'update_data' => 'getUpdateData'
     ];
 
     /**
@@ -246,21 +246,21 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['external_system'] = $data['external_system'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['auto_schedule_enabled'] = $data['auto_schedule_enabled'] ?? null;
-        $this->container['create_behavior_master'] = $data['create_behavior_master'] ?? null;
         $this->container['create_behavior_es'] = $data['create_behavior_es'] ?? null;
-        $this->container['create_defaults_master'] = $data['create_defaults_master'] ?? null;
+        $this->container['create_behavior_master'] = $data['create_behavior_master'] ?? null;
         $this->container['create_defaults_es'] = $data['create_defaults_es'] ?? null;
+        $this->container['create_defaults_master'] = $data['create_defaults_master'] ?? null;
+        $this->container['delete_behavior_es'] = $data['delete_behavior_es'] ?? null;
+        $this->container['delete_behavior_master'] = $data['delete_behavior_master'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['external_system'] = $data['external_system'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['link_behavior'] = $data['link_behavior'] ?? null;
         $this->container['link_data'] = $data['link_data'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['update_behavior'] = $data['update_behavior'] ?? null;
         $this->container['update_data'] = $data['update_data'] ?? null;
-        $this->container['delete_behavior_master'] = $data['delete_behavior_master'] ?? null;
-        $this->container['delete_behavior_es'] = $data['delete_behavior_es'] ?? null;
     }
 
     /**
@@ -272,14 +272,14 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['auto_schedule_enabled'] === null) {
+            $invalidProperties[] = "'auto_schedule_enabled' can't be null";
         }
         if ($this->container['domain_type'] === null) {
             $invalidProperties[] = "'domain_type' can't be null";
         }
-        if ($this->container['auto_schedule_enabled'] === null) {
-            $invalidProperties[] = "'auto_schedule_enabled' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         return $invalidProperties;
     }
@@ -295,102 +295,6 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets external_system
-     *
-     * @return \StevenBuehner\ChurchTools\Model\ExternalSystem1|null
-     */
-    public function getExternalSystem()
-    {
-        return $this->container['external_system'];
-    }
-
-    /**
-     * Sets external_system
-     *
-     * @param \StevenBuehner\ChurchTools\Model\ExternalSystem1|null $external_system external_system
-     *
-     * @return self
-     */
-    public function setExternalSystem($external_system)
-    {
-        $this->container['external_system'] = $external_system;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_type
-     *
-     * @return string
-     */
-    public function getDomainType()
-    {
-        return $this->container['domain_type'];
-    }
-
-    /**
-     * Sets domain_type
-     *
-     * @param string $domain_type domain_type
-     *
-     * @return self
-     */
-    public function setDomainType($domain_type)
-    {
-        $this->container['domain_type'] = $domain_type;
-
-        return $this;
-    }
 
     /**
      * Gets auto_schedule_enabled
@@ -412,30 +316,6 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
     public function setAutoScheduleEnabled($auto_schedule_enabled)
     {
         $this->container['auto_schedule_enabled'] = $auto_schedule_enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets create_behavior_master
-     *
-     * @return string|null
-     */
-    public function getCreateBehaviorMaster()
-    {
-        return $this->container['create_behavior_master'];
-    }
-
-    /**
-     * Sets create_behavior_master
-     *
-     * @param string|null $create_behavior_master create_behavior_master
-     *
-     * @return self
-     */
-    public function setCreateBehaviorMaster($create_behavior_master)
-    {
-        $this->container['create_behavior_master'] = $create_behavior_master;
 
         return $this;
     }
@@ -465,25 +345,25 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets create_defaults_master
+     * Gets create_behavior_master
      *
-     * @return object|null
+     * @return string|null
      */
-    public function getCreateDefaultsMaster()
+    public function getCreateBehaviorMaster()
     {
-        return $this->container['create_defaults_master'];
+        return $this->container['create_behavior_master'];
     }
 
     /**
-     * Sets create_defaults_master
+     * Sets create_behavior_master
      *
-     * @param object|null $create_defaults_master create_defaults_master
+     * @param string|null $create_behavior_master create_behavior_master
      *
      * @return self
      */
-    public function setCreateDefaultsMaster($create_defaults_master)
+    public function setCreateBehaviorMaster($create_behavior_master)
     {
-        $this->container['create_defaults_master'] = $create_defaults_master;
+        $this->container['create_behavior_master'] = $create_behavior_master;
 
         return $this;
     }
@@ -508,6 +388,150 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
     public function setCreateDefaultsEs($create_defaults_es)
     {
         $this->container['create_defaults_es'] = $create_defaults_es;
+
+        return $this;
+    }
+
+    /**
+     * Gets create_defaults_master
+     *
+     * @return object|null
+     */
+    public function getCreateDefaultsMaster()
+    {
+        return $this->container['create_defaults_master'];
+    }
+
+    /**
+     * Sets create_defaults_master
+     *
+     * @param object|null $create_defaults_master create_defaults_master
+     *
+     * @return self
+     */
+    public function setCreateDefaultsMaster($create_defaults_master)
+    {
+        $this->container['create_defaults_master'] = $create_defaults_master;
+
+        return $this;
+    }
+
+    /**
+     * Gets delete_behavior_es
+     *
+     * @return string|null
+     */
+    public function getDeleteBehaviorEs()
+    {
+        return $this->container['delete_behavior_es'];
+    }
+
+    /**
+     * Sets delete_behavior_es
+     *
+     * @param string|null $delete_behavior_es delete_behavior_es
+     *
+     * @return self
+     */
+    public function setDeleteBehaviorEs($delete_behavior_es)
+    {
+        $this->container['delete_behavior_es'] = $delete_behavior_es;
+
+        return $this;
+    }
+
+    /**
+     * Gets delete_behavior_master
+     *
+     * @return string|null
+     */
+    public function getDeleteBehaviorMaster()
+    {
+        return $this->container['delete_behavior_master'];
+    }
+
+    /**
+     * Sets delete_behavior_master
+     *
+     * @param string|null $delete_behavior_master delete_behavior_master
+     *
+     * @return self
+     */
+    public function setDeleteBehaviorMaster($delete_behavior_master)
+    {
+        $this->container['delete_behavior_master'] = $delete_behavior_master;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_type
+     *
+     * @return string
+     */
+    public function getDomainType()
+    {
+        return $this->container['domain_type'];
+    }
+
+    /**
+     * Sets domain_type
+     *
+     * @param string $domain_type domain_type
+     *
+     * @return self
+     */
+    public function setDomainType($domain_type)
+    {
+        $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_system
+     *
+     * @return \StevenBuehner\ChurchTools\Model\ExternalSystem1|null
+     */
+    public function getExternalSystem()
+    {
+        return $this->container['external_system'];
+    }
+
+    /**
+     * Sets external_system
+     *
+     * @param \StevenBuehner\ChurchTools\Model\ExternalSystem1|null $external_system external_system
+     *
+     * @return self
+     */
+    public function setExternalSystem($external_system)
+    {
+        $this->container['external_system'] = $external_system;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -561,6 +585,30 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * Gets update_behavior
      *
      * @return string|null
@@ -604,54 +652,6 @@ class JobConfigurationReturn1 implements ModelInterface, ArrayAccess, \JsonSeria
     public function setUpdateData($update_data)
     {
         $this->container['update_data'] = $update_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets delete_behavior_master
-     *
-     * @return string|null
-     */
-    public function getDeleteBehaviorMaster()
-    {
-        return $this->container['delete_behavior_master'];
-    }
-
-    /**
-     * Sets delete_behavior_master
-     *
-     * @param string|null $delete_behavior_master delete_behavior_master
-     *
-     * @return self
-     */
-    public function setDeleteBehaviorMaster($delete_behavior_master)
-    {
-        $this->container['delete_behavior_master'] = $delete_behavior_master;
-
-        return $this;
-    }
-
-    /**
-     * Gets delete_behavior_es
-     *
-     * @return string|null
-     */
-    public function getDeleteBehaviorEs()
-    {
-        return $this->container['delete_behavior_es'];
-    }
-
-    /**
-     * Sets delete_behavior_es
-     *
-     * @param string|null $delete_behavior_es delete_behavior_es
-     *
-     * @return self
-     */
-    public function setDeleteBehaviorEs($delete_behavior_es)
-    {
-        $this->container['delete_behavior_es'] = $delete_behavior_es;
 
         return $this;
     }

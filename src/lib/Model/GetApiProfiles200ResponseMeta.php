@@ -57,10 +57,10 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'count' => 'float',
         'church_guid' => 'string',
         'church_name' => 'string',
-        'church_slug' => 'string'
+        'church_slug' => 'string',
+        'count' => 'int'
     ];
 
     /**
@@ -71,10 +71,10 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'count' => null,
         'church_guid' => null,
         'church_name' => null,
-        'church_slug' => null
+        'church_slug' => null,
+        'count' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'count' => 'count',
         'church_guid' => 'churchGuid',
         'church_name' => 'churchName',
-        'church_slug' => 'churchSlug'
+        'church_slug' => 'churchSlug',
+        'count' => 'count'
     ];
 
     /**
@@ -116,10 +116,10 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'count' => 'setCount',
         'church_guid' => 'setChurchGuid',
         'church_name' => 'setChurchName',
-        'church_slug' => 'setChurchSlug'
+        'church_slug' => 'setChurchSlug',
+        'count' => 'setCount'
     ];
 
     /**
@@ -128,10 +128,10 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'count' => 'getCount',
         'church_guid' => 'getChurchGuid',
         'church_name' => 'getChurchName',
-        'church_slug' => 'getChurchSlug'
+        'church_slug' => 'getChurchSlug',
+        'count' => 'getCount'
     ];
 
     /**
@@ -191,10 +191,10 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['count'] = $data['count'] ?? null;
         $this->container['church_guid'] = $data['church_guid'] ?? null;
         $this->container['church_name'] = $data['church_name'] ?? null;
         $this->container['church_slug'] = $data['church_slug'] ?? null;
+        $this->container['count'] = $data['count'] ?? null;
     }
 
     /**
@@ -220,30 +220,6 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets count
-     *
-     * @return float|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param float|null $count count
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
 
     /**
      * Gets church_guid
@@ -313,6 +289,30 @@ class GetApiProfiles200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
     public function setChurchSlug($church_slug)
     {
         $this->container['church_slug'] = $church_slug;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     *
+     * @return int|null
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int|null $count count
+     *
+     * @return self
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
 
         return $this;
     }

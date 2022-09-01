@@ -57,13 +57,13 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'guid' => 'string',
-        'name' => 'string',
         'description' => 'string',
-        'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'event_services' => '\StevenBuehner\ChurchTools\Model\GetPersonEvents200ResponseDataEventServicesInner[]'
+        'event_services' => '\StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseDataInnerEventServicesInner[]',
+        'guid' => 'string',
+        'id' => 'int',
+        'name' => 'string',
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -74,13 +74,13 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'guid' => null,
-        'name' => null,
         'description' => null,
-        'start_date' => 'date-time',
         'end_date' => 'date-time',
-        'event_services' => null
+        'event_services' => null,
+        'guid' => null,
+        'id' => null,
+        'name' => null,
+        'start_date' => 'date-time'
     ];
 
     /**
@@ -110,13 +110,13 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'guid' => 'guid',
-        'name' => 'name',
         'description' => 'description',
-        'start_date' => 'startDate',
         'end_date' => 'endDate',
-        'event_services' => 'eventServices'
+        'event_services' => 'eventServices',
+        'guid' => 'guid',
+        'id' => 'id',
+        'name' => 'name',
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -125,13 +125,13 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'guid' => 'setGuid',
-        'name' => 'setName',
         'description' => 'setDescription',
-        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'event_services' => 'setEventServices'
+        'event_services' => 'setEventServices',
+        'guid' => 'setGuid',
+        'id' => 'setId',
+        'name' => 'setName',
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -140,13 +140,13 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'guid' => 'getGuid',
-        'name' => 'getName',
         'description' => 'getDescription',
-        'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'event_services' => 'getEventServices'
+        'event_services' => 'getEventServices',
+        'guid' => 'getGuid',
+        'id' => 'getId',
+        'name' => 'getName',
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -206,13 +206,13 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['guid'] = $data['guid'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['event_services'] = $data['event_services'] ?? null;
+        $this->container['guid'] = $data['guid'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -240,78 +240,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets guid
-     *
-     * @return string|null
-     */
-    public function getGuid()
-    {
-        return $this->container['guid'];
-    }
-
-    /**
-     * Sets guid
-     *
-     * @param string|null $guid guid
-     *
-     * @return self
-     */
-    public function setGuid($guid)
-    {
-        $this->container['guid'] = $guid;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets description
      *
      * @return string|null
@@ -331,30 +259,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
 
         return $this;
     }
@@ -386,7 +290,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets event_services
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonEvents200ResponseDataEventServicesInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseDataInnerEventServicesInner[]|null
      */
     public function getEventServices()
     {
@@ -396,13 +300,109 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets event_services
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetPersonEvents200ResponseDataEventServicesInner[]|null $event_services event_services
+     * @param \StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseDataInnerEventServicesInner[]|null $event_services event_services
      *
      * @return self
      */
     public function setEventServices($event_services)
     {
         $this->container['event_services'] = $event_services;
+
+        return $this;
+    }
+
+    /**
+     * Gets guid
+     *
+     * @return string|null
+     */
+    public function getGuid()
+    {
+        return $this->container['guid'];
+    }
+
+    /**
+     * Sets guid
+     *
+     * @param string|null $guid guid
+     *
+     * @return self
+     */
+    public function setGuid($guid)
+    {
+        $this->container['guid'] = $guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime|null $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

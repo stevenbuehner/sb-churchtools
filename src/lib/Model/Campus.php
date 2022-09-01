@@ -58,37 +58,37 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'address' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddress',
+        'association' => 'object',
+        'banner' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner',
+        'denomination' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerDenomination',
+        'description' => 'string',
+        'email' => 'string',
+        'finder_url' => 'string',
+        'gallery' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner[]',
+        'groups' => '\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataGroupsInner[]',
         'guid' => 'string',
-        'profile_type' => 'string',
+        'id' => 'int',
+        'is_published' => 'bool',
+        'logo' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
         'name' => 'string',
         'name_translated' => 'string',
+        'phone' => 'string',
+        'profile_type' => 'string',
+        'service_banner' => 'string',
+        'services' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[]',
         'short_name' => 'string',
         'shorty' => 'string',
+        'sign_up_group' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup',
         'slug' => 'string',
-        'finder_url' => 'string',
-        'sort_key' => 'float',
-        'is_published' => 'bool',
-        'description' => 'string',
-        'association' => 'object',
-        'website' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
-        'denomination' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerDenomination',
-        'address' => '\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataAddress',
-        'groups' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInner[]',
-        'logo' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo',
-        'banner' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo',
         'social_media' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSocialMedia',
+        'sort_key' => 'int',
         'tags' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTagsInner[]',
-        'services' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[]',
-        'visitors' => 'int',
-        'service_banner' => 'string',
-        'sign_up_group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
-        'gallery' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo[]',
-        'team_title' => 'string',
         'team' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInner[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'team_title' => 'string',
+        'visitors' => 'int',
+        'website' => 'string'
     ];
 
     /**
@@ -99,37 +99,37 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'address' => null,
+        'association' => null,
+        'banner' => null,
+        'denomination' => null,
+        'description' => null,
+        'email' => null,
+        'finder_url' => null,
+        'gallery' => null,
+        'groups' => null,
         'guid' => null,
-        'profile_type' => null,
+        'id' => null,
+        'is_published' => null,
+        'logo' => null,
+        'meta' => null,
         'name' => null,
         'name_translated' => null,
+        'phone' => null,
+        'profile_type' => null,
+        'service_banner' => null,
+        'services' => null,
         'short_name' => null,
         'shorty' => null,
-        'slug' => null,
-        'finder_url' => null,
-        'sort_key' => null,
-        'is_published' => null,
-        'description' => null,
-        'association' => null,
-        'website' => null,
-        'email' => null,
-        'phone' => null,
-        'denomination' => null,
-        'address' => null,
-        'groups' => null,
-        'logo' => null,
-        'banner' => null,
-        'social_media' => null,
-        'tags' => null,
-        'services' => null,
-        'visitors' => null,
-        'service_banner' => null,
         'sign_up_group' => null,
-        'gallery' => null,
-        'team_title' => null,
+        'slug' => null,
+        'social_media' => null,
+        'sort_key' => null,
+        'tags' => null,
         'team' => null,
-        'meta' => null
+        'team_title' => null,
+        'visitors' => null,
+        'website' => null
     ];
 
     /**
@@ -159,37 +159,37 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'address' => 'address',
+        'association' => 'association',
+        'banner' => 'banner',
+        'denomination' => 'denomination',
+        'description' => 'description',
+        'email' => 'email',
+        'finder_url' => 'finderUrl',
+        'gallery' => 'gallery',
+        'groups' => 'groups',
         'guid' => 'guid',
-        'profile_type' => 'profileType',
+        'id' => 'id',
+        'is_published' => 'isPublished',
+        'logo' => 'logo',
+        'meta' => 'meta',
         'name' => 'name',
         'name_translated' => 'nameTranslated',
+        'phone' => 'phone',
+        'profile_type' => 'profileType',
+        'service_banner' => 'serviceBanner',
+        'services' => 'services',
         'short_name' => 'shortName',
         'shorty' => 'shorty',
-        'slug' => 'slug',
-        'finder_url' => 'finderUrl',
-        'sort_key' => 'sortKey',
-        'is_published' => 'isPublished',
-        'description' => 'description',
-        'association' => 'association',
-        'website' => 'website',
-        'email' => 'email',
-        'phone' => 'phone',
-        'denomination' => 'denomination',
-        'address' => 'address',
-        'groups' => 'groups',
-        'logo' => 'logo',
-        'banner' => 'banner',
-        'social_media' => 'socialMedia',
-        'tags' => 'tags',
-        'services' => 'services',
-        'visitors' => 'visitors',
-        'service_banner' => 'serviceBanner',
         'sign_up_group' => 'signUpGroup',
-        'gallery' => 'gallery',
-        'team_title' => 'teamTitle',
+        'slug' => 'slug',
+        'social_media' => 'socialMedia',
+        'sort_key' => 'sortKey',
+        'tags' => 'tags',
         'team' => 'team',
-        'meta' => 'meta'
+        'team_title' => 'teamTitle',
+        'visitors' => 'visitors',
+        'website' => 'website'
     ];
 
     /**
@@ -198,37 +198,37 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'address' => 'setAddress',
+        'association' => 'setAssociation',
+        'banner' => 'setBanner',
+        'denomination' => 'setDenomination',
+        'description' => 'setDescription',
+        'email' => 'setEmail',
+        'finder_url' => 'setFinderUrl',
+        'gallery' => 'setGallery',
+        'groups' => 'setGroups',
         'guid' => 'setGuid',
-        'profile_type' => 'setProfileType',
+        'id' => 'setId',
+        'is_published' => 'setIsPublished',
+        'logo' => 'setLogo',
+        'meta' => 'setMeta',
         'name' => 'setName',
         'name_translated' => 'setNameTranslated',
+        'phone' => 'setPhone',
+        'profile_type' => 'setProfileType',
+        'service_banner' => 'setServiceBanner',
+        'services' => 'setServices',
         'short_name' => 'setShortName',
         'shorty' => 'setShorty',
-        'slug' => 'setSlug',
-        'finder_url' => 'setFinderUrl',
-        'sort_key' => 'setSortKey',
-        'is_published' => 'setIsPublished',
-        'description' => 'setDescription',
-        'association' => 'setAssociation',
-        'website' => 'setWebsite',
-        'email' => 'setEmail',
-        'phone' => 'setPhone',
-        'denomination' => 'setDenomination',
-        'address' => 'setAddress',
-        'groups' => 'setGroups',
-        'logo' => 'setLogo',
-        'banner' => 'setBanner',
-        'social_media' => 'setSocialMedia',
-        'tags' => 'setTags',
-        'services' => 'setServices',
-        'visitors' => 'setVisitors',
-        'service_banner' => 'setServiceBanner',
         'sign_up_group' => 'setSignUpGroup',
-        'gallery' => 'setGallery',
-        'team_title' => 'setTeamTitle',
+        'slug' => 'setSlug',
+        'social_media' => 'setSocialMedia',
+        'sort_key' => 'setSortKey',
+        'tags' => 'setTags',
         'team' => 'setTeam',
-        'meta' => 'setMeta'
+        'team_title' => 'setTeamTitle',
+        'visitors' => 'setVisitors',
+        'website' => 'setWebsite'
     ];
 
     /**
@@ -237,37 +237,37 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'address' => 'getAddress',
+        'association' => 'getAssociation',
+        'banner' => 'getBanner',
+        'denomination' => 'getDenomination',
+        'description' => 'getDescription',
+        'email' => 'getEmail',
+        'finder_url' => 'getFinderUrl',
+        'gallery' => 'getGallery',
+        'groups' => 'getGroups',
         'guid' => 'getGuid',
-        'profile_type' => 'getProfileType',
+        'id' => 'getId',
+        'is_published' => 'getIsPublished',
+        'logo' => 'getLogo',
+        'meta' => 'getMeta',
         'name' => 'getName',
         'name_translated' => 'getNameTranslated',
+        'phone' => 'getPhone',
+        'profile_type' => 'getProfileType',
+        'service_banner' => 'getServiceBanner',
+        'services' => 'getServices',
         'short_name' => 'getShortName',
         'shorty' => 'getShorty',
-        'slug' => 'getSlug',
-        'finder_url' => 'getFinderUrl',
-        'sort_key' => 'getSortKey',
-        'is_published' => 'getIsPublished',
-        'description' => 'getDescription',
-        'association' => 'getAssociation',
-        'website' => 'getWebsite',
-        'email' => 'getEmail',
-        'phone' => 'getPhone',
-        'denomination' => 'getDenomination',
-        'address' => 'getAddress',
-        'groups' => 'getGroups',
-        'logo' => 'getLogo',
-        'banner' => 'getBanner',
-        'social_media' => 'getSocialMedia',
-        'tags' => 'getTags',
-        'services' => 'getServices',
-        'visitors' => 'getVisitors',
-        'service_banner' => 'getServiceBanner',
         'sign_up_group' => 'getSignUpGroup',
-        'gallery' => 'getGallery',
-        'team_title' => 'getTeamTitle',
+        'slug' => 'getSlug',
+        'social_media' => 'getSocialMedia',
+        'sort_key' => 'getSortKey',
+        'tags' => 'getTags',
         'team' => 'getTeam',
-        'meta' => 'getMeta'
+        'team_title' => 'getTeamTitle',
+        'visitors' => 'getVisitors',
+        'website' => 'getWebsite'
     ];
 
     /**
@@ -342,37 +342,37 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
+        $this->container['association'] = $data['association'] ?? null;
+        $this->container['banner'] = $data['banner'] ?? null;
+        $this->container['denomination'] = $data['denomination'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['finder_url'] = $data['finder_url'] ?? null;
+        $this->container['gallery'] = $data['gallery'] ?? null;
+        $this->container['groups'] = $data['groups'] ?? null;
         $this->container['guid'] = $data['guid'] ?? null;
-        $this->container['profile_type'] = $data['profile_type'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_published'] = $data['is_published'] ?? null;
+        $this->container['logo'] = $data['logo'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['profile_type'] = $data['profile_type'] ?? null;
+        $this->container['service_banner'] = $data['service_banner'] ?? null;
+        $this->container['services'] = $data['services'] ?? null;
         $this->container['short_name'] = $data['short_name'] ?? null;
         $this->container['shorty'] = $data['shorty'] ?? null;
-        $this->container['slug'] = $data['slug'] ?? null;
-        $this->container['finder_url'] = $data['finder_url'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['is_published'] = $data['is_published'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['association'] = $data['association'] ?? null;
-        $this->container['website'] = $data['website'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
-        $this->container['denomination'] = $data['denomination'] ?? null;
-        $this->container['address'] = $data['address'] ?? null;
-        $this->container['groups'] = $data['groups'] ?? null;
-        $this->container['logo'] = $data['logo'] ?? null;
-        $this->container['banner'] = $data['banner'] ?? null;
-        $this->container['social_media'] = $data['social_media'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['services'] = $data['services'] ?? null;
-        $this->container['visitors'] = $data['visitors'] ?? null;
-        $this->container['service_banner'] = $data['service_banner'] ?? null;
         $this->container['sign_up_group'] = $data['sign_up_group'] ?? null;
-        $this->container['gallery'] = $data['gallery'] ?? null;
-        $this->container['team_title'] = $data['team_title'] ?? null;
+        $this->container['slug'] = $data['slug'] ?? null;
+        $this->container['social_media'] = $data['social_media'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['team'] = $data['team'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['team_title'] = $data['team_title'] ?? null;
+        $this->container['visitors'] = $data['visitors'] ?? null;
+        $this->container['website'] = $data['website'] ?? null;
     }
 
     /**
@@ -384,14 +384,88 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
         }
+        if ($this->container['banner'] === null) {
+            $invalidProperties[] = "'banner' can't be null";
+        }
+        if ($this->container['denomination'] === null) {
+            $invalidProperties[] = "'denomination' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
+        if ((mb_strlen($this->container['description']) < 0)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ((mb_strlen($this->container['email']) < 1)) {
+            $invalidProperties[] = "invalid value for 'email', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['finder_url'] === null) {
+            $invalidProperties[] = "'finder_url' can't be null";
+        }
+        if ((mb_strlen($this->container['finder_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'finder_url', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['gallery'] === null) {
+            $invalidProperties[] = "'gallery' can't be null";
+        }
+        if ((count($this->container['gallery']) < 0)) {
+            $invalidProperties[] = "invalid value for 'gallery', number of items must be greater than or equal to 0.";
+        }
+
+        if ($this->container['groups'] === null) {
+            $invalidProperties[] = "'groups' can't be null";
+        }
+        if ((count($this->container['groups']) < 0)) {
+            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 0.";
+        }
+
         if ($this->container['guid'] === null) {
             $invalidProperties[] = "'guid' can't be null";
         }
         if ((mb_strlen($this->container['guid']) < 1)) {
             $invalidProperties[] = "invalid value for 'guid', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['is_published'] === null) {
+            $invalidProperties[] = "'is_published' can't be null";
+        }
+        if ($this->container['logo'] === null) {
+            $invalidProperties[] = "'logo' can't be null";
+        }
+        if ($this->container['meta'] === null) {
+            $invalidProperties[] = "'meta' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((mb_strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['name_translated'] === null) {
+            $invalidProperties[] = "'name_translated' can't be null";
+        }
+        if ((mb_strlen($this->container['name_translated']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name_translated', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['phone'] === null) {
+            $invalidProperties[] = "'phone' can't be null";
+        }
+        if ((mb_strlen($this->container['phone']) < 1)) {
+            $invalidProperties[] = "invalid value for 'phone', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['profile_type'] === null) {
@@ -410,18 +484,18 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'profile_type', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['service_banner'] === null) {
+            $invalidProperties[] = "'service_banner' can't be null";
         }
-        if ((mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['service_banner']) < 1)) {
+            $invalidProperties[] = "invalid value for 'service_banner', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['name_translated'] === null) {
-            $invalidProperties[] = "'name_translated' can't be null";
+        if ($this->container['services'] === null) {
+            $invalidProperties[] = "'services' can't be null";
         }
-        if ((mb_strlen($this->container['name_translated']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name_translated', the character length must be bigger than or equal to 1.";
+        if ((count($this->container['services']) < 0)) {
+            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 0.";
         }
 
         if ($this->container['short_name'] === null) {
@@ -445,94 +519,20 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'slug', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['finder_url'] === null) {
-            $invalidProperties[] = "'finder_url' can't be null";
-        }
-        if ((mb_strlen($this->container['finder_url']) < 1)) {
-            $invalidProperties[] = "invalid value for 'finder_url', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sort_key'] === null) {
-            $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['is_published'] === null) {
-            $invalidProperties[] = "'is_published' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->container['description']) < 0)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['website'] === null) {
-            $invalidProperties[] = "'website' can't be null";
-        }
-        if ((mb_strlen($this->container['website']) < 1)) {
-            $invalidProperties[] = "invalid value for 'website', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
-        if ((mb_strlen($this->container['email']) < 1)) {
-            $invalidProperties[] = "invalid value for 'email', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
-        }
-        if ((mb_strlen($this->container['phone']) < 1)) {
-            $invalidProperties[] = "invalid value for 'phone', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['denomination'] === null) {
-            $invalidProperties[] = "'denomination' can't be null";
-        }
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
-        }
-        if ($this->container['groups'] === null) {
-            $invalidProperties[] = "'groups' can't be null";
-        }
-        if ((count($this->container['groups']) < 0)) {
-            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 0.";
-        }
-
-        if ($this->container['logo'] === null) {
-            $invalidProperties[] = "'logo' can't be null";
-        }
-        if ($this->container['banner'] === null) {
-            $invalidProperties[] = "'banner' can't be null";
-        }
         if ($this->container['social_media'] === null) {
             $invalidProperties[] = "'social_media' can't be null";
+        }
+        if ($this->container['sort_key'] === null) {
+            $invalidProperties[] = "'sort_key' can't be null";
         }
         if ($this->container['tags'] === null) {
             $invalidProperties[] = "'tags' can't be null";
         }
-        if ($this->container['services'] === null) {
-            $invalidProperties[] = "'services' can't be null";
+        if ($this->container['team'] === null) {
+            $invalidProperties[] = "'team' can't be null";
         }
-        if ((count($this->container['services']) < 0)) {
-            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 0.";
-        }
-
-        if ($this->container['visitors'] === null) {
-            $invalidProperties[] = "'visitors' can't be null";
-        }
-        if ($this->container['service_banner'] === null) {
-            $invalidProperties[] = "'service_banner' can't be null";
-        }
-        if ((mb_strlen($this->container['service_banner']) < 1)) {
-            $invalidProperties[] = "invalid value for 'service_banner', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['gallery'] === null) {
-            $invalidProperties[] = "'gallery' can't be null";
-        }
-        if ((count($this->container['gallery']) < 0)) {
-            $invalidProperties[] = "invalid value for 'gallery', number of items must be greater than or equal to 0.";
+        if ((count($this->container['team']) < 0)) {
+            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 0.";
         }
 
         if ($this->container['team_title'] === null) {
@@ -542,16 +542,16 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'team_title', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['team'] === null) {
-            $invalidProperties[] = "'team' can't be null";
+        if ($this->container['visitors'] === null) {
+            $invalidProperties[] = "'visitors' can't be null";
         }
-        if ((count($this->container['team']) < 0)) {
-            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 0.";
+        if ($this->container['website'] === null) {
+            $invalidProperties[] = "'website' can't be null";
+        }
+        if ((mb_strlen($this->container['website']) < 1)) {
+            $invalidProperties[] = "invalid value for 'website', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['meta'] === null) {
-            $invalidProperties[] = "'meta' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -568,25 +568,242 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets address
      *
-     * @return int
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddress
      */
-    public function getId()
+    public function getAddress()
     {
-        return $this->container['id'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets id
+     * Sets address
      *
-     * @param int $id id
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddress $address address
      *
      * @return self
      */
-    public function setId($id)
+    public function setAddress($address)
     {
-        $this->container['id'] = $id;
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets association
+     *
+     * @return object|null
+     */
+    public function getAssociation()
+    {
+        return $this->container['association'];
+    }
+
+    /**
+     * Sets association
+     *
+     * @param object|null $association Will be the same for all profiles.
+     *
+     * @return self
+     */
+    public function setAssociation($association)
+    {
+        $this->container['association'] = $association;
+
+        return $this;
+    }
+
+    /**
+     * Gets banner
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner
+     */
+    public function getBanner()
+    {
+        return $this->container['banner'];
+    }
+
+    /**
+     * Sets banner
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner $banner banner
+     *
+     * @return self
+     */
+    public function setBanner($banner)
+    {
+        $this->container['banner'] = $banner;
+
+        return $this;
+    }
+
+    /**
+     * Gets denomination
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerDenomination
+     */
+    public function getDenomination()
+    {
+        return $this->container['denomination'];
+    }
+
+    /**
+     * Sets denomination
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerDenomination $denomination denomination
+     *
+     * @return self
+     */
+    public function setDenomination($denomination)
+    {
+        $this->container['denomination'] = $denomination;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+
+        if ((mb_strlen($description) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling Campus., must be bigger than or equal to 0.');
+        }
+
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+
+        if ((mb_strlen($email) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $email when calling Campus., must be bigger than or equal to 1.');
+        }
+
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets finder_url
+     *
+     * @return string
+     */
+    public function getFinderUrl()
+    {
+        return $this->container['finder_url'];
+    }
+
+    /**
+     * Sets finder_url
+     *
+     * @param string $finder_url finder_url
+     *
+     * @return self
+     */
+    public function setFinderUrl($finder_url)
+    {
+
+        if ((mb_strlen($finder_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $finder_url when calling Campus., must be bigger than or equal to 1.');
+        }
+
+        $this->container['finder_url'] = $finder_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets gallery
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner[]
+     */
+    public function getGallery()
+    {
+        return $this->container['gallery'];
+    }
+
+    /**
+     * Sets gallery
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner[] $gallery gallery
+     *
+     * @return self
+     */
+    public function setGallery($gallery)
+    {
+
+
+        if ((count($gallery) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $gallery when calling Campus., number of items must be greater than or equal to 0.');
+        }
+        $this->container['gallery'] = $gallery;
+
+        return $this;
+    }
+
+    /**
+     * Gets groups
+     *
+     * @return \StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataGroupsInner[]
+     */
+    public function getGroups()
+    {
+        return $this->container['groups'];
+    }
+
+    /**
+     * Sets groups
+     *
+     * @param \StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataGroupsInner[] $groups groups
+     *
+     * @return self
+     */
+    public function setGroups($groups)
+    {
+
+
+        if ((count($groups) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $groups when calling Campus., number of items must be greater than or equal to 0.');
+        }
+        $this->container['groups'] = $groups;
 
         return $this;
     }
@@ -621,40 +838,97 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets profile_type
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getProfileType()
+    public function getId()
     {
-        return $this->container['profile_type'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets profile_type
+     * Sets id
      *
-     * @param string $profile_type church: Church profile for this installation; campus: one specific campus profile
+     * @param int $id id
      *
      * @return self
      */
-    public function setProfileType($profile_type)
+    public function setId($id)
     {
-        $allowedValues = $this->getProfileTypeAllowableValues();
-        if (!in_array($profile_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'profile_type', must be one of '%s'",
-                    $profile_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
+        $this->container['id'] = $id;
 
-        if ((mb_strlen($profile_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $profile_type when calling Campus., must be bigger than or equal to 1.');
-        }
+        return $this;
+    }
 
-        $this->container['profile_type'] = $profile_type;
+    /**
+     * Gets is_published
+     *
+     * @return bool
+     */
+    public function getIsPublished()
+    {
+        return $this->container['is_published'];
+    }
+
+    /**
+     * Sets is_published
+     *
+     * @param bool $is_published is_published
+     *
+     * @return self
+     */
+    public function setIsPublished($is_published)
+    {
+        $this->container['is_published'] = $is_published;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner
+     */
+    public function getLogo()
+    {
+        return $this->container['logo'];
+    }
+
+    /**
+     * Sets logo
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner $logo logo
+     *
+     * @return self
+     */
+    public function setLogo($logo)
+    {
+        $this->container['logo'] = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -718,6 +992,132 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone phone
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+
+        if ((mb_strlen($phone) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $phone when calling Campus., must be bigger than or equal to 1.');
+        }
+
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets profile_type
+     *
+     * @return string
+     */
+    public function getProfileType()
+    {
+        return $this->container['profile_type'];
+    }
+
+    /**
+     * Sets profile_type
+     *
+     * @param string $profile_type church: Church profile for this installation; campus: one specific campus profile
+     *
+     * @return self
+     */
+    public function setProfileType($profile_type)
+    {
+        $allowedValues = $this->getProfileTypeAllowableValues();
+        if (!in_array($profile_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'profile_type', must be one of '%s'",
+                    $profile_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+
+        if ((mb_strlen($profile_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $profile_type when calling Campus., must be bigger than or equal to 1.');
+        }
+
+        $this->container['profile_type'] = $profile_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets service_banner
+     *
+     * @return string
+     */
+    public function getServiceBanner()
+    {
+        return $this->container['service_banner'];
+    }
+
+    /**
+     * Sets service_banner
+     *
+     * @param string $service_banner service_banner
+     *
+     * @return self
+     */
+    public function setServiceBanner($service_banner)
+    {
+
+        if ((mb_strlen($service_banner) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $service_banner when calling Campus., must be bigger than or equal to 1.');
+        }
+
+        $this->container['service_banner'] = $service_banner;
+
+        return $this;
+    }
+
+    /**
+     * Gets services
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[]
+     */
+    public function getServices()
+    {
+        return $this->container['services'];
+    }
+
+    /**
+     * Sets services
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[] $services services
+     *
+     * @return self
+     */
+    public function setServices($services)
+    {
+
+
+        if ((count($services) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $services when calling Campus., number of items must be greater than or equal to 0.');
+        }
+        $this->container['services'] = $services;
+
+        return $this;
+    }
+
+    /**
      * Gets short_name
      *
      * @return string
@@ -776,6 +1176,30 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets sign_up_group
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null
+     */
+    public function getSignUpGroup()
+    {
+        return $this->container['sign_up_group'];
+    }
+
+    /**
+     * Sets sign_up_group
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null $sign_up_group sign_up_group
+     *
+     * @return self
+     */
+    public function setSignUpGroup($sign_up_group)
+    {
+        $this->container['sign_up_group'] = $sign_up_group;
+
+        return $this;
+    }
+
+    /**
      * Gets slug
      *
      * @return string
@@ -805,348 +1229,6 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets finder_url
-     *
-     * @return string
-     */
-    public function getFinderUrl()
-    {
-        return $this->container['finder_url'];
-    }
-
-    /**
-     * Sets finder_url
-     *
-     * @param string $finder_url finder_url
-     *
-     * @return self
-     */
-    public function setFinderUrl($finder_url)
-    {
-
-        if ((mb_strlen($finder_url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $finder_url when calling Campus., must be bigger than or equal to 1.');
-        }
-
-        $this->container['finder_url'] = $finder_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort_key
-     *
-     * @return float
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param float $sort_key sort_key
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_published
-     *
-     * @return bool
-     */
-    public function getIsPublished()
-    {
-        return $this->container['is_published'];
-    }
-
-    /**
-     * Sets is_published
-     *
-     * @param bool $is_published is_published
-     *
-     * @return self
-     */
-    public function setIsPublished($is_published)
-    {
-        $this->container['is_published'] = $is_published;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-
-        if ((mb_strlen($description) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling Campus., must be bigger than or equal to 0.');
-        }
-
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets association
-     *
-     * @return object|null
-     */
-    public function getAssociation()
-    {
-        return $this->container['association'];
-    }
-
-    /**
-     * Sets association
-     *
-     * @param object|null $association Will be the same for all profiles.
-     *
-     * @return self
-     */
-    public function setAssociation($association)
-    {
-        $this->container['association'] = $association;
-
-        return $this;
-    }
-
-    /**
-     * Gets website
-     *
-     * @return string
-     */
-    public function getWebsite()
-    {
-        return $this->container['website'];
-    }
-
-    /**
-     * Sets website
-     *
-     * @param string $website website
-     *
-     * @return self
-     */
-    public function setWebsite($website)
-    {
-
-        if ((mb_strlen($website) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $website when calling Campus., must be bigger than or equal to 1.');
-        }
-
-        $this->container['website'] = $website;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-
-        if ((mb_strlen($email) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling Campus., must be bigger than or equal to 1.');
-        }
-
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string $phone phone
-     *
-     * @return self
-     */
-    public function setPhone($phone)
-    {
-
-        if ((mb_strlen($phone) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $phone when calling Campus., must be bigger than or equal to 1.');
-        }
-
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets denomination
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerDenomination
-     */
-    public function getDenomination()
-    {
-        return $this->container['denomination'];
-    }
-
-    /**
-     * Sets denomination
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerDenomination $denomination denomination
-     *
-     * @return self
-     */
-    public function setDenomination($denomination)
-    {
-        $this->container['denomination'] = $denomination;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     *
-     * @return \StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataAddress
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param \StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataAddress $address address
-     *
-     * @return self
-     */
-    public function setAddress($address)
-    {
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets groups
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInner[]
-     */
-    public function getGroups()
-    {
-        return $this->container['groups'];
-    }
-
-    /**
-     * Sets groups
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInner[] $groups groups
-     *
-     * @return self
-     */
-    public function setGroups($groups)
-    {
-
-
-        if ((count($groups) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $groups when calling Campus., number of items must be greater than or equal to 0.');
-        }
-        $this->container['groups'] = $groups;
-
-        return $this;
-    }
-
-    /**
-     * Gets logo
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo
-     */
-    public function getLogo()
-    {
-        return $this->container['logo'];
-    }
-
-    /**
-     * Sets logo
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo $logo logo
-     *
-     * @return self
-     */
-    public function setLogo($logo)
-    {
-        $this->container['logo'] = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Gets banner
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo
-     */
-    public function getBanner()
-    {
-        return $this->container['banner'];
-    }
-
-    /**
-     * Sets banner
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo $banner banner
-     *
-     * @return self
-     */
-    public function setBanner($banner)
-    {
-        $this->container['banner'] = $banner;
-
-        return $this;
-    }
-
-    /**
      * Gets social_media
      *
      * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSocialMedia
@@ -1171,6 +1253,30 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets sort_key
+     *
+     * @return int
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
+
+        return $this;
+    }
+
+    /**
      * Gets tags
      *
      * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTagsInner[]
@@ -1190,170 +1296,6 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTags($tags)
     {
         $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets services
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[]
-     */
-    public function getServices()
-    {
-        return $this->container['services'];
-    }
-
-    /**
-     * Sets services
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[] $services services
-     *
-     * @return self
-     */
-    public function setServices($services)
-    {
-
-
-        if ((count($services) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $services when calling Campus., number of items must be greater than or equal to 0.');
-        }
-        $this->container['services'] = $services;
-
-        return $this;
-    }
-
-    /**
-     * Gets visitors
-     *
-     * @return int
-     */
-    public function getVisitors()
-    {
-        return $this->container['visitors'];
-    }
-
-    /**
-     * Sets visitors
-     *
-     * @param int $visitors visitors
-     *
-     * @return self
-     */
-    public function setVisitors($visitors)
-    {
-        $this->container['visitors'] = $visitors;
-
-        return $this;
-    }
-
-    /**
-     * Gets service_banner
-     *
-     * @return string
-     */
-    public function getServiceBanner()
-    {
-        return $this->container['service_banner'];
-    }
-
-    /**
-     * Sets service_banner
-     *
-     * @param string $service_banner service_banner
-     *
-     * @return self
-     */
-    public function setServiceBanner($service_banner)
-    {
-
-        if ((mb_strlen($service_banner) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $service_banner when calling Campus., must be bigger than or equal to 1.');
-        }
-
-        $this->container['service_banner'] = $service_banner;
-
-        return $this;
-    }
-
-    /**
-     * Gets sign_up_group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null
-     */
-    public function getSignUpGroup()
-    {
-        return $this->container['sign_up_group'];
-    }
-
-    /**
-     * Sets sign_up_group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null $sign_up_group sign_up_group
-     *
-     * @return self
-     */
-    public function setSignUpGroup($sign_up_group)
-    {
-        $this->container['sign_up_group'] = $sign_up_group;
-
-        return $this;
-    }
-
-    /**
-     * Gets gallery
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo[]
-     */
-    public function getGallery()
-    {
-        return $this->container['gallery'];
-    }
-
-    /**
-     * Sets gallery
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerLogo[] $gallery gallery
-     *
-     * @return self
-     */
-    public function setGallery($gallery)
-    {
-
-
-        if ((count($gallery) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $gallery when calling Campus., number of items must be greater than or equal to 0.');
-        }
-        $this->container['gallery'] = $gallery;
-
-        return $this;
-    }
-
-    /**
-     * Gets team_title
-     *
-     * @return string
-     */
-    public function getTeamTitle()
-    {
-        return $this->container['team_title'];
-    }
-
-    /**
-     * Sets team_title
-     *
-     * @param string $team_title team_title
-     *
-     * @return self
-     */
-    public function setTeamTitle($team_title)
-    {
-
-        if ((mb_strlen($team_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $team_title when calling Campus., must be bigger than or equal to 1.');
-        }
-
-        $this->container['team_title'] = $team_title;
 
         return $this;
     }
@@ -1388,25 +1330,83 @@ class Campus implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets meta
+     * Gets team_title
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta
+     * @return string
      */
-    public function getMeta()
+    public function getTeamTitle()
     {
-        return $this->container['meta'];
+        return $this->container['team_title'];
     }
 
     /**
-     * Sets meta
+     * Sets team_title
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta $meta meta
+     * @param string $team_title team_title
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setTeamTitle($team_title)
     {
-        $this->container['meta'] = $meta;
+
+        if ((mb_strlen($team_title) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $team_title when calling Campus., must be bigger than or equal to 1.');
+        }
+
+        $this->container['team_title'] = $team_title;
+
+        return $this;
+    }
+
+    /**
+     * Gets visitors
+     *
+     * @return int
+     */
+    public function getVisitors()
+    {
+        return $this->container['visitors'];
+    }
+
+    /**
+     * Sets visitors
+     *
+     * @param int $visitors visitors
+     *
+     * @return self
+     */
+    public function setVisitors($visitors)
+    {
+        $this->container['visitors'] = $visitors;
+
+        return $this;
+    }
+
+    /**
+     * Gets website
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->container['website'];
+    }
+
+    /**
+     * Sets website
+     *
+     * @param string $website website
+     *
+     * @return self
+     */
+    public function setWebsite($website)
+    {
+
+        if ((mb_strlen($website) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $website when calling Campus., must be bigger than or equal to 1.');
+        }
+
+        $this->container['website'] = $website;
 
         return $this;
     }

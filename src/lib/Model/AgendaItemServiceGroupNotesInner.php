@@ -57,8 +57,8 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'service_group_id' => 'int',
-        'note' => 'string'
+        'note' => 'string',
+        'service_group_id' => 'int'
     ];
 
     /**
@@ -69,8 +69,8 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'service_group_id' => null,
-        'note' => null
+        'note' => null,
+        'service_group_id' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'service_group_id' => 'serviceGroupId',
-        'note' => 'note'
+        'note' => 'note',
+        'service_group_id' => 'serviceGroupId'
     ];
 
     /**
@@ -110,8 +110,8 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'service_group_id' => 'setServiceGroupId',
-        'note' => 'setNote'
+        'note' => 'setNote',
+        'service_group_id' => 'setServiceGroupId'
     ];
 
     /**
@@ -120,8 +120,8 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'service_group_id' => 'getServiceGroupId',
-        'note' => 'getNote'
+        'note' => 'getNote',
+        'service_group_id' => 'getServiceGroupId'
     ];
 
     /**
@@ -181,8 +181,8 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['service_group_id'] = $data['service_group_id'] ?? null;
         $this->container['note'] = $data['note'] ?? null;
+        $this->container['service_group_id'] = $data['service_group_id'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets service_group_id
-     *
-     * @return int|null
-     */
-    public function getServiceGroupId()
-    {
-        return $this->container['service_group_id'];
-    }
-
-    /**
-     * Sets service_group_id
-     *
-     * @param int|null $service_group_id service_group_id
-     *
-     * @return self
-     */
-    public function setServiceGroupId($service_group_id)
-    {
-        $this->container['service_group_id'] = $service_group_id;
-
-        return $this;
-    }
-
-    /**
      * Gets note
      *
      * @return string|null
@@ -253,6 +229,30 @@ class AgendaItemServiceGroupNotesInner implements ModelInterface, ArrayAccess, \
     public function setNote($note)
     {
         $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets service_group_id
+     *
+     * @return int|null
+     */
+    public function getServiceGroupId()
+    {
+        return $this->container['service_group_id'];
+    }
+
+    /**
+     * Sets service_group_id
+     *
+     * @param int|null $service_group_id service_group_id
+     *
+     * @return self
+     */
+    public function setServiceGroupId($service_group_id)
+    {
+        $this->container['service_group_id'] = $service_group_id;
 
         return $this;
     }

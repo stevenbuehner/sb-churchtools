@@ -58,45 +58,45 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'nickname' => 'string',
-        'job' => 'string',
-        'street' => 'string',
         'address_addition' => 'string',
-        'zip' => 'string',
-        'city' => 'string',
-        'country' => 'string',
-        'phone_private' => 'string',
-        'phone_work' => 'string',
-        'mobile' => 'string',
-        'fax' => 'string',
+        'baptised_by' => 'string',
         'birth_name' => 'string',
         'birthday' => '\DateTime',
         'birthplace' => 'string',
-        'sex_id' => 'int',
-        'email' => 'string',
-        'emails' => '\StevenBuehner\ChurchTools\Model\PersonEmail1[]',
-        'cms_user_id' => 'string',
-        'optigem_id' => 'int',
-        'privacy_policy_agreement' => '\StevenBuehner\ChurchTools\Model\CreatePersonRequestPrivacyPolicyAgreement',
-        'nationality_id' => 'int',
-        'family_status_id' => 'int',
-        'wedding_date' => '\DateTime',
         'campus_id' => 'int',
-        'status_id' => 'int',
-        'department_ids' => 'int[]',
-        'first_contact' => '\DateTime',
+        'city' => 'string',
+        'cms_user_id' => 'string',
+        'country' => 'string',
+        'date_of_baptism' => '\DateTime',
         'date_of_belonging' => '\DateTime',
         'date_of_entry' => '\DateTime',
         'date_of_resign' => '\DateTime',
-        'date_of_baptism' => '\DateTime',
+        'department_ids' => 'int[]',
+        'email' => 'string',
+        'emails' => '\StevenBuehner\ChurchTools\Model\PersonEmail1[]',
+        'family_status_id' => 'int',
+        'fax' => 'string',
+        'first_contact' => '\DateTime',
+        'first_name' => 'string',
+        'grow_path_id' => 'int',
+        'job' => 'string',
+        'last_name' => 'string',
+        'mobile' => 'string',
+        'nationality_id' => 'int',
+        'nickname' => 'string',
+        'optigem_id' => 'int',
+        'phone_private' => 'string',
+        'phone_work' => 'string',
         'place_of_baptism' => 'string',
-        'baptised_by' => 'string',
+        'privacy_policy_agreement' => '\StevenBuehner\ChurchTools\Model\CreatePersonRequestPrivacyPolicyAgreement',
         'referred_by' => 'string',
         'referred_to' => 'string',
-        'grow_path_id' => 'int'
+        'sex_id' => 'int',
+        'status_id' => 'int',
+        'street' => 'string',
+        'title' => 'string',
+        'wedding_date' => '\DateTime',
+        'zip' => 'string'
     ];
 
     /**
@@ -107,45 +107,45 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'first_name' => null,
-        'last_name' => null,
-        'nickname' => null,
-        'job' => null,
-        'street' => null,
         'address_addition' => null,
-        'zip' => null,
-        'city' => null,
-        'country' => null,
-        'phone_private' => null,
-        'phone_work' => null,
-        'mobile' => null,
-        'fax' => null,
+        'baptised_by' => null,
         'birth_name' => null,
         'birthday' => 'date',
         'birthplace' => null,
-        'sex_id' => null,
-        'email' => null,
-        'emails' => null,
-        'cms_user_id' => null,
-        'optigem_id' => null,
-        'privacy_policy_agreement' => null,
-        'nationality_id' => null,
-        'family_status_id' => null,
-        'wedding_date' => 'date',
         'campus_id' => null,
-        'status_id' => null,
-        'department_ids' => null,
-        'first_contact' => 'date-time',
+        'city' => null,
+        'cms_user_id' => null,
+        'country' => null,
+        'date_of_baptism' => 'date',
         'date_of_belonging' => 'date',
         'date_of_entry' => 'date-time',
         'date_of_resign' => 'date-time',
-        'date_of_baptism' => 'date',
+        'department_ids' => null,
+        'email' => null,
+        'emails' => null,
+        'family_status_id' => null,
+        'fax' => null,
+        'first_contact' => 'date-time',
+        'first_name' => null,
+        'grow_path_id' => null,
+        'job' => null,
+        'last_name' => null,
+        'mobile' => null,
+        'nationality_id' => null,
+        'nickname' => null,
+        'optigem_id' => null,
+        'phone_private' => null,
+        'phone_work' => null,
         'place_of_baptism' => null,
-        'baptised_by' => null,
+        'privacy_policy_agreement' => null,
         'referred_by' => null,
         'referred_to' => null,
-        'grow_path_id' => null
+        'sex_id' => null,
+        'status_id' => null,
+        'street' => null,
+        'title' => null,
+        'wedding_date' => 'date',
+        'zip' => null
     ];
 
     /**
@@ -175,45 +175,45 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'first_name' => 'firstName',
-        'last_name' => 'lastName',
-        'nickname' => 'nickname',
-        'job' => 'job',
-        'street' => 'street',
         'address_addition' => 'addressAddition',
-        'zip' => 'zip',
-        'city' => 'city',
-        'country' => 'country',
-        'phone_private' => 'phonePrivate',
-        'phone_work' => 'phoneWork',
-        'mobile' => 'mobile',
-        'fax' => 'fax',
+        'baptised_by' => 'baptisedBy',
         'birth_name' => 'birthName',
         'birthday' => 'birthday',
         'birthplace' => 'birthplace',
-        'sex_id' => 'sexId',
-        'email' => 'email',
-        'emails' => 'emails',
-        'cms_user_id' => 'cmsUserId',
-        'optigem_id' => 'optigemId',
-        'privacy_policy_agreement' => 'privacyPolicyAgreement',
-        'nationality_id' => 'nationalityId',
-        'family_status_id' => 'familyStatusId',
-        'wedding_date' => 'weddingDate',
         'campus_id' => 'campusId',
-        'status_id' => 'statusId',
-        'department_ids' => 'departmentIds',
-        'first_contact' => 'firstContact',
+        'city' => 'city',
+        'cms_user_id' => 'cmsUserId',
+        'country' => 'country',
+        'date_of_baptism' => 'dateOfBaptism',
         'date_of_belonging' => 'dateOfBelonging',
         'date_of_entry' => 'dateOfEntry',
         'date_of_resign' => 'dateOfResign',
-        'date_of_baptism' => 'dateOfBaptism',
+        'department_ids' => 'departmentIds',
+        'email' => 'email',
+        'emails' => 'emails',
+        'family_status_id' => 'familyStatusId',
+        'fax' => 'fax',
+        'first_contact' => 'firstContact',
+        'first_name' => 'firstName',
+        'grow_path_id' => 'growPathId',
+        'job' => 'job',
+        'last_name' => 'lastName',
+        'mobile' => 'mobile',
+        'nationality_id' => 'nationalityId',
+        'nickname' => 'nickname',
+        'optigem_id' => 'optigemId',
+        'phone_private' => 'phonePrivate',
+        'phone_work' => 'phoneWork',
         'place_of_baptism' => 'placeOfBaptism',
-        'baptised_by' => 'baptisedBy',
+        'privacy_policy_agreement' => 'privacyPolicyAgreement',
         'referred_by' => 'referredBy',
         'referred_to' => 'referredTo',
-        'grow_path_id' => 'growPathId'
+        'sex_id' => 'sexId',
+        'status_id' => 'statusId',
+        'street' => 'street',
+        'title' => 'title',
+        'wedding_date' => 'weddingDate',
+        'zip' => 'zip'
     ];
 
     /**
@@ -222,45 +222,45 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'nickname' => 'setNickname',
-        'job' => 'setJob',
-        'street' => 'setStreet',
         'address_addition' => 'setAddressAddition',
-        'zip' => 'setZip',
-        'city' => 'setCity',
-        'country' => 'setCountry',
-        'phone_private' => 'setPhonePrivate',
-        'phone_work' => 'setPhoneWork',
-        'mobile' => 'setMobile',
-        'fax' => 'setFax',
+        'baptised_by' => 'setBaptisedBy',
         'birth_name' => 'setBirthName',
         'birthday' => 'setBirthday',
         'birthplace' => 'setBirthplace',
-        'sex_id' => 'setSexId',
-        'email' => 'setEmail',
-        'emails' => 'setEmails',
-        'cms_user_id' => 'setCmsUserId',
-        'optigem_id' => 'setOptigemId',
-        'privacy_policy_agreement' => 'setPrivacyPolicyAgreement',
-        'nationality_id' => 'setNationalityId',
-        'family_status_id' => 'setFamilyStatusId',
-        'wedding_date' => 'setWeddingDate',
         'campus_id' => 'setCampusId',
-        'status_id' => 'setStatusId',
-        'department_ids' => 'setDepartmentIds',
-        'first_contact' => 'setFirstContact',
+        'city' => 'setCity',
+        'cms_user_id' => 'setCmsUserId',
+        'country' => 'setCountry',
+        'date_of_baptism' => 'setDateOfBaptism',
         'date_of_belonging' => 'setDateOfBelonging',
         'date_of_entry' => 'setDateOfEntry',
         'date_of_resign' => 'setDateOfResign',
-        'date_of_baptism' => 'setDateOfBaptism',
+        'department_ids' => 'setDepartmentIds',
+        'email' => 'setEmail',
+        'emails' => 'setEmails',
+        'family_status_id' => 'setFamilyStatusId',
+        'fax' => 'setFax',
+        'first_contact' => 'setFirstContact',
+        'first_name' => 'setFirstName',
+        'grow_path_id' => 'setGrowPathId',
+        'job' => 'setJob',
+        'last_name' => 'setLastName',
+        'mobile' => 'setMobile',
+        'nationality_id' => 'setNationalityId',
+        'nickname' => 'setNickname',
+        'optigem_id' => 'setOptigemId',
+        'phone_private' => 'setPhonePrivate',
+        'phone_work' => 'setPhoneWork',
         'place_of_baptism' => 'setPlaceOfBaptism',
-        'baptised_by' => 'setBaptisedBy',
+        'privacy_policy_agreement' => 'setPrivacyPolicyAgreement',
         'referred_by' => 'setReferredBy',
         'referred_to' => 'setReferredTo',
-        'grow_path_id' => 'setGrowPathId'
+        'sex_id' => 'setSexId',
+        'status_id' => 'setStatusId',
+        'street' => 'setStreet',
+        'title' => 'setTitle',
+        'wedding_date' => 'setWeddingDate',
+        'zip' => 'setZip'
     ];
 
     /**
@@ -269,45 +269,45 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'nickname' => 'getNickname',
-        'job' => 'getJob',
-        'street' => 'getStreet',
         'address_addition' => 'getAddressAddition',
-        'zip' => 'getZip',
-        'city' => 'getCity',
-        'country' => 'getCountry',
-        'phone_private' => 'getPhonePrivate',
-        'phone_work' => 'getPhoneWork',
-        'mobile' => 'getMobile',
-        'fax' => 'getFax',
+        'baptised_by' => 'getBaptisedBy',
         'birth_name' => 'getBirthName',
         'birthday' => 'getBirthday',
         'birthplace' => 'getBirthplace',
-        'sex_id' => 'getSexId',
-        'email' => 'getEmail',
-        'emails' => 'getEmails',
-        'cms_user_id' => 'getCmsUserId',
-        'optigem_id' => 'getOptigemId',
-        'privacy_policy_agreement' => 'getPrivacyPolicyAgreement',
-        'nationality_id' => 'getNationalityId',
-        'family_status_id' => 'getFamilyStatusId',
-        'wedding_date' => 'getWeddingDate',
         'campus_id' => 'getCampusId',
-        'status_id' => 'getStatusId',
-        'department_ids' => 'getDepartmentIds',
-        'first_contact' => 'getFirstContact',
+        'city' => 'getCity',
+        'cms_user_id' => 'getCmsUserId',
+        'country' => 'getCountry',
+        'date_of_baptism' => 'getDateOfBaptism',
         'date_of_belonging' => 'getDateOfBelonging',
         'date_of_entry' => 'getDateOfEntry',
         'date_of_resign' => 'getDateOfResign',
-        'date_of_baptism' => 'getDateOfBaptism',
+        'department_ids' => 'getDepartmentIds',
+        'email' => 'getEmail',
+        'emails' => 'getEmails',
+        'family_status_id' => 'getFamilyStatusId',
+        'fax' => 'getFax',
+        'first_contact' => 'getFirstContact',
+        'first_name' => 'getFirstName',
+        'grow_path_id' => 'getGrowPathId',
+        'job' => 'getJob',
+        'last_name' => 'getLastName',
+        'mobile' => 'getMobile',
+        'nationality_id' => 'getNationalityId',
+        'nickname' => 'getNickname',
+        'optigem_id' => 'getOptigemId',
+        'phone_private' => 'getPhonePrivate',
+        'phone_work' => 'getPhoneWork',
         'place_of_baptism' => 'getPlaceOfBaptism',
-        'baptised_by' => 'getBaptisedBy',
+        'privacy_policy_agreement' => 'getPrivacyPolicyAgreement',
         'referred_by' => 'getReferredBy',
         'referred_to' => 'getReferredTo',
-        'grow_path_id' => 'getGrowPathId'
+        'sex_id' => 'getSexId',
+        'status_id' => 'getStatusId',
+        'street' => 'getStreet',
+        'title' => 'getTitle',
+        'wedding_date' => 'getWeddingDate',
+        'zip' => 'getZip'
     ];
 
     /**
@@ -367,45 +367,45 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['first_name'] = $data['first_name'] ?? null;
-        $this->container['last_name'] = $data['last_name'] ?? null;
-        $this->container['nickname'] = $data['nickname'] ?? null;
-        $this->container['job'] = $data['job'] ?? null;
-        $this->container['street'] = $data['street'] ?? null;
         $this->container['address_addition'] = $data['address_addition'] ?? null;
-        $this->container['zip'] = $data['zip'] ?? null;
-        $this->container['city'] = $data['city'] ?? null;
-        $this->container['country'] = $data['country'] ?? null;
-        $this->container['phone_private'] = $data['phone_private'] ?? null;
-        $this->container['phone_work'] = $data['phone_work'] ?? null;
-        $this->container['mobile'] = $data['mobile'] ?? null;
-        $this->container['fax'] = $data['fax'] ?? null;
+        $this->container['baptised_by'] = $data['baptised_by'] ?? null;
         $this->container['birth_name'] = $data['birth_name'] ?? null;
         $this->container['birthday'] = $data['birthday'] ?? null;
         $this->container['birthplace'] = $data['birthplace'] ?? null;
-        $this->container['sex_id'] = $data['sex_id'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['emails'] = $data['emails'] ?? null;
-        $this->container['cms_user_id'] = $data['cms_user_id'] ?? null;
-        $this->container['optigem_id'] = $data['optigem_id'] ?? null;
-        $this->container['privacy_policy_agreement'] = $data['privacy_policy_agreement'] ?? null;
-        $this->container['nationality_id'] = $data['nationality_id'] ?? null;
-        $this->container['family_status_id'] = $data['family_status_id'] ?? null;
-        $this->container['wedding_date'] = $data['wedding_date'] ?? null;
         $this->container['campus_id'] = $data['campus_id'] ?? null;
-        $this->container['status_id'] = $data['status_id'] ?? null;
-        $this->container['department_ids'] = $data['department_ids'] ?? null;
-        $this->container['first_contact'] = $data['first_contact'] ?? null;
+        $this->container['city'] = $data['city'] ?? null;
+        $this->container['cms_user_id'] = $data['cms_user_id'] ?? null;
+        $this->container['country'] = $data['country'] ?? null;
+        $this->container['date_of_baptism'] = $data['date_of_baptism'] ?? null;
         $this->container['date_of_belonging'] = $data['date_of_belonging'] ?? null;
         $this->container['date_of_entry'] = $data['date_of_entry'] ?? null;
         $this->container['date_of_resign'] = $data['date_of_resign'] ?? null;
-        $this->container['date_of_baptism'] = $data['date_of_baptism'] ?? null;
+        $this->container['department_ids'] = $data['department_ids'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['emails'] = $data['emails'] ?? null;
+        $this->container['family_status_id'] = $data['family_status_id'] ?? null;
+        $this->container['fax'] = $data['fax'] ?? null;
+        $this->container['first_contact'] = $data['first_contact'] ?? null;
+        $this->container['first_name'] = $data['first_name'] ?? null;
+        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
+        $this->container['job'] = $data['job'] ?? null;
+        $this->container['last_name'] = $data['last_name'] ?? null;
+        $this->container['mobile'] = $data['mobile'] ?? null;
+        $this->container['nationality_id'] = $data['nationality_id'] ?? null;
+        $this->container['nickname'] = $data['nickname'] ?? null;
+        $this->container['optigem_id'] = $data['optigem_id'] ?? null;
+        $this->container['phone_private'] = $data['phone_private'] ?? null;
+        $this->container['phone_work'] = $data['phone_work'] ?? null;
         $this->container['place_of_baptism'] = $data['place_of_baptism'] ?? null;
-        $this->container['baptised_by'] = $data['baptised_by'] ?? null;
+        $this->container['privacy_policy_agreement'] = $data['privacy_policy_agreement'] ?? null;
         $this->container['referred_by'] = $data['referred_by'] ?? null;
         $this->container['referred_to'] = $data['referred_to'] ?? null;
-        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
+        $this->container['sex_id'] = $data['sex_id'] ?? null;
+        $this->container['status_id'] = $data['status_id'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['wedding_date'] = $data['wedding_date'] ?? null;
+        $this->container['zip'] = $data['zip'] ?? null;
     }
 
     /**
@@ -433,150 +433,6 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_name
-     *
-     * @return string|null
-     */
-    public function getFirstName()
-    {
-        return $this->container['first_name'];
-    }
-
-    /**
-     * Sets first_name
-     *
-     * @param string|null $first_name first_name
-     *
-     * @return self
-     */
-    public function setFirstName($first_name)
-    {
-        $this->container['first_name'] = $first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_name
-     *
-     * @return string|null
-     */
-    public function getLastName()
-    {
-        return $this->container['last_name'];
-    }
-
-    /**
-     * Sets last_name
-     *
-     * @param string|null $last_name last_name
-     *
-     * @return self
-     */
-    public function setLastName($last_name)
-    {
-        $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets nickname
-     *
-     * @return string|null
-     */
-    public function getNickname()
-    {
-        return $this->container['nickname'];
-    }
-
-    /**
-     * Sets nickname
-     *
-     * @param string|null $nickname nickname
-     *
-     * @return self
-     */
-    public function setNickname($nickname)
-    {
-        $this->container['nickname'] = $nickname;
-
-        return $this;
-    }
-
-    /**
-     * Gets job
-     *
-     * @return string|null
-     */
-    public function getJob()
-    {
-        return $this->container['job'];
-    }
-
-    /**
-     * Sets job
-     *
-     * @param string|null $job job
-     *
-     * @return self
-     */
-    public function setJob($job)
-    {
-        $this->container['job'] = $job;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string|null
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string|null $street street
-     *
-     * @return self
-     */
-    public function setStreet($street)
-    {
-        $this->container['street'] = $street;
-
-        return $this;
-    }
-
-    /**
      * Gets address_addition
      *
      * @return string|null
@@ -601,169 +457,25 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets zip
+     * Gets baptised_by
      *
      * @return string|null
      */
-    public function getZip()
+    public function getBaptisedBy()
     {
-        return $this->container['zip'];
+        return $this->container['baptised_by'];
     }
 
     /**
-     * Sets zip
+     * Sets baptised_by
      *
-     * @param string|null $zip zip
+     * @param string|null $baptised_by baptised_by
      *
      * @return self
      */
-    public function setZip($zip)
+    public function setBaptisedBy($baptised_by)
     {
-        $this->container['zip'] = $zip;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string|null
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string|null $city city
-     *
-     * @return self
-     */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return string|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param string|null $country country
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_private
-     *
-     * @return string|null
-     */
-    public function getPhonePrivate()
-    {
-        return $this->container['phone_private'];
-    }
-
-    /**
-     * Sets phone_private
-     *
-     * @param string|null $phone_private phone_private
-     *
-     * @return self
-     */
-    public function setPhonePrivate($phone_private)
-    {
-        $this->container['phone_private'] = $phone_private;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_work
-     *
-     * @return string|null
-     */
-    public function getPhoneWork()
-    {
-        return $this->container['phone_work'];
-    }
-
-    /**
-     * Sets phone_work
-     *
-     * @param string|null $phone_work phone_work
-     *
-     * @return self
-     */
-    public function setPhoneWork($phone_work)
-    {
-        $this->container['phone_work'] = $phone_work;
-
-        return $this;
-    }
-
-    /**
-     * Gets mobile
-     *
-     * @return string|null
-     */
-    public function getMobile()
-    {
-        return $this->container['mobile'];
-    }
-
-    /**
-     * Sets mobile
-     *
-     * @param string|null $mobile mobile
-     *
-     * @return self
-     */
-    public function setMobile($mobile)
-    {
-        $this->container['mobile'] = $mobile;
-
-        return $this;
-    }
-
-    /**
-     * Gets fax
-     *
-     * @return string|null
-     */
-    public function getFax()
-    {
-        return $this->container['fax'];
-    }
-
-    /**
-     * Sets fax
-     *
-     * @param string|null $fax fax
-     *
-     * @return self
-     */
-    public function setFax($fax)
-    {
-        $this->container['fax'] = $fax;
+        $this->container['baptised_by'] = $baptised_by;
 
         return $this;
     }
@@ -841,73 +553,49 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sex_id
+     * Gets campus_id
      *
      * @return int|null
      */
-    public function getSexId()
+    public function getCampusId()
     {
-        return $this->container['sex_id'];
+        return $this->container['campus_id'];
     }
 
     /**
-     * Sets sex_id
+     * Sets campus_id
      *
-     * @param int|null $sex_id sex_id
+     * @param int|null $campus_id campus_id
      *
      * @return self
      */
-    public function setSexId($sex_id)
+    public function setCampusId($campus_id)
     {
-        $this->container['sex_id'] = $sex_id;
+        $this->container['campus_id'] = $campus_id;
 
         return $this;
     }
 
     /**
-     * Gets email
+     * Gets city
      *
      * @return string|null
      */
-    public function getEmail()
+    public function getCity()
     {
-        return $this->container['email'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets email
+     * Sets city
      *
-     * @param string|null $email email
+     * @param string|null $city city
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setCity($city)
     {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets emails
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PersonEmail1[]|null
-     */
-    public function getEmails()
-    {
-        return $this->container['emails'];
-    }
-
-    /**
-     * Sets emails
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PersonEmail1[]|null $emails Save many eMail addresses for person. If `emails` is present in request `email` is ignored.
-     *
-     * @return self
-     */
-    public function setEmails($emails)
-    {
-        $this->container['emails'] = $emails;
+        $this->container['city'] = $city;
 
         return $this;
     }
@@ -937,217 +625,49 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets optigem_id
+     * Gets country
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getOptigemId()
+    public function getCountry()
     {
-        return $this->container['optigem_id'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets optigem_id
+     * Sets country
      *
-     * @param int|null $optigem_id optigem_id
+     * @param string|null $country country
      *
      * @return self
      */
-    public function setOptigemId($optigem_id)
+    public function setCountry($country)
     {
-        $this->container['optigem_id'] = $optigem_id;
+        $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets privacy_policy_agreement
-     *
-     * @return \StevenBuehner\ChurchTools\Model\CreatePersonRequestPrivacyPolicyAgreement|null
-     */
-    public function getPrivacyPolicyAgreement()
-    {
-        return $this->container['privacy_policy_agreement'];
-    }
-
-    /**
-     * Sets privacy_policy_agreement
-     *
-     * @param \StevenBuehner\ChurchTools\Model\CreatePersonRequestPrivacyPolicyAgreement|null $privacy_policy_agreement privacy_policy_agreement
-     *
-     * @return self
-     */
-    public function setPrivacyPolicyAgreement($privacy_policy_agreement)
-    {
-        $this->container['privacy_policy_agreement'] = $privacy_policy_agreement;
-
-        return $this;
-    }
-
-    /**
-     * Gets nationality_id
-     *
-     * @return int|null
-     */
-    public function getNationalityId()
-    {
-        return $this->container['nationality_id'];
-    }
-
-    /**
-     * Sets nationality_id
-     *
-     * @param int|null $nationality_id nationality_id
-     *
-     * @return self
-     */
-    public function setNationalityId($nationality_id)
-    {
-        $this->container['nationality_id'] = $nationality_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets family_status_id
-     *
-     * @return int|null
-     */
-    public function getFamilyStatusId()
-    {
-        return $this->container['family_status_id'];
-    }
-
-    /**
-     * Sets family_status_id
-     *
-     * @param int|null $family_status_id family_status_id
-     *
-     * @return self
-     */
-    public function setFamilyStatusId($family_status_id)
-    {
-        $this->container['family_status_id'] = $family_status_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets wedding_date
+     * Gets date_of_baptism
      *
      * @return \DateTime|null
      */
-    public function getWeddingDate()
+    public function getDateOfBaptism()
     {
-        return $this->container['wedding_date'];
+        return $this->container['date_of_baptism'];
     }
 
     /**
-     * Sets wedding_date
+     * Sets date_of_baptism
      *
-     * @param \DateTime|null $wedding_date wedding_date
+     * @param \DateTime|null $date_of_baptism date_of_baptism
      *
      * @return self
      */
-    public function setWeddingDate($wedding_date)
+    public function setDateOfBaptism($date_of_baptism)
     {
-        $this->container['wedding_date'] = $wedding_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets campus_id
-     *
-     * @return int|null
-     */
-    public function getCampusId()
-    {
-        return $this->container['campus_id'];
-    }
-
-    /**
-     * Sets campus_id
-     *
-     * @param int|null $campus_id campus_id
-     *
-     * @return self
-     */
-    public function setCampusId($campus_id)
-    {
-        $this->container['campus_id'] = $campus_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets status_id
-     *
-     * @return int|null
-     */
-    public function getStatusId()
-    {
-        return $this->container['status_id'];
-    }
-
-    /**
-     * Sets status_id
-     *
-     * @param int|null $status_id status_id
-     *
-     * @return self
-     */
-    public function setStatusId($status_id)
-    {
-        $this->container['status_id'] = $status_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets department_ids
-     *
-     * @return int[]|null
-     */
-    public function getDepartmentIds()
-    {
-        return $this->container['department_ids'];
-    }
-
-    /**
-     * Sets department_ids
-     *
-     * @param int[]|null $department_ids Department IDs. At least one department MUST be set for a person. The last department ID cannot be deleted.
-     *
-     * @return self
-     */
-    public function setDepartmentIds($department_ids)
-    {
-        $this->container['department_ids'] = $department_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_contact
-     *
-     * @return \DateTime|null
-     */
-    public function getFirstContact()
-    {
-        return $this->container['first_contact'];
-    }
-
-    /**
-     * Sets first_contact
-     *
-     * @param \DateTime|null $first_contact first_contact
-     *
-     * @return self
-     */
-    public function setFirstContact($first_contact)
-    {
-        $this->container['first_contact'] = $first_contact;
+        $this->container['date_of_baptism'] = $date_of_baptism;
 
         return $this;
     }
@@ -1225,25 +745,385 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets date_of_baptism
+     * Gets department_ids
      *
-     * @return \DateTime|null
+     * @return int[]|null
      */
-    public function getDateOfBaptism()
+    public function getDepartmentIds()
     {
-        return $this->container['date_of_baptism'];
+        return $this->container['department_ids'];
     }
 
     /**
-     * Sets date_of_baptism
+     * Sets department_ids
      *
-     * @param \DateTime|null $date_of_baptism date_of_baptism
+     * @param int[]|null $department_ids Department IDs. At least one department MUST be set for a person. The last department ID cannot be deleted.
      *
      * @return self
      */
-    public function setDateOfBaptism($date_of_baptism)
+    public function setDepartmentIds($department_ids)
     {
-        $this->container['date_of_baptism'] = $date_of_baptism;
+        $this->container['department_ids'] = $department_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets emails
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PersonEmail1[]|null
+     */
+    public function getEmails()
+    {
+        return $this->container['emails'];
+    }
+
+    /**
+     * Sets emails
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PersonEmail1[]|null $emails Save many eMail addresses for person. If `emails` is present in request `email` is ignored.
+     *
+     * @return self
+     */
+    public function setEmails($emails)
+    {
+        $this->container['emails'] = $emails;
+
+        return $this;
+    }
+
+    /**
+     * Gets family_status_id
+     *
+     * @return int|null
+     */
+    public function getFamilyStatusId()
+    {
+        return $this->container['family_status_id'];
+    }
+
+    /**
+     * Sets family_status_id
+     *
+     * @param int|null $family_status_id family_status_id
+     *
+     * @return self
+     */
+    public function setFamilyStatusId($family_status_id)
+    {
+        $this->container['family_status_id'] = $family_status_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets fax
+     *
+     * @return string|null
+     */
+    public function getFax()
+    {
+        return $this->container['fax'];
+    }
+
+    /**
+     * Sets fax
+     *
+     * @param string|null $fax fax
+     *
+     * @return self
+     */
+    public function setFax($fax)
+    {
+        $this->container['fax'] = $fax;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_contact
+     *
+     * @return \DateTime|null
+     */
+    public function getFirstContact()
+    {
+        return $this->container['first_contact'];
+    }
+
+    /**
+     * Sets first_contact
+     *
+     * @param \DateTime|null $first_contact first_contact
+     *
+     * @return self
+     */
+    public function setFirstContact($first_contact)
+    {
+        $this->container['first_contact'] = $first_contact;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_name
+     *
+     * @return string|null
+     */
+    public function getFirstName()
+    {
+        return $this->container['first_name'];
+    }
+
+    /**
+     * Sets first_name
+     *
+     * @param string|null $first_name first_name
+     *
+     * @return self
+     */
+    public function setFirstName($first_name)
+    {
+        $this->container['first_name'] = $first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets grow_path_id
+     *
+     * @return int|null
+     */
+    public function getGrowPathId()
+    {
+        return $this->container['grow_path_id'];
+    }
+
+    /**
+     * Sets grow_path_id
+     *
+     * @param int|null $grow_path_id grow_path_id
+     *
+     * @return self
+     */
+    public function setGrowPathId($grow_path_id)
+    {
+        $this->container['grow_path_id'] = $grow_path_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets job
+     *
+     * @return string|null
+     */
+    public function getJob()
+    {
+        return $this->container['job'];
+    }
+
+    /**
+     * Sets job
+     *
+     * @param string|null $job job
+     *
+     * @return self
+     */
+    public function setJob($job)
+    {
+        $this->container['job'] = $job;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_name
+     *
+     * @return string|null
+     */
+    public function getLastName()
+    {
+        return $this->container['last_name'];
+    }
+
+    /**
+     * Sets last_name
+     *
+     * @param string|null $last_name last_name
+     *
+     * @return self
+     */
+    public function setLastName($last_name)
+    {
+        $this->container['last_name'] = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile
+     *
+     * @return string|null
+     */
+    public function getMobile()
+    {
+        return $this->container['mobile'];
+    }
+
+    /**
+     * Sets mobile
+     *
+     * @param string|null $mobile mobile
+     *
+     * @return self
+     */
+    public function setMobile($mobile)
+    {
+        $this->container['mobile'] = $mobile;
+
+        return $this;
+    }
+
+    /**
+     * Gets nationality_id
+     *
+     * @return int|null
+     */
+    public function getNationalityId()
+    {
+        return $this->container['nationality_id'];
+    }
+
+    /**
+     * Sets nationality_id
+     *
+     * @param int|null $nationality_id nationality_id
+     *
+     * @return self
+     */
+    public function setNationalityId($nationality_id)
+    {
+        $this->container['nationality_id'] = $nationality_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets nickname
+     *
+     * @return string|null
+     */
+    public function getNickname()
+    {
+        return $this->container['nickname'];
+    }
+
+    /**
+     * Sets nickname
+     *
+     * @param string|null $nickname nickname
+     *
+     * @return self
+     */
+    public function setNickname($nickname)
+    {
+        $this->container['nickname'] = $nickname;
+
+        return $this;
+    }
+
+    /**
+     * Gets optigem_id
+     *
+     * @return int|null
+     */
+    public function getOptigemId()
+    {
+        return $this->container['optigem_id'];
+    }
+
+    /**
+     * Sets optigem_id
+     *
+     * @param int|null $optigem_id optigem_id
+     *
+     * @return self
+     */
+    public function setOptigemId($optigem_id)
+    {
+        $this->container['optigem_id'] = $optigem_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_private
+     *
+     * @return string|null
+     */
+    public function getPhonePrivate()
+    {
+        return $this->container['phone_private'];
+    }
+
+    /**
+     * Sets phone_private
+     *
+     * @param string|null $phone_private phone_private
+     *
+     * @return self
+     */
+    public function setPhonePrivate($phone_private)
+    {
+        $this->container['phone_private'] = $phone_private;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_work
+     *
+     * @return string|null
+     */
+    public function getPhoneWork()
+    {
+        return $this->container['phone_work'];
+    }
+
+    /**
+     * Sets phone_work
+     *
+     * @param string|null $phone_work phone_work
+     *
+     * @return self
+     */
+    public function setPhoneWork($phone_work)
+    {
+        $this->container['phone_work'] = $phone_work;
 
         return $this;
     }
@@ -1273,25 +1153,25 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets baptised_by
+     * Gets privacy_policy_agreement
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\CreatePersonRequestPrivacyPolicyAgreement|null
      */
-    public function getBaptisedBy()
+    public function getPrivacyPolicyAgreement()
     {
-        return $this->container['baptised_by'];
+        return $this->container['privacy_policy_agreement'];
     }
 
     /**
-     * Sets baptised_by
+     * Sets privacy_policy_agreement
      *
-     * @param string|null $baptised_by baptised_by
+     * @param \StevenBuehner\ChurchTools\Model\CreatePersonRequestPrivacyPolicyAgreement|null $privacy_policy_agreement privacy_policy_agreement
      *
      * @return self
      */
-    public function setBaptisedBy($baptised_by)
+    public function setPrivacyPolicyAgreement($privacy_policy_agreement)
     {
-        $this->container['baptised_by'] = $baptised_by;
+        $this->container['privacy_policy_agreement'] = $privacy_policy_agreement;
 
         return $this;
     }
@@ -1345,25 +1225,145 @@ class PersonUpdateable implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets grow_path_id
+     * Gets sex_id
      *
      * @return int|null
      */
-    public function getGrowPathId()
+    public function getSexId()
     {
-        return $this->container['grow_path_id'];
+        return $this->container['sex_id'];
     }
 
     /**
-     * Sets grow_path_id
+     * Sets sex_id
      *
-     * @param int|null $grow_path_id grow_path_id
+     * @param int|null $sex_id sex_id
      *
      * @return self
      */
-    public function setGrowPathId($grow_path_id)
+    public function setSexId($sex_id)
     {
-        $this->container['grow_path_id'] = $grow_path_id;
+        $this->container['sex_id'] = $sex_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_id
+     *
+     * @return int|null
+     */
+    public function getStatusId()
+    {
+        return $this->container['status_id'];
+    }
+
+    /**
+     * Sets status_id
+     *
+     * @param int|null $status_id status_id
+     *
+     * @return self
+     */
+    public function setStatusId($status_id)
+    {
+        $this->container['status_id'] = $status_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string|null
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string|null $street street
+     *
+     * @return self
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string|null $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets wedding_date
+     *
+     * @return \DateTime|null
+     */
+    public function getWeddingDate()
+    {
+        return $this->container['wedding_date'];
+    }
+
+    /**
+     * Sets wedding_date
+     *
+     * @param \DateTime|null $wedding_date wedding_date
+     *
+     * @return self
+     */
+    public function setWeddingDate($wedding_date)
+    {
+        $this->container['wedding_date'] = $wedding_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets zip
+     *
+     * @return string|null
+     */
+    public function getZip()
+    {
+        return $this->container['zip'];
+    }
+
+    /**
+     * Sets zip
+     *
+     * @param string|null $zip zip
+     *
+     * @return self
+     */
+    public function setZip($zip)
+    {
+        $this->container['zip'] = $zip;
 
         return $this;
     }

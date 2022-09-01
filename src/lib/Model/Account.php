@@ -57,17 +57,17 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'number' => 'string',
-        'name' => 'string',
         'account_group_id' => 'int',
         'accounting_period_id' => 'int',
+        'balance' => 'int',
+        'id' => 'int',
         'is_donation_account' => 'bool',
         'is_opening_balance_account' => 'bool',
-        'taxe_rate_id' => 'int',
-        'balance' => 'float',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInnerPermissions',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
+        'name' => 'string',
+        'number' => 'string',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInnerPermissions',
+        'taxe_rate_id' => 'int'
     ];
 
     /**
@@ -78,17 +78,17 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'number' => null,
-        'name' => null,
         'account_group_id' => null,
         'accounting_period_id' => null,
+        'balance' => null,
+        'id' => null,
         'is_donation_account' => null,
         'is_opening_balance_account' => null,
-        'taxe_rate_id' => null,
-        'balance' => 'integer',
+        'meta' => null,
+        'name' => null,
+        'number' => null,
         'permissions' => null,
-        'meta' => null
+        'taxe_rate_id' => null
     ];
 
     /**
@@ -118,17 +118,17 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'number' => 'number',
-        'name' => 'name',
         'account_group_id' => 'accountGroupId',
         'accounting_period_id' => 'accountingPeriodId',
+        'balance' => 'balance',
+        'id' => 'id',
         'is_donation_account' => 'isDonationAccount',
         'is_opening_balance_account' => 'isOpeningBalanceAccount',
-        'taxe_rate_id' => 'taxeRateId',
-        'balance' => 'balance',
+        'meta' => 'meta',
+        'name' => 'name',
+        'number' => 'number',
         'permissions' => 'permissions',
-        'meta' => 'meta'
+        'taxe_rate_id' => 'taxeRateId'
     ];
 
     /**
@@ -137,17 +137,17 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'number' => 'setNumber',
-        'name' => 'setName',
         'account_group_id' => 'setAccountGroupId',
         'accounting_period_id' => 'setAccountingPeriodId',
+        'balance' => 'setBalance',
+        'id' => 'setId',
         'is_donation_account' => 'setIsDonationAccount',
         'is_opening_balance_account' => 'setIsOpeningBalanceAccount',
-        'taxe_rate_id' => 'setTaxeRateId',
-        'balance' => 'setBalance',
+        'meta' => 'setMeta',
+        'name' => 'setName',
+        'number' => 'setNumber',
         'permissions' => 'setPermissions',
-        'meta' => 'setMeta'
+        'taxe_rate_id' => 'setTaxeRateId'
     ];
 
     /**
@@ -156,17 +156,17 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'number' => 'getNumber',
-        'name' => 'getName',
         'account_group_id' => 'getAccountGroupId',
         'accounting_period_id' => 'getAccountingPeriodId',
+        'balance' => 'getBalance',
+        'id' => 'getId',
         'is_donation_account' => 'getIsDonationAccount',
         'is_opening_balance_account' => 'getIsOpeningBalanceAccount',
-        'taxe_rate_id' => 'getTaxeRateId',
-        'balance' => 'getBalance',
+        'meta' => 'getMeta',
+        'name' => 'getName',
+        'number' => 'getNumber',
         'permissions' => 'getPermissions',
-        'meta' => 'getMeta'
+        'taxe_rate_id' => 'getTaxeRateId'
     ];
 
     /**
@@ -226,17 +226,17 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['account_group_id'] = $data['account_group_id'] ?? null;
         $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
+        $this->container['balance'] = $data['balance'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_donation_account'] = $data['is_donation_account'] ?? null;
         $this->container['is_opening_balance_account'] = $data['is_opening_balance_account'] ?? null;
-        $this->container['taxe_rate_id'] = $data['taxe_rate_id'] ?? null;
-        $this->container['balance'] = $data['balance'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['number'] = $data['number'] ?? null;
+        $this->container['permissions'] = $data['permissions'] ?? null;
+        $this->container['taxe_rate_id'] = $data['taxe_rate_id'] ?? null;
     }
 
     /**
@@ -262,78 +262,6 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets number
-     *
-     * @return string|null
-     */
-    public function getNumber()
-    {
-        return $this->container['number'];
-    }
-
-    /**
-     * Sets number
-     *
-     * @param string|null $number number
-     *
-     * @return self
-     */
-    public function setNumber($number)
-    {
-        $this->container['number'] = $number;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets account_group_id
@@ -379,6 +307,54 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAccountingPeriodId($accounting_period_id)
     {
         $this->container['accounting_period_id'] = $accounting_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets balance
+     *
+     * @return int|null
+     */
+    public function getBalance()
+    {
+        return $this->container['balance'];
+    }
+
+    /**
+     * Sets balance
+     *
+     * @param int|null $balance Current balance of account in cent.
+     *
+     * @return self
+     */
+    public function setBalance($balance)
+    {
+        $this->container['balance'] = $balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -432,6 +408,102 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets number
+     *
+     * @return string|null
+     */
+    public function getNumber()
+    {
+        return $this->container['number'];
+    }
+
+    /**
+     * Sets number
+     *
+     * @param string|null $number number
+     *
+     * @return self
+     */
+    public function setNumber($number)
+    {
+        $this->container['number'] = $number;
+
+        return $this;
+    }
+
+    /**
+     * Gets permissions
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInnerPermissions|null
+     */
+    public function getPermissions()
+    {
+        return $this->container['permissions'];
+    }
+
+    /**
+     * Sets permissions
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInnerPermissions|null $permissions permissions
+     *
+     * @return self
+     */
+    public function setPermissions($permissions)
+    {
+        $this->container['permissions'] = $permissions;
+
+        return $this;
+    }
+
+    /**
      * Gets taxe_rate_id
      *
      * @return int|null
@@ -451,78 +523,6 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTaxeRateId($taxe_rate_id)
     {
         $this->container['taxe_rate_id'] = $taxe_rate_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets balance
-     *
-     * @return float|null
-     */
-    public function getBalance()
-    {
-        return $this->container['balance'];
-    }
-
-    /**
-     * Sets balance
-     *
-     * @param float|null $balance Current balance of account in cent.
-     *
-     * @return self
-     */
-    public function setBalance($balance)
-    {
-        $this->container['balance'] = $balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets permissions
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInnerPermissions|null
-     */
-    public function getPermissions()
-    {
-        return $this->container['permissions'];
-    }
-
-    /**
-     * Sets permissions
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInnerPermissions|null $permissions permissions
-     *
-     * @return self
-     */
-    public function setPermissions($permissions)
-    {
-        $this->container['permissions'] = $permissions;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

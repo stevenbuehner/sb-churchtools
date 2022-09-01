@@ -57,10 +57,10 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'day' => 'float',
+        'day' => 'int',
+        'note' => 'string',
         'repetition' => 'string',
-        'time' => 'string',
-        'note' => 'string'
+        'time' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPIFormats = [
         'day' => null,
+        'note' => null,
         'repetition' => null,
-        'time' => null,
-        'note' => null
+        'time' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
      */
     protected static $attributeMap = [
         'day' => 'day',
+        'note' => 'note',
         'repetition' => 'repetition',
-        'time' => 'time',
-        'note' => 'note'
+        'time' => 'time'
     ];
 
     /**
@@ -117,9 +117,9 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
      */
     protected static $setters = [
         'day' => 'setDay',
+        'note' => 'setNote',
         'repetition' => 'setRepetition',
-        'time' => 'setTime',
-        'note' => 'setNote'
+        'time' => 'setTime'
     ];
 
     /**
@@ -129,9 +129,9 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
      */
     protected static $getters = [
         'day' => 'getDay',
+        'note' => 'getNote',
         'repetition' => 'getRepetition',
-        'time' => 'getTime',
-        'note' => 'getNote'
+        'time' => 'getTime'
     ];
 
     /**
@@ -192,9 +192,9 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
     public function __construct(array $data = null)
     {
         $this->container['day'] = $data['day'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
         $this->container['repetition'] = $data['repetition'] ?? null;
         $this->container['time'] = $data['time'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
     }
 
     /**
@@ -209,6 +209,13 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
         if ($this->container['day'] === null) {
             $invalidProperties[] = "'day' can't be null";
         }
+        if ($this->container['note'] === null) {
+            $invalidProperties[] = "'note' can't be null";
+        }
+        if ((mb_strlen($this->container['note']) < 1)) {
+            $invalidProperties[] = "invalid value for 'note', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['repetition'] === null) {
             $invalidProperties[] = "'repetition' can't be null";
         }
@@ -221,13 +228,6 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
         }
         if ((mb_strlen($this->container['time']) < 1)) {
             $invalidProperties[] = "invalid value for 'time', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['note'] === null) {
-            $invalidProperties[] = "'note' can't be null";
-        }
-        if ((mb_strlen($this->container['note']) < 1)) {
-            $invalidProperties[] = "invalid value for 'note', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -248,7 +248,7 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
     /**
      * Gets day
      *
-     * @return float
+     * @return int
      */
     public function getDay()
     {
@@ -258,13 +258,42 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets day
      *
-     * @param float $day day
+     * @param int $day day
      *
      * @return self
      */
     public function setDay($day)
     {
         $this->container['day'] = $day;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+
+        if ((mb_strlen($note) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $note when calling UpdateCampusRequestServicesInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['note'] = $note;
 
         return $this;
     }
@@ -323,35 +352,6 @@ class UpdateCampusRequestServicesInner implements ModelInterface, ArrayAccess, \
         }
 
         $this->container['time'] = $time;
-
-        return $this;
-    }
-
-    /**
-     * Gets note
-     *
-     * @return string
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-
-        if ((mb_strlen($note) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $note when calling UpdateCampusRequestServicesInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['note'] = $note;
 
         return $this;
     }

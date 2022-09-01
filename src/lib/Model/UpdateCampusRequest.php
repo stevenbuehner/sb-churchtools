@@ -58,27 +58,27 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'address' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestAddress',
+        'association_id' => 'int',
+        'denomination' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestDenomination',
+        'description' => 'string',
+        'email' => 'string',
+        'groups' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestGroupsInner[]',
+        'is_published' => 'bool',
         'name' => 'string',
+        'phone' => 'string',
+        'services' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestServicesInner[]',
         'short_name' => 'string',
         'shorty' => 'string',
-        'slug' => 'string',
-        'sort_key' => 'float',
-        'is_published' => 'bool',
-        'description' => 'string',
-        'website' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
-        'denomination' => 'string',
-        'association_id' => 'float',
-        'address' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestAddress',
-        'social_media' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestSocialMedia',
-        'tags' => 'string[]',
-        'groups' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestGroupsInner[]',
-        'visitors' => 'float',
         'sign_up_group' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroup',
-        'services' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestServicesInner[]',
+        'slug' => 'string',
+        'social_media' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestSocialMedia',
+        'sort_key' => 'int',
+        'tags' => 'string[]',
+        'team' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInner[]',
         'team_title' => 'string',
-        'team' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInner[]'
+        'visitors' => 'int',
+        'website' => 'string'
     ];
 
     /**
@@ -89,27 +89,27 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'address' => null,
+        'association_id' => null,
+        'denomination' => null,
+        'description' => null,
+        'email' => null,
+        'groups' => null,
+        'is_published' => null,
         'name' => null,
+        'phone' => null,
+        'services' => null,
         'short_name' => null,
         'shorty' => null,
-        'slug' => null,
-        'sort_key' => null,
-        'is_published' => null,
-        'description' => null,
-        'website' => null,
-        'email' => null,
-        'phone' => null,
-        'denomination' => null,
-        'association_id' => null,
-        'address' => null,
-        'social_media' => null,
-        'tags' => null,
-        'groups' => null,
-        'visitors' => null,
         'sign_up_group' => null,
-        'services' => null,
+        'slug' => null,
+        'social_media' => null,
+        'sort_key' => null,
+        'tags' => null,
+        'team' => null,
         'team_title' => null,
-        'team' => null
+        'visitors' => null,
+        'website' => null
     ];
 
     /**
@@ -139,27 +139,27 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'address' => 'address',
+        'association_id' => 'associationId',
+        'denomination' => 'denomination',
+        'description' => 'description',
+        'email' => 'email',
+        'groups' => 'groups',
+        'is_published' => 'isPublished',
         'name' => 'name',
+        'phone' => 'phone',
+        'services' => 'services',
         'short_name' => 'shortName',
         'shorty' => 'shorty',
-        'slug' => 'slug',
-        'sort_key' => 'sortKey',
-        'is_published' => 'isPublished',
-        'description' => 'description',
-        'website' => 'website',
-        'email' => 'email',
-        'phone' => 'phone',
-        'denomination' => 'denomination',
-        'association_id' => 'associationId',
-        'address' => 'address',
-        'social_media' => 'socialMedia',
-        'tags' => 'tags',
-        'groups' => 'groups',
-        'visitors' => 'visitors',
         'sign_up_group' => 'signUpGroup',
-        'services' => 'services',
+        'slug' => 'slug',
+        'social_media' => 'socialMedia',
+        'sort_key' => 'sortKey',
+        'tags' => 'tags',
+        'team' => 'team',
         'team_title' => 'teamTitle',
-        'team' => 'team'
+        'visitors' => 'visitors',
+        'website' => 'website'
     ];
 
     /**
@@ -168,27 +168,27 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'address' => 'setAddress',
+        'association_id' => 'setAssociationId',
+        'denomination' => 'setDenomination',
+        'description' => 'setDescription',
+        'email' => 'setEmail',
+        'groups' => 'setGroups',
+        'is_published' => 'setIsPublished',
         'name' => 'setName',
+        'phone' => 'setPhone',
+        'services' => 'setServices',
         'short_name' => 'setShortName',
         'shorty' => 'setShorty',
-        'slug' => 'setSlug',
-        'sort_key' => 'setSortKey',
-        'is_published' => 'setIsPublished',
-        'description' => 'setDescription',
-        'website' => 'setWebsite',
-        'email' => 'setEmail',
-        'phone' => 'setPhone',
-        'denomination' => 'setDenomination',
-        'association_id' => 'setAssociationId',
-        'address' => 'setAddress',
-        'social_media' => 'setSocialMedia',
-        'tags' => 'setTags',
-        'groups' => 'setGroups',
-        'visitors' => 'setVisitors',
         'sign_up_group' => 'setSignUpGroup',
-        'services' => 'setServices',
+        'slug' => 'setSlug',
+        'social_media' => 'setSocialMedia',
+        'sort_key' => 'setSortKey',
+        'tags' => 'setTags',
+        'team' => 'setTeam',
         'team_title' => 'setTeamTitle',
-        'team' => 'setTeam'
+        'visitors' => 'setVisitors',
+        'website' => 'setWebsite'
     ];
 
     /**
@@ -197,27 +197,27 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'address' => 'getAddress',
+        'association_id' => 'getAssociationId',
+        'denomination' => 'getDenomination',
+        'description' => 'getDescription',
+        'email' => 'getEmail',
+        'groups' => 'getGroups',
+        'is_published' => 'getIsPublished',
         'name' => 'getName',
+        'phone' => 'getPhone',
+        'services' => 'getServices',
         'short_name' => 'getShortName',
         'shorty' => 'getShorty',
-        'slug' => 'getSlug',
-        'sort_key' => 'getSortKey',
-        'is_published' => 'getIsPublished',
-        'description' => 'getDescription',
-        'website' => 'getWebsite',
-        'email' => 'getEmail',
-        'phone' => 'getPhone',
-        'denomination' => 'getDenomination',
-        'association_id' => 'getAssociationId',
-        'address' => 'getAddress',
-        'social_media' => 'getSocialMedia',
-        'tags' => 'getTags',
-        'groups' => 'getGroups',
-        'visitors' => 'getVisitors',
         'sign_up_group' => 'getSignUpGroup',
-        'services' => 'getServices',
+        'slug' => 'getSlug',
+        'social_media' => 'getSocialMedia',
+        'sort_key' => 'getSortKey',
+        'tags' => 'getTags',
+        'team' => 'getTeam',
         'team_title' => 'getTeamTitle',
-        'team' => 'getTeam'
+        'visitors' => 'getVisitors',
+        'website' => 'getWebsite'
     ];
 
     /**
@@ -261,12 +261,6 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
-    public const DENOMINATION_NONE = 'denomination.none';
-    public const DENOMINATION_PROTESTANT = 'denomination.protestant';
-    public const DENOMINATION_FREE_EVANGELICAL = 'denomination.free.evangelical';
-    public const DENOMINATION_CATHOLIC = 'denomination.catholic';
-    public const DENOMINATION_ECUMENICAL = 'denomination.ecumenical';
-    public const DENOMINATION_ORTHODOX = 'denomination.orthodox';
     public const VISITORS_0 = 0;
     public const VISITORS_1 = 1;
     public const VISITORS_50 = 50;
@@ -274,23 +268,6 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     public const VISITORS_250 = 250;
     public const VISITORS_500 = 500;
     public const VISITORS_1000 = 1000;
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getDenominationAllowableValues()
-    {
-        return [
-            self::DENOMINATION_NONE,
-            self::DENOMINATION_PROTESTANT,
-            self::DENOMINATION_FREE_EVANGELICAL,
-            self::DENOMINATION_CATHOLIC,
-            self::DENOMINATION_ECUMENICAL,
-            self::DENOMINATION_ORTHODOX,
-        ];
-    }
 
     /**
      * Gets allowable values of the enum
@@ -325,27 +302,27 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
+        $this->container['address'] = $data['address'] ?? null;
+        $this->container['association_id'] = $data['association_id'] ?? null;
+        $this->container['denomination'] = $data['denomination'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['groups'] = $data['groups'] ?? null;
+        $this->container['is_published'] = $data['is_published'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['services'] = $data['services'] ?? null;
         $this->container['short_name'] = $data['short_name'] ?? null;
         $this->container['shorty'] = $data['shorty'] ?? null;
-        $this->container['slug'] = $data['slug'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? 0;
-        $this->container['is_published'] = $data['is_published'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['website'] = $data['website'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
-        $this->container['denomination'] = $data['denomination'] ?? null;
-        $this->container['association_id'] = $data['association_id'] ?? null;
-        $this->container['address'] = $data['address'] ?? null;
-        $this->container['social_media'] = $data['social_media'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['groups'] = $data['groups'] ?? null;
-        $this->container['visitors'] = $data['visitors'] ?? null;
         $this->container['sign_up_group'] = $data['sign_up_group'] ?? null;
-        $this->container['services'] = $data['services'] ?? null;
-        $this->container['team_title'] = $data['team_title'] ?? null;
+        $this->container['slug'] = $data['slug'] ?? null;
+        $this->container['social_media'] = $data['social_media'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? 0;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['team'] = $data['team'] ?? null;
+        $this->container['team_title'] = $data['team_title'] ?? null;
+        $this->container['visitors'] = $data['visitors'] ?? null;
+        $this->container['website'] = $data['website'] ?? null;
     }
 
     /**
@@ -357,11 +334,62 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
+        }
+        if ($this->container['association_id'] === null) {
+            $invalidProperties[] = "'association_id' can't be null";
+        }
+        if ($this->container['denomination'] === null) {
+            $invalidProperties[] = "'denomination' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
+        if ((mb_strlen($this->container['description']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1000.";
+        }
+
+        if ((mb_strlen($this->container['description']) < 1)) {
+            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ((mb_strlen($this->container['email']) < 1)) {
+            $invalidProperties[] = "invalid value for 'email', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['groups'] === null) {
+            $invalidProperties[] = "'groups' can't be null";
+        }
+        if ((count($this->container['groups']) < 1)) {
+            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 1.";
+        }
+
+        if ($this->container['is_published'] === null) {
+            $invalidProperties[] = "'is_published' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ((mb_strlen($this->container['name']) < 1)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['phone'] === null) {
+            $invalidProperties[] = "'phone' can't be null";
+        }
+        if ((mb_strlen($this->container['phone']) < 1)) {
+            $invalidProperties[] = "invalid value for 'phone', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['services'] === null) {
+            $invalidProperties[] = "'services' can't be null";
+        }
+        if ((count($this->container['services']) < 1)) {
+            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 1.";
         }
 
         if ($this->container['short_name'] === null) {
@@ -378,6 +406,9 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'shorty', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['sign_up_group'] === null) {
+            $invalidProperties[] = "'sign_up_group' can't be null";
+        }
         if ($this->container['slug'] === null) {
             $invalidProperties[] = "'slug' can't be null";
         }
@@ -385,73 +416,27 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'slug', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['sort_key'] === null) {
-            $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['is_published'] === null) {
-            $invalidProperties[] = "'is_published' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->container['description']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1000.";
-        }
-
-        if ((mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['website'] === null) {
-            $invalidProperties[] = "'website' can't be null";
-        }
-        if ((mb_strlen($this->container['website']) < 1)) {
-            $invalidProperties[] = "invalid value for 'website', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
-        if ((mb_strlen($this->container['email']) < 1)) {
-            $invalidProperties[] = "invalid value for 'email', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
-        }
-        if ((mb_strlen($this->container['phone']) < 1)) {
-            $invalidProperties[] = "invalid value for 'phone', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['denomination'] === null) {
-            $invalidProperties[] = "'denomination' can't be null";
-        }
-        $allowedValues = $this->getDenominationAllowableValues();
-        if (!is_null($this->container['denomination']) && !in_array($this->container['denomination'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'denomination', must be one of '%s'",
-                $this->container['denomination'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['association_id'] === null) {
-            $invalidProperties[] = "'association_id' can't be null";
-        }
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
-        }
         if ($this->container['social_media'] === null) {
             $invalidProperties[] = "'social_media' can't be null";
+        }
+        if ($this->container['sort_key'] === null) {
+            $invalidProperties[] = "'sort_key' can't be null";
         }
         if ($this->container['tags'] === null) {
             $invalidProperties[] = "'tags' can't be null";
         }
-        if ($this->container['groups'] === null) {
-            $invalidProperties[] = "'groups' can't be null";
+        if ($this->container['team'] === null) {
+            $invalidProperties[] = "'team' can't be null";
         }
-        if ((count($this->container['groups']) < 1)) {
-            $invalidProperties[] = "invalid value for 'groups', number of items must be greater than or equal to 1.";
+        if ((count($this->container['team']) < 1)) {
+            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 1.";
+        }
+
+        if ($this->container['team_title'] === null) {
+            $invalidProperties[] = "'team_title' can't be null";
+        }
+        if ((mb_strlen($this->container['team_title']) < 1)) {
+            $invalidProperties[] = "invalid value for 'team_title', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['visitors'] === null) {
@@ -466,28 +451,11 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
             );
         }
 
-        if ($this->container['sign_up_group'] === null) {
-            $invalidProperties[] = "'sign_up_group' can't be null";
+        if ($this->container['website'] === null) {
+            $invalidProperties[] = "'website' can't be null";
         }
-        if ($this->container['services'] === null) {
-            $invalidProperties[] = "'services' can't be null";
-        }
-        if ((count($this->container['services']) < 1)) {
-            $invalidProperties[] = "invalid value for 'services', number of items must be greater than or equal to 1.";
-        }
-
-        if ($this->container['team_title'] === null) {
-            $invalidProperties[] = "'team_title' can't be null";
-        }
-        if ((mb_strlen($this->container['team_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'team_title', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['team'] === null) {
-            $invalidProperties[] = "'team' can't be null";
-        }
-        if ((count($this->container['team']) < 1)) {
-            $invalidProperties[] = "invalid value for 'team', number of items must be greater than or equal to 1.";
+        if ((mb_strlen($this->container['website']) < 1)) {
+            $invalidProperties[] = "invalid value for 'website', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -504,6 +472,191 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets address
+     *
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestAddress
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestAddress $address address
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets association_id
+     *
+     * @return int
+     */
+    public function getAssociationId()
+    {
+        return $this->container['association_id'];
+    }
+
+    /**
+     * Sets association_id
+     *
+     * @param int $association_id association_id
+     *
+     * @return self
+     */
+    public function setAssociationId($association_id)
+    {
+        $this->container['association_id'] = $association_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets denomination
+     *
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestDenomination
+     */
+    public function getDenomination()
+    {
+        return $this->container['denomination'];
+    }
+
+    /**
+     * Sets denomination
+     *
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestDenomination $denomination denomination
+     *
+     * @return self
+     */
+    public function setDenomination($denomination)
+    {
+        $this->container['denomination'] = $denomination;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if ((mb_strlen($description) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling UpdateCampusRequest., must be smaller than or equal to 1000.');
+        }
+        if ((mb_strlen($description) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $description when calling UpdateCampusRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+
+        if ((mb_strlen($email) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $email when calling UpdateCampusRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets groups
+     *
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestGroupsInner[]
+     */
+    public function getGroups()
+    {
+        return $this->container['groups'];
+    }
+
+    /**
+     * Sets groups
+     *
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestGroupsInner[] $groups Either array of group IDs or array of objects with group-property, which is a domain object wiht 'domainIdentifier'
+     *
+     * @return self
+     */
+    public function setGroups($groups)
+    {
+
+
+        if ((count($groups) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $groups when calling UpdateCampusRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_published
+     *
+     * @return bool
+     */
+    public function getIsPublished()
+    {
+        return $this->container['is_published'];
+    }
+
+    /**
+     * Sets is_published
+     *
+     * @param bool $is_published is_published
+     *
+     * @return self
+     */
+    public function setIsPublished($is_published)
+    {
+        $this->container['is_published'] = $is_published;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -530,6 +683,64 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone phone
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+
+        if ((mb_strlen($phone) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $phone when calling UpdateCampusRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets services
+     *
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestServicesInner[]
+     */
+    public function getServices()
+    {
+        return $this->container['services'];
+    }
+
+    /**
+     * Sets services
+     *
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestServicesInner[] $services services
+     *
+     * @return self
+     */
+    public function setServices($services)
+    {
+
+
+        if ((count($services) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $services when calling UpdateCampusRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['services'] = $services;
 
         return $this;
     }
@@ -593,6 +804,30 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets sign_up_group
+     *
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroup
+     */
+    public function getSignUpGroup()
+    {
+        return $this->container['sign_up_group'];
+    }
+
+    /**
+     * Sets sign_up_group
+     *
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroup $sign_up_group sign_up_group
+     *
+     * @return self
+     */
+    public function setSignUpGroup($sign_up_group)
+    {
+        $this->container['sign_up_group'] = $sign_up_group;
+
+        return $this;
+    }
+
+    /**
      * Gets slug
      *
      * @return string
@@ -622,254 +857,6 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets sort_key
-     *
-     * @return float
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param float $sort_key sort_key
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_published
-     *
-     * @return bool
-     */
-    public function getIsPublished()
-    {
-        return $this->container['is_published'];
-    }
-
-    /**
-     * Sets is_published
-     *
-     * @param bool $is_published is_published
-     *
-     * @return self
-     */
-    public function setIsPublished($is_published)
-    {
-        $this->container['is_published'] = $is_published;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if ((mb_strlen($description) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling UpdateCampusRequest., must be smaller than or equal to 1000.');
-        }
-        if ((mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling UpdateCampusRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets website
-     *
-     * @return string
-     */
-    public function getWebsite()
-    {
-        return $this->container['website'];
-    }
-
-    /**
-     * Sets website
-     *
-     * @param string $website website
-     *
-     * @return self
-     */
-    public function setWebsite($website)
-    {
-
-        if ((mb_strlen($website) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $website when calling UpdateCampusRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['website'] = $website;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-
-        if ((mb_strlen($email) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling UpdateCampusRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string $phone phone
-     *
-     * @return self
-     */
-    public function setPhone($phone)
-    {
-
-        if ((mb_strlen($phone) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $phone when calling UpdateCampusRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets denomination
-     *
-     * @return string
-     */
-    public function getDenomination()
-    {
-        return $this->container['denomination'];
-    }
-
-    /**
-     * Sets denomination
-     *
-     * @param string $denomination Either exact string or denomination object with name property
-     *
-     * @return self
-     */
-    public function setDenomination($denomination)
-    {
-        $allowedValues = $this->getDenominationAllowableValues();
-        if (!in_array($denomination, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'denomination', must be one of '%s'",
-                    $denomination,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['denomination'] = $denomination;
-
-        return $this;
-    }
-
-    /**
-     * Gets association_id
-     *
-     * @return float
-     */
-    public function getAssociationId()
-    {
-        return $this->container['association_id'];
-    }
-
-    /**
-     * Sets association_id
-     *
-     * @param float $association_id association_id
-     *
-     * @return self
-     */
-    public function setAssociationId($association_id)
-    {
-        $this->container['association_id'] = $association_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestAddress
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestAddress $address address
-     *
-     * @return self
-     */
-    public function setAddress($address)
-    {
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
      * Gets social_media
      *
      * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSocialMedia
@@ -889,6 +876,30 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setSocialMedia($social_media)
     {
         $this->container['social_media'] = $social_media;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }
@@ -918,117 +929,30 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets groups
+     * Gets team
      *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestGroupsInner[]
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInner[]
      */
-    public function getGroups()
+    public function getTeam()
     {
-        return $this->container['groups'];
+        return $this->container['team'];
     }
 
     /**
-     * Sets groups
+     * Sets team
      *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestGroupsInner[] $groups Either array of group IDs or array of objects with group-property, which is a domain object wiht 'domainIdentifier'
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInner[] $team team
      *
      * @return self
      */
-    public function setGroups($groups)
+    public function setTeam($team)
     {
 
 
-        if ((count($groups) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $groups when calling UpdateCampusRequest., number of items must be greater than or equal to 1.');
+        if ((count($team) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $team when calling UpdateCampusRequest., number of items must be greater than or equal to 1.');
         }
-        $this->container['groups'] = $groups;
-
-        return $this;
-    }
-
-    /**
-     * Gets visitors
-     *
-     * @return float
-     */
-    public function getVisitors()
-    {
-        return $this->container['visitors'];
-    }
-
-    /**
-     * Sets visitors
-     *
-     * @param float $visitors Single integer, which represents a range.
-     *
-     * @return self
-     */
-    public function setVisitors($visitors)
-    {
-        $allowedValues = $this->getVisitorsAllowableValues();
-        if (!in_array($visitors, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'visitors', must be one of '%s'",
-                    $visitors,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['visitors'] = $visitors;
-
-        return $this;
-    }
-
-    /**
-     * Gets sign_up_group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroup
-     */
-    public function getSignUpGroup()
-    {
-        return $this->container['sign_up_group'];
-    }
-
-    /**
-     * Sets sign_up_group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroup $sign_up_group sign_up_group
-     *
-     * @return self
-     */
-    public function setSignUpGroup($sign_up_group)
-    {
-        $this->container['sign_up_group'] = $sign_up_group;
-
-        return $this;
-    }
-
-    /**
-     * Gets services
-     *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestServicesInner[]
-     */
-    public function getServices()
-    {
-        return $this->container['services'];
-    }
-
-    /**
-     * Sets services
-     *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestServicesInner[] $services services
-     *
-     * @return self
-     */
-    public function setServices($services)
-    {
-
-
-        if ((count($services) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $services when calling UpdateCampusRequest., number of items must be greater than or equal to 1.');
-        }
-        $this->container['services'] = $services;
+        $this->container['team'] = $team;
 
         return $this;
     }
@@ -1063,30 +987,64 @@ class UpdateCampusRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets team
+     * Gets visitors
      *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInner[]
+     * @return int
      */
-    public function getTeam()
+    public function getVisitors()
     {
-        return $this->container['team'];
+        return $this->container['visitors'];
     }
 
     /**
-     * Sets team
+     * Sets visitors
      *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInner[] $team team
+     * @param int $visitors Single integer, which represents a range.
      *
      * @return self
      */
-    public function setTeam($team)
+    public function setVisitors($visitors)
+    {
+        $allowedValues = $this->getVisitorsAllowableValues();
+        if (!in_array($visitors, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'visitors', must be one of '%s'",
+                    $visitors,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['visitors'] = $visitors;
+
+        return $this;
+    }
+
+    /**
+     * Gets website
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->container['website'];
+    }
+
+    /**
+     * Sets website
+     *
+     * @param string $website website
+     *
+     * @return self
+     */
+    public function setWebsite($website)
     {
 
-
-        if ((count($team) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $team when calling UpdateCampusRequest., number of items must be greater than or equal to 1.');
+        if ((mb_strlen($website) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $website when calling UpdateCampusRequest., must be bigger than or equal to 1.');
         }
-        $this->container['team'] = $team;
+
+        $this->container['website'] = $website;
 
         return $this;
     }

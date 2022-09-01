@@ -57,9 +57,9 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
         'account_type_id' => 'int',
         'include_profit_loss' => 'bool',
+        'name' => 'string',
         'sort_key' => 'int'
     ];
 
@@ -71,9 +71,9 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
         'account_type_id' => null,
         'include_profit_loss' => null,
+        'name' => null,
         'sort_key' => null
     ];
 
@@ -104,9 +104,9 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'account_type_id' => 'accountTypeId',
         'include_profit_loss' => 'includeProfitLoss',
+        'name' => 'name',
         'sort_key' => 'sortKey'
     ];
 
@@ -116,9 +116,9 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'account_type_id' => 'setAccountTypeId',
         'include_profit_loss' => 'setIncludeProfitLoss',
+        'name' => 'setName',
         'sort_key' => 'setSortKey'
     ];
 
@@ -128,9 +128,9 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'account_type_id' => 'getAccountTypeId',
         'include_profit_loss' => 'getIncludeProfitLoss',
+        'name' => 'getName',
         'sort_key' => 'getSortKey'
     ];
 
@@ -191,9 +191,9 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['account_type_id'] = $data['account_type_id'] ?? null;
         $this->container['include_profit_loss'] = $data['include_profit_loss'] ?? false;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? 0;
     }
 
@@ -206,11 +206,11 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['account_type_id'] === null) {
             $invalidProperties[] = "'account_type_id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,30 +226,6 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets account_type_id
@@ -295,6 +271,30 @@ class CreateNewAccountClassRequest implements ModelInterface, ArrayAccess, \Json
     public function setIncludeProfitLoss($include_profit_loss)
     {
         $this->container['include_profit_loss'] = $include_profit_loss;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

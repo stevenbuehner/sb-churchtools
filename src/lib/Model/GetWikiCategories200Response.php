@@ -58,7 +58,7 @@ class GetWikiCategories200Response implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\WikiCategory1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
         'permissions' => '\StevenBuehner\ChurchTools\Model\GetWikiCategories200ResponsePermissions'
     ];
 
@@ -242,7 +242,7 @@ class GetWikiCategories200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -252,7 +252,7 @@ class GetWikiCategories200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

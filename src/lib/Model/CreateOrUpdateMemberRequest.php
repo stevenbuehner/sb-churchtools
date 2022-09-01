@@ -57,11 +57,11 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'group_type_role_id' => 'int',
         'comment' => 'string',
-        'member_start_date' => '\DateTime',
-        'member_end_date' => '\DateTime',
         'fields' => 'object',
+        'group_type_role_id' => 'int',
+        'member_end_date' => '\DateTime',
+        'member_start_date' => '\DateTime',
         'waitinglist_pos' => 'int'
     ];
 
@@ -73,11 +73,11 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'group_type_role_id' => null,
         'comment' => null,
-        'member_start_date' => 'date',
-        'member_end_date' => 'date',
         'fields' => null,
+        'group_type_role_id' => null,
+        'member_end_date' => 'date',
+        'member_start_date' => 'date',
         'waitinglist_pos' => null
     ];
 
@@ -108,11 +108,11 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'group_type_role_id' => 'groupTypeRoleId',
         'comment' => 'comment',
-        'member_start_date' => 'memberStartDate',
-        'member_end_date' => 'memberEndDate',
         'fields' => 'fields',
+        'group_type_role_id' => 'groupTypeRoleId',
+        'member_end_date' => 'memberEndDate',
+        'member_start_date' => 'memberStartDate',
         'waitinglist_pos' => 'waitinglistPos'
     ];
 
@@ -122,11 +122,11 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'group_type_role_id' => 'setGroupTypeRoleId',
         'comment' => 'setComment',
-        'member_start_date' => 'setMemberStartDate',
-        'member_end_date' => 'setMemberEndDate',
         'fields' => 'setFields',
+        'group_type_role_id' => 'setGroupTypeRoleId',
+        'member_end_date' => 'setMemberEndDate',
+        'member_start_date' => 'setMemberStartDate',
         'waitinglist_pos' => 'setWaitinglistPos'
     ];
 
@@ -136,11 +136,11 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'group_type_role_id' => 'getGroupTypeRoleId',
         'comment' => 'getComment',
-        'member_start_date' => 'getMemberStartDate',
-        'member_end_date' => 'getMemberEndDate',
         'fields' => 'getFields',
+        'group_type_role_id' => 'getGroupTypeRoleId',
+        'member_end_date' => 'getMemberEndDate',
+        'member_start_date' => 'getMemberStartDate',
         'waitinglist_pos' => 'getWaitinglistPos'
     ];
 
@@ -201,11 +201,11 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
         $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
-        $this->container['member_end_date'] = $data['member_end_date'] ?? null;
         $this->container['fields'] = $data['fields'] ?? null;
+        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
+        $this->container['member_end_date'] = $data['member_end_date'] ?? null;
+        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
         $this->container['waitinglist_pos'] = $data['waitinglist_pos'] ?? null;
     }
 
@@ -234,30 +234,6 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets group_type_role_id
-     *
-     * @return int|null
-     */
-    public function getGroupTypeRoleId()
-    {
-        return $this->container['group_type_role_id'];
-    }
-
-    /**
-     * Sets group_type_role_id
-     *
-     * @param int|null $group_type_role_id group_type_role_id
-     *
-     * @return self
-     */
-    public function setGroupTypeRoleId($group_type_role_id)
-    {
-        $this->container['group_type_role_id'] = $group_type_role_id;
-
-        return $this;
-    }
-
-    /**
      * Gets comment
      *
      * @return string|null
@@ -282,25 +258,49 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets member_start_date
+     * Gets fields
      *
-     * @return \DateTime|null
+     * @return object|null
      */
-    public function getMemberStartDate()
+    public function getFields()
     {
-        return $this->container['member_start_date'];
+        return $this->container['fields'];
     }
 
     /**
-     * Sets member_start_date
+     * Sets fields
      *
-     * @param \DateTime|null $member_start_date member_start_date
+     * @param object|null $fields Group member fields as key value pairs, where the key is the ID of the field to be set.
      *
      * @return self
      */
-    public function setMemberStartDate($member_start_date)
+    public function setFields($fields)
     {
-        $this->container['member_start_date'] = $member_start_date;
+        $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_type_role_id
+     *
+     * @return int|null
+     */
+    public function getGroupTypeRoleId()
+    {
+        return $this->container['group_type_role_id'];
+    }
+
+    /**
+     * Sets group_type_role_id
+     *
+     * @param int|null $group_type_role_id group_type_role_id
+     *
+     * @return self
+     */
+    public function setGroupTypeRoleId($group_type_role_id)
+    {
+        $this->container['group_type_role_id'] = $group_type_role_id;
 
         return $this;
     }
@@ -330,25 +330,25 @@ class CreateOrUpdateMemberRequest implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets fields
+     * Gets member_start_date
      *
-     * @return object|null
+     * @return \DateTime|null
      */
-    public function getFields()
+    public function getMemberStartDate()
     {
-        return $this->container['fields'];
+        return $this->container['member_start_date'];
     }
 
     /**
-     * Sets fields
+     * Sets member_start_date
      *
-     * @param object|null $fields Group member fields as key value pairs, where the key is the ID of the field to be set.
+     * @param \DateTime|null $member_start_date member_start_date
      *
      * @return self
      */
-    public function setFields($fields)
+    public function setMemberStartDate($member_start_date)
     {
-        $this->container['fields'] = $fields;
+        $this->container['member_start_date'] = $member_start_date;
 
         return $this;
     }

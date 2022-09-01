@@ -59,7 +59,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'shorty' => 'string',
+        'name_translated' => 'string',
         'sort_key' => 'int'
     ];
 
@@ -73,7 +73,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'shorty' => null,
+        'name_translated' => null,
         'sort_key' => null
     ];
 
@@ -106,7 +106,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'shorty' => 'shorty',
+        'name_translated' => 'nameTranslated',
         'sort_key' => 'sortKey'
     ];
 
@@ -118,7 +118,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'shorty' => 'setShorty',
+        'name_translated' => 'setNameTranslated',
         'sort_key' => 'setSortKey'
     ];
 
@@ -130,7 +130,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'shorty' => 'getShorty',
+        'name_translated' => 'getNameTranslated',
         'sort_key' => 'getSortKey'
     ];
 
@@ -193,7 +193,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['shorty'] = $data['shorty'] ?? null;
+        $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
@@ -234,7 +234,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int|null $id ID of department
+     * @param int|null $id id
      *
      * @return self
      */
@@ -258,7 +258,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Department name
+     * @param string|null $name name
      *
      * @return self
      */
@@ -270,25 +270,25 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets shorty
+     * Gets name_translated
      *
      * @return string|null
      */
-    public function getShorty()
+    public function getNameTranslated()
     {
-        return $this->container['shorty'];
+        return $this->container['name_translated'];
     }
 
     /**
-     * Sets shorty
+     * Sets name_translated
      *
-     * @param string|null $shorty Abbreviation
+     * @param string|null $name_translated name_translated
      *
      * @return self
      */
-    public function setShorty($shorty)
+    public function setNameTranslated($name_translated)
     {
-        $this->container['shorty'] = $shorty;
+        $this->container['name_translated'] = $name_translated;
 
         return $this;
     }
@@ -306,7 +306,7 @@ class Department implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sort_key
      *
-     * @param int|null $sort_key Used to sort all departments
+     * @param int|null $sort_key sort_key
      *
      * @return self
      */

@@ -57,10 +57,10 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
+        'age' => 'int',
         'date' => 'string',
-        'age' => 'float',
-        'person' => '\StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseDataInnerPerson'
+        'person' => '\StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseDataInnerPerson',
+        'type' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'date' => null,
         'age' => null,
-        'person' => null
+        'date' => null,
+        'person' => null,
+        'type' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'date' => 'date',
         'age' => 'age',
-        'person' => 'person'
+        'date' => 'date',
+        'person' => 'person',
+        'type' => 'type'
     ];
 
     /**
@@ -116,10 +116,10 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'date' => 'setDate',
         'age' => 'setAge',
-        'person' => 'setPerson'
+        'date' => 'setDate',
+        'person' => 'setPerson',
+        'type' => 'setType'
     ];
 
     /**
@@ -128,10 +128,10 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'date' => 'getDate',
         'age' => 'getAge',
-        'person' => 'getPerson'
+        'date' => 'getDate',
+        'person' => 'getPerson',
+        'type' => 'getType'
     ];
 
     /**
@@ -191,10 +191,10 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['date'] = $data['date'] ?? null;
         $this->container['age'] = $data['age'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
         $this->container['person'] = $data['person'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -206,13 +206,9 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['age'] === null) {
+            $invalidProperties[] = "'age' can't be null";
         }
-        if ((mb_strlen($this->container['type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
         }
@@ -220,9 +216,13 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
             $invalidProperties[] = "invalid value for 'date', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['age'] === null) {
-            $invalidProperties[] = "'age' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
+        if ((mb_strlen($this->container['type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -239,30 +239,25 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets type
+     * Gets age
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getAge()
     {
-        return $this->container['type'];
+        return $this->container['age'];
     }
 
     /**
-     * Sets type
+     * Sets age
      *
-     * @param string $type Type of Date
+     * @param int $age Calculated age. (see note to that endpoint)
      *
      * @return self
      */
-    public function setType($type)
+    public function setAge($age)
     {
-
-        if ((mb_strlen($type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling GetPersonsBirthdays200ResponseDataInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['type'] = $type;
+        $this->container['age'] = $age;
 
         return $this;
     }
@@ -297,30 +292,6 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets age
-     *
-     * @return float
-     */
-    public function getAge()
-    {
-        return $this->container['age'];
-    }
-
-    /**
-     * Sets age
-     *
-     * @param float $age Calculated age. (see note to that endpoint)
-     *
-     * @return self
-     */
-    public function setAge($age)
-    {
-        $this->container['age'] = $age;
-
-        return $this;
-    }
-
-    /**
      * Gets person
      *
      * @return \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseDataInnerPerson|null
@@ -340,6 +311,35 @@ class GetPersonsBirthdays200ResponseDataInner implements ModelInterface, ArrayAc
     public function setPerson($person)
     {
         $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type Type of Date
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+
+        if ((mb_strlen($type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $type when calling GetPersonsBirthdays200ResponseDataInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['type'] = $type;
 
         return $this;
     }

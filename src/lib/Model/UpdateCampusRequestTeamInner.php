@@ -57,10 +57,10 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInnerPerson',
-        'person_id' => 'float',
         'note' => 'string',
-        'sort_key' => 'float'
+        'person' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInnerPerson',
+        'person_id' => 'int',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -71,9 +71,9 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'note' => null,
         'person' => null,
         'person_id' => null,
-        'note' => null,
         'sort_key' => null
     ];
 
@@ -104,9 +104,9 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
+        'note' => 'note',
         'person' => 'person',
         'person_id' => 'personId',
-        'note' => 'note',
         'sort_key' => 'sortKey'
     ];
 
@@ -116,9 +116,9 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
+        'note' => 'setNote',
         'person' => 'setPerson',
         'person_id' => 'setPersonId',
-        'note' => 'setNote',
         'sort_key' => 'setSortKey'
     ];
 
@@ -128,9 +128,9 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
+        'note' => 'getNote',
         'person' => 'getPerson',
         'person_id' => 'getPersonId',
-        'note' => 'getNote',
         'sort_key' => 'getSortKey'
     ];
 
@@ -191,9 +191,9 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
+        $this->container['note'] = $data['note'] ?? null;
         $this->container['person'] = $data['person'] ?? null;
         $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
@@ -232,54 +232,6 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInnerPerson|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInnerPerson|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
-     * Gets person_id
-     *
-     * @return float|null
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param float|null $person_id person_id
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
      * Gets note
      *
      * @return string
@@ -309,9 +261,57 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
+     * Gets person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInnerPerson|null
+     */
+    public function getPerson()
+    {
+        return $this->container['person'];
+    }
+
+    /**
+     * Sets person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestTeamInnerPerson|null $person person
+     *
+     * @return self
+     */
+    public function setPerson($person)
+    {
+        $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int|null
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int|null $person_id person_id
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
+
+        return $this;
+    }
+
+    /**
      * Gets sort_key
      *
-     * @return float
+     * @return int
      */
     public function getSortKey()
     {
@@ -321,7 +321,7 @@ class UpdateCampusRequestTeamInner implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets sort_key
      *
-     * @param float $sort_key sort_key
+     * @param int $sort_key sort_key
      *
      * @return self
      */

@@ -57,16 +57,16 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'churchcore' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcore',
-        'churchcheckin' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcheckin',
-        'churchdb' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchdb',
         'churchcal' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcal',
+        'churchcheckin' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcheckin',
+        'churchcore' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcore',
+        'churchdb' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchdb',
+        'churchfinance' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchfinance',
+        'churchreport' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchreport',
         'churchresource' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchresource',
         'churchservice' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchservice',
         'churchwiki' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchwiki',
-        'churchfinance' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchfinance',
-        'finance' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataFinance',
-        'churchreport' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchreport'
+        'finance' => '\StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataFinance'
     ];
 
     /**
@@ -77,16 +77,16 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'churchcore' => null,
-        'churchcheckin' => null,
-        'churchdb' => null,
         'churchcal' => null,
+        'churchcheckin' => null,
+        'churchcore' => null,
+        'churchdb' => null,
+        'churchfinance' => null,
+        'churchreport' => null,
         'churchresource' => null,
         'churchservice' => null,
         'churchwiki' => null,
-        'churchfinance' => null,
-        'finance' => null,
-        'churchreport' => null
+        'finance' => null
     ];
 
     /**
@@ -116,16 +116,16 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'churchcore' => 'churchcore',
-        'churchcheckin' => 'churchcheckin',
-        'churchdb' => 'churchdb',
         'churchcal' => 'churchcal',
+        'churchcheckin' => 'churchcheckin',
+        'churchcore' => 'churchcore',
+        'churchdb' => 'churchdb',
+        'churchfinance' => 'churchfinance',
+        'churchreport' => 'churchreport',
         'churchresource' => 'churchresource',
         'churchservice' => 'churchservice',
         'churchwiki' => 'churchwiki',
-        'churchfinance' => 'churchfinance',
-        'finance' => 'finance',
-        'churchreport' => 'churchreport'
+        'finance' => 'finance'
     ];
 
     /**
@@ -134,16 +134,16 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'churchcore' => 'setChurchcore',
-        'churchcheckin' => 'setChurchcheckin',
-        'churchdb' => 'setChurchdb',
         'churchcal' => 'setChurchcal',
+        'churchcheckin' => 'setChurchcheckin',
+        'churchcore' => 'setChurchcore',
+        'churchdb' => 'setChurchdb',
+        'churchfinance' => 'setChurchfinance',
+        'churchreport' => 'setChurchreport',
         'churchresource' => 'setChurchresource',
         'churchservice' => 'setChurchservice',
         'churchwiki' => 'setChurchwiki',
-        'churchfinance' => 'setChurchfinance',
-        'finance' => 'setFinance',
-        'churchreport' => 'setChurchreport'
+        'finance' => 'setFinance'
     ];
 
     /**
@@ -152,16 +152,16 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'churchcore' => 'getChurchcore',
-        'churchcheckin' => 'getChurchcheckin',
-        'churchdb' => 'getChurchdb',
         'churchcal' => 'getChurchcal',
+        'churchcheckin' => 'getChurchcheckin',
+        'churchcore' => 'getChurchcore',
+        'churchdb' => 'getChurchdb',
+        'churchfinance' => 'getChurchfinance',
+        'churchreport' => 'getChurchreport',
         'churchresource' => 'getChurchresource',
         'churchservice' => 'getChurchservice',
         'churchwiki' => 'getChurchwiki',
-        'churchfinance' => 'getChurchfinance',
-        'finance' => 'getFinance',
-        'churchreport' => 'getChurchreport'
+        'finance' => 'getFinance'
     ];
 
     /**
@@ -221,16 +221,16 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['churchcore'] = $data['churchcore'] ?? null;
-        $this->container['churchcheckin'] = $data['churchcheckin'] ?? null;
-        $this->container['churchdb'] = $data['churchdb'] ?? null;
         $this->container['churchcal'] = $data['churchcal'] ?? null;
+        $this->container['churchcheckin'] = $data['churchcheckin'] ?? null;
+        $this->container['churchcore'] = $data['churchcore'] ?? null;
+        $this->container['churchdb'] = $data['churchdb'] ?? null;
+        $this->container['churchfinance'] = $data['churchfinance'] ?? null;
+        $this->container['churchreport'] = $data['churchreport'] ?? null;
         $this->container['churchresource'] = $data['churchresource'] ?? null;
         $this->container['churchservice'] = $data['churchservice'] ?? null;
         $this->container['churchwiki'] = $data['churchwiki'] ?? null;
-        $this->container['churchfinance'] = $data['churchfinance'] ?? null;
         $this->container['finance'] = $data['finance'] ?? null;
-        $this->container['churchreport'] = $data['churchreport'] ?? null;
     }
 
     /**
@@ -258,25 +258,25 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets churchcore
+     * Gets churchcal
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcore|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcal|null
      */
-    public function getChurchcore()
+    public function getChurchcal()
     {
-        return $this->container['churchcore'];
+        return $this->container['churchcal'];
     }
 
     /**
-     * Sets churchcore
+     * Sets churchcal
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcore|null $churchcore churchcore
+     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcal|null $churchcal churchcal
      *
      * @return self
      */
-    public function setChurchcore($churchcore)
+    public function setChurchcal($churchcal)
     {
-        $this->container['churchcore'] = $churchcore;
+        $this->container['churchcal'] = $churchcal;
 
         return $this;
     }
@@ -306,6 +306,30 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets churchcore
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcore|null
+     */
+    public function getChurchcore()
+    {
+        return $this->container['churchcore'];
+    }
+
+    /**
+     * Sets churchcore
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcore|null $churchcore churchcore
+     *
+     * @return self
+     */
+    public function setChurchcore($churchcore)
+    {
+        $this->container['churchcore'] = $churchcore;
+
+        return $this;
+    }
+
+    /**
      * Gets churchdb
      *
      * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchdb|null
@@ -330,25 +354,49 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets churchcal
+     * Gets churchfinance
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcal|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchfinance|null
      */
-    public function getChurchcal()
+    public function getChurchfinance()
     {
-        return $this->container['churchcal'];
+        return $this->container['churchfinance'];
     }
 
     /**
-     * Sets churchcal
+     * Sets churchfinance
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchcal|null $churchcal churchcal
+     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchfinance|null $churchfinance churchfinance
      *
      * @return self
      */
-    public function setChurchcal($churchcal)
+    public function setChurchfinance($churchfinance)
     {
-        $this->container['churchcal'] = $churchcal;
+        $this->container['churchfinance'] = $churchfinance;
+
+        return $this;
+    }
+
+    /**
+     * Gets churchreport
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchreport|null
+     */
+    public function getChurchreport()
+    {
+        return $this->container['churchreport'];
+    }
+
+    /**
+     * Sets churchreport
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchreport|null $churchreport churchreport
+     *
+     * @return self
+     */
+    public function setChurchreport($churchreport)
+    {
+        $this->container['churchreport'] = $churchreport;
 
         return $this;
     }
@@ -426,30 +474,6 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets churchfinance
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchfinance|null
-     */
-    public function getChurchfinance()
-    {
-        return $this->container['churchfinance'];
-    }
-
-    /**
-     * Sets churchfinance
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchfinance|null $churchfinance churchfinance
-     *
-     * @return self
-     */
-    public function setChurchfinance($churchfinance)
-    {
-        $this->container['churchfinance'] = $churchfinance;
-
-        return $this;
-    }
-
-    /**
      * Gets finance
      *
      * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataFinance|null
@@ -469,30 +493,6 @@ class GetGlobalPermissions200ResponseData implements ModelInterface, ArrayAccess
     public function setFinance($finance)
     {
         $this->container['finance'] = $finance;
-
-        return $this;
-    }
-
-    /**
-     * Gets churchreport
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchreport|null
-     */
-    public function getChurchreport()
-    {
-        return $this->container['churchreport'];
-    }
-
-    /**
-     * Sets churchreport
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetGlobalPermissions200ResponseDataChurchreport|null $churchreport churchreport
-     *
-     * @return self
-     */
-    public function setChurchreport($churchreport)
-    {
-        $this->container['churchreport'] = $churchreport;
 
         return $this;
     }

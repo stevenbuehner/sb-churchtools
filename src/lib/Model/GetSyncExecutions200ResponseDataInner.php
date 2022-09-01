@@ -57,16 +57,16 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'execution_id' => 'string',
-        'job_id' => 'float',
-        'start_date' => 'string',
-        'end_date' => 'string',
-        'status' => 'string',
-        'error_count' => 'int',
         'both' => '\StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerBoth',
+        'end_date' => 'string',
+        'error_count' => 'int',
         'es' => '\StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerEs',
+        'execution_id' => 'string',
+        'is_dry_run' => 'bool',
+        'job_id' => 'int',
         'master' => '\StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerEs',
-        'is_dry_run' => 'bool'
+        'start_date' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -77,16 +77,16 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'execution_id' => null,
-        'job_id' => null,
-        'start_date' => null,
-        'end_date' => null,
-        'status' => null,
-        'error_count' => null,
         'both' => null,
+        'end_date' => null,
+        'error_count' => null,
         'es' => null,
+        'execution_id' => null,
+        'is_dry_run' => null,
+        'job_id' => null,
         'master' => null,
-        'is_dry_run' => null
+        'start_date' => null,
+        'status' => null
     ];
 
     /**
@@ -116,16 +116,16 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'execution_id' => 'executionId',
-        'job_id' => 'jobId',
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'status' => 'status',
-        'error_count' => 'errorCount',
         'both' => 'both',
+        'end_date' => 'endDate',
+        'error_count' => 'errorCount',
         'es' => 'es',
+        'execution_id' => 'executionId',
+        'is_dry_run' => 'isDryRun',
+        'job_id' => 'jobId',
         'master' => 'master',
-        'is_dry_run' => 'isDryRun'
+        'start_date' => 'startDate',
+        'status' => 'status'
     ];
 
     /**
@@ -134,16 +134,16 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'execution_id' => 'setExecutionId',
-        'job_id' => 'setJobId',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'status' => 'setStatus',
-        'error_count' => 'setErrorCount',
         'both' => 'setBoth',
+        'end_date' => 'setEndDate',
+        'error_count' => 'setErrorCount',
         'es' => 'setEs',
+        'execution_id' => 'setExecutionId',
+        'is_dry_run' => 'setIsDryRun',
+        'job_id' => 'setJobId',
         'master' => 'setMaster',
-        'is_dry_run' => 'setIsDryRun'
+        'start_date' => 'setStartDate',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -152,16 +152,16 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'execution_id' => 'getExecutionId',
-        'job_id' => 'getJobId',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'status' => 'getStatus',
-        'error_count' => 'getErrorCount',
         'both' => 'getBoth',
+        'end_date' => 'getEndDate',
+        'error_count' => 'getErrorCount',
         'es' => 'getEs',
+        'execution_id' => 'getExecutionId',
+        'is_dry_run' => 'getIsDryRun',
+        'job_id' => 'getJobId',
         'master' => 'getMaster',
-        'is_dry_run' => 'getIsDryRun'
+        'start_date' => 'getStartDate',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -221,16 +221,16 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['execution_id'] = $data['execution_id'] ?? null;
-        $this->container['job_id'] = $data['job_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['error_count'] = $data['error_count'] ?? null;
         $this->container['both'] = $data['both'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['error_count'] = $data['error_count'] ?? null;
         $this->container['es'] = $data['es'] ?? null;
-        $this->container['master'] = $data['master'] ?? null;
+        $this->container['execution_id'] = $data['execution_id'] ?? null;
         $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
+        $this->container['job_id'] = $data['job_id'] ?? null;
+        $this->container['master'] = $data['master'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -241,6 +241,13 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
+        }
+        if ((mb_strlen($this->container['end_date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'end_date', the character length must be bigger than or equal to 1.";
+        }
 
         if ($this->container['execution_id'] === null) {
             $invalidProperties[] = "'execution_id' can't be null";
@@ -257,13 +264,6 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($this->container['start_date']) < 1)) {
             $invalidProperties[] = "invalid value for 'start_date', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['end_date'] === null) {
-            $invalidProperties[] = "'end_date' can't be null";
-        }
-        if ((mb_strlen($this->container['end_date']) < 1)) {
-            $invalidProperties[] = "invalid value for 'end_date', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['status'] === null) {
@@ -289,83 +289,25 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets execution_id
+     * Gets both
      *
-     * @return string
+     * @return \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerBoth|null
      */
-    public function getExecutionId()
+    public function getBoth()
     {
-        return $this->container['execution_id'];
+        return $this->container['both'];
     }
 
     /**
-     * Sets execution_id
+     * Sets both
      *
-     * @param string $execution_id execution_id
+     * @param \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerBoth|null $both both
      *
      * @return self
      */
-    public function setExecutionId($execution_id)
+    public function setBoth($both)
     {
-
-        if ((mb_strlen($execution_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $execution_id when calling GetSyncExecutions200ResponseDataInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['execution_id'] = $execution_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets job_id
-     *
-     * @return float
-     */
-    public function getJobId()
-    {
-        return $this->container['job_id'];
-    }
-
-    /**
-     * Sets job_id
-     *
-     * @param float $job_id job_id
-     *
-     * @return self
-     */
-    public function setJobId($job_id)
-    {
-        $this->container['job_id'] = $job_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return string
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param string $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-
-        if ((mb_strlen($start_date) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $start_date when calling GetSyncExecutions200ResponseDataInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['start_date'] = $start_date;
+        $this->container['both'] = $both;
 
         return $this;
     }
@@ -400,35 +342,6 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-
-        if ((mb_strlen($status) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $status when calling GetSyncExecutions200ResponseDataInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
      * Gets error_count
      *
      * @return int|null
@@ -448,30 +361,6 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
     public function setErrorCount($error_count)
     {
         $this->container['error_count'] = $error_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets both
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerBoth|null
-     */
-    public function getBoth()
-    {
-        return $this->container['both'];
-    }
-
-    /**
-     * Sets both
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerBoth|null $both both
-     *
-     * @return self
-     */
-    public function setBoth($both)
-    {
-        $this->container['both'] = $both;
 
         return $this;
     }
@@ -501,25 +390,30 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets master
+     * Gets execution_id
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerEs|null
+     * @return string
      */
-    public function getMaster()
+    public function getExecutionId()
     {
-        return $this->container['master'];
+        return $this->container['execution_id'];
     }
 
     /**
-     * Sets master
+     * Sets execution_id
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerEs|null $master master
+     * @param string $execution_id execution_id
      *
      * @return self
      */
-    public function setMaster($master)
+    public function setExecutionId($execution_id)
     {
-        $this->container['master'] = $master;
+
+        if ((mb_strlen($execution_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $execution_id when calling GetSyncExecutions200ResponseDataInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['execution_id'] = $execution_id;
 
         return $this;
     }
@@ -544,6 +438,112 @@ class GetSyncExecutions200ResponseDataInner implements ModelInterface, ArrayAcce
     public function setIsDryRun($is_dry_run)
     {
         $this->container['is_dry_run'] = $is_dry_run;
+
+        return $this;
+    }
+
+    /**
+     * Gets job_id
+     *
+     * @return int
+     */
+    public function getJobId()
+    {
+        return $this->container['job_id'];
+    }
+
+    /**
+     * Sets job_id
+     *
+     * @param int $job_id job_id
+     *
+     * @return self
+     */
+    public function setJobId($job_id)
+    {
+        $this->container['job_id'] = $job_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets master
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerEs|null
+     */
+    public function getMaster()
+    {
+        return $this->container['master'];
+    }
+
+    /**
+     * Sets master
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseDataInnerEs|null $master master
+     *
+     * @return self
+     */
+    public function setMaster($master)
+    {
+        $this->container['master'] = $master;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return string
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param string $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+
+        if ((mb_strlen($start_date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $start_date when calling GetSyncExecutions200ResponseDataInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+
+        if ((mb_strlen($status) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $status when calling GetSyncExecutions200ResponseDataInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['status'] = $status;
 
         return $this;
     }

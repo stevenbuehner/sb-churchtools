@@ -57,24 +57,24 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'account_id' => 'int',
+        'amount' => 'int',
+        'cash_discount_amount' => 'int',
+        'cash_discount_id' => 'int',
+        'contra_account_id' => 'int',
+        'cost_center_id' => 'int',
         'document_date' => '\DateTime',
         'document_number' => 'string',
-        'account_id' => 'int',
-        'contra_account_id' => 'int',
-        'amount' => 'float',
-        'note' => 'string',
+        'donator' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
+        'donator_spouse' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
+        'id' => 'int',
         'is_immutable' => 'bool',
-        'cost_center_id' => 'int',
-        'donator' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson',
-        'donator_spouse' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson',
-        'split_transaction_id' => 'int',
-        'tax_rate_id' => 'float',
-        'tax_transaction_id' => 'float',
-        'cash_discount_id' => 'int',
-        'cash_discount_amount' => 'float',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'note' => 'string',
         'permissions' => '\StevenBuehner\ChurchTools\Model\GetAllTransactions200ResponseDataInnerPermissions',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'split_transaction_id' => 'int',
+        'tax_rate_id' => 'int',
+        'tax_transaction_id' => 'int'
     ];
 
     /**
@@ -85,24 +85,24 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'account_id' => null,
+        'amount' => null,
+        'cash_discount_amount' => null,
+        'cash_discount_id' => null,
+        'contra_account_id' => null,
+        'cost_center_id' => null,
         'document_date' => 'date',
         'document_number' => null,
-        'account_id' => null,
-        'contra_account_id' => null,
-        'amount' => 'integer',
-        'note' => null,
-        'is_immutable' => null,
-        'cost_center_id' => null,
         'donator' => null,
         'donator_spouse' => null,
-        'split_transaction_id' => null,
-        'tax_rate_id' => 'integer',
-        'tax_transaction_id' => 'integer',
-        'cash_discount_id' => null,
-        'cash_discount_amount' => 'integer',
+        'id' => null,
+        'is_immutable' => null,
+        'meta' => null,
+        'note' => null,
         'permissions' => null,
-        'meta' => null
+        'split_transaction_id' => null,
+        'tax_rate_id' => null,
+        'tax_transaction_id' => null
     ];
 
     /**
@@ -132,24 +132,24 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'account_id' => 'accountId',
+        'amount' => 'amount',
+        'cash_discount_amount' => 'cashDiscountAmount',
+        'cash_discount_id' => 'cashDiscountId',
+        'contra_account_id' => 'contraAccountId',
+        'cost_center_id' => 'costCenterId',
         'document_date' => 'documentDate',
         'document_number' => 'documentNumber',
-        'account_id' => 'accountId',
-        'contra_account_id' => 'contraAccountId',
-        'amount' => 'amount',
-        'note' => 'note',
-        'is_immutable' => 'isImmutable',
-        'cost_center_id' => 'costCenterId',
         'donator' => 'donator',
         'donator_spouse' => 'donatorSpouse',
+        'id' => 'id',
+        'is_immutable' => 'isImmutable',
+        'meta' => 'meta',
+        'note' => 'note',
+        'permissions' => 'permissions',
         'split_transaction_id' => 'splitTransactionId',
         'tax_rate_id' => 'taxRateId',
-        'tax_transaction_id' => 'taxTransactionId',
-        'cash_discount_id' => 'cashDiscountId',
-        'cash_discount_amount' => 'cashDiscountAmount',
-        'permissions' => 'permissions',
-        'meta' => 'meta'
+        'tax_transaction_id' => 'taxTransactionId'
     ];
 
     /**
@@ -158,24 +158,24 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'account_id' => 'setAccountId',
+        'amount' => 'setAmount',
+        'cash_discount_amount' => 'setCashDiscountAmount',
+        'cash_discount_id' => 'setCashDiscountId',
+        'contra_account_id' => 'setContraAccountId',
+        'cost_center_id' => 'setCostCenterId',
         'document_date' => 'setDocumentDate',
         'document_number' => 'setDocumentNumber',
-        'account_id' => 'setAccountId',
-        'contra_account_id' => 'setContraAccountId',
-        'amount' => 'setAmount',
-        'note' => 'setNote',
-        'is_immutable' => 'setIsImmutable',
-        'cost_center_id' => 'setCostCenterId',
         'donator' => 'setDonator',
         'donator_spouse' => 'setDonatorSpouse',
+        'id' => 'setId',
+        'is_immutable' => 'setIsImmutable',
+        'meta' => 'setMeta',
+        'note' => 'setNote',
+        'permissions' => 'setPermissions',
         'split_transaction_id' => 'setSplitTransactionId',
         'tax_rate_id' => 'setTaxRateId',
-        'tax_transaction_id' => 'setTaxTransactionId',
-        'cash_discount_id' => 'setCashDiscountId',
-        'cash_discount_amount' => 'setCashDiscountAmount',
-        'permissions' => 'setPermissions',
-        'meta' => 'setMeta'
+        'tax_transaction_id' => 'setTaxTransactionId'
     ];
 
     /**
@@ -184,24 +184,24 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'account_id' => 'getAccountId',
+        'amount' => 'getAmount',
+        'cash_discount_amount' => 'getCashDiscountAmount',
+        'cash_discount_id' => 'getCashDiscountId',
+        'contra_account_id' => 'getContraAccountId',
+        'cost_center_id' => 'getCostCenterId',
         'document_date' => 'getDocumentDate',
         'document_number' => 'getDocumentNumber',
-        'account_id' => 'getAccountId',
-        'contra_account_id' => 'getContraAccountId',
-        'amount' => 'getAmount',
-        'note' => 'getNote',
-        'is_immutable' => 'getIsImmutable',
-        'cost_center_id' => 'getCostCenterId',
         'donator' => 'getDonator',
         'donator_spouse' => 'getDonatorSpouse',
+        'id' => 'getId',
+        'is_immutable' => 'getIsImmutable',
+        'meta' => 'getMeta',
+        'note' => 'getNote',
+        'permissions' => 'getPermissions',
         'split_transaction_id' => 'getSplitTransactionId',
         'tax_rate_id' => 'getTaxRateId',
-        'tax_transaction_id' => 'getTaxTransactionId',
-        'cash_discount_id' => 'getCashDiscountId',
-        'cash_discount_amount' => 'getCashDiscountAmount',
-        'permissions' => 'getPermissions',
-        'meta' => 'getMeta'
+        'tax_transaction_id' => 'getTaxTransactionId'
     ];
 
     /**
@@ -261,24 +261,24 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
+        $this->container['account_id'] = $data['account_id'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['cash_discount_amount'] = $data['cash_discount_amount'] ?? null;
+        $this->container['cash_discount_id'] = $data['cash_discount_id'] ?? null;
+        $this->container['contra_account_id'] = $data['contra_account_id'] ?? null;
+        $this->container['cost_center_id'] = $data['cost_center_id'] ?? null;
         $this->container['document_date'] = $data['document_date'] ?? null;
         $this->container['document_number'] = $data['document_number'] ?? null;
-        $this->container['account_id'] = $data['account_id'] ?? null;
-        $this->container['contra_account_id'] = $data['contra_account_id'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['is_immutable'] = $data['is_immutable'] ?? null;
-        $this->container['cost_center_id'] = $data['cost_center_id'] ?? null;
         $this->container['donator'] = $data['donator'] ?? null;
         $this->container['donator_spouse'] = $data['donator_spouse'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_immutable'] = $data['is_immutable'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['permissions'] = $data['permissions'] ?? null;
         $this->container['split_transaction_id'] = $data['split_transaction_id'] ?? null;
         $this->container['tax_rate_id'] = $data['tax_rate_id'] ?? null;
         $this->container['tax_transaction_id'] = $data['tax_transaction_id'] ?? null;
-        $this->container['cash_discount_id'] = $data['cash_discount_id'] ?? null;
-        $this->container['cash_discount_amount'] = $data['cash_discount_amount'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -306,25 +306,145 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets id
+     * Gets account_id
      *
      * @return int|null
      */
-    public function getId()
+    public function getAccountId()
     {
-        return $this->container['id'];
+        return $this->container['account_id'];
     }
 
     /**
-     * Sets id
+     * Sets account_id
      *
-     * @param int|null $id id
+     * @param int|null $account_id account_id
      *
      * @return self
      */
-    public function setId($id)
+    public function setAccountId($account_id)
     {
-        $this->container['id'] = $id;
+        $this->container['account_id'] = $account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int|null
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int|null $amount Value is in cent.
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets cash_discount_amount
+     *
+     * @return int|null
+     */
+    public function getCashDiscountAmount()
+    {
+        return $this->container['cash_discount_amount'];
+    }
+
+    /**
+     * Sets cash_discount_amount
+     *
+     * @param int|null $cash_discount_amount Value is in cent.
+     *
+     * @return self
+     */
+    public function setCashDiscountAmount($cash_discount_amount)
+    {
+        $this->container['cash_discount_amount'] = $cash_discount_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets cash_discount_id
+     *
+     * @return int|null
+     */
+    public function getCashDiscountId()
+    {
+        return $this->container['cash_discount_id'];
+    }
+
+    /**
+     * Sets cash_discount_id
+     *
+     * @param int|null $cash_discount_id cash_discount_id
+     *
+     * @return self
+     */
+    public function setCashDiscountId($cash_discount_id)
+    {
+        $this->container['cash_discount_id'] = $cash_discount_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets contra_account_id
+     *
+     * @return int|null
+     */
+    public function getContraAccountId()
+    {
+        return $this->container['contra_account_id'];
+    }
+
+    /**
+     * Sets contra_account_id
+     *
+     * @param int|null $contra_account_id contra_account_id
+     *
+     * @return self
+     */
+    public function setContraAccountId($contra_account_id)
+    {
+        $this->container['contra_account_id'] = $contra_account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost_center_id
+     *
+     * @return int|null
+     */
+    public function getCostCenterId()
+    {
+        return $this->container['cost_center_id'];
+    }
+
+    /**
+     * Sets cost_center_id
+     *
+     * @param int|null $cost_center_id cost_center_id
+     *
+     * @return self
+     */
+    public function setCostCenterId($cost_center_id)
+    {
+        $this->container['cost_center_id'] = $cost_center_id;
 
         return $this;
     }
@@ -378,97 +498,73 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets account_id
+     * Gets donator
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
+     */
+    public function getDonator()
+    {
+        return $this->container['donator'];
+    }
+
+    /**
+     * Sets donator
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $donator donator
+     *
+     * @return self
+     */
+    public function setDonator($donator)
+    {
+        $this->container['donator'] = $donator;
+
+        return $this;
+    }
+
+    /**
+     * Gets donator_spouse
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
+     */
+    public function getDonatorSpouse()
+    {
+        return $this->container['donator_spouse'];
+    }
+
+    /**
+     * Sets donator_spouse
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $donator_spouse donator_spouse
+     *
+     * @return self
+     */
+    public function setDonatorSpouse($donator_spouse)
+    {
+        $this->container['donator_spouse'] = $donator_spouse;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
      *
      * @return int|null
      */
-    public function getAccountId()
+    public function getId()
     {
-        return $this->container['account_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets account_id
+     * Sets id
      *
-     * @param int|null $account_id account_id
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setAccountId($account_id)
+    public function setId($id)
     {
-        $this->container['account_id'] = $account_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets contra_account_id
-     *
-     * @return int|null
-     */
-    public function getContraAccountId()
-    {
-        return $this->container['contra_account_id'];
-    }
-
-    /**
-     * Sets contra_account_id
-     *
-     * @param int|null $contra_account_id contra_account_id
-     *
-     * @return self
-     */
-    public function setContraAccountId($contra_account_id)
-    {
-        $this->container['contra_account_id'] = $contra_account_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return float|null
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param float|null $amount Value is in cent.
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets note
-     *
-     * @return string|null
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string|null $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -498,73 +594,73 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets cost_center_id
+     * Gets meta
      *
-     * @return int|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
-    public function getCostCenterId()
+    public function getMeta()
     {
-        return $this->container['cost_center_id'];
+        return $this->container['meta'];
     }
 
     /**
-     * Sets cost_center_id
+     * Sets meta
      *
-     * @param int|null $cost_center_id cost_center_id
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */
-    public function setCostCenterId($cost_center_id)
+    public function setMeta($meta)
     {
-        $this->container['cost_center_id'] = $cost_center_id;
+        $this->container['meta'] = $meta;
 
         return $this;
     }
 
     /**
-     * Gets donator
+     * Gets note
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson|null
+     * @return string|null
      */
-    public function getDonator()
+    public function getNote()
     {
-        return $this->container['donator'];
+        return $this->container['note'];
     }
 
     /**
-     * Sets donator
+     * Sets note
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson|null $donator donator
+     * @param string|null $note note
      *
      * @return self
      */
-    public function setDonator($donator)
+    public function setNote($note)
     {
-        $this->container['donator'] = $donator;
+        $this->container['note'] = $note;
 
         return $this;
     }
 
     /**
-     * Gets donator_spouse
+     * Gets permissions
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllTransactions200ResponseDataInnerPermissions|null
      */
-    public function getDonatorSpouse()
+    public function getPermissions()
     {
-        return $this->container['donator_spouse'];
+        return $this->container['permissions'];
     }
 
     /**
-     * Sets donator_spouse
+     * Sets permissions
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson|null $donator_spouse donator_spouse
+     * @param \StevenBuehner\ChurchTools\Model\GetAllTransactions200ResponseDataInnerPermissions|null $permissions permissions
      *
      * @return self
      */
-    public function setDonatorSpouse($donator_spouse)
+    public function setPermissions($permissions)
     {
-        $this->container['donator_spouse'] = $donator_spouse;
+        $this->container['permissions'] = $permissions;
 
         return $this;
     }
@@ -596,7 +692,7 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
     /**
      * Gets tax_rate_id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getTaxRateId()
     {
@@ -606,7 +702,7 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
     /**
      * Sets tax_rate_id
      *
-     * @param float|null $tax_rate_id If a tax rate is set for the transaction, the corresponding tax transaction is returned in the field taxTransactionId.
+     * @param int|null $tax_rate_id If a tax rate is set for the transaction, the corresponding tax transaction is returned in the field taxTransactionId.
      *
      * @return self
      */
@@ -620,7 +716,7 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
     /**
      * Gets tax_transaction_id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getTaxTransactionId()
     {
@@ -630,109 +726,13 @@ class GetAllTransactions200ResponseDataInner implements ModelInterface, ArrayAcc
     /**
      * Sets tax_transaction_id
      *
-     * @param float|null $tax_transaction_id Reference to the transaction which is a split booking for taxes.
+     * @param int|null $tax_transaction_id Reference to the transaction which is a split booking for taxes.
      *
      * @return self
      */
     public function setTaxTransactionId($tax_transaction_id)
     {
         $this->container['tax_transaction_id'] = $tax_transaction_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cash_discount_id
-     *
-     * @return int|null
-     */
-    public function getCashDiscountId()
-    {
-        return $this->container['cash_discount_id'];
-    }
-
-    /**
-     * Sets cash_discount_id
-     *
-     * @param int|null $cash_discount_id cash_discount_id
-     *
-     * @return self
-     */
-    public function setCashDiscountId($cash_discount_id)
-    {
-        $this->container['cash_discount_id'] = $cash_discount_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cash_discount_amount
-     *
-     * @return float|null
-     */
-    public function getCashDiscountAmount()
-    {
-        return $this->container['cash_discount_amount'];
-    }
-
-    /**
-     * Sets cash_discount_amount
-     *
-     * @param float|null $cash_discount_amount Value is in cent.
-     *
-     * @return self
-     */
-    public function setCashDiscountAmount($cash_discount_amount)
-    {
-        $this->container['cash_discount_amount'] = $cash_discount_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets permissions
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllTransactions200ResponseDataInnerPermissions|null
-     */
-    public function getPermissions()
-    {
-        return $this->container['permissions'];
-    }
-
-    /**
-     * Sets permissions
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllTransactions200ResponseDataInnerPermissions|null $permissions permissions
-     *
-     * @return self
-     */
-    public function setPermissions($permissions)
-    {
-        $this->container['permissions'] = $permissions;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

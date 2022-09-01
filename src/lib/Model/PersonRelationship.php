@@ -58,10 +58,10 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'relative' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject',
         'degree_of_relationship' => 'string',
         'relationship_name' => 'string',
-        'relationship_type_id' => 'int'
+        'relationship_type_id' => 'int',
+        'relative' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson'
     ];
 
     /**
@@ -72,10 +72,10 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'relative' => null,
         'degree_of_relationship' => null,
         'relationship_name' => null,
-        'relationship_type_id' => null
+        'relationship_type_id' => null,
+        'relative' => null
     ];
 
     /**
@@ -105,10 +105,10 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'relative' => 'relative',
         'degree_of_relationship' => 'degreeOfRelationship',
         'relationship_name' => 'relationshipName',
-        'relationship_type_id' => 'relationshipTypeId'
+        'relationship_type_id' => 'relationshipTypeId',
+        'relative' => 'relative'
     ];
 
     /**
@@ -117,10 +117,10 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'relative' => 'setRelative',
         'degree_of_relationship' => 'setDegreeOfRelationship',
         'relationship_name' => 'setRelationshipName',
-        'relationship_type_id' => 'setRelationshipTypeId'
+        'relationship_type_id' => 'setRelationshipTypeId',
+        'relative' => 'setRelative'
     ];
 
     /**
@@ -129,10 +129,10 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'relative' => 'getRelative',
         'degree_of_relationship' => 'getDegreeOfRelationship',
         'relationship_name' => 'getRelationshipName',
-        'relationship_type_id' => 'getRelationshipTypeId'
+        'relationship_type_id' => 'getRelationshipTypeId',
+        'relative' => 'getRelative'
     ];
 
     /**
@@ -192,10 +192,10 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['relative'] = $data['relative'] ?? null;
         $this->container['degree_of_relationship'] = $data['degree_of_relationship'] ?? null;
         $this->container['relationship_name'] = $data['relationship_name'] ?? null;
         $this->container['relationship_type_id'] = $data['relationship_type_id'] ?? null;
+        $this->container['relative'] = $data['relative'] ?? null;
     }
 
     /**
@@ -221,30 +221,6 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets relative
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject|null
-     */
-    public function getRelative()
-    {
-        return $this->container['relative'];
-    }
-
-    /**
-     * Sets relative
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject|null $relative relative
-     *
-     * @return self
-     */
-    public function setRelative($relative)
-    {
-        $this->container['relative'] = $relative;
-
-        return $this;
-    }
 
     /**
      * Gets degree_of_relationship
@@ -314,6 +290,30 @@ class PersonRelationship implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setRelationshipTypeId($relationship_type_id)
     {
         $this->container['relationship_type_id'] = $relationship_type_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets relative
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
+     */
+    public function getRelative()
+    {
+        return $this->container['relative'];
+    }
+
+    /**
+     * Sets relative
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $relative relative
+     *
+     * @return self
+     */
+    public function setRelative($relative)
+    {
+        $this->container['relative'] = $relative;
 
         return $this;
     }

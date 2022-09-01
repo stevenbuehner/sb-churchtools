@@ -57,13 +57,13 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'clients' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataClientsInner[]',
-        'accounting_periods' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInner[]',
-        'accounts' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner[]',
-        'account_types' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountTypesInner[]',
-        'account_classes' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountClassesInner[]',
-        'account_groups' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountGroupsInner[]',
-        'cash_discounts' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataCashDiscountsInner[]',
+        'account_classes' => '\StevenBuehner\ChurchTools\Model\GetAllAccountClasses200ResponseDataInner[]',
+        'account_groups' => '\StevenBuehner\ChurchTools\Model\GetAllAccountGroups200ResponseDataInner[]',
+        'account_types' => '\StevenBuehner\ChurchTools\Model\GetAllAccountTypes200ResponseDataInner[]',
+        'accounting_periods' => '\StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInner[]',
+        'accounts' => '\StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner[]',
+        'cash_discounts' => '\StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200ResponseDataInner[]',
+        'clients' => '\StevenBuehner\ChurchTools\Model\GetAllClients200ResponseDataInner[]',
         'cost_centers' => '\StevenBuehner\ChurchTools\Model\CostCenter[]',
         'tax_rates' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataTaxRatesInner[]',
         'tax_types' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataTaxTypesInner[]',
@@ -78,13 +78,13 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'clients' => null,
-        'accounting_periods' => null,
-        'accounts' => null,
-        'account_types' => null,
         'account_classes' => null,
         'account_groups' => null,
+        'account_types' => null,
+        'accounting_periods' => null,
+        'accounts' => null,
         'cash_discounts' => null,
+        'clients' => null,
         'cost_centers' => null,
         'tax_rates' => null,
         'tax_types' => null,
@@ -118,13 +118,13 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'clients' => 'clients',
-        'accounting_periods' => 'accountingPeriods',
-        'accounts' => 'accounts',
-        'account_types' => 'accountTypes',
         'account_classes' => 'accountClasses',
         'account_groups' => 'accountGroups',
+        'account_types' => 'accountTypes',
+        'accounting_periods' => 'accountingPeriods',
+        'accounts' => 'accounts',
         'cash_discounts' => 'cashDiscounts',
+        'clients' => 'clients',
         'cost_centers' => 'costCenters',
         'tax_rates' => 'taxRates',
         'tax_types' => 'taxTypes',
@@ -137,13 +137,13 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'clients' => 'setClients',
-        'accounting_periods' => 'setAccountingPeriods',
-        'accounts' => 'setAccounts',
-        'account_types' => 'setAccountTypes',
         'account_classes' => 'setAccountClasses',
         'account_groups' => 'setAccountGroups',
+        'account_types' => 'setAccountTypes',
+        'accounting_periods' => 'setAccountingPeriods',
+        'accounts' => 'setAccounts',
         'cash_discounts' => 'setCashDiscounts',
+        'clients' => 'setClients',
         'cost_centers' => 'setCostCenters',
         'tax_rates' => 'setTaxRates',
         'tax_types' => 'setTaxTypes',
@@ -156,13 +156,13 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'clients' => 'getClients',
-        'accounting_periods' => 'getAccountingPeriods',
-        'accounts' => 'getAccounts',
-        'account_types' => 'getAccountTypes',
         'account_classes' => 'getAccountClasses',
         'account_groups' => 'getAccountGroups',
+        'account_types' => 'getAccountTypes',
+        'accounting_periods' => 'getAccountingPeriods',
+        'accounts' => 'getAccounts',
         'cash_discounts' => 'getCashDiscounts',
+        'clients' => 'getClients',
         'cost_centers' => 'getCostCenters',
         'tax_rates' => 'getTaxRates',
         'tax_types' => 'getTaxTypes',
@@ -226,13 +226,13 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['clients'] = $data['clients'] ?? null;
-        $this->container['accounting_periods'] = $data['accounting_periods'] ?? null;
-        $this->container['accounts'] = $data['accounts'] ?? null;
-        $this->container['account_types'] = $data['account_types'] ?? null;
         $this->container['account_classes'] = $data['account_classes'] ?? null;
         $this->container['account_groups'] = $data['account_groups'] ?? null;
+        $this->container['account_types'] = $data['account_types'] ?? null;
+        $this->container['accounting_periods'] = $data['accounting_periods'] ?? null;
+        $this->container['accounts'] = $data['accounts'] ?? null;
         $this->container['cash_discounts'] = $data['cash_discounts'] ?? null;
+        $this->container['clients'] = $data['clients'] ?? null;
         $this->container['cost_centers'] = $data['cost_centers'] ?? null;
         $this->container['tax_rates'] = $data['tax_rates'] ?? null;
         $this->container['tax_types'] = $data['tax_types'] ?? null;
@@ -264,105 +264,9 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets clients
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataClientsInner[]|null
-     */
-    public function getClients()
-    {
-        return $this->container['clients'];
-    }
-
-    /**
-     * Sets clients
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataClientsInner[]|null $clients clients
-     *
-     * @return self
-     */
-    public function setClients($clients)
-    {
-        $this->container['clients'] = $clients;
-
-        return $this;
-    }
-
-    /**
-     * Gets accounting_periods
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInner[]|null
-     */
-    public function getAccountingPeriods()
-    {
-        return $this->container['accounting_periods'];
-    }
-
-    /**
-     * Sets accounting_periods
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInner[]|null $accounting_periods accounting_periods
-     *
-     * @return self
-     */
-    public function setAccountingPeriods($accounting_periods)
-    {
-        $this->container['accounting_periods'] = $accounting_periods;
-
-        return $this;
-    }
-
-    /**
-     * Gets accounts
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner[]|null
-     */
-    public function getAccounts()
-    {
-        return $this->container['accounts'];
-    }
-
-    /**
-     * Sets accounts
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner[]|null $accounts accounts
-     *
-     * @return self
-     */
-    public function setAccounts($accounts)
-    {
-        $this->container['accounts'] = $accounts;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_types
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountTypesInner[]|null
-     */
-    public function getAccountTypes()
-    {
-        return $this->container['account_types'];
-    }
-
-    /**
-     * Sets account_types
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountTypesInner[]|null $account_types account_types
-     *
-     * @return self
-     */
-    public function setAccountTypes($account_types)
-    {
-        $this->container['account_types'] = $account_types;
-
-        return $this;
-    }
-
-    /**
      * Gets account_classes
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountClassesInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccountClasses200ResponseDataInner[]|null
      */
     public function getAccountClasses()
     {
@@ -372,7 +276,7 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets account_classes
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountClassesInner[]|null $account_classes account_classes
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccountClasses200ResponseDataInner[]|null $account_classes account_classes
      *
      * @return self
      */
@@ -386,7 +290,7 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets account_groups
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountGroupsInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccountGroups200ResponseDataInner[]|null
      */
     public function getAccountGroups()
     {
@@ -396,7 +300,7 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets account_groups
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountGroupsInner[]|null $account_groups account_groups
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccountGroups200ResponseDataInner[]|null $account_groups account_groups
      *
      * @return self
      */
@@ -408,9 +312,81 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
+     * Gets account_types
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccountTypes200ResponseDataInner[]|null
+     */
+    public function getAccountTypes()
+    {
+        return $this->container['account_types'];
+    }
+
+    /**
+     * Sets account_types
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccountTypes200ResponseDataInner[]|null $account_types account_types
+     *
+     * @return self
+     */
+    public function setAccountTypes($account_types)
+    {
+        $this->container['account_types'] = $account_types;
+
+        return $this;
+    }
+
+    /**
+     * Gets accounting_periods
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInner[]|null
+     */
+    public function getAccountingPeriods()
+    {
+        return $this->container['accounting_periods'];
+    }
+
+    /**
+     * Sets accounting_periods
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInner[]|null $accounting_periods accounting_periods
+     *
+     * @return self
+     */
+    public function setAccountingPeriods($accounting_periods)
+    {
+        $this->container['accounting_periods'] = $accounting_periods;
+
+        return $this;
+    }
+
+    /**
+     * Gets accounts
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner[]|null
+     */
+    public function getAccounts()
+    {
+        return $this->container['accounts'];
+    }
+
+    /**
+     * Sets accounts
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner[]|null $accounts accounts
+     *
+     * @return self
+     */
+    public function setAccounts($accounts)
+    {
+        $this->container['accounts'] = $accounts;
+
+        return $this;
+    }
+
+    /**
      * Gets cash_discounts
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataCashDiscountsInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200ResponseDataInner[]|null
      */
     public function getCashDiscounts()
     {
@@ -420,13 +396,37 @@ class GetAllData200ResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets cash_discounts
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataCashDiscountsInner[]|null $cash_discounts cash_discounts
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200ResponseDataInner[]|null $cash_discounts cash_discounts
      *
      * @return self
      */
     public function setCashDiscounts($cash_discounts)
     {
         $this->container['cash_discounts'] = $cash_discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets clients
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllClients200ResponseDataInner[]|null
+     */
+    public function getClients()
+    {
+        return $this->container['clients'];
+    }
+
+    /**
+     * Sets clients
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllClients200ResponseDataInner[]|null $clients clients
+     *
+     * @return self
+     */
+    public function setClients($clients)
+    {
+        $this->container['clients'] = $clients;
 
         return $this;
     }

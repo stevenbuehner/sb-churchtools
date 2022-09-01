@@ -91,7 +91,7 @@ Apply finance template
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -103,8 +103,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of finance template
-$accounting_period_id = 3; // int | Filter by accounting period
+$id = 1; // int | ID of Entity
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 
 try {
     $apiInstance->applyFinanceTemplate($id, $accounting_period_id);
@@ -117,8 +117,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of finance template |
- **accounting_period_id** | **int**| Filter by accounting period |
+ **id** | **int**| ID of Entity |
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
 
 ### Return type
 
@@ -126,7 +126,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Batch API for Transactions. The batch API needs two informations sets. Firstly t
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -214,7 +214,7 @@ Create new cash discout
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -276,7 +276,7 @@ Create new cost center
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -336,7 +336,7 @@ Create new account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -396,7 +396,7 @@ Create new account class
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Create new account group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -516,7 +516,7 @@ Create new account type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -550,7 +550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -576,7 +576,7 @@ Create new accounting period
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -636,7 +636,7 @@ Create new client
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -696,7 +696,7 @@ Create new transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -730,7 +730,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -756,7 +756,7 @@ Create new transaction purpose
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -790,7 +790,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -816,7 +816,7 @@ Create new tax rate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -850,7 +850,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -876,7 +876,7 @@ Create new tax type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -936,7 +936,7 @@ Delete account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -948,7 +948,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -962,7 +962,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -971,7 +971,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -985,7 +985,7 @@ void (empty response body)
 ## `deleteAccountClass()`
 
 ```php
-deleteAccountClass($id, $dry_run)
+deleteAccountClass($id)
 ```
 
 Delete account class
@@ -997,7 +997,7 @@ Delete account class
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1009,11 +1009,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account class
-$dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
+$id = 1; // int | ID of Entity
 
 try {
-    $apiInstance->deleteAccountClass($id, $dry_run);
+    $apiInstance->deleteAccountClass($id);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->deleteAccountClass: ', $e->getMessage(), PHP_EOL;
 }
@@ -1023,8 +1022,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account class |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -1032,7 +1030,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1046,7 +1044,7 @@ void (empty response body)
 ## `deleteAccountGroup()`
 
 ```php
-deleteAccountGroup($id, $dry_run)
+deleteAccountGroup($id)
 ```
 
 Delete account group
@@ -1058,7 +1056,7 @@ Delete account group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1070,11 +1068,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account group
-$dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
+$id = 1; // int | ID of Entity
 
 try {
-    $apiInstance->deleteAccountGroup($id, $dry_run);
+    $apiInstance->deleteAccountGroup($id);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->deleteAccountGroup: ', $e->getMessage(), PHP_EOL;
 }
@@ -1084,8 +1081,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account group |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -1093,7 +1089,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1119,7 +1115,7 @@ Delete account type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1131,7 +1127,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account type
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1145,7 +1141,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account type |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1154,7 +1150,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1180,7 +1176,7 @@ Delete accounting period
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1192,7 +1188,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of accounting period
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1206,7 +1202,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of accounting period |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1215,7 +1211,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1241,7 +1237,7 @@ Delete accounts for accounting period
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1253,7 +1249,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of accounting period
+$id = 1; // int | ID of Entity
 
 try {
     $apiInstance->deleteAccountsForAccountingPeriod($id);
@@ -1266,7 +1262,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of accounting period |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -1274,7 +1270,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1300,7 +1296,7 @@ Delete cash discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1312,7 +1308,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of cash discount
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1326,7 +1322,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of cash discount |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1335,7 +1331,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1361,7 +1357,7 @@ Delete client
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1373,7 +1369,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of client
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1387,7 +1383,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of client |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1396,7 +1392,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1424,7 +1420,7 @@ Delete cost center
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1436,7 +1432,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of cost center
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1450,7 +1446,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of cost center |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1459,7 +1455,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1485,7 +1481,7 @@ Delete tax rate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1497,7 +1493,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of tax rate
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1511,7 +1507,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of tax rate |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1520,7 +1516,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1546,7 +1542,7 @@ Delete tax type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1558,7 +1554,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of tax type
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1572,7 +1568,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of tax type |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1581,7 +1577,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1607,7 +1603,7 @@ Delete transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1619,7 +1615,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of transaction
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1633,7 +1629,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of transaction |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1642,7 +1638,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1668,7 +1664,7 @@ Delete transaction purpose
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1680,7 +1676,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of transaction purpose
+$id = 1; // int | ID of Entity
 $dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
@@ -1694,7 +1690,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of transaction purpose |
+ **id** | **int**| ID of Entity |
  **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
@@ -1703,7 +1699,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1729,7 +1725,7 @@ Epports a finance template based on the masterdata for a given accounting period
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1741,7 +1737,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 3; // int | Filter by accounting period
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 
 try {
     $apiInstance->exportFinanceTemplate($accounting_period_id);
@@ -1754,7 +1750,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period |
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
 
 ### Return type
 
@@ -1762,7 +1758,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1788,7 +1784,7 @@ Get a account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1800,7 +1796,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getAccountById($id);
@@ -1814,7 +1810,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -1822,7 +1818,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1848,7 +1844,7 @@ Get a account class
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1860,7 +1856,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account class
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getAccountClassById($id);
@@ -1874,7 +1870,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account class |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -1882,7 +1878,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1908,7 +1904,7 @@ Get a account group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1920,7 +1916,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account group
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getAccountGroupById($id);
@@ -1934,7 +1930,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account group |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -1942,7 +1938,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1968,7 +1964,7 @@ Get a account type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1980,7 +1976,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account type
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getAccountTypeById($id);
@@ -1994,7 +1990,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account type |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -2002,7 +1998,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2028,7 +2024,7 @@ Get a accounting period
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2040,7 +2036,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of accounting period
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getAccountingPeriodById($id);
@@ -2054,7 +2050,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of accounting period |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -2062,7 +2058,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2088,7 +2084,7 @@ Get all account classes ordered by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2119,7 +2115,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2145,7 +2141,7 @@ Get all account groups ordered by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2176,7 +2172,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2202,7 +2198,7 @@ Get all account types ordered by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2233,7 +2229,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2259,7 +2255,7 @@ Get all accounting periods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2290,7 +2286,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2316,7 +2312,7 @@ Get all accounts ordered by accounting period and number
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2328,7 +2324,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 2; // int | Filter by accounting period
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 $calculate_balance = true; // bool | Calculate balance for accounts
 
 try {
@@ -2343,7 +2339,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period | [optional]
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
  **calculate_balance** | **bool**| Calculate balance for accounts | [optional]
 
 ### Return type
@@ -2352,7 +2348,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2366,7 +2362,7 @@ Name | Type | Description  | Notes
 ## `getAllCashDiscounts()`
 
 ```php
-getAllCashDiscounts($accounting_period_id): \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200Response
+getAllCashDiscounts(): \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200Response
 ```
 
 Get all cash discounts ordered by id
@@ -2378,7 +2374,7 @@ Get all cash discounts ordered by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2390,10 +2386,9 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 3; // int | Filter by accounting period
 
 try {
-    $result = $apiInstance->getAllCashDiscounts($accounting_period_id);
+    $result = $apiInstance->getAllCashDiscounts();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->getAllCashDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -2402,9 +2397,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -2412,7 +2405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2438,7 +2431,7 @@ Get all clients
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2469,7 +2462,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2497,7 +2490,7 @@ Get all cost centers ordered by accounting period and number ascending
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2509,7 +2502,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 3; // int | Filter by accounting period
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 
 try {
     $result = $apiInstance->getAllCostCenters($accounting_period_id);
@@ -2523,7 +2516,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period | [optional]
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
 
 ### Return type
 
@@ -2531,7 +2524,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2557,7 +2550,7 @@ Get all donators including their donation information (e.g. donation amount)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2569,7 +2562,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 3; // int | Filter by accounting period
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 $order_by = 'order_by_example'; // string | Default is `name`.
 $order_direction = 'order_direction_example'; // string | Way of direction: ascending or descending
 $page = 1; // int | Page number to show page in pagenation. If empty, start at first page.
@@ -2587,7 +2580,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period |
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
  **order_by** | **string**| Default is &#x60;name&#x60;. | [optional]
  **order_direction** | **string**| Way of direction: ascending or descending | [optional]
  **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
@@ -2599,7 +2592,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2625,7 +2618,7 @@ Get all finance templates
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2656,7 +2649,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2682,7 +2675,7 @@ Get all tax rates ordered by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2694,7 +2687,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 3; // int | Filter by accounting period
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 
 try {
     $result = $apiInstance->getAllTaxRates($accounting_period_id);
@@ -2708,7 +2701,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period | [optional]
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
 
 ### Return type
 
@@ -2716,7 +2709,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2742,7 +2735,7 @@ Get all tax types
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2773,7 +2766,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2799,7 +2792,7 @@ Get all transaction purposes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2830,7 +2823,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2856,7 +2849,7 @@ Get all transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2868,7 +2861,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 3; // int | Filter by accounting period
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 $created_pid = 56; // int | Filter by person ID. Get all transactions the person has created. But only show those the user can see.
 $cost_center_ids = array(56); // int[] | Filter by cost centers.
 $donator_ids = array(56); // int[] | Filter by donator or donator spouse. Provide an array of person ids.
@@ -2895,7 +2888,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Filter by accounting period |
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
  **created_pid** | **int**| Filter by person ID. Get all transactions the person has created. But only show those the user can see. | [optional]
  **cost_center_ids** | [**int[]**](../Model/int.md)| Filter by cost centers. | [optional]
  **donator_ids** | [**int[]**](../Model/int.md)| Filter by donator or donator spouse. Provide an array of person ids. | [optional]
@@ -2916,7 +2909,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2942,7 +2935,7 @@ Get a cash discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2954,7 +2947,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of cash discount
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getCashDiscount($id);
@@ -2968,7 +2961,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of cash discount |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -2976,7 +2969,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3002,7 +2995,7 @@ Get a client
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3014,7 +3007,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of client
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getClientById($id);
@@ -3028,7 +3021,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of client |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -3036,7 +3029,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3064,7 +3057,7 @@ Get a cost center
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3076,7 +3069,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of cost center
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getCostCenter($id);
@@ -3090,7 +3083,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of cost center |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -3098,7 +3091,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3124,7 +3117,7 @@ Get donation receipt PDFs (cover letter and attachment)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3136,7 +3129,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_period_id = 3; // int | Accounting period to create the donation receipt for
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
 $donator_id = 50; // int | ID of the donator person to create the donation receipt for
 $donator_spouse_id = 51; // int | ID of the donator spouse to create the donation receipt for
 
@@ -3152,7 +3145,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| Accounting period to create the donation receipt for |
+ **accounting_period_id** | **int**| ID of accounting period to get master data for |
  **donator_id** | **int**| ID of the donator person to create the donation receipt for |
  **donator_spouse_id** | **int**| ID of the donator spouse to create the donation receipt for | [optional]
 
@@ -3162,7 +3155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3190,7 +3183,7 @@ Exports all Accounts for the given acounting period as csv
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3223,7 +3216,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3249,7 +3242,7 @@ Get a tax rate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3261,7 +3254,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of tax rate
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getTaxRate($id);
@@ -3275,7 +3268,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of tax rate |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -3283,7 +3276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3309,7 +3302,7 @@ Get a tax type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3321,7 +3314,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of tax type
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getTaxType($id);
@@ -3335,7 +3328,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of tax type |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -3343,7 +3336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3369,7 +3362,7 @@ Get a transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3381,7 +3374,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of transaction
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getTransactionById($id);
@@ -3395,7 +3388,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of transaction |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -3403,7 +3396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3429,7 +3422,7 @@ Get a transaction purpose
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3441,7 +3434,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of transaction purpose
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getTransactionPurposeById($id);
@@ -3455,7 +3448,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of transaction purpose |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -3463,7 +3456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3482,8 +3475,6 @@ postFinanceCostcentersBulkcreate($post_finance_costcenters_bulkcreate_request): 
 
 Import many cost centers
 
-
-
 ### Example
 
 ```php
@@ -3491,7 +3482,7 @@ Import many cost centers
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3525,7 +3516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3553,7 +3544,7 @@ Issue new finance report. _Balance_ and _Profit-Loss_ reports are available. The
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3589,7 +3580,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3615,7 +3606,7 @@ Update account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3627,7 +3618,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account
+$id = 1; // int | ID of Entity
 $create_new_account_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest | Account data
 
 try {
@@ -3642,7 +3633,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account |
+ **id** | **int**| ID of Entity |
  **create_new_account_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountRequest**](../Model/CreateNewAccountRequest.md)| Account data |
 
 ### Return type
@@ -3651,7 +3642,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3677,7 +3668,7 @@ Update account class
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3689,7 +3680,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account class
+$id = 1; // int | ID of Entity
 $create_new_account_class_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest | Account Class data
 
 try {
@@ -3704,7 +3695,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account class |
+ **id** | **int**| ID of Entity |
  **create_new_account_class_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest**](../Model/CreateNewAccountClassRequest.md)| Account Class data |
 
 ### Return type
@@ -3713,7 +3704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3739,7 +3730,7 @@ Update account group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3751,7 +3742,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account group
+$id = 1; // int | ID of Entity
 $create_new_account_group_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest | Account Group data
 
 try {
@@ -3766,7 +3757,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account group |
+ **id** | **int**| ID of Entity |
  **create_new_account_group_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest**](../Model/CreateNewAccountGroupRequest.md)| Account Group data |
 
 ### Return type
@@ -3775,7 +3766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3801,7 +3792,7 @@ Update account type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3813,7 +3804,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of account type
+$id = 1; // int | ID of Entity
 $create_new_account_type_request = new \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest | Account Type data
 
 try {
@@ -3828,7 +3819,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of account type |
+ **id** | **int**| ID of Entity |
  **create_new_account_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest**](../Model/CreateNewAccountTypeRequest.md)| Account Type data |
 
 ### Return type
@@ -3837,7 +3828,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3863,7 +3854,7 @@ Update accounting period
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3875,7 +3866,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of accounting period
+$id = 1; // int | ID of Entity
 $update_accounting_period_request = new \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest(); // \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest | Accounting period data
 
 try {
@@ -3890,7 +3881,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of accounting period |
+ **id** | **int**| ID of Entity |
  **update_accounting_period_request** | [**\StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest**](../Model/UpdateAccountingPeriodRequest.md)| Accounting period data |
 
 ### Return type
@@ -3899,7 +3890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3925,7 +3916,7 @@ Update cash discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3937,7 +3928,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of cash discount
+$id = 1; // int | ID of Entity
 $create_cash_discount_request = new \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest(); // \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest | cash discount data
 
 try {
@@ -3952,7 +3943,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of cash discount |
+ **id** | **int**| ID of Entity |
  **create_cash_discount_request** | [**\StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest**](../Model/CreateCashDiscountRequest.md)| cash discount data |
 
 ### Return type
@@ -3961,7 +3952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -3987,7 +3978,7 @@ Update client
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -3999,7 +3990,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of client
+$id = 1; // int | ID of Entity
 $create_new_client_request = new \StevenBuehner\ChurchTools\Model\CreateNewClientRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewClientRequest | Client data
 
 try {
@@ -4014,7 +4005,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of client |
+ **id** | **int**| ID of Entity |
  **create_new_client_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewClientRequest**](../Model/CreateNewClientRequest.md)| Client data |
 
 ### Return type
@@ -4023,7 +4014,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -4051,7 +4042,7 @@ Update cost center
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -4063,7 +4054,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of cost center
+$id = 1; // int | ID of Entity
 $update_cost_center_request = new \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest(); // \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest | cost center data
 
 try {
@@ -4078,7 +4069,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of cost center |
+ **id** | **int**| ID of Entity |
  **update_cost_center_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest**](../Model/UpdateCostCenterRequest.md)| cost center data |
 
 ### Return type
@@ -4087,7 +4078,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -4113,7 +4104,7 @@ Update tax rate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -4125,7 +4116,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of tax rate
+$id = 1; // int | ID of Entity
 $create_tax_rate_request = new \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest(); // \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest | Tax rate data
 
 try {
@@ -4140,7 +4131,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of tax rate |
+ **id** | **int**| ID of Entity |
  **create_tax_rate_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxRateRequest**](../Model/CreateTaxRateRequest.md)| Tax rate data |
 
 ### Return type
@@ -4149,7 +4140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -4175,7 +4166,7 @@ Update tax type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -4187,7 +4178,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of tax type
+$id = 1; // int | ID of Entity
 $create_tax_type_request = new \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest(); // \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest | tax type data
 
 try {
@@ -4202,7 +4193,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of tax type |
+ **id** | **int**| ID of Entity |
  **create_tax_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest**](../Model/CreateTaxTypeRequest.md)| tax type data |
 
 ### Return type
@@ -4211,11 +4202,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -4237,7 +4228,7 @@ Update transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -4249,7 +4240,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of transaction
+$id = 1; // int | ID of Entity
 $update_transaction_request = new \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest(); // \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest | Transaction data
 
 try {
@@ -4264,7 +4255,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of transaction |
+ **id** | **int**| ID of Entity |
  **update_transaction_request** | [**\StevenBuehner\ChurchTools\Model\UpdateTransactionRequest**](../Model/UpdateTransactionRequest.md)| Transaction data |
 
 ### Return type
@@ -4273,7 +4264,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -4299,7 +4290,7 @@ Update transaction purpose
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -4311,7 +4302,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of transaction purpose
+$id = 1; // int | ID of Entity
 $create_new_transaction_purpose_request = new \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest(); // \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest | transaction purpose data
 
 try {
@@ -4326,7 +4317,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of transaction purpose |
+ **id** | **int**| ID of Entity |
  **create_new_transaction_purpose_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest**](../Model/CreateNewTransactionPurposeRequest.md)| transaction purpose data |
 
 ### Return type
@@ -4335,7 +4326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

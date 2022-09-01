@@ -58,11 +58,11 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'campus_id' => 'int',
         'id' => 'int',
         'name' => 'string',
         'name_translated' => 'string',
-        'sort_key' => 'float',
-        'campus_id' => 'int'
+        'sort_key' => 'int'
     ];
 
     /**
@@ -73,11 +73,11 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'campus_id' => null,
         'id' => null,
         'name' => null,
         'name_translated' => null,
-        'sort_key' => null,
-        'campus_id' => null
+        'sort_key' => null
     ];
 
     /**
@@ -107,11 +107,11 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'campus_id' => 'campusId',
         'id' => 'id',
         'name' => 'name',
         'name_translated' => 'nameTranslated',
-        'sort_key' => 'sortKey',
-        'campus_id' => 'campusId'
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -120,11 +120,11 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'campus_id' => 'setCampusId',
         'id' => 'setId',
         'name' => 'setName',
         'name_translated' => 'setNameTranslated',
-        'sort_key' => 'setSortKey',
-        'campus_id' => 'setCampusId'
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -133,11 +133,11 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'campus_id' => 'getCampusId',
         'id' => 'getId',
         'name' => 'getName',
         'name_translated' => 'getNameTranslated',
-        'sort_key' => 'getSortKey',
-        'campus_id' => 'getCampusId'
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -197,11 +197,11 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['campus_id'] = $data['campus_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['campus_id'] = $data['campus_id'] ?? null;
     }
 
     /**
@@ -227,6 +227,30 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets campus_id
+     *
+     * @return int|null
+     */
+    public function getCampusId()
+    {
+        return $this->container['campus_id'];
+    }
+
+    /**
+     * Sets campus_id
+     *
+     * @param int|null $campus_id campus_id
+     *
+     * @return self
+     */
+    public function setCampusId($campus_id)
+    {
+        $this->container['campus_id'] = $campus_id;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -303,7 +327,7 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sort_key
      *
-     * @return float|null
+     * @return int|null
      */
     public function getSortKey()
     {
@@ -313,37 +337,13 @@ class SongCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sort_key
      *
-     * @param float|null $sort_key sort_key
+     * @param int|null $sort_key sort_key
      *
      * @return self
      */
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets campus_id
-     *
-     * @return int|null
-     */
-    public function getCampusId()
-    {
-        return $this->container['campus_id'];
-    }
-
-    /**
-     * Sets campus_id
-     *
-     * @param int|null $campus_id campus_id
-     *
-     * @return self
-     */
-    public function setCampusId($campus_id)
-    {
-        $this->container['campus_id'] = $campus_id;
 
         return $this;
     }

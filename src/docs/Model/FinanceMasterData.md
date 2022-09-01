@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clients** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataClientsInner[]**](GetAllData200ResponseDataClientsInner.md) |  | [optional]
-**accounting_periods** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInner[]**](GetAllData200ResponseDataAccountingPeriodsInner.md) |  | [optional]
-**accounts** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner[]**](GetAllData200ResponseDataAccountsInner.md) |  | [optional]
-**account_types** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountTypesInner[]**](GetAllData200ResponseDataAccountTypesInner.md) |  | [optional]
-**account_classes** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountClassesInner[]**](GetAllData200ResponseDataAccountClassesInner.md) |  | [optional]
-**account_groups** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountGroupsInner[]**](GetAllData200ResponseDataAccountGroupsInner.md) |  | [optional]
-**cash_discounts** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataCashDiscountsInner[]**](GetAllData200ResponseDataCashDiscountsInner.md) |  | [optional]
+**account_classes** | [**\StevenBuehner\ChurchTools\Model\GetAllAccountClasses200ResponseDataInner[]**](GetAllAccountClasses200ResponseDataInner.md) |  | [optional]
+**account_groups** | [**\StevenBuehner\ChurchTools\Model\GetAllAccountGroups200ResponseDataInner[]**](GetAllAccountGroups200ResponseDataInner.md) |  | [optional]
+**account_types** | [**\StevenBuehner\ChurchTools\Model\GetAllAccountTypes200ResponseDataInner[]**](GetAllAccountTypes200ResponseDataInner.md) |  | [optional]
+**accounting_periods** | [**\StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInner[]**](GetAllAccountingPeriods200ResponseDataInner.md) |  | [optional]
+**accounts** | [**\StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner[]**](GetAllAccounts200ResponseDataInner.md) |  | [optional]
+**cash_discounts** | [**\StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200ResponseDataInner[]**](GetAllCashDiscounts200ResponseDataInner.md) |  | [optional]
+**clients** | [**\StevenBuehner\ChurchTools\Model\GetAllClients200ResponseDataInner[]**](GetAllClients200ResponseDataInner.md) |  | [optional]
 **cost_centers** | [**\StevenBuehner\ChurchTools\Model\CostCenter[]**](CostCenter.md) |  | [optional]
 **tax_rates** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataTaxRatesInner[]**](GetAllData200ResponseDataTaxRatesInner.md) |  | [optional]
 **tax_types** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataTaxTypesInner[]**](GetAllData200ResponseDataTaxTypesInner.md) |  | [optional]

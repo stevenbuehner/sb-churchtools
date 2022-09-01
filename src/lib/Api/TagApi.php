@@ -116,6 +116,291 @@ class TagApi
     }
 
     /**
+     * Operation getGroupsGroupIdTags
+     *
+     * Fetch group tags
+     *
+     * @param  int $group_id ID of group (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response
+     */
+    public function getGroupsGroupIdTags($group_id)
+    {
+        list($response) = $this->getGroupsGroupIdTagsWithHttpInfo($group_id);
+        return $response;
+    }
+
+    /**
+     * Operation getGroupsGroupIdTagsWithHttpInfo
+     *
+     * Fetch group tags
+     *
+     * @param  int $group_id ID of group (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGroupsGroupIdTagsWithHttpInfo($group_id)
+    {
+        $request = $this->getGroupsGroupIdTagsRequest($group_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGroupsGroupIdTagsAsync
+     *
+     * Fetch group tags
+     *
+     * @param  int $group_id ID of group (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGroupsGroupIdTagsAsync($group_id)
+    {
+        return $this->getGroupsGroupIdTagsAsyncWithHttpInfo($group_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGroupsGroupIdTagsAsyncWithHttpInfo
+     *
+     * Fetch group tags
+     *
+     * @param  int $group_id ID of group (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGroupsGroupIdTagsAsyncWithHttpInfo($group_id)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response';
+        $request = $this->getGroupsGroupIdTagsRequest($group_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGroupsGroupIdTags'
+     *
+     * @param  int $group_id ID of group (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getGroupsGroupIdTagsRequest($group_id)
+    {
+        // verify the required parameter 'group_id' is set
+        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $group_id when calling getGroupsGroupIdTags'
+            );
+        }
+
+        $resourcePath = '/groups/{groupId}/tags';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($group_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'groupId' . '}',
+                ObjectSerializer::toPathValue($group_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getTags
      *
      * Get all tags of a type
@@ -124,7 +409,7 @@ class TagApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]|string
+     * @return \StevenBuehner\ChurchTools\Model\GetTags200Response|string
      */
     public function getTags($type)
     {
@@ -141,7 +426,7 @@ class TagApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetTags200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTagsWithHttpInfo($type)
     {
@@ -184,17 +469,17 @@ class TagApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetTags200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetTags200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetTags200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -215,7 +500,7 @@ class TagApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetTags200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -236,7 +521,7 @@ class TagApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]',
+                        '\StevenBuehner\ChurchTools\Model\GetTags200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -286,7 +571,7 @@ class TagApi
      */
     public function getTagsAsyncWithHttpInfo($type)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]';
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetTags200Response';
         $request = $this->getTagsRequest($type);
 
         return $this->client

@@ -57,14 +57,14 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'domain_type' => 'string',
-        'domain_identifier' => 'string',
         'api_url' => 'string',
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroupDomainAttributes',
+        'domain_identifier' => 'string',
+        'domain_type' => 'string',
         'frontend_url' => 'string',
-        'image_url' => 'mixed',
         'icon' => 'string',
-        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroupDomainAttributes'
+        'image_url' => 'mixed',
+        'title' => 'string'
     ];
 
     /**
@@ -75,14 +75,14 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'domain_type' => null,
-        'domain_identifier' => null,
         'api_url' => null,
+        'domain_attributes' => null,
+        'domain_identifier' => null,
+        'domain_type' => null,
         'frontend_url' => null,
-        'image_url' => null,
         'icon' => null,
-        'domain_attributes' => null
+        'image_url' => null,
+        'title' => null
     ];
 
     /**
@@ -112,14 +112,14 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'domain_type' => 'domainType',
-        'domain_identifier' => 'domainIdentifier',
         'api_url' => 'apiUrl',
+        'domain_attributes' => 'domainAttributes',
+        'domain_identifier' => 'domainIdentifier',
+        'domain_type' => 'domainType',
         'frontend_url' => 'frontendUrl',
-        'image_url' => 'imageUrl',
         'icon' => 'icon',
-        'domain_attributes' => 'domainAttributes'
+        'image_url' => 'imageUrl',
+        'title' => 'title'
     ];
 
     /**
@@ -128,14 +128,14 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'domain_type' => 'setDomainType',
-        'domain_identifier' => 'setDomainIdentifier',
         'api_url' => 'setApiUrl',
+        'domain_attributes' => 'setDomainAttributes',
+        'domain_identifier' => 'setDomainIdentifier',
+        'domain_type' => 'setDomainType',
         'frontend_url' => 'setFrontendUrl',
-        'image_url' => 'setImageUrl',
         'icon' => 'setIcon',
-        'domain_attributes' => 'setDomainAttributes'
+        'image_url' => 'setImageUrl',
+        'title' => 'setTitle'
     ];
 
     /**
@@ -144,14 +144,14 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'domain_type' => 'getDomainType',
-        'domain_identifier' => 'getDomainIdentifier',
         'api_url' => 'getApiUrl',
+        'domain_attributes' => 'getDomainAttributes',
+        'domain_identifier' => 'getDomainIdentifier',
+        'domain_type' => 'getDomainType',
         'frontend_url' => 'getFrontendUrl',
-        'image_url' => 'getImageUrl',
         'icon' => 'getIcon',
-        'domain_attributes' => 'getDomainAttributes'
+        'image_url' => 'getImageUrl',
+        'title' => 'getTitle'
     ];
 
     /**
@@ -211,14 +211,14 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
-        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
         $this->container['api_url'] = $data['api_url'] ?? null;
-        $this->container['frontend_url'] = $data['frontend_url'] ?? null;
-        $this->container['image_url'] = $data['image_url'] ?? null;
-        $this->container['icon'] = $data['icon'] ?? null;
         $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
+        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['frontend_url'] = $data['frontend_url'] ?? null;
+        $this->container['icon'] = $data['icon'] ?? null;
+        $this->container['image_url'] = $data['image_url'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
     }
 
     /**
@@ -230,20 +230,16 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
+        if ($this->container['api_url'] === null) {
+            $invalidProperties[] = "'api_url' can't be null";
         }
-        if ((mb_strlen($this->container['title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['domain_type'] === null) {
-            $invalidProperties[] = "'domain_type' can't be null";
-        }
-        if ((mb_strlen($this->container['domain_type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['api_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'api_url', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['domain_attributes'] === null) {
+            $invalidProperties[] = "'domain_attributes' can't be null";
+        }
         if ($this->container['domain_identifier'] === null) {
             $invalidProperties[] = "'domain_identifier' can't be null";
         }
@@ -251,11 +247,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
             $invalidProperties[] = "invalid value for 'domain_identifier', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['api_url'] === null) {
-            $invalidProperties[] = "'api_url' can't be null";
+        if ($this->container['domain_type'] === null) {
+            $invalidProperties[] = "'domain_type' can't be null";
         }
-        if ((mb_strlen($this->container['api_url']) < 1)) {
-            $invalidProperties[] = "invalid value for 'api_url', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['domain_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['frontend_url'] === null) {
@@ -272,9 +268,13 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
             $invalidProperties[] = "invalid value for 'icon', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['domain_attributes'] === null) {
-            $invalidProperties[] = "'domain_attributes' can't be null";
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
         }
+        if ((mb_strlen($this->container['title']) < 1)) {
+            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -291,59 +291,54 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
 
 
     /**
-     * Gets title
+     * Gets api_url
      *
      * @return string
      */
-    public function getTitle()
+    public function getApiUrl()
     {
-        return $this->container['title'];
+        return $this->container['api_url'];
     }
 
     /**
-     * Sets title
+     * Sets api_url
      *
-     * @param string $title title
+     * @param string $api_url api_url
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setApiUrl($api_url)
     {
 
-        if ((mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroup., must be bigger than or equal to 1.');
+        if ((mb_strlen($api_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $api_url when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroup., must be bigger than or equal to 1.');
         }
 
-        $this->container['title'] = $title;
+        $this->container['api_url'] = $api_url;
 
         return $this;
     }
 
     /**
-     * Gets domain_type
+     * Gets domain_attributes
      *
-     * @return string
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroupDomainAttributes
      */
-    public function getDomainType()
+    public function getDomainAttributes()
     {
-        return $this->container['domain_type'];
+        return $this->container['domain_attributes'];
     }
 
     /**
-     * Sets domain_type
+     * Sets domain_attributes
      *
-     * @param string $domain_type domain_type
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroupDomainAttributes $domain_attributes domain_attributes
      *
      * @return self
      */
-    public function setDomainType($domain_type)
+    public function setDomainAttributes($domain_attributes)
     {
-
-        if ((mb_strlen($domain_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $domain_type when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroup., must be bigger than or equal to 1.');
-        }
-
-        $this->container['domain_type'] = $domain_type;
+        $this->container['domain_attributes'] = $domain_attributes;
 
         return $this;
     }
@@ -378,30 +373,30 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
     }
 
     /**
-     * Gets api_url
+     * Gets domain_type
      *
      * @return string
      */
-    public function getApiUrl()
+    public function getDomainType()
     {
-        return $this->container['api_url'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets api_url
+     * Sets domain_type
      *
-     * @param string $api_url api_url
+     * @param string $domain_type domain_type
      *
      * @return self
      */
-    public function setApiUrl($api_url)
+    public function setDomainType($domain_type)
     {
 
-        if ((mb_strlen($api_url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $api_url when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroup., must be bigger than or equal to 1.');
+        if ((mb_strlen($domain_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $domain_type when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroup., must be bigger than or equal to 1.');
         }
 
-        $this->container['api_url'] = $api_url;
+        $this->container['domain_type'] = $domain_type;
 
         return $this;
     }
@@ -436,30 +431,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
     }
 
     /**
-     * Gets image_url
-     *
-     * @return mixed|null
-     */
-    public function getImageUrl()
-    {
-        return $this->container['image_url'];
-    }
-
-    /**
-     * Sets image_url
-     *
-     * @param mixed|null $image_url image_url
-     *
-     * @return self
-     */
-    public function setImageUrl($image_url)
-    {
-        $this->container['image_url'] = $image_url;
-
-        return $this;
-    }
-
-    /**
      * Gets icon
      *
      * @return string
@@ -489,25 +460,54 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGro
     }
 
     /**
-     * Gets domain_attributes
+     * Gets image_url
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroupDomainAttributes
+     * @return mixed|null
      */
-    public function getDomainAttributes()
+    public function getImageUrl()
     {
-        return $this->container['domain_attributes'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets domain_attributes
+     * Sets image_url
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroupDomainAttributes $domain_attributes domain_attributes
+     * @param mixed|null $image_url image_url
      *
      * @return self
      */
-    public function setDomainAttributes($domain_attributes)
+    public function setImageUrl($image_url)
     {
-        $this->container['domain_attributes'] = $domain_attributes;
+        $this->container['image_url'] = $image_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+
+        if ((mb_strlen($title) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $title when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroup., must be bigger than or equal to 1.');
+        }
+
+        $this->container['title'] = $title;
 
         return $this;
     }

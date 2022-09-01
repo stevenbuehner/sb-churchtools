@@ -57,7 +57,7 @@ class GetResourceMasterdata200ResponseData implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'resource_types' => '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourceTypesInner[]',
+        'resource_types' => '\StevenBuehner\ChurchTools\Model\GetPublicgroup200ResponseDataInformationGroupCategory[]',
         'resources' => '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourcesInner[]'
     ];
 
@@ -212,7 +212,7 @@ class GetResourceMasterdata200ResponseData implements ModelInterface, ArrayAcces
     /**
      * Gets resource_types
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourceTypesInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetPublicgroup200ResponseDataInformationGroupCategory[]|null
      */
     public function getResourceTypes()
     {
@@ -222,7 +222,7 @@ class GetResourceMasterdata200ResponseData implements ModelInterface, ArrayAcces
     /**
      * Sets resource_types
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourceTypesInner[]|null $resource_types resource_types
+     * @param \StevenBuehner\ChurchTools\Model\GetPublicgroup200ResponseDataInformationGroupCategory[]|null $resource_types resource_types
      *
      * @return self
      */

@@ -58,8 +58,8 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'member' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner',
-        'is_checked_in' => 'bool'
+        'is_checked_in' => 'bool',
+        'member' => '\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'member' => null,
-        'is_checked_in' => null
+        'is_checked_in' => null,
+        'member' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'member' => 'member',
-        'is_checked_in' => 'isCheckedIn'
+        'is_checked_in' => 'isCheckedIn',
+        'member' => 'member'
     ];
 
     /**
@@ -111,8 +111,8 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'member' => 'setMember',
-        'is_checked_in' => 'setIsCheckedIn'
+        'is_checked_in' => 'setIsCheckedIn',
+        'member' => 'setMember'
     ];
 
     /**
@@ -121,8 +121,8 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'member' => 'getMember',
-        'is_checked_in' => 'getIsCheckedIn'
+        'is_checked_in' => 'getIsCheckedIn',
+        'member' => 'getMember'
     ];
 
     /**
@@ -182,8 +182,8 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['member'] = $data['member'] ?? null;
         $this->container['is_checked_in'] = $data['is_checked_in'] ?? null;
+        $this->container['member'] = $data['member'] ?? null;
     }
 
     /**
@@ -211,30 +211,6 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets member
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner|null
-     */
-    public function getMember()
-    {
-        return $this->container['member'];
-    }
-
-    /**
-     * Sets member
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner|null $member member
-     *
-     * @return self
-     */
-    public function setMember($member)
-    {
-        $this->container['member'] = $member;
-
-        return $this;
-    }
-
-    /**
      * Gets is_checked_in
      *
      * @return bool|null
@@ -254,6 +230,30 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setIsCheckedIn($is_checked_in)
     {
         $this->container['is_checked_in'] = $is_checked_in;
+
+        return $this;
+    }
+
+    /**
+     * Gets member
+     *
+     * @return \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData|null
+     */
+    public function getMember()
+    {
+        return $this->container['member'];
+    }
+
+    /**
+     * Sets member
+     *
+     * @param \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData|null $member member
+     *
+     * @return self
+     */
+    public function setMember($member)
+    {
+        $this->container['member'] = $member;
 
         return $this;
     }

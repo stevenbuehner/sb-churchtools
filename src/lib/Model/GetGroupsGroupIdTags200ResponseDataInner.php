@@ -57,11 +57,11 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'name' => 'string',
+        'count' => 'int',
+        'id' => 'int',
         'modified_at' => 'string',
-        'modified_by' => 'float',
-        'count' => 'int'
+        'modified_by' => 'int',
+        'name' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'count' => null,
         'id' => null,
-        'name' => null,
         'modified_at' => null,
         'modified_by' => null,
-        'count' => null
+        'name' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
+        'count' => 'count',
         'id' => 'id',
-        'name' => 'name',
         'modified_at' => 'modifiedAt',
         'modified_by' => 'modifiedBy',
-        'count' => 'count'
+        'name' => 'name'
     ];
 
     /**
@@ -119,11 +119,11 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
+        'count' => 'setCount',
         'id' => 'setId',
-        'name' => 'setName',
         'modified_at' => 'setModifiedAt',
         'modified_by' => 'setModifiedBy',
-        'count' => 'setCount'
+        'name' => 'setName'
     ];
 
     /**
@@ -132,11 +132,11 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
+        'count' => 'getCount',
         'id' => 'getId',
-        'name' => 'getName',
         'modified_at' => 'getModifiedAt',
         'modified_by' => 'getModifiedBy',
-        'count' => 'getCount'
+        'name' => 'getName'
     ];
 
     /**
@@ -196,11 +196,11 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
+        $this->container['count'] = $data['count'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['modified_at'] = $data['modified_at'] ?? null;
         $this->container['modified_by'] = $data['modified_by'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -228,9 +228,33 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
 
 
     /**
+     * Gets count
+     *
+     * @return int|null
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int|null $count count
+     *
+     * @return self
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getId()
     {
@@ -240,37 +264,13 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
     /**
      * Sets id
      *
-     * @param float|null $id id
+     * @param int|null $id id
      *
      * @return self
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
 
         return $this;
     }
@@ -302,7 +302,7 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
     /**
      * Gets modified_by
      *
-     * @return float|null
+     * @return int|null
      */
     public function getModifiedBy()
     {
@@ -312,7 +312,7 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
     /**
      * Sets modified_by
      *
-     * @param float|null $modified_by modified_by
+     * @param int|null $modified_by modified_by
      *
      * @return self
      */
@@ -324,25 +324,25 @@ class GetGroupsGroupIdTags200ResponseDataInner implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets count
+     * Gets name
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getCount()
+    public function getName()
     {
-        return $this->container['count'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets count
+     * Sets name
      *
-     * @param int|null $count count
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setCount($count)
+    public function setName($name)
     {
-        $this->container['count'] = $count;
+        $this->container['name'] = $name;
 
         return $this;
     }

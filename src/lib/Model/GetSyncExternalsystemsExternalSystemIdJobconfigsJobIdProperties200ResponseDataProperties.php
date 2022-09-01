@@ -57,8 +57,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
       * @var string[]
       */
     protected static $openAPITypes = [
-        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsMasterToESInner[]',
-        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsMasterToESInner[]'
+        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner[]',
+        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner[]'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'property_mappings_master_to_es' => null,
-        'property_mappings_esto_master' => null
+        'property_mappings_esto_master' => null,
+        'property_mappings_master_to_es' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      * @var string[]
      */
     protected static $attributeMap = [
-        'property_mappings_master_to_es' => 'propertyMappingsMasterToES',
-        'property_mappings_esto_master' => 'propertyMappingsESToMaster'
+        'property_mappings_esto_master' => 'propertyMappingsESToMaster',
+        'property_mappings_master_to_es' => 'propertyMappingsMasterToES'
     ];
 
     /**
@@ -110,8 +110,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      * @var string[]
      */
     protected static $setters = [
-        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster'
+        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster',
+        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs'
     ];
 
     /**
@@ -120,8 +120,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      * @var string[]
      */
     protected static $getters = [
-        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster'
+        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster',
+        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs'
     ];
 
     /**
@@ -181,8 +181,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      */
     public function __construct(array $data = null)
     {
-        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
         $this->container['property_mappings_esto_master'] = $data['property_mappings_esto_master'] ?? null;
+        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
     }
 
     /**
@@ -194,18 +194,18 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
     {
         $invalidProperties = [];
 
-        if ($this->container['property_mappings_master_to_es'] === null) {
-            $invalidProperties[] = "'property_mappings_master_to_es' can't be null";
-        }
-        if ((count($this->container['property_mappings_master_to_es']) < 1)) {
-            $invalidProperties[] = "invalid value for 'property_mappings_master_to_es', number of items must be greater than or equal to 1.";
-        }
-
         if ($this->container['property_mappings_esto_master'] === null) {
             $invalidProperties[] = "'property_mappings_esto_master' can't be null";
         }
         if ((count($this->container['property_mappings_esto_master']) < 1)) {
             $invalidProperties[] = "invalid value for 'property_mappings_esto_master', number of items must be greater than or equal to 1.";
+        }
+
+        if ($this->container['property_mappings_master_to_es'] === null) {
+            $invalidProperties[] = "'property_mappings_master_to_es' can't be null";
+        }
+        if ((count($this->container['property_mappings_master_to_es']) < 1)) {
+            $invalidProperties[] = "invalid value for 'property_mappings_master_to_es', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -224,38 +224,9 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
 
 
     /**
-     * Gets property_mappings_master_to_es
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsMasterToESInner[]
-     */
-    public function getPropertyMappingsMasterToEs()
-    {
-        return $this->container['property_mappings_master_to_es'];
-    }
-
-    /**
-     * Sets property_mappings_master_to_es
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsMasterToESInner[] $property_mappings_master_to_es property_mappings_master_to_es
-     *
-     * @return self
-     */
-    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
-    {
-
-
-        if ((count($property_mappings_master_to_es) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $property_mappings_master_to_es when calling GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataProperties., number of items must be greater than or equal to 1.');
-        }
-        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
-
-        return $this;
-    }
-
-    /**
      * Gets property_mappings_esto_master
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsMasterToESInner[]
+     * @return \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner[]
      */
     public function getPropertyMappingsEstoMaster()
     {
@@ -265,7 +236,7 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
     /**
      * Sets property_mappings_esto_master
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsMasterToESInner[] $property_mappings_esto_master property_mappings_esto_master
+     * @param \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner[] $property_mappings_esto_master property_mappings_esto_master
      *
      * @return self
      */
@@ -277,6 +248,35 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
             throw new \InvalidArgumentException('invalid length for $property_mappings_esto_master when calling GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataProperties., number of items must be greater than or equal to 1.');
         }
         $this->container['property_mappings_esto_master'] = $property_mappings_esto_master;
+
+        return $this;
+    }
+
+    /**
+     * Gets property_mappings_master_to_es
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner[]
+     */
+    public function getPropertyMappingsMasterToEs()
+    {
+        return $this->container['property_mappings_master_to_es'];
+    }
+
+    /**
+     * Sets property_mappings_master_to_es
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner[] $property_mappings_master_to_es property_mappings_master_to_es
+     *
+     * @return self
+     */
+    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
+    {
+
+
+        if ((count($property_mappings_master_to_es) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $property_mappings_master_to_es when calling GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataProperties., number of items must be greater than or equal to 1.');
+        }
+        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
 
         return $this;
     }

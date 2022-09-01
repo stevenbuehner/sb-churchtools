@@ -57,19 +57,19 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'title' => 'string',
-        'comment' => 'string',
-        'start_time' => 'string',
-        'duration' => 'int',
         'all_day' => 'bool',
-        'note' => 'string',
-        'is_internal' => 'bool',
         'category_id' => 'int',
-        'repeat_id' => 'int',
+        'comment' => 'string',
+        'duration' => 'int',
+        'id' => 'int',
+        'is_internal' => 'bool',
+        'note' => 'string',
+        'repeat_duration' => 'int',
         'repeat_frequence' => 'int',
+        'repeat_id' => 'int',
         'repeat_option_id' => 'int',
-        'repeat_duration' => 'int'
+        'start_time' => 'string',
+        'title' => 'string'
     ];
 
     /**
@@ -80,19 +80,19 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'title' => null,
-        'comment' => null,
-        'start_time' => null,
-        'duration' => null,
         'all_day' => null,
-        'note' => null,
-        'is_internal' => null,
         'category_id' => null,
-        'repeat_id' => null,
+        'comment' => null,
+        'duration' => null,
+        'id' => null,
+        'is_internal' => null,
+        'note' => null,
+        'repeat_duration' => null,
         'repeat_frequence' => null,
+        'repeat_id' => null,
         'repeat_option_id' => null,
-        'repeat_duration' => null
+        'start_time' => null,
+        'title' => null
     ];
 
     /**
@@ -122,19 +122,19 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'title' => 'title',
-        'comment' => 'comment',
-        'start_time' => 'startTime',
-        'duration' => 'duration',
         'all_day' => 'allDay',
-        'note' => 'note',
-        'is_internal' => 'isInternal',
         'category_id' => 'categoryId',
-        'repeat_id' => 'repeatId',
+        'comment' => 'comment',
+        'duration' => 'duration',
+        'id' => 'id',
+        'is_internal' => 'isInternal',
+        'note' => 'note',
+        'repeat_duration' => 'repeatDuration',
         'repeat_frequence' => 'repeatFrequence',
+        'repeat_id' => 'repeatId',
         'repeat_option_id' => 'repeatOptionId',
-        'repeat_duration' => 'repeatDuration'
+        'start_time' => 'startTime',
+        'title' => 'title'
     ];
 
     /**
@@ -143,19 +143,19 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'title' => 'setTitle',
-        'comment' => 'setComment',
-        'start_time' => 'setStartTime',
-        'duration' => 'setDuration',
         'all_day' => 'setAllDay',
-        'note' => 'setNote',
-        'is_internal' => 'setIsInternal',
         'category_id' => 'setCategoryId',
-        'repeat_id' => 'setRepeatId',
+        'comment' => 'setComment',
+        'duration' => 'setDuration',
+        'id' => 'setId',
+        'is_internal' => 'setIsInternal',
+        'note' => 'setNote',
+        'repeat_duration' => 'setRepeatDuration',
         'repeat_frequence' => 'setRepeatFrequence',
+        'repeat_id' => 'setRepeatId',
         'repeat_option_id' => 'setRepeatOptionId',
-        'repeat_duration' => 'setRepeatDuration'
+        'start_time' => 'setStartTime',
+        'title' => 'setTitle'
     ];
 
     /**
@@ -164,19 +164,19 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'title' => 'getTitle',
-        'comment' => 'getComment',
-        'start_time' => 'getStartTime',
-        'duration' => 'getDuration',
         'all_day' => 'getAllDay',
-        'note' => 'getNote',
-        'is_internal' => 'getIsInternal',
         'category_id' => 'getCategoryId',
-        'repeat_id' => 'getRepeatId',
+        'comment' => 'getComment',
+        'duration' => 'getDuration',
+        'id' => 'getId',
+        'is_internal' => 'getIsInternal',
+        'note' => 'getNote',
+        'repeat_duration' => 'getRepeatDuration',
         'repeat_frequence' => 'getRepeatFrequence',
+        'repeat_id' => 'getRepeatId',
         'repeat_option_id' => 'getRepeatOptionId',
-        'repeat_duration' => 'getRepeatDuration'
+        'start_time' => 'getStartTime',
+        'title' => 'getTitle'
     ];
 
     /**
@@ -236,19 +236,19 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['start_time'] = $data['start_time'] ?? null;
-        $this->container['duration'] = $data['duration'] ?? null;
         $this->container['all_day'] = $data['all_day'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['is_internal'] = $data['is_internal'] ?? null;
         $this->container['category_id'] = $data['category_id'] ?? null;
-        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
-        $this->container['repeat_frequence'] = $data['repeat_frequence'] ?? null;
-        $this->container['repeat_option_id'] = $data['repeat_option_id'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
+        $this->container['duration'] = $data['duration'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_internal'] = $data['is_internal'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
         $this->container['repeat_duration'] = $data['repeat_duration'] ?? null;
+        $this->container['repeat_frequence'] = $data['repeat_frequence'] ?? null;
+        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
+        $this->container['repeat_option_id'] = $data['repeat_option_id'] ?? null;
+        $this->container['start_time'] = $data['start_time'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
     }
 
     /**
@@ -276,126 +276,6 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string|null
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string|null $comment comment
-     *
-     * @return self
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_time
-     *
-     * @return string|null
-     */
-    public function getStartTime()
-    {
-        return $this->container['start_time'];
-    }
-
-    /**
-     * Sets start_time
-     *
-     * @param string|null $start_time start_time
-     *
-     * @return self
-     */
-    public function setStartTime($start_time)
-    {
-        $this->container['start_time'] = $start_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets duration
-     *
-     * @return int|null
-     */
-    public function getDuration()
-    {
-        return $this->container['duration'];
-    }
-
-    /**
-     * Sets duration
-     *
-     * @param int|null $duration Duration in seconds
-     *
-     * @return self
-     */
-    public function setDuration($duration)
-    {
-        $this->container['duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
      * Gets all_day
      *
      * @return bool|null
@@ -415,54 +295,6 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setAllDay($all_day)
     {
         $this->container['all_day'] = $all_day;
-
-        return $this;
-    }
-
-    /**
-     * Gets note
-     *
-     * @return string|null
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string|null $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_internal
-     *
-     * @return bool|null
-     */
-    public function getIsInternal()
-    {
-        return $this->container['is_internal'];
-    }
-
-    /**
-     * Sets is_internal
-     *
-     * @param bool|null $is_internal is_internal
-     *
-     * @return self
-     */
-    public function setIsInternal($is_internal)
-    {
-        $this->container['is_internal'] = $is_internal;
 
         return $this;
     }
@@ -492,25 +324,145 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets repeat_id
+     * Gets comment
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getRepeatId()
+    public function getComment()
     {
-        return $this->container['repeat_id'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets repeat_id
+     * Sets comment
      *
-     * @param int|null $repeat_id repeat_id
+     * @param string|null $comment comment
      *
      * @return self
      */
-    public function setRepeatId($repeat_id)
+    public function setComment($comment)
     {
-        $this->container['repeat_id'] = $repeat_id;
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets duration
+     *
+     * @return int|null
+     */
+    public function getDuration()
+    {
+        return $this->container['duration'];
+    }
+
+    /**
+     * Sets duration
+     *
+     * @param int|null $duration Duration in seconds
+     *
+     * @return self
+     */
+    public function setDuration($duration)
+    {
+        $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_internal
+     *
+     * @return bool|null
+     */
+    public function getIsInternal()
+    {
+        return $this->container['is_internal'];
+    }
+
+    /**
+     * Sets is_internal
+     *
+     * @param bool|null $is_internal is_internal
+     *
+     * @return self
+     */
+    public function setIsInternal($is_internal)
+    {
+        $this->container['is_internal'] = $is_internal;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string|null
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string|null $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_duration
+     *
+     * @return int|null
+     */
+    public function getRepeatDuration()
+    {
+        return $this->container['repeat_duration'];
+    }
+
+    /**
+     * Sets repeat_duration
+     *
+     * @param int|null $repeat_duration repeat_duration
+     *
+     * @return self
+     */
+    public function setRepeatDuration($repeat_duration)
+    {
+        $this->container['repeat_duration'] = $repeat_duration;
 
         return $this;
     }
@@ -540,6 +492,30 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets repeat_id
+     *
+     * @return int|null
+     */
+    public function getRepeatId()
+    {
+        return $this->container['repeat_id'];
+    }
+
+    /**
+     * Sets repeat_id
+     *
+     * @param int|null $repeat_id repeat_id
+     *
+     * @return self
+     */
+    public function setRepeatId($repeat_id)
+    {
+        $this->container['repeat_id'] = $repeat_id;
+
+        return $this;
+    }
+
+    /**
      * Gets repeat_option_id
      *
      * @return int|null
@@ -564,25 +540,49 @@ class AppointmentTemplate implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets repeat_duration
+     * Gets start_time
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getRepeatDuration()
+    public function getStartTime()
     {
-        return $this->container['repeat_duration'];
+        return $this->container['start_time'];
     }
 
     /**
-     * Sets repeat_duration
+     * Sets start_time
      *
-     * @param int|null $repeat_duration repeat_duration
+     * @param string|null $start_time start_time
      *
      * @return self
      */
-    public function setRepeatDuration($repeat_duration)
+    public function setStartTime($start_time)
     {
-        $this->container['repeat_duration'] = $repeat_duration;
+        $this->container['start_time'] = $start_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string|null $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
 
         return $this;
     }

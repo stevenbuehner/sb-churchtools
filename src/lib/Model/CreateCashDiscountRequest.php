@@ -57,9 +57,9 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rate' => 'float',
+        'account_id' => 'int',
         'note' => 'string',
-        'account_id' => 'int'
+        'rate' => 'float'
     ];
 
     /**
@@ -70,9 +70,9 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'rate' => 'float',
+        'account_id' => null,
         'note' => null,
-        'account_id' => null
+        'rate' => 'float'
     ];
 
     /**
@@ -102,9 +102,9 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'rate' => 'rate',
+        'account_id' => 'accountId',
         'note' => 'note',
-        'account_id' => 'accountId'
+        'rate' => 'rate'
     ];
 
     /**
@@ -113,9 +113,9 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'rate' => 'setRate',
+        'account_id' => 'setAccountId',
         'note' => 'setNote',
-        'account_id' => 'setAccountId'
+        'rate' => 'setRate'
     ];
 
     /**
@@ -124,9 +124,9 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'rate' => 'getRate',
+        'account_id' => 'getAccountId',
         'note' => 'getNote',
-        'account_id' => 'getAccountId'
+        'rate' => 'getRate'
     ];
 
     /**
@@ -186,9 +186,9 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['rate'] = $data['rate'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
         $this->container['account_id'] = $data['account_id'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['rate'] = $data['rate'] ?? null;
     }
 
     /**
@@ -200,14 +200,14 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['rate'] === null) {
-            $invalidProperties[] = "'rate' can't be null";
+        if ($this->container['account_id'] === null) {
+            $invalidProperties[] = "'account_id' can't be null";
         }
         if ($this->container['note'] === null) {
             $invalidProperties[] = "'note' can't be null";
         }
-        if ($this->container['account_id'] === null) {
-            $invalidProperties[] = "'account_id' can't be null";
+        if ($this->container['rate'] === null) {
+            $invalidProperties[] = "'rate' can't be null";
         }
         return $invalidProperties;
     }
@@ -225,25 +225,25 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets rate
+     * Gets account_id
      *
-     * @return float
+     * @return int
      */
-    public function getRate()
+    public function getAccountId()
     {
-        return $this->container['rate'];
+        return $this->container['account_id'];
     }
 
     /**
-     * Sets rate
+     * Sets account_id
      *
-     * @param float $rate rate
+     * @param int $account_id account_id
      *
      * @return self
      */
-    public function setRate($rate)
+    public function setAccountId($account_id)
     {
-        $this->container['rate'] = $rate;
+        $this->container['account_id'] = $account_id;
 
         return $this;
     }
@@ -273,25 +273,25 @@ class CreateCashDiscountRequest implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets account_id
+     * Gets rate
      *
-     * @return int
+     * @return float
      */
-    public function getAccountId()
+    public function getRate()
     {
-        return $this->container['account_id'];
+        return $this->container['rate'];
     }
 
     /**
-     * Sets account_id
+     * Sets rate
      *
-     * @param int $account_id account_id
+     * @param float $rate rate
      *
      * @return self
      */
-    public function setAccountId($account_id)
+    public function setRate($rate)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['rate'] = $rate;
 
         return $this;
     }

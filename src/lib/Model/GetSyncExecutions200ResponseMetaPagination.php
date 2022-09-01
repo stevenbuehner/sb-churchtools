@@ -57,10 +57,10 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => 'float',
-        'limit' => 'float',
-        'current' => 'float',
-        'last_page' => 'float'
+        'current' => 'int',
+        'last_page' => 'int',
+        'limit' => 'int',
+        'total' => 'int'
     ];
 
     /**
@@ -71,10 +71,10 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total' => null,
-        'limit' => null,
         'current' => null,
-        'last_page' => null
+        'last_page' => null,
+        'limit' => null,
+        'total' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'total' => 'total',
-        'limit' => 'limit',
         'current' => 'current',
-        'last_page' => 'lastPage'
+        'last_page' => 'lastPage',
+        'limit' => 'limit',
+        'total' => 'total'
     ];
 
     /**
@@ -116,10 +116,10 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'total' => 'setTotal',
-        'limit' => 'setLimit',
         'current' => 'setCurrent',
-        'last_page' => 'setLastPage'
+        'last_page' => 'setLastPage',
+        'limit' => 'setLimit',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -128,10 +128,10 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'total' => 'getTotal',
-        'limit' => 'getLimit',
         'current' => 'getCurrent',
-        'last_page' => 'getLastPage'
+        'last_page' => 'getLastPage',
+        'limit' => 'getLimit',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -191,10 +191,10 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['limit'] = $data['limit'] ?? null;
         $this->container['current'] = $data['current'] ?? null;
         $this->container['last_page'] = $data['last_page'] ?? null;
+        $this->container['limit'] = $data['limit'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
     }
 
     /**
@@ -206,17 +206,17 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
-        if ($this->container['limit'] === null) {
-            $invalidProperties[] = "'limit' can't be null";
-        }
         if ($this->container['current'] === null) {
             $invalidProperties[] = "'current' can't be null";
         }
         if ($this->container['last_page'] === null) {
             $invalidProperties[] = "'last_page' can't be null";
+        }
+        if ($this->container['limit'] === null) {
+            $invalidProperties[] = "'limit' can't be null";
+        }
+        if ($this->container['total'] === null) {
+            $invalidProperties[] = "'total' can't be null";
         }
         return $invalidProperties;
     }
@@ -234,57 +234,9 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
 
 
     /**
-     * Gets total
-     *
-     * @return float
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param float $total total
-     *
-     * @return self
-     */
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets limit
-     *
-     * @return float
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     *
-     * @param float $limit limit
-     *
-     * @return self
-     */
-    public function setLimit($limit)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
      * Gets current
      *
-     * @return float
+     * @return int
      */
     public function getCurrent()
     {
@@ -294,7 +246,7 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
     /**
      * Sets current
      *
-     * @param float $current current
+     * @param int $current current
      *
      * @return self
      */
@@ -308,7 +260,7 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
     /**
      * Gets last_page
      *
-     * @return float
+     * @return int
      */
     public function getLastPage()
     {
@@ -318,13 +270,61 @@ class GetSyncExecutions200ResponseMetaPagination implements ModelInterface, Arra
     /**
      * Sets last_page
      *
-     * @param float $last_page last_page
+     * @param int $last_page last_page
      *
      * @return self
      */
     public function setLastPage($last_page)
     {
         $this->container['last_page'] = $last_page;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int $limit limit
+     *
+     * @return self
+     */
+    public function setLimit($limit)
+    {
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param int $total total
+     *
+     * @return self
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

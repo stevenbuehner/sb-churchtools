@@ -57,13 +57,13 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
+        'append_agenda_button' => 'bool',
+        'body' => 'string',
         'event_ids' => 'int[]',
+        'files' => 'int[]',
         'recipients' => 'int[]',
         'send_copy_to_me' => 'bool',
-        'subject' => 'string',
-        'body' => 'string',
-        'append_agenda_button' => 'bool',
-        'files' => 'int[]'
+        'subject' => 'string'
     ];
 
     /**
@@ -74,13 +74,13 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'append_agenda_button' => null,
+        'body' => null,
         'event_ids' => null,
+        'files' => null,
         'recipients' => null,
         'send_copy_to_me' => null,
-        'subject' => null,
-        'body' => null,
-        'append_agenda_button' => null,
-        'files' => null
+        'subject' => null
     ];
 
     /**
@@ -110,13 +110,13 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
+        'append_agenda_button' => 'appendAgendaButton',
+        'body' => 'body',
         'event_ids' => 'eventIds',
+        'files' => 'files',
         'recipients' => 'recipients',
         'send_copy_to_me' => 'sendCopyToMe',
-        'subject' => 'subject',
-        'body' => 'body',
-        'append_agenda_button' => 'appendAgendaButton',
-        'files' => 'files'
+        'subject' => 'subject'
     ];
 
     /**
@@ -125,13 +125,13 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
+        'append_agenda_button' => 'setAppendAgendaButton',
+        'body' => 'setBody',
         'event_ids' => 'setEventIds',
+        'files' => 'setFiles',
         'recipients' => 'setRecipients',
         'send_copy_to_me' => 'setSendCopyToMe',
-        'subject' => 'setSubject',
-        'body' => 'setBody',
-        'append_agenda_button' => 'setAppendAgendaButton',
-        'files' => 'setFiles'
+        'subject' => 'setSubject'
     ];
 
     /**
@@ -140,13 +140,13 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
+        'append_agenda_button' => 'getAppendAgendaButton',
+        'body' => 'getBody',
         'event_ids' => 'getEventIds',
+        'files' => 'getFiles',
         'recipients' => 'getRecipients',
         'send_copy_to_me' => 'getSendCopyToMe',
-        'subject' => 'getSubject',
-        'body' => 'getBody',
-        'append_agenda_button' => 'getAppendAgendaButton',
-        'files' => 'getFiles'
+        'subject' => 'getSubject'
     ];
 
     /**
@@ -206,13 +206,13 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
+        $this->container['append_agenda_button'] = $data['append_agenda_button'] ?? null;
+        $this->container['body'] = $data['body'] ?? null;
         $this->container['event_ids'] = $data['event_ids'] ?? null;
+        $this->container['files'] = $data['files'] ?? null;
         $this->container['recipients'] = $data['recipients'] ?? null;
         $this->container['send_copy_to_me'] = $data['send_copy_to_me'] ?? false;
         $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['body'] = $data['body'] ?? null;
-        $this->container['append_agenda_button'] = $data['append_agenda_button'] ?? null;
-        $this->container['files'] = $data['files'] ?? null;
     }
 
     /**
@@ -224,23 +224,23 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
+        if ($this->container['append_agenda_button'] === null) {
+            $invalidProperties[] = "'append_agenda_button' can't be null";
+        }
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
         if ($this->container['event_ids'] === null) {
             $invalidProperties[] = "'event_ids' can't be null";
+        }
+        if ($this->container['files'] === null) {
+            $invalidProperties[] = "'files' can't be null";
         }
         if ($this->container['recipients'] === null) {
             $invalidProperties[] = "'recipients' can't be null";
         }
         if ($this->container['subject'] === null) {
             $invalidProperties[] = "'subject' can't be null";
-        }
-        if ($this->container['body'] === null) {
-            $invalidProperties[] = "'body' can't be null";
-        }
-        if ($this->container['append_agenda_button'] === null) {
-            $invalidProperties[] = "'append_agenda_button' can't be null";
-        }
-        if ($this->container['files'] === null) {
-            $invalidProperties[] = "'files' can't be null";
         }
         return $invalidProperties;
     }
@@ -256,6 +256,54 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets append_agenda_button
+     *
+     * @return bool
+     */
+    public function getAppendAgendaButton()
+    {
+        return $this->container['append_agenda_button'];
+    }
+
+    /**
+     * Sets append_agenda_button
+     *
+     * @param bool $append_agenda_button If an agenda exists for the event, a button with a link to that agenda is added to the mail body.
+     *
+     * @return self
+     */
+    public function setAppendAgendaButton($append_agenda_button)
+    {
+        $this->container['append_agenda_button'] = $append_agenda_button;
+
+        return $this;
+    }
+
+    /**
+     * Gets body
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->container['body'];
+    }
+
+    /**
+     * Sets body
+     *
+     * @param string $body E-Mail body.
+     *
+     * @return self
+     */
+    public function setBody($body)
+    {
+        $this->container['body'] = $body;
+
+        return $this;
+    }
 
     /**
      * Gets event_ids
@@ -277,6 +325,30 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setEventIds($event_ids)
     {
         $this->container['event_ids'] = $event_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets files
+     *
+     * @return int[]
+     */
+    public function getFiles()
+    {
+        return $this->container['files'];
+    }
+
+    /**
+     * Sets files
+     *
+     * @param int[] $files List of file Ids. If the file is attached to the event it is added to the mail body.
+     *
+     * @return self
+     */
+    public function setFiles($files)
+    {
+        $this->container['files'] = $files;
 
         return $this;
     }
@@ -349,78 +421,6 @@ class SendEventEmailRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSubject($subject)
     {
         $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets body
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     *
-     * @param string $body E-Mail body.
-     *
-     * @return self
-     */
-    public function setBody($body)
-    {
-        $this->container['body'] = $body;
-
-        return $this;
-    }
-
-    /**
-     * Gets append_agenda_button
-     *
-     * @return bool
-     */
-    public function getAppendAgendaButton()
-    {
-        return $this->container['append_agenda_button'];
-    }
-
-    /**
-     * Sets append_agenda_button
-     *
-     * @param bool $append_agenda_button If an agenda exists for the event, a button with a link to that agenda is added to the mail body.
-     *
-     * @return self
-     */
-    public function setAppendAgendaButton($append_agenda_button)
-    {
-        $this->container['append_agenda_button'] = $append_agenda_button;
-
-        return $this;
-    }
-
-    /**
-     * Gets files
-     *
-     * @return int[]
-     */
-    public function getFiles()
-    {
-        return $this->container['files'];
-    }
-
-    /**
-     * Sets files
-     *
-     * @param int[] $files List of file Ids. If the file is attached to the event it is added to the mail body.
-     *
-     * @return self
-     */
-    public function setFiles($files)
-    {
-        $this->container['files'] = $files;
 
         return $this;
     }

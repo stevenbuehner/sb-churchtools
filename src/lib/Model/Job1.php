@@ -57,13 +57,13 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'identifier' => 'string',
-        'name' => 'string',
-        'status' => 'string',
-        'domein_type' => 'string',
-        'domain_id' => 'string',
         'created_date' => 'string',
-        'modified_date' => 'string'
+        'domain_id' => 'string',
+        'domain_type' => 'string',
+        'identifier' => 'string',
+        'modified_date' => 'string',
+        'name' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -74,13 +74,13 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'identifier' => null,
-        'name' => null,
-        'status' => null,
-        'domein_type' => null,
-        'domain_id' => null,
         'created_date' => null,
-        'modified_date' => null
+        'domain_id' => null,
+        'domain_type' => null,
+        'identifier' => null,
+        'modified_date' => null,
+        'name' => null,
+        'status' => null
     ];
 
     /**
@@ -110,13 +110,13 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'identifier' => 'identifier',
-        'name' => 'name',
-        'status' => 'status',
-        'domein_type' => 'domeinType',
-        'domain_id' => 'domainId',
         'created_date' => 'createdDate',
-        'modified_date' => 'modifiedDate'
+        'domain_id' => 'domainId',
+        'domain_type' => 'domainType',
+        'identifier' => 'identifier',
+        'modified_date' => 'modifiedDate',
+        'name' => 'name',
+        'status' => 'status'
     ];
 
     /**
@@ -125,13 +125,13 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'identifier' => 'setIdentifier',
-        'name' => 'setName',
-        'status' => 'setStatus',
-        'domein_type' => 'setDomeinType',
-        'domain_id' => 'setDomainId',
         'created_date' => 'setCreatedDate',
-        'modified_date' => 'setModifiedDate'
+        'domain_id' => 'setDomainId',
+        'domain_type' => 'setDomainType',
+        'identifier' => 'setIdentifier',
+        'modified_date' => 'setModifiedDate',
+        'name' => 'setName',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -140,13 +140,13 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'identifier' => 'getIdentifier',
-        'name' => 'getName',
-        'status' => 'getStatus',
-        'domein_type' => 'getDomeinType',
-        'domain_id' => 'getDomainId',
         'created_date' => 'getCreatedDate',
-        'modified_date' => 'getModifiedDate'
+        'domain_id' => 'getDomainId',
+        'domain_type' => 'getDomainType',
+        'identifier' => 'getIdentifier',
+        'modified_date' => 'getModifiedDate',
+        'name' => 'getName',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -206,13 +206,13 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['created_date'] = $data['created_date'] ?? null;
+        $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['identifier'] = $data['identifier'] ?? null;
+        $this->container['modified_date'] = $data['modified_date'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
-        $this->container['domein_type'] = $data['domein_type'] ?? null;
-        $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['created_date'] = $data['created_date'] ?? null;
-        $this->container['modified_date'] = $data['modified_date'] ?? null;
     }
 
     /**
@@ -240,6 +240,78 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets created_date
+     *
+     * @return string|null
+     */
+    public function getCreatedDate()
+    {
+        return $this->container['created_date'];
+    }
+
+    /**
+     * Sets created_date
+     *
+     * @param string|null $created_date created_date
+     *
+     * @return self
+     */
+    public function setCreatedDate($created_date)
+    {
+        $this->container['created_date'] = $created_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_id
+     *
+     * @return string|null
+     */
+    public function getDomainId()
+    {
+        return $this->container['domain_id'];
+    }
+
+    /**
+     * Sets domain_id
+     *
+     * @param string|null $domain_id domain_id
+     *
+     * @return self
+     */
+    public function setDomainId($domain_id)
+    {
+        $this->container['domain_id'] = $domain_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_type
+     *
+     * @return string|null
+     */
+    public function getDomainType()
+    {
+        return $this->container['domain_type'];
+    }
+
+    /**
+     * Sets domain_type
+     *
+     * @param string|null $domain_type domain_type
+     *
+     * @return self
+     */
+    public function setDomainType($domain_type)
+    {
+        $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
+
+    /**
      * Gets identifier
      *
      * @return string|null
@@ -259,6 +331,30 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets modified_date
+     *
+     * @return string|null
+     */
+    public function getModifiedDate()
+    {
+        return $this->container['modified_date'];
+    }
+
+    /**
+     * Sets modified_date
+     *
+     * @param string|null $modified_date modified_date
+     *
+     * @return self
+     */
+    public function setModifiedDate($modified_date)
+    {
+        $this->container['modified_date'] = $modified_date;
 
         return $this;
     }
@@ -307,102 +403,6 @@ class Job1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets domein_type
-     *
-     * @return string|null
-     */
-    public function getDomeinType()
-    {
-        return $this->container['domein_type'];
-    }
-
-    /**
-     * Sets domein_type
-     *
-     * @param string|null $domein_type domein_type
-     *
-     * @return self
-     */
-    public function setDomeinType($domein_type)
-    {
-        $this->container['domein_type'] = $domein_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_id
-     *
-     * @return string|null
-     */
-    public function getDomainId()
-    {
-        return $this->container['domain_id'];
-    }
-
-    /**
-     * Sets domain_id
-     *
-     * @param string|null $domain_id domain_id
-     *
-     * @return self
-     */
-    public function setDomainId($domain_id)
-    {
-        $this->container['domain_id'] = $domain_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_date
-     *
-     * @return string|null
-     */
-    public function getCreatedDate()
-    {
-        return $this->container['created_date'];
-    }
-
-    /**
-     * Sets created_date
-     *
-     * @param string|null $created_date created_date
-     *
-     * @return self
-     */
-    public function setCreatedDate($created_date)
-    {
-        $this->container['created_date'] = $created_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets modified_date
-     *
-     * @return string|null
-     */
-    public function getModifiedDate()
-    {
-        return $this->container['modified_date'];
-    }
-
-    /**
-     * Sets modified_date
-     *
-     * @param string|null $modified_date modified_date
-     *
-     * @return self
-     */
-    public function setModifiedDate($modified_date)
-    {
-        $this->container['modified_date'] = $modified_date;
 
         return $this;
     }

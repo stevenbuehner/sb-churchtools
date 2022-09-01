@@ -25,7 +25,7 @@ Job in a queue can belong to a job group to categorize a job. This endpoint coun
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

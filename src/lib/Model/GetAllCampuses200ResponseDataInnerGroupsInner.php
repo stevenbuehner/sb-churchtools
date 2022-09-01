@@ -57,9 +57,9 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
-        'group_homepage_url' => 'string',
-        'group_homepage_api' => 'string'
+        'group' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup',
+        'group_homepage_api' => 'string',
+        'group_homepage_url' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
       */
     protected static $openAPIFormats = [
         'group' => null,
-        'group_homepage_url' => null,
-        'group_homepage_api' => null
+        'group_homepage_api' => null,
+        'group_homepage_url' => null
     ];
 
     /**
@@ -103,8 +103,8 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
      */
     protected static $attributeMap = [
         'group' => 'group',
-        'group_homepage_url' => 'groupHomepageUrl',
-        'group_homepage_api' => 'groupHomepageApi'
+        'group_homepage_api' => 'groupHomepageApi',
+        'group_homepage_url' => 'groupHomepageUrl'
     ];
 
     /**
@@ -114,8 +114,8 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
      */
     protected static $setters = [
         'group' => 'setGroup',
-        'group_homepage_url' => 'setGroupHomepageUrl',
-        'group_homepage_api' => 'setGroupHomepageApi'
+        'group_homepage_api' => 'setGroupHomepageApi',
+        'group_homepage_url' => 'setGroupHomepageUrl'
     ];
 
     /**
@@ -125,8 +125,8 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
      */
     protected static $getters = [
         'group' => 'getGroup',
-        'group_homepage_url' => 'getGroupHomepageUrl',
-        'group_homepage_api' => 'getGroupHomepageApi'
+        'group_homepage_api' => 'getGroupHomepageApi',
+        'group_homepage_url' => 'getGroupHomepageUrl'
     ];
 
     /**
@@ -187,8 +187,8 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
     public function __construct(array $data = null)
     {
         $this->container['group'] = $data['group'] ?? null;
-        $this->container['group_homepage_url'] = $data['group_homepage_url'] ?? null;
         $this->container['group_homepage_api'] = $data['group_homepage_api'] ?? null;
+        $this->container['group_homepage_url'] = $data['group_homepage_url'] ?? null;
     }
 
     /**
@@ -200,18 +200,18 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
     {
         $invalidProperties = [];
 
-        if ($this->container['group_homepage_url'] === null) {
-            $invalidProperties[] = "'group_homepage_url' can't be null";
-        }
-        if ((mb_strlen($this->container['group_homepage_url']) < 1)) {
-            $invalidProperties[] = "invalid value for 'group_homepage_url', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['group_homepage_api'] === null) {
             $invalidProperties[] = "'group_homepage_api' can't be null";
         }
         if ((mb_strlen($this->container['group_homepage_api']) < 1)) {
             $invalidProperties[] = "invalid value for 'group_homepage_api', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['group_homepage_url'] === null) {
+            $invalidProperties[] = "'group_homepage_url' can't be null";
+        }
+        if ((mb_strlen($this->container['group_homepage_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'group_homepage_url', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -232,7 +232,7 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
     /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup|null
      */
     public function getGroup()
     {
@@ -242,42 +242,13 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup|null $group group
      *
      * @return self
      */
     public function setGroup($group)
     {
         $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_homepage_url
-     *
-     * @return string
-     */
-    public function getGroupHomepageUrl()
-    {
-        return $this->container['group_homepage_url'];
-    }
-
-    /**
-     * Sets group_homepage_url
-     *
-     * @param string $group_homepage_url group_homepage_url
-     *
-     * @return self
-     */
-    public function setGroupHomepageUrl($group_homepage_url)
-    {
-
-        if ((mb_strlen($group_homepage_url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $group_homepage_url when calling GetAllCampuses200ResponseDataInnerGroupsInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['group_homepage_url'] = $group_homepage_url;
 
         return $this;
     }
@@ -307,6 +278,35 @@ class GetAllCampuses200ResponseDataInnerGroupsInner implements ModelInterface, A
         }
 
         $this->container['group_homepage_api'] = $group_homepage_api;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_homepage_url
+     *
+     * @return string
+     */
+    public function getGroupHomepageUrl()
+    {
+        return $this->container['group_homepage_url'];
+    }
+
+    /**
+     * Sets group_homepage_url
+     *
+     * @param string $group_homepage_url group_homepage_url
+     *
+     * @return self
+     */
+    public function setGroupHomepageUrl($group_homepage_url)
+    {
+
+        if ((mb_strlen($group_homepage_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $group_homepage_url when calling GetAllCampuses200ResponseDataInnerGroupsInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['group_homepage_url'] = $group_homepage_url;
 
         return $this;
     }

@@ -58,10 +58,10 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'children' => 'int[]',
+        'group' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup',
         'id' => 'int',
-        'group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
-        'parents' => 'int[]',
-        'children' => 'int[]'
+        'parents' => 'int[]'
     ];
 
     /**
@@ -72,10 +72,10 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'children' => null,
         'group' => null,
-        'parents' => null,
-        'children' => null
+        'id' => null,
+        'parents' => null
     ];
 
     /**
@@ -105,10 +105,10 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'children' => 'children',
         'group' => 'group',
-        'parents' => 'parents',
-        'children' => 'children'
+        'id' => 'id',
+        'parents' => 'parents'
     ];
 
     /**
@@ -117,10 +117,10 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'children' => 'setChildren',
         'group' => 'setGroup',
-        'parents' => 'setParents',
-        'children' => 'setChildren'
+        'id' => 'setId',
+        'parents' => 'setParents'
     ];
 
     /**
@@ -129,10 +129,10 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'children' => 'getChildren',
         'group' => 'getGroup',
-        'parents' => 'getParents',
-        'children' => 'getChildren'
+        'id' => 'getId',
+        'parents' => 'getParents'
     ];
 
     /**
@@ -192,10 +192,10 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['parents'] = $data['parents'] ?? null;
         $this->container['children'] = $data['children'] ?? null;
+        $this->container['group'] = $data['group'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['parents'] = $data['parents'] ?? null;
     }
 
     /**
@@ -223,6 +223,54 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets children
+     *
+     * @return int[]|null
+     */
+    public function getChildren()
+    {
+        return $this->container['children'];
+    }
+
+    /**
+     * Sets children
+     *
+     * @param int[]|null $children children
+     *
+     * @return self
+     */
+    public function setChildren($children)
+    {
+        $this->container['children'] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Gets group
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null
+     */
+    public function getGroup()
+    {
+        return $this->container['group'];
+    }
+
+    /**
+     * Sets group
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null $group group
+     *
+     * @return self
+     */
+    public function setGroup($group)
+    {
+        $this->container['group'] = $group;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -247,30 +295,6 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
      * Gets parents
      *
      * @return int[]|null
@@ -290,30 +314,6 @@ class GroupHierarchy1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setParents($parents)
     {
         $this->container['parents'] = $parents;
-
-        return $this;
-    }
-
-    /**
-     * Gets children
-     *
-     * @return int[]|null
-     */
-    public function getChildren()
-    {
-        return $this->container['children'];
-    }
-
-    /**
-     * Sets children
-     *
-     * @param int[]|null $children children
-     *
-     * @return self
-     */
-    public function setChildren($children)
-    {
-        $this->container['children'] = $children;
 
         return $this;
     }

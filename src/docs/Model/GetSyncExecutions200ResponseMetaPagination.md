@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **float** |  |
-**limit** | **float** |  |
-**current** | **float** |  |
-**last_page** | **float** |  |
+**current** | **int** |  |
+**last_page** | **int** |  |
+**limit** | **int** |  |
+**total** | **int** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

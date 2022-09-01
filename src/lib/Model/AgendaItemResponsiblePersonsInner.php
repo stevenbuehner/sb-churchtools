@@ -57,9 +57,9 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'service' => 'string',
         'approved' => 'bool',
-        'person' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject'
+        'person' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
+        'service' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'service' => null,
         'approved' => null,
-        'person' => null
+        'person' => null,
+        'service' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'service' => 'service',
         'approved' => 'approved',
-        'person' => 'person'
+        'person' => 'person',
+        'service' => 'service'
     ];
 
     /**
@@ -113,9 +113,9 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'service' => 'setService',
         'approved' => 'setApproved',
-        'person' => 'setPerson'
+        'person' => 'setPerson',
+        'service' => 'setService'
     ];
 
     /**
@@ -124,9 +124,9 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'service' => 'getService',
         'approved' => 'getApproved',
-        'person' => 'getPerson'
+        'person' => 'getPerson',
+        'service' => 'getService'
     ];
 
     /**
@@ -186,9 +186,9 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['service'] = $data['service'] ?? null;
         $this->container['approved'] = $data['approved'] ?? null;
         $this->container['person'] = $data['person'] ?? null;
+        $this->container['service'] = $data['service'] ?? null;
     }
 
     /**
@@ -214,30 +214,6 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets service
-     *
-     * @return string|null
-     */
-    public function getService()
-    {
-        return $this->container['service'];
-    }
-
-    /**
-     * Sets service
-     *
-     * @param string|null $service Name of the service, which is also the placeholder in the raw text string.
-     *
-     * @return self
-     */
-    public function setService($service)
-    {
-        $this->container['service'] = $service;
-
-        return $this;
-    }
 
     /**
      * Gets approved
@@ -266,7 +242,7 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets person
      *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
      */
     public function getPerson()
     {
@@ -276,13 +252,37 @@ class AgendaItemResponsiblePersonsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets person
      *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject|null $person person
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $person person
      *
      * @return self
      */
     public function setPerson($person)
     {
         $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Gets service
+     *
+     * @return string|null
+     */
+    public function getService()
+    {
+        return $this->container['service'];
+    }
+
+    /**
+     * Sets service
+     *
+     * @param string|null $service Name of the service, which is also the placeholder in the raw text string.
+     *
+     * @return self
+     */
+    public function setService($service)
+    {
+        $this->container['service'] = $service;
 
         return $this;
     }

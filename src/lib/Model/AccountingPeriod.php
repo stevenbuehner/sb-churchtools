@@ -57,13 +57,13 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'client_id' => 'int',
-        'start_date' => '\DateTime',
         'end_date' => '\DateTime',
+        'id' => 'int',
         'is_closed' => 'bool',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInnerPermissions',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInnerPermissions',
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -74,13 +74,13 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'client_id' => null,
-        'start_date' => 'date',
         'end_date' => 'date',
+        'id' => null,
         'is_closed' => null,
+        'meta' => null,
         'permissions' => null,
-        'meta' => null
+        'start_date' => 'date'
     ];
 
     /**
@@ -110,13 +110,13 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'client_id' => 'clientId',
-        'start_date' => 'startDate',
         'end_date' => 'endDate',
+        'id' => 'id',
         'is_closed' => 'isClosed',
+        'meta' => 'meta',
         'permissions' => 'permissions',
-        'meta' => 'meta'
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -125,13 +125,13 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'client_id' => 'setClientId',
-        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
+        'id' => 'setId',
         'is_closed' => 'setIsClosed',
+        'meta' => 'setMeta',
         'permissions' => 'setPermissions',
-        'meta' => 'setMeta'
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -140,13 +140,13 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'client_id' => 'getClientId',
-        'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
+        'id' => 'getId',
         'is_closed' => 'getIsClosed',
+        'meta' => 'getMeta',
         'permissions' => 'getPermissions',
-        'meta' => 'getMeta'
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -206,13 +206,13 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['client_id'] = $data['client_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_closed'] = $data['is_closed'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['permissions'] = $data['permissions'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -240,30 +240,6 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets client_id
      *
      * @return int|null
@@ -283,30 +259,6 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setClientId($client_id)
     {
         $this->container['client_id'] = $client_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
 
         return $this;
     }
@@ -336,6 +288,30 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets is_closed
      *
      * @return bool|null
@@ -360,9 +336,33 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
      * Gets permissions
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInnerPermissions|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInnerPermissions|null
      */
     public function getPermissions()
     {
@@ -372,7 +372,7 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets permissions
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInnerPermissions|null $permissions permissions
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInnerPermissions|null $permissions permissions
      *
      * @return self
      */
@@ -384,25 +384,25 @@ class AccountingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets meta
+     * Gets start_date
      *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
+     * @return \DateTime|null
      */
-    public function getMeta()
+    public function getStartDate()
     {
-        return $this->container['meta'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets meta
+     * Sets start_date
      *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
+     * @param \DateTime|null $start_date start_date
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setStartDate($start_date)
     {
-        $this->container['meta'] = $meta;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

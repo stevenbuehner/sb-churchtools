@@ -58,9 +58,9 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
+        'key' => 'string',
         'name' => 'string',
-        'name_translated' => 'string',
-        'key' => 'string'
+        'name_translated' => 'string'
     ];
 
     /**
@@ -71,9 +71,9 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'key' => null,
         'name' => null,
-        'name_translated' => null,
-        'key' => null
+        'name_translated' => null
     ];
 
     /**
@@ -103,9 +103,9 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
+        'key' => 'key',
         'name' => 'name',
-        'name_translated' => 'nameTranslated',
-        'key' => 'key'
+        'name_translated' => 'nameTranslated'
     ];
 
     /**
@@ -114,9 +114,9 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
+        'key' => 'setKey',
         'name' => 'setName',
-        'name_translated' => 'setNameTranslated',
-        'key' => 'setKey'
+        'name_translated' => 'setNameTranslated'
     ];
 
     /**
@@ -125,9 +125,9 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
+        'key' => 'getKey',
         'name' => 'getName',
-        'name_translated' => 'getNameTranslated',
-        'key' => 'getKey'
+        'name_translated' => 'getNameTranslated'
     ];
 
     /**
@@ -187,9 +187,9 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
+        $this->container['key'] = $data['key'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['key'] = $data['key'] ?? null;
     }
 
     /**
@@ -200,6 +200,13 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
+        }
+        if ((mb_strlen($this->container['key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'key', the character length must be bigger than or equal to 1.";
+        }
 
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
@@ -213,13 +220,6 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
         }
         if ((mb_strlen($this->container['name_translated']) < 1)) {
             $invalidProperties[] = "invalid value for 'name_translated', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['key'] === null) {
-            $invalidProperties[] = "'key' can't be null";
-        }
-        if ((mb_strlen($this->container['key']) < 1)) {
-            $invalidProperties[] = "invalid value for 'key', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -236,6 +236,35 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets key
+     *
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->container['key'];
+    }
+
+    /**
+     * Sets key
+     *
+     * @param string $key key
+     *
+     * @return self
+     */
+    public function setKey($key)
+    {
+
+        if ((mb_strlen($key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $key when calling GetAllCampuses200ResponseDataInnerDenomination., must be bigger than or equal to 1.');
+        }
+
+        $this->container['key'] = $key;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -291,35 +320,6 @@ class GetAllCampuses200ResponseDataInnerDenomination implements ModelInterface, 
         }
 
         $this->container['name_translated'] = $name_translated;
-
-        return $this;
-    }
-
-    /**
-     * Gets key
-     *
-     * @return string
-     */
-    public function getKey()
-    {
-        return $this->container['key'];
-    }
-
-    /**
-     * Sets key
-     *
-     * @param string $key key
-     *
-     * @return self
-     */
-    public function setKey($key)
-    {
-
-        if ((mb_strlen($key) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $key when calling GetAllCampuses200ResponseDataInnerDenomination., must be bigger than or equal to 1.');
-        }
-
-        $this->container['key'] = $key;
 
         return $this;
     }

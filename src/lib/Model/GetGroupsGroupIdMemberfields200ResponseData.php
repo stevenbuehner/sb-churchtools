@@ -57,8 +57,8 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
-        'field' => '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMemberfields200ResponseDataField'
+        'field' => '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMemberfields200ResponseDataField',
+        'type' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'field' => null
+        'field' => null,
+        'type' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'field' => 'field'
+        'field' => 'field',
+        'type' => 'type'
     ];
 
     /**
@@ -110,8 +110,8 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'field' => 'setField'
+        'field' => 'setField',
+        'type' => 'setType'
     ];
 
     /**
@@ -120,8 +120,8 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'field' => 'getField'
+        'field' => 'getField',
+        'type' => 'getType'
     ];
 
     /**
@@ -181,8 +181,8 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
         $this->container['field'] = $data['field'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
 
 
     /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
      * Gets field
      *
      * @return \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMemberfields200ResponseDataField|null
@@ -253,6 +229,30 @@ class GetGroupsGroupIdMemberfields200ResponseData implements ModelInterface, Arr
     public function setField($field)
     {
         $this->container['field'] = $field;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pending' => 'float',
-        'running' => 'float',
-        'deleted' => 'float',
-        'buried' => 'float'
+        'buried' => 'int',
+        'deleted' => 'int',
+        'pending' => 'int',
+        'running' => 'int'
     ];
 
     /**
@@ -71,10 +71,10 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pending' => null,
-        'running' => null,
+        'buried' => null,
         'deleted' => null,
-        'buried' => null
+        'pending' => null,
+        'running' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'pending' => 'pending',
-        'running' => 'running',
+        'buried' => 'buried',
         'deleted' => 'deleted',
-        'buried' => 'buried'
+        'pending' => 'pending',
+        'running' => 'running'
     ];
 
     /**
@@ -116,10 +116,10 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'pending' => 'setPending',
-        'running' => 'setRunning',
+        'buried' => 'setBuried',
         'deleted' => 'setDeleted',
-        'buried' => 'setBuried'
+        'pending' => 'setPending',
+        'running' => 'setRunning'
     ];
 
     /**
@@ -128,10 +128,10 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'pending' => 'getPending',
-        'running' => 'getRunning',
+        'buried' => 'getBuried',
         'deleted' => 'getDeleted',
-        'buried' => 'getBuried'
+        'pending' => 'getPending',
+        'running' => 'getRunning'
     ];
 
     /**
@@ -191,10 +191,10 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
+        $this->container['buried'] = $data['buried'] ?? null;
+        $this->container['deleted'] = $data['deleted'] ?? null;
         $this->container['pending'] = $data['pending'] ?? null;
         $this->container['running'] = $data['running'] ?? null;
-        $this->container['deleted'] = $data['deleted'] ?? null;
-        $this->container['buried'] = $data['buried'] ?? null;
     }
 
     /**
@@ -222,9 +222,57 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
 
 
     /**
+     * Gets buried
+     *
+     * @return int|null
+     */
+    public function getBuried()
+    {
+        return $this->container['buried'];
+    }
+
+    /**
+     * Sets buried
+     *
+     * @param int|null $buried Number of Buried Jobs
+     *
+     * @return self
+     */
+    public function setBuried($buried)
+    {
+        $this->container['buried'] = $buried;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return int|null
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param int|null $deleted Number of Deleted Jobs (but still in Queue listed)
+     *
+     * @return self
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
      * Gets pending
      *
-     * @return float|null
+     * @return int|null
      */
     public function getPending()
     {
@@ -234,7 +282,7 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
     /**
      * Sets pending
      *
-     * @param float|null $pending Number of Pending Jobs
+     * @param int|null $pending Number of Pending Jobs
      *
      * @return self
      */
@@ -248,7 +296,7 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
     /**
      * Gets running
      *
-     * @return float|null
+     * @return int|null
      */
     public function getRunning()
     {
@@ -258,61 +306,13 @@ class GetQueueJobGroupsStatus200ResponseDataInnerJobs implements ModelInterface,
     /**
      * Sets running
      *
-     * @param float|null $running Number of Running Jobs
+     * @param int|null $running Number of Running Jobs
      *
      * @return self
      */
     public function setRunning($running)
     {
         $this->container['running'] = $running;
-
-        return $this;
-    }
-
-    /**
-     * Gets deleted
-     *
-     * @return float|null
-     */
-    public function getDeleted()
-    {
-        return $this->container['deleted'];
-    }
-
-    /**
-     * Sets deleted
-     *
-     * @param float|null $deleted Number of Deleted Jobs (but still in Queue listed)
-     *
-     * @return self
-     */
-    public function setDeleted($deleted)
-    {
-        $this->container['deleted'] = $deleted;
-
-        return $this;
-    }
-
-    /**
-     * Gets buried
-     *
-     * @return float|null
-     */
-    public function getBuried()
-    {
-        return $this->container['buried'];
-    }
-
-    /**
-     * Sets buried
-     *
-     * @param float|null $buried Number of Buried Jobs
-     *
-     * @return self
-     */
-    public function setBuried($buried)
-    {
-        $this->container['buried'] = $buried;
 
         return $this;
     }

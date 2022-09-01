@@ -58,7 +58,7 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigurations200Response impleme
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\JobConfigurationReturn1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigurations200Response impleme
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigurations200Response impleme
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

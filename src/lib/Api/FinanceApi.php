@@ -120,8 +120,8 @@ class FinanceApi
      *
      * Apply finance template
      *
-     * @param  int $id ID of finance template (required)
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $id ID of Entity (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -137,8 +137,8 @@ class FinanceApi
      *
      * Apply finance template
      *
-     * @param  int $id ID of finance template (required)
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $id ID of Entity (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -205,8 +205,8 @@ class FinanceApi
      *
      * Apply finance template
      *
-     * @param  int $id ID of finance template (required)
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $id ID of Entity (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -226,8 +226,8 @@ class FinanceApi
      *
      * Apply finance template
      *
-     * @param  int $id ID of finance template (required)
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $id ID of Entity (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -263,8 +263,8 @@ class FinanceApi
     /**
      * Create request for operation 'applyFinanceTemplate'
      *
-     * @param  int $id ID of finance template (required)
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $id ID of Entity (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4259,7 +4259,7 @@ class FinanceApi
      *
      * Delete account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -4276,7 +4276,7 @@ class FinanceApi
      *
      * Delete account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -4337,7 +4337,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4352,7 +4352,7 @@ class FinanceApi
      *
      * Delete account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4373,7 +4373,7 @@ class FinanceApi
      *
      * Delete account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4410,7 +4410,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteAccount'
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4520,16 +4520,15 @@ class FinanceApi
      *
      * Delete account class
      *
-     * @param  int $id ID of account class (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteAccountClass($id, $dry_run = null)
+    public function deleteAccountClass($id)
     {
-        $this->deleteAccountClassWithHttpInfo($id, $dry_run);
+        $this->deleteAccountClassWithHttpInfo($id);
     }
 
     /**
@@ -4537,16 +4536,15 @@ class FinanceApi
      *
      * Delete account class
      *
-     * @param  int $id ID of account class (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAccountClassWithHttpInfo($id, $dry_run = null)
+    public function deleteAccountClassWithHttpInfo($id)
     {
-        $request = $this->deleteAccountClassRequest($id, $dry_run);
+        $request = $this->deleteAccountClassRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4598,7 +4596,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4613,15 +4611,14 @@ class FinanceApi
      *
      * Delete account class
      *
-     * @param  int $id ID of account class (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccountClassAsync($id, $dry_run = null)
+    public function deleteAccountClassAsync($id)
     {
-        return $this->deleteAccountClassAsyncWithHttpInfo($id, $dry_run)
+        return $this->deleteAccountClassAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4634,16 +4631,15 @@ class FinanceApi
      *
      * Delete account class
      *
-     * @param  int $id ID of account class (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccountClassAsyncWithHttpInfo($id, $dry_run = null)
+    public function deleteAccountClassAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteAccountClassRequest($id, $dry_run);
+        $request = $this->deleteAccountClassRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4671,13 +4667,12 @@ class FinanceApi
     /**
      * Create request for operation 'deleteAccountClass'
      *
-     * @param  int $id ID of account class (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteAccountClassRequest($id, $dry_run = null)
+    public function deleteAccountClassRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -4693,15 +4688,6 @@ class FinanceApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $dry_run,
-            'dry_run', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
@@ -4781,16 +4767,15 @@ class FinanceApi
      *
      * Delete account group
      *
-     * @param  int $id ID of account group (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteAccountGroup($id, $dry_run = null)
+    public function deleteAccountGroup($id)
     {
-        $this->deleteAccountGroupWithHttpInfo($id, $dry_run);
+        $this->deleteAccountGroupWithHttpInfo($id);
     }
 
     /**
@@ -4798,16 +4783,15 @@ class FinanceApi
      *
      * Delete account group
      *
-     * @param  int $id ID of account group (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAccountGroupWithHttpInfo($id, $dry_run = null)
+    public function deleteAccountGroupWithHttpInfo($id)
     {
-        $request = $this->deleteAccountGroupRequest($id, $dry_run);
+        $request = $this->deleteAccountGroupRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4859,7 +4843,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4874,15 +4858,14 @@ class FinanceApi
      *
      * Delete account group
      *
-     * @param  int $id ID of account group (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccountGroupAsync($id, $dry_run = null)
+    public function deleteAccountGroupAsync($id)
     {
-        return $this->deleteAccountGroupAsyncWithHttpInfo($id, $dry_run)
+        return $this->deleteAccountGroupAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4895,16 +4878,15 @@ class FinanceApi
      *
      * Delete account group
      *
-     * @param  int $id ID of account group (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccountGroupAsyncWithHttpInfo($id, $dry_run = null)
+    public function deleteAccountGroupAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteAccountGroupRequest($id, $dry_run);
+        $request = $this->deleteAccountGroupRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4932,13 +4914,12 @@ class FinanceApi
     /**
      * Create request for operation 'deleteAccountGroup'
      *
-     * @param  int $id ID of account group (required)
-     * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteAccountGroupRequest($id, $dry_run = null)
+    public function deleteAccountGroupRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -4954,15 +4935,6 @@ class FinanceApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $dry_run,
-            'dry_run', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
@@ -5042,7 +5014,7 @@ class FinanceApi
      *
      * Delete account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -5059,7 +5031,7 @@ class FinanceApi
      *
      * Delete account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -5120,7 +5092,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5135,7 +5107,7 @@ class FinanceApi
      *
      * Delete account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5156,7 +5128,7 @@ class FinanceApi
      *
      * Delete account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5193,7 +5165,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteAccountType'
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5303,7 +5275,7 @@ class FinanceApi
      *
      * Delete accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -5320,7 +5292,7 @@ class FinanceApi
      *
      * Delete accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -5381,7 +5353,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5396,7 +5368,7 @@ class FinanceApi
      *
      * Delete accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5417,7 +5389,7 @@ class FinanceApi
      *
      * Delete accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5454,7 +5426,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteAccountingPeriod'
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5564,7 +5536,7 @@ class FinanceApi
      *
      * Delete accounts for accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5580,7 +5552,7 @@ class FinanceApi
      *
      * Delete accounts for accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5655,7 +5627,7 @@ class FinanceApi
      *
      * Delete accounts for accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5675,7 +5647,7 @@ class FinanceApi
      *
      * Delete accounts for accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5711,7 +5683,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteAccountsForAccountingPeriod'
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5811,7 +5783,7 @@ class FinanceApi
      *
      * Delete cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -5828,7 +5800,7 @@ class FinanceApi
      *
      * Delete cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -5889,7 +5861,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5904,7 +5876,7 @@ class FinanceApi
      *
      * Delete cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5925,7 +5897,7 @@ class FinanceApi
      *
      * Delete cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5962,7 +5934,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteCashDiscount'
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6072,7 +6044,7 @@ class FinanceApi
      *
      * Delete client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6089,7 +6061,7 @@ class FinanceApi
      *
      * Delete client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6150,7 +6122,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6165,7 +6137,7 @@ class FinanceApi
      *
      * Delete client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6186,7 +6158,7 @@ class FinanceApi
      *
      * Delete client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6223,7 +6195,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteClient'
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6333,7 +6305,7 @@ class FinanceApi
      *
      * Delete cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6350,7 +6322,7 @@ class FinanceApi
      *
      * Delete cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6411,7 +6383,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6426,7 +6398,7 @@ class FinanceApi
      *
      * Delete cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6447,7 +6419,7 @@ class FinanceApi
      *
      * Delete cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6484,7 +6456,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteCostCenter'
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6594,7 +6566,7 @@ class FinanceApi
      *
      * Delete tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6611,7 +6583,7 @@ class FinanceApi
      *
      * Delete tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6672,7 +6644,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6687,7 +6659,7 @@ class FinanceApi
      *
      * Delete tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6708,7 +6680,7 @@ class FinanceApi
      *
      * Delete tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6745,7 +6717,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteTaxRate'
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6855,7 +6827,7 @@ class FinanceApi
      *
      * Delete tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6872,7 +6844,7 @@ class FinanceApi
      *
      * Delete tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -6933,7 +6905,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6948,7 +6920,7 @@ class FinanceApi
      *
      * Delete tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6969,7 +6941,7 @@ class FinanceApi
      *
      * Delete tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7006,7 +6978,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteTaxType'
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7116,7 +7088,7 @@ class FinanceApi
      *
      * Delete transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -7133,7 +7105,7 @@ class FinanceApi
      *
      * Delete transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -7201,7 +7173,7 @@ class FinanceApi
      *
      * Delete transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7222,7 +7194,7 @@ class FinanceApi
      *
      * Delete transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7259,7 +7231,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteTransaction'
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7369,7 +7341,7 @@ class FinanceApi
      *
      * Delete transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -7386,7 +7358,7 @@ class FinanceApi
      *
      * Delete transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -7447,7 +7419,7 @@ class FinanceApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\DeleteClient409Response',
+                        '\StevenBuehner\ChurchTools\Model\DeleteAccountClass409Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7462,7 +7434,7 @@ class FinanceApi
      *
      * Delete transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7483,7 +7455,7 @@ class FinanceApi
      *
      * Delete transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7520,7 +7492,7 @@ class FinanceApi
     /**
      * Create request for operation 'deleteTransactionPurpose'
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $dry_run If set to true, the deletion is simulated but nothing will be deleted. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7630,7 +7602,7 @@ class FinanceApi
      *
      * Epports a finance template based on the masterdata for a given accounting period
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7646,7 +7618,7 @@ class FinanceApi
      *
      * Epports a finance template based on the masterdata for a given accounting period
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7713,7 +7685,7 @@ class FinanceApi
      *
      * Epports a finance template based on the masterdata for a given accounting period
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7733,7 +7705,7 @@ class FinanceApi
      *
      * Epports a finance template based on the masterdata for a given accounting period
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7769,7 +7741,7 @@ class FinanceApi
     /**
      * Create request for operation 'exportFinanceTemplate'
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7870,7 +7842,7 @@ class FinanceApi
      *
      * Get a account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7887,7 +7859,7 @@ class FinanceApi
      *
      * Get a account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8009,7 +7981,7 @@ class FinanceApi
      *
      * Get a account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8029,7 +8001,7 @@ class FinanceApi
      *
      * Get a account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8078,7 +8050,7 @@ class FinanceApi
     /**
      * Create request for operation 'getAccountById'
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8178,7 +8150,7 @@ class FinanceApi
      *
      * Get a account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8195,7 +8167,7 @@ class FinanceApi
      *
      * Get a account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8317,7 +8289,7 @@ class FinanceApi
      *
      * Get a account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8337,7 +8309,7 @@ class FinanceApi
      *
      * Get a account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8386,7 +8358,7 @@ class FinanceApi
     /**
      * Create request for operation 'getAccountClassById'
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8486,7 +8458,7 @@ class FinanceApi
      *
      * Get a account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8503,7 +8475,7 @@ class FinanceApi
      *
      * Get a account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8625,7 +8597,7 @@ class FinanceApi
      *
      * Get a account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8645,7 +8617,7 @@ class FinanceApi
      *
      * Get a account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8694,7 +8666,7 @@ class FinanceApi
     /**
      * Create request for operation 'getAccountGroupById'
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8794,7 +8766,7 @@ class FinanceApi
      *
      * Get a account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8811,7 +8783,7 @@ class FinanceApi
      *
      * Get a account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8933,7 +8905,7 @@ class FinanceApi
      *
      * Get a account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8953,7 +8925,7 @@ class FinanceApi
      *
      * Get a account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9002,7 +8974,7 @@ class FinanceApi
     /**
      * Create request for operation 'getAccountTypeById'
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9102,7 +9074,7 @@ class FinanceApi
      *
      * Get a accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9119,7 +9091,7 @@ class FinanceApi
      *
      * Get a accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9241,7 +9213,7 @@ class FinanceApi
      *
      * Get a accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9261,7 +9233,7 @@ class FinanceApi
      *
      * Get a accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9310,7 +9282,7 @@ class FinanceApi
     /**
      * Create request for operation 'getAccountingPeriodById'
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -10566,14 +10538,14 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetAllAccounts200Response|string
      */
-    public function getAllAccounts($accounting_period_id = null, $calculate_balance = null)
+    public function getAllAccounts($accounting_period_id, $calculate_balance = null)
     {
         list($response) = $this->getAllAccountsWithHttpInfo($accounting_period_id, $calculate_balance);
         return $response;
@@ -10584,14 +10556,14 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetAllAccounts200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllAccountsWithHttpInfo($accounting_period_id = null, $calculate_balance = null)
+    public function getAllAccountsWithHttpInfo($accounting_period_id, $calculate_balance = null)
     {
         $request = $this->getAllAccountsRequest($accounting_period_id, $calculate_balance);
 
@@ -10707,13 +10679,13 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllAccountsAsync($accounting_period_id = null, $calculate_balance = null)
+    public function getAllAccountsAsync($accounting_period_id, $calculate_balance = null)
     {
         return $this->getAllAccountsAsyncWithHttpInfo($accounting_period_id, $calculate_balance)
             ->then(
@@ -10728,13 +10700,13 @@ class FinanceApi
      *
      * Get all accounts ordered by accounting period and number
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllAccountsAsyncWithHttpInfo($accounting_period_id = null, $calculate_balance = null)
+    public function getAllAccountsAsyncWithHttpInfo($accounting_period_id, $calculate_balance = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetAllAccounts200Response';
         $request = $this->getAllAccountsRequest($accounting_period_id, $calculate_balance);
@@ -10778,14 +10750,20 @@ class FinanceApi
     /**
      * Create request for operation 'getAllAccounts'
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  bool $calculate_balance Calculate balance for accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllAccountsRequest($accounting_period_id = null, $calculate_balance = null)
+    public function getAllAccountsRequest($accounting_period_id, $calculate_balance = null)
     {
+        // verify the required parameter 'accounting_period_id' is set
+        if ($accounting_period_id === null || (is_array($accounting_period_id) && count($accounting_period_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accounting_period_id when calling getAllAccounts'
+            );
+        }
 
         $resourcePath = '/finance/accounts';
         $formParams = [];
@@ -10801,7 +10779,7 @@ class FinanceApi
             'integer', // openApiType
             'form', // style
             true, // explode
-            false // required
+            true // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
@@ -10883,15 +10861,14 @@ class FinanceApi
      *
      * Get all cash discounts ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200Response|string
      */
-    public function getAllCashDiscounts($accounting_period_id = null)
+    public function getAllCashDiscounts()
     {
-        list($response) = $this->getAllCashDiscountsWithHttpInfo($accounting_period_id);
+        list($response) = $this->getAllCashDiscountsWithHttpInfo();
         return $response;
     }
 
@@ -10900,15 +10877,14 @@ class FinanceApi
      *
      * Get all cash discounts ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllCashDiscountsWithHttpInfo($accounting_period_id = null)
+    public function getAllCashDiscountsWithHttpInfo()
     {
-        $request = $this->getAllCashDiscountsRequest($accounting_period_id);
+        $request = $this->getAllCashDiscountsRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -11022,14 +10998,13 @@ class FinanceApi
      *
      * Get all cash discounts ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCashDiscountsAsync($accounting_period_id = null)
+    public function getAllCashDiscountsAsync()
     {
-        return $this->getAllCashDiscountsAsyncWithHttpInfo($accounting_period_id)
+        return $this->getAllCashDiscountsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11042,15 +11017,14 @@ class FinanceApi
      *
      * Get all cash discounts ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCashDiscountsAsyncWithHttpInfo($accounting_period_id = null)
+    public function getAllCashDiscountsAsyncWithHttpInfo()
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200Response';
-        $request = $this->getAllCashDiscountsRequest($accounting_period_id);
+        $request = $this->getAllCashDiscountsRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11091,12 +11065,11 @@ class FinanceApi
     /**
      * Create request for operation 'getAllCashDiscounts'
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllCashDiscountsRequest($accounting_period_id = null)
+    public function getAllCashDiscountsRequest()
     {
 
         $resourcePath = '/finance/cashdiscounts';
@@ -11106,15 +11079,6 @@ class FinanceApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $accounting_period_id,
-            'accounting_period_id', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
 
@@ -11475,13 +11439,13 @@ class FinanceApi
      *
      * Get all cost centers ordered by accounting period and number ascending
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response|string
      */
-    public function getAllCostCenters($accounting_period_id = null)
+    public function getAllCostCenters($accounting_period_id)
     {
         list($response) = $this->getAllCostCentersWithHttpInfo($accounting_period_id);
         return $response;
@@ -11492,13 +11456,13 @@ class FinanceApi
      *
      * Get all cost centers ordered by accounting period and number ascending
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllCostCentersWithHttpInfo($accounting_period_id = null)
+    public function getAllCostCentersWithHttpInfo($accounting_period_id)
     {
         $request = $this->getAllCostCentersRequest($accounting_period_id);
 
@@ -11614,12 +11578,12 @@ class FinanceApi
      *
      * Get all cost centers ordered by accounting period and number ascending
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCostCentersAsync($accounting_period_id = null)
+    public function getAllCostCentersAsync($accounting_period_id)
     {
         return $this->getAllCostCentersAsyncWithHttpInfo($accounting_period_id)
             ->then(
@@ -11634,12 +11598,12 @@ class FinanceApi
      *
      * Get all cost centers ordered by accounting period and number ascending
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllCostCentersAsyncWithHttpInfo($accounting_period_id = null)
+    public function getAllCostCentersAsyncWithHttpInfo($accounting_period_id)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response';
         $request = $this->getAllCostCentersRequest($accounting_period_id);
@@ -11683,13 +11647,19 @@ class FinanceApi
     /**
      * Create request for operation 'getAllCostCenters'
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllCostCentersRequest($accounting_period_id = null)
+    public function getAllCostCentersRequest($accounting_period_id)
     {
+        // verify the required parameter 'accounting_period_id' is set
+        if ($accounting_period_id === null || (is_array($accounting_period_id) && count($accounting_period_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accounting_period_id when calling getAllCostCenters'
+            );
+        }
 
         $resourcePath = '/finance/costcenters';
         $formParams = [];
@@ -11705,7 +11675,7 @@ class FinanceApi
             'integer', // openApiType
             'form', // style
             true, // explode
-            false // required
+            true // required
         ) ?? []);
 
 
@@ -11778,7 +11748,7 @@ class FinanceApi
      *
      * Get all donators including their donation information (e.g. donation amount)
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  string $order_by Default is &#x60;name&#x60;. (optional)
      * @param  string $order_direction Way of direction: ascending or descending (optional)
      * @param  int $page Page number to show page in pagenation. If empty, start at first page. (optional, default to 1)
@@ -11799,7 +11769,7 @@ class FinanceApi
      *
      * Get all donators including their donation information (e.g. donation amount)
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  string $order_by Default is &#x60;name&#x60;. (optional)
      * @param  string $order_direction Way of direction: ascending or descending (optional)
      * @param  int $page Page number to show page in pagenation. If empty, start at first page. (optional, default to 1)
@@ -11925,7 +11895,7 @@ class FinanceApi
      *
      * Get all donators including their donation information (e.g. donation amount)
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  string $order_by Default is &#x60;name&#x60;. (optional)
      * @param  string $order_direction Way of direction: ascending or descending (optional)
      * @param  int $page Page number to show page in pagenation. If empty, start at first page. (optional, default to 1)
@@ -11949,7 +11919,7 @@ class FinanceApi
      *
      * Get all donators including their donation information (e.g. donation amount)
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  string $order_by Default is &#x60;name&#x60;. (optional)
      * @param  string $order_direction Way of direction: ascending or descending (optional)
      * @param  int $page Page number to show page in pagenation. If empty, start at first page. (optional, default to 1)
@@ -12002,7 +11972,7 @@ class FinanceApi
     /**
      * Create request for operation 'getAllDonators'
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  string $order_by Default is &#x60;name&#x60;. (optional)
      * @param  string $order_direction Way of direction: ascending or descending (optional)
      * @param  int $page Page number to show page in pagenation. If empty, start at first page. (optional, default to 1)
@@ -12432,13 +12402,13 @@ class FinanceApi
      *
      * Get all tax rates ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetAllTaxRates200Response|string
      */
-    public function getAllTaxRates($accounting_period_id = null)
+    public function getAllTaxRates($accounting_period_id)
     {
         list($response) = $this->getAllTaxRatesWithHttpInfo($accounting_period_id);
         return $response;
@@ -12449,13 +12419,13 @@ class FinanceApi
      *
      * Get all tax rates ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetAllTaxRates200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllTaxRatesWithHttpInfo($accounting_period_id = null)
+    public function getAllTaxRatesWithHttpInfo($accounting_period_id)
     {
         $request = $this->getAllTaxRatesRequest($accounting_period_id);
 
@@ -12571,12 +12541,12 @@ class FinanceApi
      *
      * Get all tax rates ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllTaxRatesAsync($accounting_period_id = null)
+    public function getAllTaxRatesAsync($accounting_period_id)
     {
         return $this->getAllTaxRatesAsyncWithHttpInfo($accounting_period_id)
             ->then(
@@ -12591,12 +12561,12 @@ class FinanceApi
      *
      * Get all tax rates ordered by id
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllTaxRatesAsyncWithHttpInfo($accounting_period_id = null)
+    public function getAllTaxRatesAsyncWithHttpInfo($accounting_period_id)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetAllTaxRates200Response';
         $request = $this->getAllTaxRatesRequest($accounting_period_id);
@@ -12640,13 +12610,19 @@ class FinanceApi
     /**
      * Create request for operation 'getAllTaxRates'
      *
-     * @param  int $accounting_period_id Filter by accounting period (optional)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllTaxRatesRequest($accounting_period_id = null)
+    public function getAllTaxRatesRequest($accounting_period_id)
     {
+        // verify the required parameter 'accounting_period_id' is set
+        if ($accounting_period_id === null || (is_array($accounting_period_id) && count($accounting_period_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accounting_period_id when calling getAllTaxRates'
+            );
+        }
 
         $resourcePath = '/finance/taxrates';
         $formParams = [];
@@ -12662,7 +12638,7 @@ class FinanceApi
             'integer', // openApiType
             'form', // style
             true, // explode
-            false // required
+            true // required
         ) ?? []);
 
 
@@ -13313,7 +13289,7 @@ class FinanceApi
      *
      * Get all transaction
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $created_pid Filter by person ID. Get all transactions the person has created. But only show those the user can see. (optional)
      * @param  int[] $cost_center_ids Filter by cost centers. (optional)
      * @param  int[] $donator_ids Filter by donator or donator spouse. Provide an array of person ids. (optional)
@@ -13343,7 +13319,7 @@ class FinanceApi
      *
      * Get all transaction
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $created_pid Filter by person ID. Get all transactions the person has created. But only show those the user can see. (optional)
      * @param  int[] $cost_center_ids Filter by cost centers. (optional)
      * @param  int[] $donator_ids Filter by donator or donator spouse. Provide an array of person ids. (optional)
@@ -13478,7 +13454,7 @@ class FinanceApi
      *
      * Get all transaction
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $created_pid Filter by person ID. Get all transactions the person has created. But only show those the user can see. (optional)
      * @param  int[] $cost_center_ids Filter by cost centers. (optional)
      * @param  int[] $donator_ids Filter by donator or donator spouse. Provide an array of person ids. (optional)
@@ -13511,7 +13487,7 @@ class FinanceApi
      *
      * Get all transaction
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $created_pid Filter by person ID. Get all transactions the person has created. But only show those the user can see. (optional)
      * @param  int[] $cost_center_ids Filter by cost centers. (optional)
      * @param  int[] $donator_ids Filter by donator or donator spouse. Provide an array of person ids. (optional)
@@ -13573,7 +13549,7 @@ class FinanceApi
     /**
      * Create request for operation 'getAllTransactions'
      *
-     * @param  int $accounting_period_id Filter by accounting period (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $created_pid Filter by person ID. Get all transactions the person has created. But only show those the user can see. (optional)
      * @param  int[] $cost_center_ids Filter by cost centers. (optional)
      * @param  int[] $donator_ids Filter by donator or donator spouse. Provide an array of person ids. (optional)
@@ -13628,7 +13604,7 @@ class FinanceApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $cost_center_ids,
-            'cost_center_ids', // param base name
+            'cost_center_ids[]', // param base name
             'array', // openApiType
             'form', // style
             true, // explode
@@ -13637,7 +13613,7 @@ class FinanceApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $donator_ids,
-            'donator_ids', // param base name
+            'donator_ids[]', // param base name
             'array', // openApiType
             'form', // style
             true, // explode
@@ -13646,7 +13622,7 @@ class FinanceApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $account_ids,
-            'account_ids', // param base name
+            'account_ids[]', // param base name
             'array', // openApiType
             'form', // style
             true, // explode
@@ -13804,7 +13780,7 @@ class FinanceApi
      *
      * Get a cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13821,7 +13797,7 @@ class FinanceApi
      *
      * Get a cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13943,7 +13919,7 @@ class FinanceApi
      *
      * Get a cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -13963,7 +13939,7 @@ class FinanceApi
      *
      * Get a cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14012,7 +13988,7 @@ class FinanceApi
     /**
      * Create request for operation 'getCashDiscount'
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -14112,7 +14088,7 @@ class FinanceApi
      *
      * Get a client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -14129,7 +14105,7 @@ class FinanceApi
      *
      * Get a client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -14251,7 +14227,7 @@ class FinanceApi
      *
      * Get a client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14271,7 +14247,7 @@ class FinanceApi
      *
      * Get a client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14320,7 +14296,7 @@ class FinanceApi
     /**
      * Create request for operation 'getClientById'
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -14420,7 +14396,7 @@ class FinanceApi
      *
      * Get a cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -14437,7 +14413,7 @@ class FinanceApi
      *
      * Get a cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -14559,7 +14535,7 @@ class FinanceApi
      *
      * Get a cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14579,7 +14555,7 @@ class FinanceApi
      *
      * Get a cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14628,7 +14604,7 @@ class FinanceApi
     /**
      * Create request for operation 'getCostCenter'
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -14728,7 +14704,7 @@ class FinanceApi
      *
      * Get donation receipt PDFs (cover letter and attachment)
      *
-     * @param  int $accounting_period_id Accounting period to create the donation receipt for (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $donator_id ID of the donator person to create the donation receipt for (required)
      * @param  int $donator_spouse_id ID of the donator spouse to create the donation receipt for (optional)
      *
@@ -14747,7 +14723,7 @@ class FinanceApi
      *
      * Get donation receipt PDFs (cover letter and attachment)
      *
-     * @param  int $accounting_period_id Accounting period to create the donation receipt for (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $donator_id ID of the donator person to create the donation receipt for (required)
      * @param  int $donator_spouse_id ID of the donator spouse to create the donation receipt for (optional)
      *
@@ -14871,7 +14847,7 @@ class FinanceApi
      *
      * Get donation receipt PDFs (cover letter and attachment)
      *
-     * @param  int $accounting_period_id Accounting period to create the donation receipt for (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $donator_id ID of the donator person to create the donation receipt for (required)
      * @param  int $donator_spouse_id ID of the donator spouse to create the donation receipt for (optional)
      *
@@ -14893,7 +14869,7 @@ class FinanceApi
      *
      * Get donation receipt PDFs (cover letter and attachment)
      *
-     * @param  int $accounting_period_id Accounting period to create the donation receipt for (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $donator_id ID of the donator person to create the donation receipt for (required)
      * @param  int $donator_spouse_id ID of the donator spouse to create the donation receipt for (optional)
      *
@@ -14944,7 +14920,7 @@ class FinanceApi
     /**
      * Create request for operation 'getDonationReceipt'
      *
-     * @param  int $accounting_period_id Accounting period to create the donation receipt for (required)
+     * @param  int $accounting_period_id ID of accounting period to get master data for (required)
      * @param  int $donator_id ID of the donator person to create the donation receipt for (required)
      * @param  int $donator_spouse_id ID of the donator spouse to create the donation receipt for (optional)
      *
@@ -15297,7 +15273,7 @@ class FinanceApi
      *
      * Get a tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -15314,7 +15290,7 @@ class FinanceApi
      *
      * Get a tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -15436,7 +15412,7 @@ class FinanceApi
      *
      * Get a tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -15456,7 +15432,7 @@ class FinanceApi
      *
      * Get a tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -15505,7 +15481,7 @@ class FinanceApi
     /**
      * Create request for operation 'getTaxRate'
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -15605,7 +15581,7 @@ class FinanceApi
      *
      * Get a tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -15622,7 +15598,7 @@ class FinanceApi
      *
      * Get a tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -15744,7 +15720,7 @@ class FinanceApi
      *
      * Get a tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -15764,7 +15740,7 @@ class FinanceApi
      *
      * Get a tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -15813,7 +15789,7 @@ class FinanceApi
     /**
      * Create request for operation 'getTaxType'
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -15913,7 +15889,7 @@ class FinanceApi
      *
      * Get a transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -15930,7 +15906,7 @@ class FinanceApi
      *
      * Get a transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -16052,7 +16028,7 @@ class FinanceApi
      *
      * Get a transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -16072,7 +16048,7 @@ class FinanceApi
      *
      * Get a transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -16121,7 +16097,7 @@ class FinanceApi
     /**
      * Create request for operation 'getTransactionById'
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -16221,7 +16197,7 @@ class FinanceApi
      *
      * Get a transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -16238,7 +16214,7 @@ class FinanceApi
      *
      * Get a transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -16360,7 +16336,7 @@ class FinanceApi
      *
      * Get a transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -16380,7 +16356,7 @@ class FinanceApi
      *
      * Get a transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -16429,7 +16405,7 @@ class FinanceApi
     /**
      * Create request for operation 'getTransactionPurposeById'
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -17102,7 +17078,7 @@ class FinanceApi
      *
      * Update account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest $create_new_account_request Account data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -17120,7 +17096,7 @@ class FinanceApi
      *
      * Update account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest $create_new_account_request Account data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -17243,7 +17219,7 @@ class FinanceApi
      *
      * Update account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest $create_new_account_request Account data (required)
      *
      * @throws \InvalidArgumentException
@@ -17264,7 +17240,7 @@ class FinanceApi
      *
      * Update account
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest $create_new_account_request Account data (required)
      *
      * @throws \InvalidArgumentException
@@ -17314,7 +17290,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateAccount'
      *
-     * @param  int $id ID of account (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountRequest $create_new_account_request Account data (required)
      *
      * @throws \InvalidArgumentException
@@ -17427,7 +17403,7 @@ class FinanceApi
      *
      * Update account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest $create_new_account_class_request Account Class data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -17445,7 +17421,7 @@ class FinanceApi
      *
      * Update account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest $create_new_account_class_request Account Class data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -17568,7 +17544,7 @@ class FinanceApi
      *
      * Update account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest $create_new_account_class_request Account Class data (required)
      *
      * @throws \InvalidArgumentException
@@ -17589,7 +17565,7 @@ class FinanceApi
      *
      * Update account class
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest $create_new_account_class_request Account Class data (required)
      *
      * @throws \InvalidArgumentException
@@ -17639,7 +17615,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateAccountClass'
      *
-     * @param  int $id ID of account class (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest $create_new_account_class_request Account Class data (required)
      *
      * @throws \InvalidArgumentException
@@ -17752,7 +17728,7 @@ class FinanceApi
      *
      * Update account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest $create_new_account_group_request Account Group data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -17770,7 +17746,7 @@ class FinanceApi
      *
      * Update account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest $create_new_account_group_request Account Group data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -17893,7 +17869,7 @@ class FinanceApi
      *
      * Update account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest $create_new_account_group_request Account Group data (required)
      *
      * @throws \InvalidArgumentException
@@ -17914,7 +17890,7 @@ class FinanceApi
      *
      * Update account group
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest $create_new_account_group_request Account Group data (required)
      *
      * @throws \InvalidArgumentException
@@ -17964,7 +17940,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateAccountGroup'
      *
-     * @param  int $id ID of account group (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest $create_new_account_group_request Account Group data (required)
      *
      * @throws \InvalidArgumentException
@@ -18077,7 +18053,7 @@ class FinanceApi
      *
      * Update account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest $create_new_account_type_request Account Type data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -18095,7 +18071,7 @@ class FinanceApi
      *
      * Update account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest $create_new_account_type_request Account Type data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -18218,7 +18194,7 @@ class FinanceApi
      *
      * Update account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest $create_new_account_type_request Account Type data (required)
      *
      * @throws \InvalidArgumentException
@@ -18239,7 +18215,7 @@ class FinanceApi
      *
      * Update account type
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest $create_new_account_type_request Account Type data (required)
      *
      * @throws \InvalidArgumentException
@@ -18289,7 +18265,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateAccountType'
      *
-     * @param  int $id ID of account type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest $create_new_account_type_request Account Type data (required)
      *
      * @throws \InvalidArgumentException
@@ -18402,7 +18378,7 @@ class FinanceApi
      *
      * Update accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest $update_accounting_period_request Accounting period data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -18420,7 +18396,7 @@ class FinanceApi
      *
      * Update accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest $update_accounting_period_request Accounting period data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -18543,7 +18519,7 @@ class FinanceApi
      *
      * Update accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest $update_accounting_period_request Accounting period data (required)
      *
      * @throws \InvalidArgumentException
@@ -18564,7 +18540,7 @@ class FinanceApi
      *
      * Update accounting period
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest $update_accounting_period_request Accounting period data (required)
      *
      * @throws \InvalidArgumentException
@@ -18614,7 +18590,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateAccountingPeriod'
      *
-     * @param  int $id ID of accounting period (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest $update_accounting_period_request Accounting period data (required)
      *
      * @throws \InvalidArgumentException
@@ -18727,7 +18703,7 @@ class FinanceApi
      *
      * Update cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest $create_cash_discount_request cash discount data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -18745,7 +18721,7 @@ class FinanceApi
      *
      * Update cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest $create_cash_discount_request cash discount data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -18868,7 +18844,7 @@ class FinanceApi
      *
      * Update cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest $create_cash_discount_request cash discount data (required)
      *
      * @throws \InvalidArgumentException
@@ -18889,7 +18865,7 @@ class FinanceApi
      *
      * Update cash discount
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest $create_cash_discount_request cash discount data (required)
      *
      * @throws \InvalidArgumentException
@@ -18939,7 +18915,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateCashDiscount'
      *
-     * @param  int $id ID of cash discount (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest $create_cash_discount_request cash discount data (required)
      *
      * @throws \InvalidArgumentException
@@ -19052,7 +19028,7 @@ class FinanceApi
      *
      * Update client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewClientRequest $create_new_client_request Client data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -19070,7 +19046,7 @@ class FinanceApi
      *
      * Update client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewClientRequest $create_new_client_request Client data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -19193,7 +19169,7 @@ class FinanceApi
      *
      * Update client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewClientRequest $create_new_client_request Client data (required)
      *
      * @throws \InvalidArgumentException
@@ -19214,7 +19190,7 @@ class FinanceApi
      *
      * Update client
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewClientRequest $create_new_client_request Client data (required)
      *
      * @throws \InvalidArgumentException
@@ -19264,7 +19240,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateClient'
      *
-     * @param  int $id ID of client (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewClientRequest $create_new_client_request Client data (required)
      *
      * @throws \InvalidArgumentException
@@ -19377,7 +19353,7 @@ class FinanceApi
      *
      * Update cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest $update_cost_center_request cost center data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -19395,7 +19371,7 @@ class FinanceApi
      *
      * Update cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest $update_cost_center_request cost center data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -19518,7 +19494,7 @@ class FinanceApi
      *
      * Update cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest $update_cost_center_request cost center data (required)
      *
      * @throws \InvalidArgumentException
@@ -19539,7 +19515,7 @@ class FinanceApi
      *
      * Update cost center
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest $update_cost_center_request cost center data (required)
      *
      * @throws \InvalidArgumentException
@@ -19589,7 +19565,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateCostCenter'
      *
-     * @param  int $id ID of cost center (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest $update_cost_center_request cost center data (required)
      *
      * @throws \InvalidArgumentException
@@ -19702,7 +19678,7 @@ class FinanceApi
      *
      * Update tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest $create_tax_rate_request Tax rate data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -19720,7 +19696,7 @@ class FinanceApi
      *
      * Update tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest $create_tax_rate_request Tax rate data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -19843,7 +19819,7 @@ class FinanceApi
      *
      * Update tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest $create_tax_rate_request Tax rate data (required)
      *
      * @throws \InvalidArgumentException
@@ -19864,7 +19840,7 @@ class FinanceApi
      *
      * Update tax rate
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest $create_tax_rate_request Tax rate data (required)
      *
      * @throws \InvalidArgumentException
@@ -19914,7 +19890,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateTaxRate'
      *
-     * @param  int $id ID of tax rate (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxRateRequest $create_tax_rate_request Tax rate data (required)
      *
      * @throws \InvalidArgumentException
@@ -20027,7 +20003,7 @@ class FinanceApi
      *
      * Update tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest $create_tax_type_request tax type data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -20045,7 +20021,7 @@ class FinanceApi
      *
      * Update tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest $create_tax_type_request tax type data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -20168,7 +20144,7 @@ class FinanceApi
      *
      * Update tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest $create_tax_type_request tax type data (required)
      *
      * @throws \InvalidArgumentException
@@ -20189,7 +20165,7 @@ class FinanceApi
      *
      * Update tax type
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest $create_tax_type_request tax type data (required)
      *
      * @throws \InvalidArgumentException
@@ -20239,7 +20215,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateTaxType'
      *
-     * @param  int $id ID of tax type (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest $create_tax_type_request tax type data (required)
      *
      * @throws \InvalidArgumentException
@@ -20286,7 +20262,7 @@ class FinanceApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/plain'],
-                ['application/json', 'application/x-www-form-urlencoded']
+                ['application/json']
             );
         }
 
@@ -20352,7 +20328,7 @@ class FinanceApi
      *
      * Update transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest $update_transaction_request Transaction data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -20370,7 +20346,7 @@ class FinanceApi
      *
      * Update transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest $update_transaction_request Transaction data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -20493,7 +20469,7 @@ class FinanceApi
      *
      * Update transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest $update_transaction_request Transaction data (required)
      *
      * @throws \InvalidArgumentException
@@ -20514,7 +20490,7 @@ class FinanceApi
      *
      * Update transaction
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest $update_transaction_request Transaction data (required)
      *
      * @throws \InvalidArgumentException
@@ -20564,7 +20540,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateTransaction'
      *
-     * @param  int $id ID of transaction (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateTransactionRequest $update_transaction_request Transaction data (required)
      *
      * @throws \InvalidArgumentException
@@ -20677,7 +20653,7 @@ class FinanceApi
      *
      * Update transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest $create_new_transaction_purpose_request transaction purpose data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -20695,7 +20671,7 @@ class FinanceApi
      *
      * Update transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest $create_new_transaction_purpose_request transaction purpose data (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -20818,7 +20794,7 @@ class FinanceApi
      *
      * Update transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest $create_new_transaction_purpose_request transaction purpose data (required)
      *
      * @throws \InvalidArgumentException
@@ -20839,7 +20815,7 @@ class FinanceApi
      *
      * Update transaction purpose
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest $create_new_transaction_purpose_request transaction purpose data (required)
      *
      * @throws \InvalidArgumentException
@@ -20889,7 +20865,7 @@ class FinanceApi
     /**
      * Create request for operation 'updateTransactionPurpose'
      *
-     * @param  int $id ID of transaction purpose (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest $create_new_transaction_purpose_request transaction purpose data (required)
      *
      * @throws \InvalidArgumentException

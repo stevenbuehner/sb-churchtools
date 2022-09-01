@@ -386,7 +386,7 @@ class WikiApi
      *
      * Returns all Wiki Pages in the given Category.
      *
-     * @param  string $wiki_category_id wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -403,7 +403,7 @@ class WikiApi
      *
      * Returns all Wiki Pages in the given Category.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -502,7 +502,7 @@ class WikiApi
      *
      * Returns all Wiki Pages in the given Category.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -522,7 +522,7 @@ class WikiApi
      *
      * Returns all Wiki Pages in the given Category.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -571,7 +571,7 @@ class WikiApi
     /**
      * Create request for operation 'getWikiCategoriesWikiCategoryIdPages'
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -671,7 +671,7 @@ class WikiApi
      *
      * Returns the latest version of the wiki page with the given identifier.
      *
-     * @param  string $wiki_category_id wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -689,7 +689,7 @@ class WikiApi
      *
      * Returns the latest version of the wiki page with the given identifier.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -789,7 +789,7 @@ class WikiApi
      *
      * Returns the latest version of the wiki page with the given identifier.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \InvalidArgumentException
@@ -810,7 +810,7 @@ class WikiApi
      *
      * Returns the latest version of the wiki page with the given identifier.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \InvalidArgumentException
@@ -860,7 +860,7 @@ class WikiApi
     /**
      * Create request for operation 'getWikiCategoriesWikiCategoryIdPagesIdentifier'
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \InvalidArgumentException
@@ -975,7 +975,7 @@ class WikiApi
      *
      * Returns all version of the wiki page for the given
      *
-     * @param  string $wiki_category_id wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -993,7 +993,7 @@ class WikiApi
      *
      * Returns all version of the wiki page for the given
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1093,7 +1093,7 @@ class WikiApi
      *
      * Returns all version of the wiki page for the given
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \InvalidArgumentException
@@ -1114,7 +1114,7 @@ class WikiApi
      *
      * Returns all version of the wiki page for the given
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \InvalidArgumentException
@@ -1164,7 +1164,7 @@ class WikiApi
     /**
      * Create request for operation 'getWikiCategoriesWikiCategoryIdPagesIdentifierVersions'
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
      * @throws \InvalidArgumentException
@@ -1279,7 +1279,7 @@ class WikiApi
      *
      * Returns the wiki page with the given identifier and version.
      *
-     * @param  string $wiki_category_id wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $version version (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
@@ -1298,7 +1298,7 @@ class WikiApi
      *
      * Returns the wiki page with the given identifier and version.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $version (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
@@ -1399,7 +1399,7 @@ class WikiApi
      *
      * Returns the wiki page with the given identifier and version.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $version (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
@@ -1421,7 +1421,7 @@ class WikiApi
      *
      * Returns the wiki page with the given identifier and version.
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $version (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
@@ -1472,7 +1472,7 @@ class WikiApi
     /**
      * Create request for operation 'getWikiCategoriesWikiCategoryIdPagesVersionsVersion'
      *
-     * @param  string $wiki_category_id (required)
+     * @param  int $wiki_category_id ID of WikiCategory (required)
      * @param  string $version (required)
      * @param  string $identifier Can either be the pages identifier or its title (required)
      *
@@ -1603,7 +1603,7 @@ class WikiApi
      * Your GET endpoint
      *
      * @param  string $query query (optional)
-     * @param  array $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
+     * @param  int[] $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1621,7 +1621,7 @@ class WikiApi
      * Your GET endpoint
      *
      * @param  string $query (optional)
-     * @param  array $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
+     * @param  int[] $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1721,7 +1721,7 @@ class WikiApi
      * Your GET endpoint
      *
      * @param  string $query (optional)
-     * @param  array $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
+     * @param  int[] $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1742,7 +1742,7 @@ class WikiApi
      * Your GET endpoint
      *
      * @param  string $query (optional)
-     * @param  array $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
+     * @param  int[] $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1792,7 +1792,7 @@ class WikiApi
      * Create request for operation 'getWikiCategoriesWikiCategoryIdSearch'
      *
      * @param  string $query (optional)
-     * @param  array $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
+     * @param  int[] $wiki_category_ids wiki categories that should be searched. if noone is given all categories are searched (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1819,7 +1819,7 @@ class WikiApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $wiki_category_ids,
-            'wiki_category_ids', // param base name
+            'wiki_category_ids[]', // param base name
             'array', // openApiType
             'form', // style
             true, // explode

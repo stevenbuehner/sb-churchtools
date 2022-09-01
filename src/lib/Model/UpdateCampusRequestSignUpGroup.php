@@ -58,8 +58,8 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'domain_identifier' => 'string',
-        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroupDomainAttributes'
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroupDomainAttributes',
+        'domain_identifier' => 'string'
     ];
 
     /**
@@ -70,8 +70,8 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'domain_identifier' => null,
-        'domain_attributes' => null
+        'domain_attributes' => null,
+        'domain_identifier' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'domain_identifier' => 'domainIdentifier',
-        'domain_attributes' => 'domainAttributes'
+        'domain_attributes' => 'domainAttributes',
+        'domain_identifier' => 'domainIdentifier'
     ];
 
     /**
@@ -111,8 +111,8 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'domain_identifier' => 'setDomainIdentifier',
-        'domain_attributes' => 'setDomainAttributes'
+        'domain_attributes' => 'setDomainAttributes',
+        'domain_identifier' => 'setDomainIdentifier'
     ];
 
     /**
@@ -121,8 +121,8 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'domain_identifier' => 'getDomainIdentifier',
-        'domain_attributes' => 'getDomainAttributes'
+        'domain_attributes' => 'getDomainAttributes',
+        'domain_identifier' => 'getDomainIdentifier'
     ];
 
     /**
@@ -182,8 +182,8 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
         $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
+        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
     }
 
     /**
@@ -195,6 +195,9 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
+        if ($this->container['domain_attributes'] === null) {
+            $invalidProperties[] = "'domain_attributes' can't be null";
+        }
         if ($this->container['domain_identifier'] === null) {
             $invalidProperties[] = "'domain_identifier' can't be null";
         }
@@ -202,9 +205,6 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'domain_identifier', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['domain_attributes'] === null) {
-            $invalidProperties[] = "'domain_attributes' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -219,6 +219,30 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets domain_attributes
+     *
+     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroupDomainAttributes
+     */
+    public function getDomainAttributes()
+    {
+        return $this->container['domain_attributes'];
+    }
+
+    /**
+     * Sets domain_attributes
+     *
+     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroupDomainAttributes $domain_attributes domain_attributes
+     *
+     * @return self
+     */
+    public function setDomainAttributes($domain_attributes)
+    {
+        $this->container['domain_attributes'] = $domain_attributes;
+
+        return $this;
+    }
 
     /**
      * Gets domain_identifier
@@ -245,30 +269,6 @@ class UpdateCampusRequestSignUpGroup implements ModelInterface, ArrayAccess, \Js
         }
 
         $this->container['domain_identifier'] = $domain_identifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_attributes
-     *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroupDomainAttributes
-     */
-    public function getDomainAttributes()
-    {
-        return $this->container['domain_attributes'];
-    }
-
-    /**
-     * Sets domain_attributes
-     *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateCampusRequestSignUpGroupDomainAttributes $domain_attributes domain_attributes
-     *
-     * @return self
-     */
-    public function setDomainAttributes($domain_attributes)
-    {
-        $this->container['domain_attributes'] = $domain_attributes;
 
         return $this;
     }

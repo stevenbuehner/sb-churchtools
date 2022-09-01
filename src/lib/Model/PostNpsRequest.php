@@ -57,7 +57,7 @@ class PostNpsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'score' => 'float'
+        'score' => 'int'
     ];
 
     /**
@@ -209,7 +209,7 @@ class PostNpsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets score
      *
-     * @return float
+     * @return int
      */
     public function getScore()
     {
@@ -219,7 +219,7 @@ class PostNpsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets score
      *
-     * @param float $score 
+     * @param int $score 
      *
      * @return self
      */

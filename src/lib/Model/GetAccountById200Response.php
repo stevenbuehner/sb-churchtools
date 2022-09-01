@@ -57,7 +57,7 @@ class GetAccountById200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetAccountById200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetAccountById200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner|null $data data
      *
      * @return self
      */

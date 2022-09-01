@@ -57,11 +57,11 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'translated_message' => 'string',
-        'message_key' => 'string',
         'args' => 'string[]',
-        'errors' => 'string[]'
+        'errors' => 'string[]',
+        'message' => 'string',
+        'message_key' => 'string',
+        'translated_message' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'translated_message' => null,
-        'message_key' => null,
         'args' => null,
-        'errors' => null
+        'errors' => null,
+        'message' => null,
+        'message_key' => null,
+        'translated_message' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'translated_message' => 'translatedMessage',
-        'message_key' => 'messageKey',
         'args' => 'args',
-        'errors' => 'errors'
+        'errors' => 'errors',
+        'message' => 'message',
+        'message_key' => 'messageKey',
+        'translated_message' => 'translatedMessage'
     ];
 
     /**
@@ -119,11 +119,11 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'translated_message' => 'setTranslatedMessage',
-        'message_key' => 'setMessageKey',
         'args' => 'setArgs',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'message' => 'setMessage',
+        'message_key' => 'setMessageKey',
+        'translated_message' => 'setTranslatedMessage'
     ];
 
     /**
@@ -132,11 +132,11 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'translated_message' => 'getTranslatedMessage',
-        'message_key' => 'getMessageKey',
         'args' => 'getArgs',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'message' => 'getMessage',
+        'message_key' => 'getMessageKey',
+        'translated_message' => 'getTranslatedMessage'
     ];
 
     /**
@@ -196,11 +196,11 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['translated_message'] = $data['translated_message'] ?? null;
-        $this->container['message_key'] = $data['message_key'] ?? null;
         $this->container['args'] = $data['args'] ?? null;
         $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['message_key'] = $data['message_key'] ?? null;
+        $this->container['translated_message'] = $data['translated_message'] ?? null;
     }
 
     /**
@@ -226,78 +226,6 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets translated_message
-     *
-     * @return string|null
-     */
-    public function getTranslatedMessage()
-    {
-        return $this->container['translated_message'];
-    }
-
-    /**
-     * Sets translated_message
-     *
-     * @param string|null $translated_message translated_message
-     *
-     * @return self
-     */
-    public function setTranslatedMessage($translated_message)
-    {
-        $this->container['translated_message'] = $translated_message;
-
-        return $this;
-    }
-
-    /**
-     * Gets message_key
-     *
-     * @return string|null
-     */
-    public function getMessageKey()
-    {
-        return $this->container['message_key'];
-    }
-
-    /**
-     * Sets message_key
-     *
-     * @param string|null $message_key message_key
-     *
-     * @return self
-     */
-    public function setMessageKey($message_key)
-    {
-        $this->container['message_key'] = $message_key;
-
-        return $this;
-    }
 
     /**
      * Gets args
@@ -343,6 +271,78 @@ class DeleteAccountsForAccountingPeriod400Response implements ModelInterface, Ar
     public function setErrors($errors)
     {
         $this->container['errors'] = $errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string|null
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string|null $message message
+     *
+     * @return self
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets message_key
+     *
+     * @return string|null
+     */
+    public function getMessageKey()
+    {
+        return $this->container['message_key'];
+    }
+
+    /**
+     * Sets message_key
+     *
+     * @param string|null $message_key message_key
+     *
+     * @return self
+     */
+    public function setMessageKey($message_key)
+    {
+        $this->container['message_key'] = $message_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets translated_message
+     *
+     * @return string|null
+     */
+    public function getTranslatedMessage()
+    {
+        return $this->container['translated_message'];
+    }
+
+    /**
+     * Sets translated_message
+     *
+     * @param string|null $translated_message translated_message
+     *
+     * @return self
+     */
+    public function setTranslatedMessage($translated_message)
+    {
+        $this->container['translated_message'] = $translated_message;
 
         return $this;
     }

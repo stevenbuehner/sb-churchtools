@@ -58,8 +58,8 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'view_category' => 'float[]',
-        'create_personal_category' => 'bool'
+        'create_personal_category' => 'bool',
+        'view_category' => 'int[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'view_category' => null,
-        'create_personal_category' => null
+        'create_personal_category' => null,
+        'view_category' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'view_category' => 'view category',
-        'create_personal_category' => 'create personal category'
+        'create_personal_category' => 'create personal category',
+        'view_category' => 'view category'
     ];
 
     /**
@@ -111,8 +111,8 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-        'view_category' => 'setViewCategory',
-        'create_personal_category' => 'setCreatePersonalCategory'
+        'create_personal_category' => 'setCreatePersonalCategory',
+        'view_category' => 'setViewCategory'
     ];
 
     /**
@@ -121,8 +121,8 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
-        'view_category' => 'getViewCategory',
-        'create_personal_category' => 'getCreatePersonalCategory'
+        'create_personal_category' => 'getCreatePersonalCategory',
+        'view_category' => 'getViewCategory'
     ];
 
     /**
@@ -182,8 +182,8 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
      */
     public function __construct(array $data = null)
     {
-        $this->container['view_category'] = $data['view_category'] ?? null;
         $this->container['create_personal_category'] = $data['create_personal_category'] ?? null;
+        $this->container['view_category'] = $data['view_category'] ?? null;
     }
 
     /**
@@ -211,30 +211,6 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
 
 
     /**
-     * Gets view_category
-     *
-     * @return float[]|null
-     */
-    public function getViewCategory()
-    {
-        return $this->container['view_category'];
-    }
-
-    /**
-     * Sets view_category
-     *
-     * @param float[]|null $view_category view_category
-     *
-     * @return self
-     */
-    public function setViewCategory($view_category)
-    {
-        $this->container['view_category'] = $view_category;
-
-        return $this;
-    }
-
-    /**
      * Gets create_personal_category
      *
      * @return bool|null
@@ -254,6 +230,30 @@ class GetGlobalPermissions200ResponseDataChurchcal implements ModelInterface, Ar
     public function setCreatePersonalCategory($create_personal_category)
     {
         $this->container['create_personal_category'] = $create_personal_category;
+
+        return $this;
+    }
+
+    /**
+     * Gets view_category
+     *
+     * @return int[]|null
+     */
+    public function getViewCategory()
+    {
+        return $this->container['view_category'];
+    }
+
+    /**
+     * Sets view_category
+     *
+     * @param int[]|null $view_category view_category
+     *
+     * @return self
+     */
+    public function setViewCategory($view_category)
+    {
+        $this->container['view_category'] = $view_category;
 
         return $this;
     }

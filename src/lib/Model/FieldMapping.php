@@ -58,10 +58,10 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'external_system' => '\StevenBuehner\ChurchTools\Model\ExternalSystem2',
         'domain_type' => 'string',
-        'entries' => '\StevenBuehner\ChurchTools\Model\FieldMappingEntries'
+        'entries' => '\StevenBuehner\ChurchTools\Model\FieldMappingEntries',
+        'external_system' => '\StevenBuehner\ChurchTools\Model\ExternalSystem2',
+        'id' => 'int'
     ];
 
     /**
@@ -72,10 +72,10 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'external_system' => null,
         'domain_type' => null,
-        'entries' => null
+        'entries' => null,
+        'external_system' => null,
+        'id' => null
     ];
 
     /**
@@ -105,10 +105,10 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'external_system' => 'externalSystem',
         'domain_type' => 'domainType',
-        'entries' => 'entries'
+        'entries' => 'entries',
+        'external_system' => 'externalSystem',
+        'id' => 'id'
     ];
 
     /**
@@ -117,10 +117,10 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'external_system' => 'setExternalSystem',
         'domain_type' => 'setDomainType',
-        'entries' => 'setEntries'
+        'entries' => 'setEntries',
+        'external_system' => 'setExternalSystem',
+        'id' => 'setId'
     ];
 
     /**
@@ -129,10 +129,10 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'external_system' => 'getExternalSystem',
         'domain_type' => 'getDomainType',
-        'entries' => 'getEntries'
+        'entries' => 'getEntries',
+        'external_system' => 'getExternalSystem',
+        'id' => 'getId'
     ];
 
     /**
@@ -192,10 +192,10 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['external_system'] = $data['external_system'] ?? null;
         $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['entries'] = $data['entries'] ?? null;
+        $this->container['external_system'] = $data['external_system'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
     }
 
     /**
@@ -207,17 +207,17 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['external_system'] === null) {
-            $invalidProperties[] = "'external_system' can't be null";
-        }
         if ($this->container['domain_type'] === null) {
             $invalidProperties[] = "'domain_type' can't be null";
         }
         if ($this->container['entries'] === null) {
             $invalidProperties[] = "'entries' can't be null";
+        }
+        if ($this->container['external_system'] === null) {
+            $invalidProperties[] = "'external_system' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
         return $invalidProperties;
     }
@@ -233,54 +233,6 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return float
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param float $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets external_system
-     *
-     * @return \StevenBuehner\ChurchTools\Model\ExternalSystem2
-     */
-    public function getExternalSystem()
-    {
-        return $this->container['external_system'];
-    }
-
-    /**
-     * Sets external_system
-     *
-     * @param \StevenBuehner\ChurchTools\Model\ExternalSystem2 $external_system external_system
-     *
-     * @return self
-     */
-    public function setExternalSystem($external_system)
-    {
-        $this->container['external_system'] = $external_system;
-
-        return $this;
-    }
 
     /**
      * Gets domain_type
@@ -326,6 +278,54 @@ class FieldMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEntries($entries)
     {
         $this->container['entries'] = $entries;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_system
+     *
+     * @return \StevenBuehner\ChurchTools\Model\ExternalSystem2
+     */
+    public function getExternalSystem()
+    {
+        return $this->container['external_system'];
+    }
+
+    /**
+     * Sets external_system
+     *
+     * @param \StevenBuehner\ChurchTools\Model\ExternalSystem2 $external_system external_system
+     *
+     * @return self
+     */
+    public function setExternalSystem($external_system)
+    {
+        $this->container['external_system'] = $external_system;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

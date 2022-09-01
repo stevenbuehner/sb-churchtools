@@ -57,16 +57,16 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'number' => 'string',
-        'name' => 'string',
-        'budget' => 'float',
-        'budget_balance' => 'float',
-        'budget_spent' => 'float',
-        'budget_last_period' => 'float',
         'accounting_period_id' => 'int',
-        'group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'budget' => 'int',
+        'budget_balance' => 'int',
+        'budget_last_period' => 'int',
+        'budget_spent' => 'int',
+        'group' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup',
+        'id' => 'int',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'name' => 'string',
+        'number' => 'string'
     ];
 
     /**
@@ -77,16 +77,16 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'number' => null,
-        'name' => null,
-        'budget' => 'integer',
-        'budget_balance' => 'integer',
-        'budget_spent' => 'integer',
-        'budget_last_period' => 'integer',
         'accounting_period_id' => null,
+        'budget' => null,
+        'budget_balance' => null,
+        'budget_last_period' => null,
+        'budget_spent' => null,
         'group' => null,
-        'meta' => null
+        'id' => null,
+        'meta' => null,
+        'name' => null,
+        'number' => null
     ];
 
     /**
@@ -116,16 +116,16 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'number' => 'number',
-        'name' => 'name',
+        'accounting_period_id' => 'accountingPeriodId',
         'budget' => 'budget',
         'budget_balance' => 'budgetBalance',
-        'budget_spent' => 'budgetSpent',
         'budget_last_period' => 'budgetLastPeriod',
-        'accounting_period_id' => 'accountingPeriodId',
+        'budget_spent' => 'budgetSpent',
         'group' => 'group',
-        'meta' => 'meta'
+        'id' => 'id',
+        'meta' => 'meta',
+        'name' => 'name',
+        'number' => 'number'
     ];
 
     /**
@@ -134,16 +134,16 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'number' => 'setNumber',
-        'name' => 'setName',
+        'accounting_period_id' => 'setAccountingPeriodId',
         'budget' => 'setBudget',
         'budget_balance' => 'setBudgetBalance',
-        'budget_spent' => 'setBudgetSpent',
         'budget_last_period' => 'setBudgetLastPeriod',
-        'accounting_period_id' => 'setAccountingPeriodId',
+        'budget_spent' => 'setBudgetSpent',
         'group' => 'setGroup',
-        'meta' => 'setMeta'
+        'id' => 'setId',
+        'meta' => 'setMeta',
+        'name' => 'setName',
+        'number' => 'setNumber'
     ];
 
     /**
@@ -152,16 +152,16 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'number' => 'getNumber',
-        'name' => 'getName',
+        'accounting_period_id' => 'getAccountingPeriodId',
         'budget' => 'getBudget',
         'budget_balance' => 'getBudgetBalance',
-        'budget_spent' => 'getBudgetSpent',
         'budget_last_period' => 'getBudgetLastPeriod',
-        'accounting_period_id' => 'getAccountingPeriodId',
+        'budget_spent' => 'getBudgetSpent',
         'group' => 'getGroup',
-        'meta' => 'getMeta'
+        'id' => 'getId',
+        'meta' => 'getMeta',
+        'name' => 'getName',
+        'number' => 'getNumber'
     ];
 
     /**
@@ -221,16 +221,16 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
+        $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
         $this->container['budget'] = $data['budget'] ?? null;
         $this->container['budget_balance'] = $data['budget_balance'] ?? null;
-        $this->container['budget_spent'] = $data['budget_spent'] ?? null;
         $this->container['budget_last_period'] = $data['budget_last_period'] ?? null;
-        $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
+        $this->container['budget_spent'] = $data['budget_spent'] ?? null;
         $this->container['group'] = $data['group'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['number'] = $data['number'] ?? null;
     }
 
     /**
@@ -258,6 +258,150 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets accounting_period_id
+     *
+     * @return int|null
+     */
+    public function getAccountingPeriodId()
+    {
+        return $this->container['accounting_period_id'];
+    }
+
+    /**
+     * Sets accounting_period_id
+     *
+     * @param int|null $accounting_period_id accounting_period_id
+     *
+     * @return self
+     */
+    public function setAccountingPeriodId($accounting_period_id)
+    {
+        $this->container['accounting_period_id'] = $accounting_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets budget
+     *
+     * @return int|null
+     */
+    public function getBudget()
+    {
+        return $this->container['budget'];
+    }
+
+    /**
+     * Sets budget
+     *
+     * @param int|null $budget Budget is in cent.
+     *
+     * @return self
+     */
+    public function setBudget($budget)
+    {
+        $this->container['budget'] = $budget;
+
+        return $this;
+    }
+
+    /**
+     * Gets budget_balance
+     *
+     * @return int|null
+     */
+    public function getBudgetBalance()
+    {
+        return $this->container['budget_balance'];
+    }
+
+    /**
+     * Sets budget_balance
+     *
+     * @param int|null $budget_balance Remaining amount. (Budget - Cost Center Expenses). Budget balance is in cent.
+     *
+     * @return self
+     */
+    public function setBudgetBalance($budget_balance)
+    {
+        $this->container['budget_balance'] = $budget_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets budget_last_period
+     *
+     * @return int|null
+     */
+    public function getBudgetLastPeriod()
+    {
+        return $this->container['budget_last_period'];
+    }
+
+    /**
+     * Sets budget_last_period
+     *
+     * @param int|null $budget_last_period Budget for the cost center with the same number in the previous accounting period.
+     *
+     * @return self
+     */
+    public function setBudgetLastPeriod($budget_last_period)
+    {
+        $this->container['budget_last_period'] = $budget_last_period;
+
+        return $this;
+    }
+
+    /**
+     * Gets budget_spent
+     *
+     * @return int|null
+     */
+    public function getBudgetSpent()
+    {
+        return $this->container['budget_spent'];
+    }
+
+    /**
+     * Sets budget_spent
+     *
+     * @param int|null $budget_spent Cost Center Expences. (Outcome - Income). In cent
+     *
+     * @return self
+     */
+    public function setBudgetSpent($budget_spent)
+    {
+        $this->container['budget_spent'] = $budget_spent;
+
+        return $this;
+    }
+
+    /**
+     * Gets group
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null
+     */
+    public function getGroup()
+    {
+        return $this->container['group'];
+    }
+
+    /**
+     * Sets group
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null $group group
+     *
+     * @return self
+     */
+    public function setGroup($group)
+    {
+        $this->container['group'] = $group;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -282,25 +426,25 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets number
+     * Gets meta
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
-    public function getNumber()
+    public function getMeta()
     {
-        return $this->container['number'];
+        return $this->container['meta'];
     }
 
     /**
-     * Sets number
+     * Sets meta
      *
-     * @param string|null $number number
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */
-    public function setNumber($number)
+    public function setMeta($meta)
     {
-        $this->container['number'] = $number;
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -330,169 +474,25 @@ class CostCenter implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets budget
+     * Gets number
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getBudget()
+    public function getNumber()
     {
-        return $this->container['budget'];
+        return $this->container['number'];
     }
 
     /**
-     * Sets budget
+     * Sets number
      *
-     * @param float|null $budget Budget is in cent.
+     * @param string|null $number number
      *
      * @return self
      */
-    public function setBudget($budget)
+    public function setNumber($number)
     {
-        $this->container['budget'] = $budget;
-
-        return $this;
-    }
-
-    /**
-     * Gets budget_balance
-     *
-     * @return float|null
-     */
-    public function getBudgetBalance()
-    {
-        return $this->container['budget_balance'];
-    }
-
-    /**
-     * Sets budget_balance
-     *
-     * @param float|null $budget_balance Remaining amount. (Budget - Cost Center Expenses). Budget balance is in cent.
-     *
-     * @return self
-     */
-    public function setBudgetBalance($budget_balance)
-    {
-        $this->container['budget_balance'] = $budget_balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets budget_spent
-     *
-     * @return float|null
-     */
-    public function getBudgetSpent()
-    {
-        return $this->container['budget_spent'];
-    }
-
-    /**
-     * Sets budget_spent
-     *
-     * @param float|null $budget_spent Cost Center Expences. (Outcome - Income). In cent
-     *
-     * @return self
-     */
-    public function setBudgetSpent($budget_spent)
-    {
-        $this->container['budget_spent'] = $budget_spent;
-
-        return $this;
-    }
-
-    /**
-     * Gets budget_last_period
-     *
-     * @return float|null
-     */
-    public function getBudgetLastPeriod()
-    {
-        return $this->container['budget_last_period'];
-    }
-
-    /**
-     * Sets budget_last_period
-     *
-     * @param float|null $budget_last_period Budget for the cost center with the same number in the previous accounting period.
-     *
-     * @return self
-     */
-    public function setBudgetLastPeriod($budget_last_period)
-    {
-        $this->container['budget_last_period'] = $budget_last_period;
-
-        return $this;
-    }
-
-    /**
-     * Gets accounting_period_id
-     *
-     * @return int|null
-     */
-    public function getAccountingPeriodId()
-    {
-        return $this->container['accounting_period_id'];
-    }
-
-    /**
-     * Sets accounting_period_id
-     *
-     * @param int|null $accounting_period_id accounting_period_id
-     *
-     * @return self
-     */
-    public function setAccountingPeriodId($accounting_period_id)
-    {
-        $this->container['accounting_period_id'] = $accounting_period_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['number'] = $number;
 
         return $this;
     }

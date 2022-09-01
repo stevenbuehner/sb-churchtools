@@ -57,12 +57,12 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'campus_id' => 'int',
         'id' => 'int',
         'name' => 'string',
+        'only_visible_in_campus_filter' => 'bool',
         'sort_key' => 'int',
-        'view_all' => 'bool',
-        'campus_id' => 'int',
-        'only_visible_in_campus_filter' => 'bool'
+        'view_all' => 'bool'
     ];
 
     /**
@@ -73,12 +73,12 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'campus_id' => null,
         'id' => null,
         'name' => null,
+        'only_visible_in_campus_filter' => null,
         'sort_key' => null,
-        'view_all' => null,
-        'campus_id' => null,
-        'only_visible_in_campus_filter' => null
+        'view_all' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'campus_id' => 'campusId',
         'id' => 'id',
         'name' => 'name',
+        'only_visible_in_campus_filter' => 'onlyVisibleInCampusFilter',
         'sort_key' => 'sortKey',
-        'view_all' => 'viewAll',
-        'campus_id' => 'campusId',
-        'only_visible_in_campus_filter' => 'onlyVisibleInCampusFilter'
+        'view_all' => 'viewAll'
     ];
 
     /**
@@ -122,12 +122,12 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'campus_id' => 'setCampusId',
         'id' => 'setId',
         'name' => 'setName',
+        'only_visible_in_campus_filter' => 'setOnlyVisibleInCampusFilter',
         'sort_key' => 'setSortKey',
-        'view_all' => 'setViewAll',
-        'campus_id' => 'setCampusId',
-        'only_visible_in_campus_filter' => 'setOnlyVisibleInCampusFilter'
+        'view_all' => 'setViewAll'
     ];
 
     /**
@@ -136,12 +136,12 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'campus_id' => 'getCampusId',
         'id' => 'getId',
         'name' => 'getName',
+        'only_visible_in_campus_filter' => 'getOnlyVisibleInCampusFilter',
         'sort_key' => 'getSortKey',
-        'view_all' => 'getViewAll',
-        'campus_id' => 'getCampusId',
-        'only_visible_in_campus_filter' => 'getOnlyVisibleInCampusFilter'
+        'view_all' => 'getViewAll'
     ];
 
     /**
@@ -201,12 +201,12 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['campus_id'] = $data['campus_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['only_visible_in_campus_filter'] = $data['only_visible_in_campus_filter'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
         $this->container['view_all'] = $data['view_all'] ?? null;
-        $this->container['campus_id'] = $data['campus_id'] ?? null;
-        $this->container['only_visible_in_campus_filter'] = $data['only_visible_in_campus_filter'] ?? null;
     }
 
     /**
@@ -232,6 +232,30 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets campus_id
+     *
+     * @return int|null
+     */
+    public function getCampusId()
+    {
+        return $this->container['campus_id'];
+    }
+
+    /**
+     * Sets campus_id
+     *
+     * @param int|null $campus_id campus_id
+     *
+     * @return self
+     */
+    public function setCampusId($campus_id)
+    {
+        $this->container['campus_id'] = $campus_id;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -282,6 +306,30 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets only_visible_in_campus_filter
+     *
+     * @return bool|null
+     */
+    public function getOnlyVisibleInCampusFilter()
+    {
+        return $this->container['only_visible_in_campus_filter'];
+    }
+
+    /**
+     * Sets only_visible_in_campus_filter
+     *
+     * @param bool|null $only_visible_in_campus_filter only_visible_in_campus_filter
+     *
+     * @return self
+     */
+    public function setOnlyVisibleInCampusFilter($only_visible_in_campus_filter)
+    {
+        $this->container['only_visible_in_campus_filter'] = $only_visible_in_campus_filter;
+
+        return $this;
+    }
+
+    /**
      * Gets sort_key
      *
      * @return int|null
@@ -325,54 +373,6 @@ class ServiceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setViewAll($view_all)
     {
         $this->container['view_all'] = $view_all;
-
-        return $this;
-    }
-
-    /**
-     * Gets campus_id
-     *
-     * @return int|null
-     */
-    public function getCampusId()
-    {
-        return $this->container['campus_id'];
-    }
-
-    /**
-     * Sets campus_id
-     *
-     * @param int|null $campus_id campus_id
-     *
-     * @return self
-     */
-    public function setCampusId($campus_id)
-    {
-        $this->container['campus_id'] = $campus_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets only_visible_in_campus_filter
-     *
-     * @return bool|null
-     */
-    public function getOnlyVisibleInCampusFilter()
-    {
-        return $this->container['only_visible_in_campus_filter'];
-    }
-
-    /**
-     * Sets only_visible_in_campus_filter
-     *
-     * @param bool|null $only_visible_in_campus_filter only_visible_in_campus_filter
-     *
-     * @return self
-     */
-    public function setOnlyVisibleInCampusFilter($only_visible_in_campus_filter)
-    {
-        $this->container['only_visible_in_campus_filter'] = $only_visible_in_campus_filter;
 
         return $this;
     }

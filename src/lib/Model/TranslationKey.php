@@ -61,8 +61,8 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'key' => 'string',
         'module' => 'string',
-        'updated' => '\DateTime',
-        'translations' => '\StevenBuehner\ChurchTools\Model\TranslationKeyTranslations'
+        'translations' => '\StevenBuehner\ChurchTools\Model\TranslationKeyTranslations',
+        'updated' => '\DateTime'
     ];
 
     /**
@@ -76,8 +76,8 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'key' => null,
         'module' => null,
-        'updated' => 'date-time',
-        'translations' => null
+        'translations' => null,
+        'updated' => 'date-time'
     ];
 
     /**
@@ -110,8 +110,8 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'key' => 'key',
         'module' => 'module',
-        'updated' => 'updated',
-        'translations' => 'translations'
+        'translations' => 'translations',
+        'updated' => 'updated'
     ];
 
     /**
@@ -123,8 +123,8 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'key' => 'setKey',
         'module' => 'setModule',
-        'updated' => 'setUpdated',
-        'translations' => 'setTranslations'
+        'translations' => 'setTranslations',
+        'updated' => 'setUpdated'
     ];
 
     /**
@@ -136,8 +136,8 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'key' => 'getKey',
         'module' => 'getModule',
-        'updated' => 'getUpdated',
-        'translations' => 'getTranslations'
+        'translations' => 'getTranslations',
+        'updated' => 'getUpdated'
     ];
 
     /**
@@ -200,8 +200,8 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['key'] = $data['key'] ?? null;
         $this->container['module'] = $data['module'] ?? null;
-        $this->container['updated'] = $data['updated'] ?? null;
         $this->container['translations'] = $data['translations'] ?? null;
+        $this->container['updated'] = $data['updated'] ?? null;
     }
 
     /**
@@ -301,30 +301,6 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets updated
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     *
-     * @param \DateTime|null $updated Last updated
-     *
-     * @return self
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
      * Gets translations
      *
      * @return \StevenBuehner\ChurchTools\Model\TranslationKeyTranslations|null
@@ -344,6 +320,30 @@ class TranslationKey implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTranslations($translations)
     {
         $this->container['translations'] = $translations;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     *
+     * @param \DateTime|null $updated Last updated
+     *
+     * @return self
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

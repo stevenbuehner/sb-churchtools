@@ -57,9 +57,9 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
         'email' => 'string',
-        'message' => 'string'
+        'message' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
         'email' => null,
-        'message' => null
+        'message' => null,
+        'name' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'email' => 'email',
-        'message' => 'message'
+        'message' => 'message',
+        'name' => 'name'
     ];
 
     /**
@@ -113,9 +113,9 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'email' => 'setEmail',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'name' => 'setName'
     ];
 
     /**
@@ -124,9 +124,9 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'email' => 'getEmail',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'name' => 'getName'
     ];
 
     /**
@@ -186,9 +186,9 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['message'] = $data['message'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -200,14 +200,14 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['email'] === null) {
             $invalidProperties[] = "'email' can't be null";
         }
         if ($this->container['message'] === null) {
             $invalidProperties[] = "'message' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,30 +223,6 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Name of the sender.
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets email
@@ -292,6 +268,30 @@ class PostPublicgroupsGroupIdMailToLeadersRequest implements ModelInterface, Arr
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Name of the sender.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

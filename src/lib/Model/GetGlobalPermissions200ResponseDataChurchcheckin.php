@@ -58,8 +58,8 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'view' => 'bool',
-        'create_person' => 'bool'
+        'create_person' => 'bool',
+        'view' => 'bool'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'view' => null,
-        'create_person' => null
+        'create_person' => null,
+        'view' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'view' => 'view',
-        'create_person' => 'create person'
+        'create_person' => 'create person',
+        'view' => 'view'
     ];
 
     /**
@@ -111,8 +111,8 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'view' => 'setView',
-        'create_person' => 'setCreatePerson'
+        'create_person' => 'setCreatePerson',
+        'view' => 'setView'
     ];
 
     /**
@@ -121,8 +121,8 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'view' => 'getView',
-        'create_person' => 'getCreatePerson'
+        'create_person' => 'getCreatePerson',
+        'view' => 'getView'
     ];
 
     /**
@@ -182,8 +182,8 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['view'] = $data['view'] ?? null;
         $this->container['create_person'] = $data['create_person'] ?? null;
+        $this->container['view'] = $data['view'] ?? null;
     }
 
     /**
@@ -211,30 +211,6 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
 
 
     /**
-     * Gets view
-     *
-     * @return bool|null
-     */
-    public function getView()
-    {
-        return $this->container['view'];
-    }
-
-    /**
-     * Sets view
-     *
-     * @param bool|null $view view
-     *
-     * @return self
-     */
-    public function setView($view)
-    {
-        $this->container['view'] = $view;
-
-        return $this;
-    }
-
-    /**
      * Gets create_person
      *
      * @return bool|null
@@ -254,6 +230,30 @@ class GetGlobalPermissions200ResponseDataChurchcheckin implements ModelInterface
     public function setCreatePerson($create_person)
     {
         $this->container['create_person'] = $create_person;
+
+        return $this;
+    }
+
+    /**
+     * Gets view
+     *
+     * @return bool|null
+     */
+    public function getView()
+    {
+        return $this->container['view'];
+    }
+
+    /**
+     * Sets view
+     *
+     * @param bool|null $view view
+     *
+     * @return self
+     */
+    public function setView($view)
+    {
+        $this->container['view'] = $view;
 
         return $this;
     }

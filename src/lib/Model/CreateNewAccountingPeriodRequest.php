@@ -58,10 +58,10 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'client_id' => 'int',
-        'start_date' => '\DateTime',
+        'copy_master_data' => 'bool',
         'end_date' => '\DateTime',
         'is_closed' => 'bool',
-        'copy_master_data' => 'bool'
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -73,10 +73,10 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPIFormats = [
         'client_id' => null,
-        'start_date' => 'date',
+        'copy_master_data' => null,
         'end_date' => 'date',
         'is_closed' => null,
-        'copy_master_data' => null
+        'start_date' => 'date'
     ];
 
     /**
@@ -107,10 +107,10 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
      */
     protected static $attributeMap = [
         'client_id' => 'clientId',
-        'start_date' => 'startDate',
+        'copy_master_data' => 'copyMasterData',
         'end_date' => 'endDate',
         'is_closed' => 'isClosed',
-        'copy_master_data' => 'copyMasterData'
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -120,10 +120,10 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
      */
     protected static $setters = [
         'client_id' => 'setClientId',
-        'start_date' => 'setStartDate',
+        'copy_master_data' => 'setCopyMasterData',
         'end_date' => 'setEndDate',
         'is_closed' => 'setIsClosed',
-        'copy_master_data' => 'setCopyMasterData'
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -133,10 +133,10 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
      */
     protected static $getters = [
         'client_id' => 'getClientId',
-        'start_date' => 'getStartDate',
+        'copy_master_data' => 'getCopyMasterData',
         'end_date' => 'getEndDate',
         'is_closed' => 'getIsClosed',
-        'copy_master_data' => 'getCopyMasterData'
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -197,10 +197,10 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
     public function __construct(array $data = null)
     {
         $this->container['client_id'] = $data['client_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['copy_master_data'] = $data['copy_master_data'] ?? false;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['is_closed'] = $data['is_closed'] ?? null;
-        $this->container['copy_master_data'] = $data['copy_master_data'] ?? false;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -215,14 +215,14 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
         if ($this->container['client_id'] === null) {
             $invalidProperties[] = "'client_id' can't be null";
         }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
         if ($this->container['end_date'] === null) {
             $invalidProperties[] = "'end_date' can't be null";
         }
         if ($this->container['is_closed'] === null) {
             $invalidProperties[] = "'is_closed' can't be null";
+        }
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -264,25 +264,25 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets start_date
+     * Gets copy_master_data
      *
-     * @return \DateTime
+     * @return bool|null
      */
-    public function getStartDate()
+    public function getCopyMasterData()
     {
-        return $this->container['start_date'];
+        return $this->container['copy_master_data'];
     }
 
     /**
-     * Sets start_date
+     * Sets copy_master_data
      *
-     * @param \DateTime $start_date start_date
+     * @param bool|null $copy_master_data Copy all master data from previous accounting period.
      *
      * @return self
      */
-    public function setStartDate($start_date)
+    public function setCopyMasterData($copy_master_data)
     {
-        $this->container['start_date'] = $start_date;
+        $this->container['copy_master_data'] = $copy_master_data;
 
         return $this;
     }
@@ -336,25 +336,25 @@ class CreateNewAccountingPeriodRequest implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets copy_master_data
+     * Gets start_date
      *
-     * @return bool|null
+     * @return \DateTime
      */
-    public function getCopyMasterData()
+    public function getStartDate()
     {
-        return $this->container['copy_master_data'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets copy_master_data
+     * Sets start_date
      *
-     * @param bool|null $copy_master_data Copy all master data from previous accounting period.
+     * @param \DateTime $start_date start_date
      *
      * @return self
      */
-    public function setCopyMasterData($copy_master_data)
+    public function setStartDate($start_date)
     {
-        $this->container['copy_master_data'] = $copy_master_data;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

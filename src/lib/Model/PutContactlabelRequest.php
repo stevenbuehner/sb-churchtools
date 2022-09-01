@@ -57,9 +57,9 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'is_default' => 'bool',
         'name' => 'string',
-        'sort_key' => 'int',
-        'is_default' => 'bool'
+        'sort_key' => 'int'
     ];
 
     /**
@@ -70,9 +70,9 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'is_default' => null,
         'name' => null,
-        'sort_key' => null,
-        'is_default' => null
+        'sort_key' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'is_default' => 'isDefault',
         'name' => 'name',
-        'sort_key' => 'sortKey',
-        'is_default' => 'isDefault'
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -113,9 +113,9 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'is_default' => 'setIsDefault',
         'name' => 'setName',
-        'sort_key' => 'setSortKey',
-        'is_default' => 'setIsDefault'
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -124,9 +124,9 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'is_default' => 'getIsDefault',
         'name' => 'getName',
-        'sort_key' => 'getSortKey',
-        'is_default' => 'getIsDefault'
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -186,9 +186,9 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
+        $this->container['is_default'] = $data['is_default'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['is_default'] = $data['is_default'] ?? null;
     }
 
     /**
@@ -200,14 +200,14 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
+        if ($this->container['is_default'] === null) {
+            $invalidProperties[] = "'is_default' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['sort_key'] === null) {
             $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['is_default'] === null) {
-            $invalidProperties[] = "'is_default' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,6 +223,30 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets is_default
+     *
+     * @return bool
+     */
+    public function getIsDefault()
+    {
+        return $this->container['is_default'];
+    }
+
+    /**
+     * Sets is_default
+     *
+     * @param bool $is_default Indicator if label is new default.
+     *
+     * @return self
+     */
+    public function setIsDefault($is_default)
+    {
+        $this->container['is_default'] = $is_default;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -268,30 +292,6 @@ class PutContactlabelRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default
-     *
-     * @return bool
-     */
-    public function getIsDefault()
-    {
-        return $this->container['is_default'];
-    }
-
-    /**
-     * Sets is_default
-     *
-     * @param bool $is_default Indicator if label is new default.
-     *
-     * @return self
-     */
-    public function setIsDefault($is_default)
-    {
-        $this->container['is_default'] = $is_default;
 
         return $this;
     }

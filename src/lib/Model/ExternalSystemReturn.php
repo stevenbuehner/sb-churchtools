@@ -57,10 +57,10 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'name' => 'string',
         'adapter' => 'string',
-        'job_configs_count' => 'int'
+        'id' => 'int',
+        'job_configs_count' => 'int',
+        'name' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
         'adapter' => null,
-        'job_configs_count' => null
+        'id' => null,
+        'job_configs_count' => null,
+        'name' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
         'adapter' => 'adapter',
-        'job_configs_count' => 'jobConfigsCount'
+        'id' => 'id',
+        'job_configs_count' => 'jobConfigsCount',
+        'name' => 'name'
     ];
 
     /**
@@ -116,10 +116,10 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
         'adapter' => 'setAdapter',
-        'job_configs_count' => 'setJobConfigsCount'
+        'id' => 'setId',
+        'job_configs_count' => 'setJobConfigsCount',
+        'name' => 'setName'
     ];
 
     /**
@@ -128,10 +128,10 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
         'adapter' => 'getAdapter',
-        'job_configs_count' => 'getJobConfigsCount'
+        'id' => 'getId',
+        'job_configs_count' => 'getJobConfigsCount',
+        'name' => 'getName'
     ];
 
     /**
@@ -191,10 +191,10 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['adapter'] = $data['adapter'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['job_configs_count'] = $data['job_configs_count'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -222,54 +222,6 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets id
-     *
-     * @return float|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param float|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets adapter
      *
      * @return string|null
@@ -294,6 +246,30 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets job_configs_count
      *
      * @return int|null
@@ -313,6 +289,30 @@ class ExternalSystemReturn implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setJobConfigsCount($job_configs_count)
     {
         $this->container['job_configs_count'] = $job_configs_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

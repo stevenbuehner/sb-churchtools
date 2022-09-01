@@ -4,9 +4,13 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getGroupForHomepage()**](GroupHomepageApi.md#getGroupForHomepage) | **GET** /publicgroups/{id}/{hash} | Public information of group
+[**getGroupForHomepage()**](GroupHomepageApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
 [**getGroupHomepage()**](GroupHomepageApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
+[**getGroupHomepages()**](GroupHomepageApi.md#getGroupHomepages) | **GET** /grouphomepages | Get all Grouphomepages
+[**getPublicGroupSignoutData()**](GroupHomepageApi.md#getPublicGroupSignoutData) | **GET** /publicgroups/{groupId}/signoutdata | 
+[**getPublicgroup()**](GroupHomepageApi.md#getPublicgroup) | **GET** /publicgroups/{groupId} | 
 [**getPublicgroupsGroupIdForm()**](GroupHomepageApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
+[**getPublicgroupsGroupIdPossiblerequesters()**](GroupHomepageApi.md#getPublicgroupsGroupIdPossiblerequesters) | **GET** /publicgroups/{groupId}/possiblerequesters | Your GET endpoint
 [**issueSignUpToken()**](GroupHomepageApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
 [**postPublicgroupsGroupIdMailToLeaders()**](GroupHomepageApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
 [**postPublicgroupsGroupIdSignup()**](GroupHomepageApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
@@ -15,7 +19,7 @@ Method | HTTP request | Description
 ## `getGroupForHomepage()`
 
 ```php
-getGroupForHomepage($hash, $id): \StevenBuehner\ChurchTools\Model\PublicGroup
+getGroupForHomepage($hash, $group_id): \StevenBuehner\ChurchTools\Model\PublicGroup1
 ```
 
 Public information of group
@@ -36,10 +40,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Group Homepage Hash
-$id = 'id_example'; // string | Group ID
+$group_id = 'group_id_example'; // string | Group ID
 
 try {
-    $result = $apiInstance->getGroupForHomepage($hash, $id);
+    $result = $apiInstance->getGroupForHomepage($hash, $group_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupHomepageApi->getGroupForHomepage: ', $e->getMessage(), PHP_EOL;
@@ -51,11 +55,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **hash** | **string**| Group Homepage Hash |
- **id** | **string**| Group ID |
+ **group_id** | **string**| Group ID |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\PublicGroup**](../Model/PublicGroup.md)
+[**\StevenBuehner\ChurchTools\Model\PublicGroup1**](../Model/PublicGroup1.md)
 
 ### Authorization
 
@@ -87,7 +91,7 @@ Get all information necessary to display public groups. The response will provid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -121,7 +125,184 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupHomepages()`
+
+```php
+getGroupHomepages(): \StevenBuehner\ChurchTools\Model\GetGroupHomepages200Response
+```
+
+Get all Grouphomepages
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getGroupHomepages();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupHomepageApi->getGroupHomepages: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupHomepages200Response**](../Model/GetGroupHomepages200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPublicGroupSignoutData()`
+
+```php
+getPublicGroupSignoutData($group_id): \StevenBuehner\ChurchTools\Model\GetPublicGroupSignoutData200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+
+try {
+    $result = $apiInstance->getPublicGroupSignoutData($group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupHomepageApi->getPublicGroupSignoutData: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **string**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetPublicGroupSignoutData200Response**](../Model/GetPublicGroupSignoutData200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPublicgroup()`
+
+```php
+getPublicgroup($group_id): \StevenBuehner\ChurchTools\Model\GetPublicgroup200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+
+try {
+    $result = $apiInstance->getPublicgroup($group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupHomepageApi->getPublicgroup: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **string**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetPublicgroup200Response**](../Model/GetPublicgroup200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -192,6 +373,70 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPublicgroupsGroupIdPossiblerequesters()`
+
+```php
+getPublicgroupsGroupIdPossiblerequesters($group_id, $token): \StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdPossiblerequesters200Response
+```
+
+Your GET endpoint
+
+Get a list of persons which could be the requester of the signup. More than one is possible because signup wirks with emails and they are not unique in ChurchTools
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$token = 'token_example'; // string | The signup token for the registration
+
+try {
+    $result = $apiInstance->getPublicgroupsGroupIdPossiblerequesters($group_id, $token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupHomepageApi->getPublicgroupsGroupIdPossiblerequesters: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **string**|  |
+ **token** | **string**| The signup token for the registration |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdPossiblerequesters200Response**](../Model/GetPublicgroupsGroupIdPossiblerequesters200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `issueSignUpToken()`
 
 ```php
@@ -215,8 +460,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$group_id = 3.4; // float | Group id of public group
-$issue_sign_up_token_request = {"personId":1,"clicked":[1,2],"groupHomepageHash":"kukiOq4WofxbacqWFEa3FgbioX0kUr6p"}; // \StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest | You MUST provide either `personId` OR `email`. Both fields cannot be present at the same time.
+$group_id = 56; // int | Group id of public group
+$issue_sign_up_token_request = {"email":"jean-de-martin@rau-en.fr","groupHomepageHash":"kukiOq4WofxbacqWFEa3FgbioX0kUr6p"}; // \StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest | You MUST provide either `personId` OR `email`. Both fields cannot be present at the same time.
 
 try {
     $result = $apiInstance->issueSignUpToken($group_id, $issue_sign_up_token_request);
@@ -230,7 +475,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **float**| Group id of public group |
+ **group_id** | **int**| Group id of public group |
  **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional]
 
 ### Return type

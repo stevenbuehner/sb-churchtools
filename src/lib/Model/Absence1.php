@@ -58,13 +58,13 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'absence_reason' => '\StevenBuehner\ChurchTools\Model\EventMasterData1DataAbsenceReasonsInner',
         'comment' => 'string',
-        'absence_reason' => '\StevenBuehner\ChurchTools\Model\AbsenceReason',
-        'start_time' => '\DateTime',
+        'end_date' => '\DateTime',
         'end_time' => '\DateTime',
+        'id' => 'int',
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'start_time' => '\DateTime'
     ];
 
     /**
@@ -75,13 +75,13 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'comment' => null,
         'absence_reason' => null,
-        'start_time' => 'date-time',
+        'comment' => null,
+        'end_date' => 'date',
         'end_time' => 'date-time',
+        'id' => null,
         'start_date' => 'date',
-        'end_date' => 'date'
+        'start_time' => 'date-time'
     ];
 
     /**
@@ -111,13 +111,13 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'comment' => 'comment',
         'absence_reason' => 'absenceReason',
-        'start_time' => 'startTime',
+        'comment' => 'comment',
+        'end_date' => 'endDate',
         'end_time' => 'endTime',
+        'id' => 'id',
         'start_date' => 'startDate',
-        'end_date' => 'endDate'
+        'start_time' => 'startTime'
     ];
 
     /**
@@ -126,13 +126,13 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'comment' => 'setComment',
         'absence_reason' => 'setAbsenceReason',
-        'start_time' => 'setStartTime',
+        'comment' => 'setComment',
+        'end_date' => 'setEndDate',
         'end_time' => 'setEndTime',
+        'id' => 'setId',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'start_time' => 'setStartTime'
     ];
 
     /**
@@ -141,13 +141,13 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'comment' => 'getComment',
         'absence_reason' => 'getAbsenceReason',
-        'start_time' => 'getStartTime',
+        'comment' => 'getComment',
+        'end_date' => 'getEndDate',
         'end_time' => 'getEndTime',
+        'id' => 'getId',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'start_time' => 'getStartTime'
     ];
 
     /**
@@ -207,13 +207,13 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['absence_reason'] = $data['absence_reason'] ?? null;
-        $this->container['start_time'] = $data['start_time'] ?? null;
-        $this->container['end_time'] = $data['end_time'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['end_time'] = $data['end_time'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['start_time'] = $data['start_time'] ?? null;
     }
 
     /**
@@ -225,20 +225,20 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['absence_reason'] === null) {
+            $invalidProperties[] = "'absence_reason' can't be null";
         }
         if ($this->container['comment'] === null) {
             $invalidProperties[] = "'comment' can't be null";
         }
-        if ($this->container['absence_reason'] === null) {
-            $invalidProperties[] = "'absence_reason' can't be null";
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
         if ($this->container['start_date'] === null) {
             $invalidProperties[] = "'start_date' can't be null";
-        }
-        if ($this->container['end_date'] === null) {
-            $invalidProperties[] = "'end_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -256,25 +256,25 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets absence_reason
      *
-     * @return int
+     * @return \StevenBuehner\ChurchTools\Model\EventMasterData1DataAbsenceReasonsInner
      */
-    public function getId()
+    public function getAbsenceReason()
     {
-        return $this->container['id'];
+        return $this->container['absence_reason'];
     }
 
     /**
-     * Sets id
+     * Sets absence_reason
      *
-     * @param int $id ID of Record
+     * @param \StevenBuehner\ChurchTools\Model\EventMasterData1DataAbsenceReasonsInner $absence_reason absence_reason
      *
      * @return self
      */
-    public function setId($id)
+    public function setAbsenceReason($absence_reason)
     {
-        $this->container['id'] = $id;
+        $this->container['absence_reason'] = $absence_reason;
 
         return $this;
     }
@@ -304,49 +304,25 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets absence_reason
+     * Gets end_date
      *
-     * @return \StevenBuehner\ChurchTools\Model\AbsenceReason
+     * @return \DateTime
      */
-    public function getAbsenceReason()
+    public function getEndDate()
     {
-        return $this->container['absence_reason'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets absence_reason
+     * Sets end_date
      *
-     * @param \StevenBuehner\ChurchTools\Model\AbsenceReason $absence_reason absence_reason
+     * @param \DateTime $end_date When this absence ends.
      *
      * @return self
      */
-    public function setAbsenceReason($absence_reason)
+    public function setEndDate($end_date)
     {
-        $this->container['absence_reason'] = $absence_reason;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_time
-     *
-     * @return \DateTime|null
-     */
-    public function getStartTime()
-    {
-        return $this->container['start_time'];
-    }
-
-    /**
-     * Sets start_time
-     *
-     * @param \DateTime|null $start_time When this absence begins. Is null if absence is all-day.
-     *
-     * @return self
-     */
-    public function setStartTime($start_time)
-    {
-        $this->container['start_time'] = $start_time;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }
@@ -376,6 +352,30 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id ID of Record
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets start_date
      *
      * @return \DateTime
@@ -400,25 +400,25 @@ class Absence1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets end_date
+     * Gets start_time
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
-    public function getEndDate()
+    public function getStartTime()
     {
-        return $this->container['end_date'];
+        return $this->container['start_time'];
     }
 
     /**
-     * Sets end_date
+     * Sets start_time
      *
-     * @param \DateTime $end_date When this absence ends.
+     * @param \DateTime|null $start_time When this absence begins. Is null if absence is all-day.
      *
      * @return self
      */
-    public function setEndDate($end_date)
+    public function setStartTime($start_time)
     {
-        $this->container['end_date'] = $end_date;
+        $this->container['start_time'] = $start_time;
 
         return $this;
     }

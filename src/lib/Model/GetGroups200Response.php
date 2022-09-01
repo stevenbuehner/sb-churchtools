@@ -57,8 +57,8 @@ class GetGroups200Response implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GroupsIdDelete200ResponseData[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInner[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta'
     ];
 
     /**
@@ -212,7 +212,7 @@ class GetGroups200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GroupsIdDelete200ResponseData[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInner[]|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class GetGroups200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GroupsIdDelete200ResponseData[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInner[]|null $data data
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class GetGroups200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetGroups200Response implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null $meta meta
      *
      * @return self
      */

@@ -58,8 +58,8 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'view_resource' => 'float[]',
-        'create_bookings' => 'float[]'
+        'create_bookings' => 'int[]',
+        'view_resource' => 'int[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'view_resource' => null,
-        'create_bookings' => null
+        'create_bookings' => null,
+        'view_resource' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        'view_resource' => 'view resource',
-        'create_bookings' => 'create bookings'
+        'create_bookings' => 'create bookings',
+        'view_resource' => 'view resource'
     ];
 
     /**
@@ -111,8 +111,8 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        'view_resource' => 'setViewResource',
-        'create_bookings' => 'setCreateBookings'
+        'create_bookings' => 'setCreateBookings',
+        'view_resource' => 'setViewResource'
     ];
 
     /**
@@ -121,8 +121,8 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        'view_resource' => 'getViewResource',
-        'create_bookings' => 'getCreateBookings'
+        'create_bookings' => 'getCreateBookings',
+        'view_resource' => 'getViewResource'
     ];
 
     /**
@@ -182,8 +182,8 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
      */
     public function __construct(array $data = null)
     {
-        $this->container['view_resource'] = $data['view_resource'] ?? null;
         $this->container['create_bookings'] = $data['create_bookings'] ?? null;
+        $this->container['view_resource'] = $data['view_resource'] ?? null;
     }
 
     /**
@@ -211,33 +211,9 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
 
 
     /**
-     * Gets view_resource
-     *
-     * @return float[]|null
-     */
-    public function getViewResource()
-    {
-        return $this->container['view_resource'];
-    }
-
-    /**
-     * Sets view_resource
-     *
-     * @param float[]|null $view_resource view_resource
-     *
-     * @return self
-     */
-    public function setViewResource($view_resource)
-    {
-        $this->container['view_resource'] = $view_resource;
-
-        return $this;
-    }
-
-    /**
      * Gets create_bookings
      *
-     * @return float[]|null
+     * @return int[]|null
      */
     public function getCreateBookings()
     {
@@ -247,13 +223,37 @@ class GetGlobalPermissions200ResponseDataChurchresource implements ModelInterfac
     /**
      * Sets create_bookings
      *
-     * @param float[]|null $create_bookings create_bookings
+     * @param int[]|null $create_bookings create_bookings
      *
      * @return self
      */
     public function setCreateBookings($create_bookings)
     {
         $this->container['create_bookings'] = $create_bookings;
+
+        return $this;
+    }
+
+    /**
+     * Gets view_resource
+     *
+     * @return int[]|null
+     */
+    public function getViewResource()
+    {
+        return $this->container['view_resource'];
+    }
+
+    /**
+     * Sets view_resource
+     *
+     * @param int[]|null $view_resource view_resource
+     *
+     * @return self
+     */
+    public function setViewResource($view_resource)
+    {
+        $this->container['view_resource'] = $view_resource;
 
         return $this;
     }

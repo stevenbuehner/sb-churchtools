@@ -57,12 +57,12 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
         'account_class_id' => 'int',
+        'id' => 'int',
         'is_cash_asset_account' => 'bool',
-        'sort_key' => 'int',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'name' => 'string',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -73,12 +73,12 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
         'account_class_id' => null,
+        'id' => null,
         'is_cash_asset_account' => null,
-        'sort_key' => null,
-        'meta' => null
+        'meta' => null,
+        'name' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
         'account_class_id' => 'accountClassId',
+        'id' => 'id',
         'is_cash_asset_account' => 'isCashAssetAccount',
-        'sort_key' => 'sortKey',
-        'meta' => 'meta'
+        'meta' => 'meta',
+        'name' => 'name',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -122,12 +122,12 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
         'account_class_id' => 'setAccountClassId',
+        'id' => 'setId',
         'is_cash_asset_account' => 'setIsCashAssetAccount',
-        'sort_key' => 'setSortKey',
-        'meta' => 'setMeta'
+        'meta' => 'setMeta',
+        'name' => 'setName',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -136,12 +136,12 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
         'account_class_id' => 'getAccountClassId',
+        'id' => 'getId',
         'is_cash_asset_account' => 'getIsCashAssetAccount',
-        'sort_key' => 'getSortKey',
-        'meta' => 'getMeta'
+        'meta' => 'getMeta',
+        'name' => 'getName',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -201,12 +201,12 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['account_class_id'] = $data['account_class_id'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_cash_asset_account'] = $data['is_cash_asset_account'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? 0;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? 0;
     }
 
     /**
@@ -234,54 +234,6 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets account_class_id
      *
      * @return int|null
@@ -301,6 +253,30 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAccountClassId($account_class_id)
     {
         $this->container['account_class_id'] = $account_class_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -330,6 +306,54 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * Gets sort_key
      *
      * @return int|null
@@ -349,30 +373,6 @@ class AccountGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

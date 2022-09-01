@@ -57,10 +57,10 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'token' => 'string',
-        'group' => 'object',
-        'requester_id' => 'float',
         'email' => 'string',
+        'group' => 'object',
+        'requester_id' => 'int',
+        'token' => 'string',
         'url' => 'string'
     ];
 
@@ -72,10 +72,10 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'token' => null,
+        'email' => null,
         'group' => null,
         'requester_id' => null,
-        'email' => null,
+        'token' => null,
         'url' => null
     ];
 
@@ -106,10 +106,10 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'token' => 'token',
+        'email' => 'email',
         'group' => 'group',
         'requester_id' => 'requesterId',
-        'email' => 'email',
+        'token' => 'token',
         'url' => 'url'
     ];
 
@@ -119,10 +119,10 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'token' => 'setToken',
+        'email' => 'setEmail',
         'group' => 'setGroup',
         'requester_id' => 'setRequesterId',
-        'email' => 'setEmail',
+        'token' => 'setToken',
         'url' => 'setUrl'
     ];
 
@@ -132,10 +132,10 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'token' => 'getToken',
+        'email' => 'getEmail',
         'group' => 'getGroup',
         'requester_id' => 'getRequesterId',
-        'email' => 'getEmail',
+        'token' => 'getToken',
         'url' => 'getUrl'
     ];
 
@@ -196,10 +196,10 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['token'] = $data['token'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
         $this->container['group'] = $data['group'] ?? null;
         $this->container['requester_id'] = $data['requester_id'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
+        $this->container['token'] = $data['token'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
     }
 
@@ -228,25 +228,25 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets token
+     * Gets email
      *
      * @return string|null
      */
-    public function getToken()
+    public function getEmail()
     {
-        return $this->container['token'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets token
+     * Sets email
      *
-     * @param string|null $token Sign Up Token
+     * @param string|null $email Provide eMail
      *
      * @return self
      */
-    public function setToken($token)
+    public function setEmail($email)
     {
-        $this->container['token'] = $token;
+        $this->container['email'] = $email;
 
         return $this;
     }
@@ -278,7 +278,7 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets requester_id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getRequesterId()
     {
@@ -288,7 +288,7 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets requester_id
      *
-     * @param float|null $requester_id Provided PersonId
+     * @param int|null $requester_id Provided PersonId
      *
      * @return self
      */
@@ -300,25 +300,25 @@ class IssueSignUpToken200ResponseData implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets email
+     * Gets token
      *
      * @return string|null
      */
-    public function getEmail()
+    public function getToken()
     {
-        return $this->container['email'];
+        return $this->container['token'];
     }
 
     /**
-     * Sets email
+     * Sets token
      *
-     * @param string|null $email Provide eMail
+     * @param string|null $token Sign Up Token
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setToken($token)
     {
-        $this->container['email'] = $email;
+        $this->container['token'] = $token;
 
         return $this;
     }

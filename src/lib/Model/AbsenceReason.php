@@ -49,7 +49,7 @@ class AbsenceReason implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Absence_Reason';
+    protected static $openAPIModelName = 'AbsenceReason';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

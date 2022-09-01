@@ -4,14 +4,77 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getGroupsGroupIdTags()**](TagApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags
 [**getTags()**](TagApi.md#getTags) | **GET** /tags | Get all tags of a type
 [**saveTag()**](TagApi.md#saveTag) | **POST** /tags | Create new tag
 
 
+## `getGroupsGroupIdTags()`
+
+```php
+getGroupsGroupIdTags($group_id): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response
+```
+
+Fetch group tags
+
+Get tags for the specific group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\TagApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 42; // int | ID of group
+
+try {
+    $result = $apiInstance->getGroupsGroupIdTags($group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TagApi->getGroupsGroupIdTags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **int**| ID of group |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response**](../Model/GetGroupsGroupIdTags200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getTags()`
 
 ```php
-getTags($type): \StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]
+getTags($type): \StevenBuehner\ChurchTools\Model\GetTags200Response
 ```
 
 Get all tags of a type
@@ -25,7 +88,7 @@ Returns all tags of type persons or songs
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -55,11 +118,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetPersonTags200ResponseDataInner[]**](../Model/GetPersonTags200ResponseDataInner.md)
+[**\StevenBuehner\ChurchTools\Model\GetTags200Response**](../Model/GetTags200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -85,7 +148,7 @@ Create new tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -119,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

@@ -57,8 +57,8 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start_date' => 'string',
-        'end_date' => '\DateTime'
+        'end_date' => '\DateTime',
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start_date' => null,
-        'end_date' => 'date-time'
+        'end_date' => 'date-time',
+        'start_date' => 'date-time'
     ];
 
     /**
@@ -100,8 +100,8 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'start_date' => 'startDate',
-        'end_date' => 'endDate'
+        'end_date' => 'endDate',
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -110,8 +110,8 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -120,8 +120,8 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -181,8 +181,8 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
 
 
     /**
-     * Gets start_date
-     *
-     * @return string|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param string|null $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
      * Gets end_date
      *
      * @return \DateTime|null
@@ -253,6 +229,30 @@ class GetBookings200ResponseDataInnerCalculated implements ModelInterface, Array
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime|null $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

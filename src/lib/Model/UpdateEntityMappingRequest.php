@@ -57,12 +57,12 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'source_entity_id' => 'string',
-        'status' => 'string',
-        'last_synced_date' => '\DateTime',
-        'source_id' => 'float',
+        'domain_id' => 'string',
         'domain_type' => 'string',
-        'domain_id' => 'string'
+        'last_synced_date' => '\DateTime',
+        'source_entity_id' => 'string',
+        'source_id' => 'int',
+        'status' => 'string'
     ];
 
     /**
@@ -73,12 +73,12 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'source_entity_id' => null,
-        'status' => null,
-        'last_synced_date' => 'date-time',
-        'source_id' => null,
+        'domain_id' => null,
         'domain_type' => null,
-        'domain_id' => null
+        'last_synced_date' => 'date-time',
+        'source_entity_id' => null,
+        'source_id' => null,
+        'status' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_entity_id' => 'sourceEntityId',
-        'status' => 'status',
-        'last_synced_date' => 'lastSyncedDate',
-        'source_id' => 'sourceId',
+        'domain_id' => 'domainId',
         'domain_type' => 'domainType',
-        'domain_id' => 'domainId'
+        'last_synced_date' => 'lastSyncedDate',
+        'source_entity_id' => 'sourceEntityId',
+        'source_id' => 'sourceId',
+        'status' => 'status'
     ];
 
     /**
@@ -122,12 +122,12 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'source_entity_id' => 'setSourceEntityId',
-        'status' => 'setStatus',
-        'last_synced_date' => 'setLastSyncedDate',
-        'source_id' => 'setSourceId',
+        'domain_id' => 'setDomainId',
         'domain_type' => 'setDomainType',
-        'domain_id' => 'setDomainId'
+        'last_synced_date' => 'setLastSyncedDate',
+        'source_entity_id' => 'setSourceEntityId',
+        'source_id' => 'setSourceId',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -136,12 +136,12 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'source_entity_id' => 'getSourceEntityId',
-        'status' => 'getStatus',
-        'last_synced_date' => 'getLastSyncedDate',
-        'source_id' => 'getSourceId',
+        'domain_id' => 'getDomainId',
         'domain_type' => 'getDomainType',
-        'domain_id' => 'getDomainId'
+        'last_synced_date' => 'getLastSyncedDate',
+        'source_entity_id' => 'getSourceEntityId',
+        'source_id' => 'getSourceId',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -218,12 +218,12 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['last_synced_date'] = $data['last_synced_date'] ?? null;
-        $this->container['source_id'] = $data['source_id'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['last_synced_date'] = $data['last_synced_date'] ?? null;
+        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
+        $this->container['source_id'] = $data['source_id'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -235,6 +235,9 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
+        if ($this->container['last_synced_date'] === null) {
+            $invalidProperties[] = "'last_synced_date' can't be null";
+        }
         if ($this->container['source_entity_id'] === null) {
             $invalidProperties[] = "'source_entity_id' can't be null";
         }
@@ -250,9 +253,6 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
             );
         }
 
-        if ($this->container['last_synced_date'] === null) {
-            $invalidProperties[] = "'last_synced_date' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -267,6 +267,78 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets domain_id
+     *
+     * @return string|null
+     */
+    public function getDomainId()
+    {
+        return $this->container['domain_id'];
+    }
+
+    /**
+     * Sets domain_id
+     *
+     * @param string|null $domain_id Domain Id of ChurchTools Entity
+     *
+     * @return self
+     */
+    public function setDomainId($domain_id)
+    {
+        $this->container['domain_id'] = $domain_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_type
+     *
+     * @return string|null
+     */
+    public function getDomainType()
+    {
+        return $this->container['domain_type'];
+    }
+
+    /**
+     * Sets domain_type
+     *
+     * @param string|null $domain_type ChurchTools Domain Type
+     *
+     * @return self
+     */
+    public function setDomainType($domain_type)
+    {
+        $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_synced_date
+     *
+     * @return \DateTime
+     */
+    public function getLastSyncedDate()
+    {
+        return $this->container['last_synced_date'];
+    }
+
+    /**
+     * Sets last_synced_date
+     *
+     * @param \DateTime $last_synced_date DateTime of Last Synchronisation in Zulu Format
+     *
+     * @return self
+     */
+    public function setLastSyncedDate($last_synced_date)
+    {
+        $this->container['last_synced_date'] = $last_synced_date;
+
+        return $this;
+    }
 
     /**
      * Gets source_entity_id
@@ -288,6 +360,30 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
     public function setSourceEntityId($source_entity_id)
     {
         $this->container['source_entity_id'] = $source_entity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     *
+     * @return int|null
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     *
+     * @param int|null $source_id Id of Source
+     *
+     * @return self
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -322,102 +418,6 @@ class UpdateEntityMappingRequest implements ModelInterface, ArrayAccess, \JsonSe
             );
         }
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_synced_date
-     *
-     * @return \DateTime
-     */
-    public function getLastSyncedDate()
-    {
-        return $this->container['last_synced_date'];
-    }
-
-    /**
-     * Sets last_synced_date
-     *
-     * @param \DateTime $last_synced_date DateTime of Last Synchronisation in Zulu Format
-     *
-     * @return self
-     */
-    public function setLastSyncedDate($last_synced_date)
-    {
-        $this->container['last_synced_date'] = $last_synced_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_id
-     *
-     * @return float|null
-     */
-    public function getSourceId()
-    {
-        return $this->container['source_id'];
-    }
-
-    /**
-     * Sets source_id
-     *
-     * @param float|null $source_id Id of Source
-     *
-     * @return self
-     */
-    public function setSourceId($source_id)
-    {
-        $this->container['source_id'] = $source_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_type
-     *
-     * @return string|null
-     */
-    public function getDomainType()
-    {
-        return $this->container['domain_type'];
-    }
-
-    /**
-     * Sets domain_type
-     *
-     * @param string|null $domain_type ChurchTools Domain Type
-     *
-     * @return self
-     */
-    public function setDomainType($domain_type)
-    {
-        $this->container['domain_type'] = $domain_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_id
-     *
-     * @return string|null
-     */
-    public function getDomainId()
-    {
-        return $this->container['domain_id'];
-    }
-
-    /**
-     * Sets domain_id
-     *
-     * @param string|null $domain_id Domain Id of ChurchTools Entity
-     *
-     * @return self
-     */
-    public function setDomainId($domain_id)
-    {
-        $this->container['domain_id'] = $domain_id;
 
         return $this;
     }

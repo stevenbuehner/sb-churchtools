@@ -57,8 +57,8 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'has_email' => 'bool',
         'can_chat' => 'bool',
+        'has_email' => 'bool',
         'invitation_status' => 'string',
         'is_saml_user' => 'bool'
     ];
@@ -71,8 +71,8 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'has_email' => null,
         'can_chat' => null,
+        'has_email' => null,
         'invitation_status' => null,
         'is_saml_user' => null
     ];
@@ -104,8 +104,8 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'has_email' => 'hasEmail',
         'can_chat' => 'canChat',
+        'has_email' => 'hasEmail',
         'invitation_status' => 'invitationStatus',
         'is_saml_user' => 'isSamlUser'
     ];
@@ -116,8 +116,8 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'has_email' => 'setHasEmail',
         'can_chat' => 'setCanChat',
+        'has_email' => 'setHasEmail',
         'invitation_status' => 'setInvitationStatus',
         'is_saml_user' => 'setIsSamlUser'
     ];
@@ -128,8 +128,8 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'has_email' => 'getHasEmail',
         'can_chat' => 'getCanChat',
+        'has_email' => 'getHasEmail',
         'invitation_status' => 'getInvitationStatus',
         'is_saml_user' => 'getIsSamlUser'
     ];
@@ -191,8 +191,8 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['has_email'] = $data['has_email'] ?? null;
         $this->container['can_chat'] = $data['can_chat'] ?? null;
+        $this->container['has_email'] = $data['has_email'] ?? null;
         $this->container['invitation_status'] = $data['invitation_status'] ?? null;
         $this->container['is_saml_user'] = $data['is_saml_user'] ?? null;
     }
@@ -222,30 +222,6 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets has_email
-     *
-     * @return bool|null
-     */
-    public function getHasEmail()
-    {
-        return $this->container['has_email'];
-    }
-
-    /**
-     * Sets has_email
-     *
-     * @param bool|null $has_email has_email
-     *
-     * @return self
-     */
-    public function setHasEmail($has_email)
-    {
-        $this->container['has_email'] = $has_email;
-
-        return $this;
-    }
-
-    /**
      * Gets can_chat
      *
      * @return bool|null
@@ -265,6 +241,30 @@ class GetPersonProperties200ResponseData1 implements ModelInterface, ArrayAccess
     public function setCanChat($can_chat)
     {
         $this->container['can_chat'] = $can_chat;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_email
+     *
+     * @return bool|null
+     */
+    public function getHasEmail()
+    {
+        return $this->container['has_email'];
+    }
+
+    /**
+     * Sets has_email
+     *
+     * @param bool|null $has_email has_email
+     *
+     * @return self
+     */
+    public function setHasEmail($has_email)
+    {
+        $this->container['has_email'] = $has_email;
 
         return $this;
     }

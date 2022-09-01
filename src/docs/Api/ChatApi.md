@@ -4,70 +4,11 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chatGuidDelete()**](ChatApi.md#chatGuidDelete) | **DELETE** /chat/{guid} | Delete a chat
 [**createNewChat()**](ChatApi.md#createNewChat) | **POST** /chat | Start new chat
+[**deleteChat()**](ChatApi.md#deleteChat) | **DELETE** /chat/{guid} | Delete a chat
 [**getAllChats()**](ChatApi.md#getAllChats) | **GET** /chat | Get all chats
 [**updateChat()**](ChatApi.md#updateChat) | **PATCH** /chat/{guid} | Update a chat
 
-
-## `chatGuidDelete()`
-
-```php
-chatGuidDelete($guid)
-```
-
-Delete a chat
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\ChatApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$guid = 681F54E3-2EB7-40A4-84F0-EFF8E8F05727; // string | chat GUID
-
-try {
-    $apiInstance->chatGuidDelete($guid);
-} catch (Exception $e) {
-    echo 'Exception when calling ChatApi->chatGuidDelete: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guid** | **string**| chat GUID |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
 
 ## `createNewChat()`
 
@@ -84,7 +25,7 @@ Start new chat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -118,12 +59,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteChat()`
+
+```php
+deleteChat($guid)
+```
+
+Delete a chat
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\ChatApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$guid = 681F54E3-2EB7-40A4-84F0-EFF8E8F05727; // string | GUID for Entity
+
+try {
+    $apiInstance->deleteChat($guid);
+} catch (Exception $e) {
+    echo 'Exception when calling ChatApi->deleteChat: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guid** | **string**| GUID for Entity |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -146,7 +146,7 @@ Gets a list of all chats
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -177,7 +177,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -203,7 +203,7 @@ Update a chat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -215,7 +215,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ChatApi(
     new GuzzleHttp\Client(),
     $config
 );
-$guid = 681F54E3-2EB7-40A4-84F0-EFF8E8F05727; // string | chat GUID
+$guid = 681F54E3-2EB7-40A4-84F0-EFF8E8F05727; // string | GUID for Entity
 $update_chat_request = new \StevenBuehner\ChurchTools\Model\UpdateChatRequest(); // \StevenBuehner\ChurchTools\Model\UpdateChatRequest | data to update
 
 try {
@@ -230,7 +230,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guid** | **string**| chat GUID |
+ **guid** | **string**| GUID for Entity |
  **update_chat_request** | [**\StevenBuehner\ChurchTools\Model\UpdateChatRequest**](../Model/UpdateChatRequest.md)| data to update |
 
 ### Return type
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

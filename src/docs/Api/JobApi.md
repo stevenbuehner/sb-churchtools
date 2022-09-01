@@ -22,7 +22,7 @@ Your GET endpoint
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -34,10 +34,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\JobApi(
     new GuzzleHttp\Client(),
     $config
 );
-$status = NULL; // array
+$status = array('status_example'); // string[]
 $identifier = 'identifier_example'; // string
 $name = 'name_example'; // string
-$domain_ids = NULL; // array
+$domain_ids = array(56); // int[]
 $created_start_date = 'created_start_date_example'; // string
 $created_end_date = 'created_end_date_example'; // string
 $modified_start_date = 'modified_start_date_example'; // string
@@ -55,10 +55,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**array**](../Model/.md)|  | [optional]
+ **status** | [**string[]**](../Model/string.md)|  | [optional]
  **identifier** | **string**|  | [optional]
  **name** | **string**|  | [optional]
- **domain_ids** | [**array**](../Model/.md)|  | [optional]
+ **domain_ids** | [**int[]**](../Model/int.md)|  | [optional]
  **created_start_date** | **string**|  | [optional]
  **created_end_date** | **string**|  | [optional]
  **modified_start_date** | **string**|  | [optional]
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

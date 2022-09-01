@@ -57,11 +57,10 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'group' => '\StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroup',
+        'group' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup',
         'group_type_role_id' => 'int',
-        'comment' => 'string',
-        'member_start_date' => '\DateTime',
-        'member_end_date' => '\DateTime'
+        'member_end_date' => '\DateTime',
+        'member_start_date' => '\DateTime'
     ];
 
     /**
@@ -74,9 +73,8 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'group' => null,
         'group_type_role_id' => null,
-        'comment' => null,
-        'member_start_date' => 'date',
-        'member_end_date' => 'date'
+        'member_end_date' => 'date',
+        'member_start_date' => 'date'
     ];
 
     /**
@@ -108,9 +106,8 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'group' => 'group',
         'group_type_role_id' => 'groupTypeRoleId',
-        'comment' => 'comment',
-        'member_start_date' => 'memberStartDate',
-        'member_end_date' => 'memberEndDate'
+        'member_end_date' => 'memberEndDate',
+        'member_start_date' => 'memberStartDate'
     ];
 
     /**
@@ -121,9 +118,8 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'group' => 'setGroup',
         'group_type_role_id' => 'setGroupTypeRoleId',
-        'comment' => 'setComment',
-        'member_start_date' => 'setMemberStartDate',
-        'member_end_date' => 'setMemberEndDate'
+        'member_end_date' => 'setMemberEndDate',
+        'member_start_date' => 'setMemberStartDate'
     ];
 
     /**
@@ -134,9 +130,8 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'group' => 'getGroup',
         'group_type_role_id' => 'getGroupTypeRoleId',
-        'comment' => 'getComment',
-        'member_start_date' => 'getMemberStartDate',
-        'member_end_date' => 'getMemberEndDate'
+        'member_end_date' => 'getMemberEndDate',
+        'member_start_date' => 'getMemberStartDate'
     ];
 
     /**
@@ -198,9 +193,8 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['group'] = $data['group'] ?? null;
         $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
         $this->container['member_end_date'] = $data['member_end_date'] ?? null;
+        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
     }
 
     /**
@@ -230,7 +224,7 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroup|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null
      */
     public function getGroup()
     {
@@ -240,7 +234,7 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroup|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null $group group
      *
      * @return self
      */
@@ -276,25 +270,25 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets comment
+     * Gets member_end_date
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getComment()
+    public function getMemberEndDate()
     {
-        return $this->container['comment'];
+        return $this->container['member_end_date'];
     }
 
     /**
-     * Sets comment
+     * Sets member_end_date
      *
-     * @param string|null $comment comment
+     * @param \DateTime|null $member_end_date member_end_date
      *
      * @return self
      */
-    public function setComment($comment)
+    public function setMemberEndDate($member_end_date)
     {
-        $this->container['comment'] = $comment;
+        $this->container['member_end_date'] = $member_end_date;
 
         return $this;
     }
@@ -319,30 +313,6 @@ class GroupsForPerson implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMemberStartDate($member_start_date)
     {
         $this->container['member_start_date'] = $member_start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets member_end_date
-     *
-     * @return \DateTime|null
-     */
-    public function getMemberEndDate()
-    {
-        return $this->container['member_end_date'];
-    }
-
-    /**
-     * Sets member_end_date
-     *
-     * @param \DateTime|null $member_end_date member_end_date
-     *
-     * @return self
-     */
-    public function setMemberEndDate($member_end_date)
-    {
-        $this->container['member_end_date'] = $member_end_date;
 
         return $this;
     }

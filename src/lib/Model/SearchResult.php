@@ -58,14 +58,14 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'domain_type' => 'string',
-        'domain_identifier' => 'string',
         'api_url' => 'string',
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\SearchResult1DomainAttributes',
+        'domain_identifier' => 'string',
+        'domain_type' => 'string',
         'frontend_url' => 'string',
         'image_url' => 'string',
-        'domain_attributes' => 'object',
-        'preview' => 'string'
+        'preview' => 'string',
+        'title' => 'string'
     ];
 
     /**
@@ -76,14 +76,14 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'domain_type' => null,
-        'domain_identifier' => null,
         'api_url' => null,
+        'domain_attributes' => null,
+        'domain_identifier' => null,
+        'domain_type' => null,
         'frontend_url' => null,
         'image_url' => null,
-        'domain_attributes' => null,
-        'preview' => null
+        'preview' => null,
+        'title' => null
     ];
 
     /**
@@ -113,14 +113,14 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'domain_type' => 'domainType',
-        'domain_identifier' => 'domainIdentifier',
         'api_url' => 'apiUrl',
+        'domain_attributes' => 'domainAttributes',
+        'domain_identifier' => 'domainIdentifier',
+        'domain_type' => 'domainType',
         'frontend_url' => 'frontendUrl',
         'image_url' => 'imageUrl',
-        'domain_attributes' => 'domainAttributes',
-        'preview' => 'preview'
+        'preview' => 'preview',
+        'title' => 'title'
     ];
 
     /**
@@ -129,14 +129,14 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'domain_type' => 'setDomainType',
-        'domain_identifier' => 'setDomainIdentifier',
         'api_url' => 'setApiUrl',
+        'domain_attributes' => 'setDomainAttributes',
+        'domain_identifier' => 'setDomainIdentifier',
+        'domain_type' => 'setDomainType',
         'frontend_url' => 'setFrontendUrl',
         'image_url' => 'setImageUrl',
-        'domain_attributes' => 'setDomainAttributes',
-        'preview' => 'setPreview'
+        'preview' => 'setPreview',
+        'title' => 'setTitle'
     ];
 
     /**
@@ -145,14 +145,14 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'domain_type' => 'getDomainType',
-        'domain_identifier' => 'getDomainIdentifier',
         'api_url' => 'getApiUrl',
+        'domain_attributes' => 'getDomainAttributes',
+        'domain_identifier' => 'getDomainIdentifier',
+        'domain_type' => 'getDomainType',
         'frontend_url' => 'getFrontendUrl',
         'image_url' => 'getImageUrl',
-        'domain_attributes' => 'getDomainAttributes',
-        'preview' => 'getPreview'
+        'preview' => 'getPreview',
+        'title' => 'getTitle'
     ];
 
     /**
@@ -212,14 +212,14 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
-        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
         $this->container['api_url'] = $data['api_url'] ?? null;
+        $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
+        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['frontend_url'] = $data['frontend_url'] ?? null;
         $this->container['image_url'] = $data['image_url'] ?? null;
-        $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
         $this->container['preview'] = $data['preview'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
     }
 
     /**
@@ -247,49 +247,49 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets title
+     * Gets api_url
      *
      * @return string|null
      */
-    public function getTitle()
+    public function getApiUrl()
     {
-        return $this->container['title'];
+        return $this->container['api_url'];
     }
 
     /**
-     * Sets title
+     * Sets api_url
      *
-     * @param string|null $title title
+     * @param string|null $api_url api_url
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setApiUrl($api_url)
     {
-        $this->container['title'] = $title;
+        $this->container['api_url'] = $api_url;
 
         return $this;
     }
 
     /**
-     * Gets domain_type
+     * Gets domain_attributes
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\SearchResult1DomainAttributes|null
      */
-    public function getDomainType()
+    public function getDomainAttributes()
     {
-        return $this->container['domain_type'];
+        return $this->container['domain_attributes'];
     }
 
     /**
-     * Sets domain_type
+     * Sets domain_attributes
      *
-     * @param string|null $domain_type domain_type
+     * @param \StevenBuehner\ChurchTools\Model\SearchResult1DomainAttributes|null $domain_attributes domain_attributes
      *
      * @return self
      */
-    public function setDomainType($domain_type)
+    public function setDomainAttributes($domain_attributes)
     {
-        $this->container['domain_type'] = $domain_type;
+        $this->container['domain_attributes'] = $domain_attributes;
 
         return $this;
     }
@@ -319,25 +319,25 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets api_url
+     * Gets domain_type
      *
      * @return string|null
      */
-    public function getApiUrl()
+    public function getDomainType()
     {
-        return $this->container['api_url'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets api_url
+     * Sets domain_type
      *
-     * @param string|null $api_url api_url
+     * @param string|null $domain_type domain_type
      *
      * @return self
      */
-    public function setApiUrl($api_url)
+    public function setDomainType($domain_type)
     {
-        $this->container['api_url'] = $api_url;
+        $this->container['domain_type'] = $domain_type;
 
         return $this;
     }
@@ -391,30 +391,6 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets domain_attributes
-     *
-     * @return object|null
-     */
-    public function getDomainAttributes()
-    {
-        return $this->container['domain_attributes'];
-    }
-
-    /**
-     * Sets domain_attributes
-     *
-     * @param object|null $domain_attributes domain_attributes
-     *
-     * @return self
-     */
-    public function setDomainAttributes($domain_attributes)
-    {
-        $this->container['domain_attributes'] = $domain_attributes;
-
-        return $this;
-    }
-
-    /**
      * Gets preview
      *
      * @return string|null
@@ -434,6 +410,30 @@ class SearchResult implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPreview($preview)
     {
         $this->container['preview'] = $preview;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string|null $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
 
         return $this;
     }

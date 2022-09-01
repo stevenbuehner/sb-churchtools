@@ -57,18 +57,18 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'admin_ids' => 'int[]',
+        'does_require_cal_entry' => 'bool',
+        'ical_location' => 'string',
         'id' => 'int',
+        'is_auto_accept' => 'bool',
+        'is_virtual' => 'bool',
+        'location' => 'string',
         'name' => 'string',
         'name_translated' => 'string',
-        'sort_key' => 'int',
+        'random_string' => 'string',
         'resource_type_id' => 'int',
-        'location' => 'string',
-        'ical_location' => 'string',
-        'is_auto_accept' => 'bool',
-        'does_require_cal_entry' => 'bool',
-        'is_virtual' => 'bool',
-        'admin_ids' => 'int[]',
-        'random_string' => 'string'
+        'sort_key' => 'int'
     ];
 
     /**
@@ -79,18 +79,18 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'admin_ids' => null,
+        'does_require_cal_entry' => null,
+        'ical_location' => null,
         'id' => null,
+        'is_auto_accept' => null,
+        'is_virtual' => null,
+        'location' => null,
         'name' => null,
         'name_translated' => null,
-        'sort_key' => null,
+        'random_string' => null,
         'resource_type_id' => null,
-        'location' => null,
-        'ical_location' => null,
-        'is_auto_accept' => null,
-        'does_require_cal_entry' => null,
-        'is_virtual' => null,
-        'admin_ids' => null,
-        'random_string' => null
+        'sort_key' => null
     ];
 
     /**
@@ -120,18 +120,18 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
+        'admin_ids' => 'adminIds',
+        'does_require_cal_entry' => 'doesRequireCalEntry',
+        'ical_location' => 'icalLocation',
         'id' => 'id',
+        'is_auto_accept' => 'isAutoAccept',
+        'is_virtual' => 'isVirtual',
+        'location' => 'location',
         'name' => 'name',
         'name_translated' => 'nameTranslated',
-        'sort_key' => 'sortKey',
+        'random_string' => 'randomString',
         'resource_type_id' => 'resourceTypeId',
-        'location' => 'location',
-        'ical_location' => 'icalLocation',
-        'is_auto_accept' => 'isAutoAccept',
-        'does_require_cal_entry' => 'doesRequireCalEntry',
-        'is_virtual' => 'isVirtual',
-        'admin_ids' => 'adminIds',
-        'random_string' => 'randomString'
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -140,18 +140,18 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
+        'admin_ids' => 'setAdminIds',
+        'does_require_cal_entry' => 'setDoesRequireCalEntry',
+        'ical_location' => 'setIcalLocation',
         'id' => 'setId',
+        'is_auto_accept' => 'setIsAutoAccept',
+        'is_virtual' => 'setIsVirtual',
+        'location' => 'setLocation',
         'name' => 'setName',
         'name_translated' => 'setNameTranslated',
-        'sort_key' => 'setSortKey',
+        'random_string' => 'setRandomString',
         'resource_type_id' => 'setResourceTypeId',
-        'location' => 'setLocation',
-        'ical_location' => 'setIcalLocation',
-        'is_auto_accept' => 'setIsAutoAccept',
-        'does_require_cal_entry' => 'setDoesRequireCalEntry',
-        'is_virtual' => 'setIsVirtual',
-        'admin_ids' => 'setAdminIds',
-        'random_string' => 'setRandomString'
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -160,18 +160,18 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
+        'admin_ids' => 'getAdminIds',
+        'does_require_cal_entry' => 'getDoesRequireCalEntry',
+        'ical_location' => 'getIcalLocation',
         'id' => 'getId',
+        'is_auto_accept' => 'getIsAutoAccept',
+        'is_virtual' => 'getIsVirtual',
+        'location' => 'getLocation',
         'name' => 'getName',
         'name_translated' => 'getNameTranslated',
-        'sort_key' => 'getSortKey',
+        'random_string' => 'getRandomString',
         'resource_type_id' => 'getResourceTypeId',
-        'location' => 'getLocation',
-        'ical_location' => 'getIcalLocation',
-        'is_auto_accept' => 'getIsAutoAccept',
-        'does_require_cal_entry' => 'getDoesRequireCalEntry',
-        'is_virtual' => 'getIsVirtual',
-        'admin_ids' => 'getAdminIds',
-        'random_string' => 'getRandomString'
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -231,18 +231,18 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
+        $this->container['admin_ids'] = $data['admin_ids'] ?? null;
+        $this->container['does_require_cal_entry'] = $data['does_require_cal_entry'] ?? null;
+        $this->container['ical_location'] = $data['ical_location'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_auto_accept'] = $data['is_auto_accept'] ?? null;
+        $this->container['is_virtual'] = $data['is_virtual'] ?? null;
+        $this->container['location'] = $data['location'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['resource_type_id'] = $data['resource_type_id'] ?? null;
-        $this->container['location'] = $data['location'] ?? null;
-        $this->container['ical_location'] = $data['ical_location'] ?? null;
-        $this->container['is_auto_accept'] = $data['is_auto_accept'] ?? null;
-        $this->container['does_require_cal_entry'] = $data['does_require_cal_entry'] ?? null;
-        $this->container['is_virtual'] = $data['is_virtual'] ?? null;
-        $this->container['admin_ids'] = $data['admin_ids'] ?? null;
         $this->container['random_string'] = $data['random_string'] ?? null;
+        $this->container['resource_type_id'] = $data['resource_type_id'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
     /**
@@ -270,6 +270,78 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
 
 
     /**
+     * Gets admin_ids
+     *
+     * @return int[]|null
+     */
+    public function getAdminIds()
+    {
+        return $this->container['admin_ids'];
+    }
+
+    /**
+     * Sets admin_ids
+     *
+     * @param int[]|null $admin_ids admin_ids
+     *
+     * @return self
+     */
+    public function setAdminIds($admin_ids)
+    {
+        $this->container['admin_ids'] = $admin_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets does_require_cal_entry
+     *
+     * @return bool|null
+     */
+    public function getDoesRequireCalEntry()
+    {
+        return $this->container['does_require_cal_entry'];
+    }
+
+    /**
+     * Sets does_require_cal_entry
+     *
+     * @param bool|null $does_require_cal_entry does_require_cal_entry
+     *
+     * @return self
+     */
+    public function setDoesRequireCalEntry($does_require_cal_entry)
+    {
+        $this->container['does_require_cal_entry'] = $does_require_cal_entry;
+
+        return $this;
+    }
+
+    /**
+     * Gets ical_location
+     *
+     * @return string|null
+     */
+    public function getIcalLocation()
+    {
+        return $this->container['ical_location'];
+    }
+
+    /**
+     * Sets ical_location
+     *
+     * @param string|null $ical_location ical_location
+     *
+     * @return self
+     */
+    public function setIcalLocation($ical_location)
+    {
+        $this->container['ical_location'] = $ical_location;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -289,6 +361,78 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_auto_accept
+     *
+     * @return bool|null
+     */
+    public function getIsAutoAccept()
+    {
+        return $this->container['is_auto_accept'];
+    }
+
+    /**
+     * Sets is_auto_accept
+     *
+     * @param bool|null $is_auto_accept is_auto_accept
+     *
+     * @return self
+     */
+    public function setIsAutoAccept($is_auto_accept)
+    {
+        $this->container['is_auto_accept'] = $is_auto_accept;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_virtual
+     *
+     * @return bool|null
+     */
+    public function getIsVirtual()
+    {
+        return $this->container['is_virtual'];
+    }
+
+    /**
+     * Sets is_virtual
+     *
+     * @param bool|null $is_virtual is_virtual
+     *
+     * @return self
+     */
+    public function setIsVirtual($is_virtual)
+    {
+        $this->container['is_virtual'] = $is_virtual;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return string|null
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param string|null $location location
+     *
+     * @return self
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
 
         return $this;
     }
@@ -342,25 +486,25 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
     }
 
     /**
-     * Gets sort_key
+     * Gets random_string
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getSortKey()
+    public function getRandomString()
     {
-        return $this->container['sort_key'];
+        return $this->container['random_string'];
     }
 
     /**
-     * Sets sort_key
+     * Sets random_string
      *
-     * @param int|null $sort_key sort_key
+     * @param string|null $random_string random_string
      *
      * @return self
      */
-    public function setSortKey($sort_key)
+    public function setRandomString($random_string)
     {
-        $this->container['sort_key'] = $sort_key;
+        $this->container['random_string'] = $random_string;
 
         return $this;
     }
@@ -390,169 +534,25 @@ class GetResourceMasterdata200ResponseDataResourcesInner implements ModelInterfa
     }
 
     /**
-     * Gets location
+     * Gets sort_key
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getLocation()
+    public function getSortKey()
     {
-        return $this->container['location'];
+        return $this->container['sort_key'];
     }
 
     /**
-     * Sets location
+     * Sets sort_key
      *
-     * @param string|null $location location
+     * @param int|null $sort_key sort_key
      *
      * @return self
      */
-    public function setLocation($location)
+    public function setSortKey($sort_key)
     {
-        $this->container['location'] = $location;
-
-        return $this;
-    }
-
-    /**
-     * Gets ical_location
-     *
-     * @return string|null
-     */
-    public function getIcalLocation()
-    {
-        return $this->container['ical_location'];
-    }
-
-    /**
-     * Sets ical_location
-     *
-     * @param string|null $ical_location ical_location
-     *
-     * @return self
-     */
-    public function setIcalLocation($ical_location)
-    {
-        $this->container['ical_location'] = $ical_location;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_auto_accept
-     *
-     * @return bool|null
-     */
-    public function getIsAutoAccept()
-    {
-        return $this->container['is_auto_accept'];
-    }
-
-    /**
-     * Sets is_auto_accept
-     *
-     * @param bool|null $is_auto_accept is_auto_accept
-     *
-     * @return self
-     */
-    public function setIsAutoAccept($is_auto_accept)
-    {
-        $this->container['is_auto_accept'] = $is_auto_accept;
-
-        return $this;
-    }
-
-    /**
-     * Gets does_require_cal_entry
-     *
-     * @return bool|null
-     */
-    public function getDoesRequireCalEntry()
-    {
-        return $this->container['does_require_cal_entry'];
-    }
-
-    /**
-     * Sets does_require_cal_entry
-     *
-     * @param bool|null $does_require_cal_entry does_require_cal_entry
-     *
-     * @return self
-     */
-    public function setDoesRequireCalEntry($does_require_cal_entry)
-    {
-        $this->container['does_require_cal_entry'] = $does_require_cal_entry;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_virtual
-     *
-     * @return bool|null
-     */
-    public function getIsVirtual()
-    {
-        return $this->container['is_virtual'];
-    }
-
-    /**
-     * Sets is_virtual
-     *
-     * @param bool|null $is_virtual is_virtual
-     *
-     * @return self
-     */
-    public function setIsVirtual($is_virtual)
-    {
-        $this->container['is_virtual'] = $is_virtual;
-
-        return $this;
-    }
-
-    /**
-     * Gets admin_ids
-     *
-     * @return int[]|null
-     */
-    public function getAdminIds()
-    {
-        return $this->container['admin_ids'];
-    }
-
-    /**
-     * Sets admin_ids
-     *
-     * @param int[]|null $admin_ids admin_ids
-     *
-     * @return self
-     */
-    public function setAdminIds($admin_ids)
-    {
-        $this->container['admin_ids'] = $admin_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets random_string
-     *
-     * @return string|null
-     */
-    public function getRandomString()
-    {
-        return $this->container['random_string'];
-    }
-
-    /**
-     * Sets random_string
-     *
-     * @param string|null $random_string random_string
-     *
-     * @return self
-     */
-    public function setRandomString($random_string)
-    {
-        $this->container['random_string'] = $random_string;
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

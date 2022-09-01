@@ -741,11 +741,11 @@ class SongApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response|string
      */
     public function getSongsOfAgenda($event_id)
     {
@@ -758,11 +758,11 @@ class SongApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSongsOfAgendaWithHttpInfo($event_id)
     {
@@ -819,6 +819,21 @@ class SongApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response';
@@ -847,6 +862,14 @@ class SongApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -857,7 +880,7 @@ class SongApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -877,7 +900,7 @@ class SongApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -926,7 +949,7 @@ class SongApi
     /**
      * Create request for operation 'getSongsOfAgenda'
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -961,11 +984,11 @@ class SongApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }

@@ -57,15 +57,15 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
+        'addition' => 'string',
+        'city' => 'string',
+        'country' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddressCountry',
+        'district' => 'string',
+        'latitude' => 'string',
+        'longitude' => 'string',
         'meeting_at' => 'string',
         'street' => 'string',
-        'addition' => 'string',
-        'district' => 'string',
-        'zip' => 'string',
-        'city' => 'string',
-        'country' => 'object',
-        'latitude' => 'string',
-        'longitude' => 'string'
+        'zip' => 'string'
     ];
 
     /**
@@ -76,15 +76,15 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'meeting_at' => null,
-        'street' => null,
         'addition' => null,
-        'district' => null,
-        'zip' => null,
         'city' => null,
         'country' => null,
+        'district' => null,
         'latitude' => null,
-        'longitude' => null
+        'longitude' => null,
+        'meeting_at' => null,
+        'street' => null,
+        'zip' => null
     ];
 
     /**
@@ -114,15 +114,15 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'meeting_at' => 'meetingAt',
-        'street' => 'street',
         'addition' => 'addition',
-        'district' => 'district',
-        'zip' => 'zip',
         'city' => 'city',
         'country' => 'country',
+        'district' => 'district',
         'latitude' => 'latitude',
-        'longitude' => 'longitude'
+        'longitude' => 'longitude',
+        'meeting_at' => 'meetingAt',
+        'street' => 'street',
+        'zip' => 'zip'
     ];
 
     /**
@@ -131,15 +131,15 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'meeting_at' => 'setMeetingAt',
-        'street' => 'setStreet',
         'addition' => 'setAddition',
-        'district' => 'setDistrict',
-        'zip' => 'setZip',
         'city' => 'setCity',
         'country' => 'setCountry',
+        'district' => 'setDistrict',
         'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude'
+        'longitude' => 'setLongitude',
+        'meeting_at' => 'setMeetingAt',
+        'street' => 'setStreet',
+        'zip' => 'setZip'
     ];
 
     /**
@@ -148,15 +148,15 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'meeting_at' => 'getMeetingAt',
-        'street' => 'getStreet',
         'addition' => 'getAddition',
-        'district' => 'getDistrict',
-        'zip' => 'getZip',
         'city' => 'getCity',
         'country' => 'getCountry',
+        'district' => 'getDistrict',
         'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude'
+        'longitude' => 'getLongitude',
+        'meeting_at' => 'getMeetingAt',
+        'street' => 'getStreet',
+        'zip' => 'getZip'
     ];
 
     /**
@@ -216,15 +216,15 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['meeting_at'] = $data['meeting_at'] ?? null;
-        $this->container['street'] = $data['street'] ?? null;
         $this->container['addition'] = $data['addition'] ?? null;
-        $this->container['district'] = $data['district'] ?? null;
-        $this->container['zip'] = $data['zip'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
         $this->container['country'] = $data['country'] ?? null;
+        $this->container['district'] = $data['district'] ?? null;
         $this->container['latitude'] = $data['latitude'] ?? null;
         $this->container['longitude'] = $data['longitude'] ?? null;
+        $this->container['meeting_at'] = $data['meeting_at'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['zip'] = $data['zip'] ?? null;
     }
 
     /**
@@ -236,29 +236,29 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['meeting_at'] === null) {
-            $invalidProperties[] = "'meeting_at' can't be null";
-        }
-        if ($this->container['street'] === null) {
-            $invalidProperties[] = "'street' can't be null";
-        }
         if ($this->container['addition'] === null) {
             $invalidProperties[] = "'addition' can't be null";
         }
-        if ($this->container['district'] === null) {
-            $invalidProperties[] = "'district' can't be null";
-        }
-        if ($this->container['zip'] === null) {
-            $invalidProperties[] = "'zip' can't be null";
-        }
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
+        }
+        if ($this->container['district'] === null) {
+            $invalidProperties[] = "'district' can't be null";
         }
         if ($this->container['latitude'] === null) {
             $invalidProperties[] = "'latitude' can't be null";
         }
         if ($this->container['longitude'] === null) {
             $invalidProperties[] = "'longitude' can't be null";
+        }
+        if ($this->container['meeting_at'] === null) {
+            $invalidProperties[] = "'meeting_at' can't be null";
+        }
+        if ($this->container['street'] === null) {
+            $invalidProperties[] = "'street' can't be null";
+        }
+        if ($this->container['zip'] === null) {
+            $invalidProperties[] = "'zip' can't be null";
         }
         return $invalidProperties;
     }
@@ -274,6 +274,150 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets addition
+     *
+     * @return string
+     */
+    public function getAddition()
+    {
+        return $this->container['addition'];
+    }
+
+    /**
+     * Sets addition
+     *
+     * @param string $addition addition
+     *
+     * @return self
+     */
+    public function setAddition($addition)
+    {
+        $this->container['addition'] = $addition;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city city
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddressCountry|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddressCountry|null $country country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets district
+     *
+     * @return string
+     */
+    public function getDistrict()
+    {
+        return $this->container['district'];
+    }
+
+    /**
+     * Sets district
+     *
+     * @param string $district district
+     *
+     * @return self
+     */
+    public function setDistrict($district)
+    {
+        $this->container['district'] = $district;
+
+        return $this;
+    }
+
+    /**
+     * Gets latitude
+     *
+     * @return string
+     */
+    public function getLatitude()
+    {
+        return $this->container['latitude'];
+    }
+
+    /**
+     * Sets latitude
+     *
+     * @param string $latitude latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude)
+    {
+        $this->container['latitude'] = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets longitude
+     *
+     * @return string
+     */
+    public function getLongitude()
+    {
+        return $this->container['longitude'];
+    }
+
+    /**
+     * Sets longitude
+     *
+     * @param string $longitude longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude)
+    {
+        $this->container['longitude'] = $longitude;
+
+        return $this;
+    }
 
     /**
      * Gets meeting_at
@@ -324,54 +468,6 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
     }
 
     /**
-     * Gets addition
-     *
-     * @return string
-     */
-    public function getAddition()
-    {
-        return $this->container['addition'];
-    }
-
-    /**
-     * Sets addition
-     *
-     * @param string $addition addition
-     *
-     * @return self
-     */
-    public function setAddition($addition)
-    {
-        $this->container['addition'] = $addition;
-
-        return $this;
-    }
-
-    /**
-     * Gets district
-     *
-     * @return string
-     */
-    public function getDistrict()
-    {
-        return $this->container['district'];
-    }
-
-    /**
-     * Sets district
-     *
-     * @param string $district district
-     *
-     * @return self
-     */
-    public function setDistrict($district)
-    {
-        $this->container['district'] = $district;
-
-        return $this;
-    }
-
-    /**
      * Gets zip
      *
      * @return string
@@ -391,102 +487,6 @@ class GetAllCampuses200ResponseDataInnerAddress implements ModelInterface, Array
     public function setZip($zip)
     {
         $this->container['zip'] = $zip;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string $city city
-     *
-     * @return self
-     */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return object|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param object|null $country country
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets latitude
-     *
-     * @return string
-     */
-    public function getLatitude()
-    {
-        return $this->container['latitude'];
-    }
-
-    /**
-     * Sets latitude
-     *
-     * @param string $latitude latitude
-     *
-     * @return self
-     */
-    public function setLatitude($latitude)
-    {
-        $this->container['latitude'] = $latitude;
-
-        return $this;
-    }
-
-    /**
-     * Gets longitude
-     *
-     * @return string
-     */
-    public function getLongitude()
-    {
-        return $this->container['longitude'];
-    }
-
-    /**
-     * Sets longitude
-     *
-     * @param string $longitude longitude
-     *
-     * @return self
-     */
-    public function setLongitude($longitude)
-    {
-        $this->container['longitude'] = $longitude;
 
         return $this;
     }

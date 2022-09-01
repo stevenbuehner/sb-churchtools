@@ -57,12 +57,12 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'number' => 'string',
-        'name' => 'string',
         'account_group_id' => 'int',
         'accounting_period_id' => 'int',
         'is_donation_account' => 'bool',
-        'is_opening_balance_account' => 'bool'
+        'is_opening_balance_account' => 'bool',
+        'name' => 'string',
+        'number' => 'string'
     ];
 
     /**
@@ -73,12 +73,12 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'number' => null,
-        'name' => null,
         'account_group_id' => null,
         'accounting_period_id' => null,
         'is_donation_account' => null,
-        'is_opening_balance_account' => null
+        'is_opening_balance_account' => null,
+        'name' => null,
+        'number' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'number' => 'number',
-        'name' => 'name',
         'account_group_id' => 'accountGroupId',
         'accounting_period_id' => 'accountingPeriodId',
         'is_donation_account' => 'isDonationAccount',
-        'is_opening_balance_account' => 'isOpeningBalanceAccount'
+        'is_opening_balance_account' => 'isOpeningBalanceAccount',
+        'name' => 'name',
+        'number' => 'number'
     ];
 
     /**
@@ -122,12 +122,12 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'number' => 'setNumber',
-        'name' => 'setName',
         'account_group_id' => 'setAccountGroupId',
         'accounting_period_id' => 'setAccountingPeriodId',
         'is_donation_account' => 'setIsDonationAccount',
-        'is_opening_balance_account' => 'setIsOpeningBalanceAccount'
+        'is_opening_balance_account' => 'setIsOpeningBalanceAccount',
+        'name' => 'setName',
+        'number' => 'setNumber'
     ];
 
     /**
@@ -136,12 +136,12 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'number' => 'getNumber',
-        'name' => 'getName',
         'account_group_id' => 'getAccountGroupId',
         'accounting_period_id' => 'getAccountingPeriodId',
         'is_donation_account' => 'getIsDonationAccount',
-        'is_opening_balance_account' => 'getIsOpeningBalanceAccount'
+        'is_opening_balance_account' => 'getIsOpeningBalanceAccount',
+        'name' => 'getName',
+        'number' => 'getNumber'
     ];
 
     /**
@@ -201,12 +201,12 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['account_group_id'] = $data['account_group_id'] ?? null;
         $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
         $this->container['is_donation_account'] = $data['is_donation_account'] ?? null;
         $this->container['is_opening_balance_account'] = $data['is_opening_balance_account'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['number'] = $data['number'] ?? null;
     }
 
     /**
@@ -218,17 +218,17 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['account_group_id'] === null) {
             $invalidProperties[] = "'account_group_id' can't be null";
         }
         if ($this->container['accounting_period_id'] === null) {
             $invalidProperties[] = "'accounting_period_id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['number'] === null) {
+            $invalidProperties[] = "'number' can't be null";
         }
         return $invalidProperties;
     }
@@ -244,54 +244,6 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets number
-     *
-     * @return string
-     */
-    public function getNumber()
-    {
-        return $this->container['number'];
-    }
-
-    /**
-     * Sets number
-     *
-     * @param string $number number
-     *
-     * @return self
-     */
-    public function setNumber($number)
-    {
-        $this->container['number'] = $number;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets account_group_id
@@ -385,6 +337,54 @@ class CreateNewAccountRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setIsOpeningBalanceAccount($is_opening_balance_account)
     {
         $this->container['is_opening_balance_account'] = $is_opening_balance_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets number
+     *
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->container['number'];
+    }
+
+    /**
+     * Sets number
+     *
+     * @param string $number number
+     *
+     * @return self
+     */
+    public function setNumber($number)
+    {
+        $this->container['number'] = $number;
 
         return $this;
     }

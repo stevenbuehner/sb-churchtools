@@ -58,9 +58,9 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => 'object',
         'group' => '\StevenBuehner\ChurchTools\Model\PutCheckinPersonsRequestGroup',
-        'tag_id' => 'float'
+        'person' => 'object',
+        'tag_id' => 'int'
     ];
 
     /**
@@ -71,8 +71,8 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person' => null,
         'group' => null,
+        'person' => null,
         'tag_id' => null
     ];
 
@@ -103,8 +103,8 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'person' => 'person',
         'group' => 'group',
+        'person' => 'person',
         'tag_id' => 'tagId'
     ];
 
@@ -114,8 +114,8 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'person' => 'setPerson',
         'group' => 'setGroup',
+        'person' => 'setPerson',
         'tag_id' => 'setTagId'
     ];
 
@@ -125,8 +125,8 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'person' => 'getPerson',
         'group' => 'getGroup',
+        'person' => 'getPerson',
         'tag_id' => 'getTagId'
     ];
 
@@ -187,8 +187,8 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['person'] = $data['person'] ?? null;
         $this->container['group'] = $data['group'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
         $this->container['tag_id'] = $data['tag_id'] ?? null;
     }
 
@@ -201,11 +201,11 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['person'] === null) {
-            $invalidProperties[] = "'person' can't be null";
-        }
         if ($this->container['group'] === null) {
             $invalidProperties[] = "'group' can't be null";
+        }
+        if ($this->container['person'] === null) {
+            $invalidProperties[] = "'person' can't be null";
         }
         if ($this->container['tag_id'] === null) {
             $invalidProperties[] = "'tag_id' can't be null";
@@ -224,30 +224,6 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets person
-     *
-     * @return object
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param object $person See `POST /persons`
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
 
     /**
      * Gets group
@@ -274,9 +250,33 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
+     * Gets person
+     *
+     * @return object
+     */
+    public function getPerson()
+    {
+        return $this->container['person'];
+    }
+
+    /**
+     * Sets person
+     *
+     * @param object $person See `POST /persons`
+     *
+     * @return self
+     */
+    public function setPerson($person)
+    {
+        $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
      * Gets tag_id
      *
-     * @return float
+     * @return int
      */
     public function getTagId()
     {
@@ -286,7 +286,7 @@ class PostCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets tag_id
      *
-     * @param float $tag_id tag_id
+     * @param int $tag_id tag_id
      *
      * @return self
      */

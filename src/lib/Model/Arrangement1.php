@@ -58,17 +58,17 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'beat' => 'string',
+        'bpm' => 'string',
+        'duration' => 'int',
+        'files' => '\StevenBuehner\ChurchTools\Model\FileOrLink[]',
         'id' => 'int',
-        'name' => 'string',
         'is_default' => 'bool',
         'key_of_arrangement' => 'string',
-        'bpm' => 'string',
-        'beat' => 'string',
-        'duration' => 'float',
-        'note' => 'string',
         'links' => '\StevenBuehner\ChurchTools\Model\FileOrLink[]',
-        'files' => '\StevenBuehner\ChurchTools\Model\FileOrLink[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
+        'name' => 'string',
+        'note' => 'string'
     ];
 
     /**
@@ -79,17 +79,17 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'beat' => null,
+        'bpm' => null,
+        'duration' => null,
+        'files' => null,
         'id' => null,
-        'name' => null,
         'is_default' => null,
         'key_of_arrangement' => null,
-        'bpm' => null,
-        'beat' => null,
-        'duration' => null,
-        'note' => null,
         'links' => null,
-        'files' => null,
-        'meta' => null
+        'meta' => null,
+        'name' => null,
+        'note' => null
     ];
 
     /**
@@ -119,17 +119,17 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'beat' => 'beat',
+        'bpm' => 'bpm',
+        'duration' => 'duration',
+        'files' => 'files',
         'id' => 'id',
-        'name' => 'name',
         'is_default' => 'isDefault',
         'key_of_arrangement' => 'keyOfArrangement',
-        'bpm' => 'bpm',
-        'beat' => 'beat',
-        'duration' => 'duration',
-        'note' => 'note',
         'links' => 'links',
-        'files' => 'files',
-        'meta' => 'meta'
+        'meta' => 'meta',
+        'name' => 'name',
+        'note' => 'note'
     ];
 
     /**
@@ -138,17 +138,17 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'beat' => 'setBeat',
+        'bpm' => 'setBpm',
+        'duration' => 'setDuration',
+        'files' => 'setFiles',
         'id' => 'setId',
-        'name' => 'setName',
         'is_default' => 'setIsDefault',
         'key_of_arrangement' => 'setKeyOfArrangement',
-        'bpm' => 'setBpm',
-        'beat' => 'setBeat',
-        'duration' => 'setDuration',
-        'note' => 'setNote',
         'links' => 'setLinks',
-        'files' => 'setFiles',
-        'meta' => 'setMeta'
+        'meta' => 'setMeta',
+        'name' => 'setName',
+        'note' => 'setNote'
     ];
 
     /**
@@ -157,17 +157,17 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'beat' => 'getBeat',
+        'bpm' => 'getBpm',
+        'duration' => 'getDuration',
+        'files' => 'getFiles',
         'id' => 'getId',
-        'name' => 'getName',
         'is_default' => 'getIsDefault',
         'key_of_arrangement' => 'getKeyOfArrangement',
-        'bpm' => 'getBpm',
-        'beat' => 'getBeat',
-        'duration' => 'getDuration',
-        'note' => 'getNote',
         'links' => 'getLinks',
-        'files' => 'getFiles',
-        'meta' => 'getMeta'
+        'meta' => 'getMeta',
+        'name' => 'getName',
+        'note' => 'getNote'
     ];
 
     /**
@@ -227,17 +227,17 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['beat'] = $data['beat'] ?? null;
+        $this->container['bpm'] = $data['bpm'] ?? null;
+        $this->container['duration'] = $data['duration'] ?? null;
+        $this->container['files'] = $data['files'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['is_default'] = $data['is_default'] ?? null;
         $this->container['key_of_arrangement'] = $data['key_of_arrangement'] ?? null;
-        $this->container['bpm'] = $data['bpm'] ?? null;
-        $this->container['beat'] = $data['beat'] ?? null;
-        $this->container['duration'] = $data['duration'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
         $this->container['links'] = $data['links'] ?? null;
-        $this->container['files'] = $data['files'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
     }
 
     /**
@@ -265,6 +265,102 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets beat
+     *
+     * @return string|null
+     */
+    public function getBeat()
+    {
+        return $this->container['beat'];
+    }
+
+    /**
+     * Sets beat
+     *
+     * @param string|null $beat beat
+     *
+     * @return self
+     */
+    public function setBeat($beat)
+    {
+        $this->container['beat'] = $beat;
+
+        return $this;
+    }
+
+    /**
+     * Gets bpm
+     *
+     * @return string|null
+     */
+    public function getBpm()
+    {
+        return $this->container['bpm'];
+    }
+
+    /**
+     * Sets bpm
+     *
+     * @param string|null $bpm bpm
+     *
+     * @return self
+     */
+    public function setBpm($bpm)
+    {
+        $this->container['bpm'] = $bpm;
+
+        return $this;
+    }
+
+    /**
+     * Gets duration
+     *
+     * @return int|null
+     */
+    public function getDuration()
+    {
+        return $this->container['duration'];
+    }
+
+    /**
+     * Sets duration
+     *
+     * @param int|null $duration Duration in seconds
+     *
+     * @return self
+     */
+    public function setDuration($duration)
+    {
+        $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets files
+     *
+     * @return \StevenBuehner\ChurchTools\Model\FileOrLink[]|null
+     */
+    public function getFiles()
+    {
+        return $this->container['files'];
+    }
+
+    /**
+     * Sets files
+     *
+     * @param \StevenBuehner\ChurchTools\Model\FileOrLink[]|null $files List of files uploaded to that arrangement
+     *
+     * @return self
+     */
+    public function setFiles($files)
+    {
+        $this->container['files'] = $files;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -284,30 +380,6 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
 
         return $this;
     }
@@ -361,102 +433,6 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets bpm
-     *
-     * @return string|null
-     */
-    public function getBpm()
-    {
-        return $this->container['bpm'];
-    }
-
-    /**
-     * Sets bpm
-     *
-     * @param string|null $bpm bpm
-     *
-     * @return self
-     */
-    public function setBpm($bpm)
-    {
-        $this->container['bpm'] = $bpm;
-
-        return $this;
-    }
-
-    /**
-     * Gets beat
-     *
-     * @return string|null
-     */
-    public function getBeat()
-    {
-        return $this->container['beat'];
-    }
-
-    /**
-     * Sets beat
-     *
-     * @param string|null $beat beat
-     *
-     * @return self
-     */
-    public function setBeat($beat)
-    {
-        $this->container['beat'] = $beat;
-
-        return $this;
-    }
-
-    /**
-     * Gets duration
-     *
-     * @return float|null
-     */
-    public function getDuration()
-    {
-        return $this->container['duration'];
-    }
-
-    /**
-     * Sets duration
-     *
-     * @param float|null $duration Duration in seconds
-     *
-     * @return self
-     */
-    public function setDuration($duration)
-    {
-        $this->container['duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets note
-     *
-     * @return string|null
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string|null $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
      * Gets links
      *
      * @return \StevenBuehner\ChurchTools\Model\FileOrLink[]|null
@@ -481,33 +457,9 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets files
-     *
-     * @return \StevenBuehner\ChurchTools\Model\FileOrLink[]|null
-     */
-    public function getFiles()
-    {
-        return $this->container['files'];
-    }
-
-    /**
-     * Sets files
-     *
-     * @param \StevenBuehner\ChurchTools\Model\FileOrLink[]|null $files List of files uploaded to that arrangement
-     *
-     * @return self
-     */
-    public function setFiles($files)
-    {
-        $this->container['files'] = $files;
-
-        return $this;
-    }
-
-    /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null
      */
     public function getMeta()
     {
@@ -517,13 +469,61 @@ class Arrangement1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null $meta meta
      *
      * @return self
      */
     public function setMeta($meta)
     {
         $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string|null
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string|null $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
 
         return $this;
     }

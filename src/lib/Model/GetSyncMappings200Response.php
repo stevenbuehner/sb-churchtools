@@ -58,7 +58,7 @@ class GetSyncMappings200Response implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\SyncEntityMapping[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetSyncMappings200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetSyncMappings200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null $meta meta
      *
      * @return self
      */

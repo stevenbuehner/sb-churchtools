@@ -57,12 +57,12 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
+        'creator' => 'int',
+        'domain_id' => 'int',
         'guid' => 'string',
         'prefix' => 'string',
-        'domain_id' => 'int',
-        'status' => 'string',
-        'creator' => 'int',
-        'roomname' => 'string'
+        'roomname' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -73,12 +73,12 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'creator' => null,
+        'domain_id' => null,
         'guid' => null,
         'prefix' => null,
-        'domain_id' => null,
-        'status' => null,
-        'creator' => null,
-        'roomname' => null
+        'roomname' => null,
+        'status' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
+        'creator' => 'creator',
+        'domain_id' => 'domainId',
         'guid' => 'guid',
         'prefix' => 'prefix',
-        'domain_id' => 'domainId',
-        'status' => 'status',
-        'creator' => 'creator',
-        'roomname' => 'roomname'
+        'roomname' => 'roomname',
+        'status' => 'status'
     ];
 
     /**
@@ -122,12 +122,12 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
+        'creator' => 'setCreator',
+        'domain_id' => 'setDomainId',
         'guid' => 'setGuid',
         'prefix' => 'setPrefix',
-        'domain_id' => 'setDomainId',
-        'status' => 'setStatus',
-        'creator' => 'setCreator',
-        'roomname' => 'setRoomname'
+        'roomname' => 'setRoomname',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -136,12 +136,12 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
+        'creator' => 'getCreator',
+        'domain_id' => 'getDomainId',
         'guid' => 'getGuid',
         'prefix' => 'getPrefix',
-        'domain_id' => 'getDomainId',
-        'status' => 'getStatus',
-        'creator' => 'getCreator',
-        'roomname' => 'getRoomname'
+        'roomname' => 'getRoomname',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -201,12 +201,12 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
+        $this->container['creator'] = $data['creator'] ?? null;
+        $this->container['domain_id'] = $data['domain_id'] ?? null;
         $this->container['guid'] = $data['guid'] ?? null;
         $this->container['prefix'] = $data['prefix'] ?? null;
-        $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['creator'] = $data['creator'] ?? null;
         $this->container['roomname'] = $data['roomname'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -232,6 +232,54 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets creator
+     *
+     * @return int|null
+     */
+    public function getCreator()
+    {
+        return $this->container['creator'];
+    }
+
+    /**
+     * Sets creator
+     *
+     * @param int|null $creator creator
+     *
+     * @return self
+     */
+    public function setCreator($creator)
+    {
+        $this->container['creator'] = $creator;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_id
+     *
+     * @return int|null
+     */
+    public function getDomainId()
+    {
+        return $this->container['domain_id'];
+    }
+
+    /**
+     * Sets domain_id
+     *
+     * @param int|null $domain_id domain_id
+     *
+     * @return self
+     */
+    public function setDomainId($domain_id)
+    {
+        $this->container['domain_id'] = $domain_id;
+
+        return $this;
+    }
 
     /**
      * Gets guid
@@ -282,25 +330,25 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets domain_id
+     * Gets roomname
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getDomainId()
+    public function getRoomname()
     {
-        return $this->container['domain_id'];
+        return $this->container['roomname'];
     }
 
     /**
-     * Sets domain_id
+     * Sets roomname
      *
-     * @param int|null $domain_id domain_id
+     * @param string|null $roomname roomname
      *
      * @return self
      */
-    public function setDomainId($domain_id)
+    public function setRoomname($roomname)
     {
-        $this->container['domain_id'] = $domain_id;
+        $this->container['roomname'] = $roomname;
 
         return $this;
     }
@@ -325,54 +373,6 @@ class GetAllChats200ResponseData implements ModelInterface, ArrayAccess, \JsonSe
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets creator
-     *
-     * @return int|null
-     */
-    public function getCreator()
-    {
-        return $this->container['creator'];
-    }
-
-    /**
-     * Sets creator
-     *
-     * @param int|null $creator creator
-     *
-     * @return self
-     */
-    public function setCreator($creator)
-    {
-        $this->container['creator'] = $creator;
-
-        return $this;
-    }
-
-    /**
-     * Gets roomname
-     *
-     * @return string|null
-     */
-    public function getRoomname()
-    {
-        return $this->container['roomname'];
-    }
-
-    /**
-     * Sets roomname
-     *
-     * @param string|null $roomname roomname
-     *
-     * @return self
-     */
-    public function setRoomname($roomname)
-    {
-        $this->container['roomname'] = $roomname;
 
         return $this;
     }

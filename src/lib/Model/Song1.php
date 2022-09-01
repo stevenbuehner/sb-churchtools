@@ -58,16 +58,16 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'name' => 'string',
-        'category' => '\StevenBuehner\ChurchTools\Model\SongCategory',
-        'should_practice' => 'bool',
+        'arrangements' => '\StevenBuehner\ChurchTools\Model\Arrangement1[]',
         'author' => 'string',
+        'category' => '\StevenBuehner\ChurchTools\Model\SongCategory',
         'ccli' => 'string',
         'copyright' => 'string',
+        'id' => 'int',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
+        'name' => 'string',
         'note' => 'string',
-        'arrangements' => '\StevenBuehner\ChurchTools\Model\Arrangement1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'should_practice' => 'bool'
     ];
 
     /**
@@ -78,16 +78,16 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'category' => null,
-        'should_practice' => null,
+        'arrangements' => null,
         'author' => null,
+        'category' => null,
         'ccli' => null,
         'copyright' => null,
+        'id' => null,
+        'meta' => null,
+        'name' => null,
         'note' => null,
-        'arrangements' => null,
-        'meta' => null
+        'should_practice' => null
     ];
 
     /**
@@ -117,16 +117,16 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'category' => 'category',
-        'should_practice' => 'shouldPractice',
+        'arrangements' => 'arrangements',
         'author' => 'author',
+        'category' => 'category',
         'ccli' => 'ccli',
         'copyright' => 'copyright',
+        'id' => 'id',
+        'meta' => 'meta',
+        'name' => 'name',
         'note' => 'note',
-        'arrangements' => 'arrangements',
-        'meta' => 'meta'
+        'should_practice' => 'shouldPractice'
     ];
 
     /**
@@ -135,16 +135,16 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'category' => 'setCategory',
-        'should_practice' => 'setShouldPractice',
+        'arrangements' => 'setArrangements',
         'author' => 'setAuthor',
+        'category' => 'setCategory',
         'ccli' => 'setCcli',
         'copyright' => 'setCopyright',
+        'id' => 'setId',
+        'meta' => 'setMeta',
+        'name' => 'setName',
         'note' => 'setNote',
-        'arrangements' => 'setArrangements',
-        'meta' => 'setMeta'
+        'should_practice' => 'setShouldPractice'
     ];
 
     /**
@@ -153,16 +153,16 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'category' => 'getCategory',
-        'should_practice' => 'getShouldPractice',
+        'arrangements' => 'getArrangements',
         'author' => 'getAuthor',
+        'category' => 'getCategory',
         'ccli' => 'getCcli',
         'copyright' => 'getCopyright',
+        'id' => 'getId',
+        'meta' => 'getMeta',
+        'name' => 'getName',
         'note' => 'getNote',
-        'arrangements' => 'getArrangements',
-        'meta' => 'getMeta'
+        'should_practice' => 'getShouldPractice'
     ];
 
     /**
@@ -222,16 +222,16 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['category'] = $data['category'] ?? null;
-        $this->container['should_practice'] = $data['should_practice'] ?? null;
+        $this->container['arrangements'] = $data['arrangements'] ?? null;
         $this->container['author'] = $data['author'] ?? null;
+        $this->container['category'] = $data['category'] ?? null;
         $this->container['ccli'] = $data['ccli'] ?? null;
         $this->container['copyright'] = $data['copyright'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['arrangements'] = $data['arrangements'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['should_practice'] = $data['should_practice'] ?? null;
     }
 
     /**
@@ -259,97 +259,25 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets arrangements
      *
-     * @return float|null
+     * @return \StevenBuehner\ChurchTools\Model\Arrangement1[]|null
      */
-    public function getId()
+    public function getArrangements()
     {
-        return $this->container['id'];
+        return $this->container['arrangements'];
     }
 
     /**
-     * Sets id
+     * Sets arrangements
      *
-     * @param float|null $id id
+     * @param \StevenBuehner\ChurchTools\Model\Arrangement1[]|null $arrangements All arrangements for that song
      *
      * @return self
      */
-    public function setId($id)
+    public function setArrangements($arrangements)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets category
-     *
-     * @return \StevenBuehner\ChurchTools\Model\SongCategory|null
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     *
-     * @param \StevenBuehner\ChurchTools\Model\SongCategory|null $category category
-     *
-     * @return self
-     */
-    public function setCategory($category)
-    {
-        $this->container['category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Gets should_practice
-     *
-     * @return bool|null
-     */
-    public function getShouldPractice()
-    {
-        return $this->container['should_practice'];
-    }
-
-    /**
-     * Sets should_practice
-     *
-     * @param bool|null $should_practice should_practice
-     *
-     * @return self
-     */
-    public function setShouldPractice($should_practice)
-    {
-        $this->container['should_practice'] = $should_practice;
+        $this->container['arrangements'] = $arrangements;
 
         return $this;
     }
@@ -374,6 +302,30 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAuthor($author)
     {
         $this->container['author'] = $author;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return \StevenBuehner\ChurchTools\Model\SongCategory|null
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param \StevenBuehner\ChurchTools\Model\SongCategory|null $category category
+     *
+     * @return self
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
 
         return $this;
     }
@@ -427,6 +379,78 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * Gets note
      *
      * @return string|null
@@ -451,49 +475,25 @@ class Song1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets arrangements
+     * Gets should_practice
      *
-     * @return \StevenBuehner\ChurchTools\Model\Arrangement1[]|null
+     * @return bool|null
      */
-    public function getArrangements()
+    public function getShouldPractice()
     {
-        return $this->container['arrangements'];
+        return $this->container['should_practice'];
     }
 
     /**
-     * Sets arrangements
+     * Sets should_practice
      *
-     * @param \StevenBuehner\ChurchTools\Model\Arrangement1[]|null $arrangements All arrangements for that song
+     * @param bool|null $should_practice should_practice
      *
      * @return self
      */
-    public function setArrangements($arrangements)
+    public function setShouldPractice($should_practice)
     {
-        $this->container['arrangements'] = $arrangements;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['should_practice'] = $should_practice;
 
         return $this;
     }

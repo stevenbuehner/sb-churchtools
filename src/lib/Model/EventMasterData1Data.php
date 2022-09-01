@@ -57,7 +57,7 @@ class EventMasterData1Data implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'absence_reasons' => '\StevenBuehner\ChurchTools\Model\AbsenceReason[]',
+        'absence_reasons' => '\StevenBuehner\ChurchTools\Model\EventMasterData1DataAbsenceReasonsInner[]',
         'song_categories' => '\StevenBuehner\ChurchTools\Model\SongCategory[]'
     ];
 
@@ -218,7 +218,7 @@ class EventMasterData1Data implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets absence_reasons
      *
-     * @return \StevenBuehner\ChurchTools\Model\AbsenceReason[]
+     * @return \StevenBuehner\ChurchTools\Model\EventMasterData1DataAbsenceReasonsInner[]
      */
     public function getAbsenceReasons()
     {
@@ -228,7 +228,7 @@ class EventMasterData1Data implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets absence_reasons
      *
-     * @param \StevenBuehner\ChurchTools\Model\AbsenceReason[] $absence_reasons absence_reasons
+     * @param \StevenBuehner\ChurchTools\Model\EventMasterData1DataAbsenceReasonsInner[] $absence_reasons absence_reasons
      *
      * @return self
      */

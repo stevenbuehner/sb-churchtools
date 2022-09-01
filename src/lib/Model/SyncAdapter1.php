@@ -58,8 +58,8 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'url' => 'string',
-        'token' => 'string'
+        'token' => 'string',
+        'url' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'url' => null,
-        'token' => null
+        'token' => null,
+        'url' => null
     ];
 
     /**
@@ -103,8 +103,8 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'url' => 'url',
-        'token' => 'token'
+        'token' => 'token',
+        'url' => 'url'
     ];
 
     /**
@@ -114,8 +114,8 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'url' => 'setUrl',
-        'token' => 'setToken'
+        'token' => 'setToken',
+        'url' => 'setUrl'
     ];
 
     /**
@@ -125,8 +125,8 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'url' => 'getUrl',
-        'token' => 'getToken'
+        'token' => 'getToken',
+        'url' => 'getUrl'
     ];
 
     /**
@@ -187,8 +187,8 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
         $this->container['token'] = $data['token'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
     }
 
     /**
@@ -240,30 +240,6 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string|null $url url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
      * Gets token
      *
      * @return string|null
@@ -283,6 +259,30 @@ class SyncAdapter1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setToken($token)
     {
         $this->container['token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string|null $url url
+     *
+     * @return self
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }

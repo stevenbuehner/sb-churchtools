@@ -59,8 +59,8 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'translation' => 'string',
-        'updated_by_church' => 'bool',
-        'updated' => '\DateTime'
+        'updated' => '\DateTime',
+        'updated_by_church' => 'bool'
     ];
 
     /**
@@ -72,8 +72,8 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'translation' => null,
-        'updated_by_church' => null,
-        'updated' => 'date-time'
+        'updated' => 'date-time',
+        'updated_by_church' => null
     ];
 
     /**
@@ -104,8 +104,8 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'translation' => 'translation',
-        'updated_by_church' => 'updatedByChurch',
-        'updated' => 'updated'
+        'updated' => 'updated',
+        'updated_by_church' => 'updatedByChurch'
     ];
 
     /**
@@ -115,8 +115,8 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'translation' => 'setTranslation',
-        'updated_by_church' => 'setUpdatedByChurch',
-        'updated' => 'setUpdated'
+        'updated' => 'setUpdated',
+        'updated_by_church' => 'setUpdatedByChurch'
     ];
 
     /**
@@ -126,8 +126,8 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'translation' => 'getTranslation',
-        'updated_by_church' => 'getUpdatedByChurch',
-        'updated' => 'getUpdated'
+        'updated' => 'getUpdated',
+        'updated_by_church' => 'getUpdatedByChurch'
     ];
 
     /**
@@ -188,8 +188,8 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['translation'] = $data['translation'] ?? null;
-        $this->container['updated_by_church'] = $data['updated_by_church'] ?? null;
         $this->container['updated'] = $data['updated'] ?? null;
+        $this->container['updated_by_church'] = $data['updated_by_church'] ?? null;
     }
 
     /**
@@ -241,30 +241,6 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets updated_by_church
-     *
-     * @return bool|null
-     */
-    public function getUpdatedByChurch()
-    {
-        return $this->container['updated_by_church'];
-    }
-
-    /**
-     * Sets updated_by_church
-     *
-     * @param bool|null $updated_by_church Determines if the translation was updated or created by the church
-     *
-     * @return self
-     */
-    public function setUpdatedByChurch($updated_by_church)
-    {
-        $this->container['updated_by_church'] = $updated_by_church;
-
-        return $this;
-    }
-
-    /**
      * Gets updated
      *
      * @return \DateTime|null
@@ -284,6 +260,30 @@ class Translation1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_by_church
+     *
+     * @return bool|null
+     */
+    public function getUpdatedByChurch()
+    {
+        return $this->container['updated_by_church'];
+    }
+
+    /**
+     * Sets updated_by_church
+     *
+     * @param bool|null $updated_by_church Determines if the translation was updated or created by the church
+     *
+     * @return self
+     */
+    public function setUpdatedByChurch($updated_by_church)
+    {
+        $this->container['updated_by_church'] = $updated_by_church;
 
         return $this;
     }

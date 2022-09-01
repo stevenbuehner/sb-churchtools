@@ -57,10 +57,10 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'int',
         'group_id' => 'int',
         'group_type_role_id' => 'int',
-        'last_change' => '\DateTime'
+        'last_change' => '\DateTime',
+        'person_id' => 'int'
     ];
 
     /**
@@ -71,10 +71,10 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
         'group_id' => null,
         'group_type_role_id' => null,
-        'last_change' => 'date'
+        'last_change' => 'date',
+        'person_id' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
         'group_id' => 'groupId',
         'group_type_role_id' => 'groupTypeRoleId',
-        'last_change' => 'lastChange'
+        'last_change' => 'lastChange',
+        'person_id' => 'personId'
     ];
 
     /**
@@ -116,10 +116,10 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
         'group_id' => 'setGroupId',
         'group_type_role_id' => 'setGroupTypeRoleId',
-        'last_change' => 'setLastChange'
+        'last_change' => 'setLastChange',
+        'person_id' => 'setPersonId'
     ];
 
     /**
@@ -128,10 +128,10 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
         'group_id' => 'getGroupId',
         'group_type_role_id' => 'getGroupTypeRoleId',
-        'last_change' => 'getLastChange'
+        'last_change' => 'getLastChange',
+        'person_id' => 'getPersonId'
     ];
 
     /**
@@ -191,10 +191,10 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['group_id'] = $data['group_id'] ?? null;
         $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
         $this->container['last_change'] = $data['last_change'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
     }
 
     /**
@@ -220,30 +220,6 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets person_id
-     *
-     * @return int|null
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param int|null $person_id person_id
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
 
     /**
      * Gets group_id
@@ -313,6 +289,30 @@ class GroupMemberShort implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastChange($last_change)
     {
         $this->container['last_change'] = $last_change;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int|null
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int|null $person_id person_id
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }

@@ -57,8 +57,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
       * @var string[]
       */
     protected static $openAPITypes = [
-        'external_system' => '\StevenBuehner\ChurchTools\Model\ExternalSystem2',
         'domain_type' => 'string',
+        'external_system' => '\StevenBuehner\ChurchTools\Model\ExternalSystem2',
         'properties' => '\StevenBuehner\ChurchTools\Model\GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataProperties'
     ];
 
@@ -70,8 +70,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'external_system' => null,
         'domain_type' => null,
+        'external_system' => null,
         'properties' => null
     ];
 
@@ -102,8 +102,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_system' => 'externalSystem',
         'domain_type' => 'domainType',
+        'external_system' => 'externalSystem',
         'properties' => 'properties'
     ];
 
@@ -113,8 +113,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      * @var string[]
      */
     protected static $setters = [
-        'external_system' => 'setExternalSystem',
         'domain_type' => 'setDomainType',
+        'external_system' => 'setExternalSystem',
         'properties' => 'setProperties'
     ];
 
@@ -124,8 +124,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      * @var string[]
      */
     protected static $getters = [
-        'external_system' => 'getExternalSystem',
         'domain_type' => 'getDomainType',
+        'external_system' => 'getExternalSystem',
         'properties' => 'getProperties'
     ];
 
@@ -186,8 +186,8 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
      */
     public function __construct(array $data = null)
     {
-        $this->container['external_system'] = $data['external_system'] ?? null;
         $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['external_system'] = $data['external_system'] ?? null;
         $this->container['properties'] = $data['properties'] ?? null;
     }
 
@@ -200,9 +200,6 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
     {
         $invalidProperties = [];
 
-        if ($this->container['external_system'] === null) {
-            $invalidProperties[] = "'external_system' can't be null";
-        }
         if ($this->container['domain_type'] === null) {
             $invalidProperties[] = "'domain_type' can't be null";
         }
@@ -210,6 +207,9 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
             $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['external_system'] === null) {
+            $invalidProperties[] = "'external_system' can't be null";
+        }
         if ($this->container['properties'] === null) {
             $invalidProperties[] = "'properties' can't be null";
         }
@@ -227,30 +227,6 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets external_system
-     *
-     * @return \StevenBuehner\ChurchTools\Model\ExternalSystem2
-     */
-    public function getExternalSystem()
-    {
-        return $this->container['external_system'];
-    }
-
-    /**
-     * Sets external_system
-     *
-     * @param \StevenBuehner\ChurchTools\Model\ExternalSystem2 $external_system external_system
-     *
-     * @return self
-     */
-    public function setExternalSystem($external_system)
-    {
-        $this->container['external_system'] = $external_system;
-
-        return $this;
-    }
 
     /**
      * Gets domain_type
@@ -277,6 +253,30 @@ class GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200Response
         }
 
         $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_system
+     *
+     * @return \StevenBuehner\ChurchTools\Model\ExternalSystem2
+     */
+    public function getExternalSystem()
+    {
+        return $this->container['external_system'];
+    }
+
+    /**
+     * Sets external_system
+     *
+     * @param \StevenBuehner\ChurchTools\Model\ExternalSystem2 $external_system external_system
+     *
+     * @return self
+     */
+    public function setExternalSystem($external_system)
+    {
+        $this->container['external_system'] = $external_system;
 
         return $this;
     }

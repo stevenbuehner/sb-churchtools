@@ -57,18 +57,18 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'filename' => 'string',
-        'file_url' => 'string',
-        'image_url' => 'string',
-        'relative_url' => 'string',
-        'type' => 'string',
-        'show_only_when_editable' => 'bool',
-        'security_level_id' => 'int',
-        'size' => 'int',
+        'domain_id' => 'string',
         'domain_type' => 'string',
-        'domain_id' => 'string'
+        'file_url' => 'string',
+        'filename' => 'string',
+        'id' => 'int',
+        'image_url' => 'string',
+        'name' => 'string',
+        'relative_url' => 'string',
+        'security_level_id' => 'int',
+        'show_only_when_editable' => 'bool',
+        'size' => 'int',
+        'type' => 'string'
     ];
 
     /**
@@ -79,18 +79,18 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'filename' => null,
-        'file_url' => null,
-        'image_url' => null,
-        'relative_url' => null,
-        'type' => null,
-        'show_only_when_editable' => null,
-        'security_level_id' => null,
-        'size' => null,
+        'domain_id' => null,
         'domain_type' => null,
-        'domain_id' => null
+        'file_url' => null,
+        'filename' => null,
+        'id' => null,
+        'image_url' => null,
+        'name' => null,
+        'relative_url' => null,
+        'security_level_id' => null,
+        'show_only_when_editable' => null,
+        'size' => null,
+        'type' => null
     ];
 
     /**
@@ -120,18 +120,18 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'filename' => 'filename',
-        'file_url' => 'fileUrl',
-        'image_url' => 'imageUrl',
-        'relative_url' => 'relativeUrl',
-        'type' => 'type',
-        'show_only_when_editable' => 'showOnlyWhenEditable',
-        'security_level_id' => 'securityLevelId',
-        'size' => 'size',
+        'domain_id' => 'domainId',
         'domain_type' => 'domainType',
-        'domain_id' => 'domainId'
+        'file_url' => 'fileUrl',
+        'filename' => 'filename',
+        'id' => 'id',
+        'image_url' => 'imageUrl',
+        'name' => 'name',
+        'relative_url' => 'relativeUrl',
+        'security_level_id' => 'securityLevelId',
+        'show_only_when_editable' => 'showOnlyWhenEditable',
+        'size' => 'size',
+        'type' => 'type'
     ];
 
     /**
@@ -140,18 +140,18 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'filename' => 'setFilename',
-        'file_url' => 'setFileUrl',
-        'image_url' => 'setImageUrl',
-        'relative_url' => 'setRelativeUrl',
-        'type' => 'setType',
-        'show_only_when_editable' => 'setShowOnlyWhenEditable',
-        'security_level_id' => 'setSecurityLevelId',
-        'size' => 'setSize',
+        'domain_id' => 'setDomainId',
         'domain_type' => 'setDomainType',
-        'domain_id' => 'setDomainId'
+        'file_url' => 'setFileUrl',
+        'filename' => 'setFilename',
+        'id' => 'setId',
+        'image_url' => 'setImageUrl',
+        'name' => 'setName',
+        'relative_url' => 'setRelativeUrl',
+        'security_level_id' => 'setSecurityLevelId',
+        'show_only_when_editable' => 'setShowOnlyWhenEditable',
+        'size' => 'setSize',
+        'type' => 'setType'
     ];
 
     /**
@@ -160,18 +160,18 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'filename' => 'getFilename',
-        'file_url' => 'getFileUrl',
-        'image_url' => 'getImageUrl',
-        'relative_url' => 'getRelativeUrl',
-        'type' => 'getType',
-        'show_only_when_editable' => 'getShowOnlyWhenEditable',
-        'security_level_id' => 'getSecurityLevelId',
-        'size' => 'getSize',
+        'domain_id' => 'getDomainId',
         'domain_type' => 'getDomainType',
-        'domain_id' => 'getDomainId'
+        'file_url' => 'getFileUrl',
+        'filename' => 'getFilename',
+        'id' => 'getId',
+        'image_url' => 'getImageUrl',
+        'name' => 'getName',
+        'relative_url' => 'getRelativeUrl',
+        'security_level_id' => 'getSecurityLevelId',
+        'show_only_when_editable' => 'getShowOnlyWhenEditable',
+        'size' => 'getSize',
+        'type' => 'getType'
     ];
 
     /**
@@ -231,18 +231,18 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['filename'] = $data['filename'] ?? null;
-        $this->container['file_url'] = $data['file_url'] ?? null;
-        $this->container['image_url'] = $data['image_url'] ?? null;
-        $this->container['relative_url'] = $data['relative_url'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['show_only_when_editable'] = $data['show_only_when_editable'] ?? null;
-        $this->container['security_level_id'] = $data['security_level_id'] ?? null;
-        $this->container['size'] = $data['size'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['file_url'] = $data['file_url'] ?? null;
+        $this->container['filename'] = $data['filename'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['image_url'] = $data['image_url'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['relative_url'] = $data['relative_url'] ?? null;
+        $this->container['security_level_id'] = $data['security_level_id'] ?? null;
+        $this->container['show_only_when_editable'] = $data['show_only_when_editable'] ?? null;
+        $this->container['size'] = $data['size'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -270,241 +270,25 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets domain_id
      *
      * @return string|null
      */
-    public function getName()
+    public function getDomainId()
     {
-        return $this->container['name'];
+        return $this->container['domain_id'];
     }
 
     /**
-     * Sets name
+     * Sets domain_id
      *
-     * @param string|null $name name
+     * @param string|null $domain_id domain_id
      *
      * @return self
      */
-    public function setName($name)
+    public function setDomainId($domain_id)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets filename
-     *
-     * @return string|null
-     */
-    public function getFilename()
-    {
-        return $this->container['filename'];
-    }
-
-    /**
-     * Sets filename
-     *
-     * @param string|null $filename filename
-     *
-     * @return self
-     */
-    public function setFilename($filename)
-    {
-        $this->container['filename'] = $filename;
-
-        return $this;
-    }
-
-    /**
-     * Gets file_url
-     *
-     * @return string|null
-     */
-    public function getFileUrl()
-    {
-        return $this->container['file_url'];
-    }
-
-    /**
-     * Sets file_url
-     *
-     * @param string|null $file_url file_url
-     *
-     * @return self
-     */
-    public function setFileUrl($file_url)
-    {
-        $this->container['file_url'] = $file_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets image_url
-     *
-     * @return string|null
-     */
-    public function getImageUrl()
-    {
-        return $this->container['image_url'];
-    }
-
-    /**
-     * Sets image_url
-     *
-     * @param string|null $image_url image_url
-     *
-     * @return self
-     */
-    public function setImageUrl($image_url)
-    {
-        $this->container['image_url'] = $image_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets relative_url
-     *
-     * @return string|null
-     */
-    public function getRelativeUrl()
-    {
-        return $this->container['relative_url'];
-    }
-
-    /**
-     * Sets relative_url
-     *
-     * @param string|null $relative_url relative_url
-     *
-     * @return self
-     */
-    public function setRelativeUrl($relative_url)
-    {
-        $this->container['relative_url'] = $relative_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_only_when_editable
-     *
-     * @return bool|null
-     */
-    public function getShowOnlyWhenEditable()
-    {
-        return $this->container['show_only_when_editable'];
-    }
-
-    /**
-     * Sets show_only_when_editable
-     *
-     * @param bool|null $show_only_when_editable show_only_when_editable
-     *
-     * @return self
-     */
-    public function setShowOnlyWhenEditable($show_only_when_editable)
-    {
-        $this->container['show_only_when_editable'] = $show_only_when_editable;
-
-        return $this;
-    }
-
-    /**
-     * Gets security_level_id
-     *
-     * @return int|null
-     */
-    public function getSecurityLevelId()
-    {
-        return $this->container['security_level_id'];
-    }
-
-    /**
-     * Sets security_level_id
-     *
-     * @param int|null $security_level_id security_level_id
-     *
-     * @return self
-     */
-    public function setSecurityLevelId($security_level_id)
-    {
-        $this->container['security_level_id'] = $security_level_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets size
-     *
-     * @return int|null
-     */
-    public function getSize()
-    {
-        return $this->container['size'];
-    }
-
-    /**
-     * Sets size
-     *
-     * @param int|null $size The file size in byte
-     *
-     * @return self
-     */
-    public function setSize($size)
-    {
-        $this->container['size'] = $size;
+        $this->container['domain_id'] = $domain_id;
 
         return $this;
     }
@@ -534,25 +318,241 @@ class UploadFiles200ResponseDataInner implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets domain_id
+     * Gets file_url
      *
      * @return string|null
      */
-    public function getDomainId()
+    public function getFileUrl()
     {
-        return $this->container['domain_id'];
+        return $this->container['file_url'];
     }
 
     /**
-     * Sets domain_id
+     * Sets file_url
      *
-     * @param string|null $domain_id domain_id
+     * @param string|null $file_url file_url
      *
      * @return self
      */
-    public function setDomainId($domain_id)
+    public function setFileUrl($file_url)
     {
-        $this->container['domain_id'] = $domain_id;
+        $this->container['file_url'] = $file_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets filename
+     *
+     * @return string|null
+     */
+    public function getFilename()
+    {
+        return $this->container['filename'];
+    }
+
+    /**
+     * Sets filename
+     *
+     * @param string|null $filename filename
+     *
+     * @return self
+     */
+    public function setFilename($filename)
+    {
+        $this->container['filename'] = $filename;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets image_url
+     *
+     * @return string|null
+     */
+    public function getImageUrl()
+    {
+        return $this->container['image_url'];
+    }
+
+    /**
+     * Sets image_url
+     *
+     * @param string|null $image_url image_url
+     *
+     * @return self
+     */
+    public function setImageUrl($image_url)
+    {
+        $this->container['image_url'] = $image_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets relative_url
+     *
+     * @return string|null
+     */
+    public function getRelativeUrl()
+    {
+        return $this->container['relative_url'];
+    }
+
+    /**
+     * Sets relative_url
+     *
+     * @param string|null $relative_url relative_url
+     *
+     * @return self
+     */
+    public function setRelativeUrl($relative_url)
+    {
+        $this->container['relative_url'] = $relative_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets security_level_id
+     *
+     * @return int|null
+     */
+    public function getSecurityLevelId()
+    {
+        return $this->container['security_level_id'];
+    }
+
+    /**
+     * Sets security_level_id
+     *
+     * @param int|null $security_level_id security_level_id
+     *
+     * @return self
+     */
+    public function setSecurityLevelId($security_level_id)
+    {
+        $this->container['security_level_id'] = $security_level_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_only_when_editable
+     *
+     * @return bool|null
+     */
+    public function getShowOnlyWhenEditable()
+    {
+        return $this->container['show_only_when_editable'];
+    }
+
+    /**
+     * Sets show_only_when_editable
+     *
+     * @param bool|null $show_only_when_editable show_only_when_editable
+     *
+     * @return self
+     */
+    public function setShowOnlyWhenEditable($show_only_when_editable)
+    {
+        $this->container['show_only_when_editable'] = $show_only_when_editable;
+
+        return $this;
+    }
+
+    /**
+     * Gets size
+     *
+     * @return int|null
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /**
+     * Sets size
+     *
+     * @param int|null $size The file size in byte
+     *
+     * @return self
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

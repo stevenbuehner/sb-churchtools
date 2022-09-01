@@ -57,7 +57,7 @@ class CreateOrUpdateMember200Response implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner'
+        'data' => '\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData'
     ];
 
     /**
@@ -206,7 +206,7 @@ class CreateOrUpdateMember200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner|null
+     * @return \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class CreateOrUpdateMember200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData|null $data data
      *
      * @return self
      */

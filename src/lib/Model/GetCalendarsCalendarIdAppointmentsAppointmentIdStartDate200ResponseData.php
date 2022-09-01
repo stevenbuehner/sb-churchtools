@@ -58,9 +58,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
       */
     protected static $openAPITypes = [
         'appointment' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointment',
+        'bookings' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInner[]',
         'event' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataEvent',
         'group' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataGroup',
-        'bookings' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInner[]',
         'meeting_requests' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInner[]'
     ];
 
@@ -73,9 +73,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
       */
     protected static $openAPIFormats = [
         'appointment' => null,
+        'bookings' => null,
         'event' => null,
         'group' => null,
-        'bookings' => null,
         'meeting_requests' => null
     ];
 
@@ -107,9 +107,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
      */
     protected static $attributeMap = [
         'appointment' => 'appointment',
+        'bookings' => 'bookings',
         'event' => 'event',
         'group' => 'group',
-        'bookings' => 'bookings',
         'meeting_requests' => 'meetingRequests'
     ];
 
@@ -120,9 +120,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
      */
     protected static $setters = [
         'appointment' => 'setAppointment',
+        'bookings' => 'setBookings',
         'event' => 'setEvent',
         'group' => 'setGroup',
-        'bookings' => 'setBookings',
         'meeting_requests' => 'setMeetingRequests'
     ];
 
@@ -133,9 +133,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
      */
     protected static $getters = [
         'appointment' => 'getAppointment',
+        'bookings' => 'getBookings',
         'event' => 'getEvent',
         'group' => 'getGroup',
-        'bookings' => 'getBookings',
         'meeting_requests' => 'getMeetingRequests'
     ];
 
@@ -197,9 +197,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
     public function __construct(array $data = null)
     {
         $this->container['appointment'] = $data['appointment'] ?? null;
+        $this->container['bookings'] = $data['bookings'] ?? null;
         $this->container['event'] = $data['event'] ?? null;
         $this->container['group'] = $data['group'] ?? null;
-        $this->container['bookings'] = $data['bookings'] ?? null;
         $this->container['meeting_requests'] = $data['meeting_requests'] ?? null;
     }
 
@@ -215,12 +215,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
         if ($this->container['appointment'] === null) {
             $invalidProperties[] = "'appointment' can't be null";
         }
-        if ($this->container['event'] === null) {
-            $invalidProperties[] = "'event' can't be null";
-        }
-        if ($this->container['group'] === null) {
-            $invalidProperties[] = "'group' can't be null";
-        }
         if ($this->container['bookings'] === null) {
             $invalidProperties[] = "'bookings' can't be null";
         }
@@ -228,6 +222,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
             $invalidProperties[] = "invalid value for 'bookings', number of items must be greater than or equal to 1.";
         }
 
+        if ($this->container['event'] === null) {
+            $invalidProperties[] = "'event' can't be null";
+        }
+        if ($this->container['group'] === null) {
+            $invalidProperties[] = "'group' can't be null";
+        }
         if ($this->container['meeting_requests'] === null) {
             $invalidProperties[] = "'meeting_requests' can't be null";
         }
@@ -270,6 +270,35 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
     public function setAppointment($appointment)
     {
         $this->container['appointment'] = $appointment;
+
+        return $this;
+    }
+
+    /**
+     * Gets bookings
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInner[]
+     */
+    public function getBookings()
+    {
+        return $this->container['bookings'];
+    }
+
+    /**
+     * Sets bookings
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInner[] $bookings bookings
+     *
+     * @return self
+     */
+    public function setBookings($bookings)
+    {
+
+
+        if ((count($bookings) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $bookings when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData., number of items must be greater than or equal to 1.');
+        }
+        $this->container['bookings'] = $bookings;
 
         return $this;
     }
@@ -318,35 +347,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData im
     public function setGroup($group)
     {
         $this->container['group'] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Gets bookings
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInner[]
-     */
-    public function getBookings()
-    {
-        return $this->container['bookings'];
-    }
-
-    /**
-     * Sets bookings
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInner[] $bookings bookings
-     *
-     * @return self
-     */
-    public function setBookings($bookings)
-    {
-
-
-        if ((count($bookings) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $bookings when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseData., number of items must be greater than or equal to 1.');
-        }
-        $this->container['bookings'] = $bookings;
 
         return $this;
     }

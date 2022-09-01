@@ -120,10 +120,10 @@ class JobApi
      *
      * Your GET endpoint
      *
-     * @param  array $status status (optional)
+     * @param  string[] $status status (optional)
      * @param  string $identifier identifier (optional)
      * @param  string $name name (optional)
-     * @param  array $domain_ids domain_ids (optional)
+     * @param  int[] $domain_ids domain_ids (optional)
      * @param  string $created_start_date created_start_date (optional)
      * @param  string $created_end_date created_end_date (optional)
      * @param  string $modified_start_date modified_start_date (optional)
@@ -144,10 +144,10 @@ class JobApi
      *
      * Your GET endpoint
      *
-     * @param  array $status (optional)
+     * @param  string[] $status (optional)
      * @param  string $identifier (optional)
      * @param  string $name (optional)
-     * @param  array $domain_ids (optional)
+     * @param  int[] $domain_ids (optional)
      * @param  string $created_start_date (optional)
      * @param  string $created_end_date (optional)
      * @param  string $modified_start_date (optional)
@@ -250,10 +250,10 @@ class JobApi
      *
      * Your GET endpoint
      *
-     * @param  array $status (optional)
+     * @param  string[] $status (optional)
      * @param  string $identifier (optional)
      * @param  string $name (optional)
-     * @param  array $domain_ids (optional)
+     * @param  int[] $domain_ids (optional)
      * @param  string $created_start_date (optional)
      * @param  string $created_end_date (optional)
      * @param  string $modified_start_date (optional)
@@ -277,10 +277,10 @@ class JobApi
      *
      * Your GET endpoint
      *
-     * @param  array $status (optional)
+     * @param  string[] $status (optional)
      * @param  string $identifier (optional)
      * @param  string $name (optional)
-     * @param  array $domain_ids (optional)
+     * @param  int[] $domain_ids (optional)
      * @param  string $created_start_date (optional)
      * @param  string $created_end_date (optional)
      * @param  string $modified_start_date (optional)
@@ -333,10 +333,10 @@ class JobApi
     /**
      * Create request for operation 'getJobs'
      *
-     * @param  array $status (optional)
+     * @param  string[] $status (optional)
      * @param  string $identifier (optional)
      * @param  string $name (optional)
-     * @param  array $domain_ids (optional)
+     * @param  int[] $domain_ids (optional)
      * @param  string $created_start_date (optional)
      * @param  string $created_end_date (optional)
      * @param  string $modified_start_date (optional)
@@ -385,7 +385,7 @@ class JobApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $domain_ids,
-            'domain_ids', // param base name
+            'domain_ids[]', // param base name
             'array', // openApiType
             'form', // style
             true, // explode

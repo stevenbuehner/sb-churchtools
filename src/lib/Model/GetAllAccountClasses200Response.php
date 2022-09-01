@@ -57,7 +57,7 @@ class GetAllAccountClasses200Response implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountClassesInner[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllAccountClasses200ResponseDataInner[]'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetAllAccountClasses200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountClassesInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccountClasses200ResponseDataInner[]|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetAllAccountClasses200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountClassesInner[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccountClasses200ResponseDataInner[]|null $data data
      *
      * @return self
      */

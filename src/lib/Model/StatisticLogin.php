@@ -57,9 +57,9 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total_logins' => 'int',
         'last_login' => '\DateTime',
-        'person' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject'
+        'person' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
+        'total_logins' => 'int'
     ];
 
     /**
@@ -70,9 +70,9 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total_logins' => null,
         'last_login' => 'date-time',
-        'person' => null
+        'person' => null,
+        'total_logins' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_logins' => 'totalLogins',
         'last_login' => 'lastLogin',
-        'person' => 'person'
+        'person' => 'person',
+        'total_logins' => 'totalLogins'
     ];
 
     /**
@@ -113,9 +113,9 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'total_logins' => 'setTotalLogins',
         'last_login' => 'setLastLogin',
-        'person' => 'setPerson'
+        'person' => 'setPerson',
+        'total_logins' => 'setTotalLogins'
     ];
 
     /**
@@ -124,9 +124,9 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'total_logins' => 'getTotalLogins',
         'last_login' => 'getLastLogin',
-        'person' => 'getPerson'
+        'person' => 'getPerson',
+        'total_logins' => 'getTotalLogins'
     ];
 
     /**
@@ -186,9 +186,9 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['total_logins'] = $data['total_logins'] ?? null;
         $this->container['last_login'] = $data['last_login'] ?? null;
         $this->container['person'] = $data['person'] ?? null;
+        $this->container['total_logins'] = $data['total_logins'] ?? null;
     }
 
     /**
@@ -214,30 +214,6 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets total_logins
-     *
-     * @return int|null
-     */
-    public function getTotalLogins()
-    {
-        return $this->container['total_logins'];
-    }
-
-    /**
-     * Sets total_logins
-     *
-     * @param int|null $total_logins Count of how many times a user has loged in.
-     *
-     * @return self
-     */
-    public function setTotalLogins($total_logins)
-    {
-        $this->container['total_logins'] = $total_logins;
-
-        return $this;
-    }
 
     /**
      * Gets last_login
@@ -266,7 +242,7 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets person
      *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
      */
     public function getPerson()
     {
@@ -276,13 +252,37 @@ class StatisticLogin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets person
      *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject|null $person person
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $person person
      *
      * @return self
      */
     public function setPerson($person)
     {
         $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_logins
+     *
+     * @return int|null
+     */
+    public function getTotalLogins()
+    {
+        return $this->container['total_logins'];
+    }
+
+    /**
+     * Sets total_logins
+     *
+     * @param int|null $total_logins Count of how many times a user has loged in.
+     *
+     * @return self
+     */
+    public function setTotalLogins($total_logins)
+    {
+        $this->container['total_logins'] = $total_logins;
 
         return $this;
     }

@@ -116,34 +116,34 @@ class DepartmentApi
     }
 
     /**
-     * Operation getAllDepartments
+     * Operation getDepartments
      *
      * Get all departments
      *
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetAllDepartments200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetDepartments200Response
      */
-    public function getAllDepartments()
+    public function getDepartments()
     {
-        list($response) = $this->getAllDepartmentsWithHttpInfo();
+        list($response) = $this->getDepartmentsWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation getAllDepartmentsWithHttpInfo
+     * Operation getDepartmentsWithHttpInfo
      *
      * Get all departments
      *
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetAllDepartments200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetDepartments200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllDepartmentsWithHttpInfo()
+    public function getDepartmentsWithHttpInfo()
     {
-        $request = $this->getAllDepartmentsRequest();
+        $request = $this->getDepartmentsRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -182,23 +182,23 @@ class DepartmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetDepartments200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetDepartments200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetDepartments200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetDepartments200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -219,7 +219,7 @@ class DepartmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetDepartments200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -230,7 +230,7 @@ class DepartmentApi
     }
 
     /**
-     * Operation getAllDepartmentsAsync
+     * Operation getDepartmentsAsync
      *
      * Get all departments
      *
@@ -238,9 +238,9 @@ class DepartmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllDepartmentsAsync()
+    public function getDepartmentsAsync()
     {
-        return $this->getAllDepartmentsAsyncWithHttpInfo()
+        return $this->getDepartmentsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -249,7 +249,7 @@ class DepartmentApi
     }
 
     /**
-     * Operation getAllDepartmentsAsyncWithHttpInfo
+     * Operation getDepartmentsAsyncWithHttpInfo
      *
      * Get all departments
      *
@@ -257,10 +257,10 @@ class DepartmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAllDepartmentsAsyncWithHttpInfo()
+    public function getDepartmentsAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response';
-        $request = $this->getAllDepartmentsRequest();
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetDepartments200Response';
+        $request = $this->getDepartmentsRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -299,13 +299,13 @@ class DepartmentApi
     }
 
     /**
-     * Create request for operation 'getAllDepartments'
+     * Create request for operation 'getDepartments'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAllDepartmentsRequest()
+    public function getDepartmentsRequest()
     {
 
         $resourcePath = '/departments';

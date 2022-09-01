@@ -57,18 +57,18 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'date' => '\DateTime',
-        'job_id' => 'float',
-        'system' => 'string',
-        'level' => 'string',
-        'is_dry_run' => 'bool',
-        'type' => 'string',
-        'message_key' => 'string',
         'args' => 'object',
-        'domain_type' => 'string',
+        'changes' => '\StevenBuehner\ChurchTools\Model\PostSyncLogsRequestLogsInnerChangesInner[]',
+        'date' => '\DateTime',
         'domain_id' => 'string',
+        'domain_type' => 'string',
+        'is_dry_run' => 'bool',
+        'job_id' => 'int',
+        'level' => 'string',
+        'message_key' => 'string',
         'source_entity_id' => 'string',
-        'changes' => '\StevenBuehner\ChurchTools\Model\PostSyncLogsRequestLogsInnerChangesInner[]'
+        'system' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -79,18 +79,18 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'date' => 'date-time',
-        'job_id' => null,
-        'system' => null,
-        'level' => null,
-        'is_dry_run' => null,
-        'type' => null,
-        'message_key' => null,
         'args' => null,
-        'domain_type' => null,
+        'changes' => null,
+        'date' => 'date-time',
         'domain_id' => null,
+        'domain_type' => null,
+        'is_dry_run' => null,
+        'job_id' => null,
+        'level' => null,
+        'message_key' => null,
         'source_entity_id' => null,
-        'changes' => null
+        'system' => null,
+        'type' => null
     ];
 
     /**
@@ -120,18 +120,18 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'date' => 'date',
-        'job_id' => 'jobId',
-        'system' => 'system',
-        'level' => 'level',
-        'is_dry_run' => 'isDryRun',
-        'type' => 'type',
-        'message_key' => 'messageKey',
         'args' => 'args',
-        'domain_type' => 'domainType',
+        'changes' => 'changes',
+        'date' => 'date',
         'domain_id' => 'domainId',
+        'domain_type' => 'domainType',
+        'is_dry_run' => 'isDryRun',
+        'job_id' => 'jobId',
+        'level' => 'level',
+        'message_key' => 'messageKey',
         'source_entity_id' => 'sourceEntityId',
-        'changes' => 'changes'
+        'system' => 'system',
+        'type' => 'type'
     ];
 
     /**
@@ -140,18 +140,18 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'date' => 'setDate',
-        'job_id' => 'setJobId',
-        'system' => 'setSystem',
-        'level' => 'setLevel',
-        'is_dry_run' => 'setIsDryRun',
-        'type' => 'setType',
-        'message_key' => 'setMessageKey',
         'args' => 'setArgs',
-        'domain_type' => 'setDomainType',
+        'changes' => 'setChanges',
+        'date' => 'setDate',
         'domain_id' => 'setDomainId',
+        'domain_type' => 'setDomainType',
+        'is_dry_run' => 'setIsDryRun',
+        'job_id' => 'setJobId',
+        'level' => 'setLevel',
+        'message_key' => 'setMessageKey',
         'source_entity_id' => 'setSourceEntityId',
-        'changes' => 'setChanges'
+        'system' => 'setSystem',
+        'type' => 'setType'
     ];
 
     /**
@@ -160,18 +160,18 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'date' => 'getDate',
-        'job_id' => 'getJobId',
-        'system' => 'getSystem',
-        'level' => 'getLevel',
-        'is_dry_run' => 'getIsDryRun',
-        'type' => 'getType',
-        'message_key' => 'getMessageKey',
         'args' => 'getArgs',
-        'domain_type' => 'getDomainType',
+        'changes' => 'getChanges',
+        'date' => 'getDate',
         'domain_id' => 'getDomainId',
+        'domain_type' => 'getDomainType',
+        'is_dry_run' => 'getIsDryRun',
+        'job_id' => 'getJobId',
+        'level' => 'getLevel',
+        'message_key' => 'getMessageKey',
         'source_entity_id' => 'getSourceEntityId',
-        'changes' => 'getChanges'
+        'system' => 'getSystem',
+        'type' => 'getType'
     ];
 
     /**
@@ -215,9 +215,6 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
         return self::$openAPIModelName;
     }
 
-    public const SYSTEM_ES = 'es';
-    public const SYSTEM_MASTER = 'master';
-    public const SYSTEM_BOTH = 'both';
     public const LEVEL_DEBUG = 'debug';
     public const LEVEL_INFO = 'info';
     public const LEVEL_NOTICE = 'notice';
@@ -226,25 +223,14 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
     public const LEVEL_CRITICAL = 'critical';
     public const LEVEL_ALERT = 'alert';
     public const LEVEL_EMERGENCY = 'emergency';
+    public const SYSTEM_ES = 'es';
+    public const SYSTEM_MASTER = 'master';
+    public const SYSTEM_BOTH = 'both';
     public const TYPE_CREATE = 'create';
     public const TYPE_UPDATE = 'update';
     public const TYPE_LINK = 'link';
     public const TYPE_DELETE = 'delete';
     public const TYPE_EXECUTION = 'execution';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getSystemAllowableValues()
-    {
-        return [
-            self::SYSTEM_ES,
-            self::SYSTEM_MASTER,
-            self::SYSTEM_BOTH,
-        ];
-    }
 
     /**
      * Gets allowable values of the enum
@@ -262,6 +248,20 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
             self::LEVEL_CRITICAL,
             self::LEVEL_ALERT,
             self::LEVEL_EMERGENCY,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSystemAllowableValues()
+    {
+        return [
+            self::SYSTEM_ES,
+            self::SYSTEM_MASTER,
+            self::SYSTEM_BOTH,
         ];
     }
 
@@ -296,18 +296,18 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['date'] = $data['date'] ?? null;
-        $this->container['job_id'] = $data['job_id'] ?? null;
-        $this->container['system'] = $data['system'] ?? null;
-        $this->container['level'] = $data['level'] ?? null;
-        $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['message_key'] = $data['message_key'] ?? null;
         $this->container['args'] = $data['args'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
-        $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
         $this->container['changes'] = $data['changes'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['is_dry_run'] = $data['is_dry_run'] ?? null;
+        $this->container['job_id'] = $data['job_id'] ?? null;
+        $this->container['level'] = $data['level'] ?? null;
+        $this->container['message_key'] = $data['message_key'] ?? null;
+        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
+        $this->container['system'] = $data['system'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -319,6 +319,9 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if ($this->container['args'] === null) {
+            $invalidProperties[] = "'args' can't be null";
+        }
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
         }
@@ -326,25 +329,26 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'date', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['domain_id'] === null) {
+            $invalidProperties[] = "'domain_id' can't be null";
+        }
+        if ((mb_strlen($this->container['domain_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'domain_id', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['domain_type'] === null) {
+            $invalidProperties[] = "'domain_type' can't be null";
+        }
+        if ((mb_strlen($this->container['domain_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['is_dry_run'] === null) {
+            $invalidProperties[] = "'is_dry_run' can't be null";
+        }
         if ($this->container['job_id'] === null) {
             $invalidProperties[] = "'job_id' can't be null";
         }
-        if ($this->container['system'] === null) {
-            $invalidProperties[] = "'system' can't be null";
-        }
-        $allowedValues = $this->getSystemAllowableValues();
-        if (!is_null($this->container['system']) && !in_array($this->container['system'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'system', must be one of '%s'",
-                $this->container['system'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ((mb_strlen($this->container['system']) < 1)) {
-            $invalidProperties[] = "invalid value for 'system', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['level'] === null) {
             $invalidProperties[] = "'level' can't be null";
         }
@@ -361,9 +365,36 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'level', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['is_dry_run'] === null) {
-            $invalidProperties[] = "'is_dry_run' can't be null";
+        if ($this->container['message_key'] === null) {
+            $invalidProperties[] = "'message_key' can't be null";
         }
+        if ((mb_strlen($this->container['message_key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'message_key', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['source_entity_id'] === null) {
+            $invalidProperties[] = "'source_entity_id' can't be null";
+        }
+        if ((mb_strlen($this->container['source_entity_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'source_entity_id', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['system'] === null) {
+            $invalidProperties[] = "'system' can't be null";
+        }
+        $allowedValues = $this->getSystemAllowableValues();
+        if (!is_null($this->container['system']) && !in_array($this->container['system'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'system', must be one of '%s'",
+                $this->container['system'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ((mb_strlen($this->container['system']) < 1)) {
+            $invalidProperties[] = "invalid value for 'system', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
@@ -380,37 +411,6 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['message_key'] === null) {
-            $invalidProperties[] = "'message_key' can't be null";
-        }
-        if ((mb_strlen($this->container['message_key']) < 1)) {
-            $invalidProperties[] = "invalid value for 'message_key', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['args'] === null) {
-            $invalidProperties[] = "'args' can't be null";
-        }
-        if ($this->container['domain_type'] === null) {
-            $invalidProperties[] = "'domain_type' can't be null";
-        }
-        if ((mb_strlen($this->container['domain_type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['domain_id'] === null) {
-            $invalidProperties[] = "'domain_id' can't be null";
-        }
-        if ((mb_strlen($this->container['domain_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'domain_id', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['source_entity_id'] === null) {
-            $invalidProperties[] = "'source_entity_id' can't be null";
-        }
-        if ((mb_strlen($this->container['source_entity_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'source_entity_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -425,6 +425,54 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets args
+     *
+     * @return object
+     */
+    public function getArgs()
+    {
+        return $this->container['args'];
+    }
+
+    /**
+     * Sets args
+     *
+     * @param object $args Arguments for Translation Key
+     *
+     * @return self
+     */
+    public function setArgs($args)
+    {
+        $this->container['args'] = $args;
+
+        return $this;
+    }
+
+    /**
+     * Gets changes
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PostSyncLogsRequestLogsInnerChangesInner[]|null
+     */
+    public function getChanges()
+    {
+        return $this->container['changes'];
+    }
+
+    /**
+     * Sets changes
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PostSyncLogsRequestLogsInnerChangesInner[]|null $changes changes
+     *
+     * @return self
+     */
+    public function setChanges($changes)
+    {
+        $this->container['changes'] = $changes;
+
+        return $this;
+    }
 
     /**
      * Gets date
@@ -456,9 +504,91 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
+     * Gets domain_id
+     *
+     * @return string
+     */
+    public function getDomainId()
+    {
+        return $this->container['domain_id'];
+    }
+
+    /**
+     * Sets domain_id
+     *
+     * @param string $domain_id domain_id
+     *
+     * @return self
+     */
+    public function setDomainId($domain_id)
+    {
+
+        if ((mb_strlen($domain_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $domain_id when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['domain_id'] = $domain_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_type
+     *
+     * @return string
+     */
+    public function getDomainType()
+    {
+        return $this->container['domain_type'];
+    }
+
+    /**
+     * Sets domain_type
+     *
+     * @param string $domain_type domain_type
+     *
+     * @return self
+     */
+    public function setDomainType($domain_type)
+    {
+
+        if ((mb_strlen($domain_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $domain_type when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_dry_run
+     *
+     * @return bool
+     */
+    public function getIsDryRun()
+    {
+        return $this->container['is_dry_run'];
+    }
+
+    /**
+     * Sets is_dry_run
+     *
+     * @param bool $is_dry_run is_dry_run
+     *
+     * @return self
+     */
+    public function setIsDryRun($is_dry_run)
+    {
+        $this->container['is_dry_run'] = $is_dry_run;
+
+        return $this;
+    }
+
+    /**
      * Gets job_id
      *
-     * @return float
+     * @return int
      */
     public function getJobId()
     {
@@ -468,52 +598,13 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets job_id
      *
-     * @param float $job_id job_id
+     * @param int $job_id job_id
      *
      * @return self
      */
     public function setJobId($job_id)
     {
         $this->container['job_id'] = $job_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets system
-     *
-     * @return string
-     */
-    public function getSystem()
-    {
-        return $this->container['system'];
-    }
-
-    /**
-     * Sets system
-     *
-     * @param string $system system
-     *
-     * @return self
-     */
-    public function setSystem($system)
-    {
-        $allowedValues = $this->getSystemAllowableValues();
-        if (!in_array($system, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'system', must be one of '%s'",
-                    $system,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-
-        if ((mb_strlen($system) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $system when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['system'] = $system;
 
         return $this;
     }
@@ -558,25 +649,98 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets is_dry_run
+     * Gets message_key
      *
-     * @return bool
+     * @return string
      */
-    public function getIsDryRun()
+    public function getMessageKey()
     {
-        return $this->container['is_dry_run'];
+        return $this->container['message_key'];
     }
 
     /**
-     * Sets is_dry_run
+     * Sets message_key
      *
-     * @param bool $is_dry_run is_dry_run
+     * @param string $message_key Translation Key
      *
      * @return self
      */
-    public function setIsDryRun($is_dry_run)
+    public function setMessageKey($message_key)
     {
-        $this->container['is_dry_run'] = $is_dry_run;
+
+        if ((mb_strlen($message_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $message_key when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['message_key'] = $message_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_entity_id
+     *
+     * @return string
+     */
+    public function getSourceEntityId()
+    {
+        return $this->container['source_entity_id'];
+    }
+
+    /**
+     * Sets source_entity_id
+     *
+     * @param string $source_entity_id source_entity_id
+     *
+     * @return self
+     */
+    public function setSourceEntityId($source_entity_id)
+    {
+
+        if ((mb_strlen($source_entity_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $source_entity_id when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['source_entity_id'] = $source_entity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets system
+     *
+     * @return string
+     */
+    public function getSystem()
+    {
+        return $this->container['system'];
+    }
+
+    /**
+     * Sets system
+     *
+     * @param string $system system
+     *
+     * @return self
+     */
+    public function setSystem($system)
+    {
+        $allowedValues = $this->getSystemAllowableValues();
+        if (!in_array($system, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'system', must be one of '%s'",
+                    $system,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+
+        if ((mb_strlen($system) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $system when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
+        }
+
+        $this->container['system'] = $system;
 
         return $this;
     }
@@ -616,170 +780,6 @@ class PostSyncLogsRequestLogsInner implements ModelInterface, ArrayAccess, \Json
         }
 
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets message_key
-     *
-     * @return string
-     */
-    public function getMessageKey()
-    {
-        return $this->container['message_key'];
-    }
-
-    /**
-     * Sets message_key
-     *
-     * @param string $message_key Translation Key
-     *
-     * @return self
-     */
-    public function setMessageKey($message_key)
-    {
-
-        if ((mb_strlen($message_key) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $message_key when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['message_key'] = $message_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets args
-     *
-     * @return object
-     */
-    public function getArgs()
-    {
-        return $this->container['args'];
-    }
-
-    /**
-     * Sets args
-     *
-     * @param object $args Arguments for Translation Key
-     *
-     * @return self
-     */
-    public function setArgs($args)
-    {
-        $this->container['args'] = $args;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_type
-     *
-     * @return string
-     */
-    public function getDomainType()
-    {
-        return $this->container['domain_type'];
-    }
-
-    /**
-     * Sets domain_type
-     *
-     * @param string $domain_type domain_type
-     *
-     * @return self
-     */
-    public function setDomainType($domain_type)
-    {
-
-        if ((mb_strlen($domain_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $domain_type when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['domain_type'] = $domain_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_id
-     *
-     * @return string
-     */
-    public function getDomainId()
-    {
-        return $this->container['domain_id'];
-    }
-
-    /**
-     * Sets domain_id
-     *
-     * @param string $domain_id domain_id
-     *
-     * @return self
-     */
-    public function setDomainId($domain_id)
-    {
-
-        if ((mb_strlen($domain_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $domain_id when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['domain_id'] = $domain_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_entity_id
-     *
-     * @return string
-     */
-    public function getSourceEntityId()
-    {
-        return $this->container['source_entity_id'];
-    }
-
-    /**
-     * Sets source_entity_id
-     *
-     * @param string $source_entity_id source_entity_id
-     *
-     * @return self
-     */
-    public function setSourceEntityId($source_entity_id)
-    {
-
-        if ((mb_strlen($source_entity_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $source_entity_id when calling PostSyncLogsRequestLogsInner., must be bigger than or equal to 1.');
-        }
-
-        $this->container['source_entity_id'] = $source_entity_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets changes
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PostSyncLogsRequestLogsInnerChangesInner[]|null
-     */
-    public function getChanges()
-    {
-        return $this->container['changes'];
-    }
-
-    /**
-     * Sets changes
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PostSyncLogsRequestLogsInnerChangesInner[]|null $changes changes
-     *
-     * @return self
-     */
-    public function setChanges($changes)
-    {
-        $this->container['changes'] = $changes;
 
         return $this;
     }

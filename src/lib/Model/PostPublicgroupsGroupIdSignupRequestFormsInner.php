@@ -57,8 +57,8 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'float',
-        'form' => '\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequestFormsInnerFormInner[]'
+        'form' => '\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequestFormsInnerFormInner[]',
+        'person_id' => 'int'
     ];
 
     /**
@@ -69,8 +69,8 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
-        'form' => null
+        'form' => null,
+        'person_id' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
-        'form' => 'form'
+        'form' => 'form',
+        'person_id' => 'personId'
     ];
 
     /**
@@ -110,8 +110,8 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
-        'form' => 'setForm'
+        'form' => 'setForm',
+        'person_id' => 'setPersonId'
     ];
 
     /**
@@ -120,8 +120,8 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
-        'form' => 'getForm'
+        'form' => 'getForm',
+        'person_id' => 'getPersonId'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['form'] = $data['form'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
     }
 
     /**
@@ -213,30 +213,6 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
 
 
     /**
-     * Gets person_id
-     *
-     * @return float|null
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param float|null $person_id The person ID the current form applies to. Can be empty if a single new user is about to sign up.
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
      * Gets form
      *
      * @return \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequestFormsInnerFormInner[]
@@ -256,6 +232,30 @@ class PostPublicgroupsGroupIdSignupRequestFormsInner implements ModelInterface, 
     public function setForm($form)
     {
         $this->container['form'] = $form;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int|null
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int|null $person_id The person ID the current form applies to. Can be empty if a single new user is about to sign up.
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }

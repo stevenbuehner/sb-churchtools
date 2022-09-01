@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountsInner**](GetAllData200ResponseDataAccountsInner.md) |  | [optional]
+**data** | [**\StevenBuehner\ChurchTools\Model\GetAllAccounts200ResponseDataInner**](GetAllAccounts200ResponseDataInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

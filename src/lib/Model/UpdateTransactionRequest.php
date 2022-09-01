@@ -57,19 +57,19 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
+        'account_id' => 'int',
+        'amount' => 'int',
+        'cash_discount_amount' => 'int',
+        'cash_discount_id' => 'int',
+        'contra_account_id' => 'int',
+        'cost_center_id' => 'int',
         'document_date' => '\DateTime',
         'document_number' => 'string',
-        'account_id' => 'int',
-        'contra_account_id' => 'int',
-        'amount' => 'float',
-        'note' => 'string',
-        'cost_center_id' => 'int',
         'donator_id' => 'int',
+        'is_immutable' => 'bool',
+        'note' => 'string',
         'split_transaction_id' => 'int',
-        'tax_rate_id' => 'float',
-        'cash_discount_id' => 'int',
-        'cash_discount_amount' => 'float',
-        'is_immutable' => 'bool'
+        'tax_rate_id' => 'int'
     ];
 
     /**
@@ -80,19 +80,19 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'account_id' => null,
+        'amount' => null,
+        'cash_discount_amount' => null,
+        'cash_discount_id' => null,
+        'contra_account_id' => null,
+        'cost_center_id' => null,
         'document_date' => 'date',
         'document_number' => null,
-        'account_id' => null,
-        'contra_account_id' => null,
-        'amount' => 'integer',
-        'note' => null,
-        'cost_center_id' => null,
         'donator_id' => null,
+        'is_immutable' => null,
+        'note' => null,
         'split_transaction_id' => null,
-        'tax_rate_id' => 'integer',
-        'cash_discount_id' => null,
-        'cash_discount_amount' => 'integer',
-        'is_immutable' => null
+        'tax_rate_id' => null
     ];
 
     /**
@@ -122,19 +122,19 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
+        'account_id' => 'accountId',
+        'amount' => 'amount',
+        'cash_discount_amount' => 'cashDiscountAmount',
+        'cash_discount_id' => 'cashDiscountId',
+        'contra_account_id' => 'contraAccountId',
+        'cost_center_id' => 'costCenterId',
         'document_date' => 'documentDate',
         'document_number' => 'documentNumber',
-        'account_id' => 'accountId',
-        'contra_account_id' => 'contraAccountId',
-        'amount' => 'amount',
-        'note' => 'note',
-        'cost_center_id' => 'costCenterId',
         'donator_id' => 'donatorId',
+        'is_immutable' => 'isImmutable',
+        'note' => 'note',
         'split_transaction_id' => 'splitTransactionId',
-        'tax_rate_id' => 'taxRateId',
-        'cash_discount_id' => 'cashDiscountId',
-        'cash_discount_amount' => 'cashDiscountAmount',
-        'is_immutable' => 'isImmutable'
+        'tax_rate_id' => 'taxRateId'
     ];
 
     /**
@@ -143,19 +143,19 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
+        'account_id' => 'setAccountId',
+        'amount' => 'setAmount',
+        'cash_discount_amount' => 'setCashDiscountAmount',
+        'cash_discount_id' => 'setCashDiscountId',
+        'contra_account_id' => 'setContraAccountId',
+        'cost_center_id' => 'setCostCenterId',
         'document_date' => 'setDocumentDate',
         'document_number' => 'setDocumentNumber',
-        'account_id' => 'setAccountId',
-        'contra_account_id' => 'setContraAccountId',
-        'amount' => 'setAmount',
-        'note' => 'setNote',
-        'cost_center_id' => 'setCostCenterId',
         'donator_id' => 'setDonatorId',
+        'is_immutable' => 'setIsImmutable',
+        'note' => 'setNote',
         'split_transaction_id' => 'setSplitTransactionId',
-        'tax_rate_id' => 'setTaxRateId',
-        'cash_discount_id' => 'setCashDiscountId',
-        'cash_discount_amount' => 'setCashDiscountAmount',
-        'is_immutable' => 'setIsImmutable'
+        'tax_rate_id' => 'setTaxRateId'
     ];
 
     /**
@@ -164,19 +164,19 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
+        'account_id' => 'getAccountId',
+        'amount' => 'getAmount',
+        'cash_discount_amount' => 'getCashDiscountAmount',
+        'cash_discount_id' => 'getCashDiscountId',
+        'contra_account_id' => 'getContraAccountId',
+        'cost_center_id' => 'getCostCenterId',
         'document_date' => 'getDocumentDate',
         'document_number' => 'getDocumentNumber',
-        'account_id' => 'getAccountId',
-        'contra_account_id' => 'getContraAccountId',
-        'amount' => 'getAmount',
-        'note' => 'getNote',
-        'cost_center_id' => 'getCostCenterId',
         'donator_id' => 'getDonatorId',
+        'is_immutable' => 'getIsImmutable',
+        'note' => 'getNote',
         'split_transaction_id' => 'getSplitTransactionId',
-        'tax_rate_id' => 'getTaxRateId',
-        'cash_discount_id' => 'getCashDiscountId',
-        'cash_discount_amount' => 'getCashDiscountAmount',
-        'is_immutable' => 'getIsImmutable'
+        'tax_rate_id' => 'getTaxRateId'
     ];
 
     /**
@@ -236,19 +236,19 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
+        $this->container['account_id'] = $data['account_id'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['cash_discount_amount'] = $data['cash_discount_amount'] ?? null;
+        $this->container['cash_discount_id'] = $data['cash_discount_id'] ?? null;
+        $this->container['contra_account_id'] = $data['contra_account_id'] ?? null;
+        $this->container['cost_center_id'] = $data['cost_center_id'] ?? null;
         $this->container['document_date'] = $data['document_date'] ?? null;
         $this->container['document_number'] = $data['document_number'] ?? null;
-        $this->container['account_id'] = $data['account_id'] ?? null;
-        $this->container['contra_account_id'] = $data['contra_account_id'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['cost_center_id'] = $data['cost_center_id'] ?? null;
         $this->container['donator_id'] = $data['donator_id'] ?? null;
+        $this->container['is_immutable'] = $data['is_immutable'] ?? false;
+        $this->container['note'] = $data['note'] ?? null;
         $this->container['split_transaction_id'] = $data['split_transaction_id'] ?? null;
         $this->container['tax_rate_id'] = $data['tax_rate_id'] ?? null;
-        $this->container['cash_discount_id'] = $data['cash_discount_id'] ?? null;
-        $this->container['cash_discount_amount'] = $data['cash_discount_amount'] ?? null;
-        $this->container['is_immutable'] = $data['is_immutable'] ?? false;
     }
 
     /**
@@ -260,26 +260,26 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
+        if ($this->container['account_id'] === null) {
+            $invalidProperties[] = "'account_id' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if ($this->container['contra_account_id'] === null) {
+            $invalidProperties[] = "'contra_account_id' can't be null";
+        }
+        if ($this->container['cost_center_id'] === null) {
+            $invalidProperties[] = "'cost_center_id' can't be null";
+        }
         if ($this->container['document_date'] === null) {
             $invalidProperties[] = "'document_date' can't be null";
         }
         if ($this->container['document_number'] === null) {
             $invalidProperties[] = "'document_number' can't be null";
         }
-        if ($this->container['account_id'] === null) {
-            $invalidProperties[] = "'account_id' can't be null";
-        }
-        if ($this->container['contra_account_id'] === null) {
-            $invalidProperties[] = "'contra_account_id' can't be null";
-        }
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
         if ($this->container['note'] === null) {
             $invalidProperties[] = "'note' can't be null";
-        }
-        if ($this->container['cost_center_id'] === null) {
-            $invalidProperties[] = "'cost_center_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -295,6 +295,150 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets account_id
+     *
+     * @return int
+     */
+    public function getAccountId()
+    {
+        return $this->container['account_id'];
+    }
+
+    /**
+     * Sets account_id
+     *
+     * @param int $account_id account_id
+     *
+     * @return self
+     */
+    public function setAccountId($account_id)
+    {
+        $this->container['account_id'] = $account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int $amount Value is in cent.
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets cash_discount_amount
+     *
+     * @return int|null
+     */
+    public function getCashDiscountAmount()
+    {
+        return $this->container['cash_discount_amount'];
+    }
+
+    /**
+     * Sets cash_discount_amount
+     *
+     * @param int|null $cash_discount_amount Value is in cent.
+     *
+     * @return self
+     */
+    public function setCashDiscountAmount($cash_discount_amount)
+    {
+        $this->container['cash_discount_amount'] = $cash_discount_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets cash_discount_id
+     *
+     * @return int|null
+     */
+    public function getCashDiscountId()
+    {
+        return $this->container['cash_discount_id'];
+    }
+
+    /**
+     * Sets cash_discount_id
+     *
+     * @param int|null $cash_discount_id cash_discount_id
+     *
+     * @return self
+     */
+    public function setCashDiscountId($cash_discount_id)
+    {
+        $this->container['cash_discount_id'] = $cash_discount_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets contra_account_id
+     *
+     * @return int
+     */
+    public function getContraAccountId()
+    {
+        return $this->container['contra_account_id'];
+    }
+
+    /**
+     * Sets contra_account_id
+     *
+     * @param int $contra_account_id contra_account_id
+     *
+     * @return self
+     */
+    public function setContraAccountId($contra_account_id)
+    {
+        $this->container['contra_account_id'] = $contra_account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost_center_id
+     *
+     * @return int
+     */
+    public function getCostCenterId()
+    {
+        return $this->container['cost_center_id'];
+    }
+
+    /**
+     * Sets cost_center_id
+     *
+     * @param int $cost_center_id cost_center_id
+     *
+     * @return self
+     */
+    public function setCostCenterId($cost_center_id)
+    {
+        $this->container['cost_center_id'] = $cost_center_id;
+
+        return $this;
+    }
 
     /**
      * Gets document_date
@@ -345,73 +489,49 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets account_id
+     * Gets donator_id
      *
-     * @return int
+     * @return int|null
      */
-    public function getAccountId()
+    public function getDonatorId()
     {
-        return $this->container['account_id'];
+        return $this->container['donator_id'];
     }
 
     /**
-     * Sets account_id
+     * Sets donator_id
      *
-     * @param int $account_id account_id
+     * @param int|null $donator_id donator_id
      *
      * @return self
      */
-    public function setAccountId($account_id)
+    public function setDonatorId($donator_id)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['donator_id'] = $donator_id;
 
         return $this;
     }
 
     /**
-     * Gets contra_account_id
+     * Gets is_immutable
      *
-     * @return int
+     * @return bool|null
      */
-    public function getContraAccountId()
+    public function getIsImmutable()
     {
-        return $this->container['contra_account_id'];
+        return $this->container['is_immutable'];
     }
 
     /**
-     * Sets contra_account_id
+     * Sets is_immutable
      *
-     * @param int $contra_account_id contra_account_id
+     * @param bool|null $is_immutable If `true` this transaction is immutable and cannot be edited or deleted.
      *
      * @return self
      */
-    public function setContraAccountId($contra_account_id)
+    public function setIsImmutable($is_immutable)
     {
-        $this->container['contra_account_id'] = $contra_account_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return float
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param float $amount Value is in cent.
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-        $this->container['amount'] = $amount;
+        $this->container['is_immutable'] = $is_immutable;
 
         return $this;
     }
@@ -436,54 +556,6 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     public function setNote($note)
     {
         $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
-     * Gets cost_center_id
-     *
-     * @return int
-     */
-    public function getCostCenterId()
-    {
-        return $this->container['cost_center_id'];
-    }
-
-    /**
-     * Sets cost_center_id
-     *
-     * @param int $cost_center_id cost_center_id
-     *
-     * @return self
-     */
-    public function setCostCenterId($cost_center_id)
-    {
-        $this->container['cost_center_id'] = $cost_center_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets donator_id
-     *
-     * @return int|null
-     */
-    public function getDonatorId()
-    {
-        return $this->container['donator_id'];
-    }
-
-    /**
-     * Sets donator_id
-     *
-     * @param int|null $donator_id donator_id
-     *
-     * @return self
-     */
-    public function setDonatorId($donator_id)
-    {
-        $this->container['donator_id'] = $donator_id;
 
         return $this;
     }
@@ -515,7 +587,7 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets tax_rate_id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getTaxRateId()
     {
@@ -525,85 +597,13 @@ class UpdateTransactionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets tax_rate_id
      *
-     * @param float|null $tax_rate_id If updated, the corresponding tax split booking automatically gets updated.
+     * @param int|null $tax_rate_id If updated, the corresponding tax split booking automatically gets updated.
      *
      * @return self
      */
     public function setTaxRateId($tax_rate_id)
     {
         $this->container['tax_rate_id'] = $tax_rate_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cash_discount_id
-     *
-     * @return int|null
-     */
-    public function getCashDiscountId()
-    {
-        return $this->container['cash_discount_id'];
-    }
-
-    /**
-     * Sets cash_discount_id
-     *
-     * @param int|null $cash_discount_id cash_discount_id
-     *
-     * @return self
-     */
-    public function setCashDiscountId($cash_discount_id)
-    {
-        $this->container['cash_discount_id'] = $cash_discount_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cash_discount_amount
-     *
-     * @return float|null
-     */
-    public function getCashDiscountAmount()
-    {
-        return $this->container['cash_discount_amount'];
-    }
-
-    /**
-     * Sets cash_discount_amount
-     *
-     * @param float|null $cash_discount_amount Value is in cent.
-     *
-     * @return self
-     */
-    public function setCashDiscountAmount($cash_discount_amount)
-    {
-        $this->container['cash_discount_amount'] = $cash_discount_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_immutable
-     *
-     * @return bool|null
-     */
-    public function getIsImmutable()
-    {
-        return $this->container['is_immutable'];
-    }
-
-    /**
-     * Sets is_immutable
-     *
-     * @param bool|null $is_immutable If `true` this transaction is immutable and cannot be edited or deleted.
-     *
-     * @return self
-     */
-    public function setIsImmutable($is_immutable)
-    {
-        $this->container['is_immutable'] = $is_immutable;
 
         return $this;
     }

@@ -57,9 +57,9 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
+        'key' => 'string',
         'name' => 'string',
-        'name_translated' => 'string',
-        'key' => 'string'
+        'name_translated' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'key' => null,
         'name' => null,
-        'name_translated' => null,
-        'key' => null
+        'name_translated' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
+        'key' => 'key',
         'name' => 'name',
-        'name_translated' => 'nameTranslated',
-        'key' => 'key'
+        'name_translated' => 'nameTranslated'
     ];
 
     /**
@@ -113,9 +113,9 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
+        'key' => 'setKey',
         'name' => 'setName',
-        'name_translated' => 'setNameTranslated',
-        'key' => 'setKey'
+        'name_translated' => 'setNameTranslated'
     ];
 
     /**
@@ -124,9 +124,9 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
+        'key' => 'getKey',
         'name' => 'getName',
-        'name_translated' => 'getNameTranslated',
-        'key' => 'getKey'
+        'name_translated' => 'getNameTranslated'
     ];
 
     /**
@@ -186,9 +186,9 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
+        $this->container['key'] = $data['key'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['key'] = $data['key'] ?? null;
     }
 
     /**
@@ -214,6 +214,30 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets key
+     *
+     * @return string|null
+     */
+    public function getKey()
+    {
+        return $this->container['key'];
+    }
+
+    /**
+     * Sets key
+     *
+     * @param string|null $key key
+     *
+     * @return self
+     */
+    public function setKey($key)
+    {
+        $this->container['key'] = $key;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -259,30 +283,6 @@ class GetAllCampuses200ResponseDataInnerTagsInner implements ModelInterface, Arr
     public function setNameTranslated($name_translated)
     {
         $this->container['name_translated'] = $name_translated;
-
-        return $this;
-    }
-
-    /**
-     * Gets key
-     *
-     * @return string|null
-     */
-    public function getKey()
-    {
-        return $this->container['key'];
-    }
-
-    /**
-     * Sets key
-     *
-     * @param string|null $key key
-     *
-     * @return self
-     */
-    public function setKey($key)
-    {
-        $this->container['key'] = $key;
 
         return $this;
     }

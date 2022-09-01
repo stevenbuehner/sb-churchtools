@@ -399,6 +399,237 @@ class StatusApi
     }
 
     /**
+     * Operation deleteStatus
+     *
+     * Delete a status
+     *
+     * @param  int $id ID of Entity (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteStatus($id)
+    {
+        $this->deleteStatusWithHttpInfo($id);
+    }
+
+    /**
+     * Operation deleteStatusWithHttpInfo
+     *
+     * Delete a status
+     *
+     * @param  int $id ID of Entity (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteStatusWithHttpInfo($id)
+    {
+        $request = $this->deleteStatusRequest($id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteStatusAsync
+     *
+     * Delete a status
+     *
+     * @param  int $id ID of Entity (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteStatusAsync($id)
+    {
+        return $this->deleteStatusAsyncWithHttpInfo($id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteStatusAsyncWithHttpInfo
+     *
+     * Delete a status
+     *
+     * @param  int $id ID of Entity (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteStatusAsyncWithHttpInfo($id)
+    {
+        $returnType = '';
+        $request = $this->deleteStatusRequest($id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteStatus'
+     *
+     * @param  int $id ID of Entity (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteStatusRequest($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling deleteStatus'
+            );
+        }
+
+        $resourcePath = '/statuses/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getAllStatuses
      *
      * Get all statuses
@@ -665,267 +896,36 @@ class StatusApi
     }
 
     /**
-     * Operation statusesIdDelete
-     *
-     * Delete a status
-     *
-     * @param  int $id ID of status (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function statusesIdDelete($id)
-    {
-        $this->statusesIdDeleteWithHttpInfo($id);
-    }
-
-    /**
-     * Operation statusesIdDeleteWithHttpInfo
-     *
-     * Delete a status
-     *
-     * @param  int $id ID of status (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function statusesIdDeleteWithHttpInfo($id)
-    {
-        $request = $this->statusesIdDeleteRequest($id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation statusesIdDeleteAsync
-     *
-     * Delete a status
-     *
-     * @param  int $id ID of status (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function statusesIdDeleteAsync($id)
-    {
-        return $this->statusesIdDeleteAsyncWithHttpInfo($id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation statusesIdDeleteAsyncWithHttpInfo
-     *
-     * Delete a status
-     *
-     * @param  int $id ID of status (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function statusesIdDeleteAsyncWithHttpInfo($id)
-    {
-        $returnType = '';
-        $request = $this->statusesIdDeleteRequest($id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'statusesIdDelete'
-     *
-     * @param  int $id ID of status (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function statusesIdDeleteRequest($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling statusesIdDelete'
-            );
-        }
-
-        $resourcePath = '/statuses/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation statusesIdGet
+     * Operation getStatus
      *
      * Get a specific status
      *
-     * @param  int $id ID of status (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetStatus200Response
      */
-    public function statusesIdGet($id)
+    public function getStatus($id)
     {
-        list($response) = $this->statusesIdGetWithHttpInfo($id);
+        list($response) = $this->getStatusWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation statusesIdGetWithHttpInfo
+     * Operation getStatusWithHttpInfo
      *
      * Get a specific status
      *
-     * @param  int $id ID of status (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetStatus200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function statusesIdGetWithHttpInfo($id)
+    public function getStatusWithHttpInfo($id)
     {
-        $request = $this->statusesIdGetRequest($id);
+        $request = $this->getStatusRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -964,23 +964,23 @@ class StatusApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetStatus200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetStatus200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetStatus200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetStatus200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1001,7 +1001,7 @@ class StatusApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetStatus200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1012,18 +1012,18 @@ class StatusApi
     }
 
     /**
-     * Operation statusesIdGetAsync
+     * Operation getStatusAsync
      *
      * Get a specific status
      *
-     * @param  int $id ID of status (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function statusesIdGetAsync($id)
+    public function getStatusAsync($id)
     {
-        return $this->statusesIdGetAsyncWithHttpInfo($id)
+        return $this->getStatusAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1032,19 +1032,19 @@ class StatusApi
     }
 
     /**
-     * Operation statusesIdGetAsyncWithHttpInfo
+     * Operation getStatusAsyncWithHttpInfo
      *
      * Get a specific status
      *
-     * @param  int $id ID of status (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function statusesIdGetAsyncWithHttpInfo($id)
+    public function getStatusAsyncWithHttpInfo($id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response';
-        $request = $this->statusesIdGetRequest($id);
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetStatus200Response';
+        $request = $this->getStatusRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1083,19 +1083,19 @@ class StatusApi
     }
 
     /**
-     * Create request for operation 'statusesIdGet'
+     * Create request for operation 'getStatus'
      *
-     * @param  int $id ID of status (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function statusesIdGetRequest($id)
+    public function getStatusRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling statusesIdGet'
+                'Missing the required parameter $id when calling getStatus'
             );
         }
 
@@ -1181,38 +1181,38 @@ class StatusApi
     }
 
     /**
-     * Operation statusesIdPut
+     * Operation putStatus
      *
      * Update status
      *
-     * @param  int $id ID of status (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest $statuses_id_delete_request New values for status (required)
+     * @param  int $id ID of Entity (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PutStatusRequest $put_status_request New values for status (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetStatus200Response
      */
-    public function statusesIdPut($id, $statuses_id_delete_request)
+    public function putStatus($id, $put_status_request)
     {
-        list($response) = $this->statusesIdPutWithHttpInfo($id, $statuses_id_delete_request);
+        list($response) = $this->putStatusWithHttpInfo($id, $put_status_request);
         return $response;
     }
 
     /**
-     * Operation statusesIdPutWithHttpInfo
+     * Operation putStatusWithHttpInfo
      *
      * Update status
      *
-     * @param  int $id ID of status (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest $statuses_id_delete_request New values for status (required)
+     * @param  int $id ID of Entity (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PutStatusRequest $put_status_request New values for status (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetStatus200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function statusesIdPutWithHttpInfo($id, $statuses_id_delete_request)
+    public function putStatusWithHttpInfo($id, $put_status_request)
     {
-        $request = $this->statusesIdPutRequest($id, $statuses_id_delete_request);
+        $request = $this->putStatusRequest($id, $put_status_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1251,23 +1251,23 @@ class StatusApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetStatus200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetStatus200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetStatus200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetStatus200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1288,7 +1288,7 @@ class StatusApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetStatus200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1299,19 +1299,19 @@ class StatusApi
     }
 
     /**
-     * Operation statusesIdPutAsync
+     * Operation putStatusAsync
      *
      * Update status
      *
-     * @param  int $id ID of status (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest $statuses_id_delete_request New values for status (required)
+     * @param  int $id ID of Entity (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PutStatusRequest $put_status_request New values for status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function statusesIdPutAsync($id, $statuses_id_delete_request)
+    public function putStatusAsync($id, $put_status_request)
     {
-        return $this->statusesIdPutAsyncWithHttpInfo($id, $statuses_id_delete_request)
+        return $this->putStatusAsyncWithHttpInfo($id, $put_status_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1320,20 +1320,20 @@ class StatusApi
     }
 
     /**
-     * Operation statusesIdPutAsyncWithHttpInfo
+     * Operation putStatusAsyncWithHttpInfo
      *
      * Update status
      *
-     * @param  int $id ID of status (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest $statuses_id_delete_request New values for status (required)
+     * @param  int $id ID of Entity (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PutStatusRequest $put_status_request New values for status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function statusesIdPutAsyncWithHttpInfo($id, $statuses_id_delete_request)
+    public function putStatusAsyncWithHttpInfo($id, $put_status_request)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response';
-        $request = $this->statusesIdPutRequest($id, $statuses_id_delete_request);
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetStatus200Response';
+        $request = $this->putStatusRequest($id, $put_status_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1372,26 +1372,26 @@ class StatusApi
     }
 
     /**
-     * Create request for operation 'statusesIdPut'
+     * Create request for operation 'putStatus'
      *
-     * @param  int $id ID of status (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest $statuses_id_delete_request New values for status (required)
+     * @param  int $id ID of Entity (required)
+     * @param  \StevenBuehner\ChurchTools\Model\PutStatusRequest $put_status_request New values for status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function statusesIdPutRequest($id, $statuses_id_delete_request)
+    public function putStatusRequest($id, $put_status_request)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling statusesIdPut'
+                'Missing the required parameter $id when calling putStatus'
             );
         }
-        // verify the required parameter 'statuses_id_delete_request' is set
-        if ($statuses_id_delete_request === null || (is_array($statuses_id_delete_request) && count($statuses_id_delete_request) === 0)) {
+        // verify the required parameter 'put_status_request' is set
+        if ($put_status_request === null || (is_array($put_status_request) && count($put_status_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $statuses_id_delete_request when calling statusesIdPut'
+                'Missing the required parameter $put_status_request when calling putStatus'
             );
         }
 
@@ -1426,11 +1426,11 @@ class StatusApi
         }
 
         // for model (json/xml)
-        if (isset($statuses_id_delete_request)) {
+        if (isset($put_status_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($statuses_id_delete_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($put_status_request));
             } else {
-                $httpBody = $statuses_id_delete_request;
+                $httpBody = $put_status_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

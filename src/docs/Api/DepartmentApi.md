@@ -4,18 +4,16 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAllDepartments()**](DepartmentApi.md#getAllDepartments) | **GET** /departments | Get all departments
+[**getDepartments()**](DepartmentApi.md#getDepartments) | **GET** /departments | Get all departments
 
 
-## `getAllDepartments()`
+## `getDepartments()`
 
 ```php
-getAllDepartments(): \StevenBuehner\ChurchTools\Model\GetAllDepartments200Response
+getDepartments(): \StevenBuehner\ChurchTools\Model\GetDepartments200Response
 ```
 
 Get all departments
-
-Returns an array of all departments defined in ChurchTools. Departments are sorted by its `sortKey` by default.
 
 ### Example
 
@@ -24,7 +22,7 @@ Returns an array of all departments defined in ChurchTools. Departments are sort
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -38,10 +36,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\DepartmentApi(
 );
 
 try {
-    $result = $apiInstance->getAllDepartments();
+    $result = $apiInstance->getDepartments();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DepartmentApi->getAllDepartments: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DepartmentApi->getDepartments: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -51,11 +49,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetAllDepartments200Response**](../Model/GetAllDepartments200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetDepartments200Response**](../Model/GetDepartments200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

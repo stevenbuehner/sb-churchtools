@@ -57,10 +57,10 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'create' => 'float',
-        'delete' => 'float',
-        'link' => 'float',
-        'update' => 'float'
+        'create' => 'int',
+        'delete' => 'int',
+        'link' => 'int',
+        'update' => 'int'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Gets create
      *
-     * @return float
+     * @return int
      */
     public function getCreate()
     {
@@ -246,7 +246,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Sets create
      *
-     * @param float $create create
+     * @param int $create create
      *
      * @return self
      */
@@ -260,7 +260,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Gets delete
      *
-     * @return float
+     * @return int
      */
     public function getDelete()
     {
@@ -270,7 +270,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Sets delete
      *
-     * @param float $delete delete
+     * @param int $delete delete
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Gets link
      *
-     * @return float
+     * @return int
      */
     public function getLink()
     {
@@ -294,7 +294,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Sets link
      *
-     * @param float $link link
+     * @param int $link link
      *
      * @return self
      */
@@ -308,7 +308,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Gets update
      *
-     * @return float
+     * @return int
      */
     public function getUpdate()
     {
@@ -318,7 +318,7 @@ class GetSyncExecutions200ResponseDataInnerBoth implements ModelInterface, Array
     /**
      * Sets update
      *
-     * @param float $update update
+     * @param int $update update
      *
      * @return self
      */

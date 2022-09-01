@@ -57,7 +57,7 @@ class GetPublicgroupsGroupIdPossiblerequesters200Response implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson[]'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetPublicgroupsGroupIdPossiblerequesters200Response implements ModelInterf
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson[]|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetPublicgroupsGroupIdPossiblerequesters200Response implements ModelInterf
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson[]|null $data data
      *
      * @return self
      */

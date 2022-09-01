@@ -58,10 +58,10 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'client_id' => 'int',
-        'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'is_closed' => 'bool',
-        'set_immutable' => 'bool'
+        'set_immutable' => 'bool',
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -73,10 +73,10 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'client_id' => null,
-        'start_date' => 'date',
         'end_date' => 'date',
         'is_closed' => null,
-        'set_immutable' => null
+        'set_immutable' => null,
+        'start_date' => 'date'
     ];
 
     /**
@@ -107,10 +107,10 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'client_id' => 'clientId',
-        'start_date' => 'startDate',
         'end_date' => 'endDate',
         'is_closed' => 'isClosed',
-        'set_immutable' => 'setImmutable'
+        'set_immutable' => 'setImmutable',
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -120,10 +120,10 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'client_id' => 'setClientId',
-        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'is_closed' => 'setIsClosed',
-        'set_immutable' => 'setSetImmutable'
+        'set_immutable' => 'setSetImmutable',
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -133,10 +133,10 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'client_id' => 'getClientId',
-        'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'is_closed' => 'getIsClosed',
-        'set_immutable' => 'getSetImmutable'
+        'set_immutable' => 'getSetImmutable',
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -197,10 +197,10 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->container['client_id'] = $data['client_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['is_closed'] = $data['is_closed'] ?? null;
         $this->container['set_immutable'] = $data['set_immutable'] ?? false;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -215,14 +215,14 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
         if ($this->container['client_id'] === null) {
             $invalidProperties[] = "'client_id' can't be null";
         }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
         if ($this->container['end_date'] === null) {
             $invalidProperties[] = "'end_date' can't be null";
         }
         if ($this->container['is_closed'] === null) {
             $invalidProperties[] = "'is_closed' can't be null";
+        }
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -259,30 +259,6 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
     public function setClientId($client_id)
     {
         $this->container['client_id'] = $client_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
 
         return $this;
     }
@@ -355,6 +331,30 @@ class UpdateAccountingPeriodRequest implements ModelInterface, ArrayAccess, \Jso
     public function setSetImmutable($set_immutable)
     {
         $this->container['set_immutable'] = $set_immutable;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

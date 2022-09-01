@@ -58,8 +58,8 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'date' => '\DateTime',
-        'token' => 'string',
-        'printer_id' => 'int'
+        'printer_id' => 'int',
+        'token' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'date' => 'date-time',
-        'token' => null,
-        'printer_id' => null
+        'printer_id' => null,
+        'token' => null
     ];
 
     /**
@@ -103,8 +103,8 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'date' => 'date',
-        'token' => 'token',
-        'printer_id' => 'printerId'
+        'printer_id' => 'printerId',
+        'token' => 'token'
     ];
 
     /**
@@ -114,8 +114,8 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'date' => 'setDate',
-        'token' => 'setToken',
-        'printer_id' => 'setPrinterId'
+        'printer_id' => 'setPrinterId',
+        'token' => 'setToken'
     ];
 
     /**
@@ -125,8 +125,8 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'date' => 'getDate',
-        'token' => 'getToken',
-        'printer_id' => 'getPrinterId'
+        'printer_id' => 'getPrinterId',
+        'token' => 'getToken'
     ];
 
     /**
@@ -187,8 +187,8 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['date'] = $data['date'] ?? null;
-        $this->container['token'] = $data['token'] ?? null;
         $this->container['printer_id'] = $data['printer_id'] ?? null;
+        $this->container['token'] = $data['token'] ?? null;
     }
 
     /**
@@ -243,30 +243,6 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets token
-     *
-     * @return string|null
-     */
-    public function getToken()
-    {
-        return $this->container['token'];
-    }
-
-    /**
-     * Sets token
-     *
-     * @param string|null $token optional token of a ticket that is to be validated
-     *
-     * @return self
-     */
-    public function setToken($token)
-    {
-        $this->container['token'] = $token;
-
-        return $this;
-    }
-
-    /**
      * Gets printer_id
      *
      * @return int|null
@@ -286,6 +262,30 @@ class CheckinRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPrinterId($printer_id)
     {
         $this->container['printer_id'] = $printer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets token
+     *
+     * @return string|null
+     */
+    public function getToken()
+    {
+        return $this->container['token'];
+    }
+
+    /**
+     * Sets token
+     *
+     * @param string|null $token optional token of a ticket that is to be validated
+     *
+     * @return self
+     */
+    public function setToken($token)
+    {
+        $this->container['token'] = $token;
 
         return $this;
     }

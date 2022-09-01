@@ -57,10 +57,10 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'float',
-        'email' => 'string',
         'clicked' => 'mixed[]',
+        'email' => 'string',
         'group_homepage_hash' => 'string',
+        'person_id' => 'int',
         'sign_up_url_template' => 'string'
     ];
 
@@ -72,10 +72,10 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
-        'email' => null,
         'clicked' => null,
+        'email' => null,
         'group_homepage_hash' => null,
+        'person_id' => null,
         'sign_up_url_template' => null
     ];
 
@@ -106,10 +106,10 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
-        'email' => 'email',
         'clicked' => 'clicked',
+        'email' => 'email',
         'group_homepage_hash' => 'groupHomepageHash',
+        'person_id' => 'personId',
         'sign_up_url_template' => 'signUpUrlTemplate'
     ];
 
@@ -119,10 +119,10 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
-        'email' => 'setEmail',
         'clicked' => 'setClicked',
+        'email' => 'setEmail',
         'group_homepage_hash' => 'setGroupHomepageHash',
+        'person_id' => 'setPersonId',
         'sign_up_url_template' => 'setSignUpUrlTemplate'
     ];
 
@@ -132,10 +132,10 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
-        'email' => 'getEmail',
         'clicked' => 'getClicked',
+        'email' => 'getEmail',
         'group_homepage_hash' => 'getGroupHomepageHash',
+        'person_id' => 'getPersonId',
         'sign_up_url_template' => 'getSignUpUrlTemplate'
     ];
 
@@ -196,10 +196,10 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
         $this->container['clicked'] = $data['clicked'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
         $this->container['group_homepage_hash'] = $data['group_homepage_hash'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['sign_up_url_template'] = $data['sign_up_url_template'] ?? null;
     }
 
@@ -228,25 +228,25 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets person_id
+     * Gets clicked
      *
-     * @return float|null
+     * @return mixed[]|null
      */
-    public function getPersonId()
+    public function getClicked()
     {
-        return $this->container['person_id'];
+        return $this->container['clicked'];
     }
 
     /**
-     * Sets person_id
+     * Sets clicked
      *
-     * @param float|null $person_id Person Id, which issues the token.
+     * @param mixed[]|null $clicked Array of person ids, which are clicked on group detail page. Those persons, will be also checked on the form site. The `clicked` field will be saved only in combination with `personId`.
      *
      * @return self
      */
-    public function setPersonId($person_id)
+    public function setClicked($clicked)
     {
-        $this->container['person_id'] = $person_id;
+        $this->container['clicked'] = $clicked;
 
         return $this;
     }
@@ -276,30 +276,6 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets clicked
-     *
-     * @return mixed[]|null
-     */
-    public function getClicked()
-    {
-        return $this->container['clicked'];
-    }
-
-    /**
-     * Sets clicked
-     *
-     * @param mixed[]|null $clicked Array of person ids, which are clicked on group detail page. Those persons, will be also checked on the form site. The `clicked` field will be saved only in combination with `personId`.
-     *
-     * @return self
-     */
-    public function setClicked($clicked)
-    {
-        $this->container['clicked'] = $clicked;
-
-        return $this;
-    }
-
-    /**
      * Gets group_homepage_hash
      *
      * @return string|null
@@ -319,6 +295,30 @@ class IssueSignUpTokenRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setGroupHomepageHash($group_homepage_hash)
     {
         $this->container['group_homepage_hash'] = $group_homepage_hash;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int|null
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int|null $person_id Person Id, which issues the token.
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }

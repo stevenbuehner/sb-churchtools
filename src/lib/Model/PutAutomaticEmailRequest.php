@@ -57,10 +57,10 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
+        'body' => 'string',
         'is_active' => 'bool',
-        'sender_id' => 'float',
-        'subject' => 'string',
-        'body' => 'string'
+        'sender_id' => 'int',
+        'subject' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'body' => null,
         'is_active' => null,
         'sender_id' => null,
-        'subject' => null,
-        'body' => null
+        'subject' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
+        'body' => 'body',
         'is_active' => 'isActive',
         'sender_id' => 'senderId',
-        'subject' => 'subject',
-        'body' => 'body'
+        'subject' => 'subject'
     ];
 
     /**
@@ -116,10 +116,10 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
+        'body' => 'setBody',
         'is_active' => 'setIsActive',
         'sender_id' => 'setSenderId',
-        'subject' => 'setSubject',
-        'body' => 'setBody'
+        'subject' => 'setSubject'
     ];
 
     /**
@@ -128,10 +128,10 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
+        'body' => 'getBody',
         'is_active' => 'getIsActive',
         'sender_id' => 'getSenderId',
-        'subject' => 'getSubject',
-        'body' => 'getBody'
+        'subject' => 'getSubject'
     ];
 
     /**
@@ -191,10 +191,10 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
+        $this->container['body'] = $data['body'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['sender_id'] = $data['sender_id'] ?? null;
         $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['body'] = $data['body'] ?? null;
     }
 
     /**
@@ -206,6 +206,9 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
         if ($this->container['is_active'] === null) {
             $invalidProperties[] = "'is_active' can't be null";
         }
@@ -214,9 +217,6 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
         }
         if ($this->container['subject'] === null) {
             $invalidProperties[] = "'subject' can't be null";
-        }
-        if ($this->container['body'] === null) {
-            $invalidProperties[] = "'body' can't be null";
         }
         return $invalidProperties;
     }
@@ -232,6 +232,30 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets body
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->container['body'];
+    }
+
+    /**
+     * Sets body
+     *
+     * @param string $body body
+     *
+     * @return self
+     */
+    public function setBody($body)
+    {
+        $this->container['body'] = $body;
+
+        return $this;
+    }
 
     /**
      * Gets is_active
@@ -260,7 +284,7 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets sender_id
      *
-     * @return float
+     * @return int
      */
     public function getSenderId()
     {
@@ -270,7 +294,7 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets sender_id
      *
-     * @param float $sender_id SenderID = PersonID of one leader in that group
+     * @param int $sender_id SenderID = PersonID of one leader in that group
      *
      * @return self
      */
@@ -301,30 +325,6 @@ class PutAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSeri
     public function setSubject($subject)
     {
         $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets body
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     *
-     * @param string $body body
-     *
-     * @return self
-     */
-    public function setBody($body)
-    {
-        $this->container['body'] = $body;
 
         return $this;
     }

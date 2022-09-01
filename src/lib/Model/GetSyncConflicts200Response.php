@@ -58,7 +58,7 @@ class GetSyncConflicts200Response implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\SyncConflicts[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetSyncConflicts200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetSyncConflicts200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null $meta meta
      *
      * @return self
      */

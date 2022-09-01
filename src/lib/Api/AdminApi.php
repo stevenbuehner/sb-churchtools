@@ -116,242 +116,11 @@ class AdminApi
     }
 
     /**
-     * Operation deleteFilesId
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function deleteFilesId($id)
-    {
-        $this->deleteFilesIdWithHttpInfo($id);
-    }
-
-    /**
-     * Operation deleteFilesIdWithHttpInfo
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function deleteFilesIdWithHttpInfo($id)
-    {
-        $request = $this->deleteFilesIdRequest($id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deleteFilesIdAsync
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteFilesIdAsync($id)
-    {
-        return $this->deleteFilesIdAsyncWithHttpInfo($id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation deleteFilesIdAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteFilesIdAsyncWithHttpInfo($id)
-    {
-        $returnType = '';
-        $request = $this->deleteFilesIdRequest($id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'deleteFilesId'
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function deleteFilesIdRequest($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteFilesId'
-            );
-        }
-
-        $resourcePath = '/files/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation deleteSecuritylevelId
      *
      * Delete the Security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -367,7 +136,7 @@ class AdminApi
      *
      * Delete the Security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -426,7 +195,7 @@ class AdminApi
      *
      * Delete the Security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -446,7 +215,7 @@ class AdminApi
      *
      * Delete the Security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -482,7 +251,7 @@ class AdminApi
     /**
      * Create request for operation 'deleteSecuritylevelId'
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -583,7 +352,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  array $levels Filter by log level ID (optional)
+     * @param  string[] $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -606,7 +375,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  array $levels Filter by log level ID (optional)
+     * @param  string[] $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -711,7 +480,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  array $levels Filter by log level ID (optional)
+     * @param  string[] $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -737,7 +506,7 @@ class AdminApi
      * Get all log messages
      *
      * @param  string $message Filter by text (optional)
-     * @param  array $levels Filter by log level ID (optional)
+     * @param  string[] $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -792,7 +561,7 @@ class AdminApi
      * Create request for operation 'getAllLogs'
      *
      * @param  string $message Filter by text (optional)
-     * @param  array $levels Filter by log level ID (optional)
+     * @param  string[] $levels Filter by log level ID (optional)
      * @param  \DateTime $before Filter log messages before that date. (Use ISO-Format) (optional)
      * @param  \DateTime $after Filter log messages after that date. (Use ISO-Format) (optional)
      * @param  int $person_id Filter by person (optional)
@@ -946,7 +715,7 @@ class AdminApi
      *
      * Get a log message
      *
-     * @param  int $id ID of log (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -963,7 +732,7 @@ class AdminApi
      *
      * Get a log message
      *
-     * @param  int $id ID of log (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1062,7 +831,7 @@ class AdminApi
      *
      * Get a log message
      *
-     * @param  int $id ID of log (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1082,7 +851,7 @@ class AdminApi
      *
      * Get a log message
      *
-     * @param  int $id ID of log (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1131,7 +900,7 @@ class AdminApi
     /**
      * Create request for operation 'getLogById'
      *
-     * @param  int $id ID of log (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1531,7 +1300,7 @@ class AdminApi
      *
      * Get a particular security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1547,7 +1316,7 @@ class AdminApi
      *
      * Get a particular security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1606,7 +1375,7 @@ class AdminApi
      *
      * Get a particular security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1626,7 +1395,7 @@ class AdminApi
      *
      * Get a particular security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1662,7 +1431,7 @@ class AdminApi
     /**
      * Create request for operation 'getSecuritylevelId'
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2024,296 +1793,11 @@ class AdminApi
     }
 
     /**
-     * Operation patchFilesId
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\PatchFilesId204Response
-     */
-    public function patchFilesId($id)
-    {
-        list($response) = $this->patchFilesIdWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation patchFilesIdWithHttpInfo
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\PatchFilesId204Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function patchFilesIdWithHttpInfo($id)
-    {
-        $request = $this->patchFilesIdRequest($id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 204:
-                    if ('\StevenBuehner\ChurchTools\Model\PatchFilesId204Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\PatchFilesId204Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\PatchFilesId204Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\StevenBuehner\ChurchTools\Model\PatchFilesId204Response';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 204:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\PatchFilesId204Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation patchFilesIdAsync
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function patchFilesIdAsync($id)
-    {
-        return $this->patchFilesIdAsyncWithHttpInfo($id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation patchFilesIdAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function patchFilesIdAsyncWithHttpInfo($id)
-    {
-        $returnType = '\StevenBuehner\ChurchTools\Model\PatchFilesId204Response';
-        $request = $this->patchFilesIdRequest($id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'patchFilesId'
-     *
-     * @param  int $id file id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function patchFilesIdRequest($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling patchFilesId'
-            );
-        }
-
-        $resourcePath = '/files/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation patchSecuritylevelId
      *
      * Update the security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $forcereorder Need to be true, if securitylevel shall be reordered (optional)
      * @param  \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest $patch_securitylevel_id_request Information to patch the security level (optional)
      *
@@ -2332,7 +1816,7 @@ class AdminApi
      *
      * Update the security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $forcereorder Need to be true, if securitylevel shall be reordered (optional)
      * @param  \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest $patch_securitylevel_id_request Information to patch the security level (optional)
      *
@@ -2433,7 +1917,7 @@ class AdminApi
      *
      * Update the security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $forcereorder Need to be true, if securitylevel shall be reordered (optional)
      * @param  \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest $patch_securitylevel_id_request Information to patch the security level (optional)
      *
@@ -2455,7 +1939,7 @@ class AdminApi
      *
      * Update the security level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $forcereorder Need to be true, if securitylevel shall be reordered (optional)
      * @param  \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest $patch_securitylevel_id_request Information to patch the security level (optional)
      *
@@ -2506,7 +1990,7 @@ class AdminApi
     /**
      * Create request for operation 'patchSecuritylevelId'
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  bool $forcereorder Need to be true, if securitylevel shall be reordered (optional)
      * @param  \StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest $patch_securitylevel_id_request Information to patch the security level (optional)
      *
@@ -2623,7 +2107,7 @@ class AdminApi
      *
      * Create a new security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest $post_securitylevel_id_request post_securitylevel_id_request (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -2641,7 +2125,7 @@ class AdminApi
      *
      * Create a new security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest $post_securitylevel_id_request (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -2741,7 +2225,7 @@ class AdminApi
      *
      * Create a new security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest $post_securitylevel_id_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -2762,7 +2246,7 @@ class AdminApi
      *
      * Create a new security Level
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest $post_securitylevel_id_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -2812,7 +2296,7 @@ class AdminApi
     /**
      * Create request for operation 'postSecuritylevelId'
      *
-     * @param  string $id Id of a particular security level (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest $post_securitylevel_id_request (optional)
      *
      * @throws \InvalidArgumentException

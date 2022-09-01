@@ -57,8 +57,8 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'score' => 'float',
-        'date' => '\DateTime'
+        'date' => '\DateTime',
+        'score' => 'int'
     ];
 
     /**
@@ -69,8 +69,8 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'score' => null,
-        'date' => 'date-time'
+        'date' => 'date-time',
+        'score' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'score' => 'score',
-        'date' => 'date'
+        'date' => 'date',
+        'score' => 'score'
     ];
 
     /**
@@ -110,8 +110,8 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'score' => 'setScore',
-        'date' => 'setDate'
+        'date' => 'setDate',
+        'score' => 'setScore'
     ];
 
     /**
@@ -120,8 +120,8 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'score' => 'getScore',
-        'date' => 'getDate'
+        'date' => 'getDate',
+        'score' => 'getScore'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['score'] = $data['score'] ?? null;
         $this->container['date'] = $data['date'] ?? null;
+        $this->container['score'] = $data['score'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets score
-     *
-     * @return float|null
-     */
-    public function getScore()
-    {
-        return $this->container['score'];
-    }
-
-    /**
-     * Sets score
-     *
-     * @param float|null $score score
-     *
-     * @return self
-     */
-    public function setScore($score)
-    {
-        $this->container['score'] = $score;
-
-        return $this;
-    }
-
-    /**
      * Gets date
      *
      * @return \DateTime|null
@@ -253,6 +229,30 @@ class PostNps201Response implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets score
+     *
+     * @return int|null
+     */
+    public function getScore()
+    {
+        return $this->container['score'];
+    }
+
+    /**
+     * Sets score
+     *
+     * @param int|null $score score
+     *
+     * @return self
+     */
+    public function setScore($score)
+    {
+        $this->container['score'] = $score;
 
         return $this;
     }

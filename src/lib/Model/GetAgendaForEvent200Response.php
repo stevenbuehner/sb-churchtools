@@ -57,7 +57,7 @@ class GetAgendaForEvent200Response implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Agenda1'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAgendaForEvent200ResponseData'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetAgendaForEvent200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Agenda1|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAgendaForEvent200ResponseData|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetAgendaForEvent200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Agenda1|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAgendaForEvent200ResponseData|null $data data
      *
      * @return self
      */

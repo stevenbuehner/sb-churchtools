@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional]
-**name** | **string** |  | [optional]
-**street** | **string** |  | [optional]
-**postal_code** | **string** |  | [optional]
 **city** | **string** |  | [optional]
-**phone** | **string** |  | [optional]
 **email** | **string** |  | [optional]
-**treasurer_id** | **int** | Person ID | [optional]
-**treasurer** | **object** | PersonDomainObject | [optional]
+**id** | **int** |  | [optional]
+**meta** | [**\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta**](GetBookings200ResponseMeta.md) |  | [optional]
+**name** | **string** |  | [optional]
+**phone** | **string** |  | [optional]
+**postal_code** | **string** |  | [optional]
 **sort_key** | **int** |  | [optional]
-**meta** | [**\StevenBuehner\ChurchTools\Model\EntityMetaData**](EntityMetaData.md) |  | [optional]
+**street** | **string** |  | [optional]
+**treasurer** | **object** | PersonDomainObject | [optional]
+**treasurer_id** | **int** | Person ID | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

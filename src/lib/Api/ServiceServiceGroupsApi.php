@@ -120,7 +120,7 @@ class ServiceServiceGroupsApi
      *
      * Decline a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  string $comment Comment (optional)
      *
@@ -128,9 +128,9 @@ class ServiceServiceGroupsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function declineServiceRequestById($id, $request_id, $comment = null)
+    public function declineServiceRequestById($person_id, $request_id, $comment = null)
     {
-        $this->declineServiceRequestByIdWithHttpInfo($id, $request_id, $comment);
+        $this->declineServiceRequestByIdWithHttpInfo($person_id, $request_id, $comment);
     }
 
     /**
@@ -138,7 +138,7 @@ class ServiceServiceGroupsApi
      *
      * Decline a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  string $comment Comment (optional)
      *
@@ -146,9 +146,9 @@ class ServiceServiceGroupsApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function declineServiceRequestByIdWithHttpInfo($id, $request_id, $comment = null)
+    public function declineServiceRequestByIdWithHttpInfo($person_id, $request_id, $comment = null)
     {
-        $request = $this->declineServiceRequestByIdRequest($id, $request_id, $comment);
+        $request = $this->declineServiceRequestByIdRequest($person_id, $request_id, $comment);
 
         try {
             $options = $this->createHttpClientOption();
@@ -207,16 +207,16 @@ class ServiceServiceGroupsApi
      *
      * Decline a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  string $comment Comment (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function declineServiceRequestByIdAsync($id, $request_id, $comment = null)
+    public function declineServiceRequestByIdAsync($person_id, $request_id, $comment = null)
     {
-        return $this->declineServiceRequestByIdAsyncWithHttpInfo($id, $request_id, $comment)
+        return $this->declineServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id, $comment)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -229,17 +229,17 @@ class ServiceServiceGroupsApi
      *
      * Decline a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  string $comment Comment (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function declineServiceRequestByIdAsyncWithHttpInfo($id, $request_id, $comment = null)
+    public function declineServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id, $comment = null)
     {
         $returnType = '';
-        $request = $this->declineServiceRequestByIdRequest($id, $request_id, $comment);
+        $request = $this->declineServiceRequestByIdRequest($person_id, $request_id, $comment);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -267,19 +267,19 @@ class ServiceServiceGroupsApi
     /**
      * Create request for operation 'declineServiceRequestById'
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  string $comment Comment (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function declineServiceRequestByIdRequest($id, $request_id, $comment = null)
+    public function declineServiceRequestByIdRequest($person_id, $request_id, $comment = null)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling declineServiceRequestById'
+                'Missing the required parameter $person_id when calling declineServiceRequestById'
             );
         }
         // verify the required parameter 'request_id' is set
@@ -289,7 +289,7 @@ class ServiceServiceGroupsApi
             );
         }
 
-        $resourcePath = '/persons/{id}/servicerequests/{requestId}';
+        $resourcePath = '/persons/{personId}/servicerequests/{requestId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -308,10 +308,10 @@ class ServiceServiceGroupsApi
 
 
         // path params
-        if ($id !== null) {
+        if ($person_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
                 $resourcePath
             );
         }
@@ -388,551 +388,19 @@ class ServiceServiceGroupsApi
     }
 
     /**
-     * Operation getAllServiceGroups
-     *
-     * Get all service groups
-     *
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response
-     */
-    public function getAllServiceGroups()
-    {
-        list($response) = $this->getAllServiceGroupsWithHttpInfo();
-        return $response;
-    }
-
-    /**
-     * Operation getAllServiceGroupsWithHttpInfo
-     *
-     * Get all service groups
-     *
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getAllServiceGroupsWithHttpInfo()
-    {
-        $request = $this->getAllServiceGroupsRequest();
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAllServiceGroupsAsync
-     *
-     * Get all service groups
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAllServiceGroupsAsync()
-    {
-        return $this->getAllServiceGroupsAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getAllServiceGroupsAsyncWithHttpInfo
-     *
-     * Get all service groups
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAllServiceGroupsAsyncWithHttpInfo()
-    {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response';
-        $request = $this->getAllServiceGroupsRequest();
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getAllServiceGroups'
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getAllServiceGroupsRequest()
-    {
-
-        $resourcePath = '/servicegroups';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getAllServices
-     *
-     * Get all services
-     *
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetAllServices200Response
-     */
-    public function getAllServices()
-    {
-        list($response) = $this->getAllServicesWithHttpInfo();
-        return $response;
-    }
-
-    /**
-     * Operation getAllServicesWithHttpInfo
-     *
-     * Get all services
-     *
-     *
-     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetAllServices200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getAllServicesWithHttpInfo()
-    {
-        $request = $this->getAllServicesRequest();
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetAllServices200Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetAllServices200Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetAllServices200Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetAllServices200Response';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetAllServices200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAllServicesAsync
-     *
-     * Get all services
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAllServicesAsync()
-    {
-        return $this->getAllServicesAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getAllServicesAsyncWithHttpInfo
-     *
-     * Get all services
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAllServicesAsyncWithHttpInfo()
-    {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetAllServices200Response';
-        $request = $this->getAllServicesRequest();
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getAllServices'
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getAllServicesRequest()
-    {
-
-        $resourcePath = '/services';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation getOpenServiceRequestsForPerson
      *
      * Get all service requests for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response|string
      */
-    public function getOpenServiceRequestsForPerson($id)
+    public function getOpenServiceRequestsForPerson($person_id)
     {
-        list($response) = $this->getOpenServiceRequestsForPersonWithHttpInfo($id);
+        list($response) = $this->getOpenServiceRequestsForPersonWithHttpInfo($person_id);
         return $response;
     }
 
@@ -941,15 +409,15 @@ class ServiceServiceGroupsApi
      *
      * Get all service requests for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOpenServiceRequestsForPersonWithHttpInfo($id)
+    public function getOpenServiceRequestsForPersonWithHttpInfo($person_id)
     {
-        $request = $this->getOpenServiceRequestsForPersonRequest($id);
+        $request = $this->getOpenServiceRequestsForPersonRequest($person_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1063,14 +531,14 @@ class ServiceServiceGroupsApi
      *
      * Get all service requests for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOpenServiceRequestsForPersonAsync($id)
+    public function getOpenServiceRequestsForPersonAsync($person_id)
     {
-        return $this->getOpenServiceRequestsForPersonAsyncWithHttpInfo($id)
+        return $this->getOpenServiceRequestsForPersonAsyncWithHttpInfo($person_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1083,15 +551,15 @@ class ServiceServiceGroupsApi
      *
      * Get all service requests for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOpenServiceRequestsForPersonAsyncWithHttpInfo($id)
+    public function getOpenServiceRequestsForPersonAsyncWithHttpInfo($person_id)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response';
-        $request = $this->getOpenServiceRequestsForPersonRequest($id);
+        $request = $this->getOpenServiceRequestsForPersonRequest($person_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1132,21 +600,21 @@ class ServiceServiceGroupsApi
     /**
      * Create request for operation 'getOpenServiceRequestsForPerson'
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOpenServiceRequestsForPersonRequest($id)
+    public function getOpenServiceRequestsForPersonRequest($person_id)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getOpenServiceRequestsForPerson'
+                'Missing the required parameter $person_id when calling getOpenServiceRequestsForPerson'
             );
         }
 
-        $resourcePath = '/persons/{id}/servicerequests';
+        $resourcePath = '/persons/{personId}/servicerequests';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1156,10 +624,10 @@ class ServiceServiceGroupsApi
 
 
         // path params
-        if ($id !== null) {
+        if ($person_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
                 $resourcePath
             );
         }
@@ -1228,20 +696,848 @@ class ServiceServiceGroupsApi
     }
 
     /**
+     * Operation getService
+     *
+     * 
+     *
+     * @param  string $service_id service_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\GetService200Response
+     */
+    public function getService($service_id)
+    {
+        list($response) = $this->getServiceWithHttpInfo($service_id);
+        return $response;
+    }
+
+    /**
+     * Operation getServiceWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $service_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\GetService200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getServiceWithHttpInfo($service_id)
+    {
+        $request = $this->getServiceRequest($service_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\GetService200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\GetService200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetService200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetService200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\GetService200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getServiceAsync
+     *
+     * 
+     *
+     * @param  string $service_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceAsync($service_id)
+    {
+        return $this->getServiceAsyncWithHttpInfo($service_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getServiceAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $service_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceAsyncWithHttpInfo($service_id)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetService200Response';
+        $request = $this->getServiceRequest($service_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getService'
+     *
+     * @param  string $service_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getServiceRequest($service_id)
+    {
+        // verify the required parameter 'service_id' is set
+        if ($service_id === null || (is_array($service_id) && count($service_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $service_id when calling getService'
+            );
+        }
+
+        $resourcePath = '/services/{serviceId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($service_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceId' . '}',
+                ObjectSerializer::toPathValue($service_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getServiceGroup
+     *
+     * 
+     *
+     * @param  string $service_group_id service_group_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\GetServiceGroup200Response
+     */
+    public function getServiceGroup($service_group_id)
+    {
+        list($response) = $this->getServiceGroupWithHttpInfo($service_group_id);
+        return $response;
+    }
+
+    /**
+     * Operation getServiceGroupWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $service_group_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\GetServiceGroup200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getServiceGroupWithHttpInfo($service_group_id)
+    {
+        $request = $this->getServiceGroupRequest($service_group_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\GetServiceGroup200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\GetServiceGroup200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetServiceGroup200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetServiceGroup200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\GetServiceGroup200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getServiceGroupAsync
+     *
+     * 
+     *
+     * @param  string $service_group_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceGroupAsync($service_group_id)
+    {
+        return $this->getServiceGroupAsyncWithHttpInfo($service_group_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getServiceGroupAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $service_group_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceGroupAsyncWithHttpInfo($service_group_id)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetServiceGroup200Response';
+        $request = $this->getServiceGroupRequest($service_group_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getServiceGroup'
+     *
+     * @param  string $service_group_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getServiceGroupRequest($service_group_id)
+    {
+        // verify the required parameter 'service_group_id' is set
+        if ($service_group_id === null || (is_array($service_group_id) && count($service_group_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $service_group_id when calling getServiceGroup'
+            );
+        }
+
+        $resourcePath = '/servicegroups/{serviceGroupId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($service_group_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceGroupId' . '}',
+                ObjectSerializer::toPathValue($service_group_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getServiceGroups
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\GetServiceGroups200Response
+     */
+    public function getServiceGroups()
+    {
+        list($response) = $this->getServiceGroupsWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getServiceGroupsWithHttpInfo
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\GetServiceGroups200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getServiceGroupsWithHttpInfo()
+    {
+        $request = $this->getServiceGroupsRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\GetServiceGroups200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\GetServiceGroups200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetServiceGroups200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetServiceGroups200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\GetServiceGroups200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getServiceGroupsAsync
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceGroupsAsync()
+    {
+        return $this->getServiceGroupsAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getServiceGroupsAsyncWithHttpInfo
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceGroupsAsyncWithHttpInfo()
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetServiceGroups200Response';
+        $request = $this->getServiceGroupsRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getServiceGroups'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getServiceGroupsRequest()
+    {
+
+        $resourcePath = '/servicegroups';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getServiceRequestById
      *
      * Get a specific service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response|string
      */
-    public function getServiceRequestById($id, $request_id)
+    public function getServiceRequestById($person_id, $request_id)
     {
-        list($response) = $this->getServiceRequestByIdWithHttpInfo($id, $request_id);
+        list($response) = $this->getServiceRequestByIdWithHttpInfo($person_id, $request_id);
         return $response;
     }
 
@@ -1250,16 +1546,16 @@ class ServiceServiceGroupsApi
      *
      * Get a specific service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getServiceRequestByIdWithHttpInfo($id, $request_id)
+    public function getServiceRequestByIdWithHttpInfo($person_id, $request_id)
     {
-        $request = $this->getServiceRequestByIdRequest($id, $request_id);
+        $request = $this->getServiceRequestByIdRequest($person_id, $request_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1373,15 +1669,15 @@ class ServiceServiceGroupsApi
      *
      * Get a specific service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceRequestByIdAsync($id, $request_id)
+    public function getServiceRequestByIdAsync($person_id, $request_id)
     {
-        return $this->getServiceRequestByIdAsyncWithHttpInfo($id, $request_id)
+        return $this->getServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1394,16 +1690,16 @@ class ServiceServiceGroupsApi
      *
      * Get a specific service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceRequestByIdAsyncWithHttpInfo($id, $request_id)
+    public function getServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response';
-        $request = $this->getServiceRequestByIdRequest($id, $request_id);
+        $request = $this->getServiceRequestByIdRequest($person_id, $request_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1444,18 +1740,18 @@ class ServiceServiceGroupsApi
     /**
      * Create request for operation 'getServiceRequestById'
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getServiceRequestByIdRequest($id, $request_id)
+    public function getServiceRequestByIdRequest($person_id, $request_id)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getServiceRequestById'
+                'Missing the required parameter $person_id when calling getServiceRequestById'
             );
         }
         // verify the required parameter 'request_id' is set
@@ -1465,7 +1761,7 @@ class ServiceServiceGroupsApi
             );
         }
 
-        $resourcePath = '/persons/{id}/servicerequests/{requestId}';
+        $resourcePath = '/persons/{personId}/servicerequests/{requestId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1475,10 +1771,10 @@ class ServiceServiceGroupsApi
 
 
         // path params
-        if ($id !== null) {
+        if ($person_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
                 $resourcePath
             );
         }
@@ -1555,20 +1851,278 @@ class ServiceServiceGroupsApi
     }
 
     /**
+     * Operation getServices
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\GetServices200Response
+     */
+    public function getServices()
+    {
+        list($response) = $this->getServicesWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getServicesWithHttpInfo
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\GetServices200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getServicesWithHttpInfo()
+    {
+        $request = $this->getServicesRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\GetServices200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\GetServices200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetServices200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetServices200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\GetServices200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getServicesAsync
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServicesAsync()
+    {
+        return $this->getServicesAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getServicesAsyncWithHttpInfo
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServicesAsyncWithHttpInfo()
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetServices200Response';
+        $request = $this->getServicesRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getServices'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getServicesRequest()
+    {
+
+        $resourcePath = '/services';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation undoServiceRequestById
      *
      * Undo last service request action
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response|string
      */
-    public function undoServiceRequestById($id, $request_id)
+    public function undoServiceRequestById($person_id, $request_id)
     {
-        list($response) = $this->undoServiceRequestByIdWithHttpInfo($id, $request_id);
+        list($response) = $this->undoServiceRequestByIdWithHttpInfo($person_id, $request_id);
         return $response;
     }
 
@@ -1577,16 +2131,16 @@ class ServiceServiceGroupsApi
      *
      * Undo last service request action
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function undoServiceRequestByIdWithHttpInfo($id, $request_id)
+    public function undoServiceRequestByIdWithHttpInfo($person_id, $request_id)
     {
-        $request = $this->undoServiceRequestByIdRequest($id, $request_id);
+        $request = $this->undoServiceRequestByIdRequest($person_id, $request_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1700,15 +2254,15 @@ class ServiceServiceGroupsApi
      *
      * Undo last service request action
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function undoServiceRequestByIdAsync($id, $request_id)
+    public function undoServiceRequestByIdAsync($person_id, $request_id)
     {
-        return $this->undoServiceRequestByIdAsyncWithHttpInfo($id, $request_id)
+        return $this->undoServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1721,16 +2275,16 @@ class ServiceServiceGroupsApi
      *
      * Undo last service request action
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function undoServiceRequestByIdAsyncWithHttpInfo($id, $request_id)
+    public function undoServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response';
-        $request = $this->undoServiceRequestByIdRequest($id, $request_id);
+        $request = $this->undoServiceRequestByIdRequest($person_id, $request_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1771,18 +2325,18 @@ class ServiceServiceGroupsApi
     /**
      * Create request for operation 'undoServiceRequestById'
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function undoServiceRequestByIdRequest($id, $request_id)
+    public function undoServiceRequestByIdRequest($person_id, $request_id)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling undoServiceRequestById'
+                'Missing the required parameter $person_id when calling undoServiceRequestById'
             );
         }
         // verify the required parameter 'request_id' is set
@@ -1792,7 +2346,7 @@ class ServiceServiceGroupsApi
             );
         }
 
-        $resourcePath = '/persons/{id}/servicerequests/{requestId}/undo';
+        $resourcePath = '/persons/{personId}/servicerequests/{requestId}/undo';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1802,10 +2356,10 @@ class ServiceServiceGroupsApi
 
 
         // path params
-        if ($id !== null) {
+        if ($person_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
                 $resourcePath
             );
         }
@@ -1886,7 +2440,7 @@ class ServiceServiceGroupsApi
      *
      * Agree to a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest $update_service_request_by_id_request Send the agreed state and optionally a comment. (required)
      *
@@ -1894,9 +2448,9 @@ class ServiceServiceGroupsApi
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response|string
      */
-    public function updateServiceRequestById($id, $request_id, $update_service_request_by_id_request)
+    public function updateServiceRequestById($person_id, $request_id, $update_service_request_by_id_request)
     {
-        list($response) = $this->updateServiceRequestByIdWithHttpInfo($id, $request_id, $update_service_request_by_id_request);
+        list($response) = $this->updateServiceRequestByIdWithHttpInfo($person_id, $request_id, $update_service_request_by_id_request);
         return $response;
     }
 
@@ -1905,7 +2459,7 @@ class ServiceServiceGroupsApi
      *
      * Agree to a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest $update_service_request_by_id_request Send the agreed state and optionally a comment. (required)
      *
@@ -1913,9 +2467,9 @@ class ServiceServiceGroupsApi
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateServiceRequestByIdWithHttpInfo($id, $request_id, $update_service_request_by_id_request)
+    public function updateServiceRequestByIdWithHttpInfo($person_id, $request_id, $update_service_request_by_id_request)
     {
-        $request = $this->updateServiceRequestByIdRequest($id, $request_id, $update_service_request_by_id_request);
+        $request = $this->updateServiceRequestByIdRequest($person_id, $request_id, $update_service_request_by_id_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2029,16 +2583,16 @@ class ServiceServiceGroupsApi
      *
      * Agree to a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest $update_service_request_by_id_request Send the agreed state and optionally a comment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateServiceRequestByIdAsync($id, $request_id, $update_service_request_by_id_request)
+    public function updateServiceRequestByIdAsync($person_id, $request_id, $update_service_request_by_id_request)
     {
-        return $this->updateServiceRequestByIdAsyncWithHttpInfo($id, $request_id, $update_service_request_by_id_request)
+        return $this->updateServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id, $update_service_request_by_id_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2051,17 +2605,17 @@ class ServiceServiceGroupsApi
      *
      * Agree to a service request for a person
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest $update_service_request_by_id_request Send the agreed state and optionally a comment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateServiceRequestByIdAsyncWithHttpInfo($id, $request_id, $update_service_request_by_id_request)
+    public function updateServiceRequestByIdAsyncWithHttpInfo($person_id, $request_id, $update_service_request_by_id_request)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response';
-        $request = $this->updateServiceRequestByIdRequest($id, $request_id, $update_service_request_by_id_request);
+        $request = $this->updateServiceRequestByIdRequest($person_id, $request_id, $update_service_request_by_id_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2102,19 +2656,19 @@ class ServiceServiceGroupsApi
     /**
      * Create request for operation 'updateServiceRequestById'
      *
-     * @param  int $id ID of person (required)
+     * @param  int $person_id ID of person (required)
      * @param  int $request_id ID of a service request (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest $update_service_request_by_id_request Send the agreed state and optionally a comment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateServiceRequestByIdRequest($id, $request_id, $update_service_request_by_id_request)
+    public function updateServiceRequestByIdRequest($person_id, $request_id, $update_service_request_by_id_request)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling updateServiceRequestById'
+                'Missing the required parameter $person_id when calling updateServiceRequestById'
             );
         }
         // verify the required parameter 'request_id' is set
@@ -2130,7 +2684,7 @@ class ServiceServiceGroupsApi
             );
         }
 
-        $resourcePath = '/persons/{id}/servicerequests/{requestId}';
+        $resourcePath = '/persons/{personId}/servicerequests/{requestId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2140,10 +2694,10 @@ class ServiceServiceGroupsApi
 
 
         // path params
-        if ($id !== null) {
+        if ($person_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
                 $resourcePath
             );
         }

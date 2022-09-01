@@ -58,7 +58,7 @@ class GetCalendarsAppointments200ResponseDataInner implements ModelInterface, Ar
       */
     protected static $openAPITypes = [
         'base' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBase',
-        'calculated' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerCalculated'
+        'calculated' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerCalculated'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetCalendarsAppointments200ResponseDataInner implements ModelInterface, Ar
     /**
      * Gets calculated
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerCalculated|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerCalculated|null
      */
     public function getCalculated()
     {
@@ -246,7 +246,7 @@ class GetCalendarsAppointments200ResponseDataInner implements ModelInterface, Ar
     /**
      * Sets calculated
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerCalculated|null $calculated calculated
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerCalculated|null $calculated calculated
      *
      * @return self
      */

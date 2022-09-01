@@ -57,10 +57,10 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'date' => '\DateTime',
+        'id' => 'int',
         'is_repeated' => 'bool',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta'
     ];
 
     /**
@@ -71,8 +71,8 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'date' => 'date',
         'id' => null,
-        'date' => 'date-time',
         'is_repeated' => null,
         'meta' => null
     ];
@@ -104,8 +104,8 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'date' => 'date',
+        'id' => 'id',
         'is_repeated' => 'isRepeated',
         'meta' => 'meta'
     ];
@@ -116,8 +116,8 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'date' => 'setDate',
+        'id' => 'setId',
         'is_repeated' => 'setIsRepeated',
         'meta' => 'setMeta'
     ];
@@ -128,8 +128,8 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'date' => 'getDate',
+        'id' => 'getId',
         'is_repeated' => 'getIsRepeated',
         'meta' => 'getMeta'
     ];
@@ -191,8 +191,8 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['date'] = $data['date'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_repeated'] = $data['is_repeated'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
     }
@@ -222,30 +222,6 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets date
      *
      * @return \DateTime|null
@@ -265,6 +241,30 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -296,7 +296,7 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null
      */
     public function getMeta()
     {
@@ -306,7 +306,7 @@ class GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInner implements 
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null $meta meta
      *
      * @return self
      */

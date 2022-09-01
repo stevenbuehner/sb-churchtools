@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  |
-**name** | **string** |  |
-**sort_key** | **int** |  |
 **campus_id** | **int** |  |
-**in_menu** | **bool** |  |
 **file_access_without_permission** | **bool** |  |
+**id** | **int** |  |
+**in_menu** | **bool** |  |
+**name** | **string** |  |
 **name_translated** | **string** |  | [optional]
+**sort_key** | **int** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

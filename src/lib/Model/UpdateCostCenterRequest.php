@@ -57,11 +57,11 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'number' => 'string',
-        'name' => 'string',
-        'budget' => 'float',
         'accounting_period_id' => 'int',
-        'group_id' => 'int'
+        'budget' => 'int',
+        'group_id' => 'int',
+        'name' => 'string',
+        'number' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'number' => null,
-        'name' => null,
-        'budget' => 'integer',
         'accounting_period_id' => null,
-        'group_id' => null
+        'budget' => null,
+        'group_id' => null,
+        'name' => null,
+        'number' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'number' => 'number',
-        'name' => 'name',
-        'budget' => 'budget',
         'accounting_period_id' => 'accountingPeriodId',
-        'group_id' => 'groupId'
+        'budget' => 'budget',
+        'group_id' => 'groupId',
+        'name' => 'name',
+        'number' => 'number'
     ];
 
     /**
@@ -119,11 +119,11 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'number' => 'setNumber',
-        'name' => 'setName',
-        'budget' => 'setBudget',
         'accounting_period_id' => 'setAccountingPeriodId',
-        'group_id' => 'setGroupId'
+        'budget' => 'setBudget',
+        'group_id' => 'setGroupId',
+        'name' => 'setName',
+        'number' => 'setNumber'
     ];
 
     /**
@@ -132,11 +132,11 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'number' => 'getNumber',
-        'name' => 'getName',
-        'budget' => 'getBudget',
         'accounting_period_id' => 'getAccountingPeriodId',
-        'group_id' => 'getGroupId'
+        'budget' => 'getBudget',
+        'group_id' => 'getGroupId',
+        'name' => 'getName',
+        'number' => 'getNumber'
     ];
 
     /**
@@ -196,11 +196,11 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['budget'] = $data['budget'] ?? null;
         $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
+        $this->container['budget'] = $data['budget'] ?? null;
         $this->container['group_id'] = $data['group_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['number'] = $data['number'] ?? null;
     }
 
     /**
@@ -212,14 +212,14 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
+        if ($this->container['accounting_period_id'] === null) {
+            $invalidProperties[] = "'accounting_period_id' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['accounting_period_id'] === null) {
-            $invalidProperties[] = "'accounting_period_id' can't be null";
+        if ($this->container['number'] === null) {
+            $invalidProperties[] = "'number' can't be null";
         }
         return $invalidProperties;
     }
@@ -237,25 +237,73 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets number
+     * Gets accounting_period_id
      *
-     * @return string
+     * @return int
      */
-    public function getNumber()
+    public function getAccountingPeriodId()
     {
-        return $this->container['number'];
+        return $this->container['accounting_period_id'];
     }
 
     /**
-     * Sets number
+     * Sets accounting_period_id
      *
-     * @param string $number number
+     * @param int $accounting_period_id accounting_period_id
      *
      * @return self
      */
-    public function setNumber($number)
+    public function setAccountingPeriodId($accounting_period_id)
     {
-        $this->container['number'] = $number;
+        $this->container['accounting_period_id'] = $accounting_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets budget
+     *
+     * @return int|null
+     */
+    public function getBudget()
+    {
+        return $this->container['budget'];
+    }
+
+    /**
+     * Sets budget
+     *
+     * @param int|null $budget Provide budget in cent.
+     *
+     * @return self
+     */
+    public function setBudget($budget)
+    {
+        $this->container['budget'] = $budget;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_id
+     *
+     * @return int|null
+     */
+    public function getGroupId()
+    {
+        return $this->container['group_id'];
+    }
+
+    /**
+     * Sets group_id
+     *
+     * @param int|null $group_id group_id
+     *
+     * @return self
+     */
+    public function setGroupId($group_id)
+    {
+        $this->container['group_id'] = $group_id;
 
         return $this;
     }
@@ -285,73 +333,25 @@ class UpdateCostCenterRequest implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets budget
+     * Gets number
      *
-     * @return float|null
+     * @return string
      */
-    public function getBudget()
+    public function getNumber()
     {
-        return $this->container['budget'];
+        return $this->container['number'];
     }
 
     /**
-     * Sets budget
+     * Sets number
      *
-     * @param float|null $budget Provide budget in cent.
+     * @param string $number number
      *
      * @return self
      */
-    public function setBudget($budget)
+    public function setNumber($number)
     {
-        $this->container['budget'] = $budget;
-
-        return $this;
-    }
-
-    /**
-     * Gets accounting_period_id
-     *
-     * @return int
-     */
-    public function getAccountingPeriodId()
-    {
-        return $this->container['accounting_period_id'];
-    }
-
-    /**
-     * Sets accounting_period_id
-     *
-     * @param int $accounting_period_id accounting_period_id
-     *
-     * @return self
-     */
-    public function setAccountingPeriodId($accounting_period_id)
-    {
-        $this->container['accounting_period_id'] = $accounting_period_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_id
-     *
-     * @return int|null
-     */
-    public function getGroupId()
-    {
-        return $this->container['group_id'];
-    }
-
-    /**
-     * Sets group_id
-     *
-     * @param int|null $group_id group_id
-     *
-     * @return self
-     */
-    public function setGroupId($group_id)
-    {
-        $this->container['group_id'] = $group_id;
+        $this->container['number'] = $number;
 
         return $this;
     }

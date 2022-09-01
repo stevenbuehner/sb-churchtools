@@ -4,16 +4,84 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**agendaExport()**](EventApi.md#agendaExport) | **POST** /agendas/{agendaId}/export | Exports the agenda
 [**getAgendaForEvent()**](EventApi.md#getAgendaForEvent) | **GET** /events/{eventId}/agenda | Get agenda for event
 [**getAllEvents()**](EventApi.md#getAllEvents) | **GET** /events | Get all events
 [**getEvent()**](EventApi.md#getEvent) | **GET** /events/{eventId} | Get a single event
+[**getEventIcal()**](EventApi.md#getEventIcal) | **GET** /events/ical | 
 [**getEventMasterdata()**](EventApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
-[**getPersonEvents()**](EventApi.md#getPersonEvents) | **GET** /persons/{id}/events | Get events that person is involved with
+[**getPersonEvents()**](EventApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with
 [**getSongsOfAgenda()**](EventApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
 [**sendAgendaEmail()**](EventApi.md#sendAgendaEmail) | **POST** /agendas/send | Send agenda email to recipients
 [**sendEventEmail()**](EventApi.md#sendEventEmail) | **POST** /events/send | Send Mail to Event Participants
 [**startStopEventChat()**](EventApi.md#startStopEventChat) | **POST** /events/{eventId}/chat | Start or stop an event chat
 
+
+## `agendaExport()`
+
+```php
+agendaExport($agenda_id, $target, $agenda_export_request): \StevenBuehner\ChurchTools\Model\AgendaExport200Response
+```
+
+Exports the agenda
+
+Exports the agenda as zip file for imports in presenter-programs
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$agenda_id = 'agenda_id_example'; // string
+$target = 'target_example'; // string
+$agenda_export_request = new \StevenBuehner\ChurchTools\Model\AgendaExportRequest(); // \StevenBuehner\ChurchTools\Model\AgendaExportRequest
+
+try {
+    $result = $apiInstance->agendaExport($agenda_id, $target, $agenda_export_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->agendaExport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agenda_id** | **string**|  |
+ **target** | **string**|  |
+ **agenda_export_request** | [**\StevenBuehner\ChurchTools\Model\AgendaExportRequest**](../Model/AgendaExportRequest.md)|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\AgendaExport200Response**](../Model/AgendaExport200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `getAgendaForEvent()`
 
@@ -32,7 +100,7 @@ Fetch all agenda items.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -44,7 +112,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$event_id = 12; // int | ID of corresponding event
+$event_id = 42; // int | ID of Event
 
 try {
     $result = $apiInstance->getAgendaForEvent($event_id);
@@ -58,7 +126,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of corresponding event |
+ **event_id** | **int**| ID of Event |
 
 ### Return type
 
@@ -66,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -94,7 +162,7 @@ Gets a list of all events with services
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -132,12 +200,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -146,7 +214,7 @@ Name | Type | Description  | Notes
 ## `getEvent()`
 
 ```php
-getEvent($event_id): \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response
+getEvent($event_id): \StevenBuehner\ChurchTools\Model\GetEvent200Response
 ```
 
 Get a single event
@@ -160,7 +228,7 @@ Get a event by id, with services
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -172,7 +240,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$event_id = 42; // int | ID of event
+$event_id = 42; // int | ID of Event
 
 try {
     $result = $apiInstance->getEvent($event_id);
@@ -186,20 +254,80 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of event |
+ **event_id** | **int**| ID of Event |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response**](../Model/GetPersonEvents200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetEvent200Response**](../Model/GetEvent200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getEventIcal()`
+
+```php
+getEventIcal($person_id): \StevenBuehner\ChurchTools\Model\GetEventIcal200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 56; // int
+
+try {
+    $result = $apiInstance->getEventIcal($person_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->getEventIcal: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **person_id** | **int**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetEventIcal200Response**](../Model/GetEventIcal200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -222,7 +350,7 @@ The master data are the backbone of ChurchTools. This endpoint returns all data 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -253,12 +381,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -267,7 +395,7 @@ This endpoint does not need any parameter.
 ## `getPersonEvents()`
 
 ```php
-getPersonEvents($id, $from): \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response
+getPersonEvents($person_id): \StevenBuehner\ChurchTools\Model\GetEvent200Response
 ```
 
 Get events that person is involved with
@@ -281,7 +409,7 @@ Gets a list of all events that a person is involved
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -293,11 +421,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
-$from = Thu Aug 08 02:00:00 CEST 2019; // \DateTime | Start date from when events are returned. Default value: today
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getPersonEvents($id, $from);
+    $result = $apiInstance->getPersonEvents($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->getPersonEvents: ', $e->getMessage(), PHP_EOL;
@@ -308,16 +435,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
- **from** | **\DateTime**| Start date from when events are returned. Default value: today | [optional]
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response**](../Model/GetPersonEvents200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetEvent200Response**](../Model/GetEvent200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -345,7 +471,7 @@ Get all songs of agenda for this event. Only those songs are returned, which the
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -357,7 +483,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$event_id = 'event_id_example'; // string
+$event_id = 42; // int | ID of Event
 
 try {
     $result = $apiInstance->getSongsOfAgenda($event_id);
@@ -371,7 +497,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **string**|  |
+ **event_id** | **int**| ID of Event |
 
 ### Return type
 
@@ -379,12 +505,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -398,7 +524,7 @@ sendAgendaEmail($send_agenda_email_request): \StevenBuehner\ChurchTools\Model\Se
 
 Send agenda email to recipients
 
-A agenda can be sent to multiple people at once. Recipients can be participants of one of the events, whereby the user sending the mail MUST see the service groups, or the user can add additional recipients from the list of people the user can see. To send a mail the user MUST see the agenda.
+An agenda can be sent to multiple people at once. Recipients can be participants of one of the events, whereby the user sending the mail MUST see the service groups, or the user can add additional recipients from the list of people the user can see. To send a mail the user MUST see the agenda.
 
 ### Example
 
@@ -407,7 +533,7 @@ A agenda can be sent to multiple people at once. Recipients can be participants 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -441,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -455,7 +581,7 @@ Name | Type | Description  | Notes
 ## `sendEventEmail()`
 
 ```php
-sendEventEmail($send_event_email_request): \StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response
+sendEventEmail($send_event_email_request): \StevenBuehner\ChurchTools\Model\SendEventEmail200Response
 ```
 
 Send Mail to Event Participants
@@ -469,7 +595,7 @@ A agenda can be sent to multiple people at once. Recipients can be participants 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -481,7 +607,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$send_event_email_request = {"eventIds":[31,32],"recipients":[40,41,116],"files":[0],"sendCopyToMe":true,"appendAgendaButton":false,"subject":"Agenda Updated","body":"I have a updated the agenda for the upcoming service. Please review the changes."}; // \StevenBuehner\ChurchTools\Model\SendEventEmailRequest | E-Mail information and recipients
+$send_event_email_request = {"appendAgendaButton":false,"body":"I have a updated the agenda for the upcoming service. Please review the changes.","eventIds":[31,32],"files":[0],"recipients":[40,41,116],"sendCopyToMe":true,"subject":"Agenda Updated"}; // \StevenBuehner\ChurchTools\Model\SendEventEmailRequest | E-Mail information and recipients
 
 try {
     $result = $apiInstance->sendEventEmail($send_event_email_request);
@@ -499,11 +625,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response**](../Model/SendAgendaEmail200Response.md)
+[**\StevenBuehner\ChurchTools\Model\SendEventEmail200Response**](../Model/SendEventEmail200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -517,7 +643,7 @@ Name | Type | Description  | Notes
 ## `startStopEventChat()`
 
 ```php
-startStopEventChat($event_id, $start_stop_group_chat_request)
+startStopEventChat($event_id, $start_stop_event_chat_request)
 ```
 
 Start or stop an event chat
@@ -529,7 +655,7 @@ Start or stop an event chat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -541,11 +667,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$event_id = 42; // int | ID of event
-$start_stop_group_chat_request = new \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest(); // \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest
+$event_id = 42; // int | ID of Event
+$start_stop_event_chat_request = new \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest(); // \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest
 
 try {
-    $apiInstance->startStopEventChat($event_id, $start_stop_group_chat_request);
+    $apiInstance->startStopEventChat($event_id, $start_stop_event_chat_request);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->startStopEventChat: ', $e->getMessage(), PHP_EOL;
 }
@@ -555,8 +681,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of event |
- **start_stop_group_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest**](../Model/StartStopGroupChatRequest.md)|  |
+ **event_id** | **int**| ID of Event |
+ **start_stop_event_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopEventChatRequest**](../Model/StartStopEventChatRequest.md)|  |
 
 ### Return type
 
@@ -564,7 +690,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

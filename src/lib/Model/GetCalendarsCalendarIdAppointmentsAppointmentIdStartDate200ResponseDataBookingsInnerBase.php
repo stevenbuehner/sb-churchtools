@@ -57,26 +57,26 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'caption' => 'string',
-        'note' => 'string',
-        'version' => 'float',
-        'resource' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBaseResource',
-        'location' => 'string',
-        'cal_id' => 'float',
-        'person_id' => 'float',
-        'show_in_cal' => 'bool',
-        'status_id' => 'float',
-        'start_date' => '\DateTime',
-        'end_date' => 'string',
-        'all_day' => 'bool',
-        'repeat_id' => 'float',
-        'repeat_frequency' => 'float',
-        'repeat_until' => '\DateTime',
-        'repeat_option' => 'mixed',
         'additionals' => 'object[]',
+        'all_day' => 'bool',
+        'cal_id' => 'int',
+        'caption' => 'string',
+        'end_date' => 'string',
         'exceptions' => 'object[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentBaseMeta'
+        'id' => 'int',
+        'location' => 'string',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
+        'note' => 'string',
+        'person_id' => 'int',
+        'repeat_frequency' => 'int',
+        'repeat_id' => 'int',
+        'repeat_option' => 'mixed',
+        'repeat_until' => '\DateTime',
+        'resource' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBaseResource',
+        'show_in_cal' => 'bool',
+        'start_date' => '\DateTime',
+        'status_id' => 'int',
+        'version' => 'float'
     ];
 
     /**
@@ -87,26 +87,26 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'caption' => null,
-        'note' => null,
-        'version' => null,
-        'resource' => null,
-        'location' => null,
-        'cal_id' => null,
-        'person_id' => null,
-        'show_in_cal' => null,
-        'status_id' => null,
-        'start_date' => 'date-time',
-        'end_date' => null,
-        'all_day' => null,
-        'repeat_id' => null,
-        'repeat_frequency' => null,
-        'repeat_until' => 'date-time',
-        'repeat_option' => null,
         'additionals' => null,
+        'all_day' => null,
+        'cal_id' => null,
+        'caption' => null,
+        'end_date' => null,
         'exceptions' => null,
-        'meta' => null
+        'id' => null,
+        'location' => null,
+        'meta' => null,
+        'note' => null,
+        'person_id' => null,
+        'repeat_frequency' => null,
+        'repeat_id' => null,
+        'repeat_option' => null,
+        'repeat_until' => 'date-time',
+        'resource' => null,
+        'show_in_cal' => null,
+        'start_date' => 'date-time',
+        'status_id' => null,
+        'version' => null
     ];
 
     /**
@@ -136,26 +136,26 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'caption' => 'caption',
-        'note' => 'note',
-        'version' => 'version',
-        'resource' => 'resource',
-        'location' => 'location',
-        'cal_id' => 'calId',
-        'person_id' => 'personId',
-        'show_in_cal' => 'showInCal',
-        'status_id' => 'statusId',
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'all_day' => 'allDay',
-        'repeat_id' => 'repeatId',
-        'repeat_frequency' => 'repeatFrequency',
-        'repeat_until' => 'repeatUntil',
-        'repeat_option' => 'repeatOption',
         'additionals' => 'additionals',
+        'all_day' => 'allDay',
+        'cal_id' => 'calId',
+        'caption' => 'caption',
+        'end_date' => 'endDate',
         'exceptions' => 'exceptions',
-        'meta' => 'meta'
+        'id' => 'id',
+        'location' => 'location',
+        'meta' => 'meta',
+        'note' => 'note',
+        'person_id' => 'personId',
+        'repeat_frequency' => 'repeatFrequency',
+        'repeat_id' => 'repeatId',
+        'repeat_option' => 'repeatOption',
+        'repeat_until' => 'repeatUntil',
+        'resource' => 'resource',
+        'show_in_cal' => 'showInCal',
+        'start_date' => 'startDate',
+        'status_id' => 'statusId',
+        'version' => 'version'
     ];
 
     /**
@@ -164,26 +164,26 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'caption' => 'setCaption',
-        'note' => 'setNote',
-        'version' => 'setVersion',
-        'resource' => 'setResource',
-        'location' => 'setLocation',
-        'cal_id' => 'setCalId',
-        'person_id' => 'setPersonId',
-        'show_in_cal' => 'setShowInCal',
-        'status_id' => 'setStatusId',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'all_day' => 'setAllDay',
-        'repeat_id' => 'setRepeatId',
-        'repeat_frequency' => 'setRepeatFrequency',
-        'repeat_until' => 'setRepeatUntil',
-        'repeat_option' => 'setRepeatOption',
         'additionals' => 'setAdditionals',
+        'all_day' => 'setAllDay',
+        'cal_id' => 'setCalId',
+        'caption' => 'setCaption',
+        'end_date' => 'setEndDate',
         'exceptions' => 'setExceptions',
-        'meta' => 'setMeta'
+        'id' => 'setId',
+        'location' => 'setLocation',
+        'meta' => 'setMeta',
+        'note' => 'setNote',
+        'person_id' => 'setPersonId',
+        'repeat_frequency' => 'setRepeatFrequency',
+        'repeat_id' => 'setRepeatId',
+        'repeat_option' => 'setRepeatOption',
+        'repeat_until' => 'setRepeatUntil',
+        'resource' => 'setResource',
+        'show_in_cal' => 'setShowInCal',
+        'start_date' => 'setStartDate',
+        'status_id' => 'setStatusId',
+        'version' => 'setVersion'
     ];
 
     /**
@@ -192,26 +192,26 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'caption' => 'getCaption',
-        'note' => 'getNote',
-        'version' => 'getVersion',
-        'resource' => 'getResource',
-        'location' => 'getLocation',
-        'cal_id' => 'getCalId',
-        'person_id' => 'getPersonId',
-        'show_in_cal' => 'getShowInCal',
-        'status_id' => 'getStatusId',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'all_day' => 'getAllDay',
-        'repeat_id' => 'getRepeatId',
-        'repeat_frequency' => 'getRepeatFrequency',
-        'repeat_until' => 'getRepeatUntil',
-        'repeat_option' => 'getRepeatOption',
         'additionals' => 'getAdditionals',
+        'all_day' => 'getAllDay',
+        'cal_id' => 'getCalId',
+        'caption' => 'getCaption',
+        'end_date' => 'getEndDate',
         'exceptions' => 'getExceptions',
-        'meta' => 'getMeta'
+        'id' => 'getId',
+        'location' => 'getLocation',
+        'meta' => 'getMeta',
+        'note' => 'getNote',
+        'person_id' => 'getPersonId',
+        'repeat_frequency' => 'getRepeatFrequency',
+        'repeat_id' => 'getRepeatId',
+        'repeat_option' => 'getRepeatOption',
+        'repeat_until' => 'getRepeatUntil',
+        'resource' => 'getResource',
+        'show_in_cal' => 'getShowInCal',
+        'start_date' => 'getStartDate',
+        'status_id' => 'getStatusId',
+        'version' => 'getVersion'
     ];
 
     /**
@@ -271,26 +271,26 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['caption'] = $data['caption'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['version'] = $data['version'] ?? null;
-        $this->container['resource'] = $data['resource'] ?? null;
-        $this->container['location'] = $data['location'] ?? null;
-        $this->container['cal_id'] = $data['cal_id'] ?? null;
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['show_in_cal'] = $data['show_in_cal'] ?? null;
-        $this->container['status_id'] = $data['status_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['all_day'] = $data['all_day'] ?? null;
-        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
-        $this->container['repeat_frequency'] = $data['repeat_frequency'] ?? null;
-        $this->container['repeat_until'] = $data['repeat_until'] ?? null;
-        $this->container['repeat_option'] = $data['repeat_option'] ?? null;
         $this->container['additionals'] = $data['additionals'] ?? null;
+        $this->container['all_day'] = $data['all_day'] ?? null;
+        $this->container['cal_id'] = $data['cal_id'] ?? null;
+        $this->container['caption'] = $data['caption'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['exceptions'] = $data['exceptions'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['location'] = $data['location'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['repeat_frequency'] = $data['repeat_frequency'] ?? null;
+        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
+        $this->container['repeat_option'] = $data['repeat_option'] ?? null;
+        $this->container['repeat_until'] = $data['repeat_until'] ?? null;
+        $this->container['resource'] = $data['resource'] ?? null;
+        $this->container['show_in_cal'] = $data['show_in_cal'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['status_id'] = $data['status_id'] ?? null;
+        $this->container['version'] = $data['version'] ?? null;
     }
 
     /**
@@ -302,49 +302,20 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['additionals'] === null) {
+            $invalidProperties[] = "'additionals' can't be null";
+        }
+        if ($this->container['all_day'] === null) {
+            $invalidProperties[] = "'all_day' can't be null";
+        }
+        if ($this->container['cal_id'] === null) {
+            $invalidProperties[] = "'cal_id' can't be null";
         }
         if ($this->container['caption'] === null) {
             $invalidProperties[] = "'caption' can't be null";
         }
         if ((mb_strlen($this->container['caption']) < 1)) {
             $invalidProperties[] = "invalid value for 'caption', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['note'] === null) {
-            $invalidProperties[] = "'note' can't be null";
-        }
-        if ($this->container['version'] === null) {
-            $invalidProperties[] = "'version' can't be null";
-        }
-        if ($this->container['resource'] === null) {
-            $invalidProperties[] = "'resource' can't be null";
-        }
-        if ($this->container['location'] === null) {
-            $invalidProperties[] = "'location' can't be null";
-        }
-        if ($this->container['cal_id'] === null) {
-            $invalidProperties[] = "'cal_id' can't be null";
-        }
-        if ($this->container['person_id'] === null) {
-            $invalidProperties[] = "'person_id' can't be null";
-        }
-        if ($this->container['show_in_cal'] === null) {
-            $invalidProperties[] = "'show_in_cal' can't be null";
-        }
-        if ($this->container['status_id'] === null) {
-            $invalidProperties[] = "'status_id' can't be null";
-        }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
-        if ((mb_strlen($this->container['start_date']) < 1)) {
-            $invalidProperties[] = "invalid value for 'start_date', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!preg_match("/2022-03-16T18:00:00.000000Z/", $this->container['start_date'])) {
-            $invalidProperties[] = "invalid value for 'start_date', must be conform to the pattern /2022-03-16T18:00:00.000000Z/.";
         }
 
         if ($this->container['end_date'] === null) {
@@ -354,14 +325,29 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
             $invalidProperties[] = "invalid value for 'end_date', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['all_day'] === null) {
-            $invalidProperties[] = "'all_day' can't be null";
+        if ($this->container['exceptions'] === null) {
+            $invalidProperties[] = "'exceptions' can't be null";
         }
-        if ($this->container['repeat_id'] === null) {
-            $invalidProperties[] = "'repeat_id' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['location'] === null) {
+            $invalidProperties[] = "'location' can't be null";
+        }
+        if ($this->container['meta'] === null) {
+            $invalidProperties[] = "'meta' can't be null";
+        }
+        if ($this->container['note'] === null) {
+            $invalidProperties[] = "'note' can't be null";
+        }
+        if ($this->container['person_id'] === null) {
+            $invalidProperties[] = "'person_id' can't be null";
         }
         if ($this->container['repeat_frequency'] === null) {
             $invalidProperties[] = "'repeat_frequency' can't be null";
+        }
+        if ($this->container['repeat_id'] === null) {
+            $invalidProperties[] = "'repeat_id' can't be null";
         }
         if ($this->container['repeat_until'] === null) {
             $invalidProperties[] = "'repeat_until' can't be null";
@@ -370,18 +356,24 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
             $invalidProperties[] = "invalid value for 'repeat_until', the character length must be bigger than or equal to 1.";
         }
 
-        if (!preg_match("/2022-03-16T18:00:00.000000Z/", $this->container['repeat_until'])) {
-            $invalidProperties[] = "invalid value for 'repeat_until', must be conform to the pattern /2022-03-16T18:00:00.000000Z/.";
+        if ($this->container['resource'] === null) {
+            $invalidProperties[] = "'resource' can't be null";
+        }
+        if ($this->container['show_in_cal'] === null) {
+            $invalidProperties[] = "'show_in_cal' can't be null";
+        }
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
+        }
+        if ((mb_strlen($this->container['start_date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'start_date', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['additionals'] === null) {
-            $invalidProperties[] = "'additionals' can't be null";
+        if ($this->container['status_id'] === null) {
+            $invalidProperties[] = "'status_id' can't be null";
         }
-        if ($this->container['exceptions'] === null) {
-            $invalidProperties[] = "'exceptions' can't be null";
-        }
-        if ($this->container['meta'] === null) {
-            $invalidProperties[] = "'meta' can't be null";
+        if ($this->container['version'] === null) {
+            $invalidProperties[] = "'version' can't be null";
         }
         return $invalidProperties;
     }
@@ -399,25 +391,73 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
 
 
     /**
-     * Gets id
+     * Gets additionals
      *
-     * @return float
+     * @return object[]
      */
-    public function getId()
+    public function getAdditionals()
     {
-        return $this->container['id'];
+        return $this->container['additionals'];
     }
 
     /**
-     * Sets id
+     * Sets additionals
      *
-     * @param float $id id
+     * @param object[] $additionals additionals
      *
      * @return self
      */
-    public function setId($id)
+    public function setAdditionals($additionals)
     {
-        $this->container['id'] = $id;
+        $this->container['additionals'] = $additionals;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_day
+     *
+     * @return bool
+     */
+    public function getAllDay()
+    {
+        return $this->container['all_day'];
+    }
+
+    /**
+     * Sets all_day
+     *
+     * @param bool $all_day all_day
+     *
+     * @return self
+     */
+    public function setAllDay($all_day)
+    {
+        $this->container['all_day'] = $all_day;
+
+        return $this;
+    }
+
+    /**
+     * Gets cal_id
+     *
+     * @return int
+     */
+    public function getCalId()
+    {
+        return $this->container['cal_id'];
+    }
+
+    /**
+     * Sets cal_id
+     *
+     * @param int $cal_id cal_id
+     *
+     * @return self
+     */
+    public function setCalId($cal_id)
+    {
+        $this->container['cal_id'] = $cal_id;
 
         return $this;
     }
@@ -452,230 +492,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     }
 
     /**
-     * Gets note
-     *
-     * @return string
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
-     * Gets version
-     *
-     * @return float
-     */
-    public function getVersion()
-    {
-        return $this->container['version'];
-    }
-
-    /**
-     * Sets version
-     *
-     * @param float $version version
-     *
-     * @return self
-     */
-    public function setVersion($version)
-    {
-        $this->container['version'] = $version;
-
-        return $this;
-    }
-
-    /**
-     * Gets resource
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBaseResource
-     */
-    public function getResource()
-    {
-        return $this->container['resource'];
-    }
-
-    /**
-     * Sets resource
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBaseResource $resource resource
-     *
-     * @return self
-     */
-    public function setResource($resource)
-    {
-        $this->container['resource'] = $resource;
-
-        return $this;
-    }
-
-    /**
-     * Gets location
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->container['location'];
-    }
-
-    /**
-     * Sets location
-     *
-     * @param string $location location
-     *
-     * @return self
-     */
-    public function setLocation($location)
-    {
-        $this->container['location'] = $location;
-
-        return $this;
-    }
-
-    /**
-     * Gets cal_id
-     *
-     * @return float
-     */
-    public function getCalId()
-    {
-        return $this->container['cal_id'];
-    }
-
-    /**
-     * Sets cal_id
-     *
-     * @param float $cal_id cal_id
-     *
-     * @return self
-     */
-    public function setCalId($cal_id)
-    {
-        $this->container['cal_id'] = $cal_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person_id
-     *
-     * @return float
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param float $person_id person_id
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_in_cal
-     *
-     * @return bool
-     */
-    public function getShowInCal()
-    {
-        return $this->container['show_in_cal'];
-    }
-
-    /**
-     * Sets show_in_cal
-     *
-     * @param bool $show_in_cal show_in_cal
-     *
-     * @return self
-     */
-    public function setShowInCal($show_in_cal)
-    {
-        $this->container['show_in_cal'] = $show_in_cal;
-
-        return $this;
-    }
-
-    /**
-     * Gets status_id
-     *
-     * @return float
-     */
-    public function getStatusId()
-    {
-        return $this->container['status_id'];
-    }
-
-    /**
-     * Sets status_id
-     *
-     * @param float $status_id status_id
-     *
-     * @return self
-     */
-    public function setStatusId($status_id)
-    {
-        $this->container['status_id'] = $status_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-
-        if ((mb_strlen($start_date) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $start_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBase., must be bigger than or equal to 1.');
-        }
-        if ((!preg_match("/2022-03-16T18:00:00.000000Z/", $start_date))) {
-            throw new \InvalidArgumentException("invalid value for $start_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBase., must conform to the pattern /2022-03-16T18:00:00.000000Z/.");
-        }
-
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
      * Gets end_date
      *
      * @return string
@@ -705,49 +521,145 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     }
 
     /**
-     * Gets all_day
+     * Gets exceptions
      *
-     * @return bool
+     * @return object[]
      */
-    public function getAllDay()
+    public function getExceptions()
     {
-        return $this->container['all_day'];
+        return $this->container['exceptions'];
     }
 
     /**
-     * Sets all_day
+     * Sets exceptions
      *
-     * @param bool $all_day all_day
+     * @param object[] $exceptions exceptions
      *
      * @return self
      */
-    public function setAllDay($all_day)
+    public function setExceptions($exceptions)
     {
-        $this->container['all_day'] = $all_day;
+        $this->container['exceptions'] = $exceptions;
 
         return $this;
     }
 
     /**
-     * Gets repeat_id
+     * Gets id
      *
-     * @return float
+     * @return int
      */
-    public function getRepeatId()
+    public function getId()
     {
-        return $this->container['repeat_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets repeat_id
+     * Sets id
      *
-     * @param float $repeat_id repeat_id
+     * @param int $id id
      *
      * @return self
      */
-    public function setRepeatId($repeat_id)
+    public function setId($id)
     {
-        $this->container['repeat_id'] = $repeat_id;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param string $location location
+     *
+     * @return self
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int $person_id person_id
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }
@@ -755,7 +667,7 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     /**
      * Gets repeat_frequency
      *
-     * @return float
+     * @return int
      */
     public function getRepeatFrequency()
     {
@@ -765,7 +677,7 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     /**
      * Sets repeat_frequency
      *
-     * @param float $repeat_frequency repeat_frequency
+     * @param int $repeat_frequency repeat_frequency
      *
      * @return self
      */
@@ -777,33 +689,25 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     }
 
     /**
-     * Gets repeat_until
+     * Gets repeat_id
      *
-     * @return \DateTime
+     * @return int
      */
-    public function getRepeatUntil()
+    public function getRepeatId()
     {
-        return $this->container['repeat_until'];
+        return $this->container['repeat_id'];
     }
 
     /**
-     * Sets repeat_until
+     * Sets repeat_id
      *
-     * @param \DateTime $repeat_until repeat_until
+     * @param int $repeat_id repeat_id
      *
      * @return self
      */
-    public function setRepeatUntil($repeat_until)
+    public function setRepeatId($repeat_id)
     {
-
-        if ((mb_strlen($repeat_until) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $repeat_until when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBase., must be bigger than or equal to 1.');
-        }
-        if ((!preg_match("/2022-03-16T18:00:00.000000Z/", $repeat_until))) {
-            throw new \InvalidArgumentException("invalid value for $repeat_until when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBase., must conform to the pattern /2022-03-16T18:00:00.000000Z/.");
-        }
-
-        $this->container['repeat_until'] = $repeat_until;
+        $this->container['repeat_id'] = $repeat_id;
 
         return $this;
     }
@@ -833,73 +737,155 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     }
 
     /**
-     * Gets additionals
+     * Gets repeat_until
      *
-     * @return object[]
+     * @return \DateTime
      */
-    public function getAdditionals()
+    public function getRepeatUntil()
     {
-        return $this->container['additionals'];
+        return $this->container['repeat_until'];
     }
 
     /**
-     * Sets additionals
+     * Sets repeat_until
      *
-     * @param object[] $additionals additionals
+     * @param \DateTime $repeat_until repeat_until
      *
      * @return self
      */
-    public function setAdditionals($additionals)
+    public function setRepeatUntil($repeat_until)
     {
-        $this->container['additionals'] = $additionals;
+
+        if ((mb_strlen($repeat_until) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $repeat_until when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBase., must be bigger than or equal to 1.');
+        }
+
+        $this->container['repeat_until'] = $repeat_until;
 
         return $this;
     }
 
     /**
-     * Gets exceptions
+     * Gets resource
      *
-     * @return object[]
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBaseResource
      */
-    public function getExceptions()
+    public function getResource()
     {
-        return $this->container['exceptions'];
+        return $this->container['resource'];
     }
 
     /**
-     * Sets exceptions
+     * Sets resource
      *
-     * @param object[] $exceptions exceptions
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBaseResource $resource resource
      *
      * @return self
      */
-    public function setExceptions($exceptions)
+    public function setResource($resource)
     {
-        $this->container['exceptions'] = $exceptions;
+        $this->container['resource'] = $resource;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets show_in_cal
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentBaseMeta
+     * @return bool
      */
-    public function getMeta()
+    public function getShowInCal()
     {
-        return $this->container['meta'];
+        return $this->container['show_in_cal'];
     }
 
     /**
-     * Sets meta
+     * Sets show_in_cal
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentBaseMeta $meta meta
+     * @param bool $show_in_cal show_in_cal
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setShowInCal($show_in_cal)
     {
-        $this->container['meta'] = $meta;
+        $this->container['show_in_cal'] = $show_in_cal;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+
+        if ((mb_strlen($start_date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $start_date when calling GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBase., must be bigger than or equal to 1.');
+        }
+
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_id
+     *
+     * @return int
+     */
+    public function getStatusId()
+    {
+        return $this->container['status_id'];
+    }
+
+    /**
+     * Sets status_id
+     *
+     * @param int $status_id status_id
+     *
+     * @return self
+     */
+    public function setStatusId($status_id)
+    {
+        $this->container['status_id'] = $status_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return float
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param float $version version
+     *
+     * @return self
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }

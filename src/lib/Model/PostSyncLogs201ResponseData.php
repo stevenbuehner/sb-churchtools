@@ -57,7 +57,7 @@ class PostSyncLogs201ResponseData implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'persisted' => 'float'
+        'persisted' => 'int'
     ];
 
     /**
@@ -206,7 +206,7 @@ class PostSyncLogs201ResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets persisted
      *
-     * @return float|null
+     * @return int|null
      */
     public function getPersisted()
     {
@@ -216,7 +216,7 @@ class PostSyncLogs201ResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets persisted
      *
-     * @param float|null $persisted persisted
+     * @param int|null $persisted persisted
      *
      * @return self
      */

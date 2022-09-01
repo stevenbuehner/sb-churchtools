@@ -58,7 +58,7 @@ class GetAllTranslations200Response implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\TranslationKey[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMeta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetAllTranslations200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetAllTranslations200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null $meta meta
      *
      * @return self
      */

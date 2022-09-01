@@ -57,9 +57,9 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'token' => 'string',
         'forms' => '\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequestFormsInner[]',
-        'sign_out_url_template' => 'string'
+        'sign_out_url_template' => 'string',
+        'token' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'token' => null,
         'forms' => null,
-        'sign_out_url_template' => null
+        'sign_out_url_template' => null,
+        'token' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'token' => 'token',
         'forms' => 'forms',
-        'sign_out_url_template' => 'signOutUrlTemplate'
+        'sign_out_url_template' => 'signOutUrlTemplate',
+        'token' => 'token'
     ];
 
     /**
@@ -113,9 +113,9 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'token' => 'setToken',
         'forms' => 'setForms',
-        'sign_out_url_template' => 'setSignOutUrlTemplate'
+        'sign_out_url_template' => 'setSignOutUrlTemplate',
+        'token' => 'setToken'
     ];
 
     /**
@@ -124,9 +124,9 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'token' => 'getToken',
         'forms' => 'getForms',
-        'sign_out_url_template' => 'getSignOutUrlTemplate'
+        'sign_out_url_template' => 'getSignOutUrlTemplate',
+        'token' => 'getToken'
     ];
 
     /**
@@ -186,9 +186,9 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['token'] = $data['token'] ?? null;
         $this->container['forms'] = $data['forms'] ?? null;
         $this->container['sign_out_url_template'] = $data['sign_out_url_template'] ?? null;
+        $this->container['token'] = $data['token'] ?? null;
     }
 
     /**
@@ -200,11 +200,11 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['token'] === null) {
-            $invalidProperties[] = "'token' can't be null";
-        }
         if ($this->container['forms'] === null) {
             $invalidProperties[] = "'forms' can't be null";
+        }
+        if ($this->container['token'] === null) {
+            $invalidProperties[] = "'token' can't be null";
         }
         return $invalidProperties;
     }
@@ -220,30 +220,6 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets token
-     *
-     * @return string
-     */
-    public function getToken()
-    {
-        return $this->container['token'];
-    }
-
-    /**
-     * Sets token
-     *
-     * @param string $token The sign up token.
-     *
-     * @return self
-     */
-    public function setToken($token)
-    {
-        $this->container['token'] = $token;
-
-        return $this;
-    }
 
     /**
      * Gets forms
@@ -289,6 +265,30 @@ class PostPublicgroupsGroupIdSignupRequest implements ModelInterface, ArrayAcces
     public function setSignOutUrlTemplate($sign_out_url_template)
     {
         $this->container['sign_out_url_template'] = $sign_out_url_template;
+
+        return $this;
+    }
+
+    /**
+     * Gets token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->container['token'];
+    }
+
+    /**
+     * Sets token
+     *
+     * @param string $token The sign up token.
+     *
+     * @return self
+     */
+    public function setToken($token)
+    {
+        $this->container['token'] = $token;
 
         return $this;
     }

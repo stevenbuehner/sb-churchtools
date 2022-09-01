@@ -57,7 +57,7 @@ class GetAllGroupMembers200Response implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner[]',
+        'data' => '\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData[]',
         'meta' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseMeta'
     ];
 
@@ -212,7 +212,7 @@ class GetAllGroupMembers200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData[]|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class GetAllGroupMembers200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInner[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData[]|null $data data
      *
      * @return self
      */

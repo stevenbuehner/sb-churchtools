@@ -58,6 +58,8 @@ class GetApiInfo200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'build' => 'string',
+        'short_name' => 'string',
+        'site_name' => 'string',
         'version' => 'string'
     ];
 
@@ -70,6 +72,8 @@ class GetApiInfo200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'build' => null,
+        'short_name' => null,
+        'site_name' => null,
         'version' => null
     ];
 
@@ -101,6 +105,8 @@ class GetApiInfo200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'build' => 'build',
+        'short_name' => 'shortName',
+        'site_name' => 'siteName',
         'version' => 'version'
     ];
 
@@ -111,6 +117,8 @@ class GetApiInfo200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'build' => 'setBuild',
+        'short_name' => 'setShortName',
+        'site_name' => 'setSiteName',
         'version' => 'setVersion'
     ];
 
@@ -121,6 +129,8 @@ class GetApiInfo200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'build' => 'getBuild',
+        'short_name' => 'getShortName',
+        'site_name' => 'getSiteName',
         'version' => 'getVersion'
     ];
 
@@ -182,6 +192,8 @@ class GetApiInfo200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['build'] = $data['build'] ?? null;
+        $this->container['short_name'] = $data['short_name'] ?? null;
+        $this->container['site_name'] = $data['site_name'] ?? null;
         $this->container['version'] = $data['version'] ?? null;
     }
 
@@ -229,6 +241,54 @@ class GetApiInfo200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setBuild($build)
     {
         $this->container['build'] = $build;
+
+        return $this;
+    }
+
+    /**
+     * Gets short_name
+     *
+     * @return string|null
+     */
+    public function getShortName()
+    {
+        return $this->container['short_name'];
+    }
+
+    /**
+     * Sets short_name
+     *
+     * @param string|null $short_name short_name
+     *
+     * @return self
+     */
+    public function setShortName($short_name)
+    {
+        $this->container['short_name'] = $short_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets site_name
+     *
+     * @return string|null
+     */
+    public function getSiteName()
+    {
+        return $this->container['site_name'];
+    }
+
+    /**
+     * Sets site_name
+     *
+     * @param string|null $site_name site_name
+     *
+     * @return self
+     */
+    public function setSiteName($site_name)
+    {
+        $this->container['site_name'] = $site_name;
 
         return $this;
     }

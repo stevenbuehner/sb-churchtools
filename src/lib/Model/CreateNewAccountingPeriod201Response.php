@@ -57,7 +57,7 @@ class CreateNewAccountingPeriod201Response implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInner'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInner'
     ];
 
     /**
@@ -206,7 +206,7 @@ class CreateNewAccountingPeriod201Response implements ModelInterface, ArrayAcces
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInner|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInner|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class CreateNewAccountingPeriod201Response implements ModelInterface, ArrayAcces
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataAccountingPeriodsInner|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllAccountingPeriods200ResponseDataInner|null $data data
      *
      * @return self
      */

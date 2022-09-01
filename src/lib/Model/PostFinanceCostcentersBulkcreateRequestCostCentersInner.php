@@ -57,11 +57,11 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'number' => 'string',
-        'group_id' => 'float',
         'accounting_period_id' => 'int',
-        'budget' => 'float'
+        'budget' => 'float',
+        'group_id' => 'int',
+        'name' => 'string',
+        'number' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'number' => null,
-        'group_id' => null,
         'accounting_period_id' => null,
-        'budget' => null
+        'budget' => null,
+        'group_id' => null,
+        'name' => null,
+        'number' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'number' => 'number',
-        'group_id' => 'groupId',
         'accounting_period_id' => 'accountingPeriodId',
-        'budget' => 'budget'
+        'budget' => 'budget',
+        'group_id' => 'groupId',
+        'name' => 'name',
+        'number' => 'number'
     ];
 
     /**
@@ -119,11 +119,11 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'number' => 'setNumber',
-        'group_id' => 'setGroupId',
         'accounting_period_id' => 'setAccountingPeriodId',
-        'budget' => 'setBudget'
+        'budget' => 'setBudget',
+        'group_id' => 'setGroupId',
+        'name' => 'setName',
+        'number' => 'setNumber'
     ];
 
     /**
@@ -132,11 +132,11 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'number' => 'getNumber',
-        'group_id' => 'getGroupId',
         'accounting_period_id' => 'getAccountingPeriodId',
-        'budget' => 'getBudget'
+        'budget' => 'getBudget',
+        'group_id' => 'getGroupId',
+        'name' => 'getName',
+        'number' => 'getNumber'
     ];
 
     /**
@@ -196,11 +196,11 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['group_id'] = $data['group_id'] ?? null;
         $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
         $this->container['budget'] = $data['budget'] ?? null;
+        $this->container['group_id'] = $data['group_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['number'] = $data['number'] ?? null;
     }
 
     /**
@@ -226,78 +226,6 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets number
-     *
-     * @return string|null
-     */
-    public function getNumber()
-    {
-        return $this->container['number'];
-    }
-
-    /**
-     * Sets number
-     *
-     * @param string|null $number number
-     *
-     * @return self
-     */
-    public function setNumber($number)
-    {
-        $this->container['number'] = $number;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_id
-     *
-     * @return float|null
-     */
-    public function getGroupId()
-    {
-        return $this->container['group_id'];
-    }
-
-    /**
-     * Sets group_id
-     *
-     * @param float|null $group_id group_id
-     *
-     * @return self
-     */
-    public function setGroupId($group_id)
-    {
-        $this->container['group_id'] = $group_id;
-
-        return $this;
-    }
 
     /**
      * Gets accounting_period_id
@@ -343,6 +271,78 @@ class PostFinanceCostcentersBulkcreateRequestCostCentersInner implements ModelIn
     public function setBudget($budget)
     {
         $this->container['budget'] = $budget;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_id
+     *
+     * @return int|null
+     */
+    public function getGroupId()
+    {
+        return $this->container['group_id'];
+    }
+
+    /**
+     * Sets group_id
+     *
+     * @param int|null $group_id group_id
+     *
+     * @return self
+     */
+    public function setGroupId($group_id)
+    {
+        $this->container['group_id'] = $group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets number
+     *
+     * @return string|null
+     */
+    public function getNumber()
+    {
+        return $this->container['number'];
+    }
+
+    /**
+     * Sets number
+     *
+     * @param string|null $number number
+     *
+     * @return self
+     */
+    public function setNumber($number)
+    {
+        $this->container['number'] = $number;
 
         return $this;
     }

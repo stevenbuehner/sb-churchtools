@@ -57,10 +57,10 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'adapter' => 'string',
         'access_header_values' => 'object',
-        'id' => 'float'
+        'adapter' => 'string',
+        'id' => 'int',
+        'name' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'adapter' => null,
         'access_header_values' => null,
-        'id' => null
+        'adapter' => null,
+        'id' => null,
+        'name' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'adapter' => 'adapter',
         'access_header_values' => 'accessHeaderValues',
-        'id' => 'id'
+        'adapter' => 'adapter',
+        'id' => 'id',
+        'name' => 'name'
     ];
 
     /**
@@ -116,10 +116,10 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'adapter' => 'setAdapter',
         'access_header_values' => 'setAccessHeaderValues',
-        'id' => 'setId'
+        'adapter' => 'setAdapter',
+        'id' => 'setId',
+        'name' => 'setName'
     ];
 
     /**
@@ -128,10 +128,10 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'adapter' => 'getAdapter',
         'access_header_values' => 'getAccessHeaderValues',
-        'id' => 'getId'
+        'adapter' => 'getAdapter',
+        'id' => 'getId',
+        'name' => 'getName'
     ];
 
     /**
@@ -191,10 +191,10 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['adapter'] = $data['adapter'] ?? null;
         $this->container['access_header_values'] = $data['access_header_values'] ?? null;
+        $this->container['adapter'] = $data['adapter'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -206,14 +206,14 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['access_header_values'] === null) {
+            $invalidProperties[] = "'access_header_values' can't be null";
         }
         if ($this->container['adapter'] === null) {
             $invalidProperties[] = "'adapter' can't be null";
         }
-        if ($this->container['access_header_values'] === null) {
-            $invalidProperties[] = "'access_header_values' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         return $invalidProperties;
     }
@@ -231,25 +231,25 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets name
+     * Gets access_header_values
      *
-     * @return string
+     * @return object
      */
-    public function getName()
+    public function getAccessHeaderValues()
     {
-        return $this->container['name'];
+        return $this->container['access_header_values'];
     }
 
     /**
-     * Sets name
+     * Sets access_header_values
      *
-     * @param string $name name
+     * @param object $access_header_values Key Value Pairs that define the access to the external system
      *
      * @return self
      */
-    public function setName($name)
+    public function setAccessHeaderValues($access_header_values)
     {
-        $this->container['name'] = $name;
+        $this->container['access_header_values'] = $access_header_values;
 
         return $this;
     }
@@ -279,33 +279,9 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets access_header_values
-     *
-     * @return object
-     */
-    public function getAccessHeaderValues()
-    {
-        return $this->container['access_header_values'];
-    }
-
-    /**
-     * Sets access_header_values
-     *
-     * @param object $access_header_values Key Value Pairs that define the access to the external system
-     *
-     * @return self
-     */
-    public function setAccessHeaderValues($access_header_values)
-    {
-        $this->container['access_header_values'] = $access_header_values;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getId()
     {
@@ -315,13 +291,37 @@ class ExternalSystem2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float|null $id Not necessary when creating a new external system
+     * @param int|null $id Not necessary when creating a new external system
      *
      * @return self
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

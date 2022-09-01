@@ -57,11 +57,11 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'prefix' => 'string',
-        'domain_id' => 'int',
-        'status' => 'string',
         'creator' => 'int',
-        'roomname' => 'string'
+        'domain_id' => 'int',
+        'prefix' => 'string',
+        'roomname' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'prefix' => null,
-        'domain_id' => null,
-        'status' => null,
         'creator' => null,
-        'roomname' => null
+        'domain_id' => null,
+        'prefix' => null,
+        'roomname' => null,
+        'status' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'prefix' => 'prefix',
-        'domain_id' => 'domainId',
-        'status' => 'status',
         'creator' => 'creator',
-        'roomname' => 'roomname'
+        'domain_id' => 'domainId',
+        'prefix' => 'prefix',
+        'roomname' => 'roomname',
+        'status' => 'status'
     ];
 
     /**
@@ -119,11 +119,11 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'prefix' => 'setPrefix',
-        'domain_id' => 'setDomainId',
-        'status' => 'setStatus',
         'creator' => 'setCreator',
-        'roomname' => 'setRoomname'
+        'domain_id' => 'setDomainId',
+        'prefix' => 'setPrefix',
+        'roomname' => 'setRoomname',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -132,11 +132,11 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'prefix' => 'getPrefix',
-        'domain_id' => 'getDomainId',
-        'status' => 'getStatus',
         'creator' => 'getCreator',
-        'roomname' => 'getRoomname'
+        'domain_id' => 'getDomainId',
+        'prefix' => 'getPrefix',
+        'roomname' => 'getRoomname',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -196,11 +196,11 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['prefix'] = $data['prefix'] ?? null;
-        $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
         $this->container['creator'] = $data['creator'] ?? null;
+        $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['prefix'] = $data['prefix'] ?? null;
         $this->container['roomname'] = $data['roomname'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -228,25 +228,25 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets prefix
+     * Gets creator
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getPrefix()
+    public function getCreator()
     {
-        return $this->container['prefix'];
+        return $this->container['creator'];
     }
 
     /**
-     * Sets prefix
+     * Sets creator
      *
-     * @param string|null $prefix prefix
+     * @param int|null $creator creator
      *
      * @return self
      */
-    public function setPrefix($prefix)
+    public function setCreator($creator)
     {
-        $this->container['prefix'] = $prefix;
+        $this->container['creator'] = $creator;
 
         return $this;
     }
@@ -276,49 +276,25 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets status
+     * Gets prefix
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getPrefix()
     {
-        return $this->container['status'];
+        return $this->container['prefix'];
     }
 
     /**
-     * Sets status
+     * Sets prefix
      *
-     * @param string|null $status status
+     * @param string|null $prefix prefix
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setPrefix($prefix)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets creator
-     *
-     * @return int|null
-     */
-    public function getCreator()
-    {
-        return $this->container['creator'];
-    }
-
-    /**
-     * Sets creator
-     *
-     * @param int|null $creator creator
-     *
-     * @return self
-     */
-    public function setCreator($creator)
-    {
-        $this->container['creator'] = $creator;
+        $this->container['prefix'] = $prefix;
 
         return $this;
     }
@@ -343,6 +319,30 @@ class UpdateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setRoomname($roomname)
     {
         $this->container['roomname'] = $roomname;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }

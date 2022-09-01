@@ -4,19 +4,21 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**declineServiceRequestById()**](ServiceServiceGroupsApi.md#declineServiceRequestById) | **DELETE** /persons/{id}/servicerequests/{requestId} | Decline a service request for a person
-[**getAllServiceGroups()**](ServiceServiceGroupsApi.md#getAllServiceGroups) | **GET** /servicegroups | Get all service groups
-[**getAllServices()**](ServiceServiceGroupsApi.md#getAllServices) | **GET** /services | Get all services
-[**getOpenServiceRequestsForPerson()**](ServiceServiceGroupsApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{id}/servicerequests | Get all service requests for a person
-[**getServiceRequestById()**](ServiceServiceGroupsApi.md#getServiceRequestById) | **GET** /persons/{id}/servicerequests/{requestId} | Get a specific service request for a person
-[**undoServiceRequestById()**](ServiceServiceGroupsApi.md#undoServiceRequestById) | **POST** /persons/{id}/servicerequests/{requestId}/undo | Undo last service request action
-[**updateServiceRequestById()**](ServiceServiceGroupsApi.md#updateServiceRequestById) | **PUT** /persons/{id}/servicerequests/{requestId} | Agree to a service request for a person
+[**declineServiceRequestById()**](ServiceServiceGroupsApi.md#declineServiceRequestById) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person
+[**getOpenServiceRequestsForPerson()**](ServiceServiceGroupsApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person
+[**getService()**](ServiceServiceGroupsApi.md#getService) | **GET** /services/{serviceId} | 
+[**getServiceGroup()**](ServiceServiceGroupsApi.md#getServiceGroup) | **GET** /servicegroups/{serviceGroupId} | 
+[**getServiceGroups()**](ServiceServiceGroupsApi.md#getServiceGroups) | **GET** /servicegroups | 
+[**getServiceRequestById()**](ServiceServiceGroupsApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person
+[**getServices()**](ServiceServiceGroupsApi.md#getServices) | **GET** /services | 
+[**undoServiceRequestById()**](ServiceServiceGroupsApi.md#undoServiceRequestById) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action
+[**updateServiceRequestById()**](ServiceServiceGroupsApi.md#updateServiceRequestById) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person
 
 
 ## `declineServiceRequestById()`
 
 ```php
-declineServiceRequestById($id, $request_id, $comment)
+declineServiceRequestById($person_id, $request_id, $comment)
 ```
 
 Decline a service request for a person
@@ -30,7 +32,7 @@ Use this endpoint to decline a service request.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -42,12 +44,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 $comment = ; // string | Comment
 
 try {
-    $apiInstance->declineServiceRequestById($id, $request_id, $comment);
+    $apiInstance->declineServiceRequestById($person_id, $request_id, $comment);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceServiceGroupsApi->declineServiceRequestById: ', $e->getMessage(), PHP_EOL;
 }
@@ -57,7 +59,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
  **comment** | **string**| Comment | [optional]
 
@@ -67,7 +69,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -78,128 +80,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getAllServiceGroups()`
-
-```php
-getAllServiceGroups(): \StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response
-```
-
-Get all service groups
-
-This endpoint returns an array with all service groups.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->getAllServiceGroups();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ServiceServiceGroupsApi->getAllServiceGroups: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\GetAllServiceGroups200Response**](../Model/GetAllServiceGroups200Response.md)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getAllServices()`
-
-```php
-getAllServices(): \StevenBuehner\ChurchTools\Model\GetAllServices200Response
-```
-
-Get all services
-
-This endpoint returns an array with all services.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->getAllServices();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ServiceServiceGroupsApi->getAllServices: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\GetAllServices200Response**](../Model/GetAllServices200Response.md)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `getOpenServiceRequestsForPerson()`
 
 ```php
-getOpenServiceRequestsForPerson($id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
+getOpenServiceRequestsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
 ```
 
 Get all service requests for a person
@@ -213,7 +97,7 @@ Use this endpoint to get all service requests for this user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -225,10 +109,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getOpenServiceRequestsForPerson($id);
+    $result = $apiInstance->getOpenServiceRequestsForPerson($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceServiceGroupsApi->getOpenServiceRequestsForPerson: ', $e->getMessage(), PHP_EOL;
@@ -239,7 +123,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -247,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -258,10 +142,187 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getService()`
+
+```php
+getService($service_id): \StevenBuehner\ChurchTools\Model\GetService200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$service_id = 'service_id_example'; // string
+
+try {
+    $result = $apiInstance->getService($service_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServiceServiceGroupsApi->getService: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_id** | **string**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetService200Response**](../Model/GetService200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getServiceGroup()`
+
+```php
+getServiceGroup($service_group_id): \StevenBuehner\ChurchTools\Model\GetServiceGroup200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$service_group_id = 'service_group_id_example'; // string
+
+try {
+    $result = $apiInstance->getServiceGroup($service_group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServiceServiceGroupsApi->getServiceGroup: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_group_id** | **string**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetServiceGroup200Response**](../Model/GetServiceGroup200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getServiceGroups()`
+
+```php
+getServiceGroups(): \StevenBuehner\ChurchTools\Model\GetServiceGroups200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getServiceGroups();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServiceServiceGroupsApi->getServiceGroups: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetServiceGroups200Response**](../Model/GetServiceGroups200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getServiceRequestById()`
 
 ```php
-getServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+getServiceRequestById($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Get a specific service request for a person
@@ -275,7 +336,7 @@ Use this endpoint to get a specific service request for this user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -287,11 +348,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 
 try {
-    $result = $apiInstance->getServiceRequestById($id, $request_id);
+    $result = $apiInstance->getServiceRequestById($person_id, $request_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceServiceGroupsApi->getServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -302,7 +363,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
 
 ### Return type
@@ -311,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -322,10 +383,67 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getServices()`
+
+```php
+getServices(): \StevenBuehner\ChurchTools\Model\GetServices200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getServices();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ServiceServiceGroupsApi->getServices: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetServices200Response**](../Model/GetServices200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `undoServiceRequestById()`
 
 ```php
-undoServiceRequestById($id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+undoServiceRequestById($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Undo last service request action
@@ -339,7 +457,7 @@ This endpoint can undo either a declination or an acceptance. Only the requested
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -351,11 +469,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 
 try {
-    $result = $apiInstance->undoServiceRequestById($id, $request_id);
+    $result = $apiInstance->undoServiceRequestById($person_id, $request_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceServiceGroupsApi->undoServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -366,7 +484,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
 
 ### Return type
@@ -375,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -389,7 +507,7 @@ Name | Type | Description  | Notes
 ## `updateServiceRequestById()`
 
 ```php
-updateServiceRequestById($id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+updateServiceRequestById($person_id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Agree to a service request for a person
@@ -403,7 +521,7 @@ Use this endpoint to agree to a service request. To decline a service request, u
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -415,12 +533,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
+$person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 $update_service_request_by_id_request = new \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest(); // \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest | Send the agreed state and optionally a comment.
 
 try {
-    $result = $apiInstance->updateServiceRequestById($id, $request_id, $update_service_request_by_id_request);
+    $result = $apiInstance->updateServiceRequestById($person_id, $request_id, $update_service_request_by_id_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceServiceGroupsApi->updateServiceRequestById: ', $e->getMessage(), PHP_EOL;
@@ -431,7 +549,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
+ **person_id** | **int**| ID of person |
  **request_id** | **int**| ID of a service request |
  **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. |
 
@@ -441,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

@@ -57,8 +57,8 @@ class GetAllEvents200Response implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Event1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseMeta'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseDataInner[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -212,7 +212,7 @@ class GetAllEvents200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Event1[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseDataInner[]|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class GetAllEvents200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Event1[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseDataInner[]|null $data data
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class GetAllEvents200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetAllEvents200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllEvents200ResponseMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

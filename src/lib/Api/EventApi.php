@@ -116,11 +116,327 @@ class EventApi
     }
 
     /**
+     * Operation agendaExport
+     *
+     * Exports the agenda
+     *
+     * @param  string $agenda_id agenda_id (required)
+     * @param  string $target target (required)
+     * @param  \StevenBuehner\ChurchTools\Model\AgendaExportRequest $agenda_export_request agenda_export_request (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\AgendaExport200Response
+     */
+    public function agendaExport($agenda_id, $target, $agenda_export_request = null)
+    {
+        list($response) = $this->agendaExportWithHttpInfo($agenda_id, $target, $agenda_export_request);
+        return $response;
+    }
+
+    /**
+     * Operation agendaExportWithHttpInfo
+     *
+     * Exports the agenda
+     *
+     * @param  string $agenda_id (required)
+     * @param  string $target (required)
+     * @param  \StevenBuehner\ChurchTools\Model\AgendaExportRequest $agenda_export_request (optional)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\AgendaExport200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function agendaExportWithHttpInfo($agenda_id, $target, $agenda_export_request = null)
+    {
+        $request = $this->agendaExportRequest($agenda_id, $target, $agenda_export_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\AgendaExport200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\AgendaExport200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\AgendaExport200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\AgendaExport200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\AgendaExport200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation agendaExportAsync
+     *
+     * Exports the agenda
+     *
+     * @param  string $agenda_id (required)
+     * @param  string $target (required)
+     * @param  \StevenBuehner\ChurchTools\Model\AgendaExportRequest $agenda_export_request (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function agendaExportAsync($agenda_id, $target, $agenda_export_request = null)
+    {
+        return $this->agendaExportAsyncWithHttpInfo($agenda_id, $target, $agenda_export_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation agendaExportAsyncWithHttpInfo
+     *
+     * Exports the agenda
+     *
+     * @param  string $agenda_id (required)
+     * @param  string $target (required)
+     * @param  \StevenBuehner\ChurchTools\Model\AgendaExportRequest $agenda_export_request (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function agendaExportAsyncWithHttpInfo($agenda_id, $target, $agenda_export_request = null)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\AgendaExport200Response';
+        $request = $this->agendaExportRequest($agenda_id, $target, $agenda_export_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'agendaExport'
+     *
+     * @param  string $agenda_id (required)
+     * @param  string $target (required)
+     * @param  \StevenBuehner\ChurchTools\Model\AgendaExportRequest $agenda_export_request (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function agendaExportRequest($agenda_id, $target, $agenda_export_request = null)
+    {
+        // verify the required parameter 'agenda_id' is set
+        if ($agenda_id === null || (is_array($agenda_id) && count($agenda_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $agenda_id when calling agendaExport'
+            );
+        }
+        // verify the required parameter 'target' is set
+        if ($target === null || (is_array($target) && count($target) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $target when calling agendaExport'
+            );
+        }
+
+        $resourcePath = '/agendas/{agendaId}/export';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $target,
+            'target', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+
+
+        // path params
+        if ($agenda_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'agendaId' . '}',
+                ObjectSerializer::toPathValue($agenda_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($agenda_export_request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($agenda_export_request));
+            } else {
+                $httpBody = $agenda_export_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getAgendaForEvent
      *
      * Get agenda for event
      *
-     * @param  int $event_id ID of corresponding event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -137,7 +453,7 @@ class EventApi
      *
      * Get agenda for event
      *
-     * @param  int $event_id ID of corresponding event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -259,7 +575,7 @@ class EventApi
      *
      * Get agenda for event
      *
-     * @param  int $event_id ID of corresponding event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -279,7 +595,7 @@ class EventApi
      *
      * Get agenda for event
      *
-     * @param  int $event_id ID of corresponding event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -328,7 +644,7 @@ class EventApi
     /**
      * Create request for operation 'getAgendaForEvent'
      *
-     * @param  int $event_id ID of corresponding event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -434,7 +750,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetAllEvents200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetAllEvents200Response|string
      */
     public function getAllEvents($from = null, $to = null, $canceled = null)
     {
@@ -453,7 +769,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetAllEvents200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetAllEvents200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllEventsWithHttpInfo($from = null, $to = null, $canceled = null)
     {
@@ -510,6 +826,21 @@ class EventApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\GetAllEvents200Response';
@@ -534,6 +865,14 @@ class EventApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\StevenBuehner\ChurchTools\Model\GetAllEvents200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -671,11 +1010,11 @@ class EventApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }
@@ -736,11 +1075,11 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  int $event_id ID of event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response|string
+     * @return \StevenBuehner\ChurchTools\Model\GetEvent200Response|string
      */
     public function getEvent($event_id)
     {
@@ -753,11 +1092,11 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  int $event_id ID of event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetEvent200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEventWithHttpInfo($event_id)
     {
@@ -800,17 +1139,17 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetEvent200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetEvent200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetEvent200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -831,7 +1170,7 @@ class EventApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetEvent200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -852,7 +1191,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetEvent200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -875,7 +1214,7 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  int $event_id ID of event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -895,14 +1234,14 @@ class EventApi
      *
      * Get a single event
      *
-     * @param  int $event_id ID of event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEventAsyncWithHttpInfo($event_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response';
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetEvent200Response';
         $request = $this->getEventRequest($event_id);
 
         return $this->client
@@ -944,7 +1283,7 @@ class EventApi
     /**
      * Create request for operation 'getEvent'
      *
-     * @param  int $event_id ID of event (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1040,6 +1379,292 @@ class EventApi
     }
 
     /**
+     * Operation getEventIcal
+     *
+     * 
+     *
+     * @param  int $person_id person_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\GetEventIcal200Response
+     */
+    public function getEventIcal($person_id)
+    {
+        list($response) = $this->getEventIcalWithHttpInfo($person_id);
+        return $response;
+    }
+
+    /**
+     * Operation getEventIcalWithHttpInfo
+     *
+     * 
+     *
+     * @param  int $person_id (required)
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\GetEventIcal200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEventIcalWithHttpInfo($person_id)
+    {
+        $request = $this->getEventIcalRequest($person_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\GetEventIcal200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\GetEventIcal200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetEventIcal200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetEventIcal200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\GetEventIcal200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEventIcalAsync
+     *
+     * 
+     *
+     * @param  int $person_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEventIcalAsync($person_id)
+    {
+        return $this->getEventIcalAsyncWithHttpInfo($person_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEventIcalAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  int $person_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEventIcalAsyncWithHttpInfo($person_id)
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetEventIcal200Response';
+        $request = $this->getEventIcalRequest($person_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEventIcal'
+     *
+     * @param  int $person_id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEventIcalRequest($person_id)
+    {
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $person_id when calling getEventIcal'
+            );
+        }
+
+        $resourcePath = '/events/ical';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $person_id,
+            'personId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getEventMasterdata
      *
      * Fetch MasterData for Module \&quot;Event\&quot;
@@ -1047,7 +1672,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\EventMasterData1
+     * @return \StevenBuehner\ChurchTools\Model\EventMasterData1|string
      */
     public function getEventMasterdata()
     {
@@ -1063,7 +1688,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\EventMasterData1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\EventMasterData1|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEventMasterdataWithHttpInfo()
     {
@@ -1120,6 +1745,21 @@ class EventApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\EventMasterData1';
@@ -1144,6 +1784,14 @@ class EventApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\StevenBuehner\ChurchTools\Model\EventMasterData1',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1245,11 +1893,11 @@ class EventApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }
@@ -1310,16 +1958,15 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  int $id ID of person (required)
-     * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response|string
+     * @return \StevenBuehner\ChurchTools\Model\GetEvent200Response|string
      */
-    public function getPersonEvents($id, $from = null)
+    public function getPersonEvents($person_id)
     {
-        list($response) = $this->getPersonEventsWithHttpInfo($id, $from);
+        list($response) = $this->getPersonEventsWithHttpInfo($person_id);
         return $response;
     }
 
@@ -1328,16 +1975,15 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  int $id ID of person (required)
-     * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetPersonEvents200Response|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetEvent200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPersonEventsWithHttpInfo($id, $from = null)
+    public function getPersonEventsWithHttpInfo($person_id)
     {
-        $request = $this->getPersonEventsRequest($id, $from);
+        $request = $this->getPersonEventsRequest($person_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1376,17 +2022,17 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetEvent200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetEvent200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetEvent200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1407,7 +2053,7 @@ class EventApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetEvent200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1428,7 +2074,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetEvent200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1451,15 +2097,14 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  int $id ID of person (required)
-     * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPersonEventsAsync($id, $from = null)
+    public function getPersonEventsAsync($person_id)
     {
-        return $this->getPersonEventsAsyncWithHttpInfo($id, $from)
+        return $this->getPersonEventsAsyncWithHttpInfo($person_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1472,16 +2117,15 @@ class EventApi
      *
      * Get events that person is involved with
      *
-     * @param  int $id ID of person (required)
-     * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPersonEventsAsyncWithHttpInfo($id, $from = null)
+    public function getPersonEventsAsyncWithHttpInfo($person_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonEvents200Response';
-        $request = $this->getPersonEventsRequest($id, $from);
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetEvent200Response';
+        $request = $this->getPersonEventsRequest($person_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1522,44 +2166,34 @@ class EventApi
     /**
      * Create request for operation 'getPersonEvents'
      *
-     * @param  int $id ID of person (required)
-     * @param  \DateTime $from Start date from when events are returned. Default value: today (optional)
+     * @param  int $person_id ID of person (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPersonEventsRequest($id, $from = null)
+    public function getPersonEventsRequest($person_id)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'person_id' is set
+        if ($person_id === null || (is_array($person_id) && count($person_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getPersonEvents'
+                'Missing the required parameter $person_id when calling getPersonEvents'
             );
         }
 
-        $resourcePath = '/persons/{id}/events';
+        $resourcePath = '/persons/{personId}/events';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $from,
-            'from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
-        if ($id !== null) {
+        if ($person_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'personId' . '}',
+                ObjectSerializer::toPathValue($person_id),
                 $resourcePath
             );
         }
@@ -1632,11 +2266,11 @@ class EventApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response|string
      */
     public function getSongsOfAgenda($event_id)
     {
@@ -1649,11 +2283,11 @@ class EventApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSongsOfAgendaWithHttpInfo($event_id)
     {
@@ -1710,6 +2344,21 @@ class EventApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\GetSongsOfAgenda200Response';
@@ -1738,6 +2387,14 @@ class EventApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1748,7 +2405,7 @@ class EventApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1768,7 +2425,7 @@ class EventApi
      *
      * Get All Songs of Agenda
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1817,7 +2474,7 @@ class EventApi
     /**
      * Create request for operation 'getSongsOfAgenda'
      *
-     * @param  string $event_id (required)
+     * @param  int $event_id ID of Event (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1852,11 +2509,11 @@ class EventApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }
@@ -2232,7 +2889,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response|string
+     * @return \StevenBuehner\ChurchTools\Model\SendEventEmail200Response|string
      */
     public function sendEventEmail($send_event_email_request)
     {
@@ -2249,7 +2906,7 @@ class EventApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response|string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\SendEventEmail200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendEventEmailWithHttpInfo($send_event_email_request)
     {
@@ -2292,17 +2949,17 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\SendEventEmail200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\SendEventEmail200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\SendEventEmail200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2323,7 +2980,7 @@ class EventApi
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\SendEventEmail200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2344,7 +3001,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response',
+                        '\StevenBuehner\ChurchTools\Model\SendEventEmail200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2394,7 +3051,7 @@ class EventApi
      */
     public function sendEventEmailAsyncWithHttpInfo($send_event_email_request)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\SendAgendaEmail200Response';
+        $returnType = '\StevenBuehner\ChurchTools\Model\SendEventEmail200Response';
         $request = $this->sendEventEmailRequest($send_event_email_request);
 
         return $this->client
@@ -2534,16 +3191,16 @@ class EventApi
      *
      * Start or stop an event chat
      *
-     * @param  int $event_id ID of event (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest $start_stop_group_chat_request start_stop_group_chat_request (required)
+     * @param  int $event_id ID of Event (required)
+     * @param  \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest $start_stop_event_chat_request start_stop_event_chat_request (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function startStopEventChat($event_id, $start_stop_group_chat_request)
+    public function startStopEventChat($event_id, $start_stop_event_chat_request)
     {
-        $this->startStopEventChatWithHttpInfo($event_id, $start_stop_group_chat_request);
+        $this->startStopEventChatWithHttpInfo($event_id, $start_stop_event_chat_request);
     }
 
     /**
@@ -2551,16 +3208,16 @@ class EventApi
      *
      * Start or stop an event chat
      *
-     * @param  int $event_id ID of event (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest $start_stop_group_chat_request (required)
+     * @param  int $event_id ID of Event (required)
+     * @param  \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest $start_stop_event_chat_request (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function startStopEventChatWithHttpInfo($event_id, $start_stop_group_chat_request)
+    public function startStopEventChatWithHttpInfo($event_id, $start_stop_event_chat_request)
     {
-        $request = $this->startStopEventChatRequest($event_id, $start_stop_group_chat_request);
+        $request = $this->startStopEventChatRequest($event_id, $start_stop_event_chat_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2619,15 +3276,15 @@ class EventApi
      *
      * Start or stop an event chat
      *
-     * @param  int $event_id ID of event (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest $start_stop_group_chat_request (required)
+     * @param  int $event_id ID of Event (required)
+     * @param  \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest $start_stop_event_chat_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function startStopEventChatAsync($event_id, $start_stop_group_chat_request)
+    public function startStopEventChatAsync($event_id, $start_stop_event_chat_request)
     {
-        return $this->startStopEventChatAsyncWithHttpInfo($event_id, $start_stop_group_chat_request)
+        return $this->startStopEventChatAsyncWithHttpInfo($event_id, $start_stop_event_chat_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2640,16 +3297,16 @@ class EventApi
      *
      * Start or stop an event chat
      *
-     * @param  int $event_id ID of event (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest $start_stop_group_chat_request (required)
+     * @param  int $event_id ID of Event (required)
+     * @param  \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest $start_stop_event_chat_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function startStopEventChatAsyncWithHttpInfo($event_id, $start_stop_group_chat_request)
+    public function startStopEventChatAsyncWithHttpInfo($event_id, $start_stop_event_chat_request)
     {
         $returnType = '';
-        $request = $this->startStopEventChatRequest($event_id, $start_stop_group_chat_request);
+        $request = $this->startStopEventChatRequest($event_id, $start_stop_event_chat_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2677,13 +3334,13 @@ class EventApi
     /**
      * Create request for operation 'startStopEventChat'
      *
-     * @param  int $event_id ID of event (required)
-     * @param  \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest $start_stop_group_chat_request (required)
+     * @param  int $event_id ID of Event (required)
+     * @param  \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest $start_stop_event_chat_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function startStopEventChatRequest($event_id, $start_stop_group_chat_request)
+    public function startStopEventChatRequest($event_id, $start_stop_event_chat_request)
     {
         // verify the required parameter 'event_id' is set
         if ($event_id === null || (is_array($event_id) && count($event_id) === 0)) {
@@ -2691,10 +3348,10 @@ class EventApi
                 'Missing the required parameter $event_id when calling startStopEventChat'
             );
         }
-        // verify the required parameter 'start_stop_group_chat_request' is set
-        if ($start_stop_group_chat_request === null || (is_array($start_stop_group_chat_request) && count($start_stop_group_chat_request) === 0)) {
+        // verify the required parameter 'start_stop_event_chat_request' is set
+        if ($start_stop_event_chat_request === null || (is_array($start_stop_event_chat_request) && count($start_stop_event_chat_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $start_stop_group_chat_request when calling startStopEventChat'
+                'Missing the required parameter $start_stop_event_chat_request when calling startStopEventChat'
             );
         }
 
@@ -2729,11 +3386,11 @@ class EventApi
         }
 
         // for model (json/xml)
-        if (isset($start_stop_group_chat_request)) {
+        if (isset($start_stop_event_chat_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($start_stop_group_chat_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($start_stop_event_chat_request));
             } else {
-                $httpBody = $start_stop_group_chat_request;
+                $httpBody = $start_stop_event_chat_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

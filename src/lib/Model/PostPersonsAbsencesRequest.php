@@ -57,12 +57,12 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
+        'absence_reason_id' => 'int',
         'comment' => 'string',
-        'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'start_time' => '\DateTime',
         'end_time' => '\DateTime',
-        'absence_reason_id' => 'int'
+        'start_date' => '\DateTime',
+        'start_time' => '\DateTime'
     ];
 
     /**
@@ -73,12 +73,12 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'absence_reason_id' => null,
         'comment' => null,
-        'start_date' => 'date',
         'end_date' => 'date',
-        'start_time' => 'date-time',
         'end_time' => 'date-time',
-        'absence_reason_id' => null
+        'start_date' => 'date',
+        'start_time' => 'date-time'
     ];
 
     /**
@@ -108,12 +108,12 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
+        'absence_reason_id' => 'absenceReasonId',
         'comment' => 'comment',
-        'start_date' => 'startDate',
         'end_date' => 'endDate',
-        'start_time' => 'startTime',
         'end_time' => 'endTime',
-        'absence_reason_id' => 'absenceReasonId'
+        'start_date' => 'startDate',
+        'start_time' => 'startTime'
     ];
 
     /**
@@ -122,12 +122,12 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
+        'absence_reason_id' => 'setAbsenceReasonId',
         'comment' => 'setComment',
-        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
-        'absence_reason_id' => 'setAbsenceReasonId'
+        'start_date' => 'setStartDate',
+        'start_time' => 'setStartTime'
     ];
 
     /**
@@ -136,12 +136,12 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
+        'absence_reason_id' => 'getAbsenceReasonId',
         'comment' => 'getComment',
-        'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'start_time' => 'getStartTime',
         'end_time' => 'getEndTime',
-        'absence_reason_id' => 'getAbsenceReasonId'
+        'start_date' => 'getStartDate',
+        'start_time' => 'getStartTime'
     ];
 
     /**
@@ -201,12 +201,12 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['start_time'] = $data['start_time'] ?? null;
-        $this->container['end_time'] = $data['end_time'] ?? null;
         $this->container['absence_reason_id'] = $data['absence_reason_id'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['end_time'] = $data['end_time'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['start_time'] = $data['start_time'] ?? null;
     }
 
     /**
@@ -218,11 +218,11 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['comment'] === null) {
-            $invalidProperties[] = "'comment' can't be null";
-        }
         if ($this->container['absence_reason_id'] === null) {
             $invalidProperties[] = "'absence_reason_id' can't be null";
+        }
+        if ($this->container['comment'] === null) {
+            $invalidProperties[] = "'comment' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,6 +238,30 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets absence_reason_id
+     *
+     * @return int
+     */
+    public function getAbsenceReasonId()
+    {
+        return $this->container['absence_reason_id'];
+    }
+
+    /**
+     * Sets absence_reason_id
+     *
+     * @param int $absence_reason_id ID of absence reason.
+     *
+     * @return self
+     */
+    public function setAbsenceReasonId($absence_reason_id)
+    {
+        $this->container['absence_reason_id'] = $absence_reason_id;
+
+        return $this;
+    }
 
     /**
      * Gets comment
@@ -259,30 +283,6 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date Date used for all-day absences. If startTime is present, startDate is ignored.
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
 
         return $this;
     }
@@ -312,30 +312,6 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets start_time
-     *
-     * @return \DateTime|null
-     */
-    public function getStartTime()
-    {
-        return $this->container['start_time'];
-    }
-
-    /**
-     * Sets start_time
-     *
-     * @param \DateTime|null $start_time start_time
-     *
-     * @return self
-     */
-    public function setStartTime($start_time)
-    {
-        $this->container['start_time'] = $start_time;
-
-        return $this;
-    }
-
-    /**
      * Gets end_time
      *
      * @return \DateTime|null
@@ -360,25 +336,49 @@ class PostPersonsAbsencesRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets absence_reason_id
+     * Gets start_date
      *
-     * @return int
+     * @return \DateTime|null
      */
-    public function getAbsenceReasonId()
+    public function getStartDate()
     {
-        return $this->container['absence_reason_id'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets absence_reason_id
+     * Sets start_date
      *
-     * @param int $absence_reason_id ID of absence reason.
+     * @param \DateTime|null $start_date Date used for all-day absences. If startTime is present, startDate is ignored.
      *
      * @return self
      */
-    public function setAbsenceReasonId($absence_reason_id)
+    public function setStartDate($start_date)
     {
-        $this->container['absence_reason_id'] = $absence_reason_id;
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_time
+     *
+     * @return \DateTime|null
+     */
+    public function getStartTime()
+    {
+        return $this->container['start_time'];
+    }
+
+    /**
+     * Sets start_time
+     *
+     * @param \DateTime|null $start_time start_time
+     *
+     * @return self
+     */
+    public function setStartTime($start_time)
+    {
+        $this->container['start_time'] = $start_time;
 
         return $this;
     }

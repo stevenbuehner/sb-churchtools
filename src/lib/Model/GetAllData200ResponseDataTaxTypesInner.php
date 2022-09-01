@@ -58,9 +58,9 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
       */
     protected static $openAPITypes = [
         'id' => 'int',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
         'name' => 'string',
-        'sort_key' => 'int',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'sort_key' => 'int'
     ];
 
     /**
@@ -72,9 +72,9 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
       */
     protected static $openAPIFormats = [
         'id' => null,
+        'meta' => null,
         'name' => null,
-        'sort_key' => null,
-        'meta' => null
+        'sort_key' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'meta' => 'meta',
         'name' => 'name',
-        'sort_key' => 'sortKey',
-        'meta' => 'meta'
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -117,9 +117,9 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
      */
     protected static $setters = [
         'id' => 'setId',
+        'meta' => 'setMeta',
         'name' => 'setName',
-        'sort_key' => 'setSortKey',
-        'meta' => 'setMeta'
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -129,9 +129,9 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
      */
     protected static $getters = [
         'id' => 'getId',
+        'meta' => 'getMeta',
         'name' => 'getName',
-        'sort_key' => 'getSortKey',
-        'meta' => 'getMeta'
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -192,9 +192,9 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -246,6 +246,30 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string|null
@@ -289,30 +313,6 @@ class GetAllData200ResponseDataTaxTypesInner implements ModelInterface, ArrayAcc
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
+        'data' => '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner[]',
+        'entity_mapping_id' => 'int',
         'job_id' => 'string',
-        'type' => 'string',
-        'entity_mapping_id' => 'float',
-        'data' => '\StevenBuehner\ChurchTools\Model\SaveSyncConflictRequestDataInner[]'
+        'type' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'job_id' => null,
-        'type' => null,
+        'data' => null,
         'entity_mapping_id' => null,
-        'data' => null
+        'job_id' => null,
+        'type' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'job_id' => 'jobId',
-        'type' => 'type',
+        'data' => 'data',
         'entity_mapping_id' => 'entityMappingId',
-        'data' => 'data'
+        'job_id' => 'jobId',
+        'type' => 'type'
     ];
 
     /**
@@ -116,10 +116,10 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'job_id' => 'setJobId',
-        'type' => 'setType',
+        'data' => 'setData',
         'entity_mapping_id' => 'setEntityMappingId',
-        'data' => 'setData'
+        'job_id' => 'setJobId',
+        'type' => 'setType'
     ];
 
     /**
@@ -128,10 +128,10 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'job_id' => 'getJobId',
-        'type' => 'getType',
+        'data' => 'getData',
         'entity_mapping_id' => 'getEntityMappingId',
-        'data' => 'getData'
+        'job_id' => 'getJobId',
+        'type' => 'getType'
     ];
 
     /**
@@ -214,10 +214,10 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['entity_mapping_id'] = $data['entity_mapping_id'] ?? null;
         $this->container['job_id'] = $data['job_id'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
-        $this->container['entity_mapping_id'] = $data['entity_mapping_id'] ?? null;
-        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -229,6 +229,9 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
+        if ($this->container['entity_mapping_id'] === null) {
+            $invalidProperties[] = "'entity_mapping_id' can't be null";
+        }
         if ($this->container['job_id'] === null) {
             $invalidProperties[] = "'job_id' can't be null";
         }
@@ -244,9 +247,6 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
             );
         }
 
-        if ($this->container['entity_mapping_id'] === null) {
-            $invalidProperties[] = "'entity_mapping_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -261,6 +261,54 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets data
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner[]|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner[]|null $data data
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_mapping_id
+     *
+     * @return int
+     */
+    public function getEntityMappingId()
+    {
+        return $this->container['entity_mapping_id'];
+    }
+
+    /**
+     * Sets entity_mapping_id
+     *
+     * @param int $entity_mapping_id Entity Mapping Id
+     *
+     * @return self
+     */
+    public function setEntityMappingId($entity_mapping_id)
+    {
+        $this->container['entity_mapping_id'] = $entity_mapping_id;
+
+        return $this;
+    }
 
     /**
      * Gets job_id
@@ -316,54 +364,6 @@ class UpdateSyncConflictRequest implements ModelInterface, ArrayAccess, \JsonSer
             );
         }
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets entity_mapping_id
-     *
-     * @return float
-     */
-    public function getEntityMappingId()
-    {
-        return $this->container['entity_mapping_id'];
-    }
-
-    /**
-     * Sets entity_mapping_id
-     *
-     * @param float $entity_mapping_id Entity Mapping Id
-     *
-     * @return self
-     */
-    public function setEntityMappingId($entity_mapping_id)
-    {
-        $this->container['entity_mapping_id'] = $entity_mapping_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequestDataInner[]|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequestDataInner[]|null $data data
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
 
         return $this;
     }

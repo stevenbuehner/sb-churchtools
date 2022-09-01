@@ -57,11 +57,11 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'body' => 'string',
         'event_ids' => 'int[]',
         'recipients' => 'int[]',
         'send_copy_to_me' => 'bool',
-        'subject' => 'string',
-        'body' => 'string'
+        'subject' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'body' => null,
         'event_ids' => null,
         'recipients' => null,
         'send_copy_to_me' => null,
-        'subject' => null,
-        'body' => null
+        'subject' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'body' => 'body',
         'event_ids' => 'eventIds',
         'recipients' => 'recipients',
         'send_copy_to_me' => 'sendCopyToMe',
-        'subject' => 'subject',
-        'body' => 'body'
+        'subject' => 'subject'
     ];
 
     /**
@@ -119,11 +119,11 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'body' => 'setBody',
         'event_ids' => 'setEventIds',
         'recipients' => 'setRecipients',
         'send_copy_to_me' => 'setSendCopyToMe',
-        'subject' => 'setSubject',
-        'body' => 'setBody'
+        'subject' => 'setSubject'
     ];
 
     /**
@@ -132,11 +132,11 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'body' => 'getBody',
         'event_ids' => 'getEventIds',
         'recipients' => 'getRecipients',
         'send_copy_to_me' => 'getSendCopyToMe',
-        'subject' => 'getSubject',
-        'body' => 'getBody'
+        'subject' => 'getSubject'
     ];
 
     /**
@@ -196,11 +196,11 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
+        $this->container['body'] = $data['body'] ?? null;
         $this->container['event_ids'] = $data['event_ids'] ?? null;
         $this->container['recipients'] = $data['recipients'] ?? null;
         $this->container['send_copy_to_me'] = $data['send_copy_to_me'] ?? false;
         $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['body'] = $data['body'] ?? null;
     }
 
     /**
@@ -212,6 +212,9 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
         if ($this->container['event_ids'] === null) {
             $invalidProperties[] = "'event_ids' can't be null";
         }
@@ -220,9 +223,6 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if ($this->container['subject'] === null) {
             $invalidProperties[] = "'subject' can't be null";
-        }
-        if ($this->container['body'] === null) {
-            $invalidProperties[] = "'body' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,6 +238,30 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets body
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->container['body'];
+    }
+
+    /**
+     * Sets body
+     *
+     * @param string $body E-Mail body.
+     *
+     * @return self
+     */
+    public function setBody($body)
+    {
+        $this->container['body'] = $body;
+
+        return $this;
+    }
 
     /**
      * Gets event_ids
@@ -331,30 +355,6 @@ class SendAgendaEmailRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSubject($subject)
     {
         $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets body
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     *
-     * @param string $body E-Mail body.
-     *
-     * @return self
-     */
-    public function setBody($body)
-    {
-        $this->container['body'] = $body;
 
         return $this;
     }

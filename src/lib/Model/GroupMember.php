@@ -57,12 +57,12 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'int',
-        'person' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson',
-        'group_type_role_id' => 'int',
         'comment' => 'string',
-        'member_start_date' => '\DateTime',
+        'group_type_role_id' => 'int',
         'member_end_date' => '\DateTime',
+        'member_start_date' => '\DateTime',
+        'person' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
+        'person_id' => 'int',
         'waitinglist_pos' => 'int'
     ];
 
@@ -74,12 +74,12 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
-        'person' => null,
-        'group_type_role_id' => null,
         'comment' => null,
-        'member_start_date' => 'date',
+        'group_type_role_id' => null,
         'member_end_date' => 'date',
+        'member_start_date' => 'date',
+        'person' => null,
+        'person_id' => null,
         'waitinglist_pos' => null
     ];
 
@@ -110,12 +110,12 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
-        'person' => 'person',
-        'group_type_role_id' => 'groupTypeRoleId',
         'comment' => 'comment',
-        'member_start_date' => 'memberStartDate',
+        'group_type_role_id' => 'groupTypeRoleId',
         'member_end_date' => 'memberEndDate',
+        'member_start_date' => 'memberStartDate',
+        'person' => 'person',
+        'person_id' => 'personId',
         'waitinglist_pos' => 'waitinglistPos'
     ];
 
@@ -125,12 +125,12 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
-        'person' => 'setPerson',
-        'group_type_role_id' => 'setGroupTypeRoleId',
         'comment' => 'setComment',
-        'member_start_date' => 'setMemberStartDate',
+        'group_type_role_id' => 'setGroupTypeRoleId',
         'member_end_date' => 'setMemberEndDate',
+        'member_start_date' => 'setMemberStartDate',
+        'person' => 'setPerson',
+        'person_id' => 'setPersonId',
         'waitinglist_pos' => 'setWaitinglistPos'
     ];
 
@@ -140,12 +140,12 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
-        'person' => 'getPerson',
-        'group_type_role_id' => 'getGroupTypeRoleId',
         'comment' => 'getComment',
-        'member_start_date' => 'getMemberStartDate',
+        'group_type_role_id' => 'getGroupTypeRoleId',
         'member_end_date' => 'getMemberEndDate',
+        'member_start_date' => 'getMemberStartDate',
+        'person' => 'getPerson',
+        'person_id' => 'getPersonId',
         'waitinglist_pos' => 'getWaitinglistPos'
     ];
 
@@ -206,12 +206,12 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['person'] = $data['person'] ?? null;
-        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
         $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
+        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
         $this->container['member_end_date'] = $data['member_end_date'] ?? null;
+        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['waitinglist_pos'] = $data['waitinglist_pos'] ?? null;
     }
 
@@ -240,49 +240,25 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets person_id
+     * Gets comment
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getPersonId()
+    public function getComment()
     {
-        return $this->container['person_id'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets person_id
+     * Sets comment
      *
-     * @param int|null $person_id person_id
+     * @param string|null $comment comment
      *
      * @return self
      */
-    public function setPersonId($person_id)
+    public function setComment($comment)
     {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
+        $this->container['comment'] = $comment;
 
         return $this;
     }
@@ -312,25 +288,25 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets comment
+     * Gets member_end_date
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getComment()
+    public function getMemberEndDate()
     {
-        return $this->container['comment'];
+        return $this->container['member_end_date'];
     }
 
     /**
-     * Sets comment
+     * Sets member_end_date
      *
-     * @param string|null $comment comment
+     * @param \DateTime|null $member_end_date member_end_date
      *
      * @return self
      */
-    public function setComment($comment)
+    public function setMemberEndDate($member_end_date)
     {
-        $this->container['comment'] = $comment;
+        $this->container['member_end_date'] = $member_end_date;
 
         return $this;
     }
@@ -360,25 +336,49 @@ class GroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets member_end_date
+     * Gets person
      *
-     * @return \DateTime|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
      */
-    public function getMemberEndDate()
+    public function getPerson()
     {
-        return $this->container['member_end_date'];
+        return $this->container['person'];
     }
 
     /**
-     * Sets member_end_date
+     * Sets person
      *
-     * @param \DateTime|null $member_end_date member_end_date
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $person person
      *
      * @return self
      */
-    public function setMemberEndDate($member_end_date)
+    public function setPerson($person)
     {
-        $this->container['member_end_date'] = $member_end_date;
+        $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int|null
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int|null $person_id person_id
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
 
         return $this;
     }

@@ -58,8 +58,8 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'module' => 'string',
         'attribute' => 'string',
+        'module' => 'string',
         'value' => '\StevenBuehner\ChurchTools\Model\GetAllPersonSettings200ResponseDataInnerValue'
     ];
 
@@ -71,8 +71,8 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'module' => null,
         'attribute' => null,
+        'module' => null,
         'value' => null
     ];
 
@@ -103,8 +103,8 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'module' => 'module',
         'attribute' => 'attribute',
+        'module' => 'module',
         'value' => 'value'
     ];
 
@@ -114,8 +114,8 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'module' => 'setModule',
         'attribute' => 'setAttribute',
+        'module' => 'setModule',
         'value' => 'setValue'
     ];
 
@@ -125,8 +125,8 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'module' => 'getModule',
         'attribute' => 'getAttribute',
+        'module' => 'getModule',
         'value' => 'getValue'
     ];
 
@@ -187,8 +187,8 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['module'] = $data['module'] ?? null;
         $this->container['attribute'] = $data['attribute'] ?? null;
+        $this->container['module'] = $data['module'] ?? null;
         $this->container['value'] = $data['value'] ?? null;
     }
 
@@ -217,30 +217,6 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
 
 
     /**
-     * Gets module
-     *
-     * @return string|null
-     */
-    public function getModule()
-    {
-        return $this->container['module'];
-    }
-
-    /**
-     * Sets module
-     *
-     * @param string|null $module module
-     *
-     * @return self
-     */
-    public function setModule($module)
-    {
-        $this->container['module'] = $module;
-
-        return $this;
-    }
-
-    /**
      * Gets attribute
      *
      * @return string|null
@@ -260,6 +236,30 @@ class GetAllPersonSettings200ResponseDataInner implements ModelInterface, ArrayA
     public function setAttribute($attribute)
     {
         $this->container['attribute'] = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * Gets module
+     *
+     * @return string|null
+     */
+    public function getModule()
+    {
+        return $this->container['module'];
+    }
+
+    /**
+     * Sets module
+     *
+     * @param string|null $module module
+     *
+     * @return self
+     */
+    public function setModule($module)
+    {
+        $this->container['module'] = $module;
 
         return $this;
     }

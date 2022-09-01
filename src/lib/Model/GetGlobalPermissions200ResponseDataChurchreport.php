@@ -59,7 +59,7 @@ class GetGlobalPermissions200ResponseDataChurchreport implements ModelInterface,
       */
     protected static $openAPITypes = [
         'view' => 'bool',
-        'view_query' => 'float[]'
+        'view_query' => 'int[]'
     ];
 
     /**
@@ -237,7 +237,7 @@ class GetGlobalPermissions200ResponseDataChurchreport implements ModelInterface,
     /**
      * Gets view_query
      *
-     * @return float[]|null
+     * @return int[]|null
      */
     public function getViewQuery()
     {
@@ -247,7 +247,7 @@ class GetGlobalPermissions200ResponseDataChurchreport implements ModelInterface,
     /**
      * Sets view_query
      *
-     * @param float[]|null $view_query view_query
+     * @param int[]|null $view_query view_query
      *
      * @return self
      */

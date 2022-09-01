@@ -1,0 +1,10 @@
+# # GetPersonById200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**** | **string** |  | [optional]
+**data** | [**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData**](PutCheckinPersons200ResponseData.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

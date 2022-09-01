@@ -57,9 +57,9 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject',
-        'group' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1',
-        'group_meeting' => '\StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner',
+        'group' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup',
+        'group_meeting' => '\StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting',
+        'person' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
         'total_checked_in' => 'int'
     ];
 
@@ -71,9 +71,9 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person' => null,
         'group' => null,
         'group_meeting' => null,
+        'person' => null,
         'total_checked_in' => null
     ];
 
@@ -104,9 +104,9 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'person' => 'person',
         'group' => 'group',
         'group_meeting' => 'groupMeeting',
+        'person' => 'person',
         'total_checked_in' => 'totalCheckedIn'
     ];
 
@@ -116,9 +116,9 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'person' => 'setPerson',
         'group' => 'setGroup',
         'group_meeting' => 'setGroupMeeting',
+        'person' => 'setPerson',
         'total_checked_in' => 'setTotalCheckedIn'
     ];
 
@@ -128,9 +128,9 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'person' => 'getPerson',
         'group' => 'getGroup',
         'group_meeting' => 'getGroupMeeting',
+        'person' => 'getPerson',
         'total_checked_in' => 'getTotalCheckedIn'
     ];
 
@@ -191,9 +191,9 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['person'] = $data['person'] ?? null;
         $this->container['group'] = $data['group'] ?? null;
         $this->container['group_meeting'] = $data['group_meeting'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
         $this->container['total_checked_in'] = $data['total_checked_in'] ?? null;
     }
 
@@ -222,33 +222,9 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
      * Gets group
      *
-     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null
      */
     public function getGroup()
     {
@@ -258,7 +234,7 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets group
      *
-     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1|null $group group
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup|null $group group
      *
      * @return self
      */
@@ -272,7 +248,7 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets group_meeting
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting|null
      */
     public function getGroupMeeting()
     {
@@ -282,13 +258,37 @@ class Checkin200ResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets group_meeting
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner|null $group_meeting group_meeting
+     * @param \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting|null $group_meeting group_meeting
      *
      * @return self
      */
     public function setGroupMeeting($group_meeting)
     {
         $this->container['group_meeting'] = $group_meeting;
+
+        return $this;
+    }
+
+    /**
+     * Gets person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
+     */
+    public function getPerson()
+    {
+        return $this->container['person'];
+    }
+
+    /**
+     * Sets person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $person person
+     *
+     * @return self
+     */
+    public function setPerson($person)
+    {
+        $this->container['person'] = $person;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'accounting_perdiod_id' => 'float',
-        'start_date' => '\DateTime',
+        'accounting_perdiod_id' => 'int',
         'end_date' => '\DateTime',
-        'show_empty_accounts' => 'bool'
+        'show_empty_accounts' => 'bool',
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -72,9 +72,9 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'accounting_perdiod_id' => null,
-        'start_date' => 'date',
         'end_date' => 'date',
-        'show_empty_accounts' => null
+        'show_empty_accounts' => null,
+        'start_date' => 'date'
     ];
 
     /**
@@ -105,9 +105,9 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'accounting_perdiod_id' => 'accountingPerdiodId',
-        'start_date' => 'startDate',
         'end_date' => 'endDate',
-        'show_empty_accounts' => 'showEmptyAccounts'
+        'show_empty_accounts' => 'showEmptyAccounts',
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -117,9 +117,9 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'accounting_perdiod_id' => 'setAccountingPerdiodId',
-        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'show_empty_accounts' => 'setShowEmptyAccounts'
+        'show_empty_accounts' => 'setShowEmptyAccounts',
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -129,9 +129,9 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'accounting_perdiod_id' => 'getAccountingPerdiodId',
-        'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'show_empty_accounts' => 'getShowEmptyAccounts'
+        'show_empty_accounts' => 'getShowEmptyAccounts',
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -192,9 +192,9 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->container['accounting_perdiod_id'] = $data['accounting_perdiod_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['show_empty_accounts'] = $data['show_empty_accounts'] ?? true;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -209,11 +209,11 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['accounting_perdiod_id'] === null) {
             $invalidProperties[] = "'accounting_perdiod_id' can't be null";
         }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
         if ($this->container['end_date'] === null) {
             $invalidProperties[] = "'end_date' can't be null";
+        }
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -233,7 +233,7 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets accounting_perdiod_id
      *
-     * @return float
+     * @return int
      */
     public function getAccountingPerdiodId()
     {
@@ -243,37 +243,13 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets accounting_perdiod_id
      *
-     * @param float $accounting_perdiod_id ID of Accounting Period
+     * @param int $accounting_perdiod_id ID of Accounting Period
      *
      * @return self
      */
     public function setAccountingPerdiodId($accounting_perdiod_id)
     {
         $this->container['accounting_perdiod_id'] = $accounting_perdiod_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date Respect Transactions From This Date On
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
 
         return $this;
     }
@@ -322,6 +298,30 @@ class PostFinanceReportsRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function setShowEmptyAccounts($show_empty_accounts)
     {
         $this->container['show_empty_accounts'] = $show_empty_accounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date Respect Transactions From This Date On
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

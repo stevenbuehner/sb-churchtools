@@ -57,11 +57,11 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'translated_message' => 'string',
-        'message_key' => 'string',
         'args' => '\StevenBuehner\ChurchTools\Model\SendAgendaEmail200ResponseArgs',
-        'errors' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject[]'
+        'errors' => 'object[]',
+        'message' => 'string',
+        'message_key' => 'string',
+        'translated_message' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'translated_message' => null,
-        'message_key' => null,
         'args' => null,
-        'errors' => null
+        'errors' => null,
+        'message' => null,
+        'message_key' => null,
+        'translated_message' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'translated_message' => 'translatedMessage',
-        'message_key' => 'messageKey',
         'args' => 'args',
-        'errors' => 'errors'
+        'errors' => 'errors',
+        'message' => 'message',
+        'message_key' => 'messageKey',
+        'translated_message' => 'translatedMessage'
     ];
 
     /**
@@ -119,11 +119,11 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'translated_message' => 'setTranslatedMessage',
-        'message_key' => 'setMessageKey',
         'args' => 'setArgs',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'message' => 'setMessage',
+        'message_key' => 'setMessageKey',
+        'translated_message' => 'setTranslatedMessage'
     ];
 
     /**
@@ -132,11 +132,11 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'translated_message' => 'getTranslatedMessage',
-        'message_key' => 'getMessageKey',
         'args' => 'getArgs',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'message' => 'getMessage',
+        'message_key' => 'getMessageKey',
+        'translated_message' => 'getTranslatedMessage'
     ];
 
     /**
@@ -196,11 +196,11 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['translated_message'] = $data['translated_message'] ?? null;
-        $this->container['message_key'] = $data['message_key'] ?? null;
         $this->container['args'] = $data['args'] ?? null;
         $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['message_key'] = $data['message_key'] ?? null;
+        $this->container['translated_message'] = $data['translated_message'] ?? null;
     }
 
     /**
@@ -228,6 +228,54 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
+     * Gets args
+     *
+     * @return \StevenBuehner\ChurchTools\Model\SendAgendaEmail200ResponseArgs|null
+     */
+    public function getArgs()
+    {
+        return $this->container['args'];
+    }
+
+    /**
+     * Sets args
+     *
+     * @param \StevenBuehner\ChurchTools\Model\SendAgendaEmail200ResponseArgs|null $args args
+     *
+     * @return self
+     */
+    public function setArgs($args)
+    {
+        $this->container['args'] = $args;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return object[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param object[]|null $errors Array of DomainObjects with people, who have no eMail Addresses.
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
+
+        return $this;
+    }
+
+    /**
      * Gets message
      *
      * @return string|null
@@ -247,30 +295,6 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
     public function setMessage($message)
     {
         $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets translated_message
-     *
-     * @return string|null
-     */
-    public function getTranslatedMessage()
-    {
-        return $this->container['translated_message'];
-    }
-
-    /**
-     * Sets translated_message
-     *
-     * @param string|null $translated_message translated_message
-     *
-     * @return self
-     */
-    public function setTranslatedMessage($translated_message)
-    {
-        $this->container['translated_message'] = $translated_message;
 
         return $this;
     }
@@ -300,49 +324,25 @@ class SendAgendaEmail200Response implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets args
+     * Gets translated_message
      *
-     * @return \StevenBuehner\ChurchTools\Model\SendAgendaEmail200ResponseArgs|null
+     * @return string|null
      */
-    public function getArgs()
+    public function getTranslatedMessage()
     {
-        return $this->container['args'];
+        return $this->container['translated_message'];
     }
 
     /**
-     * Sets args
+     * Sets translated_message
      *
-     * @param \StevenBuehner\ChurchTools\Model\SendAgendaEmail200ResponseArgs|null $args args
+     * @param string|null $translated_message translated_message
      *
      * @return self
      */
-    public function setArgs($args)
+    public function setTranslatedMessage($translated_message)
     {
-        $this->container['args'] = $args;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject[]|null $errors Array of DomainObjects with people, who have no eMail Addresses.
-     *
-     * @return self
-     */
-    public function setErrors($errors)
-    {
-        $this->container['errors'] = $errors;
+        $this->container['translated_message'] = $translated_message;
 
         return $this;
     }

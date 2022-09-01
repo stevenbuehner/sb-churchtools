@@ -57,8 +57,9 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
+        'all' => 'int',
         'count' => 'int',
-        'pagination' => '\StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMetaPagination'
+        'pagination' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMetaPagination'
     ];
 
     /**
@@ -69,6 +70,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'all' => null,
         'count' => null,
         'pagination' => null
     ];
@@ -100,6 +102,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'all' => 'all',
         'count' => 'count',
         'pagination' => 'pagination'
     ];
@@ -110,6 +113,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'all' => 'setAll',
         'count' => 'setCount',
         'pagination' => 'setPagination'
     ];
@@ -120,6 +124,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'all' => 'getAll',
         'count' => 'getCount',
         'pagination' => 'getPagination'
     ];
@@ -181,6 +186,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
+        $this->container['all'] = $data['all'] ?? null;
         $this->container['count'] = $data['count'] ?? null;
         $this->container['pagination'] = $data['pagination'] ?? null;
     }
@@ -210,6 +216,30 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
+     * Gets all
+     *
+     * @return int|null
+     */
+    public function getAll()
+    {
+        return $this->container['all'];
+    }
+
+    /**
+     * Sets all
+     *
+     * @param int|null $all all
+     *
+     * @return self
+     */
+    public function setAll($all)
+    {
+        $this->container['all'] = $all;
+
+        return $this;
+    }
+
+    /**
      * Gets count
      *
      * @return int|null
@@ -222,7 +252,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets count
      *
-     * @param int|null $count Count of donators on this current page.
+     * @param int|null $count count
      *
      * @return self
      */
@@ -236,7 +266,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pagination
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMetaPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMetaPagination|null
      */
     public function getPagination()
     {
@@ -246,7 +276,7 @@ class GetAllDonators200ResponseMeta implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pagination
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMetaPagination|null $pagination pagination
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMetaPagination|null $pagination pagination
      *
      * @return self
      */

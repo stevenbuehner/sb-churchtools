@@ -58,9 +58,9 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'float',
         'group' => '\StevenBuehner\ChurchTools\Model\PutCheckinPersonsRequestGroup',
-        'tag_id' => 'float'
+        'person_id' => 'int',
+        'tag_id' => 'int'
     ];
 
     /**
@@ -71,8 +71,8 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
         'group' => null,
+        'person_id' => null,
         'tag_id' => null
     ];
 
@@ -103,8 +103,8 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
         'group' => 'group',
+        'person_id' => 'personId',
         'tag_id' => 'tagId'
     ];
 
@@ -114,8 +114,8 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
         'group' => 'setGroup',
+        'person_id' => 'setPersonId',
         'tag_id' => 'setTagId'
     ];
 
@@ -125,8 +125,8 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
         'group' => 'getGroup',
+        'person_id' => 'getPersonId',
         'tag_id' => 'getTagId'
     ];
 
@@ -187,8 +187,8 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['group'] = $data['group'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['tag_id'] = $data['tag_id'] ?? null;
     }
 
@@ -201,11 +201,11 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['person_id'] === null) {
-            $invalidProperties[] = "'person_id' can't be null";
-        }
         if ($this->container['group'] === null) {
             $invalidProperties[] = "'group' can't be null";
+        }
+        if ($this->container['person_id'] === null) {
+            $invalidProperties[] = "'person_id' can't be null";
         }
         if ($this->container['tag_id'] === null) {
             $invalidProperties[] = "'tag_id' can't be null";
@@ -224,30 +224,6 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets person_id
-     *
-     * @return float
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param float $person_id person_id
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
 
     /**
      * Gets group
@@ -274,9 +250,33 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
+     * Gets person_id
+     *
+     * @return int
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int $person_id person_id
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
+
+        return $this;
+    }
+
+    /**
      * Gets tag_id
      *
-     * @return float
+     * @return int
      */
     public function getTagId()
     {
@@ -286,7 +286,7 @@ class PutCheckinPersonsRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets tag_id
      *
-     * @param float $tag_id tag_id
+     * @param int $tag_id tag_id
      *
      * @return self
      */

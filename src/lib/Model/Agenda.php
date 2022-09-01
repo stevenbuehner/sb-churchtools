@@ -57,14 +57,14 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'calendar_id' => 'int',
         'id' => 'int',
+        'is_final' => 'bool',
+        'items' => '\StevenBuehner\ChurchTools\Model\AgendaItem[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta',
         'name' => 'string',
         'series' => 'string',
-        'is_final' => 'bool',
-        'calendar_id' => 'int',
-        'total' => 'int',
-        'items' => '\StevenBuehner\ChurchTools\Model\AgendaItem[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Agenda1Meta'
+        'total' => 'int'
     ];
 
     /**
@@ -75,14 +75,14 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'calendar_id' => null,
         'id' => null,
+        'is_final' => null,
+        'items' => null,
+        'meta' => null,
         'name' => null,
         'series' => null,
-        'is_final' => null,
-        'calendar_id' => null,
-        'total' => null,
-        'items' => null,
-        'meta' => null
+        'total' => null
     ];
 
     /**
@@ -112,14 +112,14 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'calendar_id' => 'calendarId',
         'id' => 'id',
+        'is_final' => 'isFinal',
+        'items' => 'items',
+        'meta' => 'meta',
         'name' => 'name',
         'series' => 'series',
-        'is_final' => 'isFinal',
-        'calendar_id' => 'calendarId',
-        'total' => 'total',
-        'items' => 'items',
-        'meta' => 'meta'
+        'total' => 'total'
     ];
 
     /**
@@ -128,14 +128,14 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'calendar_id' => 'setCalendarId',
         'id' => 'setId',
+        'is_final' => 'setIsFinal',
+        'items' => 'setItems',
+        'meta' => 'setMeta',
         'name' => 'setName',
         'series' => 'setSeries',
-        'is_final' => 'setIsFinal',
-        'calendar_id' => 'setCalendarId',
-        'total' => 'setTotal',
-        'items' => 'setItems',
-        'meta' => 'setMeta'
+        'total' => 'setTotal'
     ];
 
     /**
@@ -144,14 +144,14 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'calendar_id' => 'getCalendarId',
         'id' => 'getId',
+        'is_final' => 'getIsFinal',
+        'items' => 'getItems',
+        'meta' => 'getMeta',
         'name' => 'getName',
         'series' => 'getSeries',
-        'is_final' => 'getIsFinal',
-        'calendar_id' => 'getCalendarId',
-        'total' => 'getTotal',
-        'items' => 'getItems',
-        'meta' => 'getMeta'
+        'total' => 'getTotal'
     ];
 
     /**
@@ -211,14 +211,14 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['series'] = $data['series'] ?? null;
-        $this->container['is_final'] = $data['is_final'] ?? null;
         $this->container['calendar_id'] = $data['calendar_id'] ?? null;
-        $this->container['total'] = $data['total'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_final'] = $data['is_final'] ?? null;
         $this->container['items'] = $data['items'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['series'] = $data['series'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
     }
 
     /**
@@ -246,6 +246,30 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets calendar_id
+     *
+     * @return int|null
+     */
+    public function getCalendarId()
+    {
+        return $this->container['calendar_id'];
+    }
+
+    /**
+     * Sets calendar_id
+     *
+     * @param int|null $calendar_id calendar_id
+     *
+     * @return self
+     */
+    public function setCalendarId($calendar_id)
+    {
+        $this->container['calendar_id'] = $calendar_id;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -265,6 +289,78 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_final
+     *
+     * @return bool|null
+     */
+    public function getIsFinal()
+    {
+        return $this->container['is_final'];
+    }
+
+    /**
+     * Sets is_final
+     *
+     * @param bool|null $is_final is_final
+     *
+     * @return self
+     */
+    public function setIsFinal($is_final)
+    {
+        $this->container['is_final'] = $is_final;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \StevenBuehner\ChurchTools\Model\AgendaItem[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \StevenBuehner\ChurchTools\Model\AgendaItem[]|null $items items
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -318,54 +414,6 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_final
-     *
-     * @return bool|null
-     */
-    public function getIsFinal()
-    {
-        return $this->container['is_final'];
-    }
-
-    /**
-     * Sets is_final
-     *
-     * @param bool|null $is_final is_final
-     *
-     * @return self
-     */
-    public function setIsFinal($is_final)
-    {
-        $this->container['is_final'] = $is_final;
-
-        return $this;
-    }
-
-    /**
-     * Gets calendar_id
-     *
-     * @return int|null
-     */
-    public function getCalendarId()
-    {
-        return $this->container['calendar_id'];
-    }
-
-    /**
-     * Sets calendar_id
-     *
-     * @param int|null $calendar_id calendar_id
-     *
-     * @return self
-     */
-    public function setCalendarId($calendar_id)
-    {
-        $this->container['calendar_id'] = $calendar_id;
-
-        return $this;
-    }
-
-    /**
      * Gets total
      *
      * @return int|null
@@ -385,54 +433,6 @@ class Agenda implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotal($total)
     {
         $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets items
-     *
-     * @return \StevenBuehner\ChurchTools\Model\AgendaItem[]|null
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \StevenBuehner\ChurchTools\Model\AgendaItem[]|null $items items
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\Agenda1Meta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\Agenda1Meta|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

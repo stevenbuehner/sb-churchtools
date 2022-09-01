@@ -57,9 +57,9 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'contact_label_id' => 'int',
         'email' => 'string',
-        'is_default' => 'bool',
-        'contact_label_id' => 'int'
+        'is_default' => 'bool'
     ];
 
     /**
@@ -70,9 +70,9 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'contact_label_id' => null,
         'email' => null,
-        'is_default' => null,
-        'contact_label_id' => null
+        'is_default' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'contact_label_id' => 'contactLabelId',
         'email' => 'email',
-        'is_default' => 'isDefault',
-        'contact_label_id' => 'contactLabelId'
+        'is_default' => 'isDefault'
     ];
 
     /**
@@ -113,9 +113,9 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'contact_label_id' => 'setContactLabelId',
         'email' => 'setEmail',
-        'is_default' => 'setIsDefault',
-        'contact_label_id' => 'setContactLabelId'
+        'is_default' => 'setIsDefault'
     ];
 
     /**
@@ -124,9 +124,9 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'contact_label_id' => 'getContactLabelId',
         'email' => 'getEmail',
-        'is_default' => 'getIsDefault',
-        'contact_label_id' => 'getContactLabelId'
+        'is_default' => 'getIsDefault'
     ];
 
     /**
@@ -186,9 +186,9 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['contact_label_id'] = $data['contact_label_id'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['is_default'] = $data['is_default'] ?? null;
-        $this->container['contact_label_id'] = $data['contact_label_id'] ?? null;
     }
 
     /**
@@ -214,6 +214,30 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets contact_label_id
+     *
+     * @return int|null
+     */
+    public function getContactLabelId()
+    {
+        return $this->container['contact_label_id'];
+    }
+
+    /**
+     * Sets contact_label_id
+     *
+     * @param int|null $contact_label_id contact_label_id
+     *
+     * @return self
+     */
+    public function setContactLabelId($contact_label_id)
+    {
+        $this->container['contact_label_id'] = $contact_label_id;
+
+        return $this;
+    }
 
     /**
      * Gets email
@@ -259,30 +283,6 @@ class PersonEmail1 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsDefault($is_default)
     {
         $this->container['is_default'] = $is_default;
-
-        return $this;
-    }
-
-    /**
-     * Gets contact_label_id
-     *
-     * @return int|null
-     */
-    public function getContactLabelId()
-    {
-        return $this->container['contact_label_id'];
-    }
-
-    /**
-     * Sets contact_label_id
-     *
-     * @param int|null $contact_label_id contact_label_id
-     *
-     * @return self
-     */
-    public function setContactLabelId($contact_label_id)
-    {
-        $this->container['contact_label_id'] = $contact_label_id;
 
         return $this;
     }

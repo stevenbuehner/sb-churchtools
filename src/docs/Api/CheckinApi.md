@@ -4,7 +4,7 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkin()**](CheckinApi.md#checkin) | **POST** /groups/{groupId}/checkin/{personId} | Checkin a person to a group
+[**checkin()**](CheckinApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
 [**getQRCodeCheckin()**](CheckinApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
 [**postCheckinPersons()**](CheckinApi.md#postCheckinPersons) | **POST** /checkin/persons | Create new person and add to group
 [**putCheckinPersons()**](CheckinApi.md#putCheckinPersons) | **PUT** /checkin/persons | Put existing person into group
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `checkin()`
 
 ```php
-checkin($group_id, $person_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
+checkin($group_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
 ```
 
 Checkin a person to a group
@@ -27,7 +27,7 @@ Checkin a person to a group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -40,11 +40,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\CheckinApi(
     $config
 );
 $group_id = 42; // int | ID of group
-$person_id = 7; // int | ID of person
 $checkin_request = new \StevenBuehner\ChurchTools\Model\CheckinRequest(); // \StevenBuehner\ChurchTools\Model\CheckinRequest
 
 try {
-    $result = $apiInstance->checkin($group_id, $person_id, $checkin_request);
+    $result = $apiInstance->checkin($group_id, $checkin_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckinApi->checkin: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +55,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| ID of group |
- **person_id** | **int**| ID of person |
  **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  |
 
 ### Return type
@@ -65,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -93,7 +91,7 @@ Get link to QR-Code for CheckIn PDF
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -129,12 +127,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -143,7 +141,7 @@ Name | Type | Description  | Notes
 ## `postCheckinPersons()`
 
 ```php
-postCheckinPersons($post_checkin_persons_request): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
+postCheckinPersons($post_checkin_persons_request): \StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response
 ```
 
 Create new person and add to group
@@ -157,7 +155,7 @@ Create new person and add to group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -187,16 +185,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
+[**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response**](../Model/PutCheckinPersons200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -205,7 +203,7 @@ Name | Type | Description  | Notes
 ## `putCheckinPersons()`
 
 ```php
-putCheckinPersons($put_checkin_persons_request): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
+putCheckinPersons($put_checkin_persons_request): \StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response
 ```
 
 Put existing person into group
@@ -217,7 +215,7 @@ Put existing person into group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -247,16 +245,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
+[**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response**](../Model/PutCheckinPersons200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

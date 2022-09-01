@@ -57,11 +57,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
       * @var string[]
       */
     protected static $openAPITypes = [
-        'signup_group_type_id' => 'float',
-        'signup_template_group_id' => 'float',
-        'signup_days_archive_group_no' => 'float',
-        'singup_days_forward_no' => 'float',
-        'signup_set_completion_date' => 'bool'
+        'signup_days_archive_group_no' => 'int',
+        'signup_group_type_id' => 'int',
+        'signup_set_completion_date' => 'bool',
+        'signup_template_group_id' => 'int',
+        'singup_days_forward_no' => 'int'
     ];
 
     /**
@@ -72,11 +72,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'signup_group_type_id' => null,
-        'signup_template_group_id' => null,
         'signup_days_archive_group_no' => null,
-        'singup_days_forward_no' => null,
-        'signup_set_completion_date' => null
+        'signup_group_type_id' => null,
+        'signup_set_completion_date' => null,
+        'signup_template_group_id' => null,
+        'singup_days_forward_no' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      * @var string[]
      */
     protected static $attributeMap = [
-        'signup_group_type_id' => 'signupGroupTypeId',
-        'signup_template_group_id' => 'signupTemplateGroupId',
         'signup_days_archive_group_no' => 'signupDaysArchiveGroupNo',
-        'singup_days_forward_no' => 'singupDaysForwardNo',
-        'signup_set_completion_date' => 'signupSetCompletionDate'
+        'signup_group_type_id' => 'signupGroupTypeId',
+        'signup_set_completion_date' => 'signupSetCompletionDate',
+        'signup_template_group_id' => 'signupTemplateGroupId',
+        'singup_days_forward_no' => 'singupDaysForwardNo'
     ];
 
     /**
@@ -119,11 +119,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      * @var string[]
      */
     protected static $setters = [
-        'signup_group_type_id' => 'setSignupGroupTypeId',
-        'signup_template_group_id' => 'setSignupTemplateGroupId',
         'signup_days_archive_group_no' => 'setSignupDaysArchiveGroupNo',
-        'singup_days_forward_no' => 'setSingupDaysForwardNo',
-        'signup_set_completion_date' => 'setSignupSetCompletionDate'
+        'signup_group_type_id' => 'setSignupGroupTypeId',
+        'signup_set_completion_date' => 'setSignupSetCompletionDate',
+        'signup_template_group_id' => 'setSignupTemplateGroupId',
+        'singup_days_forward_no' => 'setSingupDaysForwardNo'
     ];
 
     /**
@@ -132,11 +132,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      * @var string[]
      */
     protected static $getters = [
-        'signup_group_type_id' => 'getSignupGroupTypeId',
-        'signup_template_group_id' => 'getSignupTemplateGroupId',
         'signup_days_archive_group_no' => 'getSignupDaysArchiveGroupNo',
-        'singup_days_forward_no' => 'getSingupDaysForwardNo',
-        'signup_set_completion_date' => 'getSignupSetCompletionDate'
+        'signup_group_type_id' => 'getSignupGroupTypeId',
+        'signup_set_completion_date' => 'getSignupSetCompletionDate',
+        'signup_template_group_id' => 'getSignupTemplateGroupId',
+        'singup_days_forward_no' => 'getSingupDaysForwardNo'
     ];
 
     /**
@@ -196,11 +196,11 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
      */
     public function __construct(array $data = null)
     {
-        $this->container['signup_group_type_id'] = $data['signup_group_type_id'] ?? null;
-        $this->container['signup_template_group_id'] = $data['signup_template_group_id'] ?? null;
         $this->container['signup_days_archive_group_no'] = $data['signup_days_archive_group_no'] ?? null;
-        $this->container['singup_days_forward_no'] = $data['singup_days_forward_no'] ?? null;
+        $this->container['signup_group_type_id'] = $data['signup_group_type_id'] ?? null;
         $this->container['signup_set_completion_date'] = $data['signup_set_completion_date'] ?? null;
+        $this->container['signup_template_group_id'] = $data['signup_template_group_id'] ?? null;
+        $this->container['singup_days_forward_no'] = $data['singup_days_forward_no'] ?? null;
     }
 
     /**
@@ -212,20 +212,20 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
     {
         $invalidProperties = [];
 
+        if ($this->container['signup_days_archive_group_no'] === null) {
+            $invalidProperties[] = "'signup_days_archive_group_no' can't be null";
+        }
         if ($this->container['signup_group_type_id'] === null) {
             $invalidProperties[] = "'signup_group_type_id' can't be null";
+        }
+        if ($this->container['signup_set_completion_date'] === null) {
+            $invalidProperties[] = "'signup_set_completion_date' can't be null";
         }
         if ($this->container['signup_template_group_id'] === null) {
             $invalidProperties[] = "'signup_template_group_id' can't be null";
         }
-        if ($this->container['signup_days_archive_group_no'] === null) {
-            $invalidProperties[] = "'signup_days_archive_group_no' can't be null";
-        }
         if ($this->container['singup_days_forward_no'] === null) {
             $invalidProperties[] = "'singup_days_forward_no' can't be null";
-        }
-        if ($this->container['signup_set_completion_date'] === null) {
-            $invalidProperties[] = "'signup_set_completion_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -243,57 +243,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
 
 
     /**
-     * Gets signup_group_type_id
-     *
-     * @return float
-     */
-    public function getSignupGroupTypeId()
-    {
-        return $this->container['signup_group_type_id'];
-    }
-
-    /**
-     * Sets signup_group_type_id
-     *
-     * @param float $signup_group_type_id signup_group_type_id
-     *
-     * @return self
-     */
-    public function setSignupGroupTypeId($signup_group_type_id)
-    {
-        $this->container['signup_group_type_id'] = $signup_group_type_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets signup_template_group_id
-     *
-     * @return float
-     */
-    public function getSignupTemplateGroupId()
-    {
-        return $this->container['signup_template_group_id'];
-    }
-
-    /**
-     * Sets signup_template_group_id
-     *
-     * @param float $signup_template_group_id signup_template_group_id
-     *
-     * @return self
-     */
-    public function setSignupTemplateGroupId($signup_template_group_id)
-    {
-        $this->container['signup_template_group_id'] = $signup_template_group_id;
-
-        return $this;
-    }
-
-    /**
      * Gets signup_days_archive_group_no
      *
-     * @return float
+     * @return int
      */
     public function getSignupDaysArchiveGroupNo()
     {
@@ -303,7 +255,7 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
     /**
      * Sets signup_days_archive_group_no
      *
-     * @param float $signup_days_archive_group_no signup_days_archive_group_no
+     * @param int $signup_days_archive_group_no signup_days_archive_group_no
      *
      * @return self
      */
@@ -315,25 +267,25 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
     }
 
     /**
-     * Gets singup_days_forward_no
+     * Gets signup_group_type_id
      *
-     * @return float
+     * @return int
      */
-    public function getSingupDaysForwardNo()
+    public function getSignupGroupTypeId()
     {
-        return $this->container['singup_days_forward_no'];
+        return $this->container['signup_group_type_id'];
     }
 
     /**
-     * Sets singup_days_forward_no
+     * Sets signup_group_type_id
      *
-     * @param float $singup_days_forward_no singup_days_forward_no
+     * @param int $signup_group_type_id signup_group_type_id
      *
      * @return self
      */
-    public function setSingupDaysForwardNo($singup_days_forward_no)
+    public function setSignupGroupTypeId($signup_group_type_id)
     {
-        $this->container['singup_days_forward_no'] = $singup_days_forward_no;
+        $this->container['signup_group_type_id'] = $signup_group_type_id;
 
         return $this;
     }
@@ -358,6 +310,54 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataApp
     public function setSignupSetCompletionDate($signup_set_completion_date)
     {
         $this->container['signup_set_completion_date'] = $signup_set_completion_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets signup_template_group_id
+     *
+     * @return int
+     */
+    public function getSignupTemplateGroupId()
+    {
+        return $this->container['signup_template_group_id'];
+    }
+
+    /**
+     * Sets signup_template_group_id
+     *
+     * @param int $signup_template_group_id signup_template_group_id
+     *
+     * @return self
+     */
+    public function setSignupTemplateGroupId($signup_template_group_id)
+    {
+        $this->container['signup_template_group_id'] = $signup_template_group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets singup_days_forward_no
+     *
+     * @return int
+     */
+    public function getSingupDaysForwardNo()
+    {
+        return $this->container['singup_days_forward_no'];
+    }
+
+    /**
+     * Sets singup_days_forward_no
+     *
+     * @param int $singup_days_forward_no singup_days_forward_no
+     *
+     * @return self
+     */
+    public function setSingupDaysForwardNo($singup_days_forward_no)
+    {
+        $this->container['singup_days_forward_no'] = $singup_days_forward_no;
 
         return $this;
     }

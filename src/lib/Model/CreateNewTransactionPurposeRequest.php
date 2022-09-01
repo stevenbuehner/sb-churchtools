@@ -57,12 +57,12 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
+        'account_ids' => 'int[]',
         'cost_center_id' => 'int',
-        'purpose_account_id' => 'int',
-        'sort_key' => 'int',
         'is_income' => 'bool',
-        'account_ids' => 'int[]'
+        'name' => 'string',
+        'purpose_account_id' => 'int',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -73,12 +73,12 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
+        'account_ids' => null,
         'cost_center_id' => null,
-        'purpose_account_id' => null,
-        'sort_key' => null,
         'is_income' => null,
-        'account_ids' => null
+        'name' => null,
+        'purpose_account_id' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
+        'account_ids' => 'accountIds',
         'cost_center_id' => 'costCenterId',
-        'purpose_account_id' => 'purposeAccountId',
-        'sort_key' => 'sortKey',
         'is_income' => 'isIncome',
-        'account_ids' => 'accountIds'
+        'name' => 'name',
+        'purpose_account_id' => 'purposeAccountId',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -122,12 +122,12 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+        'account_ids' => 'setAccountIds',
         'cost_center_id' => 'setCostCenterId',
-        'purpose_account_id' => 'setPurposeAccountId',
-        'sort_key' => 'setSortKey',
         'is_income' => 'setIsIncome',
-        'account_ids' => 'setAccountIds'
+        'name' => 'setName',
+        'purpose_account_id' => 'setPurposeAccountId',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -136,12 +136,12 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
+        'account_ids' => 'getAccountIds',
         'cost_center_id' => 'getCostCenterId',
-        'purpose_account_id' => 'getPurposeAccountId',
-        'sort_key' => 'getSortKey',
         'is_income' => 'getIsIncome',
-        'account_ids' => 'getAccountIds'
+        'name' => 'getName',
+        'purpose_account_id' => 'getPurposeAccountId',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -201,12 +201,12 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
+        $this->container['account_ids'] = $data['account_ids'] ?? null;
         $this->container['cost_center_id'] = $data['cost_center_id'] ?? null;
+        $this->container['is_income'] = $data['is_income'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['purpose_account_id'] = $data['purpose_account_id'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['is_income'] = $data['is_income'] ?? null;
-        $this->container['account_ids'] = $data['account_ids'] ?? null;
     }
 
     /**
@@ -218,20 +218,20 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['cost_center_id'] === null) {
             $invalidProperties[] = "'cost_center_id' can't be null";
+        }
+        if ($this->container['is_income'] === null) {
+            $invalidProperties[] = "'is_income' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['purpose_account_id'] === null) {
             $invalidProperties[] = "'purpose_account_id' can't be null";
         }
         if ($this->container['sort_key'] === null) {
             $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['is_income'] === null) {
-            $invalidProperties[] = "'is_income' can't be null";
         }
         return $invalidProperties;
     }
@@ -249,25 +249,25 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets name
+     * Gets account_ids
      *
-     * @return string
+     * @return int[]|null
      */
-    public function getName()
+    public function getAccountIds()
     {
-        return $this->container['name'];
+        return $this->container['account_ids'];
     }
 
     /**
-     * Sets name
+     * Sets account_ids
      *
-     * @param string $name name
+     * @param int[]|null $account_ids account_ids
      *
      * @return self
      */
-    public function setName($name)
+    public function setAccountIds($account_ids)
     {
-        $this->container['name'] = $name;
+        $this->container['account_ids'] = $account_ids;
 
         return $this;
     }
@@ -292,6 +292,54 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
     public function setCostCenterId($cost_center_id)
     {
         $this->container['cost_center_id'] = $cost_center_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_income
+     *
+     * @return bool
+     */
+    public function getIsIncome()
+    {
+        return $this->container['is_income'];
+    }
+
+    /**
+     * Sets is_income
+     *
+     * @param bool $is_income is_income
+     *
+     * @return self
+     */
+    public function setIsIncome($is_income)
+    {
+        $this->container['is_income'] = $is_income;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -340,54 +388,6 @@ class CreateNewTransactionPurposeRequest implements ModelInterface, ArrayAccess,
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_income
-     *
-     * @return bool
-     */
-    public function getIsIncome()
-    {
-        return $this->container['is_income'];
-    }
-
-    /**
-     * Sets is_income
-     *
-     * @param bool $is_income is_income
-     *
-     * @return self
-     */
-    public function setIsIncome($is_income)
-    {
-        $this->container['is_income'] = $is_income;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_ids
-     *
-     * @return int[]|null
-     */
-    public function getAccountIds()
-    {
-        return $this->container['account_ids'];
-    }
-
-    /**
-     * Sets account_ids
-     *
-     * @param int[]|null $account_ids account_ids
-     *
-     * @return self
-     */
-    public function setAccountIds($account_ids)
-    {
-        $this->container['account_ids'] = $account_ids;
 
         return $this;
     }

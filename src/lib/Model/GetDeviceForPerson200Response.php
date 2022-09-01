@@ -57,7 +57,7 @@ class GetDeviceForPerson200Response implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Device'
+        'data' => '\StevenBuehner\ChurchTools\Model\Device1'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetDeviceForPerson200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Device|null
+     * @return \StevenBuehner\ChurchTools\Model\Device1|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetDeviceForPerson200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Device|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\Device1|null $data data
      *
      * @return self
      */

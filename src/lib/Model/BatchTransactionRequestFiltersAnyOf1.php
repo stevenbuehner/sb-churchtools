@@ -58,8 +58,8 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'include' => 'float[]',
-        'accounting_period_id' => 'float'
+        'accounting_period_id' => 'int',
+        'include' => 'int[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'include' => null,
-        'accounting_period_id' => null
+        'accounting_period_id' => null,
+        'include' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'include' => 'include',
-        'accounting_period_id' => 'accountingPeriodId'
+        'accounting_period_id' => 'accountingPeriodId',
+        'include' => 'include'
     ];
 
     /**
@@ -111,8 +111,8 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'include' => 'setInclude',
-        'accounting_period_id' => 'setAccountingPeriodId'
+        'accounting_period_id' => 'setAccountingPeriodId',
+        'include' => 'setInclude'
     ];
 
     /**
@@ -121,8 +121,8 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'include' => 'getInclude',
-        'accounting_period_id' => 'getAccountingPeriodId'
+        'accounting_period_id' => 'getAccountingPeriodId',
+        'include' => 'getInclude'
     ];
 
     /**
@@ -182,8 +182,8 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['include'] = $data['include'] ?? null;
         $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
+        $this->container['include'] = $data['include'] ?? null;
     }
 
     /**
@@ -195,11 +195,11 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['include'] === null) {
-            $invalidProperties[] = "'include' can't be null";
-        }
         if ($this->container['accounting_period_id'] === null) {
             $invalidProperties[] = "'accounting_period_id' can't be null";
+        }
+        if ($this->container['include'] === null) {
+            $invalidProperties[] = "'include' can't be null";
         }
         return $invalidProperties;
     }
@@ -217,33 +217,9 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets include
-     *
-     * @return float[]
-     */
-    public function getInclude()
-    {
-        return $this->container['include'];
-    }
-
-    /**
-     * Sets include
-     *
-     * @param float[] $include List of Transaction IDs. Only those Transactions are updated.
-     *
-     * @return self
-     */
-    public function setInclude($include)
-    {
-        $this->container['include'] = $include;
-
-        return $this;
-    }
-
-    /**
      * Gets accounting_period_id
      *
-     * @return float
+     * @return int
      */
     public function getAccountingPeriodId()
     {
@@ -253,13 +229,37 @@ class BatchTransactionRequestFiltersAnyOf1 implements ModelInterface, ArrayAcces
     /**
      * Sets accounting_period_id
      *
-     * @param float $accounting_period_id Filter by Accounting Period
+     * @param int $accounting_period_id Filter by Accounting Period
      *
      * @return self
      */
     public function setAccountingPeriodId($accounting_period_id)
     {
         $this->container['accounting_period_id'] = $accounting_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets include
+     *
+     * @return int[]
+     */
+    public function getInclude()
+    {
+        return $this->container['include'];
+    }
+
+    /**
+     * Sets include
+     *
+     * @param int[] $include List of Transaction IDs. Only those Transactions are updated.
+     *
+     * @return self
+     */
+    public function setInclude($include)
+    {
+        $this->container['include'] = $include;
 
         return $this;
     }

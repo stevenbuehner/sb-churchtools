@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**getAllData()**](MasterDataApi.md#getAllData) | **GET** /finance/masterdata | Get a master data for finance module
 [**getAllGroupTypeRoles()**](MasterDataApi.md#getAllGroupTypeRoles) | **GET** /masterdata/person/roles | Get all group type roles
 [**getEventMasterdata()**](MasterDataApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
-[**getMasterDataPerson()**](MasterDataApi.md#getMasterDataPerson) | **GET** /person/masterdata | Fetch all master data for the module \&quot;People &amp; Groups\&quot;
-[**masterdataPersonRolesRoleIdGet()**](MasterDataApi.md#masterdataPersonRolesRoleIdGet) | **GET** /masterdata/person/roles/{roleId} | Get a group type role
+[**getPersonMasterdata()**](MasterDataApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
+[**getPersonMasterdataRole()**](MasterDataApi.md#getPersonMasterdataRole) | **GET** /masterdata/person/roles/{roleId} | Get a group type role
+[**getResourceMasterdata()**](MasterDataApi.md#getResourceMasterdata) | **GET** /resource/masterdata | Your GET endpoint
 
 
 ## `fetchMasterDataPerson()`
@@ -29,7 +30,7 @@ Endpoint deprecated. Please use `/person/masterdata`.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -59,7 +60,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -85,7 +86,7 @@ Get a master data for finance module
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -119,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -147,7 +148,7 @@ This endpoint returns an array with all roles of a group type.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -178,7 +179,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -206,7 +207,7 @@ The master data are the backbone of ChurchTools. This endpoint returns all data 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -237,26 +238,26 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getMasterDataPerson()`
+## `getPersonMasterdata()`
 
 ```php
-getMasterDataPerson(): \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response
+getPersonMasterdata(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
 ```
 
-Fetch all master data for the module \"People & Groups\"
+Get person & groups masterdata
 
-The master data are the backbone of ChurchTools. You can add new db fields, or change the available countries. This endpoint returns all data for that module to work with. Different endpoints don't include the master data directly but only state the ID for this data and this endpoint provides the data with all its details.
+Endpoint for getting all relevant masterdata for persons and groups.
 
 ### Example
 
@@ -265,7 +266,7 @@ The master data are the backbone of ChurchTools. You can add new db fields, or c
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -279,10 +280,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\MasterDataApi(
 );
 
 try {
-    $result = $apiInstance->getMasterDataPerson();
+    $result = $apiInstance->getPersonMasterdata();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MasterDataApi->getMasterDataPerson: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MasterDataApi->getPersonMasterdata: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -292,11 +293,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response**](../Model/GetMasterDataPerson200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response**](../Model/GetPersonMasterdata200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -307,10 +308,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `masterdataPersonRolesRoleIdGet()`
+## `getPersonMasterdataRole()`
 
 ```php
-masterdataPersonRolesRoleIdGet($role_id): \StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response
+getPersonMasterdataRole($role_id): \StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response
 ```
 
 Get a group type role
@@ -322,7 +323,7 @@ Get a group type role
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -337,10 +338,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\MasterDataApi(
 $role_id = 1; // int | ID of group type role
 
 try {
-    $result = $apiInstance->masterdataPersonRolesRoleIdGet($role_id);
+    $result = $apiInstance->getPersonMasterdataRole($role_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MasterDataApi->masterdataPersonRolesRoleIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MasterDataApi->getPersonMasterdataRole: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -352,11 +353,68 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response**](../Model/MasterdataPersonRolesRoleIdGet200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response**](../Model/GetPersonMasterdataRole200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getResourceMasterdata()`
+
+```php
+getResourceMasterdata(): \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response
+```
+
+Your GET endpoint
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\MasterDataApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getResourceMasterdata();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MasterDataApi->getResourceMasterdata: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response**](../Model/GetResourceMasterdata200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

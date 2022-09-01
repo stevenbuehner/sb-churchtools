@@ -58,10 +58,10 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'see_persons' => 'int',
+        'edit_persons' => 'bool',
         'invite_person' => 'bool',
-        'see_tags' => 'bool',
-        'edit_persons' => 'bool'
+        'see_persons' => 'int',
+        'see_tags' => 'bool'
     ];
 
     /**
@@ -72,10 +72,10 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'see_persons' => null,
+        'edit_persons' => null,
         'invite_person' => null,
-        'see_tags' => null,
-        'edit_persons' => null
+        'see_persons' => null,
+        'see_tags' => null
     ];
 
     /**
@@ -105,10 +105,10 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
      * @var string[]
      */
     protected static $attributeMap = [
-        'see_persons' => '+see persons',
+        'edit_persons' => '+edit persons',
         'invite_person' => '+invite person',
-        'see_tags' => '+see tags',
-        'edit_persons' => '+edit persons'
+        'see_persons' => '+see persons',
+        'see_tags' => '+see tags'
     ];
 
     /**
@@ -117,10 +117,10 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-        'see_persons' => 'setSeePersons',
+        'edit_persons' => 'setEditPersons',
         'invite_person' => 'setInvitePerson',
-        'see_tags' => 'setSeeTags',
-        'edit_persons' => 'setEditPersons'
+        'see_persons' => 'setSeePersons',
+        'see_tags' => 'setSeeTags'
     ];
 
     /**
@@ -129,10 +129,10 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
      * @var string[]
      */
     protected static $getters = [
-        'see_persons' => 'getSeePersons',
+        'edit_persons' => 'getEditPersons',
         'invite_person' => 'getInvitePerson',
-        'see_tags' => 'getSeeTags',
-        'edit_persons' => 'getEditPersons'
+        'see_persons' => 'getSeePersons',
+        'see_tags' => 'getSeeTags'
     ];
 
     /**
@@ -192,10 +192,10 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
      */
     public function __construct(array $data = null)
     {
-        $this->container['see_persons'] = $data['see_persons'] ?? null;
-        $this->container['invite_person'] = $data['invite_person'] ?? null;
-        $this->container['see_tags'] = $data['see_tags'] ?? null;
         $this->container['edit_persons'] = $data['edit_persons'] ?? null;
+        $this->container['invite_person'] = $data['invite_person'] ?? null;
+        $this->container['see_persons'] = $data['see_persons'] ?? null;
+        $this->container['see_tags'] = $data['see_tags'] ?? null;
     }
 
     /**
@@ -223,25 +223,25 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
 
 
     /**
-     * Gets see_persons
+     * Gets edit_persons
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getSeePersons()
+    public function getEditPersons()
     {
-        return $this->container['see_persons'];
+        return $this->container['edit_persons'];
     }
 
     /**
-     * Sets see_persons
+     * Sets edit_persons
      *
-     * @param int|null $see_persons Security Level to View Person
+     * @param bool|null $edit_persons edit_persons
      *
      * @return self
      */
-    public function setSeePersons($see_persons)
+    public function setEditPersons($edit_persons)
     {
-        $this->container['see_persons'] = $see_persons;
+        $this->container['edit_persons'] = $edit_persons;
 
         return $this;
     }
@@ -271,6 +271,30 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
     }
 
     /**
+     * Gets see_persons
+     *
+     * @return int|null
+     */
+    public function getSeePersons()
+    {
+        return $this->container['see_persons'];
+    }
+
+    /**
+     * Sets see_persons
+     *
+     * @param int|null $see_persons Security Level to View Person
+     *
+     * @return self
+     */
+    public function setSeePersons($see_persons)
+    {
+        $this->container['see_persons'] = $see_persons;
+
+        return $this;
+    }
+
+    /**
      * Gets see_tags
      *
      * @return bool|null
@@ -290,30 +314,6 @@ class GetInternalPermissionsForPerson200ResponseDataChurchdb implements ModelInt
     public function setSeeTags($see_tags)
     {
         $this->container['see_tags'] = $see_tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets edit_persons
-     *
-     * @return bool|null
-     */
-    public function getEditPersons()
-    {
-        return $this->container['edit_persons'];
-    }
-
-    /**
-     * Sets edit_persons
-     *
-     * @param bool|null $edit_persons edit_persons
-     *
-     * @return self
-     */
-    public function setEditPersons($edit_persons)
-    {
-        $this->container['edit_persons'] = $edit_persons;
 
         return $this;
     }

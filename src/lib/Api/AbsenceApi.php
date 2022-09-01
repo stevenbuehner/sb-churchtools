@@ -120,8 +120,8 @@ class AbsenceApi
      *
      * Delete absence
      *
-     * @param  string $person_id person_id (required)
-     * @param  string $id id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -137,8 +137,8 @@ class AbsenceApi
      *
      * Delete absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -197,8 +197,8 @@ class AbsenceApi
      *
      * Delete absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -218,8 +218,8 @@ class AbsenceApi
      *
      * Delete absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -255,8 +255,8 @@ class AbsenceApi
     /**
      * Create request for operation 'deletePersonsAbsence'
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -370,13 +370,13 @@ class AbsenceApi
      *
      * Fetch all absences for persons in a group
      *
-     * @param  string $group_id group_id (required)
+     * @param  int $group_id ID of group (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response
      */
     public function getGroupsAbsences($group_id, $from_date = null, $to_date = null)
     {
@@ -389,13 +389,13 @@ class AbsenceApi
      *
      * Fetch all absences for persons in a group
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGroupsAbsencesWithHttpInfo($group_id, $from_date = null, $to_date = null)
     {
@@ -438,23 +438,23 @@ class AbsenceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -475,7 +475,7 @@ class AbsenceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -490,7 +490,7 @@ class AbsenceApi
      *
      * Fetch all absences for persons in a group
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
@@ -512,7 +512,7 @@ class AbsenceApi
      *
      * Fetch all absences for persons in a group
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
@@ -521,7 +521,7 @@ class AbsenceApi
      */
     public function getGroupsAbsencesAsyncWithHttpInfo($group_id, $from_date = null, $to_date = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response';
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response';
         $request = $this->getGroupsAbsencesRequest($group_id, $from_date, $to_date);
 
         return $this->client
@@ -563,7 +563,7 @@ class AbsenceApi
     /**
      * Create request for operation 'getGroupsAbsences'
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
@@ -683,8 +683,8 @@ class AbsenceApi
      *
      * Fetch one absence
      *
-     * @param  string $person_id person_id (required)
-     * @param  string $id id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -701,8 +701,8 @@ class AbsenceApi
      *
      * Fetch one absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -801,8 +801,8 @@ class AbsenceApi
      *
      * Fetch one absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -822,8 +822,8 @@ class AbsenceApi
      *
      * Fetch one absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -872,8 +872,8 @@ class AbsenceApi
     /**
      * Create request for operation 'getPersonsAbsence'
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -987,13 +987,13 @@ class AbsenceApi
      *
      * Fetch all absences for a person
      *
-     * @param  string $person_id person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response
      */
     public function getPersonsAbsences($person_id, $from_date = null, $to_date = null)
     {
@@ -1006,13 +1006,13 @@ class AbsenceApi
      *
      * Fetch all absences for a person
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPersonsAbsencesWithHttpInfo($person_id, $from_date = null, $to_date = null)
     {
@@ -1055,23 +1055,23 @@ class AbsenceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1092,7 +1092,7 @@ class AbsenceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1107,7 +1107,7 @@ class AbsenceApi
      *
      * Fetch all absences for a person
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
@@ -1129,7 +1129,7 @@ class AbsenceApi
      *
      * Fetch all absences for a person
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
@@ -1138,7 +1138,7 @@ class AbsenceApi
      */
     public function getPersonsAbsencesAsyncWithHttpInfo($person_id, $from_date = null, $to_date = null)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response';
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response';
         $request = $this->getPersonsAbsencesRequest($person_id, $from_date, $to_date);
 
         return $this->client
@@ -1180,7 +1180,7 @@ class AbsenceApi
     /**
      * Create request for operation 'getPersonsAbsences'
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \DateTime $from_date Return absences starting from this date. (optional)
      * @param  \DateTime $to_date Return absences till this date. (optional)
      *
@@ -1300,7 +1300,7 @@ class AbsenceApi
      *
      * Create new absence for person
      *
-     * @param  string $person_id person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest $post_persons_absences_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1318,7 +1318,7 @@ class AbsenceApi
      *
      * Create new absence for person
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest $post_persons_absences_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1418,7 +1418,7 @@ class AbsenceApi
      *
      * Create new absence for person
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest $post_persons_absences_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1439,7 +1439,7 @@ class AbsenceApi
      *
      * Create new absence for person
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest $post_persons_absences_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1489,7 +1489,7 @@ class AbsenceApi
     /**
      * Create request for operation 'postPersonsAbsences'
      *
-     * @param  string $person_id (required)
+     * @param  int $person_id ID of person (required)
      * @param  \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest $post_persons_absences_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1596,8 +1596,8 @@ class AbsenceApi
      *
      * Update absence
      *
-     * @param  string $person_id person_id (required)
-     * @param  string $id id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest $put_persons_absence_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1615,8 +1615,8 @@ class AbsenceApi
      *
      * Update absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest $put_persons_absence_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1716,8 +1716,8 @@ class AbsenceApi
      *
      * Update absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest $put_persons_absence_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1738,8 +1738,8 @@ class AbsenceApi
      *
      * Update absence
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest $put_persons_absence_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1789,8 +1789,8 @@ class AbsenceApi
     /**
      * Create request for operation 'putPersonsAbsence'
      *
-     * @param  string $person_id (required)
-     * @param  string $id (required)
+     * @param  int $person_id ID of person (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest $put_persons_absence_request Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. (optional)
      *
      * @throws \InvalidArgumentException

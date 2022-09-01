@@ -29,7 +29,7 @@ Delete absence for person
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -41,8 +41,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 'person_id_example'; // string
-$id = 'id_example'; // string
+$person_id = 42; // int | ID of person
+$id = 1; // int | ID of Entity
 
 try {
     $apiInstance->deletePersonsAbsence($person_id, $id);
@@ -55,8 +55,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
- **id** | **string**|  |
+ **person_id** | **int**| ID of person |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -64,7 +64,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -78,7 +78,7 @@ void (empty response body)
 ## `getGroupsAbsences()`
 
 ```php
-getGroupsAbsences($group_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response
+getGroupsAbsences($group_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response
 ```
 
 Fetch all absences for persons in a group
@@ -92,7 +92,7 @@ This endpoint returns absences for persons in a group. Absences are sorted by st
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -104,7 +104,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 $from_date = Wed Nov 11 01:00:00 CET 2020; // \DateTime | Return absences starting from this date.
 $to_date = Tue Dec 01 01:00:00 CET 2020; // \DateTime | Return absences till this date.
 
@@ -120,17 +120,17 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
  **from_date** | **\DateTime**| Return absences starting from this date. | [optional]
  **to_date** | **\DateTime**| Return absences till this date. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response**](../Model/GetPersonsAbsences200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response**](../Model/GetGroupsAbsences200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -158,7 +158,7 @@ Fetch one absence for person.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -170,8 +170,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 'person_id_example'; // string
-$id = 'id_example'; // string
+$person_id = 42; // int | ID of person
+$id = 1; // int | ID of Entity
 
 try {
     $result = $apiInstance->getPersonsAbsence($person_id, $id);
@@ -185,8 +185,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
- **id** | **string**|  |
+ **person_id** | **int**| ID of person |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 ## `getPersonsAbsences()`
 
 ```php
-getPersonsAbsences($person_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response
+getPersonsAbsences($person_id, $from_date, $to_date): \StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response
 ```
 
 Fetch all absences for a person
@@ -222,7 +222,7 @@ This endpoint returns absences for a person. Absences are sorted by startDate th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -234,7 +234,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 'person_id_example'; // string
+$person_id = 42; // int | ID of person
 $from_date = Wed Nov 11 01:00:00 CET 2020; // \DateTime | Return absences starting from this date.
 $to_date = Tue Dec 01 01:00:00 CET 2020; // \DateTime | Return absences till this date.
 
@@ -250,17 +250,17 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
+ **person_id** | **int**| ID of person |
  **from_date** | **\DateTime**| Return absences starting from this date. | [optional]
  **to_date** | **\DateTime**| Return absences till this date. | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetPersonsAbsences200Response**](../Model/GetPersonsAbsences200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetGroupsAbsences200Response**](../Model/GetGroupsAbsences200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -288,7 +288,7 @@ Save new absence for this person.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -300,7 +300,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 'person_id_example'; // string
+$person_id = 42; // int | ID of person
 $post_persons_absences_request = new \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest(); // \StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest | Absences can be all-day or with a specific time. Either `startDate`, `endDate`  or `startTime`, `endTime` MUST be present. If `*Time` is given, the `*Date` value will be ignored.
 
 try {
@@ -315,7 +315,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
+ **person_id** | **int**| ID of person |
  **post_persons_absences_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest**](../Model/PostPersonsAbsencesRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional]
 
 ### Return type
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -352,7 +352,7 @@ Update absence for person.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -364,8 +364,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\AbsenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$person_id = 'person_id_example'; // string
-$id = 'id_example'; // string
+$person_id = 42; // int | ID of person
+$id = 1; // int | ID of Entity
 $put_persons_absence_request = new \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest(); // \StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest | Absences can be all-day or with a specific time. Either `startDate`, `endDate`  or `startTime`, `endTime` MUST be present. If `*Time` is given, the `*Date` value will be ignored.
 
 try {
@@ -380,8 +380,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
- **id** | **string**|  |
+ **person_id** | **int**| ID of person |
+ **id** | **int**| ID of Entity |
  **put_persons_absence_request** | [**\StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest**](../Model/PutPersonsAbsenceRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional]
 
 ### Return type
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

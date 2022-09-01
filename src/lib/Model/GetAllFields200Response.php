@@ -58,7 +58,7 @@ class GetAllFields200Response implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\GetAllFields200ResponseDataInner[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseMeta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllFields200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetAllFields200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllFields200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetAllFields200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllFields200ResponseMeta|null $meta meta
      *
      * @return self
      */

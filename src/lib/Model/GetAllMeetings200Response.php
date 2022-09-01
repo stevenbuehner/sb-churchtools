@@ -57,8 +57,8 @@ class GetAllMeetings200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\MetaPagination'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta'
     ];
 
     /**
@@ -212,7 +212,7 @@ class GetAllMeetings200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting[]|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class GetAllMeetings200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting[]|null $data data
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class GetAllMeetings200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetAllMeetings200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPagination|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null $meta meta
      *
      * @return self
      */

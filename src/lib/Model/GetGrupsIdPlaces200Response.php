@@ -58,16 +58,16 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'street' => 'string',
-        'district' => 'string',
-        'postalcode' => 'string',
         'city' => 'string',
-        'marker_url' => 'string',
+        'created_date' => 'string',
+        'created_person' => '\StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200ResponseCreatedPerson',
+        'district' => 'string',
         'geo_lat' => 'string',
         'geo_lng' => 'string',
-        'created_date' => 'string',
-        'created_person' => '\StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200ResponseCreatedPerson'
+        'marker_url' => 'string',
+        'name' => 'string',
+        'postalcode' => 'string',
+        'street' => 'string'
     ];
 
     /**
@@ -78,16 +78,16 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'street' => null,
-        'district' => null,
-        'postalcode' => null,
         'city' => null,
-        'marker_url' => null,
+        'created_date' => null,
+        'created_person' => null,
+        'district' => null,
         'geo_lat' => null,
         'geo_lng' => null,
-        'created_date' => null,
-        'created_person' => null
+        'marker_url' => null,
+        'name' => null,
+        'postalcode' => null,
+        'street' => null
     ];
 
     /**
@@ -117,16 +117,16 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'street' => 'street',
-        'district' => 'district',
-        'postalcode' => 'postalcode',
         'city' => 'city',
-        'marker_url' => 'markerUrl',
+        'created_date' => 'createdDate',
+        'created_person' => 'createdPerson',
+        'district' => 'district',
         'geo_lat' => 'geoLat',
         'geo_lng' => 'geoLng',
-        'created_date' => 'createdDate',
-        'created_person' => 'createdPerson'
+        'marker_url' => 'markerUrl',
+        'name' => 'name',
+        'postalcode' => 'postalcode',
+        'street' => 'street'
     ];
 
     /**
@@ -135,16 +135,16 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'street' => 'setStreet',
-        'district' => 'setDistrict',
-        'postalcode' => 'setPostalcode',
         'city' => 'setCity',
-        'marker_url' => 'setMarkerUrl',
+        'created_date' => 'setCreatedDate',
+        'created_person' => 'setCreatedPerson',
+        'district' => 'setDistrict',
         'geo_lat' => 'setGeoLat',
         'geo_lng' => 'setGeoLng',
-        'created_date' => 'setCreatedDate',
-        'created_person' => 'setCreatedPerson'
+        'marker_url' => 'setMarkerUrl',
+        'name' => 'setName',
+        'postalcode' => 'setPostalcode',
+        'street' => 'setStreet'
     ];
 
     /**
@@ -153,16 +153,16 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'street' => 'getStreet',
-        'district' => 'getDistrict',
-        'postalcode' => 'getPostalcode',
         'city' => 'getCity',
-        'marker_url' => 'getMarkerUrl',
+        'created_date' => 'getCreatedDate',
+        'created_person' => 'getCreatedPerson',
+        'district' => 'getDistrict',
         'geo_lat' => 'getGeoLat',
         'geo_lng' => 'getGeoLng',
-        'created_date' => 'getCreatedDate',
-        'created_person' => 'getCreatedPerson'
+        'marker_url' => 'getMarkerUrl',
+        'name' => 'getName',
+        'postalcode' => 'getPostalcode',
+        'street' => 'getStreet'
     ];
 
     /**
@@ -222,16 +222,16 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['street'] = $data['street'] ?? null;
-        $this->container['district'] = $data['district'] ?? null;
-        $this->container['postalcode'] = $data['postalcode'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
-        $this->container['marker_url'] = $data['marker_url'] ?? null;
-        $this->container['geo_lat'] = $data['geo_lat'] ?? null;
-        $this->container['geo_lng'] = $data['geo_lng'] ?? null;
         $this->container['created_date'] = $data['created_date'] ?? null;
         $this->container['created_person'] = $data['created_person'] ?? null;
+        $this->container['district'] = $data['district'] ?? null;
+        $this->container['geo_lat'] = $data['geo_lat'] ?? null;
+        $this->container['geo_lng'] = $data['geo_lng'] ?? null;
+        $this->container['marker_url'] = $data['marker_url'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['postalcode'] = $data['postalcode'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
     }
 
     /**
@@ -243,28 +243,16 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['street']) && (mb_strlen($this->container['street']) < 1)) {
-            $invalidProperties[] = "invalid value for 'street', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['district']) && (mb_strlen($this->container['district']) < 1)) {
-            $invalidProperties[] = "invalid value for 'district', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['postalcode']) && (mb_strlen($this->container['postalcode']) < 1)) {
-            $invalidProperties[] = "invalid value for 'postalcode', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['city']) && (mb_strlen($this->container['city']) < 1)) {
             $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['marker_url']) && (mb_strlen($this->container['marker_url']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marker_url', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['created_date']) && (mb_strlen($this->container['created_date']) < 1)) {
+            $invalidProperties[] = "invalid value for 'created_date', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['district']) && (mb_strlen($this->container['district']) < 1)) {
+            $invalidProperties[] = "invalid value for 'district', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['geo_lat']) && (mb_strlen($this->container['geo_lat']) < 1)) {
@@ -275,8 +263,20 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'geo_lng', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['created_date']) && (mb_strlen($this->container['created_date']) < 1)) {
-            $invalidProperties[] = "invalid value for 'created_date', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['marker_url']) && (mb_strlen($this->container['marker_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'marker_url', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['postalcode']) && (mb_strlen($this->container['postalcode']) < 1)) {
+            $invalidProperties[] = "invalid value for 'postalcode', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['street']) && (mb_strlen($this->container['street']) < 1)) {
+            $invalidProperties[] = "invalid value for 'street', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -293,122 +293,6 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Name of the place or the person livning there
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-
-        if (!is_null($name) && (mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
-        }
-
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string|null
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string|null $street Street
-     *
-     * @return self
-     */
-    public function setStreet($street)
-    {
-
-        if (!is_null($street) && (mb_strlen($street) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $street when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
-        }
-
-        $this->container['street'] = $street;
-
-        return $this;
-    }
-
-    /**
-     * Gets district
-     *
-     * @return string|null
-     */
-    public function getDistrict()
-    {
-        return $this->container['district'];
-    }
-
-    /**
-     * Sets district
-     *
-     * @param string|null $district Disctrict
-     *
-     * @return self
-     */
-    public function setDistrict($district)
-    {
-
-        if (!is_null($district) && (mb_strlen($district) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $district when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
-        }
-
-        $this->container['district'] = $district;
-
-        return $this;
-    }
-
-    /**
-     * Gets postalcode
-     *
-     * @return string|null
-     */
-    public function getPostalcode()
-    {
-        return $this->container['postalcode'];
-    }
-
-    /**
-     * Sets postalcode
-     *
-     * @param string|null $postalcode Zip code of the place
-     *
-     * @return self
-     */
-    public function setPostalcode($postalcode)
-    {
-
-        if (!is_null($postalcode) && (mb_strlen($postalcode) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $postalcode when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
-        }
-
-        $this->container['postalcode'] = $postalcode;
-
-        return $this;
-    }
 
     /**
      * Gets city
@@ -440,30 +324,83 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets marker_url
+     * Gets created_date
      *
      * @return string|null
      */
-    public function getMarkerUrl()
+    public function getCreatedDate()
     {
-        return $this->container['marker_url'];
+        return $this->container['created_date'];
     }
 
     /**
-     * Sets marker_url
+     * Sets created_date
      *
-     * @param string|null $marker_url url for the marker icon
+     * @param string|null $created_date Date of creation
      *
      * @return self
      */
-    public function setMarkerUrl($marker_url)
+    public function setCreatedDate($created_date)
     {
 
-        if (!is_null($marker_url) && (mb_strlen($marker_url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marker_url when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
+        if (!is_null($created_date) && (mb_strlen($created_date) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $created_date when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
         }
 
-        $this->container['marker_url'] = $marker_url;
+        $this->container['created_date'] = $created_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200ResponseCreatedPerson|null
+     */
+    public function getCreatedPerson()
+    {
+        return $this->container['created_person'];
+    }
+
+    /**
+     * Sets created_person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200ResponseCreatedPerson|null $created_person created_person
+     *
+     * @return self
+     */
+    public function setCreatedPerson($created_person)
+    {
+        $this->container['created_person'] = $created_person;
+
+        return $this;
+    }
+
+    /**
+     * Gets district
+     *
+     * @return string|null
+     */
+    public function getDistrict()
+    {
+        return $this->container['district'];
+    }
+
+    /**
+     * Sets district
+     *
+     * @param string|null $district Disctrict
+     *
+     * @return self
+     */
+    public function setDistrict($district)
+    {
+
+        if (!is_null($district) && (mb_strlen($district) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $district when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
+        }
+
+        $this->container['district'] = $district;
 
         return $this;
     }
@@ -527,54 +464,117 @@ class GetGrupsIdPlaces200Response implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets created_date
+     * Gets marker_url
      *
      * @return string|null
      */
-    public function getCreatedDate()
+    public function getMarkerUrl()
     {
-        return $this->container['created_date'];
+        return $this->container['marker_url'];
     }
 
     /**
-     * Sets created_date
+     * Sets marker_url
      *
-     * @param string|null $created_date Date of creation
+     * @param string|null $marker_url url for the marker icon
      *
      * @return self
      */
-    public function setCreatedDate($created_date)
+    public function setMarkerUrl($marker_url)
     {
 
-        if (!is_null($created_date) && (mb_strlen($created_date) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $created_date when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
+        if (!is_null($marker_url) && (mb_strlen($marker_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $marker_url when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
         }
 
-        $this->container['created_date'] = $created_date;
+        $this->container['marker_url'] = $marker_url;
 
         return $this;
     }
 
     /**
-     * Gets created_person
+     * Gets name
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200ResponseCreatedPerson|null
+     * @return string|null
      */
-    public function getCreatedPerson()
+    public function getName()
     {
-        return $this->container['created_person'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets created_person
+     * Sets name
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200ResponseCreatedPerson|null $created_person created_person
+     * @param string|null $name Name of the place or the person livning there
      *
      * @return self
      */
-    public function setCreatedPerson($created_person)
+    public function setName($name)
     {
-        $this->container['created_person'] = $created_person;
+
+        if (!is_null($name) && (mb_strlen($name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
+        }
+
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalcode
+     *
+     * @return string|null
+     */
+    public function getPostalcode()
+    {
+        return $this->container['postalcode'];
+    }
+
+    /**
+     * Sets postalcode
+     *
+     * @param string|null $postalcode Zip code of the place
+     *
+     * @return self
+     */
+    public function setPostalcode($postalcode)
+    {
+
+        if (!is_null($postalcode) && (mb_strlen($postalcode) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $postalcode when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
+        }
+
+        $this->container['postalcode'] = $postalcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string|null
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string|null $street Street
+     *
+     * @return self
+     */
+    public function setStreet($street)
+    {
+
+        if (!is_null($street) && (mb_strlen($street) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $street when calling GetGrupsIdPlaces200Response., must be bigger than or equal to 1.');
+        }
+
+        $this->container['street'] = $street;
 
         return $this;
     }

@@ -57,7 +57,7 @@ class CreateCashDiscount200Response implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataCashDiscountsInner'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200ResponseDataInner'
     ];
 
     /**
@@ -206,7 +206,7 @@ class CreateCashDiscount200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataCashDiscountsInner|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200ResponseDataInner|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class CreateCashDiscount200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataCashDiscountsInner|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCashDiscounts200ResponseDataInner|null $data data
      *
      * @return self
      */

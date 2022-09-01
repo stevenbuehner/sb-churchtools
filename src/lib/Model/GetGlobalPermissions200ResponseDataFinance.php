@@ -59,7 +59,7 @@ class GetGlobalPermissions200ResponseDataFinance implements ModelInterface, Arra
       */
     protected static $openAPITypes = [
         'view' => 'bool',
-        'view_accounting_period' => 'float[]'
+        'view_accounting_period' => 'int[]'
     ];
 
     /**
@@ -237,7 +237,7 @@ class GetGlobalPermissions200ResponseDataFinance implements ModelInterface, Arra
     /**
      * Gets view_accounting_period
      *
-     * @return float[]|null
+     * @return int[]|null
      */
     public function getViewAccountingPeriod()
     {
@@ -247,7 +247,7 @@ class GetGlobalPermissions200ResponseDataFinance implements ModelInterface, Arra
     /**
      * Sets view_accounting_period
      *
-     * @param float[]|null $view_accounting_period view_accounting_period
+     * @param int[]|null $view_accounting_period view_accounting_period
      *
      * @return self
      */

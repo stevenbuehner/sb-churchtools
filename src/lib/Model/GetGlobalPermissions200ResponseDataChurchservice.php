@@ -58,8 +58,8 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'view_history' => 'bool',
-        'view_fact' => 'float[]'
+        'view_fact' => 'int[]',
+        'view_history' => 'bool'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'view_history' => null,
-        'view_fact' => null
+        'view_fact' => null,
+        'view_history' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'view_history' => 'view history',
-        'view_fact' => 'view fact'
+        'view_fact' => 'view fact',
+        'view_history' => 'view history'
     ];
 
     /**
@@ -111,8 +111,8 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'view_history' => 'setViewHistory',
-        'view_fact' => 'setViewFact'
+        'view_fact' => 'setViewFact',
+        'view_history' => 'setViewHistory'
     ];
 
     /**
@@ -121,8 +121,8 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'view_history' => 'getViewHistory',
-        'view_fact' => 'getViewFact'
+        'view_fact' => 'getViewFact',
+        'view_history' => 'getViewHistory'
     ];
 
     /**
@@ -182,8 +182,8 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['view_history'] = $data['view_history'] ?? null;
         $this->container['view_fact'] = $data['view_fact'] ?? null;
+        $this->container['view_history'] = $data['view_history'] ?? null;
     }
 
     /**
@@ -211,6 +211,30 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
 
 
     /**
+     * Gets view_fact
+     *
+     * @return int[]|null
+     */
+    public function getViewFact()
+    {
+        return $this->container['view_fact'];
+    }
+
+    /**
+     * Sets view_fact
+     *
+     * @param int[]|null $view_fact view_fact
+     *
+     * @return self
+     */
+    public function setViewFact($view_fact)
+    {
+        $this->container['view_fact'] = $view_fact;
+
+        return $this;
+    }
+
+    /**
      * Gets view_history
      *
      * @return bool|null
@@ -230,30 +254,6 @@ class GetGlobalPermissions200ResponseDataChurchservice implements ModelInterface
     public function setViewHistory($view_history)
     {
         $this->container['view_history'] = $view_history;
-
-        return $this;
-    }
-
-    /**
-     * Gets view_fact
-     *
-     * @return float[]|null
-     */
-    public function getViewFact()
-    {
-        return $this->container['view_fact'];
-    }
-
-    /**
-     * Sets view_fact
-     *
-     * @param float[]|null $view_fact view_fact
-     *
-     * @return self
-     */
-    public function setViewFact($view_fact)
-    {
-        $this->container['view_fact'] = $view_fact;
 
         return $this;
     }

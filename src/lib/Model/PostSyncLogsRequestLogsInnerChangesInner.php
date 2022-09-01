@@ -57,10 +57,10 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
+        'field_attribute' => 'string',
         'field_name' => 'string',
-        'old_value' => 'string',
         'new_value' => 'string',
-        'field_attribute' => 'string'
+        'old_value' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'field_attribute' => null,
         'field_name' => null,
-        'old_value' => null,
         'new_value' => null,
-        'field_attribute' => null
+        'old_value' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
+        'field_attribute' => 'fieldAttribute',
         'field_name' => 'fieldName',
-        'old_value' => 'oldValue',
         'new_value' => 'newValue',
-        'field_attribute' => 'fieldAttribute'
+        'old_value' => 'oldValue'
     ];
 
     /**
@@ -116,10 +116,10 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
+        'field_attribute' => 'setFieldAttribute',
         'field_name' => 'setFieldName',
-        'old_value' => 'setOldValue',
         'new_value' => 'setNewValue',
-        'field_attribute' => 'setFieldAttribute'
+        'old_value' => 'setOldValue'
     ];
 
     /**
@@ -128,10 +128,10 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
+        'field_attribute' => 'getFieldAttribute',
         'field_name' => 'getFieldName',
-        'old_value' => 'getOldValue',
         'new_value' => 'getNewValue',
-        'field_attribute' => 'getFieldAttribute'
+        'old_value' => 'getOldValue'
     ];
 
     /**
@@ -191,10 +191,10 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['field_name'] = $data['field_name'] ?? null;
-        $this->container['old_value'] = $data['old_value'] ?? null;
-        $this->container['new_value'] = $data['new_value'] ?? null;
         $this->container['field_attribute'] = $data['field_attribute'] ?? null;
+        $this->container['field_name'] = $data['field_name'] ?? null;
+        $this->container['new_value'] = $data['new_value'] ?? null;
+        $this->container['old_value'] = $data['old_value'] ?? null;
     }
 
     /**
@@ -222,6 +222,30 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
 
 
     /**
+     * Gets field_attribute
+     *
+     * @return string|null
+     */
+    public function getFieldAttribute()
+    {
+        return $this->container['field_attribute'];
+    }
+
+    /**
+     * Sets field_attribute
+     *
+     * @param string|null $field_attribute Secondary value for FieldName. Used for Group Roles.
+     *
+     * @return self
+     */
+    public function setFieldAttribute($field_attribute)
+    {
+        $this->container['field_attribute'] = $field_attribute;
+
+        return $this;
+    }
+
+    /**
      * Gets field_name
      *
      * @return string|null
@@ -241,30 +265,6 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
     public function setFieldName($field_name)
     {
         $this->container['field_name'] = $field_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets old_value
-     *
-     * @return string|null
-     */
-    public function getOldValue()
-    {
-        return $this->container['old_value'];
-    }
-
-    /**
-     * Sets old_value
-     *
-     * @param string|null $old_value `null` if new
-     *
-     * @return self
-     */
-    public function setOldValue($old_value)
-    {
-        $this->container['old_value'] = $old_value;
 
         return $this;
     }
@@ -294,25 +294,25 @@ class PostSyncLogsRequestLogsInnerChangesInner implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets field_attribute
+     * Gets old_value
      *
      * @return string|null
      */
-    public function getFieldAttribute()
+    public function getOldValue()
     {
-        return $this->container['field_attribute'];
+        return $this->container['old_value'];
     }
 
     /**
-     * Sets field_attribute
+     * Sets old_value
      *
-     * @param string|null $field_attribute Secondary value for FieldName. Used for Group Roles.
+     * @param string|null $old_value `null` if new
      *
      * @return self
      */
-    public function setFieldAttribute($field_attribute)
+    public function setOldValue($old_value)
     {
-        $this->container['field_attribute'] = $field_attribute;
+        $this->container['old_value'] = $old_value;
 
         return $this;
     }

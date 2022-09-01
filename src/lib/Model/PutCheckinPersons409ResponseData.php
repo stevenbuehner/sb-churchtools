@@ -57,11 +57,11 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string',
-        'translated_message' => 'string',
-        'message_key' => 'string',
         'args' => 'mixed[]',
-        'errors' => 'mixed[]'
+        'errors' => 'mixed[]',
+        'message' => 'string',
+        'message_key' => 'string',
+        'translated_message' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null,
-        'translated_message' => null,
-        'message_key' => null,
         'args' => null,
-        'errors' => null
+        'errors' => null,
+        'message' => null,
+        'message_key' => null,
+        'translated_message' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message',
-        'translated_message' => 'translatedMessage',
-        'message_key' => 'messageKey',
         'args' => 'args',
-        'errors' => 'errors'
+        'errors' => 'errors',
+        'message' => 'message',
+        'message_key' => 'messageKey',
+        'translated_message' => 'translatedMessage'
     ];
 
     /**
@@ -119,11 +119,11 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage',
-        'translated_message' => 'setTranslatedMessage',
-        'message_key' => 'setMessageKey',
         'args' => 'setArgs',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'message' => 'setMessage',
+        'message_key' => 'setMessageKey',
+        'translated_message' => 'setTranslatedMessage'
     ];
 
     /**
@@ -132,11 +132,11 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage',
-        'translated_message' => 'getTranslatedMessage',
-        'message_key' => 'getMessageKey',
         'args' => 'getArgs',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'message' => 'getMessage',
+        'message_key' => 'getMessageKey',
+        'translated_message' => 'getTranslatedMessage'
     ];
 
     /**
@@ -196,11 +196,11 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['translated_message'] = $data['translated_message'] ?? null;
-        $this->container['message_key'] = $data['message_key'] ?? null;
         $this->container['args'] = $data['args'] ?? null;
         $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['message_key'] = $data['message_key'] ?? null;
+        $this->container['translated_message'] = $data['translated_message'] ?? null;
     }
 
     /**
@@ -212,18 +212,17 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
+        if ($this->container['args'] === null) {
+            $invalidProperties[] = "'args' can't be null";
+        }
+        if ($this->container['errors'] === null) {
+            $invalidProperties[] = "'errors' can't be null";
+        }
         if ($this->container['message'] === null) {
             $invalidProperties[] = "'message' can't be null";
         }
         if ((mb_strlen($this->container['message']) < 1)) {
             $invalidProperties[] = "invalid value for 'message', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['translated_message'] === null) {
-            $invalidProperties[] = "'translated_message' can't be null";
-        }
-        if ((mb_strlen($this->container['translated_message']) < 1)) {
-            $invalidProperties[] = "invalid value for 'translated_message', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['message_key'] === null) {
@@ -233,12 +232,13 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'message_key', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['args'] === null) {
-            $invalidProperties[] = "'args' can't be null";
+        if ($this->container['translated_message'] === null) {
+            $invalidProperties[] = "'translated_message' can't be null";
         }
-        if ($this->container['errors'] === null) {
-            $invalidProperties[] = "'errors' can't be null";
+        if ((mb_strlen($this->container['translated_message']) < 1)) {
+            $invalidProperties[] = "invalid value for 'translated_message', the character length must be bigger than or equal to 1.";
         }
+
         return $invalidProperties;
     }
 
@@ -253,93 +253,6 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-
-        if ((mb_strlen($message) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $message when calling PutCheckinPersons409ResponseData., must be bigger than or equal to 1.');
-        }
-
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets translated_message
-     *
-     * @return string
-     */
-    public function getTranslatedMessage()
-    {
-        return $this->container['translated_message'];
-    }
-
-    /**
-     * Sets translated_message
-     *
-     * @param string $translated_message translated_message
-     *
-     * @return self
-     */
-    public function setTranslatedMessage($translated_message)
-    {
-
-        if ((mb_strlen($translated_message) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $translated_message when calling PutCheckinPersons409ResponseData., must be bigger than or equal to 1.');
-        }
-
-        $this->container['translated_message'] = $translated_message;
-
-        return $this;
-    }
-
-    /**
-     * Gets message_key
-     *
-     * @return string
-     */
-    public function getMessageKey()
-    {
-        return $this->container['message_key'];
-    }
-
-    /**
-     * Sets message_key
-     *
-     * @param string $message_key message_key
-     *
-     * @return self
-     */
-    public function setMessageKey($message_key)
-    {
-
-        if ((mb_strlen($message_key) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $message_key when calling PutCheckinPersons409ResponseData., must be bigger than or equal to 1.');
-        }
-
-        $this->container['message_key'] = $message_key;
-
-        return $this;
-    }
 
     /**
      * Gets args
@@ -385,6 +298,93 @@ class PutCheckinPersons409ResponseData implements ModelInterface, ArrayAccess, \
     public function setErrors($errors)
     {
         $this->container['errors'] = $errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string $message message
+     *
+     * @return self
+     */
+    public function setMessage($message)
+    {
+
+        if ((mb_strlen($message) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $message when calling PutCheckinPersons409ResponseData., must be bigger than or equal to 1.');
+        }
+
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets message_key
+     *
+     * @return string
+     */
+    public function getMessageKey()
+    {
+        return $this->container['message_key'];
+    }
+
+    /**
+     * Sets message_key
+     *
+     * @param string $message_key message_key
+     *
+     * @return self
+     */
+    public function setMessageKey($message_key)
+    {
+
+        if ((mb_strlen($message_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $message_key when calling PutCheckinPersons409ResponseData., must be bigger than or equal to 1.');
+        }
+
+        $this->container['message_key'] = $message_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets translated_message
+     *
+     * @return string
+     */
+    public function getTranslatedMessage()
+    {
+        return $this->container['translated_message'];
+    }
+
+    /**
+     * Sets translated_message
+     *
+     * @param string $translated_message translated_message
+     *
+     * @return self
+     */
+    public function setTranslatedMessage($translated_message)
+    {
+
+        if ((mb_strlen($translated_message) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $translated_message when calling PutCheckinPersons409ResponseData., must be bigger than or equal to 1.');
+        }
+
+        $this->container['translated_message'] = $translated_message;
 
         return $this;
     }

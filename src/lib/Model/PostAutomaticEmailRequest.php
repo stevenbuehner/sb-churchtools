@@ -57,12 +57,12 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'role_id' => 'float',
+        'body' => 'string',
+        'is_active' => 'int',
         'is_for_waitinglist' => 'bool',
-        'is_active' => 'float',
-        'sender_id' => 'float',
-        'subject' => 'string',
-        'body' => 'string'
+        'role_id' => 'int',
+        'sender_id' => 'int',
+        'subject' => 'string'
     ];
 
     /**
@@ -73,12 +73,12 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'role_id' => null,
-        'is_for_waitinglist' => null,
+        'body' => null,
         'is_active' => null,
+        'is_for_waitinglist' => null,
+        'role_id' => null,
         'sender_id' => null,
-        'subject' => null,
-        'body' => null
+        'subject' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'role_id' => 'roleId',
-        'is_for_waitinglist' => 'isForWaitinglist',
+        'body' => 'body',
         'is_active' => 'isActive',
+        'is_for_waitinglist' => 'isForWaitinglist',
+        'role_id' => 'roleId',
         'sender_id' => 'senderId',
-        'subject' => 'subject',
-        'body' => 'body'
+        'subject' => 'subject'
     ];
 
     /**
@@ -122,12 +122,12 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'role_id' => 'setRoleId',
-        'is_for_waitinglist' => 'setIsForWaitinglist',
+        'body' => 'setBody',
         'is_active' => 'setIsActive',
+        'is_for_waitinglist' => 'setIsForWaitinglist',
+        'role_id' => 'setRoleId',
         'sender_id' => 'setSenderId',
-        'subject' => 'setSubject',
-        'body' => 'setBody'
+        'subject' => 'setSubject'
     ];
 
     /**
@@ -136,12 +136,12 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'role_id' => 'getRoleId',
-        'is_for_waitinglist' => 'getIsForWaitinglist',
+        'body' => 'getBody',
         'is_active' => 'getIsActive',
+        'is_for_waitinglist' => 'getIsForWaitinglist',
+        'role_id' => 'getRoleId',
         'sender_id' => 'getSenderId',
-        'subject' => 'getSubject',
-        'body' => 'getBody'
+        'subject' => 'getSubject'
     ];
 
     /**
@@ -201,12 +201,12 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['role_id'] = $data['role_id'] ?? null;
-        $this->container['is_for_waitinglist'] = $data['is_for_waitinglist'] ?? null;
+        $this->container['body'] = $data['body'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
+        $this->container['is_for_waitinglist'] = $data['is_for_waitinglist'] ?? null;
+        $this->container['role_id'] = $data['role_id'] ?? null;
         $this->container['sender_id'] = $data['sender_id'] ?? null;
         $this->container['subject'] = $data['subject'] ?? null;
-        $this->container['body'] = $data['body'] ?? null;
     }
 
     /**
@@ -218,23 +218,23 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['role_id'] === null) {
-            $invalidProperties[] = "'role_id' can't be null";
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['is_for_waitinglist'] === null) {
             $invalidProperties[] = "'is_for_waitinglist' can't be null";
         }
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
+        if ($this->container['role_id'] === null) {
+            $invalidProperties[] = "'role_id' can't be null";
         }
         if ($this->container['sender_id'] === null) {
             $invalidProperties[] = "'sender_id' can't be null";
         }
         if ($this->container['subject'] === null) {
             $invalidProperties[] = "'subject' can't be null";
-        }
-        if ($this->container['body'] === null) {
-            $invalidProperties[] = "'body' can't be null";
         }
         return $invalidProperties;
     }
@@ -252,25 +252,49 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets role_id
+     * Gets body
      *
-     * @return float
+     * @return string
      */
-    public function getRoleId()
+    public function getBody()
     {
-        return $this->container['role_id'];
+        return $this->container['body'];
     }
 
     /**
-     * Sets role_id
+     * Sets body
      *
-     * @param float $role_id Grouptype Role Id; Must be a role of the group
+     * @param string $body body
      *
      * @return self
      */
-    public function setRoleId($role_id)
+    public function setBody($body)
     {
-        $this->container['role_id'] = $role_id;
+        $this->container['body'] = $body;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return int
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param int $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }
@@ -300,25 +324,25 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets is_active
+     * Gets role_id
      *
-     * @return float
+     * @return int
      */
-    public function getIsActive()
+    public function getRoleId()
     {
-        return $this->container['is_active'];
+        return $this->container['role_id'];
     }
 
     /**
-     * Sets is_active
+     * Sets role_id
      *
-     * @param float $is_active is_active
+     * @param int $role_id Grouptype Role Id; Must be a role of the group
      *
      * @return self
      */
-    public function setIsActive($is_active)
+    public function setRoleId($role_id)
     {
-        $this->container['is_active'] = $is_active;
+        $this->container['role_id'] = $role_id;
 
         return $this;
     }
@@ -326,7 +350,7 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets sender_id
      *
-     * @return float
+     * @return int
      */
     public function getSenderId()
     {
@@ -336,7 +360,7 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets sender_id
      *
-     * @param float $sender_id PersonId; Must be a leader in that group
+     * @param int $sender_id PersonId; Must be a leader in that group
      *
      * @return self
      */
@@ -367,30 +391,6 @@ class PostAutomaticEmailRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function setSubject($subject)
     {
         $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets body
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     *
-     * @param string $body body
-     *
-     * @return self
-     */
-    public function setBody($body)
-    {
-        $this->container['body'] = $body;
 
         return $this;
     }

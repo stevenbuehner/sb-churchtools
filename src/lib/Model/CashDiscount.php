@@ -57,11 +57,11 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'rate' => 'float',
-        'note' => 'string',
         'account_id' => 'int',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'id' => 'int',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'note' => 'string',
+        'rate' => 'float'
     ];
 
     /**
@@ -72,11 +72,11 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'rate' => 'float',
-        'note' => null,
         'account_id' => null,
-        'meta' => null
+        'id' => null,
+        'meta' => null,
+        'note' => null,
+        'rate' => 'float'
     ];
 
     /**
@@ -106,11 +106,11 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'rate' => 'rate',
-        'note' => 'note',
         'account_id' => 'accountId',
-        'meta' => 'meta'
+        'id' => 'id',
+        'meta' => 'meta',
+        'note' => 'note',
+        'rate' => 'rate'
     ];
 
     /**
@@ -119,11 +119,11 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'rate' => 'setRate',
-        'note' => 'setNote',
         'account_id' => 'setAccountId',
-        'meta' => 'setMeta'
+        'id' => 'setId',
+        'meta' => 'setMeta',
+        'note' => 'setNote',
+        'rate' => 'setRate'
     ];
 
     /**
@@ -132,11 +132,11 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'rate' => 'getRate',
-        'note' => 'getNote',
         'account_id' => 'getAccountId',
-        'meta' => 'getMeta'
+        'id' => 'getId',
+        'meta' => 'getMeta',
+        'note' => 'getNote',
+        'rate' => 'getRate'
     ];
 
     /**
@@ -196,11 +196,11 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['rate'] = $data['rate'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
         $this->container['account_id'] = $data['account_id'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['rate'] = $data['rate'] ?? null;
     }
 
     /**
@@ -228,6 +228,30 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets account_id
+     *
+     * @return int|null
+     */
+    public function getAccountId()
+    {
+        return $this->container['account_id'];
+    }
+
+    /**
+     * Sets account_id
+     *
+     * @param int|null $account_id account_id
+     *
+     * @return self
+     */
+    public function setAccountId($account_id)
+    {
+        $this->container['account_id'] = $account_id;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -252,25 +276,25 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets rate
+     * Gets meta
      *
-     * @return float|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
-    public function getRate()
+    public function getMeta()
     {
-        return $this->container['rate'];
+        return $this->container['meta'];
     }
 
     /**
-     * Sets rate
+     * Sets meta
      *
-     * @param float|null $rate rate
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */
-    public function setRate($rate)
+    public function setMeta($meta)
     {
-        $this->container['rate'] = $rate;
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -300,49 +324,25 @@ class CashDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets account_id
+     * Gets rate
      *
-     * @return int|null
+     * @return float|null
      */
-    public function getAccountId()
+    public function getRate()
     {
-        return $this->container['account_id'];
+        return $this->container['rate'];
     }
 
     /**
-     * Sets account_id
+     * Sets rate
      *
-     * @param int|null $account_id account_id
+     * @param float|null $rate rate
      *
      * @return self
      */
-    public function setAccountId($account_id)
+    public function setRate($rate)
     {
-        $this->container['account_id'] = $account_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['rate'] = $rate;
 
         return $this;
     }

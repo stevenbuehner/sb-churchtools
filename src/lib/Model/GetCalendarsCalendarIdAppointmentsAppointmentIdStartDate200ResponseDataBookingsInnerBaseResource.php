@@ -57,18 +57,18 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'admin_ids' => 'mixed',
+        'does_require_cal_entry' => 'bool',
+        'i_cal_location' => 'string',
+        'id' => 'int',
+        'is_auto_accept' => 'bool',
+        'is_virtual' => 'bool',
+        'location' => 'string',
         'name' => 'string',
         'name_translated' => 'string',
-        'sort_key' => 'int',
-        'resource_type_id' => 'float',
-        'location' => 'string',
-        'i_cal_location' => 'string',
-        'is_auto_accept' => 'bool',
-        'does_require_cal_entry' => 'bool',
-        'is_virtual' => 'bool',
-        'admin_ids' => 'mixed',
-        'random_string' => 'string'
+        'random_string' => 'string',
+        'resource_type_id' => 'int',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -79,18 +79,18 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'admin_ids' => null,
+        'does_require_cal_entry' => null,
+        'i_cal_location' => null,
         'id' => null,
+        'is_auto_accept' => null,
+        'is_virtual' => null,
+        'location' => null,
         'name' => null,
         'name_translated' => null,
-        'sort_key' => null,
+        'random_string' => null,
         'resource_type_id' => null,
-        'location' => null,
-        'i_cal_location' => null,
-        'is_auto_accept' => null,
-        'does_require_cal_entry' => null,
-        'is_virtual' => null,
-        'admin_ids' => null,
-        'random_string' => null
+        'sort_key' => null
     ];
 
     /**
@@ -120,18 +120,18 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      * @var string[]
      */
     protected static $attributeMap = [
+        'admin_ids' => 'adminIds',
+        'does_require_cal_entry' => 'doesRequireCalEntry',
+        'i_cal_location' => 'iCalLocation',
         'id' => 'id',
+        'is_auto_accept' => 'isAutoAccept',
+        'is_virtual' => 'isVirtual',
+        'location' => 'location',
         'name' => 'name',
         'name_translated' => 'nameTranslated',
-        'sort_key' => 'sortKey',
+        'random_string' => 'randomString',
         'resource_type_id' => 'resourceTypeId',
-        'location' => 'location',
-        'i_cal_location' => 'iCalLocation',
-        'is_auto_accept' => 'isAutoAccept',
-        'does_require_cal_entry' => 'doesRequireCalEntry',
-        'is_virtual' => 'isVirtual',
-        'admin_ids' => 'adminIds',
-        'random_string' => 'randomString'
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -140,18 +140,18 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      * @var string[]
      */
     protected static $setters = [
+        'admin_ids' => 'setAdminIds',
+        'does_require_cal_entry' => 'setDoesRequireCalEntry',
+        'i_cal_location' => 'setICalLocation',
         'id' => 'setId',
+        'is_auto_accept' => 'setIsAutoAccept',
+        'is_virtual' => 'setIsVirtual',
+        'location' => 'setLocation',
         'name' => 'setName',
         'name_translated' => 'setNameTranslated',
-        'sort_key' => 'setSortKey',
+        'random_string' => 'setRandomString',
         'resource_type_id' => 'setResourceTypeId',
-        'location' => 'setLocation',
-        'i_cal_location' => 'setICalLocation',
-        'is_auto_accept' => 'setIsAutoAccept',
-        'does_require_cal_entry' => 'setDoesRequireCalEntry',
-        'is_virtual' => 'setIsVirtual',
-        'admin_ids' => 'setAdminIds',
-        'random_string' => 'setRandomString'
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -160,18 +160,18 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      * @var string[]
      */
     protected static $getters = [
+        'admin_ids' => 'getAdminIds',
+        'does_require_cal_entry' => 'getDoesRequireCalEntry',
+        'i_cal_location' => 'getICalLocation',
         'id' => 'getId',
+        'is_auto_accept' => 'getIsAutoAccept',
+        'is_virtual' => 'getIsVirtual',
+        'location' => 'getLocation',
         'name' => 'getName',
         'name_translated' => 'getNameTranslated',
-        'sort_key' => 'getSortKey',
+        'random_string' => 'getRandomString',
         'resource_type_id' => 'getResourceTypeId',
-        'location' => 'getLocation',
-        'i_cal_location' => 'getICalLocation',
-        'is_auto_accept' => 'getIsAutoAccept',
-        'does_require_cal_entry' => 'getDoesRequireCalEntry',
-        'is_virtual' => 'getIsVirtual',
-        'admin_ids' => 'getAdminIds',
-        'random_string' => 'getRandomString'
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -231,18 +231,18 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
      */
     public function __construct(array $data = null)
     {
+        $this->container['admin_ids'] = $data['admin_ids'] ?? null;
+        $this->container['does_require_cal_entry'] = $data['does_require_cal_entry'] ?? null;
+        $this->container['i_cal_location'] = $data['i_cal_location'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_auto_accept'] = $data['is_auto_accept'] ?? null;
+        $this->container['is_virtual'] = $data['is_virtual'] ?? null;
+        $this->container['location'] = $data['location'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['resource_type_id'] = $data['resource_type_id'] ?? null;
-        $this->container['location'] = $data['location'] ?? null;
-        $this->container['i_cal_location'] = $data['i_cal_location'] ?? null;
-        $this->container['is_auto_accept'] = $data['is_auto_accept'] ?? null;
-        $this->container['does_require_cal_entry'] = $data['does_require_cal_entry'] ?? null;
-        $this->container['is_virtual'] = $data['is_virtual'] ?? null;
-        $this->container['admin_ids'] = $data['admin_ids'] ?? null;
         $this->container['random_string'] = $data['random_string'] ?? null;
+        $this->container['resource_type_id'] = $data['resource_type_id'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
     /**
@@ -254,8 +254,23 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     {
         $invalidProperties = [];
 
+        if ($this->container['does_require_cal_entry'] === null) {
+            $invalidProperties[] = "'does_require_cal_entry' can't be null";
+        }
+        if ($this->container['i_cal_location'] === null) {
+            $invalidProperties[] = "'i_cal_location' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['is_auto_accept'] === null) {
+            $invalidProperties[] = "'is_auto_accept' can't be null";
+        }
+        if ($this->container['is_virtual'] === null) {
+            $invalidProperties[] = "'is_virtual' can't be null";
+        }
+        if ($this->container['location'] === null) {
+            $invalidProperties[] = "'location' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
@@ -271,27 +286,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
             $invalidProperties[] = "invalid value for 'name_translated', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['sort_key'] === null) {
-            $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['resource_type_id'] === null) {
-            $invalidProperties[] = "'resource_type_id' can't be null";
-        }
-        if ($this->container['location'] === null) {
-            $invalidProperties[] = "'location' can't be null";
-        }
-        if ($this->container['i_cal_location'] === null) {
-            $invalidProperties[] = "'i_cal_location' can't be null";
-        }
-        if ($this->container['is_auto_accept'] === null) {
-            $invalidProperties[] = "'is_auto_accept' can't be null";
-        }
-        if ($this->container['does_require_cal_entry'] === null) {
-            $invalidProperties[] = "'does_require_cal_entry' can't be null";
-        }
-        if ($this->container['is_virtual'] === null) {
-            $invalidProperties[] = "'is_virtual' can't be null";
-        }
         if ($this->container['random_string'] === null) {
             $invalidProperties[] = "'random_string' can't be null";
         }
@@ -299,6 +293,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
             $invalidProperties[] = "invalid value for 'random_string', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['resource_type_id'] === null) {
+            $invalidProperties[] = "'resource_type_id' can't be null";
+        }
+        if ($this->container['sort_key'] === null) {
+            $invalidProperties[] = "'sort_key' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -315,9 +315,81 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
 
 
     /**
+     * Gets admin_ids
+     *
+     * @return mixed|null
+     */
+    public function getAdminIds()
+    {
+        return $this->container['admin_ids'];
+    }
+
+    /**
+     * Sets admin_ids
+     *
+     * @param mixed|null $admin_ids admin_ids
+     *
+     * @return self
+     */
+    public function setAdminIds($admin_ids)
+    {
+        $this->container['admin_ids'] = $admin_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets does_require_cal_entry
+     *
+     * @return bool
+     */
+    public function getDoesRequireCalEntry()
+    {
+        return $this->container['does_require_cal_entry'];
+    }
+
+    /**
+     * Sets does_require_cal_entry
+     *
+     * @param bool $does_require_cal_entry does_require_cal_entry
+     *
+     * @return self
+     */
+    public function setDoesRequireCalEntry($does_require_cal_entry)
+    {
+        $this->container['does_require_cal_entry'] = $does_require_cal_entry;
+
+        return $this;
+    }
+
+    /**
+     * Gets i_cal_location
+     *
+     * @return string
+     */
+    public function getICalLocation()
+    {
+        return $this->container['i_cal_location'];
+    }
+
+    /**
+     * Sets i_cal_location
+     *
+     * @param string $i_cal_location i_cal_location
+     *
+     * @return self
+     */
+    public function setICalLocation($i_cal_location)
+    {
+        $this->container['i_cal_location'] = $i_cal_location;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -327,13 +399,85 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_auto_accept
+     *
+     * @return bool
+     */
+    public function getIsAutoAccept()
+    {
+        return $this->container['is_auto_accept'];
+    }
+
+    /**
+     * Sets is_auto_accept
+     *
+     * @param bool $is_auto_accept is_auto_accept
+     *
+     * @return self
+     */
+    public function setIsAutoAccept($is_auto_accept)
+    {
+        $this->container['is_auto_accept'] = $is_auto_accept;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_virtual
+     *
+     * @return bool
+     */
+    public function getIsVirtual()
+    {
+        return $this->container['is_virtual'];
+    }
+
+    /**
+     * Sets is_virtual
+     *
+     * @param bool $is_virtual is_virtual
+     *
+     * @return self
+     */
+    public function setIsVirtual($is_virtual)
+    {
+        $this->container['is_virtual'] = $is_virtual;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param string $location location
+     *
+     * @return self
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
 
         return $this;
     }
@@ -397,198 +541,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     }
 
     /**
-     * Gets sort_key
-     *
-     * @return int
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param int $sort_key sort_key
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets resource_type_id
-     *
-     * @return float
-     */
-    public function getResourceTypeId()
-    {
-        return $this->container['resource_type_id'];
-    }
-
-    /**
-     * Sets resource_type_id
-     *
-     * @param float $resource_type_id resource_type_id
-     *
-     * @return self
-     */
-    public function setResourceTypeId($resource_type_id)
-    {
-        $this->container['resource_type_id'] = $resource_type_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets location
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->container['location'];
-    }
-
-    /**
-     * Sets location
-     *
-     * @param string $location location
-     *
-     * @return self
-     */
-    public function setLocation($location)
-    {
-        $this->container['location'] = $location;
-
-        return $this;
-    }
-
-    /**
-     * Gets i_cal_location
-     *
-     * @return string
-     */
-    public function getICalLocation()
-    {
-        return $this->container['i_cal_location'];
-    }
-
-    /**
-     * Sets i_cal_location
-     *
-     * @param string $i_cal_location i_cal_location
-     *
-     * @return self
-     */
-    public function setICalLocation($i_cal_location)
-    {
-        $this->container['i_cal_location'] = $i_cal_location;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_auto_accept
-     *
-     * @return bool
-     */
-    public function getIsAutoAccept()
-    {
-        return $this->container['is_auto_accept'];
-    }
-
-    /**
-     * Sets is_auto_accept
-     *
-     * @param bool $is_auto_accept is_auto_accept
-     *
-     * @return self
-     */
-    public function setIsAutoAccept($is_auto_accept)
-    {
-        $this->container['is_auto_accept'] = $is_auto_accept;
-
-        return $this;
-    }
-
-    /**
-     * Gets does_require_cal_entry
-     *
-     * @return bool
-     */
-    public function getDoesRequireCalEntry()
-    {
-        return $this->container['does_require_cal_entry'];
-    }
-
-    /**
-     * Sets does_require_cal_entry
-     *
-     * @param bool $does_require_cal_entry does_require_cal_entry
-     *
-     * @return self
-     */
-    public function setDoesRequireCalEntry($does_require_cal_entry)
-    {
-        $this->container['does_require_cal_entry'] = $does_require_cal_entry;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_virtual
-     *
-     * @return bool
-     */
-    public function getIsVirtual()
-    {
-        return $this->container['is_virtual'];
-    }
-
-    /**
-     * Sets is_virtual
-     *
-     * @param bool $is_virtual is_virtual
-     *
-     * @return self
-     */
-    public function setIsVirtual($is_virtual)
-    {
-        $this->container['is_virtual'] = $is_virtual;
-
-        return $this;
-    }
-
-    /**
-     * Gets admin_ids
-     *
-     * @return mixed|null
-     */
-    public function getAdminIds()
-    {
-        return $this->container['admin_ids'];
-    }
-
-    /**
-     * Sets admin_ids
-     *
-     * @param mixed|null $admin_ids admin_ids
-     *
-     * @return self
-     */
-    public function setAdminIds($admin_ids)
-    {
-        $this->container['admin_ids'] = $admin_ids;
-
-        return $this;
-    }
-
-    /**
      * Gets random_string
      *
      * @return string
@@ -613,6 +565,54 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
         }
 
         $this->container['random_string'] = $random_string;
+
+        return $this;
+    }
+
+    /**
+     * Gets resource_type_id
+     *
+     * @return int
+     */
+    public function getResourceTypeId()
+    {
+        return $this->container['resource_type_id'];
+    }
+
+    /**
+     * Sets resource_type_id
+     *
+     * @param int $resource_type_id resource_type_id
+     *
+     * @return self
+     */
+    public function setResourceTypeId($resource_type_id)
+    {
+        $this->container['resource_type_id'] = $resource_type_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta'
+        'id' => 'int',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta',
+        'start_date' => '\DateTime'
     ];
 
     /**
@@ -71,10 +71,10 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'end_date' => 'date',
         'id' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
-        'meta' => null
+        'meta' => null,
+        'start_date' => 'date'
     ];
 
     /**
@@ -104,10 +104,10 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'start_date' => 'startDate',
         'end_date' => 'endDate',
-        'meta' => 'meta'
+        'id' => 'id',
+        'meta' => 'meta',
+        'start_date' => 'startDate'
     ];
 
     /**
@@ -116,10 +116,10 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'meta' => 'setMeta'
+        'id' => 'setId',
+        'meta' => 'setMeta',
+        'start_date' => 'setStartDate'
     ];
 
     /**
@@ -128,10 +128,10 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'meta' => 'getMeta'
+        'id' => 'getId',
+        'meta' => 'getMeta',
+        'start_date' => 'getStartDate'
     ];
 
     /**
@@ -191,10 +191,10 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -222,54 +222,6 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
      * Gets end_date
      *
      * @return \DateTime|null
@@ -294,9 +246,33 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
     }
 
     /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null
      */
     public function getMeta()
     {
@@ -306,13 +282,37 @@ class GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner implements
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsAppointments200ResponseDataInnerBaseAdditionsInnerMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null $meta meta
      *
      * @return self
      */
     public function setMeta($meta)
     {
         $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime|null $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }

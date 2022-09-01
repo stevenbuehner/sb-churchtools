@@ -1,0 +1,12 @@
+# # GetFileWithDomainType200ResponseDataInnerMeta
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**created_date** | **\DateTime** |  | [optional]
+**created_person** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson**](GetAllCampuses200ResponseDataInnerTeamInnerPerson.md) |  | [optional]
+**modified_date** | **\DateTime** |  | [optional]
+**modified_person** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson**](GetAllCampuses200ResponseDataInnerTeamInnerPerson.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -58,19 +58,19 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'position' => 'int',
-        'type' => 'string',
-        'title' => 'string',
-        'note' => 'string',
         'duration' => 'int',
-        'start' => '\DateTime',
+        'id' => 'int',
         'is_before_event' => 'bool',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta',
+        'note' => 'string',
+        'position' => 'int',
         'responsible' => '\StevenBuehner\ChurchTools\Model\AgendaItemResponsible',
         'service_group_notes' => '\StevenBuehner\ChurchTools\Model\AgendaItemServiceGroupNotesInner[]',
         'song' => '\StevenBuehner\ChurchTools\Model\AgendaItemSong',
-        'meta' => '\StevenBuehner\ChurchTools\Model\AgendaItemMeta',
-        'start_times' => '\StevenBuehner\ChurchTools\Model\AgendaItemStartTimes'
+        'start' => '\DateTime',
+        'start_times' => '\StevenBuehner\ChurchTools\Model\AgendaItemStartTimes',
+        'title' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -81,19 +81,19 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'position' => null,
-        'type' => null,
-        'title' => null,
-        'note' => null,
         'duration' => null,
-        'start' => 'date-time',
+        'id' => null,
         'is_before_event' => null,
+        'meta' => null,
+        'note' => null,
+        'position' => null,
         'responsible' => null,
         'service_group_notes' => null,
         'song' => null,
-        'meta' => null,
-        'start_times' => null
+        'start' => 'date-time',
+        'start_times' => null,
+        'title' => null,
+        'type' => null
     ];
 
     /**
@@ -123,19 +123,19 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'position' => 'position',
-        'type' => 'type',
-        'title' => 'title',
-        'note' => 'note',
         'duration' => 'duration',
-        'start' => 'start',
+        'id' => 'id',
         'is_before_event' => 'isBeforeEvent',
+        'meta' => 'meta',
+        'note' => 'note',
+        'position' => 'position',
         'responsible' => 'responsible',
         'service_group_notes' => 'serviceGroupNotes',
         'song' => 'song',
-        'meta' => 'meta',
-        'start_times' => 'startTimes'
+        'start' => 'start',
+        'start_times' => 'startTimes',
+        'title' => 'title',
+        'type' => 'type'
     ];
 
     /**
@@ -144,19 +144,19 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'position' => 'setPosition',
-        'type' => 'setType',
-        'title' => 'setTitle',
-        'note' => 'setNote',
         'duration' => 'setDuration',
-        'start' => 'setStart',
+        'id' => 'setId',
         'is_before_event' => 'setIsBeforeEvent',
+        'meta' => 'setMeta',
+        'note' => 'setNote',
+        'position' => 'setPosition',
         'responsible' => 'setResponsible',
         'service_group_notes' => 'setServiceGroupNotes',
         'song' => 'setSong',
-        'meta' => 'setMeta',
-        'start_times' => 'setStartTimes'
+        'start' => 'setStart',
+        'start_times' => 'setStartTimes',
+        'title' => 'setTitle',
+        'type' => 'setType'
     ];
 
     /**
@@ -165,19 +165,19 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'position' => 'getPosition',
-        'type' => 'getType',
-        'title' => 'getTitle',
-        'note' => 'getNote',
         'duration' => 'getDuration',
-        'start' => 'getStart',
+        'id' => 'getId',
         'is_before_event' => 'getIsBeforeEvent',
+        'meta' => 'getMeta',
+        'note' => 'getNote',
+        'position' => 'getPosition',
         'responsible' => 'getResponsible',
         'service_group_notes' => 'getServiceGroupNotes',
         'song' => 'getSong',
-        'meta' => 'getMeta',
-        'start_times' => 'getStartTimes'
+        'start' => 'getStart',
+        'start_times' => 'getStartTimes',
+        'title' => 'getTitle',
+        'type' => 'getType'
     ];
 
     /**
@@ -254,19 +254,19 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['position'] = $data['position'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
         $this->container['duration'] = $data['duration'] ?? null;
-        $this->container['start'] = $data['start'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['is_before_event'] = $data['is_before_event'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['position'] = $data['position'] ?? null;
         $this->container['responsible'] = $data['responsible'] ?? null;
         $this->container['service_group_notes'] = $data['service_group_notes'] ?? null;
         $this->container['song'] = $data['song'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['start'] = $data['start'] ?? null;
         $this->container['start_times'] = $data['start_times'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -303,6 +303,30 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets duration
+     *
+     * @return int|null
+     */
+    public function getDuration()
+    {
+        return $this->container['duration'];
+    }
+
+    /**
+     * Sets duration
+     *
+     * @param int|null $duration Duration of agenda item in seconds.
+     *
+     * @return self
+     */
+    public function setDuration($duration)
+    {
+        $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -327,83 +351,49 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets position
+     * Gets is_before_event
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getPosition()
+    public function getIsBeforeEvent()
     {
-        return $this->container['position'];
+        return $this->container['is_before_event'];
     }
 
     /**
-     * Sets position
+     * Sets is_before_event
      *
-     * @param int|null $position position
+     * @param bool|null $is_before_event is_before_event
      *
      * @return self
      */
-    public function setPosition($position)
+    public function setIsBeforeEvent($is_before_event)
     {
-        $this->container['position'] = $position;
+        $this->container['is_before_event'] = $is_before_event;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets meta
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null
      */
-    public function getType()
+    public function getMeta()
     {
-        return $this->container['type'];
+        return $this->container['meta'];
     }
 
     /**
-     * Sets type
+     * Sets meta
      *
-     * @param string|null $type type
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta|null $meta meta
      *
      * @return self
      */
-    public function setType($type)
+    public function setMeta($meta)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -433,73 +423,25 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets duration
+     * Gets position
      *
      * @return int|null
      */
-    public function getDuration()
+    public function getPosition()
     {
-        return $this->container['duration'];
+        return $this->container['position'];
     }
 
     /**
-     * Sets duration
+     * Sets position
      *
-     * @param int|null $duration Duration of agenda item in seconds.
+     * @param int|null $position position
      *
      * @return self
      */
-    public function setDuration($duration)
+    public function setPosition($position)
     {
-        $this->container['duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets start
-     *
-     * @return \DateTime|null
-     */
-    public function getStart()
-    {
-        return $this->container['start'];
-    }
-
-    /**
-     * Sets start
-     *
-     * @param \DateTime|null $start The start time of a position is dynamically calculated based on previous items and the start time of the event.
-     *
-     * @return self
-     */
-    public function setStart($start)
-    {
-        $this->container['start'] = $start;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_before_event
-     *
-     * @return bool|null
-     */
-    public function getIsBeforeEvent()
-    {
-        return $this->container['is_before_event'];
-    }
-
-    /**
-     * Sets is_before_event
-     *
-     * @param bool|null $is_before_event is_before_event
-     *
-     * @return self
-     */
-    public function setIsBeforeEvent($is_before_event)
-    {
-        $this->container['is_before_event'] = $is_before_event;
+        $this->container['position'] = $position;
 
         return $this;
     }
@@ -577,25 +519,25 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets meta
+     * Gets start
      *
-     * @return \StevenBuehner\ChurchTools\Model\AgendaItemMeta|null
+     * @return \DateTime|null
      */
-    public function getMeta()
+    public function getStart()
     {
-        return $this->container['meta'];
+        return $this->container['start'];
     }
 
     /**
-     * Sets meta
+     * Sets start
      *
-     * @param \StevenBuehner\ChurchTools\Model\AgendaItemMeta|null $meta meta
+     * @param \DateTime|null $start The start time of a position is dynamically calculated based on previous items and the start time of the event.
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setStart($start)
     {
-        $this->container['meta'] = $meta;
+        $this->container['start'] = $start;
 
         return $this;
     }
@@ -620,6 +562,64 @@ class AgendaItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStartTimes($start_times)
     {
         $this->container['start_times'] = $start_times;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string|null $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

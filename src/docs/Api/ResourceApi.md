@@ -23,7 +23,7 @@ Your GET endpoint
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -35,10 +35,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ResourceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$resource_ids = NULL; // array
+$resource_ids = array(56); // int[]
 $from = Tue Mar 01 01:00:00 CET 2022; // \DateTime
 $to = Wed Mar 30 02:00:00 CEST 2022; // \DateTime
-$status_ids = NULL; // array | 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht
+$status_ids = array(56); // int[] | 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht
 
 try {
     $result = $apiInstance->getBookings($resource_ids, $from, $to, $status_ids);
@@ -52,10 +52,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_ids** | [**array**](../Model/.md)|  | [optional]
+ **resource_ids** | [**int[]**](../Model/int.md)|  |
  **from** | **\DateTime**|  | [optional]
  **to** | **\DateTime**|  | [optional]
- **status_ids** | [**array**](../Model/.md)| 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht | [optional]
+ **status_ids** | [**int[]**](../Model/int.md)| 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht | [optional]
 
 ### Return type
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -89,7 +89,7 @@ Your GET endpoint
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -120,7 +120,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

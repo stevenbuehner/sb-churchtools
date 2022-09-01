@@ -57,8 +57,8 @@ class GetWikiCategoriesWikiCategoryIdPages200Response implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\WikiPage2[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'data' => '\StevenBuehner\ChurchTools\Model\WikiPage1[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -212,7 +212,7 @@ class GetWikiCategoriesWikiCategoryIdPages200Response implements ModelInterface,
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\WikiPage2[]|null
+     * @return \StevenBuehner\ChurchTools\Model\WikiPage1[]|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class GetWikiCategoriesWikiCategoryIdPages200Response implements ModelInterface,
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\WikiPage2[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\WikiPage1[]|null $data data
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class GetWikiCategoriesWikiCategoryIdPages200Response implements ModelInterface,
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetWikiCategoriesWikiCategoryIdPages200Response implements ModelInterface,
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

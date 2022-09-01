@@ -58,13 +58,13 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'sort_key' => 'int',
         'campus_id' => 'int',
-        'in_menu' => 'bool',
         'file_access_without_permission' => 'bool',
-        'name_translated' => 'string'
+        'id' => 'int',
+        'in_menu' => 'bool',
+        'name' => 'string',
+        'name_translated' => 'string',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -75,13 +75,13 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'sort_key' => null,
         'campus_id' => null,
-        'in_menu' => null,
         'file_access_without_permission' => null,
-        'name_translated' => null
+        'id' => null,
+        'in_menu' => null,
+        'name' => null,
+        'name_translated' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -111,13 +111,13 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'sort_key' => 'sortKey',
         'campus_id' => 'campusId',
-        'in_menu' => 'inMenu',
         'file_access_without_permission' => 'fileAccessWithoutPermission',
-        'name_translated' => 'nameTranslated'
+        'id' => 'id',
+        'in_menu' => 'inMenu',
+        'name' => 'name',
+        'name_translated' => 'nameTranslated',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -126,13 +126,13 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'sort_key' => 'setSortKey',
         'campus_id' => 'setCampusId',
-        'in_menu' => 'setInMenu',
         'file_access_without_permission' => 'setFileAccessWithoutPermission',
-        'name_translated' => 'setNameTranslated'
+        'id' => 'setId',
+        'in_menu' => 'setInMenu',
+        'name' => 'setName',
+        'name_translated' => 'setNameTranslated',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -141,13 +141,13 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'sort_key' => 'getSortKey',
         'campus_id' => 'getCampusId',
-        'in_menu' => 'getInMenu',
         'file_access_without_permission' => 'getFileAccessWithoutPermission',
-        'name_translated' => 'getNameTranslated'
+        'id' => 'getId',
+        'in_menu' => 'getInMenu',
+        'name' => 'getName',
+        'name_translated' => 'getNameTranslated',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -207,13 +207,13 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
         $this->container['campus_id'] = $data['campus_id'] ?? null;
-        $this->container['in_menu'] = $data['in_menu'] ?? null;
         $this->container['file_access_without_permission'] = $data['file_access_without_permission'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['in_menu'] = $data['in_menu'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
     /**
@@ -225,23 +225,23 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['campus_id'] === null) {
+            $invalidProperties[] = "'campus_id' can't be null";
+        }
+        if ($this->container['file_access_without_permission'] === null) {
+            $invalidProperties[] = "'file_access_without_permission' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['in_menu'] === null) {
+            $invalidProperties[] = "'in_menu' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['sort_key'] === null) {
             $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['campus_id'] === null) {
-            $invalidProperties[] = "'campus_id' can't be null";
-        }
-        if ($this->container['in_menu'] === null) {
-            $invalidProperties[] = "'in_menu' can't be null";
-        }
-        if ($this->container['file_access_without_permission'] === null) {
-            $invalidProperties[] = "'file_access_without_permission' can't be null";
         }
         return $invalidProperties;
     }
@@ -257,78 +257,6 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort_key
-     *
-     * @return int
-     */
-    public function getSortKey()
-    {
-        return $this->container['sort_key'];
-    }
-
-    /**
-     * Sets sort_key
-     *
-     * @param int $sort_key sort_key
-     *
-     * @return self
-     */
-    public function setSortKey($sort_key)
-    {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
 
     /**
      * Gets campus_id
@@ -350,30 +278,6 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCampusId($campus_id)
     {
         $this->container['campus_id'] = $campus_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_menu
-     *
-     * @return bool
-     */
-    public function getInMenu()
-    {
-        return $this->container['in_menu'];
-    }
-
-    /**
-     * Sets in_menu
-     *
-     * @param bool $in_menu in_menu
-     *
-     * @return self
-     */
-    public function setInMenu($in_menu)
-    {
-        $this->container['in_menu'] = $in_menu;
 
         return $this;
     }
@@ -403,6 +307,78 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_menu
+     *
+     * @return bool
+     */
+    public function getInMenu()
+    {
+        return $this->container['in_menu'];
+    }
+
+    /**
+     * Sets in_menu
+     *
+     * @param bool $in_menu in_menu
+     *
+     * @return self
+     */
+    public function setInMenu($in_menu)
+    {
+        $this->container['in_menu'] = $in_menu;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * Gets name_translated
      *
      * @return string|null
@@ -422,6 +398,30 @@ class WikiCategory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNameTranslated($name_translated)
     {
         $this->container['name_translated'] = $name_translated;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

@@ -58,14 +58,14 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'date' => '\DateTime',
+        'domain_id' => 'int',
+        'domain_type' => 'string',
         'id' => 'int',
         'level' => 'int',
-        'date' => '\DateTime',
+        'message' => 'string',
         'person_id' => 'int',
-        'simulte_person_id' => 'int',
-        'domain_type' => 'string',
-        'domain_id' => 'int',
-        'message' => 'string'
+        'simulte_person_id' => 'int'
     ];
 
     /**
@@ -76,14 +76,14 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'date' => 'date-time',
+        'domain_id' => null,
+        'domain_type' => null,
         'id' => null,
         'level' => null,
-        'date' => 'date-time',
+        'message' => null,
         'person_id' => null,
-        'simulte_person_id' => null,
-        'domain_type' => null,
-        'domain_id' => null,
-        'message' => null
+        'simulte_person_id' => null
     ];
 
     /**
@@ -113,14 +113,14 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'date' => 'date',
+        'domain_id' => 'domainId',
+        'domain_type' => 'domainType',
         'id' => 'id',
         'level' => 'level',
-        'date' => 'date',
+        'message' => 'message',
         'person_id' => 'personId',
-        'simulte_person_id' => 'simultePersonId',
-        'domain_type' => 'domainType',
-        'domain_id' => 'domainId',
-        'message' => 'message'
+        'simulte_person_id' => 'simultePersonId'
     ];
 
     /**
@@ -129,14 +129,14 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'date' => 'setDate',
+        'domain_id' => 'setDomainId',
+        'domain_type' => 'setDomainType',
         'id' => 'setId',
         'level' => 'setLevel',
-        'date' => 'setDate',
+        'message' => 'setMessage',
         'person_id' => 'setPersonId',
-        'simulte_person_id' => 'setSimultePersonId',
-        'domain_type' => 'setDomainType',
-        'domain_id' => 'setDomainId',
-        'message' => 'setMessage'
+        'simulte_person_id' => 'setSimultePersonId'
     ];
 
     /**
@@ -145,14 +145,14 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'date' => 'getDate',
+        'domain_id' => 'getDomainId',
+        'domain_type' => 'getDomainType',
         'id' => 'getId',
         'level' => 'getLevel',
-        'date' => 'getDate',
+        'message' => 'getMessage',
         'person_id' => 'getPersonId',
-        'simulte_person_id' => 'getSimultePersonId',
-        'domain_type' => 'getDomainType',
-        'domain_id' => 'getDomainId',
-        'message' => 'getMessage'
+        'simulte_person_id' => 'getSimultePersonId'
     ];
 
     /**
@@ -212,14 +212,14 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['domain_id'] = $data['domain_id'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['level'] = $data['level'] ?? null;
-        $this->container['date'] = $data['date'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
         $this->container['person_id'] = $data['person_id'] ?? null;
         $this->container['simulte_person_id'] = $data['simulte_person_id'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
-        $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
     }
 
     /**
@@ -245,6 +245,78 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets date
+     *
+     * @return \DateTime|null
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     *
+     * @param \DateTime|null $date Timestamp of log
+     *
+     * @return self
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_id
+     *
+     * @return int|null
+     */
+    public function getDomainId()
+    {
+        return $this->container['domain_id'];
+    }
+
+    /**
+     * Sets domain_id
+     *
+     * @param int|null $domain_id Analog to the domain type, the ID is the explicit resource.
+     *
+     * @return self
+     */
+    public function setDomainId($domain_id)
+    {
+        $this->container['domain_id'] = $domain_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_type
+     *
+     * @return string|null
+     */
+    public function getDomainType()
+    {
+        return $this->container['domain_type'];
+    }
+
+    /**
+     * Sets domain_type
+     *
+     * @param string|null $domain_type The domain type tells us, where in ChurchTools the action was performed.
+     *
+     * @return self
+     */
+    public function setDomainType($domain_type)
+    {
+        $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -295,25 +367,25 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets date
+     * Gets message
      *
-     * @return \DateTime|null
+     * @return string|null
      */
-    public function getDate()
+    public function getMessage()
     {
-        return $this->container['date'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets date
+     * Sets message
      *
-     * @param \DateTime|null $date Timestamp of log
+     * @param string|null $message message
      *
      * @return self
      */
-    public function setDate($date)
+    public function setMessage($message)
     {
-        $this->container['date'] = $date;
+        $this->container['message'] = $message;
 
         return $this;
     }
@@ -362,78 +434,6 @@ class Log implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSimultePersonId($simulte_person_id)
     {
         $this->container['simulte_person_id'] = $simulte_person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_type
-     *
-     * @return string|null
-     */
-    public function getDomainType()
-    {
-        return $this->container['domain_type'];
-    }
-
-    /**
-     * Sets domain_type
-     *
-     * @param string|null $domain_type The domain type tells us, where in ChurchTools the action was performed.
-     *
-     * @return self
-     */
-    public function setDomainType($domain_type)
-    {
-        $this->container['domain_type'] = $domain_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain_id
-     *
-     * @return int|null
-     */
-    public function getDomainId()
-    {
-        return $this->container['domain_id'];
-    }
-
-    /**
-     * Sets domain_id
-     *
-     * @param int|null $domain_id Analog to the domain type, the ID is the explicit resource.
-     *
-     * @return self
-     */
-    public function setDomainId($domain_id)
-    {
-        $this->container['domain_id'] = $domain_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
 
         return $this;
     }

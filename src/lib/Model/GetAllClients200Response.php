@@ -57,7 +57,7 @@ class GetAllClients200Response implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataClientsInner[]'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetAllClients200ResponseDataInner[]'
     ];
 
     /**
@@ -206,7 +206,7 @@ class GetAllClients200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataClientsInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllClients200ResponseDataInner[]|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class GetAllClients200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllData200ResponseDataClientsInner[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetAllClients200ResponseDataInner[]|null $data data
      *
      * @return self
      */

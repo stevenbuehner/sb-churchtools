@@ -60,8 +60,8 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'all_places' => 'int',
         'free_places' => 'int',
-        'taken_places' => 'int',
         'requested_places' => 'int',
+        'taken_places' => 'int',
         'waitinglist_places' => 'int'
     ];
 
@@ -75,8 +75,8 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'all_places' => null,
         'free_places' => null,
-        'taken_places' => null,
         'requested_places' => null,
+        'taken_places' => null,
         'waitinglist_places' => null
     ];
 
@@ -109,8 +109,8 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'all_places' => 'allPlaces',
         'free_places' => 'freePlaces',
-        'taken_places' => 'takenPlaces',
         'requested_places' => 'requestedPlaces',
+        'taken_places' => 'takenPlaces',
         'waitinglist_places' => 'waitinglistPlaces'
     ];
 
@@ -122,8 +122,8 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'all_places' => 'setAllPlaces',
         'free_places' => 'setFreePlaces',
-        'taken_places' => 'setTakenPlaces',
         'requested_places' => 'setRequestedPlaces',
+        'taken_places' => 'setTakenPlaces',
         'waitinglist_places' => 'setWaitinglistPlaces'
     ];
 
@@ -135,8 +135,8 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'all_places' => 'getAllPlaces',
         'free_places' => 'getFreePlaces',
-        'taken_places' => 'getTakenPlaces',
         'requested_places' => 'getRequestedPlaces',
+        'taken_places' => 'getTakenPlaces',
         'waitinglist_places' => 'getWaitinglistPlaces'
     ];
 
@@ -199,8 +199,8 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['all_places'] = $data['all_places'] ?? null;
         $this->container['free_places'] = $data['free_places'] ?? null;
-        $this->container['taken_places'] = $data['taken_places'] ?? null;
         $this->container['requested_places'] = $data['requested_places'] ?? null;
+        $this->container['taken_places'] = $data['taken_places'] ?? null;
         $this->container['waitinglist_places'] = $data['waitinglist_places'] ?? null;
     }
 
@@ -277,30 +277,6 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets taken_places
-     *
-     * @return int|null
-     */
-    public function getTakenPlaces()
-    {
-        return $this->container['taken_places'];
-    }
-
-    /**
-     * Sets taken_places
-     *
-     * @param int|null $taken_places Count of taken places in group
-     *
-     * @return self
-     */
-    public function setTakenPlaces($taken_places)
-    {
-        $this->container['taken_places'] = $taken_places;
-
-        return $this;
-    }
-
-    /**
      * Gets requested_places
      *
      * @return int|null
@@ -320,6 +296,30 @@ class GroupStatistics implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRequestedPlaces($requested_places)
     {
         $this->container['requested_places'] = $requested_places;
+
+        return $this;
+    }
+
+    /**
+     * Gets taken_places
+     *
+     * @return int|null
+     */
+    public function getTakenPlaces()
+    {
+        return $this->container['taken_places'];
+    }
+
+    /**
+     * Sets taken_places
+     *
+     * @param int|null $taken_places Count of taken places in group
+     *
+     * @return self
+     */
+    public function setTakenPlaces($taken_places)
+    {
+        $this->container['taken_places'] = $taken_places;
 
         return $this;
     }

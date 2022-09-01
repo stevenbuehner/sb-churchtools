@@ -57,25 +57,26 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'caption' => 'string',
-        'note' => 'string',
-        'version' => 'int',
-        'resource' => '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourcesInner',
-        'cal_id' => 'string',
-        'person_id' => 'int',
-        'show_in_cal' => 'bool',
-        'status_id' => 'int',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'repeat_id' => 'int',
-        'repeat_frequency' => 'int',
-        'repeat_until' => '\DateTime',
-        'repeat_option' => 'int',
         'additionals' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInner[]',
+        'all_day' => 'bool',
+        'cal_id' => 'int',
+        'caption' => 'string',
+        'end_date' => '\DateTime',
         'exceptions' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseExceptionsInner[]',
+        'id' => 'int',
         'location' => 'string',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMeta',
+        'note' => 'string',
+        'person_id' => 'int',
+        'repeat_frequency' => 'int',
+        'repeat_id' => 'int',
+        'repeat_option' => 'int',
+        'repeat_until' => '\DateTime',
+        'resource' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseResource',
+        'show_in_cal' => 'bool',
+        'start_date' => '\DateTime',
+        'status_id' => 'int',
+        'version' => 'int'
     ];
 
     /**
@@ -86,25 +87,26 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'caption' => null,
-        'note' => null,
-        'version' => null,
-        'resource' => null,
-        'cal_id' => null,
-        'person_id' => null,
-        'show_in_cal' => null,
-        'status_id' => null,
-        'start_date' => 'date-time',
-        'end_date' => 'date-time',
-        'repeat_id' => null,
-        'repeat_frequency' => null,
-        'repeat_until' => 'date-time',
-        'repeat_option' => null,
         'additionals' => null,
+        'all_day' => null,
+        'cal_id' => null,
+        'caption' => null,
+        'end_date' => 'date-time',
         'exceptions' => null,
+        'id' => null,
         'location' => null,
-        'meta' => null
+        'meta' => null,
+        'note' => null,
+        'person_id' => null,
+        'repeat_frequency' => null,
+        'repeat_id' => null,
+        'repeat_option' => null,
+        'repeat_until' => 'date-time',
+        'resource' => null,
+        'show_in_cal' => null,
+        'start_date' => 'date-time',
+        'status_id' => null,
+        'version' => null
     ];
 
     /**
@@ -134,25 +136,26 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'caption' => 'caption',
-        'note' => 'note',
-        'version' => 'version',
-        'resource' => 'resource',
-        'cal_id' => 'calId',
-        'person_id' => 'personId',
-        'show_in_cal' => 'showInCal',
-        'status_id' => 'statusId',
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'repeat_id' => 'repeatId',
-        'repeat_frequency' => 'repeatFrequency',
-        'repeat_until' => 'repeatUntil',
-        'repeat_option' => 'repeatOption',
         'additionals' => 'additionals',
+        'all_day' => 'allDay',
+        'cal_id' => 'calId',
+        'caption' => 'caption',
+        'end_date' => 'endDate',
         'exceptions' => 'exceptions',
+        'id' => 'id',
         'location' => 'location',
-        'meta' => 'meta'
+        'meta' => 'meta',
+        'note' => 'note',
+        'person_id' => 'personId',
+        'repeat_frequency' => 'repeatFrequency',
+        'repeat_id' => 'repeatId',
+        'repeat_option' => 'repeatOption',
+        'repeat_until' => 'repeatUntil',
+        'resource' => 'resource',
+        'show_in_cal' => 'showInCal',
+        'start_date' => 'startDate',
+        'status_id' => 'statusId',
+        'version' => 'version'
     ];
 
     /**
@@ -161,25 +164,26 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'caption' => 'setCaption',
-        'note' => 'setNote',
-        'version' => 'setVersion',
-        'resource' => 'setResource',
-        'cal_id' => 'setCalId',
-        'person_id' => 'setPersonId',
-        'show_in_cal' => 'setShowInCal',
-        'status_id' => 'setStatusId',
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'repeat_id' => 'setRepeatId',
-        'repeat_frequency' => 'setRepeatFrequency',
-        'repeat_until' => 'setRepeatUntil',
-        'repeat_option' => 'setRepeatOption',
         'additionals' => 'setAdditionals',
+        'all_day' => 'setAllDay',
+        'cal_id' => 'setCalId',
+        'caption' => 'setCaption',
+        'end_date' => 'setEndDate',
         'exceptions' => 'setExceptions',
+        'id' => 'setId',
         'location' => 'setLocation',
-        'meta' => 'setMeta'
+        'meta' => 'setMeta',
+        'note' => 'setNote',
+        'person_id' => 'setPersonId',
+        'repeat_frequency' => 'setRepeatFrequency',
+        'repeat_id' => 'setRepeatId',
+        'repeat_option' => 'setRepeatOption',
+        'repeat_until' => 'setRepeatUntil',
+        'resource' => 'setResource',
+        'show_in_cal' => 'setShowInCal',
+        'start_date' => 'setStartDate',
+        'status_id' => 'setStatusId',
+        'version' => 'setVersion'
     ];
 
     /**
@@ -188,25 +192,26 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'caption' => 'getCaption',
-        'note' => 'getNote',
-        'version' => 'getVersion',
-        'resource' => 'getResource',
-        'cal_id' => 'getCalId',
-        'person_id' => 'getPersonId',
-        'show_in_cal' => 'getShowInCal',
-        'status_id' => 'getStatusId',
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'repeat_id' => 'getRepeatId',
-        'repeat_frequency' => 'getRepeatFrequency',
-        'repeat_until' => 'getRepeatUntil',
-        'repeat_option' => 'getRepeatOption',
         'additionals' => 'getAdditionals',
+        'all_day' => 'getAllDay',
+        'cal_id' => 'getCalId',
+        'caption' => 'getCaption',
+        'end_date' => 'getEndDate',
         'exceptions' => 'getExceptions',
+        'id' => 'getId',
         'location' => 'getLocation',
-        'meta' => 'getMeta'
+        'meta' => 'getMeta',
+        'note' => 'getNote',
+        'person_id' => 'getPersonId',
+        'repeat_frequency' => 'getRepeatFrequency',
+        'repeat_id' => 'getRepeatId',
+        'repeat_option' => 'getRepeatOption',
+        'repeat_until' => 'getRepeatUntil',
+        'resource' => 'getResource',
+        'show_in_cal' => 'getShowInCal',
+        'start_date' => 'getStartDate',
+        'status_id' => 'getStatusId',
+        'version' => 'getVersion'
     ];
 
     /**
@@ -266,25 +271,26 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['caption'] = $data['caption'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['version'] = $data['version'] ?? null;
-        $this->container['resource'] = $data['resource'] ?? null;
-        $this->container['cal_id'] = $data['cal_id'] ?? null;
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['show_in_cal'] = $data['show_in_cal'] ?? null;
-        $this->container['status_id'] = $data['status_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
-        $this->container['repeat_frequency'] = $data['repeat_frequency'] ?? null;
-        $this->container['repeat_until'] = $data['repeat_until'] ?? null;
-        $this->container['repeat_option'] = $data['repeat_option'] ?? null;
         $this->container['additionals'] = $data['additionals'] ?? null;
+        $this->container['all_day'] = $data['all_day'] ?? null;
+        $this->container['cal_id'] = $data['cal_id'] ?? null;
+        $this->container['caption'] = $data['caption'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['exceptions'] = $data['exceptions'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['location'] = $data['location'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['repeat_frequency'] = $data['repeat_frequency'] ?? null;
+        $this->container['repeat_id'] = $data['repeat_id'] ?? null;
+        $this->container['repeat_option'] = $data['repeat_option'] ?? null;
+        $this->container['repeat_until'] = $data['repeat_until'] ?? null;
+        $this->container['resource'] = $data['resource'] ?? null;
+        $this->container['show_in_cal'] = $data['show_in_cal'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['status_id'] = $data['status_id'] ?? null;
+        $this->container['version'] = $data['version'] ?? null;
     }
 
     /**
@@ -312,25 +318,73 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets additionals
      *
-     * @return int|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInner[]|null
      */
-    public function getId()
+    public function getAdditionals()
     {
-        return $this->container['id'];
+        return $this->container['additionals'];
     }
 
     /**
-     * Sets id
+     * Sets additionals
      *
-     * @param int|null $id id
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInner[]|null $additionals additionals
      *
      * @return self
      */
-    public function setId($id)
+    public function setAdditionals($additionals)
     {
-        $this->container['id'] = $id;
+        $this->container['additionals'] = $additionals;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_day
+     *
+     * @return bool|null
+     */
+    public function getAllDay()
+    {
+        return $this->container['all_day'];
+    }
+
+    /**
+     * Sets all_day
+     *
+     * @param bool|null $all_day all_day
+     *
+     * @return self
+     */
+    public function setAllDay($all_day)
+    {
+        $this->container['all_day'] = $all_day;
+
+        return $this;
+    }
+
+    /**
+     * Gets cal_id
+     *
+     * @return int|null
+     */
+    public function getCalId()
+    {
+        return $this->container['cal_id'];
+    }
+
+    /**
+     * Sets cal_id
+     *
+     * @param int|null $cal_id cal_id
+     *
+     * @return self
+     */
+    public function setCalId($cal_id)
+    {
+        $this->container['cal_id'] = $cal_id;
 
         return $this;
     }
@@ -360,198 +414,6 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets note
-     *
-     * @return string|null
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string|null $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
-     * Gets version
-     *
-     * @return int|null
-     */
-    public function getVersion()
-    {
-        return $this->container['version'];
-    }
-
-    /**
-     * Sets version
-     *
-     * @param int|null $version version
-     *
-     * @return self
-     */
-    public function setVersion($version)
-    {
-        $this->container['version'] = $version;
-
-        return $this;
-    }
-
-    /**
-     * Gets resource
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourcesInner|null
-     */
-    public function getResource()
-    {
-        return $this->container['resource'];
-    }
-
-    /**
-     * Sets resource
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200ResponseDataResourcesInner|null $resource resource
-     *
-     * @return self
-     */
-    public function setResource($resource)
-    {
-        $this->container['resource'] = $resource;
-
-        return $this;
-    }
-
-    /**
-     * Gets cal_id
-     *
-     * @return string|null
-     */
-    public function getCalId()
-    {
-        return $this->container['cal_id'];
-    }
-
-    /**
-     * Sets cal_id
-     *
-     * @param string|null $cal_id cal_id
-     *
-     * @return self
-     */
-    public function setCalId($cal_id)
-    {
-        $this->container['cal_id'] = $cal_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person_id
-     *
-     * @return int|null
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param int|null $person_id person_id
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_in_cal
-     *
-     * @return bool|null
-     */
-    public function getShowInCal()
-    {
-        return $this->container['show_in_cal'];
-    }
-
-    /**
-     * Sets show_in_cal
-     *
-     * @param bool|null $show_in_cal show_in_cal
-     *
-     * @return self
-     */
-    public function setShowInCal($show_in_cal)
-    {
-        $this->container['show_in_cal'] = $show_in_cal;
-
-        return $this;
-    }
-
-    /**
-     * Gets status_id
-     *
-     * @return int|null
-     */
-    public function getStatusId()
-    {
-        return $this->container['status_id'];
-    }
-
-    /**
-     * Sets status_id
-     *
-     * @param int|null $status_id status_id
-     *
-     * @return self
-     */
-    public function setStatusId($status_id)
-    {
-        $this->container['status_id'] = $status_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
      * Gets end_date
      *
      * @return \DateTime|null
@@ -576,126 +438,6 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets repeat_id
-     *
-     * @return int|null
-     */
-    public function getRepeatId()
-    {
-        return $this->container['repeat_id'];
-    }
-
-    /**
-     * Sets repeat_id
-     *
-     * @param int|null $repeat_id repeat_id
-     *
-     * @return self
-     */
-    public function setRepeatId($repeat_id)
-    {
-        $this->container['repeat_id'] = $repeat_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat_frequency
-     *
-     * @return int|null
-     */
-    public function getRepeatFrequency()
-    {
-        return $this->container['repeat_frequency'];
-    }
-
-    /**
-     * Sets repeat_frequency
-     *
-     * @param int|null $repeat_frequency repeat_frequency
-     *
-     * @return self
-     */
-    public function setRepeatFrequency($repeat_frequency)
-    {
-        $this->container['repeat_frequency'] = $repeat_frequency;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat_until
-     *
-     * @return \DateTime|null
-     */
-    public function getRepeatUntil()
-    {
-        return $this->container['repeat_until'];
-    }
-
-    /**
-     * Sets repeat_until
-     *
-     * @param \DateTime|null $repeat_until repeat_until
-     *
-     * @return self
-     */
-    public function setRepeatUntil($repeat_until)
-    {
-        $this->container['repeat_until'] = $repeat_until;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat_option
-     *
-     * @return int|null
-     */
-    public function getRepeatOption()
-    {
-        return $this->container['repeat_option'];
-    }
-
-    /**
-     * Sets repeat_option
-     *
-     * @param int|null $repeat_option repeat_option
-     *
-     * @return self
-     */
-    public function setRepeatOption($repeat_option)
-    {
-        $this->container['repeat_option'] = $repeat_option;
-
-        return $this;
-    }
-
-    /**
-     * Gets additionals
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInner[]|null
-     */
-    public function getAdditionals()
-    {
-        return $this->container['additionals'];
-    }
-
-    /**
-     * Sets additionals
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInner[]|null $additionals additionals
-     *
-     * @return self
-     */
-    public function setAdditionals($additionals)
-    {
-        $this->container['additionals'] = $additionals;
-
-        return $this;
-    }
-
-    /**
      * Gets exceptions
      *
      * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseExceptionsInner[]|null
@@ -715,6 +457,30 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
     public function setExceptions($exceptions)
     {
         $this->container['exceptions'] = $exceptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -763,6 +529,270 @@ class GetBookings200ResponseDataInnerBase implements ModelInterface, ArrayAccess
     public function setMeta($meta)
     {
         $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string|null
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string|null $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int|null
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int|null $person_id person_id
+     *
+     * @return self
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_frequency
+     *
+     * @return int|null
+     */
+    public function getRepeatFrequency()
+    {
+        return $this->container['repeat_frequency'];
+    }
+
+    /**
+     * Sets repeat_frequency
+     *
+     * @param int|null $repeat_frequency repeat_frequency
+     *
+     * @return self
+     */
+    public function setRepeatFrequency($repeat_frequency)
+    {
+        $this->container['repeat_frequency'] = $repeat_frequency;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_id
+     *
+     * @return int|null
+     */
+    public function getRepeatId()
+    {
+        return $this->container['repeat_id'];
+    }
+
+    /**
+     * Sets repeat_id
+     *
+     * @param int|null $repeat_id repeat_id
+     *
+     * @return self
+     */
+    public function setRepeatId($repeat_id)
+    {
+        $this->container['repeat_id'] = $repeat_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_option
+     *
+     * @return int|null
+     */
+    public function getRepeatOption()
+    {
+        return $this->container['repeat_option'];
+    }
+
+    /**
+     * Sets repeat_option
+     *
+     * @param int|null $repeat_option repeat_option
+     *
+     * @return self
+     */
+    public function setRepeatOption($repeat_option)
+    {
+        $this->container['repeat_option'] = $repeat_option;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat_until
+     *
+     * @return \DateTime|null
+     */
+    public function getRepeatUntil()
+    {
+        return $this->container['repeat_until'];
+    }
+
+    /**
+     * Sets repeat_until
+     *
+     * @param \DateTime|null $repeat_until repeat_until
+     *
+     * @return self
+     */
+    public function setRepeatUntil($repeat_until)
+    {
+        $this->container['repeat_until'] = $repeat_until;
+
+        return $this;
+    }
+
+    /**
+     * Gets resource
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseResource|null
+     */
+    public function getResource()
+    {
+        return $this->container['resource'];
+    }
+
+    /**
+     * Sets resource
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseResource|null $resource resource
+     *
+     * @return self
+     */
+    public function setResource($resource)
+    {
+        $this->container['resource'] = $resource;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_in_cal
+     *
+     * @return bool|null
+     */
+    public function getShowInCal()
+    {
+        return $this->container['show_in_cal'];
+    }
+
+    /**
+     * Sets show_in_cal
+     *
+     * @param bool|null $show_in_cal show_in_cal
+     *
+     * @return self
+     */
+    public function setShowInCal($show_in_cal)
+    {
+        $this->container['show_in_cal'] = $show_in_cal;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime|null $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_id
+     *
+     * @return int|null
+     */
+    public function getStatusId()
+    {
+        return $this->container['status_id'];
+    }
+
+    /**
+     * Sets status_id
+     *
+     * @param int|null $status_id status_id
+     *
+     * @return self
+     */
+    public function setStatusId($status_id)
+    {
+        $this->container['status_id'] = $status_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return int|null
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param int|null $version version
+     *
+     * @return self
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }

@@ -57,8 +57,8 @@ class BatchTransaction200ResponseData implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'affected_rows' => 'float',
-        'changed_rows' => 'float'
+        'affected_rows' => 'int',
+        'changed_rows' => 'int'
     ];
 
     /**
@@ -212,7 +212,7 @@ class BatchTransaction200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets affected_rows
      *
-     * @return float|null
+     * @return int|null
      */
     public function getAffectedRows()
     {
@@ -222,7 +222,7 @@ class BatchTransaction200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets affected_rows
      *
-     * @param float|null $affected_rows Number of affected rows, which could be resolved by given filters.
+     * @param int|null $affected_rows Number of affected rows, which could be resolved by given filters.
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class BatchTransaction200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets changed_rows
      *
-     * @return float|null
+     * @return int|null
      */
     public function getChangedRows()
     {
@@ -246,7 +246,7 @@ class BatchTransaction200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets changed_rows
      *
-     * @param float|null $changed_rows Number of database rows, which were changed.
+     * @param int|null $changed_rows Number of database rows, which were changed.
      *
      * @return self
      */

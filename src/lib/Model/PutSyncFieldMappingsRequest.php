@@ -57,8 +57,8 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsMasterToESInner[]',
-        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsMasterToESInner[]'
+        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner[]',
+        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner[]'
     ];
 
     /**
@@ -69,8 +69,8 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'property_mappings_master_to_es' => null,
-        'property_mappings_esto_master' => null
+        'property_mappings_esto_master' => null,
+        'property_mappings_master_to_es' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'property_mappings_master_to_es' => 'propertyMappingsMasterToES',
-        'property_mappings_esto_master' => 'propertyMappingsESToMaster'
+        'property_mappings_esto_master' => 'propertyMappingsESToMaster',
+        'property_mappings_master_to_es' => 'propertyMappingsMasterToES'
     ];
 
     /**
@@ -110,8 +110,8 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster'
+        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster',
+        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs'
     ];
 
     /**
@@ -120,8 +120,8 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster'
+        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster',
+        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
         $this->container['property_mappings_esto_master'] = $data['property_mappings_esto_master'] ?? null;
+        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
     }
 
     /**
@@ -210,33 +210,9 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets property_mappings_master_to_es
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsMasterToESInner[]|null
-     */
-    public function getPropertyMappingsMasterToEs()
-    {
-        return $this->container['property_mappings_master_to_es'];
-    }
-
-    /**
-     * Sets property_mappings_master_to_es
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsMasterToESInner[]|null $property_mappings_master_to_es property_mappings_master_to_es
-     *
-     * @return self
-     */
-    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
-    {
-        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
-
-        return $this;
-    }
-
-    /**
      * Gets property_mappings_esto_master
      *
-     * @return \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsMasterToESInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner[]|null
      */
     public function getPropertyMappingsEstoMaster()
     {
@@ -246,13 +222,37 @@ class PutSyncFieldMappingsRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets property_mappings_esto_master
      *
-     * @param \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsMasterToESInner[]|null $property_mappings_esto_master property_mappings_esto_master
+     * @param \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner[]|null $property_mappings_esto_master property_mappings_esto_master
      *
      * @return self
      */
     public function setPropertyMappingsEstoMaster($property_mappings_esto_master)
     {
         $this->container['property_mappings_esto_master'] = $property_mappings_esto_master;
+
+        return $this;
+    }
+
+    /**
+     * Gets property_mappings_master_to_es
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner[]|null
+     */
+    public function getPropertyMappingsMasterToEs()
+    {
+        return $this->container['property_mappings_master_to_es'];
+    }
+
+    /**
+     * Sets property_mappings_master_to_es
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner[]|null $property_mappings_master_to_es property_mappings_master_to_es
+     *
+     * @return self
+     */
+    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
+    {
+        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
 
         return $this;
     }

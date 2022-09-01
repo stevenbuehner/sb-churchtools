@@ -57,13 +57,14 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'domain_type' => 'string',
-        'domain_identifier' => 'string',
         'api_url' => 'string',
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroupDomainAttributes',
+        'domain_identifier' => 'string',
+        'domain_type' => 'string',
         'frontend_url' => 'string',
+        'icon' => 'string',
         'image_url' => 'string',
-        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes'
+        'title' => 'string'
     ];
 
     /**
@@ -74,13 +75,14 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'domain_type' => null,
-        'domain_identifier' => null,
         'api_url' => null,
+        'domain_attributes' => null,
+        'domain_identifier' => null,
+        'domain_type' => null,
         'frontend_url' => null,
+        'icon' => null,
         'image_url' => null,
-        'domain_attributes' => null
+        'title' => null
     ];
 
     /**
@@ -110,13 +112,14 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'domain_type' => 'domainType',
-        'domain_identifier' => 'domainIdentifier',
         'api_url' => 'apiUrl',
+        'domain_attributes' => 'domainAttributes',
+        'domain_identifier' => 'domainIdentifier',
+        'domain_type' => 'domainType',
         'frontend_url' => 'frontendUrl',
+        'icon' => 'icon',
         'image_url' => 'imageUrl',
-        'domain_attributes' => 'domainAttributes'
+        'title' => 'title'
     ];
 
     /**
@@ -125,13 +128,14 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'domain_type' => 'setDomainType',
-        'domain_identifier' => 'setDomainIdentifier',
         'api_url' => 'setApiUrl',
+        'domain_attributes' => 'setDomainAttributes',
+        'domain_identifier' => 'setDomainIdentifier',
+        'domain_type' => 'setDomainType',
         'frontend_url' => 'setFrontendUrl',
+        'icon' => 'setIcon',
         'image_url' => 'setImageUrl',
-        'domain_attributes' => 'setDomainAttributes'
+        'title' => 'setTitle'
     ];
 
     /**
@@ -140,13 +144,14 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'domain_type' => 'getDomainType',
-        'domain_identifier' => 'getDomainIdentifier',
         'api_url' => 'getApiUrl',
+        'domain_attributes' => 'getDomainAttributes',
+        'domain_identifier' => 'getDomainIdentifier',
+        'domain_type' => 'getDomainType',
         'frontend_url' => 'getFrontendUrl',
+        'icon' => 'getIcon',
         'image_url' => 'getImageUrl',
-        'domain_attributes' => 'getDomainAttributes'
+        'title' => 'getTitle'
     ];
 
     /**
@@ -190,19 +195,6 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
         return self::$openAPIModelName;
     }
 
-    public const DOMAIN_TYPE_GROUP = 'group';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getDomainTypeAllowableValues()
-    {
-        return [
-            self::DOMAIN_TYPE_GROUP,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -219,13 +211,14 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
-        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
         $this->container['api_url'] = $data['api_url'] ?? null;
-        $this->container['frontend_url'] = $data['frontend_url'] ?? null;
-        $this->container['image_url'] = $data['image_url'] ?? null;
         $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
+        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? 'group';
+        $this->container['frontend_url'] = $data['frontend_url'] ?? null;
+        $this->container['icon'] = $data['icon'] ?? 'users';
+        $this->container['image_url'] = $data['image_url'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
     }
 
     /**
@@ -236,15 +229,6 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getDomainTypeAllowableValues();
-        if (!is_null($this->container['domain_type']) && !in_array($this->container['domain_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'domain_type', must be one of '%s'",
-                $this->container['domain_type'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -262,59 +246,49 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
 
 
     /**
-     * Gets title
+     * Gets api_url
      *
      * @return string|null
      */
-    public function getTitle()
+    public function getApiUrl()
     {
-        return $this->container['title'];
+        return $this->container['api_url'];
     }
 
     /**
-     * Sets title
+     * Sets api_url
      *
-     * @param string|null $title title
+     * @param string|null $api_url api_url
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setApiUrl($api_url)
     {
-        $this->container['title'] = $title;
+        $this->container['api_url'] = $api_url;
 
         return $this;
     }
 
     /**
-     * Gets domain_type
+     * Gets domain_attributes
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroupDomainAttributes|null
      */
-    public function getDomainType()
+    public function getDomainAttributes()
     {
-        return $this->container['domain_type'];
+        return $this->container['domain_attributes'];
     }
 
     /**
-     * Sets domain_type
+     * Sets domain_attributes
      *
-     * @param string|null $domain_type domain_type
+     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200ResponseDataInnerGroupDomainAttributes|null $domain_attributes domain_attributes
      *
      * @return self
      */
-    public function setDomainType($domain_type)
+    public function setDomainAttributes($domain_attributes)
     {
-        $allowedValues = $this->getDomainTypeAllowableValues();
-        if (!is_null($domain_type) && !in_array($domain_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'domain_type', must be one of '%s'",
-                    $domain_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['domain_type'] = $domain_type;
+        $this->container['domain_attributes'] = $domain_attributes;
 
         return $this;
     }
@@ -344,25 +318,25 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
     }
 
     /**
-     * Gets api_url
+     * Gets domain_type
      *
      * @return string|null
      */
-    public function getApiUrl()
+    public function getDomainType()
     {
-        return $this->container['api_url'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets api_url
+     * Sets domain_type
      *
-     * @param string|null $api_url api_url
+     * @param string|null $domain_type domain_type
      *
      * @return self
      */
-    public function setApiUrl($api_url)
+    public function setDomainType($domain_type)
     {
-        $this->container['api_url'] = $api_url;
+        $this->container['domain_type'] = $domain_type;
 
         return $this;
     }
@@ -392,6 +366,30 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
     }
 
     /**
+     * Gets icon
+     *
+     * @return string|null
+     */
+    public function getIcon()
+    {
+        return $this->container['icon'];
+    }
+
+    /**
+     * Sets icon
+     *
+     * @param string|null $icon icon
+     *
+     * @return self
+     */
+    public function setIcon($icon)
+    {
+        $this->container['icon'] = $icon;
+
+        return $this;
+    }
+
+    /**
      * Gets image_url
      *
      * @return string|null
@@ -416,25 +414,25 @@ class GetAllGroupsForPerson200ResponseDataInnerGroup implements ModelInterface, 
     }
 
     /**
-     * Gets domain_attributes
+     * Gets title
      *
-     * @return \StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes|null
+     * @return string|null
      */
-    public function getDomainAttributes()
+    public function getTitle()
     {
-        return $this->container['domain_attributes'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets domain_attributes
+     * Sets title
      *
-     * @param \StevenBuehner\ChurchTools\Model\GroupDomainObject1DomainAttributes|null $domain_attributes domain_attributes
+     * @param string|null $title title
      *
      * @return self
      */
-    public function setDomainAttributes($domain_attributes)
+    public function setTitle($title)
     {
-        $this->container['domain_attributes'] = $domain_attributes;
+        $this->container['title'] = $title;
 
         return $this;
     }

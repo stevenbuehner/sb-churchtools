@@ -58,12 +58,12 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'name' => 'string',
-        'shorty' => 'string',
         'is_member' => 'bool',
         'is_searchable' => 'bool',
-        'sort_key' => 'int',
-        'security_level_id' => 'int'
+        'name' => 'string',
+        'security_level_id' => 'int',
+        'shorty' => 'string',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -75,12 +75,12 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'name' => null,
-        'shorty' => null,
         'is_member' => null,
         'is_searchable' => null,
-        'sort_key' => null,
-        'security_level_id' => null
+        'name' => null,
+        'security_level_id' => null,
+        'shorty' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -111,12 +111,12 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'name' => 'name',
-        'shorty' => 'shorty',
         'is_member' => 'isMember',
         'is_searchable' => 'isSearchable',
-        'sort_key' => 'sortKey',
-        'security_level_id' => 'securityLevelId'
+        'name' => 'name',
+        'security_level_id' => 'securityLevelId',
+        'shorty' => 'shorty',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -126,12 +126,12 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'name' => 'setName',
-        'shorty' => 'setShorty',
         'is_member' => 'setIsMember',
         'is_searchable' => 'setIsSearchable',
-        'sort_key' => 'setSortKey',
-        'security_level_id' => 'setSecurityLevelId'
+        'name' => 'setName',
+        'security_level_id' => 'setSecurityLevelId',
+        'shorty' => 'setShorty',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -141,12 +141,12 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'name' => 'getName',
-        'shorty' => 'getShorty',
         'is_member' => 'getIsMember',
         'is_searchable' => 'getIsSearchable',
-        'sort_key' => 'getSortKey',
-        'security_level_id' => 'getSecurityLevelId'
+        'name' => 'getName',
+        'security_level_id' => 'getSecurityLevelId',
+        'shorty' => 'getShorty',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -207,12 +207,12 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['shorty'] = $data['shorty'] ?? null;
         $this->container['is_member'] = $data['is_member'] ?? null;
         $this->container['is_searchable'] = $data['is_searchable'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['security_level_id'] = $data['security_level_id'] ?? null;
+        $this->container['shorty'] = $data['shorty'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
     /**
@@ -259,54 +259,6 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Status name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets shorty
-     *
-     * @return string|null
-     */
-    public function getShorty()
-    {
-        return $this->container['shorty'];
-    }
-
-    /**
-     * Sets shorty
-     *
-     * @param string|null $shorty Abbreviation of name.
-     *
-     * @return self
-     */
-    public function setShorty($shorty)
-    {
-        $this->container['shorty'] = $shorty;
 
         return $this;
     }
@@ -360,25 +312,25 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sort_key
+     * Gets name
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getSortKey()
+    public function getName()
     {
-        return $this->container['sort_key'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets sort_key
+     * Sets name
      *
-     * @param int|null $sort_key Used to sort all statuses
+     * @param string|null $name Status name
      *
      * @return self
      */
-    public function setSortKey($sort_key)
+    public function setName($name)
     {
-        $this->container['sort_key'] = $sort_key;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -403,6 +355,54 @@ class Status implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSecurityLevelId($security_level_id)
     {
         $this->container['security_level_id'] = $security_level_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shorty
+     *
+     * @return string|null
+     */
+    public function getShorty()
+    {
+        return $this->container['shorty'];
+    }
+
+    /**
+     * Sets shorty
+     *
+     * @param string|null $shorty Abbreviation of name.
+     *
+     * @return self
+     */
+    public function setShorty($shorty)
+    {
+        $this->container['shorty'] = $shorty;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int|null
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int|null $sort_key Used to sort all statuses
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

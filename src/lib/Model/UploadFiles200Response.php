@@ -58,7 +58,7 @@ class UploadFiles200Response implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\UploadFiles200ResponseDataInner[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseMeta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetAllFields200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class UploadFiles200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllFields200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class UploadFiles200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetAllFields200ResponseMeta|null $meta meta
      *
      * @return self
      */

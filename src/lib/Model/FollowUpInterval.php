@@ -35,7 +35,6 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * FollowUpInterval Class Doc Comment
  *
  * @category Class
- * @description 
  * @package  StevenBuehner\ChurchTools
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -58,10 +57,10 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'follow_up_id' => 'float',
-        'count' => 'float',
-        'days_diff' => 'float',
+        'count' => 'int',
+        'days_diff' => 'int',
+        'follow_up_id' => 'int',
+        'id' => 'int',
         'info' => 'string'
     ];
 
@@ -73,10 +72,10 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'follow_up_id' => null,
         'count' => null,
         'days_diff' => null,
+        'follow_up_id' => null,
+        'id' => null,
         'info' => null
     ];
 
@@ -107,10 +106,10 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'follow_up_id' => 'followUpId',
         'count' => 'count',
         'days_diff' => 'daysDiff',
+        'follow_up_id' => 'followUpId',
+        'id' => 'id',
         'info' => 'info'
     ];
 
@@ -120,10 +119,10 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'follow_up_id' => 'setFollowUpId',
         'count' => 'setCount',
         'days_diff' => 'setDaysDiff',
+        'follow_up_id' => 'setFollowUpId',
+        'id' => 'setId',
         'info' => 'setInfo'
     ];
 
@@ -133,10 +132,10 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'follow_up_id' => 'getFollowUpId',
         'count' => 'getCount',
         'days_diff' => 'getDaysDiff',
+        'follow_up_id' => 'getFollowUpId',
+        'id' => 'getId',
         'info' => 'getInfo'
     ];
 
@@ -197,10 +196,10 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['follow_up_id'] = $data['follow_up_id'] ?? null;
         $this->container['count'] = $data['count'] ?? null;
         $this->container['days_diff'] = $data['days_diff'] ?? null;
+        $this->container['follow_up_id'] = $data['follow_up_id'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['info'] = $data['info'] ?? null;
     }
 
@@ -212,25 +211,6 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['follow_up_id'] === null) {
-            $invalidProperties[] = "'follow_up_id' can't be null";
-        }
-        if ($this->container['count'] === null) {
-            $invalidProperties[] = "'count' can't be null";
-        }
-        if ($this->container['days_diff'] === null) {
-            $invalidProperties[] = "'days_diff' can't be null";
-        }
-        if ($this->container['info'] === null) {
-            $invalidProperties[] = "'info' can't be null";
-        }
-        if ((mb_strlen($this->container['info']) < 1)) {
-            $invalidProperties[] = "invalid value for 'info', the character length must be bigger than or equal to 1.";
-        }
 
         return $invalidProperties;
     }
@@ -248,57 +228,9 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return float
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param float $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets follow_up_id
-     *
-     * @return float
-     */
-    public function getFollowUpId()
-    {
-        return $this->container['follow_up_id'];
-    }
-
-    /**
-     * Sets follow_up_id
-     *
-     * @param float $follow_up_id follow_up_id
-     *
-     * @return self
-     */
-    public function setFollowUpId($follow_up_id)
-    {
-        $this->container['follow_up_id'] = $follow_up_id;
-
-        return $this;
-    }
-
-    /**
      * Gets count
      *
-     * @return float
+     * @return int|null
      */
     public function getCount()
     {
@@ -308,7 +240,7 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets count
      *
-     * @param float $count Count defines the step of that interval entry. Intervals are ordered by count.
+     * @param int|null $count count
      *
      * @return self
      */
@@ -322,7 +254,7 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets days_diff
      *
-     * @return float
+     * @return int|null
      */
     public function getDaysDiff()
     {
@@ -332,7 +264,7 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets days_diff
      *
-     * @param float $days_diff Duration after that interval step is due.
+     * @param int|null $days_diff days_diff
      *
      * @return self
      */
@@ -344,9 +276,57 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets follow_up_id
+     *
+     * @return int|null
+     */
+    public function getFollowUpId()
+    {
+        return $this->container['follow_up_id'];
+    }
+
+    /**
+     * Sets follow_up_id
+     *
+     * @param int|null $follow_up_id follow_up_id
+     *
+     * @return self
+     */
+    public function setFollowUpId($follow_up_id)
+    {
+        $this->container['follow_up_id'] = $follow_up_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets info
      *
-     * @return string
+     * @return string|null
      */
     public function getInfo()
     {
@@ -356,17 +336,12 @@ class FollowUpInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets info
      *
-     * @param string $info info
+     * @param string|null $info info
      *
      * @return self
      */
     public function setInfo($info)
     {
-
-        if ((mb_strlen($info) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $info when calling FollowUpInterval., must be bigger than or equal to 1.');
-        }
-
         $this->container['info'] = $info;
 
         return $this;

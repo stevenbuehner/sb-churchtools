@@ -57,7 +57,7 @@ class GetSyncExecutions200ResponseMeta implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'count' => 'float',
+        'count' => 'int',
         'pagination' => '\StevenBuehner\ChurchTools\Model\GetSyncExecutions200ResponseMetaPagination'
     ];
 
@@ -218,7 +218,7 @@ class GetSyncExecutions200ResponseMeta implements ModelInterface, ArrayAccess, \
     /**
      * Gets count
      *
-     * @return float
+     * @return int
      */
     public function getCount()
     {
@@ -228,7 +228,7 @@ class GetSyncExecutions200ResponseMeta implements ModelInterface, ArrayAccess, \
     /**
      * Sets count
      *
-     * @param float $count count
+     * @param int $count count
      *
      * @return self
      */

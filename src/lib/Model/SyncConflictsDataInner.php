@@ -58,7 +58,7 @@ class SyncConflictsDataInner implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
         'key' => 'string',
         'value' => 'string'
     ];
@@ -219,7 +219,7 @@ class SyncConflictsDataInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getId()
     {
@@ -229,7 +229,7 @@ class SyncConflictsDataInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id
      *
-     * @param float|null $id id
+     * @param int|null $id id
      *
      * @return self
      */

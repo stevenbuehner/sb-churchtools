@@ -57,8 +57,8 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => '\StevenBuehner\ChurchTools\Model\PersonDomainObject',
         'note' => 'string',
+        'person' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson',
         'sort_key' => 'int'
     ];
 
@@ -70,8 +70,8 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person' => null,
         'note' => null,
+        'person' => null,
         'sort_key' => null
     ];
 
@@ -102,8 +102,8 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'person' => 'person',
         'note' => 'note',
+        'person' => 'person',
         'sort_key' => 'sortKey'
     ];
 
@@ -113,8 +113,8 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'person' => 'setPerson',
         'note' => 'setNote',
+        'person' => 'setPerson',
         'sort_key' => 'setSortKey'
     ];
 
@@ -124,8 +124,8 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'person' => 'getPerson',
         'note' => 'getNote',
+        'person' => 'getPerson',
         'sort_key' => 'getSortKey'
     ];
 
@@ -186,8 +186,8 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['person'] = $data['person'] ?? null;
         $this->container['note'] = $data['note'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
     }
 
@@ -222,30 +222,6 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
 
 
     /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PersonDomainObject|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PersonDomainObject|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
      * Gets note
      *
      * @return string
@@ -265,6 +241,30 @@ class GetAllCampuses200ResponseDataInnerTeamInner implements ModelInterface, Arr
     public function setNote($note)
     {
         $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null
+     */
+    public function getPerson()
+    {
+        return $this->container['person'];
+    }
+
+    /**
+     * Sets person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson|null $person person
+     *
+     * @return self
+     */
+    public function setPerson($person)
+    {
+        $this->container['person'] = $person;
 
         return $this;
     }

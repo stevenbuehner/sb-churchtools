@@ -57,12 +57,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'appointment_id' => 'float',
-        'person' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson',
-        'event_date' => 'string',
         'accepted' => 'mixed',
+        'appointment_id' => 'int',
+        'event_date' => 'string',
+        'id' => 'int',
         'mail_send_date' => 'string',
+        'person' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson',
         'response_date' => 'mixed'
     ];
 
@@ -74,12 +74,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'appointment_id' => null,
-        'person' => null,
-        'event_date' => null,
         'accepted' => null,
+        'appointment_id' => null,
+        'event_date' => null,
+        'id' => null,
         'mail_send_date' => null,
+        'person' => null,
         'response_date' => null
     ];
 
@@ -110,12 +110,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'appointment_id' => 'appointmentId',
-        'person' => 'person',
-        'event_date' => 'eventDate',
         'accepted' => 'accepted',
+        'appointment_id' => 'appointmentId',
+        'event_date' => 'eventDate',
+        'id' => 'id',
         'mail_send_date' => 'mailSendDate',
+        'person' => 'person',
         'response_date' => 'responseDate'
     ];
 
@@ -125,12 +125,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'appointment_id' => 'setAppointmentId',
-        'person' => 'setPerson',
-        'event_date' => 'setEventDate',
         'accepted' => 'setAccepted',
+        'appointment_id' => 'setAppointmentId',
+        'event_date' => 'setEventDate',
+        'id' => 'setId',
         'mail_send_date' => 'setMailSendDate',
+        'person' => 'setPerson',
         'response_date' => 'setResponseDate'
     ];
 
@@ -140,12 +140,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'appointment_id' => 'getAppointmentId',
-        'person' => 'getPerson',
-        'event_date' => 'getEventDate',
         'accepted' => 'getAccepted',
+        'appointment_id' => 'getAppointmentId',
+        'event_date' => 'getEventDate',
+        'id' => 'getId',
         'mail_send_date' => 'getMailSendDate',
+        'person' => 'getPerson',
         'response_date' => 'getResponseDate'
     ];
 
@@ -206,12 +206,12 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['appointment_id'] = $data['appointment_id'] ?? null;
-        $this->container['person'] = $data['person'] ?? null;
-        $this->container['event_date'] = $data['event_date'] ?? null;
         $this->container['accepted'] = $data['accepted'] ?? null;
+        $this->container['appointment_id'] = $data['appointment_id'] ?? null;
+        $this->container['event_date'] = $data['event_date'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['mail_send_date'] = $data['mail_send_date'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
         $this->container['response_date'] = $data['response_date'] ?? null;
     }
 
@@ -224,9 +224,6 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         if ($this->container['appointment_id'] === null) {
             $invalidProperties[] = "'appointment_id' can't be null";
         }
@@ -237,6 +234,9 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
             $invalidProperties[] = "invalid value for 'event_date', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
         if ($this->container['mail_send_date'] === null) {
             $invalidProperties[] = "'mail_send_date' can't be null";
         }
@@ -260,25 +260,25 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
 
 
     /**
-     * Gets id
+     * Gets accepted
      *
-     * @return float
+     * @return mixed|null
      */
-    public function getId()
+    public function getAccepted()
     {
-        return $this->container['id'];
+        return $this->container['accepted'];
     }
 
     /**
-     * Sets id
+     * Sets accepted
      *
-     * @param float $id id
+     * @param mixed|null $accepted accepted
      *
      * @return self
      */
-    public function setId($id)
+    public function setAccepted($accepted)
     {
-        $this->container['id'] = $id;
+        $this->container['accepted'] = $accepted;
 
         return $this;
     }
@@ -286,7 +286,7 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
     /**
      * Gets appointment_id
      *
-     * @return float
+     * @return int
      */
     public function getAppointmentId()
     {
@@ -296,37 +296,13 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
     /**
      * Sets appointment_id
      *
-     * @param float $appointment_id appointment_id
+     * @param int $appointment_id appointment_id
      *
      * @return self
      */
     public function setAppointmentId($appointment_id)
     {
         $this->container['appointment_id'] = $appointment_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
 
         return $this;
     }
@@ -361,25 +337,25 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
     }
 
     /**
-     * Gets accepted
+     * Gets id
      *
-     * @return mixed|null
+     * @return int
      */
-    public function getAccepted()
+    public function getId()
     {
-        return $this->container['accepted'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets accepted
+     * Sets id
      *
-     * @param mixed|null $accepted accepted
+     * @param int $id id
      *
      * @return self
      */
-    public function setAccepted($accepted)
+    public function setId($id)
     {
-        $this->container['accepted'] = $accepted;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -409,6 +385,30 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMee
         }
 
         $this->container['mail_send_date'] = $mail_send_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson|null
+     */
+    public function getPerson()
+    {
+        return $this->container['person'];
+    }
+
+    /**
+     * Sets person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson|null $person person
+     *
+     * @return self
+     */
+    public function setPerson($person)
+    {
+        $this->container['person'] = $person;
 
         return $this;
     }

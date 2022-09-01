@@ -915,7 +915,7 @@ class MasterDataApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\EventMasterData1
+     * @return \StevenBuehner\ChurchTools\Model\EventMasterData1|string
      */
     public function getEventMasterdata()
     {
@@ -931,7 +931,7 @@ class MasterDataApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\EventMasterData1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\EventMasterData1|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEventMasterdataWithHttpInfo()
     {
@@ -988,6 +988,21 @@ class MasterDataApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\EventMasterData1';
@@ -1012,6 +1027,14 @@ class MasterDataApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\StevenBuehner\ChurchTools\Model\EventMasterData1',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1113,11 +1136,11 @@ class MasterDataApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }
@@ -1174,34 +1197,34 @@ class MasterDataApi
     }
 
     /**
-     * Operation getMasterDataPerson
+     * Operation getPersonMasterdata
      *
-     * Fetch all master data for the module \&quot;People &amp; Groups\&quot;
+     * Get person &amp; groups masterdata
      *
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
      */
-    public function getMasterDataPerson()
+    public function getPersonMasterdata()
     {
-        list($response) = $this->getMasterDataPersonWithHttpInfo();
+        list($response) = $this->getPersonMasterdataWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation getMasterDataPersonWithHttpInfo
+     * Operation getPersonMasterdataWithHttpInfo
      *
-     * Fetch all master data for the module \&quot;People &amp; Groups\&quot;
+     * Get person &amp; groups masterdata
      *
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMasterDataPersonWithHttpInfo()
+    public function getPersonMasterdataWithHttpInfo()
     {
-        $request = $this->getMasterDataPersonRequest();
+        $request = $this->getPersonMasterdataRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1240,23 +1263,23 @@ class MasterDataApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1277,7 +1300,7 @@ class MasterDataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1288,17 +1311,17 @@ class MasterDataApi
     }
 
     /**
-     * Operation getMasterDataPersonAsync
+     * Operation getPersonMasterdataAsync
      *
-     * Fetch all master data for the module \&quot;People &amp; Groups\&quot;
+     * Get person &amp; groups masterdata
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMasterDataPersonAsync()
+    public function getPersonMasterdataAsync()
     {
-        return $this->getMasterDataPersonAsyncWithHttpInfo()
+        return $this->getPersonMasterdataAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1307,18 +1330,18 @@ class MasterDataApi
     }
 
     /**
-     * Operation getMasterDataPersonAsyncWithHttpInfo
+     * Operation getPersonMasterdataAsyncWithHttpInfo
      *
-     * Fetch all master data for the module \&quot;People &amp; Groups\&quot;
+     * Get person &amp; groups masterdata
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMasterDataPersonAsyncWithHttpInfo()
+    public function getPersonMasterdataAsyncWithHttpInfo()
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response';
-        $request = $this->getMasterDataPersonRequest();
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response';
+        $request = $this->getPersonMasterdataRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1357,13 +1380,13 @@ class MasterDataApi
     }
 
     /**
-     * Create request for operation 'getMasterDataPerson'
+     * Create request for operation 'getPersonMasterdata'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getMasterDataPersonRequest()
+    public function getPersonMasterdataRequest()
     {
 
         $resourcePath = '/person/masterdata';
@@ -1440,7 +1463,7 @@ class MasterDataApi
     }
 
     /**
-     * Operation masterdataPersonRolesRoleIdGet
+     * Operation getPersonMasterdataRole
      *
      * Get a group type role
      *
@@ -1448,16 +1471,16 @@ class MasterDataApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response
      */
-    public function masterdataPersonRolesRoleIdGet($role_id)
+    public function getPersonMasterdataRole($role_id)
     {
-        list($response) = $this->masterdataPersonRolesRoleIdGetWithHttpInfo($role_id);
+        list($response) = $this->getPersonMasterdataRoleWithHttpInfo($role_id);
         return $response;
     }
 
     /**
-     * Operation masterdataPersonRolesRoleIdGetWithHttpInfo
+     * Operation getPersonMasterdataRoleWithHttpInfo
      *
      * Get a group type role
      *
@@ -1465,11 +1488,11 @@ class MasterDataApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function masterdataPersonRolesRoleIdGetWithHttpInfo($role_id)
+    public function getPersonMasterdataRoleWithHttpInfo($role_id)
     {
-        $request = $this->masterdataPersonRolesRoleIdGetRequest($role_id);
+        $request = $this->getPersonMasterdataRoleRequest($role_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1508,23 +1531,23 @@ class MasterDataApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response' === '\SplFileObject') {
+                    if ('\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response' !== 'string') {
+                        if ('\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response', []),
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response';
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1545,7 +1568,7 @@ class MasterDataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response',
+                        '\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1556,7 +1579,7 @@ class MasterDataApi
     }
 
     /**
-     * Operation masterdataPersonRolesRoleIdGetAsync
+     * Operation getPersonMasterdataRoleAsync
      *
      * Get a group type role
      *
@@ -1565,9 +1588,9 @@ class MasterDataApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function masterdataPersonRolesRoleIdGetAsync($role_id)
+    public function getPersonMasterdataRoleAsync($role_id)
     {
-        return $this->masterdataPersonRolesRoleIdGetAsyncWithHttpInfo($role_id)
+        return $this->getPersonMasterdataRoleAsyncWithHttpInfo($role_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1576,7 +1599,7 @@ class MasterDataApi
     }
 
     /**
-     * Operation masterdataPersonRolesRoleIdGetAsyncWithHttpInfo
+     * Operation getPersonMasterdataRoleAsyncWithHttpInfo
      *
      * Get a group type role
      *
@@ -1585,10 +1608,10 @@ class MasterDataApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function masterdataPersonRolesRoleIdGetAsyncWithHttpInfo($role_id)
+    public function getPersonMasterdataRoleAsyncWithHttpInfo($role_id)
     {
-        $returnType = '\StevenBuehner\ChurchTools\Model\MasterdataPersonRolesRoleIdGet200Response';
-        $request = $this->masterdataPersonRolesRoleIdGetRequest($role_id);
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response';
+        $request = $this->getPersonMasterdataRoleRequest($role_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1627,19 +1650,19 @@ class MasterDataApi
     }
 
     /**
-     * Create request for operation 'masterdataPersonRolesRoleIdGet'
+     * Create request for operation 'getPersonMasterdataRole'
      *
      * @param  int $role_id ID of group type role (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function masterdataPersonRolesRoleIdGetRequest($role_id)
+    public function getPersonMasterdataRoleRequest($role_id)
     {
         // verify the required parameter 'role_id' is set
         if ($role_id === null || (is_array($role_id) && count($role_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $role_id when calling masterdataPersonRolesRoleIdGet'
+                'Missing the required parameter $role_id when calling getPersonMasterdataRole'
             );
         }
 
@@ -1660,6 +1683,272 @@ class MasterDataApi
                 $resourcePath
             );
         }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getResourceMasterdata
+     *
+     * Your GET endpoint
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response
+     */
+    public function getResourceMasterdata()
+    {
+        list($response) = $this->getResourceMasterdataWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getResourceMasterdataWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     *
+     * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getResourceMasterdataWithHttpInfo()
+    {
+        $request = $this->getResourceMasterdataRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getResourceMasterdataAsync
+     *
+     * Your GET endpoint
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceMasterdataAsync()
+    {
+        return $this->getResourceMasterdataAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getResourceMasterdataAsyncWithHttpInfo
+     *
+     * Your GET endpoint
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceMasterdataAsyncWithHttpInfo()
+    {
+        $returnType = '\StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response';
+        $request = $this->getResourceMasterdataRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getResourceMasterdata'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getResourceMasterdataRequest()
+    {
+
+        $resourcePath = '/resource/masterdata';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
 
 
         if ($multipart) {

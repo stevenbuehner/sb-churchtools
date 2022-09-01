@@ -58,12 +58,12 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
+        'campus_id' => 'int',
+        'force' => 'bool',
+        'group_status_id' => 'int',
+        'group_type_id' => 'int',
         'name' => 'string',
-        'group_type_id' => 'float',
-        'group_status_id' => 'float',
-        'superior_group_id' => 'float',
-        'campus_id' => 'float',
-        'force' => 'bool'
+        'superior_group_id' => 'int'
     ];
 
     /**
@@ -74,12 +74,12 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'group_type_id' => null,
-        'group_status_id' => null,
-        'superior_group_id' => null,
         'campus_id' => null,
-        'force' => null
+        'force' => null,
+        'group_status_id' => null,
+        'group_type_id' => null,
+        'name' => null,
+        'superior_group_id' => null
     ];
 
     /**
@@ -109,12 +109,12 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'group_type_id' => 'groupTypeId',
-        'group_status_id' => 'groupStatusId',
-        'superior_group_id' => 'superiorGroupId',
         'campus_id' => 'campusId',
-        'force' => 'force'
+        'force' => 'force',
+        'group_status_id' => 'groupStatusId',
+        'group_type_id' => 'groupTypeId',
+        'name' => 'name',
+        'superior_group_id' => 'superiorGroupId'
     ];
 
     /**
@@ -123,12 +123,12 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'group_type_id' => 'setGroupTypeId',
-        'group_status_id' => 'setGroupStatusId',
-        'superior_group_id' => 'setSuperiorGroupId',
         'campus_id' => 'setCampusId',
-        'force' => 'setForce'
+        'force' => 'setForce',
+        'group_status_id' => 'setGroupStatusId',
+        'group_type_id' => 'setGroupTypeId',
+        'name' => 'setName',
+        'superior_group_id' => 'setSuperiorGroupId'
     ];
 
     /**
@@ -137,12 +137,12 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'group_type_id' => 'getGroupTypeId',
-        'group_status_id' => 'getGroupStatusId',
-        'superior_group_id' => 'getSuperiorGroupId',
         'campus_id' => 'getCampusId',
-        'force' => 'getForce'
+        'force' => 'getForce',
+        'group_status_id' => 'getGroupStatusId',
+        'group_type_id' => 'getGroupTypeId',
+        'name' => 'getName',
+        'superior_group_id' => 'getSuperiorGroupId'
     ];
 
     /**
@@ -202,12 +202,12 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['group_type_id'] = $data['group_type_id'] ?? null;
-        $this->container['group_status_id'] = $data['group_status_id'] ?? null;
-        $this->container['superior_group_id'] = $data['superior_group_id'] ?? null;
         $this->container['campus_id'] = $data['campus_id'] ?? null;
         $this->container['force'] = $data['force'] ?? null;
+        $this->container['group_status_id'] = $data['group_status_id'] ?? null;
+        $this->container['group_type_id'] = $data['group_type_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['superior_group_id'] = $data['superior_group_id'] ?? null;
     }
 
     /**
@@ -219,6 +219,12 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
+        if ($this->container['group_status_id'] === null) {
+            $invalidProperties[] = "'group_status_id' can't be null";
+        }
+        if ($this->container['group_type_id'] === null) {
+            $invalidProperties[] = "'group_type_id' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -226,12 +232,6 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['group_type_id'] === null) {
-            $invalidProperties[] = "'group_type_id' can't be null";
-        }
-        if ($this->container['group_status_id'] === null) {
-            $invalidProperties[] = "'group_status_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -246,6 +246,102 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets campus_id
+     *
+     * @return int|null
+     */
+    public function getCampusId()
+    {
+        return $this->container['campus_id'];
+    }
+
+    /**
+     * Sets campus_id
+     *
+     * @param int|null $campus_id Campus Id if group is connected to a campus
+     *
+     * @return self
+     */
+    public function setCampusId($campus_id)
+    {
+        $this->container['campus_id'] = $campus_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets force
+     *
+     * @return bool|null
+     */
+    public function getForce()
+    {
+        return $this->container['force'];
+    }
+
+    /**
+     * Sets force
+     *
+     * @param bool|null $force Need to be true, if another group with that name already exists
+     *
+     * @return self
+     */
+    public function setForce($force)
+    {
+        $this->container['force'] = $force;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_status_id
+     *
+     * @return int
+     */
+    public function getGroupStatusId()
+    {
+        return $this->container['group_status_id'];
+    }
+
+    /**
+     * Sets group_status_id
+     *
+     * @param int $group_status_id ID of group status
+     *
+     * @return self
+     */
+    public function setGroupStatusId($group_status_id)
+    {
+        $this->container['group_status_id'] = $group_status_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_type_id
+     *
+     * @return int
+     */
+    public function getGroupTypeId()
+    {
+        return $this->container['group_type_id'];
+    }
+
+    /**
+     * Sets group_type_id
+     *
+     * @param int $group_type_id Id of group type
+     *
+     * @return self
+     */
+    public function setGroupTypeId($group_type_id)
+    {
+        $this->container['group_type_id'] = $group_type_id;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -277,57 +373,9 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets group_type_id
-     *
-     * @return float
-     */
-    public function getGroupTypeId()
-    {
-        return $this->container['group_type_id'];
-    }
-
-    /**
-     * Sets group_type_id
-     *
-     * @param float $group_type_id Id of group type
-     *
-     * @return self
-     */
-    public function setGroupTypeId($group_type_id)
-    {
-        $this->container['group_type_id'] = $group_type_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_status_id
-     *
-     * @return float
-     */
-    public function getGroupStatusId()
-    {
-        return $this->container['group_status_id'];
-    }
-
-    /**
-     * Sets group_status_id
-     *
-     * @param float $group_status_id ID of group status
-     *
-     * @return self
-     */
-    public function setGroupStatusId($group_status_id)
-    {
-        $this->container['group_status_id'] = $group_status_id;
-
-        return $this;
-    }
-
-    /**
      * Gets superior_group_id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getSuperiorGroupId()
     {
@@ -337,61 +385,13 @@ class PostGroupsRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets superior_group_id
      *
-     * @param float|null $superior_group_id Group ID of superior group
+     * @param int|null $superior_group_id Group ID of superior group
      *
      * @return self
      */
     public function setSuperiorGroupId($superior_group_id)
     {
         $this->container['superior_group_id'] = $superior_group_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets campus_id
-     *
-     * @return float|null
-     */
-    public function getCampusId()
-    {
-        return $this->container['campus_id'];
-    }
-
-    /**
-     * Sets campus_id
-     *
-     * @param float|null $campus_id Campus Id if group is connected to a campus
-     *
-     * @return self
-     */
-    public function setCampusId($campus_id)
-    {
-        $this->container['campus_id'] = $campus_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets force
-     *
-     * @return bool|null
-     */
-    public function getForce()
-    {
-        return $this->container['force'];
-    }
-
-    /**
-     * Sets force
-     *
-     * @param bool|null $force Need to be true, if another group with that name already exists
-     *
-     * @return self
-     */
-    public function setForce($force)
-    {
-        $this->container['force'] = $force;
 
         return $this;
     }

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  |
+**account_ids** | **int[]** |  | [optional]
 **cost_center_id** | **int** |  |
+**is_income** | **bool** |  |
+**name** | **string** |  |
 **purpose_account_id** | **int** |  |
 **sort_key** | **int** |  |
-**is_income** | **bool** |  |
-**account_ids** | **int[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

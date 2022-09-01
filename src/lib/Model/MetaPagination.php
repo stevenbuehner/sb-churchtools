@@ -57,8 +57,9 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'count' => 'float',
-        'pagination' => '\StevenBuehner\ChurchTools\Model\MetaPaginationPagination'
+        'all' => 'int',
+        'count' => 'int',
+        'pagination' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMetaPagination'
     ];
 
     /**
@@ -69,6 +70,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'all' => null,
         'count' => null,
         'pagination' => null
     ];
@@ -100,6 +102,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'all' => 'all',
         'count' => 'count',
         'pagination' => 'pagination'
     ];
@@ -110,6 +113,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'all' => 'setAll',
         'count' => 'setCount',
         'pagination' => 'setPagination'
     ];
@@ -120,6 +124,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'all' => 'getAll',
         'count' => 'getCount',
         'pagination' => 'getPagination'
     ];
@@ -181,6 +186,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['all'] = $data['all'] ?? null;
         $this->container['count'] = $data['count'] ?? null;
         $this->container['pagination'] = $data['pagination'] ?? null;
     }
@@ -210,9 +216,33 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets all
+     *
+     * @return int|null
+     */
+    public function getAll()
+    {
+        return $this->container['all'];
+    }
+
+    /**
+     * Sets all
+     *
+     * @param int|null $all all
+     *
+     * @return self
+     */
+    public function setAll($all)
+    {
+        $this->container['all'] = $all;
+
+        return $this;
+    }
+
+    /**
      * Gets count
      *
-     * @return float|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -222,7 +252,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets count
      *
-     * @param float|null $count Size of data array.
+     * @param int|null $count count
      *
      * @return self
      */
@@ -236,7 +266,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets pagination
      *
-     * @return \StevenBuehner\ChurchTools\Model\MetaPaginationPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMetaPagination|null
      */
     public function getPagination()
     {
@@ -246,7 +276,7 @@ class MetaPagination implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pagination
      *
-     * @param \StevenBuehner\ChurchTools\Model\MetaPaginationPagination|null $pagination pagination
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMetaPagination|null $pagination pagination
      *
      * @return self
      */

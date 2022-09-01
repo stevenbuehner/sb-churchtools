@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional]
 **date** | **\DateTime** |  | [optional]
+**id** | **int** |  | [optional]
 **is_repeated** | **string** |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta**](GetBookings200ResponseDataInnerBaseAdditionalsInnerMeta.md) |  | [optional]
 

@@ -58,14 +58,14 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'domain_type' => 'string',
         'domain_id' => 'string',
-        'source_id' => 'float',
-        'source_entity_id' => 'string',
-        'status' => 'string',
+        'domain_type' => 'string',
+        'id' => 'int',
         'last_synced_date' => '\DateTime',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'source_entity_id' => 'string',
+        'source_id' => 'int',
+        'status' => 'string'
     ];
 
     /**
@@ -76,14 +76,14 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'domain_type' => null,
         'domain_id' => null,
-        'source_id' => null,
-        'source_entity_id' => null,
-        'status' => null,
+        'domain_type' => null,
+        'id' => null,
         'last_synced_date' => 'date-time',
-        'meta' => null
+        'meta' => null,
+        'source_entity_id' => null,
+        'source_id' => null,
+        'status' => null
     ];
 
     /**
@@ -113,14 +113,14 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'domain_type' => 'domainType',
         'domain_id' => 'domainId',
-        'source_id' => 'sourceId',
-        'source_entity_id' => 'sourceEntityId',
-        'status' => 'status',
+        'domain_type' => 'domainType',
+        'id' => 'id',
         'last_synced_date' => 'lastSyncedDate',
-        'meta' => 'meta'
+        'meta' => 'meta',
+        'source_entity_id' => 'sourceEntityId',
+        'source_id' => 'sourceId',
+        'status' => 'status'
     ];
 
     /**
@@ -129,14 +129,14 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'domain_type' => 'setDomainType',
         'domain_id' => 'setDomainId',
-        'source_id' => 'setSourceId',
-        'source_entity_id' => 'setSourceEntityId',
-        'status' => 'setStatus',
+        'domain_type' => 'setDomainType',
+        'id' => 'setId',
         'last_synced_date' => 'setLastSyncedDate',
-        'meta' => 'setMeta'
+        'meta' => 'setMeta',
+        'source_entity_id' => 'setSourceEntityId',
+        'source_id' => 'setSourceId',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -145,14 +145,14 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'domain_type' => 'getDomainType',
         'domain_id' => 'getDomainId',
-        'source_id' => 'getSourceId',
-        'source_entity_id' => 'getSourceEntityId',
-        'status' => 'getStatus',
+        'domain_type' => 'getDomainType',
+        'id' => 'getId',
         'last_synced_date' => 'getLastSyncedDate',
-        'meta' => 'getMeta'
+        'meta' => 'getMeta',
+        'source_entity_id' => 'getSourceEntityId',
+        'source_id' => 'getSourceId',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -229,14 +229,14 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['source_id'] = $data['source_id'] ?? null;
-        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['last_synced_date'] = $data['last_synced_date'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
+        $this->container['source_id'] = $data['source_id'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -273,25 +273,25 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets id
+     * Gets domain_id
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getId()
+    public function getDomainId()
     {
-        return $this->container['id'];
+        return $this->container['domain_id'];
     }
 
     /**
-     * Sets id
+     * Sets domain_id
      *
-     * @param float|null $id ID of Entity Mapping
+     * @param string|null $domain_id ChurchTools Internal Domain Identifier
      *
      * @return self
      */
-    public function setId($id)
+    public function setDomainId($domain_id)
     {
-        $this->container['id'] = $id;
+        $this->container['domain_id'] = $domain_id;
 
         return $this;
     }
@@ -321,49 +321,73 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets domain_id
+     * Gets id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getDomainId()
+    public function getId()
     {
-        return $this->container['domain_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets domain_id
+     * Sets id
      *
-     * @param string|null $domain_id ChurchTools Internal Domain Identifier
+     * @param int|null $id ID of Entity Mapping
      *
      * @return self
      */
-    public function setDomainId($domain_id)
+    public function setId($id)
     {
-        $this->container['domain_id'] = $domain_id;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets source_id
+     * Gets last_synced_date
      *
-     * @return float|null
+     * @return \DateTime|null
      */
-    public function getSourceId()
+    public function getLastSyncedDate()
     {
-        return $this->container['source_id'];
+        return $this->container['last_synced_date'];
     }
 
     /**
-     * Sets source_id
+     * Sets last_synced_date
      *
-     * @param float|null $source_id Id of Source System Registered in ChurchTools
+     * @param \DateTime|null $last_synced_date Date of Last Sync
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setLastSyncedDate($last_synced_date)
     {
-        $this->container['source_id'] = $source_id;
+        $this->container['last_synced_date'] = $last_synced_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -388,6 +412,30 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSourceEntityId($source_entity_id)
     {
         $this->container['source_entity_id'] = $source_entity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     *
+     * @return int|null
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     *
+     * @param int|null $source_id Id of Source System Registered in ChurchTools
+     *
+     * @return self
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -422,54 +470,6 @@ class SyncEntityMapping implements ModelInterface, ArrayAccess, \JsonSerializabl
             );
         }
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_synced_date
-     *
-     * @return \DateTime|null
-     */
-    public function getLastSyncedDate()
-    {
-        return $this->container['last_synced_date'];
-    }
-
-    /**
-     * Sets last_synced_date
-     *
-     * @param \DateTime|null $last_synced_date Date of Last Sync
-     *
-     * @return self
-     */
-    public function setLastSyncedDate($last_synced_date)
-    {
-        $this->container['last_synced_date'] = $last_synced_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

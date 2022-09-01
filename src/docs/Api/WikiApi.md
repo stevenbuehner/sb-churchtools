@@ -29,7 +29,7 @@ Get all wiki categories.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -60,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -88,7 +88,7 @@ Returns all Wiki Pages in the given Category. Only the latest version of each pa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -100,7 +100,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\WikiApi(
     new GuzzleHttp\Client(),
     $config
 );
-$wiki_category_id = 'wiki_category_id_example'; // string
+$wiki_category_id = 42; // int | ID of WikiCategory
 
 try {
     $result = $apiInstance->getWikiCategoriesWikiCategoryIdPages($wiki_category_id);
@@ -114,7 +114,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **string**|  |
+ **wiki_category_id** | **int**| ID of WikiCategory |
 
 ### Return type
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Returns the latest version of the wiki page with the given identifier.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -162,7 +162,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\WikiApi(
     new GuzzleHttp\Client(),
     $config
 );
-$wiki_category_id = 'wiki_category_id_example'; // string
+$wiki_category_id = 42; // int | ID of WikiCategory
 $identifier = 'identifier_example'; // string | Can either be the pages identifier or its title
 
 try {
@@ -177,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **string**|  |
+ **wiki_category_id** | **int**| ID of WikiCategory |
  **identifier** | **string**| Can either be the pages identifier or its title |
 
 ### Return type
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -214,7 +214,7 @@ Returns all version of the wiki page for the given identifier.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -226,7 +226,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\WikiApi(
     new GuzzleHttp\Client(),
     $config
 );
-$wiki_category_id = 'wiki_category_id_example'; // string
+$wiki_category_id = 42; // int | ID of WikiCategory
 $identifier = 'identifier_example'; // string | Can either be the pages identifier or its title
 
 try {
@@ -241,7 +241,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **string**|  |
+ **wiki_category_id** | **int**| ID of WikiCategory |
  **identifier** | **string**| Can either be the pages identifier or its title |
 
 ### Return type
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -278,7 +278,7 @@ Returns the wiki page with the given identifier and version.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -290,7 +290,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\WikiApi(
     new GuzzleHttp\Client(),
     $config
 );
-$wiki_category_id = 'wiki_category_id_example'; // string
+$wiki_category_id = 42; // int | ID of WikiCategory
 $version = 'version_example'; // string
 $identifier = 'identifier_example'; // string | Can either be the pages identifier or its title
 
@@ -306,7 +306,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **string**|  |
+ **wiki_category_id** | **int**| ID of WikiCategory |
  **version** | **string**|  |
  **identifier** | **string**| Can either be the pages identifier or its title |
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -344,7 +344,7 @@ Full text search in all wiki pages
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -357,7 +357,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\WikiApi(
     $config
 );
 $query = 'query_example'; // string
-$wiki_category_ids = NULL; // array | wiki categories that should be searched. if noone is given all categories are searched
+$wiki_category_ids = array(56); // int[] | wiki categories that should be searched. if noone is given all categories are searched
 
 try {
     $result = $apiInstance->getWikiCategoriesWikiCategoryIdSearch($query, $wiki_category_ids);
@@ -372,7 +372,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string**|  | [optional]
- **wiki_category_ids** | [**array**](../Model/.md)| wiki categories that should be searched. if noone is given all categories are searched | [optional]
+ **wiki_category_ids** | [**int[]**](../Model/int.md)| wiki categories that should be searched. if noone is given all categories are searched | [optional]
 
 ### Return type
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

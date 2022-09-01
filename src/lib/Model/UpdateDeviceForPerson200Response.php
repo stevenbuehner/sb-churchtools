@@ -57,8 +57,8 @@ class UpdateDeviceForPerson200Response implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\Device[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\UpdateDeviceForPerson200ResponseMeta'
+        'data' => '\StevenBuehner\ChurchTools\Model\Device1[]',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -212,7 +212,7 @@ class UpdateDeviceForPerson200Response implements ModelInterface, ArrayAccess, \
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\Device[]|null
+     * @return \StevenBuehner\ChurchTools\Model\Device1[]|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class UpdateDeviceForPerson200Response implements ModelInterface, ArrayAccess, \
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\Device[]|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\Device1[]|null $data data
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class UpdateDeviceForPerson200Response implements ModelInterface, ArrayAccess, \
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\UpdateDeviceForPerson200ResponseMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class UpdateDeviceForPerson200Response implements ModelInterface, ArrayAccess, \
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\UpdateDeviceForPerson200ResponseMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

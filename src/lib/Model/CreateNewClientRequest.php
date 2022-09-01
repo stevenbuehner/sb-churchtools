@@ -57,14 +57,14 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'street' => 'string',
-        'postal_code' => 'string',
         'city' => 'string',
-        'phone' => 'string',
         'email' => 'string',
-        'treasurer_id' => 'int',
-        'sort_key' => 'int'
+        'name' => 'string',
+        'phone' => 'string',
+        'postal_code' => 'string',
+        'sort_key' => 'int',
+        'street' => 'string',
+        'treasurer_id' => 'int'
     ];
 
     /**
@@ -75,14 +75,14 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'street' => null,
-        'postal_code' => null,
         'city' => null,
-        'phone' => null,
         'email' => null,
-        'treasurer_id' => null,
-        'sort_key' => null
+        'name' => null,
+        'phone' => null,
+        'postal_code' => null,
+        'sort_key' => null,
+        'street' => null,
+        'treasurer_id' => null
     ];
 
     /**
@@ -112,14 +112,14 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'street' => 'street',
-        'postal_code' => 'postalCode',
         'city' => 'city',
-        'phone' => 'phone',
         'email' => 'email',
-        'treasurer_id' => 'treasurerId',
-        'sort_key' => 'sortKey'
+        'name' => 'name',
+        'phone' => 'phone',
+        'postal_code' => 'postalCode',
+        'sort_key' => 'sortKey',
+        'street' => 'street',
+        'treasurer_id' => 'treasurerId'
     ];
 
     /**
@@ -128,14 +128,14 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'street' => 'setStreet',
-        'postal_code' => 'setPostalCode',
         'city' => 'setCity',
-        'phone' => 'setPhone',
         'email' => 'setEmail',
-        'treasurer_id' => 'setTreasurerId',
-        'sort_key' => 'setSortKey'
+        'name' => 'setName',
+        'phone' => 'setPhone',
+        'postal_code' => 'setPostalCode',
+        'sort_key' => 'setSortKey',
+        'street' => 'setStreet',
+        'treasurer_id' => 'setTreasurerId'
     ];
 
     /**
@@ -144,14 +144,14 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'street' => 'getStreet',
-        'postal_code' => 'getPostalCode',
         'city' => 'getCity',
-        'phone' => 'getPhone',
         'email' => 'getEmail',
-        'treasurer_id' => 'getTreasurerId',
-        'sort_key' => 'getSortKey'
+        'name' => 'getName',
+        'phone' => 'getPhone',
+        'postal_code' => 'getPostalCode',
+        'sort_key' => 'getSortKey',
+        'street' => 'getStreet',
+        'treasurer_id' => 'getTreasurerId'
     ];
 
     /**
@@ -211,14 +211,14 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['street'] = $data['street'] ?? null;
-        $this->container['postal_code'] = $data['postal_code'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
-        $this->container['treasurer_id'] = $data['treasurer_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['postal_code'] = $data['postal_code'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['treasurer_id'] = $data['treasurer_id'] ?? null;
     }
 
     /**
@@ -252,78 +252,6 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string|null
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string|null $street street
-     *
-     * @return self
-     */
-    public function setStreet($street)
-    {
-        $this->container['street'] = $street;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     *
-     * @return string|null
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     *
-     * @param string|null $postal_code postal_code
-     *
-     * @return self
-     */
-    public function setPostalCode($postal_code)
-    {
-        $this->container['postal_code'] = $postal_code;
-
-        return $this;
-    }
-
-    /**
      * Gets city
      *
      * @return string|null
@@ -343,30 +271,6 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCity($city)
     {
         $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string|null
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string|null $phone phone
-     *
-     * @return self
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
 
         return $this;
     }
@@ -396,25 +300,73 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets treasurer_id
+     * Gets name
      *
-     * @return int|null
+     * @return string
      */
-    public function getTreasurerId()
+    public function getName()
     {
-        return $this->container['treasurer_id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets treasurer_id
+     * Sets name
      *
-     * @param int|null $treasurer_id treasurer_id
+     * @param string $name name
      *
      * @return self
      */
-    public function setTreasurerId($treasurer_id)
+    public function setName($name)
     {
-        $this->container['treasurer_id'] = $treasurer_id;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string|null
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string|null $postal_code postal_code
+     *
+     * @return self
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
@@ -439,6 +391,54 @@ class CreateNewClientRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string|null
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string|null $street street
+     *
+     * @return self
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets treasurer_id
+     *
+     * @return int|null
+     */
+    public function getTreasurerId()
+    {
+        return $this->container['treasurer_id'];
+    }
+
+    /**
+     * Sets treasurer_id
+     *
+     * @param int|null $treasurer_id treasurer_id
+     *
+     * @return self
+     */
+    public function setTreasurerId($treasurer_id)
+    {
+        $this->container['treasurer_id'] = $treasurer_id;
 
         return $this;
     }

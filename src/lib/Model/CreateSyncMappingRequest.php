@@ -57,12 +57,12 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'domain_type' => 'string',
         'domain_id' => 'string',
-        'source_id' => 'float',
+        'domain_type' => 'string',
+        'last_synced_date' => '\DateTime',
         'source_entity_id' => 'string',
-        'status' => 'string',
-        'last_synced_date' => '\DateTime'
+        'source_id' => 'int',
+        'status' => 'string'
     ];
 
     /**
@@ -73,12 +73,12 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'domain_type' => null,
         'domain_id' => null,
-        'source_id' => null,
+        'domain_type' => null,
+        'last_synced_date' => 'date-time',
         'source_entity_id' => null,
-        'status' => null,
-        'last_synced_date' => 'date-time'
+        'source_id' => null,
+        'status' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'domain_type' => 'domainType',
         'domain_id' => 'domainId',
-        'source_id' => 'sourceId',
+        'domain_type' => 'domainType',
+        'last_synced_date' => 'lastSyncedDate',
         'source_entity_id' => 'sourceEntityId',
-        'status' => 'status',
-        'last_synced_date' => 'lastSyncedDate'
+        'source_id' => 'sourceId',
+        'status' => 'status'
     ];
 
     /**
@@ -122,12 +122,12 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'domain_type' => 'setDomainType',
         'domain_id' => 'setDomainId',
-        'source_id' => 'setSourceId',
+        'domain_type' => 'setDomainType',
+        'last_synced_date' => 'setLastSyncedDate',
         'source_entity_id' => 'setSourceEntityId',
-        'status' => 'setStatus',
-        'last_synced_date' => 'setLastSyncedDate'
+        'source_id' => 'setSourceId',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -136,12 +136,12 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'domain_type' => 'getDomainType',
         'domain_id' => 'getDomainId',
-        'source_id' => 'getSourceId',
+        'domain_type' => 'getDomainType',
+        'last_synced_date' => 'getLastSyncedDate',
         'source_entity_id' => 'getSourceEntityId',
-        'status' => 'getStatus',
-        'last_synced_date' => 'getLastSyncedDate'
+        'source_id' => 'getSourceId',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -218,12 +218,12 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['domain_id'] = $data['domain_id'] ?? null;
-        $this->container['source_id'] = $data['source_id'] ?? null;
-        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['last_synced_date'] = $data['last_synced_date'] ?? null;
+        $this->container['source_entity_id'] = $data['source_entity_id'] ?? null;
+        $this->container['source_id'] = $data['source_id'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -235,17 +235,20 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['domain_type'] === null) {
-            $invalidProperties[] = "'domain_type' can't be null";
-        }
         if ($this->container['domain_id'] === null) {
             $invalidProperties[] = "'domain_id' can't be null";
         }
-        if ($this->container['source_id'] === null) {
-            $invalidProperties[] = "'source_id' can't be null";
+        if ($this->container['domain_type'] === null) {
+            $invalidProperties[] = "'domain_type' can't be null";
+        }
+        if ($this->container['last_synced_date'] === null) {
+            $invalidProperties[] = "'last_synced_date' can't be null";
         }
         if ($this->container['source_entity_id'] === null) {
             $invalidProperties[] = "'source_entity_id' can't be null";
+        }
+        if ($this->container['source_id'] === null) {
+            $invalidProperties[] = "'source_id' can't be null";
         }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
@@ -259,9 +262,6 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
             );
         }
 
-        if ($this->container['last_synced_date'] === null) {
-            $invalidProperties[] = "'last_synced_date' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -276,30 +276,6 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets domain_type
-     *
-     * @return string
-     */
-    public function getDomainType()
-    {
-        return $this->container['domain_type'];
-    }
-
-    /**
-     * Sets domain_type
-     *
-     * @param string $domain_type ChurchTools Domain Type
-     *
-     * @return self
-     */
-    public function setDomainType($domain_type)
-    {
-        $this->container['domain_type'] = $domain_type;
-
-        return $this;
-    }
 
     /**
      * Gets domain_id
@@ -326,25 +302,49 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets source_id
+     * Gets domain_type
      *
-     * @return float
+     * @return string
      */
-    public function getSourceId()
+    public function getDomainType()
     {
-        return $this->container['source_id'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets source_id
+     * Sets domain_type
      *
-     * @param float $source_id Identifier of Synchronisation Source
+     * @param string $domain_type ChurchTools Domain Type
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setDomainType($domain_type)
     {
-        $this->container['source_id'] = $source_id;
+        $this->container['domain_type'] = $domain_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_synced_date
+     *
+     * @return \DateTime
+     */
+    public function getLastSyncedDate()
+    {
+        return $this->container['last_synced_date'];
+    }
+
+    /**
+     * Sets last_synced_date
+     *
+     * @param \DateTime $last_synced_date DateTime of Last Synchronisation in Zulu Format
+     *
+     * @return self
+     */
+    public function setLastSyncedDate($last_synced_date)
+    {
+        $this->container['last_synced_date'] = $last_synced_date;
 
         return $this;
     }
@@ -369,6 +369,30 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
     public function setSourceEntityId($source_entity_id)
     {
         $this->container['source_entity_id'] = $source_entity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     *
+     * @return int
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     *
+     * @param int $source_id Identifier of Synchronisation Source
+     *
+     * @return self
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -403,30 +427,6 @@ class CreateSyncMappingRequest implements ModelInterface, ArrayAccess, \JsonSeri
             );
         }
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_synced_date
-     *
-     * @return \DateTime
-     */
-    public function getLastSyncedDate()
-    {
-        return $this->container['last_synced_date'];
-    }
-
-    /**
-     * Sets last_synced_date
-     *
-     * @param \DateTime $last_synced_date DateTime of Last Synchronisation in Zulu Format
-     *
-     * @return self
-     */
-    public function setLastSyncedDate($last_synced_date)
-    {
-        $this->container['last_synced_date'] = $last_synced_date;
 
         return $this;
     }

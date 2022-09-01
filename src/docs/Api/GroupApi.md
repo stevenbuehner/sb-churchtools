@@ -4,33 +4,38 @@ All URIs are relative to /api.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkin()**](GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin/{personId} | Checkin a person to a group
-[**createMeeting()**](GroupApi.md#createMeeting) | **POST** /groups/{id}/meetings | Create a group meeting
-[**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
+[**checkin()**](GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
+[**createMeeting()**](GroupApi.md#createMeeting) | **POST** /groups/{groupId}/meetings | Create a group meeting
+[**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/members/{personId} | Create/Update a group member
 [**deleteAutomaticEmail()**](GroupApi.md#deleteAutomaticEmail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email
-[**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /groups/{id} | 
+[**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /groups/{groupId} | 
 [**deleteGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingId) | **DELETE** /groups/{groupId}/meetings/{meetingId} | 
 [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
-[**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
-[**getAllGroupMembers()**](GroupApi.md#getAllGroupMembers) | **GET** /groups/{id}/members | Get all group members
-[**getAllGroupsForPerson()**](GroupApi.md#getAllGroupsForPerson) | **GET** /persons/{id}/groups | Get all groups a member is in
-[**getAllMeetings()**](GroupApi.md#getAllMeetings) | **GET** /groups/{id}/meetings | Get all group meetings for a specific group
+[**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/members/{personId} | Delete a group member
+[**getAllGroupMembers()**](GroupApi.md#getAllGroupMembers) | **GET** /groups/{groupId}/members | Get all group members
+[**getAllGroupsForPerson()**](GroupApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in
+[**getAllMeetings()**](GroupApi.md#getAllMeetings) | **GET** /groups/{groupId}/meetings | Get all group meetings for a specific group
 [**getAutomaticEmail()**](GroupApi.md#getAutomaticEmail) | **GET** /groups/{groupId}/emails/{emailId} | Get one automatic email
 [**getAutomaticEmails()**](GroupApi.md#getAutomaticEmails) | **GET** /groups/{groupId}/emails | Get all automatic emails of a group
-[**getGroupForHomepage()**](GroupApi.md#getGroupForHomepage) | **GET** /publicgroups/{id}/{hash} | Public information of group
+[**getGroup()**](GroupApi.md#getGroup) | **GET** /groups/{groupId} | Get a group
+[**getGroupForHomepage()**](GroupApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
 [**getGroupHomepage()**](GroupApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
-[**getGroupStatistics()**](GroupApi.md#getGroupStatistics) | **GET** /groups/{groupId}/statistics | Fetch calculated facts about group
+[**getGroupRoles()**](GroupApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get all roles for this group
+[**getGroupStatistics()**](GroupApi.md#getGroupStatistics) | **GET** /groups/{groupId}/statistics | Fetch facts about group
 [**getGroups()**](GroupApi.md#getGroups) | **GET** /groups | Get all groups
+[**getGroupsGroupIdMeetingsMeetingIdMembers()**](GroupApi.md#getGroupsGroupIdMeetingsMeetingIdMembers) | **GET** /groups/{groupId}/meetings/{meetingId}/members | Get Group Meeting Members
 [**getGroupsGroupIdMemberfields()**](GroupApi.md#getGroupsGroupIdMemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields
 [**getGroupsGroupIdMembersStatistics()**](GroupApi.md#getGroupsGroupIdMembersStatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members
+[**getGroupsGroupIdTags()**](GroupApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags
 [**getGroupsHierarchies()**](GroupApi.md#getGroupsHierarchies) | **GET** /groups/hierarchies | Get all group hierarchies
 [**getGroupsMembers()**](GroupApi.md#getGroupsMembers) | **GET** /groups/members | Get all group members
-[**getGrupsIdPlaces()**](GroupApi.md#getGrupsIdPlaces) | **GET** /groups/{id}/places | Get all places of a group
+[**getGrupsIdPlaces()**](GroupApi.md#getGrupsIdPlaces) | **GET** /groups/{groupId}/places | Get all places of a group
+[**getPersonMasterdata()**](GroupApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
 [**getPublicgroupsGroupIdForm()**](GroupApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
 [**getQRCodeCheckin()**](GroupApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
-[**groupsIdGet()**](GroupApi.md#groupsIdGet) | **GET** /groups/{id} | Get a group
 [**issueSignUpToken()**](GroupApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
-[**optIns()**](GroupApi.md#optIns) | **GET** /groups/{id}/optins | Get Opt In status of group members
+[**optIns()**](GroupApi.md#optIns) | **GET** /groups/{groupId}/optins | Get Opt In status of group members
+[**patchGroupsGroupIdRolesRoleId()**](GroupApi.md#patchGroupsGroupIdRolesRoleId) | **PATCH** /groups/{groupId}/roles/{roleId} | save role
 [**postAutomaticEmail()**](GroupApi.md#postAutomaticEmail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role
 [**postGroups()**](GroupApi.md#postGroups) | **POST** /groups | Create Group
 [**postGroupsGroupIdMeetingsMeetingIdMembersMissing()**](GroupApi.md#postGroupsGroupIdMeetingsMeetingIdMembersMissing) | **POST** /groups/{groupId}/meetings/{meetingId}/members/missing | 
@@ -38,13 +43,13 @@ Method | HTTP request | Description
 [**postPublicgroupsGroupIdSignup()**](GroupApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
 [**putAutomaticEmail()**](GroupApi.md#putAutomaticEmail) | **PUT** /groups/{groupId}/emails/{emailId} | Update automatic email
 [**putGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#putGroupsGroupIdMeetingsMeetingId) | **PUT** /groups/{groupId}/meetings/{meetingId} | 
-[**startStopGroupChat()**](GroupApi.md#startStopGroupChat) | **POST** /groups/{id}/chat | Start or stop an event chat
+[**startStopGroupChat()**](GroupApi.md#startStopGroupChat) | **POST** /groups/{groupId}/chat | Start or stop an event chat
 
 
 ## `checkin()`
 
 ```php
-checkin($group_id, $person_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
+checkin($group_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
 ```
 
 Checkin a person to a group
@@ -58,7 +63,7 @@ Checkin a person to a group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -71,11 +76,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     $config
 );
 $group_id = 42; // int | ID of group
-$person_id = 7; // int | ID of person
 $checkin_request = new \StevenBuehner\ChurchTools\Model\CheckinRequest(); // \StevenBuehner\ChurchTools\Model\CheckinRequest
 
 try {
-    $result = $apiInstance->checkin($group_id, $person_id, $checkin_request);
+    $result = $apiInstance->checkin($group_id, $checkin_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->checkin: ', $e->getMessage(), PHP_EOL;
@@ -87,7 +91,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| ID of group |
- **person_id** | **int**| ID of person |
  **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  |
 
 ### Return type
@@ -96,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -110,7 +113,7 @@ Name | Type | Description  | Notes
 ## `createMeeting()`
 
 ```php
-createMeeting($id, $create_meeting_request): \StevenBuehner\ChurchTools\Model\CreateMeeting200Response
+createMeeting($group_id, $create_meeting_request): \StevenBuehner\ChurchTools\Model\CreateMeeting200Response
 ```
 
 Create a group meeting
@@ -124,7 +127,7 @@ Create a group meeting
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -136,11 +139,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
+$group_id = 42; // int | ID of group
 $create_meeting_request = new \StevenBuehner\ChurchTools\Model\CreateMeetingRequest(); // \StevenBuehner\ChurchTools\Model\CreateMeetingRequest
 
 try {
-    $result = $apiInstance->createMeeting($id, $create_meeting_request);
+    $result = $apiInstance->createMeeting($group_id, $create_meeting_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->createMeeting: ', $e->getMessage(), PHP_EOL;
@@ -151,7 +154,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
+ **group_id** | **int**| ID of group |
  **create_meeting_request** | [**\StevenBuehner\ChurchTools\Model\CreateMeetingRequest**](../Model/CreateMeetingRequest.md)|  |
 
 ### Return type
@@ -160,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -174,7 +177,7 @@ Name | Type | Description  | Notes
 ## `createOrUpdateMember()`
 
 ```php
-createOrUpdateMember($id, $person_id, $create_or_update_member_request): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response
+createOrUpdateMember($person_id, $create_or_update_member_request): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response
 ```
 
 Create/Update a group member
@@ -188,7 +191,7 @@ Add or update a group member.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -200,12 +203,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
 $create_or_update_member_request = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
 
 try {
-    $result = $apiInstance->createOrUpdateMember($id, $person_id, $create_or_update_member_request);
+    $result = $apiInstance->createOrUpdateMember($person_id, $create_or_update_member_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->createOrUpdateMember: ', $e->getMessage(), PHP_EOL;
@@ -216,7 +218,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
  **person_id** | **int**| ID of person |
  **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. |
 
@@ -226,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -240,7 +241,7 @@ Name | Type | Description  | Notes
 ## `deleteAutomaticEmail()`
 
 ```php
-deleteAutomaticEmail($group_id, $email_id, $dry_run)
+deleteAutomaticEmail($email_id, $group_id)
 ```
 
 Delete automatic email
@@ -252,7 +253,7 @@ Delete automatic email
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -264,12 +265,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
 $email_id = 'email_id_example'; // string
-$dry_run = True; // bool
+$group_id = 42; // int | ID or chat GUID of group
 
 try {
-    $apiInstance->deleteAutomaticEmail($group_id, $email_id, $dry_run);
+    $apiInstance->deleteAutomaticEmail($email_id, $group_id);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->deleteAutomaticEmail: ', $e->getMessage(), PHP_EOL;
 }
@@ -279,9 +279,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
  **email_id** | **string**|  |
- **dry_run** | **bool**|  | [optional]
+ **group_id** | **int**| ID or chat GUID of group |
 
 ### Return type
 
@@ -289,7 +288,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -303,7 +302,7 @@ void (empty response body)
 ## `deleteGroup()`
 
 ```php
-deleteGroup($id, $dry_run)
+deleteGroup($group_id, $dry_run)
 ```
 
 
@@ -317,7 +316,7 @@ Delete a group. This will remove all people from this group.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -329,11 +328,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | The id of the group
-$dry_run = True; // bool
+$group_id = 42; // int | ID of group
+$dry_run = true; // bool | If set to true, the deletion is simulated but nothing will be deleted.
 
 try {
-    $apiInstance->deleteGroup($id, $dry_run);
+    $apiInstance->deleteGroup($group_id, $dry_run);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->deleteGroup: ', $e->getMessage(), PHP_EOL;
 }
@@ -343,8 +342,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the group |
- **dry_run** | **bool**|  | [optional]
+ **group_id** | **int**| ID of group |
+ **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
 
 ### Return type
 
@@ -352,7 +351,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -380,7 +379,7 @@ delete group meeting
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -392,7 +391,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 $meeting_id = 'meeting_id_example'; // string
 
 try {
@@ -406,7 +405,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
  **meeting_id** | **string**|  |
 
 ### Return type
@@ -415,7 +414,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -429,7 +428,7 @@ void (empty response body)
 ## `deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()`
 
 ```php
-deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id, $delete_groups_group_id_meetings_meeting_id_members_member_id_request)
+deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id)
 ```
 
 Revoke checkin
@@ -443,7 +442,7 @@ Revoke the checkin for a previously checked-in group member.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -455,13 +454,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 $meeting_id = 'meeting_id_example'; // string
 $member_id = 'member_id_example'; // string
-$delete_groups_group_id_meetings_meeting_id_members_member_id_request = new \StevenBuehner\ChurchTools\Model\DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest(); // \StevenBuehner\ChurchTools\Model\DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest
 
 try {
-    $apiInstance->deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id, $delete_groups_group_id_meetings_meeting_id_members_member_id_request);
+    $apiInstance->deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId($group_id, $meeting_id, $member_id);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId: ', $e->getMessage(), PHP_EOL;
 }
@@ -471,10 +469,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
  **meeting_id** | **string**|  |
  **member_id** | **string**|  |
- **delete_groups_group_id_meetings_meeting_id_members_member_id_request** | [**\StevenBuehner\ChurchTools\Model\DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest**](../Model/DeleteGroupsGroupIdMeetingsMeetingIdMembersMemberIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -482,11 +479,11 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -496,7 +493,7 @@ void (empty response body)
 ## `deleteMember()`
 
 ```php
-deleteMember($id, $person_id)
+deleteMember($person_id)
 ```
 
 Delete a group member
@@ -510,7 +507,7 @@ Removes a group member from the group.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -522,11 +519,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
 
 try {
-    $apiInstance->deleteMember($id, $person_id);
+    $apiInstance->deleteMember($person_id);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->deleteMember: ', $e->getMessage(), PHP_EOL;
 }
@@ -536,7 +532,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
  **person_id** | **int**| ID of person |
 
 ### Return type
@@ -545,7 +540,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -559,7 +554,7 @@ void (empty response body)
 ## `getAllGroupMembers()`
 
 ```php
-getAllGroupMembers($id, $page, $limit, $role_ids, $allowed_chat_users_only, $query): \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200Response
+getAllGroupMembers($group_id, $page, $limit, $role_ids, $allowed_chat_users_only, $query): \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200Response
 ```
 
 Get all group members
@@ -573,7 +568,7 @@ This endpoint returns an array with all group members of one group. The members 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -585,7 +580,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
+$group_id = 42; // int | ID of group
 $page = 1; // int | Page number to show page in pagenation. If empty, start at first page.
 $limit = 10; // int | Number of results per page.
 $role_ids = array(56); // int[] | roles to filter the members
@@ -593,7 +588,7 @@ $allowed_chat_users_only = false; // bool | If true, return only group members, 
 $query = Peter Maier; // string | searches in first and second name of group member
 
 try {
-    $result = $apiInstance->getAllGroupMembers($id, $page, $limit, $role_ids, $allowed_chat_users_only, $query);
+    $result = $apiInstance->getAllGroupMembers($group_id, $page, $limit, $role_ids, $allowed_chat_users_only, $query);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getAllGroupMembers: ', $e->getMessage(), PHP_EOL;
@@ -604,7 +599,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
+ **group_id** | **int**| ID of group |
  **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
  **limit** | **int**| Number of results per page. | [optional] [default to 10]
  **role_ids** | [**int[]**](../Model/int.md)| roles to filter the members | [optional]
@@ -617,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -631,7 +626,7 @@ Name | Type | Description  | Notes
 ## `getAllGroupsForPerson()`
 
 ```php
-getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
+getAllGroupsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
 ```
 
 Get all groups a member is in
@@ -645,7 +640,7 @@ This endpoint returns an array with all groups the user is in.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -657,12 +652,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of person
-$show_overdue_groups = True; // bool | Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person & groups
-$show_inactive_groups = True; // bool | Determines if inactive groups should be returned
+$person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getAllGroupsForPerson($id, $show_overdue_groups, $show_inactive_groups);
+    $result = $apiInstance->getAllGroupsForPerson($person_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getAllGroupsForPerson: ', $e->getMessage(), PHP_EOL;
@@ -673,9 +666,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of person |
- **show_overdue_groups** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups | [optional]
- **show_inactive_groups** | **bool**| Determines if inactive groups should be returned | [optional]
+ **person_id** | **int**| ID of person |
 
 ### Return type
 
@@ -683,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -697,7 +688,7 @@ Name | Type | Description  | Notes
 ## `getAllMeetings()`
 
 ```php
-getAllMeetings($id, $is_canceled, $is_completed): \StevenBuehner\ChurchTools\Model\GetAllMeetings200Response
+getAllMeetings($group_id, $is_canceled, $is_completed): \StevenBuehner\ChurchTools\Model\GetAllMeetings200Response
 ```
 
 Get all group meetings for a specific group
@@ -711,7 +702,7 @@ Get all group meetings for a specific group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -723,12 +714,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
+$group_id = 42; // int | ID of group
 $is_canceled = True; // bool | Whether to show canceled group meetings
 $is_completed = True; // bool | Whether to show done group meetings
 
 try {
-    $result = $apiInstance->getAllMeetings($id, $is_canceled, $is_completed);
+    $result = $apiInstance->getAllMeetings($group_id, $is_canceled, $is_completed);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getAllMeetings: ', $e->getMessage(), PHP_EOL;
@@ -739,7 +730,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
+ **group_id** | **int**| ID of group |
  **is_canceled** | **bool**| Whether to show canceled group meetings | [optional]
  **is_completed** | **bool**| Whether to show done group meetings | [optional]
 
@@ -749,7 +740,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -775,7 +766,7 @@ Get one automatic email
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -787,7 +778,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 $email_id = 'email_id_example'; // string
 
 try {
@@ -802,7 +793,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
  **email_id** | **string**|  |
 
 ### Return type
@@ -811,7 +802,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -839,7 +830,7 @@ Get all automatic emails of a group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -851,7 +842,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 
 try {
     $result = $apiInstance->getAutomaticEmails($group_id);
@@ -865,7 +856,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
 
 ### Return type
 
@@ -873,7 +864,61 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroup()`
+
+```php
+getGroup($group_id): \StevenBuehner\ChurchTools\Model\PostGroups201Response
+```
+
+Get a group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$group_id = 42; // int | ID or chat GUID of group
+
+try {
+    $result = $apiInstance->getGroup($group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroup: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **int**| ID or chat GUID of group |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PostGroups201Response**](../Model/PostGroups201Response.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -887,7 +932,7 @@ Name | Type | Description  | Notes
 ## `getGroupForHomepage()`
 
 ```php
-getGroupForHomepage($hash, $id): \StevenBuehner\ChurchTools\Model\PublicGroup
+getGroupForHomepage($hash, $group_id): \StevenBuehner\ChurchTools\Model\PublicGroup1
 ```
 
 Public information of group
@@ -908,10 +953,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Group Homepage Hash
-$id = 'id_example'; // string | Group ID
+$group_id = 'group_id_example'; // string | Group ID
 
 try {
-    $result = $apiInstance->getGroupForHomepage($hash, $id);
+    $result = $apiInstance->getGroupForHomepage($hash, $group_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getGroupForHomepage: ', $e->getMessage(), PHP_EOL;
@@ -923,11 +968,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **hash** | **string**| Group Homepage Hash |
- **id** | **string**| Group ID |
+ **group_id** | **string**| Group ID |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\PublicGroup**](../Model/PublicGroup.md)
+[**\StevenBuehner\ChurchTools\Model\PublicGroup1**](../Model/PublicGroup1.md)
 
 ### Authorization
 
@@ -959,7 +1004,7 @@ Get all information necessary to display public groups. The response will provid
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -993,7 +1038,69 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupRoles()`
+
+```php
+getGroupRoles($group_id): \StevenBuehner\ChurchTools\Model\GetGroupRoles200Response
+```
+
+Get all roles for this group
+
+Get all the roles with definitions for the given group.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 42; // int | ID of group
+
+try {
+    $result = $apiInstance->getGroupRoles($group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupRoles: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **int**| ID of group |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupRoles200Response**](../Model/GetGroupRoles200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1010,6 +1117,8 @@ Name | Type | Description  | Notes
 getGroupStatistics($group_id): \StevenBuehner\ChurchTools\Model\GetGroupStatistics200Response
 ```
 
+Fetch facts about group
+
 Fetch calculated facts about group
 
 ### Example
@@ -1019,7 +1128,7 @@ Fetch calculated facts about group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1031,7 +1140,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 
 try {
     $result = $apiInstance->getGroupStatistics($group_id);
@@ -1045,7 +1154,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
 
 ### Return type
 
@@ -1053,12 +1162,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1081,7 +1190,7 @@ This endpoint returns an array with all groups the user can see. This includes g
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1108,8 +1217,8 @@ $show_overdue_groups_respect_settings = True; // bool | Determines if groups wit
 $show_inactive_groups = True; // bool | Determines if inactive groups should be returned
 $without_my_groups = True; // bool | Determines if groups should be omitted where I am in
 $query = 'query_example'; // string
-$page = 1; // float | Page number to show page in pagenation. If empty, start at first page.
-$limit = 10; // float | Number of results per page.
+$page = 1; // int | Page number to show page in pagenation. If empty, start at first page.
+$limit = 10; // int | Number of results per page.
 
 try {
     $result = $apiInstance->getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit);
@@ -1138,8 +1247,8 @@ Name | Type | Description  | Notes
  **show_inactive_groups** | **bool**| Determines if inactive groups should be returned | [optional]
  **without_my_groups** | **bool**| Determines if groups should be omitted where I am in | [optional]
  **query** | **string**|  | [optional]
- **page** | **float**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **float**| Number of results per page. | [optional] [default to 10]
+ **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
+ **limit** | **int**| Number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -1147,7 +1256,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupsGroupIdMeetingsMeetingIdMembers()`
+
+```php
+getGroupsGroupIdMeetingsMeetingIdMembers($group_id, $meeting_id): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMeetingsMeetingIdMembers200Response
+```
+
+Get Group Meeting Members
+
+Get all group members that the current user can see and is able to check in.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 42; // int | ID of group
+$meeting_id = 'meeting_id_example'; // string
+
+try {
+    $result = $apiInstance->getGroupsGroupIdMeetingsMeetingIdMembers($group_id, $meeting_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupsGroupIdMeetingsMeetingIdMembers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **int**| ID of group |
+ **meeting_id** | **string**|  |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMeetingsMeetingIdMembers200Response**](../Model/GetGroupsGroupIdMeetingsMeetingIdMembers200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1175,7 +1348,7 @@ Returns the configured group member fields for the given group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1187,7 +1360,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 
 try {
     $result = $apiInstance->getGroupsGroupIdMemberfields($group_id);
@@ -1201,7 +1374,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
 
 ### Return type
 
@@ -1209,7 +1382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1237,7 +1410,7 @@ Gets statistics for the group members
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1249,10 +1422,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
-$group_type_role_ids = NULL; // array | 
-$person_fields = NULL; // array | person field keys
-$group_member_fields = NULL; // array | group member field ids
+$group_id = 42; // int | ID of group
+$group_type_role_ids = array(56); // int[] | 
+$person_fields = array('person_fields_example'); // string[] | person field keys
+$group_member_fields = array(56); // int[] | group member field ids
 
 try {
     $result = $apiInstance->getGroupsGroupIdMembersStatistics($group_id, $group_type_role_ids, $person_fields, $group_member_fields);
@@ -1266,10 +1439,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
- **group_type_role_ids** | [**array**](../Model/.md)|  | [optional]
- **person_fields** | [**array**](../Model/.md)| person field keys | [optional]
- **group_member_fields** | [**array**](../Model/.md)| group member field ids | [optional]
+ **group_id** | **int**| ID of group |
+ **group_type_role_ids** | [**int[]**](../Model/int.md)|  | [optional]
+ **person_fields** | [**string[]**](../Model/string.md)| person field keys | [optional]
+ **group_member_fields** | [**int[]**](../Model/int.md)| group member field ids | [optional]
 
 ### Return type
 
@@ -1277,7 +1450,69 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupsGroupIdTags()`
+
+```php
+getGroupsGroupIdTags($group_id): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response
+```
+
+Fetch group tags
+
+Get tags for the specific group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 42; // int | ID of group
+
+try {
+    $result = $apiInstance->getGroupsGroupIdTags($group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupsGroupIdTags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **int**| ID of group |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response**](../Model/GetGroupsGroupIdTags200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1305,7 +1540,7 @@ Returns all group hierarchies. The groups not visible for the user only show ids
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1367,7 +1602,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1395,7 +1630,7 @@ Returns all group members. Only accessible for users with right \"administer per
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1431,7 +1666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1445,7 +1680,7 @@ Name | Type | Description  | Notes
 ## `getGrupsIdPlaces()`
 
 ```php
-getGrupsIdPlaces($id): \StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200Response
+getGrupsIdPlaces($group_id): \StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200Response
 ```
 
 Get all places of a group
@@ -1459,7 +1694,7 @@ Returns an array of places
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1471,10 +1706,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | Id of group
+$group_id = 42; // int | ID of group
 
 try {
-    $result = $apiInstance->getGrupsIdPlaces($id);
+    $result = $apiInstance->getGrupsIdPlaces($group_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getGrupsIdPlaces: ', $e->getMessage(), PHP_EOL;
@@ -1485,7 +1720,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Id of group |
+ **group_id** | **int**| ID of group |
 
 ### Return type
 
@@ -1493,7 +1728,66 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPersonMasterdata()`
+
+```php
+getPersonMasterdata(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
+```
+
+Get person & groups masterdata
+
+Endpoint for getting all relevant masterdata for persons and groups.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getPersonMasterdata();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getPersonMasterdata: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response**](../Model/GetPersonMasterdata200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1581,7 +1875,7 @@ Get link to QR-Code for CheckIn PDF
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1617,72 +1911,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `groupsIdGet()`
-
-```php
-groupsIdGet($id): \StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response
-```
-
-Get a group
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = 42; // int | ID or chat GUID of group
-
-try {
-    $result = $apiInstance->groupsIdGet($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GroupApi->groupsIdGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID or chat GUID of group |
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response**](../Model/GroupsIdDelete200Response.md)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1711,8 +1945,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$group_id = 3.4; // float | Group id of public group
-$issue_sign_up_token_request = {"personId":1,"clicked":[1,2],"groupHomepageHash":"kukiOq4WofxbacqWFEa3FgbioX0kUr6p"}; // \StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest | You MUST provide either `personId` OR `email`. Both fields cannot be present at the same time.
+$group_id = 56; // int | Group id of public group
+$issue_sign_up_token_request = {"email":"jean-de-martin@rau-en.fr","groupHomepageHash":"kukiOq4WofxbacqWFEa3FgbioX0kUr6p"}; // \StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest | You MUST provide either `personId` OR `email`. Both fields cannot be present at the same time.
 
 try {
     $result = $apiInstance->issueSignUpToken($group_id, $issue_sign_up_token_request);
@@ -1726,7 +1960,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **float**| Group id of public group |
+ **group_id** | **int**| Group id of public group |
  **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional]
 
 ### Return type
@@ -1749,7 +1983,7 @@ No authorization required
 ## `optIns()`
 
 ```php
-optIns($id): \StevenBuehner\ChurchTools\Model\OptIns200Response
+optIns($group_id): \StevenBuehner\ChurchTools\Model\OptIns200Response
 ```
 
 Get Opt In status of group members
@@ -1761,7 +1995,63 @@ Get Opt In status of group members
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$group_id = 42; // int | ID of group
+
+try {
+    $result = $apiInstance->optIns($group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->optIns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **int**| ID of group |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\OptIns200Response**](../Model/OptIns200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `patchGroupsGroupIdRolesRoleId()`
+
+```php
+patchGroupsGroupIdRolesRoleId($group_id, $role_id, $patch_groups_group_id_roles_role_id_request)
+```
+
+save role
+
+Save role specific settings for this group.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1773,13 +2063,14 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
+$group_id = 42; // int | ID of group
+$role_id = 1; // int | ID of group type role
+$patch_groups_group_id_roles_role_id_request = new \StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest(); // \StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest
 
 try {
-    $result = $apiInstance->optIns($id);
-    print_r($result);
+    $apiInstance->patchGroupsGroupIdRolesRoleId($group_id, $role_id, $patch_groups_group_id_roles_role_id_request);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->optIns: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->patchGroupsGroupIdRolesRoleId: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1787,20 +2078,22 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
+ **group_id** | **int**| ID of group |
+ **role_id** | **int**| ID of group type role |
+ **patch_groups_group_id_roles_role_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest**](../Model/PatchGroupsGroupIdRolesRoleIdRequest.md)|  | [optional]
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\OptIns200Response**](../Model/OptIns200Response.md)
+void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`, `text/plain`
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1821,7 +2114,7 @@ Save new automatic email for a group role
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1833,7 +2126,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 $post_automatic_email_request = new \StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest(); // \StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest
 
 try {
@@ -1848,7 +2141,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
  **post_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest**](../Model/PostAutomaticEmailRequest.md)|  | [optional]
 
 ### Return type
@@ -1857,7 +2150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1871,7 +2164,7 @@ Name | Type | Description  | Notes
 ## `postGroups()`
 
 ```php
-postGroups($post_groups_request): \StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response
+postGroups($post_groups_request): \StevenBuehner\ChurchTools\Model\PostGroups201Response
 ```
 
 Create Group
@@ -1885,7 +2178,7 @@ Create new group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1915,11 +2208,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GroupsIdDelete200Response**](../Model/GroupsIdDelete200Response.md)
+[**\StevenBuehner\ChurchTools\Model\PostGroups201Response**](../Model/PostGroups201Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1947,7 +2240,7 @@ Set group meeting status for unsure members
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -1984,7 +2277,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2125,7 +2418,7 @@ Update automatic email
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2137,7 +2430,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 $email_id = 'email_id_example'; // string
 $put_automatic_email_request = new \StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest(); // \StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest
 
@@ -2152,7 +2445,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
  **email_id** | **string**|  |
  **put_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest**](../Model/PutAutomaticEmailRequest.md)|  | [optional]
 
@@ -2162,7 +2455,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2190,7 +2483,7 @@ Update group meeting
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2202,7 +2495,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$group_id = 'group_id_example'; // string
+$group_id = 42; // int | ID of group
 $meeting_id = 'meeting_id_example'; // string
 $put_groups_group_id_meetings_meeting_id_request = new \StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest(); // \StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest
 
@@ -2217,7 +2510,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **int**| ID of group |
  **meeting_id** | **string**|  |
  **put_groups_group_id_meetings_meeting_id_request** | [**\StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest**](../Model/PutGroupsGroupIdMeetingsMeetingIdRequest.md)|  | [optional]
 
@@ -2227,7 +2520,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -2241,7 +2534,7 @@ void (empty response body)
 ## `startStopGroupChat()`
 
 ```php
-startStopGroupChat($id, $start_stop_group_chat_request)
+startStopGroupChat($group_id, $start_stop_event_chat_request)
 ```
 
 Start or stop an event chat
@@ -2253,7 +2546,7 @@ Start or stop an event chat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -2265,11 +2558,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
-$start_stop_group_chat_request = new \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest(); // \StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest
+$group_id = 42; // int | ID of group
+$start_stop_event_chat_request = new \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest(); // \StevenBuehner\ChurchTools\Model\StartStopEventChatRequest
 
 try {
-    $apiInstance->startStopGroupChat($id, $start_stop_group_chat_request);
+    $apiInstance->startStopGroupChat($group_id, $start_stop_event_chat_request);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->startStopGroupChat: ', $e->getMessage(), PHP_EOL;
 }
@@ -2279,8 +2572,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
- **start_stop_group_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopGroupChatRequest**](../Model/StartStopGroupChatRequest.md)|  |
+ **group_id** | **int**| ID of group |
+ **start_stop_event_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopEventChatRequest**](../Model/StartStopEventChatRequest.md)|  |
 
 ### Return type
 
@@ -2288,7 +2581,7 @@ void (empty response body)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

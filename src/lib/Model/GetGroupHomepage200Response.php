@@ -57,20 +57,20 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'parent_group' => 'float',
-        'is_enabled' => 'bool',
-        'show_leader' => 'bool',
-        'show_group_images' => 'bool',
-        'show_map' => 'bool',
-        'show_filter' => 'bool',
         'default_view' => 'string',
-        'sort_by' => 'string',
-        'order_direction' => 'string',
-        'random_url' => 'string',
         'filter' => 'object[]',
+        'groups' => '\StevenBuehner\ChurchTools\Model\PublicGroup1[]',
+        'id' => 'int',
+        'is_enabled' => 'bool',
         'meta' => 'object',
-        'groups' => '\StevenBuehner\ChurchTools\Model\PublicGroup[]'
+        'order_direction' => 'string',
+        'parent_group' => 'int',
+        'random_url' => 'string',
+        'show_filter' => 'bool',
+        'show_group_images' => 'bool',
+        'show_leader' => 'bool',
+        'show_map' => 'bool',
+        'sort_by' => 'string'
     ];
 
     /**
@@ -81,20 +81,20 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'parent_group' => null,
-        'is_enabled' => null,
-        'show_leader' => null,
-        'show_group_images' => null,
-        'show_map' => null,
-        'show_filter' => null,
         'default_view' => null,
-        'sort_by' => null,
-        'order_direction' => null,
-        'random_url' => null,
         'filter' => null,
+        'groups' => null,
+        'id' => null,
+        'is_enabled' => null,
         'meta' => null,
-        'groups' => null
+        'order_direction' => null,
+        'parent_group' => null,
+        'random_url' => null,
+        'show_filter' => null,
+        'show_group_images' => null,
+        'show_leader' => null,
+        'show_map' => null,
+        'sort_by' => null
     ];
 
     /**
@@ -124,20 +124,20 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'parent_group' => 'parentGroup',
-        'is_enabled' => 'isEnabled',
-        'show_leader' => 'showLeader',
-        'show_group_images' => 'showGroupImages',
-        'show_map' => 'showMap',
-        'show_filter' => 'showFilter',
         'default_view' => 'defaultView',
-        'sort_by' => 'sortBy',
-        'order_direction' => 'orderDirection',
-        'random_url' => 'randomUrl',
         'filter' => 'filter',
+        'groups' => 'groups',
+        'id' => 'id',
+        'is_enabled' => 'isEnabled',
         'meta' => 'meta',
-        'groups' => 'groups'
+        'order_direction' => 'orderDirection',
+        'parent_group' => 'parentGroup',
+        'random_url' => 'randomUrl',
+        'show_filter' => 'showFilter',
+        'show_group_images' => 'showGroupImages',
+        'show_leader' => 'showLeader',
+        'show_map' => 'showMap',
+        'sort_by' => 'sortBy'
     ];
 
     /**
@@ -146,20 +146,20 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'parent_group' => 'setParentGroup',
-        'is_enabled' => 'setIsEnabled',
-        'show_leader' => 'setShowLeader',
-        'show_group_images' => 'setShowGroupImages',
-        'show_map' => 'setShowMap',
-        'show_filter' => 'setShowFilter',
         'default_view' => 'setDefaultView',
-        'sort_by' => 'setSortBy',
-        'order_direction' => 'setOrderDirection',
-        'random_url' => 'setRandomUrl',
         'filter' => 'setFilter',
+        'groups' => 'setGroups',
+        'id' => 'setId',
+        'is_enabled' => 'setIsEnabled',
         'meta' => 'setMeta',
-        'groups' => 'setGroups'
+        'order_direction' => 'setOrderDirection',
+        'parent_group' => 'setParentGroup',
+        'random_url' => 'setRandomUrl',
+        'show_filter' => 'setShowFilter',
+        'show_group_images' => 'setShowGroupImages',
+        'show_leader' => 'setShowLeader',
+        'show_map' => 'setShowMap',
+        'sort_by' => 'setSortBy'
     ];
 
     /**
@@ -168,20 +168,20 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'parent_group' => 'getParentGroup',
-        'is_enabled' => 'getIsEnabled',
-        'show_leader' => 'getShowLeader',
-        'show_group_images' => 'getShowGroupImages',
-        'show_map' => 'getShowMap',
-        'show_filter' => 'getShowFilter',
         'default_view' => 'getDefaultView',
-        'sort_by' => 'getSortBy',
-        'order_direction' => 'getOrderDirection',
-        'random_url' => 'getRandomUrl',
         'filter' => 'getFilter',
+        'groups' => 'getGroups',
+        'id' => 'getId',
+        'is_enabled' => 'getIsEnabled',
         'meta' => 'getMeta',
-        'groups' => 'getGroups'
+        'order_direction' => 'getOrderDirection',
+        'parent_group' => 'getParentGroup',
+        'random_url' => 'getRandomUrl',
+        'show_filter' => 'getShowFilter',
+        'show_group_images' => 'getShowGroupImages',
+        'show_leader' => 'getShowLeader',
+        'show_map' => 'getShowMap',
+        'sort_by' => 'getSortBy'
     ];
 
     /**
@@ -225,23 +225,10 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
         return self::$openAPIModelName;
     }
 
-    public const SORT_BY_NAME = 'name';
-    public const SORT_BY_DATE_OF_FOUNDATION = 'dateOfFoundation';
     public const ORDER_DIRECTION_ASC = 'ASC';
     public const ORDER_DIRECTION_DESC = 'DESC';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getSortByAllowableValues()
-    {
-        return [
-            self::SORT_BY_NAME,
-            self::SORT_BY_DATE_OF_FOUNDATION,
-        ];
-    }
+    public const SORT_BY_NAME = 'name';
+    public const SORT_BY_DATE_OF_FOUNDATION = 'dateOfFoundation';
 
     /**
      * Gets allowable values of the enum
@@ -253,6 +240,19 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
         return [
             self::ORDER_DIRECTION_ASC,
             self::ORDER_DIRECTION_DESC,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSortByAllowableValues()
+    {
+        return [
+            self::SORT_BY_NAME,
+            self::SORT_BY_DATE_OF_FOUNDATION,
         ];
     }
 
@@ -271,20 +271,20 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['parent_group'] = $data['parent_group'] ?? null;
-        $this->container['is_enabled'] = $data['is_enabled'] ?? null;
-        $this->container['show_leader'] = $data['show_leader'] ?? null;
-        $this->container['show_group_images'] = $data['show_group_images'] ?? null;
-        $this->container['show_map'] = $data['show_map'] ?? null;
-        $this->container['show_filter'] = $data['show_filter'] ?? null;
         $this->container['default_view'] = $data['default_view'] ?? null;
-        $this->container['sort_by'] = $data['sort_by'] ?? null;
-        $this->container['order_direction'] = $data['order_direction'] ?? null;
-        $this->container['random_url'] = $data['random_url'] ?? null;
         $this->container['filter'] = $data['filter'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
         $this->container['groups'] = $data['groups'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_enabled'] = $data['is_enabled'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['order_direction'] = $data['order_direction'] ?? null;
+        $this->container['parent_group'] = $data['parent_group'] ?? null;
+        $this->container['random_url'] = $data['random_url'] ?? null;
+        $this->container['show_filter'] = $data['show_filter'] ?? null;
+        $this->container['show_group_images'] = $data['show_group_images'] ?? null;
+        $this->container['show_leader'] = $data['show_leader'] ?? null;
+        $this->container['show_map'] = $data['show_map'] ?? null;
+        $this->container['sort_by'] = $data['sort_by'] ?? null;
     }
 
     /**
@@ -296,20 +296,38 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
+        if ($this->container['groups'] === null) {
+            $invalidProperties[] = "'groups' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['parent_group'] === null) {
-            $invalidProperties[] = "'parent_group' can't be null";
         }
         if ($this->container['is_enabled'] === null) {
             $invalidProperties[] = "'is_enabled' can't be null";
         }
-        if ($this->container['show_leader'] === null) {
-            $invalidProperties[] = "'show_leader' can't be null";
+        if ($this->container['meta'] === null) {
+            $invalidProperties[] = "'meta' can't be null";
+        }
+        $allowedValues = $this->getOrderDirectionAllowableValues();
+        if (!is_null($this->container['order_direction']) && !in_array($this->container['order_direction'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'order_direction', must be one of '%s'",
+                $this->container['order_direction'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['parent_group'] === null) {
+            $invalidProperties[] = "'parent_group' can't be null";
+        }
+        if ($this->container['random_url'] === null) {
+            $invalidProperties[] = "'random_url' can't be null";
         }
         if ($this->container['show_group_images'] === null) {
             $invalidProperties[] = "'show_group_images' can't be null";
+        }
+        if ($this->container['show_leader'] === null) {
+            $invalidProperties[] = "'show_leader' can't be null";
         }
         if ($this->container['show_map'] === null) {
             $invalidProperties[] = "'show_map' can't be null";
@@ -323,24 +341,6 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
             );
         }
 
-        $allowedValues = $this->getOrderDirectionAllowableValues();
-        if (!is_null($this->container['order_direction']) && !in_array($this->container['order_direction'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'order_direction', must be one of '%s'",
-                $this->container['order_direction'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['random_url'] === null) {
-            $invalidProperties[] = "'random_url' can't be null";
-        }
-        if ($this->container['meta'] === null) {
-            $invalidProperties[] = "'meta' can't be null";
-        }
-        if ($this->container['groups'] === null) {
-            $invalidProperties[] = "'groups' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -357,9 +357,81 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
+     * Gets default_view
+     *
+     * @return string|null
+     */
+    public function getDefaultView()
+    {
+        return $this->container['default_view'];
+    }
+
+    /**
+     * Sets default_view
+     *
+     * @param string|null $default_view Type how groups are listed on the page.
+     *
+     * @return self
+     */
+    public function setDefaultView($default_view)
+    {
+        $this->container['default_view'] = $default_view;
+
+        return $this;
+    }
+
+    /**
+     * Gets filter
+     *
+     * @return object[]|null
+     */
+    public function getFilter()
+    {
+        return $this->container['filter'];
+    }
+
+    /**
+     * Sets filter
+     *
+     * @param object[]|null $filter Specifies all filters that can be applied for this group homepage.
+     *
+     * @return self
+     */
+    public function setFilter($filter)
+    {
+        $this->container['filter'] = $filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets groups
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PublicGroup1[]
+     */
+    public function getGroups()
+    {
+        return $this->container['groups'];
+    }
+
+    /**
+     * Sets groups
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PublicGroup1[] $groups Array of groups to be displayed on the group homepage.
+     *
+     * @return self
+     */
+    public function setGroups($groups)
+    {
+        $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -369,37 +441,13 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets id
      *
-     * @param float $id Group Homepage ID
+     * @param int $id Group Homepage ID
      *
      * @return self
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_group
-     *
-     * @return float
-     */
-    public function getParentGroup()
-    {
-        return $this->container['parent_group'];
-    }
-
-    /**
-     * Sets parent_group
-     *
-     * @param float $parent_group ID of the parent group of all groups that should be displayed in the group homepage
-     *
-     * @return self
-     */
-    public function setParentGroup($parent_group)
-    {
-        $this->container['parent_group'] = $parent_group;
 
         return $this;
     }
@@ -429,155 +477,25 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets show_leader
+     * Gets meta
      *
-     * @return bool
+     * @return object
      */
-    public function getShowLeader()
+    public function getMeta()
     {
-        return $this->container['show_leader'];
+        return $this->container['meta'];
     }
 
     /**
-     * Sets show_leader
+     * Sets meta
      *
-     * @param bool $show_leader If true, the group homepage is set to display the leaders of each group.
+     * @param object $meta Entity meta data
      *
      * @return self
      */
-    public function setShowLeader($show_leader)
+    public function setMeta($meta)
     {
-        $this->container['show_leader'] = $show_leader;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_group_images
-     *
-     * @return bool
-     */
-    public function getShowGroupImages()
-    {
-        return $this->container['show_group_images'];
-    }
-
-    /**
-     * Sets show_group_images
-     *
-     * @param bool $show_group_images If true, the group homepage is set to display group images.
-     *
-     * @return self
-     */
-    public function setShowGroupImages($show_group_images)
-    {
-        $this->container['show_group_images'] = $show_group_images;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_map
-     *
-     * @return bool
-     */
-    public function getShowMap()
-    {
-        return $this->container['show_map'];
-    }
-
-    /**
-     * Sets show_map
-     *
-     * @param bool $show_map If true, the group homepage is set to display an overview map of all groups.
-     *
-     * @return self
-     */
-    public function setShowMap($show_map)
-    {
-        $this->container['show_map'] = $show_map;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_filter
-     *
-     * @return bool|null
-     */
-    public function getShowFilter()
-    {
-        return $this->container['show_filter'];
-    }
-
-    /**
-     * Sets show_filter
-     *
-     * @param bool|null $show_filter If true, selected filters are displayed.
-     *
-     * @return self
-     */
-    public function setShowFilter($show_filter)
-    {
-        $this->container['show_filter'] = $show_filter;
-
-        return $this;
-    }
-
-    /**
-     * Gets default_view
-     *
-     * @return string|null
-     */
-    public function getDefaultView()
-    {
-        return $this->container['default_view'];
-    }
-
-    /**
-     * Sets default_view
-     *
-     * @param string|null $default_view Type how groups are listed on the page.
-     *
-     * @return self
-     */
-    public function setDefaultView($default_view)
-    {
-        $this->container['default_view'] = $default_view;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort_by
-     *
-     * @return string|null
-     */
-    public function getSortBy()
-    {
-        return $this->container['sort_by'];
-    }
-
-    /**
-     * Sets sort_by
-     *
-     * @param string|null $sort_by Group field to sort list of groups by.
-     *
-     * @return self
-     */
-    public function setSortBy($sort_by)
-    {
-        $allowedValues = $this->getSortByAllowableValues();
-        if (!is_null($sort_by) && !in_array($sort_by, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'sort_by', must be one of '%s'",
-                    $sort_by,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['sort_by'] = $sort_by;
+        $this->container['meta'] = $meta;
 
         return $this;
     }
@@ -617,6 +535,30 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets parent_group
+     *
+     * @return int
+     */
+    public function getParentGroup()
+    {
+        return $this->container['parent_group'];
+    }
+
+    /**
+     * Sets parent_group
+     *
+     * @param int $parent_group ID of the parent group of all groups that should be displayed in the group homepage
+     *
+     * @return self
+     */
+    public function setParentGroup($parent_group)
+    {
+        $this->container['parent_group'] = $parent_group;
+
+        return $this;
+    }
+
+    /**
      * Gets random_url
      *
      * @return string
@@ -641,73 +583,131 @@ class GetGroupHomepage200Response implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets filter
+     * Gets show_filter
      *
-     * @return object[]|null
+     * @return bool|null
      */
-    public function getFilter()
+    public function getShowFilter()
     {
-        return $this->container['filter'];
+        return $this->container['show_filter'];
     }
 
     /**
-     * Sets filter
+     * Sets show_filter
      *
-     * @param object[]|null $filter Specifies all filters that can be applied for this group homepage.
+     * @param bool|null $show_filter If true, selected filters are displayed.
      *
      * @return self
      */
-    public function setFilter($filter)
+    public function setShowFilter($show_filter)
     {
-        $this->container['filter'] = $filter;
+        $this->container['show_filter'] = $show_filter;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets show_group_images
      *
-     * @return object
+     * @return bool
      */
-    public function getMeta()
+    public function getShowGroupImages()
     {
-        return $this->container['meta'];
+        return $this->container['show_group_images'];
     }
 
     /**
-     * Sets meta
+     * Sets show_group_images
      *
-     * @param object $meta Entity meta data
+     * @param bool $show_group_images If true, the group homepage is set to display group images.
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setShowGroupImages($show_group_images)
     {
-        $this->container['meta'] = $meta;
+        $this->container['show_group_images'] = $show_group_images;
 
         return $this;
     }
 
     /**
-     * Gets groups
+     * Gets show_leader
      *
-     * @return \StevenBuehner\ChurchTools\Model\PublicGroup[]
+     * @return bool
      */
-    public function getGroups()
+    public function getShowLeader()
     {
-        return $this->container['groups'];
+        return $this->container['show_leader'];
     }
 
     /**
-     * Sets groups
+     * Sets show_leader
      *
-     * @param \StevenBuehner\ChurchTools\Model\PublicGroup[] $groups Array of groups to be displayed on the group homepage.
+     * @param bool $show_leader If true, the group homepage is set to display the leaders of each group.
      *
      * @return self
      */
-    public function setGroups($groups)
+    public function setShowLeader($show_leader)
     {
-        $this->container['groups'] = $groups;
+        $this->container['show_leader'] = $show_leader;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_map
+     *
+     * @return bool
+     */
+    public function getShowMap()
+    {
+        return $this->container['show_map'];
+    }
+
+    /**
+     * Sets show_map
+     *
+     * @param bool $show_map If true, the group homepage is set to display an overview map of all groups.
+     *
+     * @return self
+     */
+    public function setShowMap($show_map)
+    {
+        $this->container['show_map'] = $show_map;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_by
+     *
+     * @return string|null
+     */
+    public function getSortBy()
+    {
+        return $this->container['sort_by'];
+    }
+
+    /**
+     * Sets sort_by
+     *
+     * @param string|null $sort_by Group field to sort list of groups by.
+     *
+     * @return self
+     */
+    public function setSortBy($sort_by)
+    {
+        $allowedValues = $this->getSortByAllowableValues();
+        if (!is_null($sort_by) && !in_array($sort_by, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'sort_by', must be one of '%s'",
+                    $sort_by,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['sort_by'] = $sort_by;
 
         return $this;
     }

@@ -59,10 +59,10 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'can_read_chat' => 'bool',
         'can_write_chat' => 'bool',
-        'grow_path_id' => 'float',
         'force_two_factor_auth' => 'bool',
-        'receive_qr_code' => 'bool',
-        'is_active' => 'bool'
+        'grow_path_id' => 'int',
+        'is_active' => 'bool',
+        'receive_qr_code' => 'bool'
     ];
 
     /**
@@ -75,10 +75,10 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'can_read_chat' => null,
         'can_write_chat' => null,
-        'grow_path_id' => null,
         'force_two_factor_auth' => null,
-        'receive_qr_code' => null,
-        'is_active' => null
+        'grow_path_id' => null,
+        'is_active' => null,
+        'receive_qr_code' => null
     ];
 
     /**
@@ -110,10 +110,10 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     protected static $attributeMap = [
         'can_read_chat' => 'canReadChat',
         'can_write_chat' => 'canWriteChat',
-        'grow_path_id' => 'growPathId',
         'force_two_factor_auth' => 'forceTwoFactorAuth',
-        'receive_qr_code' => 'receiveQRCode',
-        'is_active' => 'isActive'
+        'grow_path_id' => 'growPathId',
+        'is_active' => 'isActive',
+        'receive_qr_code' => 'receiveQRCode'
     ];
 
     /**
@@ -124,10 +124,10 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     protected static $setters = [
         'can_read_chat' => 'setCanReadChat',
         'can_write_chat' => 'setCanWriteChat',
-        'grow_path_id' => 'setGrowPathId',
         'force_two_factor_auth' => 'setForceTwoFactorAuth',
-        'receive_qr_code' => 'setReceiveQrCode',
-        'is_active' => 'setIsActive'
+        'grow_path_id' => 'setGrowPathId',
+        'is_active' => 'setIsActive',
+        'receive_qr_code' => 'setReceiveQrCode'
     ];
 
     /**
@@ -138,10 +138,10 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     protected static $getters = [
         'can_read_chat' => 'getCanReadChat',
         'can_write_chat' => 'getCanWriteChat',
-        'grow_path_id' => 'getGrowPathId',
         'force_two_factor_auth' => 'getForceTwoFactorAuth',
-        'receive_qr_code' => 'getReceiveQrCode',
-        'is_active' => 'getIsActive'
+        'grow_path_id' => 'getGrowPathId',
+        'is_active' => 'getIsActive',
+        'receive_qr_code' => 'getReceiveQrCode'
     ];
 
     /**
@@ -203,10 +203,10 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     {
         $this->container['can_read_chat'] = $data['can_read_chat'] ?? null;
         $this->container['can_write_chat'] = $data['can_write_chat'] ?? null;
-        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
         $this->container['force_two_factor_auth'] = $data['force_two_factor_auth'] ?? null;
-        $this->container['receive_qr_code'] = $data['receive_qr_code'] ?? null;
+        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
         $this->container['is_active'] = $data['is_active'] ?? null;
+        $this->container['receive_qr_code'] = $data['receive_qr_code'] ?? null;
     }
 
     /**
@@ -282,30 +282,6 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets grow_path_id
-     *
-     * @return float|null
-     */
-    public function getGrowPathId()
-    {
-        return $this->container['grow_path_id'];
-    }
-
-    /**
-     * Sets grow_path_id
-     *
-     * @param float|null $grow_path_id grow_path_id
-     *
-     * @return self
-     */
-    public function setGrowPathId($grow_path_id)
-    {
-        $this->container['grow_path_id'] = $grow_path_id;
-
-        return $this;
-    }
-
-    /**
      * Gets force_two_factor_auth
      *
      * @return bool|null
@@ -330,25 +306,25 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets receive_qr_code
+     * Gets grow_path_id
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getReceiveQrCode()
+    public function getGrowPathId()
     {
-        return $this->container['receive_qr_code'];
+        return $this->container['grow_path_id'];
     }
 
     /**
-     * Sets receive_qr_code
+     * Sets grow_path_id
      *
-     * @param bool|null $receive_qr_code receive_qr_code
+     * @param int|null $grow_path_id grow_path_id
      *
      * @return self
      */
-    public function setReceiveQrCode($receive_qr_code)
+    public function setGrowPathId($grow_path_id)
     {
-        $this->container['receive_qr_code'] = $receive_qr_code;
+        $this->container['grow_path_id'] = $grow_path_id;
 
         return $this;
     }
@@ -373,6 +349,30 @@ class PatchGroupsGroupIdRolesRoleIdRequest implements ModelInterface, ArrayAcces
     public function setIsActive($is_active)
     {
         $this->container['is_active'] = $is_active;
+
+        return $this;
+    }
+
+    /**
+     * Gets receive_qr_code
+     *
+     * @return bool|null
+     */
+    public function getReceiveQrCode()
+    {
+        return $this->container['receive_qr_code'];
+    }
+
+    /**
+     * Sets receive_qr_code
+     *
+     * @param bool|null $receive_qr_code receive_qr_code
+     *
+     * @return self
+     */
+    public function setReceiveQrCode($receive_qr_code)
+    {
+        $this->container['receive_qr_code'] = $receive_qr_code;
 
         return $this;
     }

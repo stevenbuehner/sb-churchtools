@@ -57,9 +57,9 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'newid' => 'int',
+        'forcereorder' => 'bool',
         'name' => 'string',
-        'forcereorder' => 'bool'
+        'newid' => 'int'
     ];
 
     /**
@@ -70,9 +70,9 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'newid' => null,
+        'forcereorder' => null,
         'name' => null,
-        'forcereorder' => null
+        'newid' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'newid' => 'newid',
+        'forcereorder' => 'forcereorder',
         'name' => 'name',
-        'forcereorder' => 'forcereorder'
+        'newid' => 'newid'
     ];
 
     /**
@@ -113,9 +113,9 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'newid' => 'setNewid',
+        'forcereorder' => 'setForcereorder',
         'name' => 'setName',
-        'forcereorder' => 'setForcereorder'
+        'newid' => 'setNewid'
     ];
 
     /**
@@ -124,9 +124,9 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'newid' => 'getNewid',
+        'forcereorder' => 'getForcereorder',
         'name' => 'getName',
-        'forcereorder' => 'getForcereorder'
+        'newid' => 'getNewid'
     ];
 
     /**
@@ -186,9 +186,9 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['newid'] = $data['newid'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['forcereorder'] = $data['forcereorder'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['newid'] = $data['newid'] ?? null;
     }
 
     /**
@@ -216,25 +216,25 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets newid
+     * Gets forcereorder
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getNewid()
+    public function getForcereorder()
     {
-        return $this->container['newid'];
+        return $this->container['forcereorder'];
     }
 
     /**
-     * Sets newid
+     * Sets forcereorder
      *
-     * @param int|null $newid newid
+     * @param bool|null $forcereorder forcereorder
      *
      * @return self
      */
-    public function setNewid($newid)
+    public function setForcereorder($forcereorder)
     {
-        $this->container['newid'] = $newid;
+        $this->container['forcereorder'] = $forcereorder;
 
         return $this;
     }
@@ -264,25 +264,25 @@ class PatchSecuritylevelIdRequest implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets forcereorder
+     * Gets newid
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getForcereorder()
+    public function getNewid()
     {
-        return $this->container['forcereorder'];
+        return $this->container['newid'];
     }
 
     /**
-     * Sets forcereorder
+     * Sets newid
      *
-     * @param bool|null $forcereorder forcereorder
+     * @param int|null $newid newid
      *
      * @return self
      */
-    public function setForcereorder($forcereorder)
+    public function setNewid($newid)
     {
-        $this->container['forcereorder'] = $forcereorder;
+        $this->container['newid'] = $newid;
 
         return $this;
     }

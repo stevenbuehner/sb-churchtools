@@ -57,8 +57,8 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\FieldMappingEntry',
-        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\FieldMappingEntry'
+        'property_mappings_esto_master' => '\StevenBuehner\ChurchTools\Model\FieldMappingEntry',
+        'property_mappings_master_to_es' => '\StevenBuehner\ChurchTools\Model\FieldMappingEntry'
     ];
 
     /**
@@ -69,8 +69,8 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'property_mappings_master_to_es' => null,
-        'property_mappings_esto_master' => null
+        'property_mappings_esto_master' => null,
+        'property_mappings_master_to_es' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'property_mappings_master_to_es' => 'propertyMappingsMasterToES',
-        'property_mappings_esto_master' => 'propertyMappingsESToMaster'
+        'property_mappings_esto_master' => 'propertyMappingsESToMaster',
+        'property_mappings_master_to_es' => 'propertyMappingsMasterToES'
     ];
 
     /**
@@ -110,8 +110,8 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster'
+        'property_mappings_esto_master' => 'setPropertyMappingsEstoMaster',
+        'property_mappings_master_to_es' => 'setPropertyMappingsMasterToEs'
     ];
 
     /**
@@ -120,8 +120,8 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs',
-        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster'
+        'property_mappings_esto_master' => 'getPropertyMappingsEstoMaster',
+        'property_mappings_master_to_es' => 'getPropertyMappingsMasterToEs'
     ];
 
     /**
@@ -181,8 +181,8 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
         $this->container['property_mappings_esto_master'] = $data['property_mappings_esto_master'] ?? null;
+        $this->container['property_mappings_master_to_es'] = $data['property_mappings_master_to_es'] ?? null;
     }
 
     /**
@@ -194,11 +194,11 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['property_mappings_master_to_es'] === null) {
-            $invalidProperties[] = "'property_mappings_master_to_es' can't be null";
-        }
         if ($this->container['property_mappings_esto_master'] === null) {
             $invalidProperties[] = "'property_mappings_esto_master' can't be null";
+        }
+        if ($this->container['property_mappings_master_to_es'] === null) {
+            $invalidProperties[] = "'property_mappings_master_to_es' can't be null";
         }
         return $invalidProperties;
     }
@@ -214,30 +214,6 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets property_mappings_master_to_es
-     *
-     * @return \StevenBuehner\ChurchTools\Model\FieldMappingEntry
-     */
-    public function getPropertyMappingsMasterToEs()
-    {
-        return $this->container['property_mappings_master_to_es'];
-    }
-
-    /**
-     * Sets property_mappings_master_to_es
-     *
-     * @param \StevenBuehner\ChurchTools\Model\FieldMappingEntry $property_mappings_master_to_es property_mappings_master_to_es
-     *
-     * @return self
-     */
-    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
-    {
-        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
-
-        return $this;
-    }
 
     /**
      * Gets property_mappings_esto_master
@@ -259,6 +235,30 @@ class FieldMappingEntries implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setPropertyMappingsEstoMaster($property_mappings_esto_master)
     {
         $this->container['property_mappings_esto_master'] = $property_mappings_esto_master;
+
+        return $this;
+    }
+
+    /**
+     * Gets property_mappings_master_to_es
+     *
+     * @return \StevenBuehner\ChurchTools\Model\FieldMappingEntry
+     */
+    public function getPropertyMappingsMasterToEs()
+    {
+        return $this->container['property_mappings_master_to_es'];
+    }
+
+    /**
+     * Sets property_mappings_master_to_es
+     *
+     * @param \StevenBuehner\ChurchTools\Model\FieldMappingEntry $property_mappings_master_to_es property_mappings_master_to_es
+     *
+     * @return self
+     */
+    public function setPropertyMappingsMasterToEs($property_mappings_master_to_es)
+    {
+        $this->container['property_mappings_master_to_es'] = $property_mappings_master_to_es;
 
         return $this;
     }

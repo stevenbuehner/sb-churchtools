@@ -57,18 +57,18 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'person_id' => 'int',
-        'person' => '\StevenBuehner\ChurchTools\Model\Person1',
-        'name' => 'string',
-        'service_id' => 'int',
         'agreed' => 'bool',
-        'is_valid' => 'bool',
-        'requested_date' => '\DateTime',
-        'requester_person_id' => 'int',
-        'requester_person' => '\StevenBuehner\ChurchTools\Model\Person1',
         'comment' => 'string',
-        'counter' => 'int'
+        'counter' => 'int',
+        'id' => 'int',
+        'is_valid' => 'bool',
+        'name' => 'string',
+        'person' => '\StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData',
+        'person_id' => 'int',
+        'requested_date' => '\DateTime',
+        'requester_person' => '\StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData',
+        'requester_person_id' => 'int',
+        'service_id' => 'int'
     ];
 
     /**
@@ -79,18 +79,18 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'person_id' => null,
-        'person' => null,
-        'name' => null,
-        'service_id' => null,
         'agreed' => null,
-        'is_valid' => null,
-        'requested_date' => 'date-time',
-        'requester_person_id' => null,
-        'requester_person' => null,
         'comment' => null,
-        'counter' => null
+        'counter' => null,
+        'id' => null,
+        'is_valid' => null,
+        'name' => null,
+        'person' => null,
+        'person_id' => null,
+        'requested_date' => 'date-time',
+        'requester_person' => null,
+        'requester_person_id' => null,
+        'service_id' => null
     ];
 
     /**
@@ -120,18 +120,18 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'person_id' => 'personId',
-        'person' => 'person',
-        'name' => 'name',
-        'service_id' => 'serviceId',
         'agreed' => 'agreed',
-        'is_valid' => 'isValid',
-        'requested_date' => 'requestedDate',
-        'requester_person_id' => 'requesterPersonId',
-        'requester_person' => 'requesterPerson',
         'comment' => 'comment',
-        'counter' => 'counter'
+        'counter' => 'counter',
+        'id' => 'id',
+        'is_valid' => 'isValid',
+        'name' => 'name',
+        'person' => 'person',
+        'person_id' => 'personId',
+        'requested_date' => 'requestedDate',
+        'requester_person' => 'requesterPerson',
+        'requester_person_id' => 'requesterPersonId',
+        'service_id' => 'serviceId'
     ];
 
     /**
@@ -140,18 +140,18 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'person_id' => 'setPersonId',
-        'person' => 'setPerson',
-        'name' => 'setName',
-        'service_id' => 'setServiceId',
         'agreed' => 'setAgreed',
-        'is_valid' => 'setIsValid',
-        'requested_date' => 'setRequestedDate',
-        'requester_person_id' => 'setRequesterPersonId',
-        'requester_person' => 'setRequesterPerson',
         'comment' => 'setComment',
-        'counter' => 'setCounter'
+        'counter' => 'setCounter',
+        'id' => 'setId',
+        'is_valid' => 'setIsValid',
+        'name' => 'setName',
+        'person' => 'setPerson',
+        'person_id' => 'setPersonId',
+        'requested_date' => 'setRequestedDate',
+        'requester_person' => 'setRequesterPerson',
+        'requester_person_id' => 'setRequesterPersonId',
+        'service_id' => 'setServiceId'
     ];
 
     /**
@@ -160,18 +160,18 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'person_id' => 'getPersonId',
-        'person' => 'getPerson',
-        'name' => 'getName',
-        'service_id' => 'getServiceId',
         'agreed' => 'getAgreed',
-        'is_valid' => 'getIsValid',
-        'requested_date' => 'getRequestedDate',
-        'requester_person_id' => 'getRequesterPersonId',
-        'requester_person' => 'getRequesterPerson',
         'comment' => 'getComment',
-        'counter' => 'getCounter'
+        'counter' => 'getCounter',
+        'id' => 'getId',
+        'is_valid' => 'getIsValid',
+        'name' => 'getName',
+        'person' => 'getPerson',
+        'person_id' => 'getPersonId',
+        'requested_date' => 'getRequestedDate',
+        'requester_person' => 'getRequesterPerson',
+        'requester_person_id' => 'getRequesterPersonId',
+        'service_id' => 'getServiceId'
     ];
 
     /**
@@ -231,18 +231,18 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['person'] = $data['person'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['service_id'] = $data['service_id'] ?? null;
         $this->container['agreed'] = $data['agreed'] ?? null;
-        $this->container['is_valid'] = $data['is_valid'] ?? null;
-        $this->container['requested_date'] = $data['requested_date'] ?? null;
-        $this->container['requester_person_id'] = $data['requester_person_id'] ?? null;
-        $this->container['requester_person'] = $data['requester_person'] ?? null;
         $this->container['comment'] = $data['comment'] ?? null;
         $this->container['counter'] = $data['counter'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_valid'] = $data['is_valid'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['requested_date'] = $data['requested_date'] ?? null;
+        $this->container['requester_person'] = $data['requester_person'] ?? null;
+        $this->container['requester_person_id'] = $data['requester_person_id'] ?? null;
+        $this->container['service_id'] = $data['service_id'] ?? null;
     }
 
     /**
@@ -270,128 +270,6 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person_id
-     *
-     * @return int|null
-     * @deprecated
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param int|null $person_id person_id
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\Person1|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\Person1|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets service_id
-     *
-     * @return int|null
-     */
-    public function getServiceId()
-    {
-        return $this->container['service_id'];
-    }
-
-    /**
-     * Sets service_id
-     *
-     * @param int|null $service_id service_id
-     *
-     * @return self
-     */
-    public function setServiceId($service_id)
-    {
-        $this->container['service_id'] = $service_id;
-
-        return $this;
-    }
-
-    /**
      * Gets agreed
      *
      * @return bool|null
@@ -411,104 +289,6 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
     public function setAgreed($agreed)
     {
         $this->container['agreed'] = $agreed;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_valid
-     *
-     * @return bool|null
-     */
-    public function getIsValid()
-    {
-        return $this->container['is_valid'];
-    }
-
-    /**
-     * Sets is_valid
-     *
-     * @param bool|null $is_valid is_valid
-     *
-     * @return self
-     */
-    public function setIsValid($is_valid)
-    {
-        $this->container['is_valid'] = $is_valid;
-
-        return $this;
-    }
-
-    /**
-     * Gets requested_date
-     *
-     * @return \DateTime|null
-     */
-    public function getRequestedDate()
-    {
-        return $this->container['requested_date'];
-    }
-
-    /**
-     * Sets requested_date
-     *
-     * @param \DateTime|null $requested_date requested_date
-     *
-     * @return self
-     */
-    public function setRequestedDate($requested_date)
-    {
-        $this->container['requested_date'] = $requested_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets requester_person_id
-     *
-     * @return int|null
-     * @deprecated
-     */
-    public function getRequesterPersonId()
-    {
-        return $this->container['requester_person_id'];
-    }
-
-    /**
-     * Sets requester_person_id
-     *
-     * @param int|null $requester_person_id requester_person_id
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setRequesterPersonId($requester_person_id)
-    {
-        $this->container['requester_person_id'] = $requester_person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets requester_person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\Person1|null
-     */
-    public function getRequesterPerson()
-    {
-        return $this->container['requester_person'];
-    }
-
-    /**
-     * Sets requester_person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\Person1|null $requester_person requester_person
-     *
-     * @return self
-     */
-    public function setRequesterPerson($requester_person)
-    {
-        $this->container['requester_person'] = $requester_person;
 
         return $this;
     }
@@ -557,6 +337,226 @@ class GetOpenServiceRequestsForPerson200ResponseDataInner implements ModelInterf
     public function setCounter($counter)
     {
         $this->container['counter'] = $counter;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_valid
+     *
+     * @return bool|null
+     */
+    public function getIsValid()
+    {
+        return $this->container['is_valid'];
+    }
+
+    /**
+     * Sets is_valid
+     *
+     * @param bool|null $is_valid is_valid
+     *
+     * @return self
+     */
+    public function setIsValid($is_valid)
+    {
+        $this->container['is_valid'] = $is_valid;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData|null
+     */
+    public function getPerson()
+    {
+        return $this->container['person'];
+    }
+
+    /**
+     * Sets person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData|null $person person
+     *
+     * @return self
+     */
+    public function setPerson($person)
+    {
+        $this->container['person'] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Gets person_id
+     *
+     * @return int|null
+     * @deprecated
+     */
+    public function getPersonId()
+    {
+        return $this->container['person_id'];
+    }
+
+    /**
+     * Sets person_id
+     *
+     * @param int|null $person_id person_id
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setPersonId($person_id)
+    {
+        $this->container['person_id'] = $person_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets requested_date
+     *
+     * @return \DateTime|null
+     */
+    public function getRequestedDate()
+    {
+        return $this->container['requested_date'];
+    }
+
+    /**
+     * Sets requested_date
+     *
+     * @param \DateTime|null $requested_date requested_date
+     *
+     * @return self
+     */
+    public function setRequestedDate($requested_date)
+    {
+        $this->container['requested_date'] = $requested_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets requester_person
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData|null
+     */
+    public function getRequesterPerson()
+    {
+        return $this->container['requester_person'];
+    }
+
+    /**
+     * Sets requester_person
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData|null $requester_person requester_person
+     *
+     * @return self
+     */
+    public function setRequesterPerson($requester_person)
+    {
+        $this->container['requester_person'] = $requester_person;
+
+        return $this;
+    }
+
+    /**
+     * Gets requester_person_id
+     *
+     * @return int|null
+     * @deprecated
+     */
+    public function getRequesterPersonId()
+    {
+        return $this->container['requester_person_id'];
+    }
+
+    /**
+     * Sets requester_person_id
+     *
+     * @param int|null $requester_person_id requester_person_id
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setRequesterPersonId($requester_person_id)
+    {
+        $this->container['requester_person_id'] = $requester_person_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets service_id
+     *
+     * @return int|null
+     */
+    public function getServiceId()
+    {
+        return $this->container['service_id'];
+    }
+
+    /**
+     * Sets service_id
+     *
+     * @param int|null $service_id service_id
+     *
+     * @return self
+     */
+    public function setServiceId($service_id)
+    {
+        $this->container['service_id'] = $service_id;
 
         return $this;
     }

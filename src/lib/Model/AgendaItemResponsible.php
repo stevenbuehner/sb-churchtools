@@ -57,8 +57,8 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'text' => 'string',
-        'persons' => '\StevenBuehner\ChurchTools\Model\AgendaItemResponsiblePersonsInner[]'
+        'persons' => '\StevenBuehner\ChurchTools\Model\AgendaItemResponsiblePersonsInner[]',
+        'text' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'text' => null,
-        'persons' => null
+        'persons' => null,
+        'text' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'text',
-        'persons' => 'persons'
+        'persons' => 'persons',
+        'text' => 'text'
     ];
 
     /**
@@ -110,8 +110,8 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText',
-        'persons' => 'setPersons'
+        'persons' => 'setPersons',
+        'text' => 'setText'
     ];
 
     /**
@@ -120,8 +120,8 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText',
-        'persons' => 'getPersons'
+        'persons' => 'getPersons',
+        'text' => 'getText'
     ];
 
     /**
@@ -181,8 +181,8 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['text'] = $data['text'] ?? null;
         $this->container['persons'] = $data['persons'] ?? null;
+        $this->container['text'] = $data['text'] ?? null;
     }
 
     /**
@@ -210,30 +210,6 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     *
-     * @param string|null $text Raw text string. You need to search-replace the placeholders yourself.
-     *
-     * @return self
-     */
-    public function setText($text)
-    {
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
      * Gets persons
      *
      * @return \StevenBuehner\ChurchTools\Model\AgendaItemResponsiblePersonsInner[]|null
@@ -253,6 +229,30 @@ class AgendaItemResponsible implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setPersons($persons)
     {
         $this->container['persons'] = $persons;
+
+        return $this;
+    }
+
+    /**
+     * Gets text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        return $this->container['text'];
+    }
+
+    /**
+     * Sets text
+     *
+     * @param string|null $text Raw text string. You need to search-replace the placeholders yourself.
+     *
+     * @return self
+     */
+    public function setText($text)
+    {
+        $this->container['text'] = $text;
 
         return $this;
     }

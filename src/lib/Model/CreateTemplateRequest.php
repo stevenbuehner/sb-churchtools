@@ -57,15 +57,15 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'comment' => 'string',
-        'start_time' => 'string',
-        'duration' => 'int',
         'all_day' => 'bool',
-        'note' => 'string',
-        'is_internal' => 'bool',
         'category_id' => 'int',
-        'repeat_id' => 'int'
+        'comment' => 'string',
+        'duration' => 'int',
+        'is_internal' => 'bool',
+        'note' => 'string',
+        'repeat_id' => 'int',
+        'start_time' => 'string',
+        'title' => 'string'
     ];
 
     /**
@@ -76,15 +76,15 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'comment' => null,
-        'start_time' => null,
-        'duration' => null,
         'all_day' => null,
-        'note' => null,
-        'is_internal' => null,
         'category_id' => null,
-        'repeat_id' => null
+        'comment' => null,
+        'duration' => null,
+        'is_internal' => null,
+        'note' => null,
+        'repeat_id' => null,
+        'start_time' => null,
+        'title' => null
     ];
 
     /**
@@ -114,15 +114,15 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'comment' => 'comment',
-        'start_time' => 'startTime',
-        'duration' => 'duration',
         'all_day' => 'allDay',
-        'note' => 'note',
-        'is_internal' => 'isInternal',
         'category_id' => 'categoryId',
-        'repeat_id' => 'repeatId'
+        'comment' => 'comment',
+        'duration' => 'duration',
+        'is_internal' => 'isInternal',
+        'note' => 'note',
+        'repeat_id' => 'repeatId',
+        'start_time' => 'startTime',
+        'title' => 'title'
     ];
 
     /**
@@ -131,15 +131,15 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'comment' => 'setComment',
-        'start_time' => 'setStartTime',
-        'duration' => 'setDuration',
         'all_day' => 'setAllDay',
-        'note' => 'setNote',
-        'is_internal' => 'setIsInternal',
         'category_id' => 'setCategoryId',
-        'repeat_id' => 'setRepeatId'
+        'comment' => 'setComment',
+        'duration' => 'setDuration',
+        'is_internal' => 'setIsInternal',
+        'note' => 'setNote',
+        'repeat_id' => 'setRepeatId',
+        'start_time' => 'setStartTime',
+        'title' => 'setTitle'
     ];
 
     /**
@@ -148,15 +148,15 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'comment' => 'getComment',
-        'start_time' => 'getStartTime',
-        'duration' => 'getDuration',
         'all_day' => 'getAllDay',
-        'note' => 'getNote',
-        'is_internal' => 'getIsInternal',
         'category_id' => 'getCategoryId',
-        'repeat_id' => 'getRepeatId'
+        'comment' => 'getComment',
+        'duration' => 'getDuration',
+        'is_internal' => 'getIsInternal',
+        'note' => 'getNote',
+        'repeat_id' => 'getRepeatId',
+        'start_time' => 'getStartTime',
+        'title' => 'getTitle'
     ];
 
     /**
@@ -216,15 +216,15 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['start_time'] = $data['start_time'] ?? null;
-        $this->container['duration'] = $data['duration'] ?? null;
         $this->container['all_day'] = $data['all_day'] ?? null;
-        $this->container['note'] = $data['note'] ?? null;
-        $this->container['is_internal'] = $data['is_internal'] ?? null;
         $this->container['category_id'] = $data['category_id'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
+        $this->container['duration'] = $data['duration'] ?? null;
+        $this->container['is_internal'] = $data['is_internal'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
         $this->container['repeat_id'] = $data['repeat_id'] ?? null;
+        $this->container['start_time'] = $data['start_time'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
     }
 
     /**
@@ -236,14 +236,14 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
+        if ($this->container['duration'] === null) {
+            $invalidProperties[] = "'duration' can't be null";
         }
         if ($this->container['start_time'] === null) {
             $invalidProperties[] = "'start_time' can't be null";
         }
-        if ($this->container['duration'] === null) {
-            $invalidProperties[] = "'duration' can't be null";
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
         }
         return $invalidProperties;
     }
@@ -259,102 +259,6 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string|null
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string|null $comment comment
-     *
-     * @return self
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_time
-     *
-     * @return string
-     */
-    public function getStartTime()
-    {
-        return $this->container['start_time'];
-    }
-
-    /**
-     * Sets start_time
-     *
-     * @param string $start_time start_time
-     *
-     * @return self
-     */
-    public function setStartTime($start_time)
-    {
-        $this->container['start_time'] = $start_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets duration
-     *
-     * @return int
-     */
-    public function getDuration()
-    {
-        return $this->container['duration'];
-    }
-
-    /**
-     * Sets duration
-     *
-     * @param int $duration duration
-     *
-     * @return self
-     */
-    public function setDuration($duration)
-    {
-        $this->container['duration'] = $duration;
-
-        return $this;
-    }
 
     /**
      * Gets all_day
@@ -376,54 +280,6 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAllDay($all_day)
     {
         $this->container['all_day'] = $all_day;
-
-        return $this;
-    }
-
-    /**
-     * Gets note
-     *
-     * @return string|null
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string|null $note note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_internal
-     *
-     * @return bool|null
-     */
-    public function getIsInternal()
-    {
-        return $this->container['is_internal'];
-    }
-
-    /**
-     * Sets is_internal
-     *
-     * @param bool|null $is_internal is_internal
-     *
-     * @return self
-     */
-    public function setIsInternal($is_internal)
-    {
-        $this->container['is_internal'] = $is_internal;
 
         return $this;
     }
@@ -453,6 +309,102 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets comment
+     *
+     * @return string|null
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     * @param string|null $comment comment
+     *
+     * @return self
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets duration
+     *
+     * @return int
+     */
+    public function getDuration()
+    {
+        return $this->container['duration'];
+    }
+
+    /**
+     * Sets duration
+     *
+     * @param int $duration duration
+     *
+     * @return self
+     */
+    public function setDuration($duration)
+    {
+        $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_internal
+     *
+     * @return bool|null
+     */
+    public function getIsInternal()
+    {
+        return $this->container['is_internal'];
+    }
+
+    /**
+     * Sets is_internal
+     *
+     * @param bool|null $is_internal is_internal
+     *
+     * @return self
+     */
+    public function setIsInternal($is_internal)
+    {
+        $this->container['is_internal'] = $is_internal;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string|null
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string|null $note note
+     *
+     * @return self
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
      * Gets repeat_id
      *
      * @return int|null
@@ -472,6 +424,54 @@ class CreateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setRepeatId($repeat_id)
     {
         $this->container['repeat_id'] = $repeat_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_time
+     *
+     * @return string
+     */
+    public function getStartTime()
+    {
+        return $this->container['start_time'];
+    }
+
+    /**
+     * Sets start_time
+     *
+     * @param string $start_time start_time
+     *
+     * @return self
+     */
+    public function setStartTime($start_time)
+    {
+        $this->container['start_time'] = $start_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
 
         return $this;
     }

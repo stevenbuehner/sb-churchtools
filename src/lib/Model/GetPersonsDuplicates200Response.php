@@ -58,7 +58,7 @@ class GetPersonsDuplicates200Response implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInner[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseMeta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetPersonsDuplicates200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseMeta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetPersonsDuplicates200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseMeta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

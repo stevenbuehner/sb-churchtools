@@ -58,7 +58,7 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
       */
     protected static $openAPITypes = [
         'base' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerBase',
-        'calculated' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated'
+        'calculated' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerCalculated'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     /**
      * Gets calculated
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated|null
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerCalculated|null
      */
     public function getCalculated()
     {
@@ -246,7 +246,7 @@ class GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBoo
     /**
      * Sets calculated
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataAppointmentCalculated|null $calculated calculated
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataBookingsInnerCalculated|null $calculated calculated
      *
      * @return self
      */

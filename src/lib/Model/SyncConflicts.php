@@ -58,12 +58,12 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'job_id' => 'string',
-        'type' => 'string',
-        'entity_mapping_id' => 'float',
         'data' => '\StevenBuehner\ChurchTools\Model\SyncConflictsDataInner[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'entity_mapping_id' => 'int',
+        'id' => 'int',
+        'job_id' => 'string',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'type' => 'string'
     ];
 
     /**
@@ -74,12 +74,12 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'data' => null,
+        'entity_mapping_id' => null,
         'id' => null,
         'job_id' => null,
-        'type' => null,
-        'entity_mapping_id' => null,
-        'data' => null,
-        'meta' => null
+        'meta' => null,
+        'type' => null
     ];
 
     /**
@@ -109,12 +109,12 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'data' => 'data',
+        'entity_mapping_id' => 'entityMappingId',
         'id' => 'id',
         'job_id' => 'jobId',
-        'type' => 'type',
-        'entity_mapping_id' => 'entityMappingId',
-        'data' => 'data',
-        'meta' => 'meta'
+        'meta' => 'meta',
+        'type' => 'type'
     ];
 
     /**
@@ -123,12 +123,12 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'data' => 'setData',
+        'entity_mapping_id' => 'setEntityMappingId',
         'id' => 'setId',
         'job_id' => 'setJobId',
-        'type' => 'setType',
-        'entity_mapping_id' => 'setEntityMappingId',
-        'data' => 'setData',
-        'meta' => 'setMeta'
+        'meta' => 'setMeta',
+        'type' => 'setType'
     ];
 
     /**
@@ -137,12 +137,12 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'data' => 'getData',
+        'entity_mapping_id' => 'getEntityMappingId',
         'id' => 'getId',
         'job_id' => 'getJobId',
-        'type' => 'getType',
-        'entity_mapping_id' => 'getEntityMappingId',
-        'data' => 'getData',
-        'meta' => 'getMeta'
+        'meta' => 'getMeta',
+        'type' => 'getType'
     ];
 
     /**
@@ -225,12 +225,12 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['entity_mapping_id'] = $data['entity_mapping_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['job_id'] = $data['job_id'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['entity_mapping_id'] = $data['entity_mapping_id'] ?? null;
-        $this->container['data'] = $data['data'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -267,9 +267,57 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets data
+     *
+     * @return \StevenBuehner\ChurchTools\Model\SyncConflictsDataInner[]|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \StevenBuehner\ChurchTools\Model\SyncConflictsDataInner[]|null $data Array of relevant meta information
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_mapping_id
+     *
+     * @return int|null
+     */
+    public function getEntityMappingId()
+    {
+        return $this->container['entity_mapping_id'];
+    }
+
+    /**
+     * Sets entity_mapping_id
+     *
+     * @param int|null $entity_mapping_id Entity Mapping Id
+     *
+     * @return self
+     */
+    public function setEntityMappingId($entity_mapping_id)
+    {
+        $this->container['entity_mapping_id'] = $entity_mapping_id;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getId()
     {
@@ -279,7 +327,7 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float|null $id Conflict Id
+     * @param int|null $id Conflict Id
      *
      * @return self
      */
@@ -315,6 +363,30 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
      * Gets type
      *
      * @return string|null
@@ -344,78 +416,6 @@ class SyncConflicts implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets entity_mapping_id
-     *
-     * @return float|null
-     */
-    public function getEntityMappingId()
-    {
-        return $this->container['entity_mapping_id'];
-    }
-
-    /**
-     * Sets entity_mapping_id
-     *
-     * @param float|null $entity_mapping_id Entity Mapping Id
-     *
-     * @return self
-     */
-    public function setEntityMappingId($entity_mapping_id)
-    {
-        $this->container['entity_mapping_id'] = $entity_mapping_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \StevenBuehner\ChurchTools\Model\SyncConflictsDataInner[]|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \StevenBuehner\ChurchTools\Model\SyncConflictsDataInner[]|null $data Array of relevant meta information
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }

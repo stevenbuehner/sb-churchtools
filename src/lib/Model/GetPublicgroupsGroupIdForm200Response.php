@@ -57,12 +57,12 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'token' => 'string',
-        'group' => '\StevenBuehner\ChurchTools\Model\PublicGroup',
-        'form' => '\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200ResponseFormInner[]',
         'email' => 'string',
-        'requester_id' => 'float',
-        'sign_up_persons' => '\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200ResponseSignUpPersonsInner[]'
+        'form' => '\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200ResponseFormInner[]',
+        'group' => '\StevenBuehner\ChurchTools\Model\PublicGroup1',
+        'requester_id' => 'int',
+        'sign_up_persons' => '\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200ResponseSignUpPersonsInner[]',
+        'token' => 'string'
     ];
 
     /**
@@ -73,12 +73,12 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'token' => null,
-        'group' => null,
-        'form' => null,
         'email' => null,
+        'form' => null,
+        'group' => null,
         'requester_id' => null,
-        'sign_up_persons' => null
+        'sign_up_persons' => null,
+        'token' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'token' => 'token',
-        'group' => 'group',
-        'form' => 'form',
         'email' => 'email',
+        'form' => 'form',
+        'group' => 'group',
         'requester_id' => 'requesterId',
-        'sign_up_persons' => 'signUpPersons'
+        'sign_up_persons' => 'signUpPersons',
+        'token' => 'token'
     ];
 
     /**
@@ -122,12 +122,12 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'token' => 'setToken',
-        'group' => 'setGroup',
-        'form' => 'setForm',
         'email' => 'setEmail',
+        'form' => 'setForm',
+        'group' => 'setGroup',
         'requester_id' => 'setRequesterId',
-        'sign_up_persons' => 'setSignUpPersons'
+        'sign_up_persons' => 'setSignUpPersons',
+        'token' => 'setToken'
     ];
 
     /**
@@ -136,12 +136,12 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'token' => 'getToken',
-        'group' => 'getGroup',
-        'form' => 'getForm',
         'email' => 'getEmail',
+        'form' => 'getForm',
+        'group' => 'getGroup',
         'requester_id' => 'getRequesterId',
-        'sign_up_persons' => 'getSignUpPersons'
+        'sign_up_persons' => 'getSignUpPersons',
+        'token' => 'getToken'
     ];
 
     /**
@@ -201,12 +201,12 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['token'] = $data['token'] ?? null;
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['form'] = $data['form'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
+        $this->container['form'] = $data['form'] ?? null;
+        $this->container['group'] = $data['group'] ?? null;
         $this->container['requester_id'] = $data['requester_id'] ?? null;
         $this->container['sign_up_persons'] = $data['sign_up_persons'] ?? null;
+        $this->container['token'] = $data['token'] ?? null;
     }
 
     /**
@@ -218,14 +218,14 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['token'] === null) {
-            $invalidProperties[] = "'token' can't be null";
+        if ($this->container['form'] === null) {
+            $invalidProperties[] = "'form' can't be null";
         }
         if ($this->container['group'] === null) {
             $invalidProperties[] = "'group' can't be null";
         }
-        if ($this->container['form'] === null) {
-            $invalidProperties[] = "'form' can't be null";
+        if ($this->container['token'] === null) {
+            $invalidProperties[] = "'token' can't be null";
         }
         return $invalidProperties;
     }
@@ -243,49 +243,25 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets token
+     * Gets email
      *
-     * @return string
+     * @return string|null
      */
-    public function getToken()
+    public function getEmail()
     {
-        return $this->container['token'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets token
+     * Sets email
      *
-     * @param string $token The sign up token.
+     * @param string|null $email If the user is not yet signed in, this specifies the email address the user has provided.
      *
      * @return self
      */
-    public function setToken($token)
+    public function setEmail($email)
     {
-        $this->container['token'] = $token;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PublicGroup
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PublicGroup $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        $this->container['group'] = $group;
+        $this->container['email'] = $email;
 
         return $this;
     }
@@ -315,25 +291,25 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets email
+     * Gets group
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\PublicGroup1
      */
-    public function getEmail()
+    public function getGroup()
     {
-        return $this->container['email'];
+        return $this->container['group'];
     }
 
     /**
-     * Sets email
+     * Sets group
      *
-     * @param string|null $email If the user is not yet signed in, this specifies the email address the user has provided.
+     * @param \StevenBuehner\ChurchTools\Model\PublicGroup1 $group group
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setGroup($group)
     {
-        $this->container['email'] = $email;
+        $this->container['group'] = $group;
 
         return $this;
     }
@@ -341,7 +317,7 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
     /**
      * Gets requester_id
      *
-     * @return float|null
+     * @return int|null
      */
     public function getRequesterId()
     {
@@ -351,7 +327,7 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
     /**
      * Sets requester_id
      *
-     * @param float|null $requester_id If the user is signed in, this specifies the user ID of the requester.
+     * @param int|null $requester_id If the user is signed in, this specifies the user ID of the requester.
      *
      * @return self
      */
@@ -382,6 +358,30 @@ class GetPublicgroupsGroupIdForm200Response implements ModelInterface, ArrayAcce
     public function setSignUpPersons($sign_up_persons)
     {
         $this->container['sign_up_persons'] = $sign_up_persons;
+
+        return $this;
+    }
+
+    /**
+     * Gets token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->container['token'];
+    }
+
+    /**
+     * Sets token
+     *
+     * @param string $token The sign up token.
+     *
+     * @return self
+     */
+    public function setToken($token)
+    {
+        $this->container['token'] = $token;
 
         return $this;
     }

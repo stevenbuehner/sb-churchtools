@@ -58,8 +58,8 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
       * @var string[]
       */
     protected static $openAPITypes = [
-        'master' => '\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestMasterInner[]',
-        'es' => '\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestMasterInner[]'
+        'es' => '\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestEsInner[]',
+        'master' => '\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestEsInner[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'master' => null,
-        'es' => null
+        'es' => null,
+        'master' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
      * @var string[]
      */
     protected static $attributeMap = [
-        'master' => 'master',
-        'es' => 'es'
+        'es' => 'es',
+        'master' => 'master'
     ];
 
     /**
@@ -111,8 +111,8 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
      * @var string[]
      */
     protected static $setters = [
-        'master' => 'setMaster',
-        'es' => 'setEs'
+        'es' => 'setEs',
+        'master' => 'setMaster'
     ];
 
     /**
@@ -121,8 +121,8 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
      * @var string[]
      */
     protected static $getters = [
-        'master' => 'getMaster',
-        'es' => 'getEs'
+        'es' => 'getEs',
+        'master' => 'getMaster'
     ];
 
     /**
@@ -182,8 +182,8 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
      */
     public function __construct(array $data = null)
     {
-        $this->container['master'] = $data['master'] ?? null;
         $this->container['es'] = $data['es'] ?? null;
+        $this->container['master'] = $data['master'] ?? null;
     }
 
     /**
@@ -195,11 +195,11 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
     {
         $invalidProperties = [];
 
-        if ($this->container['master'] === null) {
-            $invalidProperties[] = "'master' can't be null";
-        }
         if ($this->container['es'] === null) {
             $invalidProperties[] = "'es' can't be null";
+        }
+        if ($this->container['master'] === null) {
+            $invalidProperties[] = "'master' can't be null";
         }
         return $invalidProperties;
     }
@@ -217,35 +217,9 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
 
 
     /**
-     * Gets master
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestMasterInner[]
-     */
-    public function getMaster()
-    {
-        return $this->container['master'];
-    }
-
-    /**
-     * Sets master
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestMasterInner[] $master master
-     *
-     * @return self
-     */
-    public function setMaster($master)
-    {
-
-
-        $this->container['master'] = $master;
-
-        return $this;
-    }
-
-    /**
      * Gets es
      *
-     * @return \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestMasterInner[]
+     * @return \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestEsInner[]
      */
     public function getEs()
     {
@@ -255,7 +229,7 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
     /**
      * Sets es
      *
-     * @param \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestMasterInner[] $es es
+     * @param \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestEsInner[] $es es
      *
      * @return self
      */
@@ -264,6 +238,32 @@ class PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest impleme
 
 
         $this->container['es'] = $es;
+
+        return $this;
+    }
+
+    /**
+     * Gets master
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestEsInner[]
+     */
+    public function getMaster()
+    {
+        return $this->container['master'];
+    }
+
+    /**
+     * Sets master
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequestEsInner[] $master master
+     *
+     * @return self
+     */
+    public function setMaster($master)
+    {
+
+
+        $this->container['master'] = $master;
 
         return $this;
     }

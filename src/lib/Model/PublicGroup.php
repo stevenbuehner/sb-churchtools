@@ -58,20 +58,20 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'name' => 'string',
-        'information' => '\StevenBuehner\ChurchTools\Model\PublicGroupInformation',
-        'children' => 'array',
-        'auto_accept' => 'bool',
         'allow_waitinglist' => 'bool',
-        'max_member_count' => 'float',
-        'current_member_count' => 'float',
-        'requested_places_count' => 'float',
-        'requested_waitinglist_places_count' => 'float',
+        'auto_accept' => 'bool',
         'can_sign_up' => 'bool',
-        'sign_up_conditions' => '\StevenBuehner\ChurchTools\Model\PublicGroupSignUpConditions',
-        'sign_up_persons' => '\StevenBuehner\ChurchTools\Model\PublicGroupSignUpPersonsInner[]',
-        'sign_up_headline' => 'string'
+        'children' => 'int[]',
+        'current_member_count' => 'int',
+        'id' => 'int',
+        'information' => '\StevenBuehner\ChurchTools\Model\PublicGroup1Information',
+        'max_member_count' => 'int',
+        'name' => 'string',
+        'requested_places_count' => 'int',
+        'requested_waitinglist_places_count' => 'int',
+        'sign_up_conditions' => '\StevenBuehner\ChurchTools\Model\PublicGroup1SignUpConditions',
+        'sign_up_headline' => 'string',
+        'sign_up_persons' => '\StevenBuehner\ChurchTools\Model\PublicGroup1SignUpPersonsInner[]'
     ];
 
     /**
@@ -82,20 +82,20 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'information' => null,
-        'children' => null,
-        'auto_accept' => null,
         'allow_waitinglist' => null,
-        'max_member_count' => null,
+        'auto_accept' => null,
+        'can_sign_up' => null,
+        'children' => null,
         'current_member_count' => null,
+        'id' => null,
+        'information' => null,
+        'max_member_count' => null,
+        'name' => null,
         'requested_places_count' => null,
         'requested_waitinglist_places_count' => null,
-        'can_sign_up' => null,
         'sign_up_conditions' => null,
-        'sign_up_persons' => null,
-        'sign_up_headline' => null
+        'sign_up_headline' => null,
+        'sign_up_persons' => null
     ];
 
     /**
@@ -125,20 +125,20 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'information' => 'information',
-        'children' => 'children',
-        'auto_accept' => 'autoAccept',
         'allow_waitinglist' => 'allowWaitinglist',
-        'max_member_count' => 'maxMemberCount',
+        'auto_accept' => 'autoAccept',
+        'can_sign_up' => 'canSignUp',
+        'children' => 'children',
         'current_member_count' => 'currentMemberCount',
+        'id' => 'id',
+        'information' => 'information',
+        'max_member_count' => 'maxMemberCount',
+        'name' => 'name',
         'requested_places_count' => 'requestedPlacesCount',
         'requested_waitinglist_places_count' => 'requestedWaitinglistPlacesCount',
-        'can_sign_up' => 'canSignUp',
         'sign_up_conditions' => 'signUpConditions',
-        'sign_up_persons' => 'signUpPersons',
-        'sign_up_headline' => 'signUpHeadline'
+        'sign_up_headline' => 'signUpHeadline',
+        'sign_up_persons' => 'signUpPersons'
     ];
 
     /**
@@ -147,20 +147,20 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'information' => 'setInformation',
-        'children' => 'setChildren',
-        'auto_accept' => 'setAutoAccept',
         'allow_waitinglist' => 'setAllowWaitinglist',
-        'max_member_count' => 'setMaxMemberCount',
+        'auto_accept' => 'setAutoAccept',
+        'can_sign_up' => 'setCanSignUp',
+        'children' => 'setChildren',
         'current_member_count' => 'setCurrentMemberCount',
+        'id' => 'setId',
+        'information' => 'setInformation',
+        'max_member_count' => 'setMaxMemberCount',
+        'name' => 'setName',
         'requested_places_count' => 'setRequestedPlacesCount',
         'requested_waitinglist_places_count' => 'setRequestedWaitinglistPlacesCount',
-        'can_sign_up' => 'setCanSignUp',
         'sign_up_conditions' => 'setSignUpConditions',
-        'sign_up_persons' => 'setSignUpPersons',
-        'sign_up_headline' => 'setSignUpHeadline'
+        'sign_up_headline' => 'setSignUpHeadline',
+        'sign_up_persons' => 'setSignUpPersons'
     ];
 
     /**
@@ -169,20 +169,20 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'information' => 'getInformation',
-        'children' => 'getChildren',
-        'auto_accept' => 'getAutoAccept',
         'allow_waitinglist' => 'getAllowWaitinglist',
-        'max_member_count' => 'getMaxMemberCount',
+        'auto_accept' => 'getAutoAccept',
+        'can_sign_up' => 'getCanSignUp',
+        'children' => 'getChildren',
         'current_member_count' => 'getCurrentMemberCount',
+        'id' => 'getId',
+        'information' => 'getInformation',
+        'max_member_count' => 'getMaxMemberCount',
+        'name' => 'getName',
         'requested_places_count' => 'getRequestedPlacesCount',
         'requested_waitinglist_places_count' => 'getRequestedWaitinglistPlacesCount',
-        'can_sign_up' => 'getCanSignUp',
         'sign_up_conditions' => 'getSignUpConditions',
-        'sign_up_persons' => 'getSignUpPersons',
-        'sign_up_headline' => 'getSignUpHeadline'
+        'sign_up_headline' => 'getSignUpHeadline',
+        'sign_up_persons' => 'getSignUpPersons'
     ];
 
     /**
@@ -242,20 +242,20 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['information'] = $data['information'] ?? null;
-        $this->container['children'] = $data['children'] ?? null;
-        $this->container['auto_accept'] = $data['auto_accept'] ?? null;
         $this->container['allow_waitinglist'] = $data['allow_waitinglist'] ?? null;
-        $this->container['max_member_count'] = $data['max_member_count'] ?? null;
+        $this->container['auto_accept'] = $data['auto_accept'] ?? null;
+        $this->container['can_sign_up'] = $data['can_sign_up'] ?? null;
+        $this->container['children'] = $data['children'] ?? null;
         $this->container['current_member_count'] = $data['current_member_count'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['information'] = $data['information'] ?? null;
+        $this->container['max_member_count'] = $data['max_member_count'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['requested_places_count'] = $data['requested_places_count'] ?? null;
         $this->container['requested_waitinglist_places_count'] = $data['requested_waitinglist_places_count'] ?? null;
-        $this->container['can_sign_up'] = $data['can_sign_up'] ?? null;
         $this->container['sign_up_conditions'] = $data['sign_up_conditions'] ?? null;
-        $this->container['sign_up_persons'] = $data['sign_up_persons'] ?? null;
         $this->container['sign_up_headline'] = $data['sign_up_headline'] ?? null;
+        $this->container['sign_up_persons'] = $data['sign_up_persons'] ?? null;
     }
 
     /**
@@ -267,35 +267,35 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['information'] === null) {
-            $invalidProperties[] = "'information' can't be null";
+        if ($this->container['allow_waitinglist'] === null) {
+            $invalidProperties[] = "'allow_waitinglist' can't be null";
         }
         if ($this->container['auto_accept'] === null) {
             $invalidProperties[] = "'auto_accept' can't be null";
         }
-        if ($this->container['allow_waitinglist'] === null) {
-            $invalidProperties[] = "'allow_waitinglist' can't be null";
+        if ($this->container['can_sign_up'] === null) {
+            $invalidProperties[] = "'can_sign_up' can't be null";
+        }
+        if ($this->container['current_member_count'] === null) {
+            $invalidProperties[] = "'current_member_count' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['information'] === null) {
+            $invalidProperties[] = "'information' can't be null";
         }
         if ($this->container['max_member_count'] === null) {
             $invalidProperties[] = "'max_member_count' can't be null";
         }
-        if ($this->container['current_member_count'] === null) {
-            $invalidProperties[] = "'current_member_count' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['requested_places_count'] === null) {
             $invalidProperties[] = "'requested_places_count' can't be null";
         }
         if ($this->container['requested_waitinglist_places_count'] === null) {
             $invalidProperties[] = "'requested_waitinglist_places_count' can't be null";
-        }
-        if ($this->container['can_sign_up'] === null) {
-            $invalidProperties[] = "'can_sign_up' can't be null";
         }
         if ($this->container['sign_up_conditions'] === null) {
             $invalidProperties[] = "'sign_up_conditions' can't be null";
@@ -316,97 +316,25 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets allow_waitinglist
      *
-     * @return float
+     * @return bool
      */
-    public function getId()
+    public function getAllowWaitinglist()
     {
-        return $this->container['id'];
+        return $this->container['allow_waitinglist'];
     }
 
     /**
-     * Sets id
+     * Sets allow_waitinglist
      *
-     * @param float $id The public group ID.
+     * @param bool $allow_waitinglist If true, group sign is allowed even if group is full.
      *
      * @return self
      */
-    public function setId($id)
+    public function setAllowWaitinglist($allow_waitinglist)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Name of the group, e.g. to be displayed as title.
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets information
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PublicGroupInformation
-     */
-    public function getInformation()
-    {
-        return $this->container['information'];
-    }
-
-    /**
-     * Sets information
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PublicGroupInformation $information information
-     *
-     * @return self
-     */
-    public function setInformation($information)
-    {
-        $this->container['information'] = $information;
-
-        return $this;
-    }
-
-    /**
-     * Gets children
-     *
-     * @return array|null
-     */
-    public function getChildren()
-    {
-        return $this->container['children'];
-    }
-
-    /**
-     * Sets children
-     *
-     * @param array|null $children Lists all (direct) child group IDs for the current group.
-     *
-     * @return self
-     */
-    public function setChildren($children)
-    {
-        $this->container['children'] = $children;
+        $this->container['allow_waitinglist'] = $allow_waitinglist;
 
         return $this;
     }
@@ -436,126 +364,6 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets allow_waitinglist
-     *
-     * @return bool
-     */
-    public function getAllowWaitinglist()
-    {
-        return $this->container['allow_waitinglist'];
-    }
-
-    /**
-     * Sets allow_waitinglist
-     *
-     * @param bool $allow_waitinglist If true, group sign is allowed even if group is full.
-     *
-     * @return self
-     */
-    public function setAllowWaitinglist($allow_waitinglist)
-    {
-        $this->container['allow_waitinglist'] = $allow_waitinglist;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_member_count
-     *
-     * @return float
-     */
-    public function getMaxMemberCount()
-    {
-        return $this->container['max_member_count'];
-    }
-
-    /**
-     * Sets max_member_count
-     *
-     * @param float $max_member_count Maximum number of members until the group is considered as full.
-     *
-     * @return self
-     */
-    public function setMaxMemberCount($max_member_count)
-    {
-        $this->container['max_member_count'] = $max_member_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets current_member_count
-     *
-     * @return float
-     */
-    public function getCurrentMemberCount()
-    {
-        return $this->container['current_member_count'];
-    }
-
-    /**
-     * Sets current_member_count
-     *
-     * @param float $current_member_count Current number of members in the group.
-     *
-     * @return self
-     */
-    public function setCurrentMemberCount($current_member_count)
-    {
-        $this->container['current_member_count'] = $current_member_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets requested_places_count
-     *
-     * @return float
-     */
-    public function getRequestedPlacesCount()
-    {
-        return $this->container['requested_places_count'];
-    }
-
-    /**
-     * Sets requested_places_count
-     *
-     * @param float $requested_places_count Number of member requests
-     *
-     * @return self
-     */
-    public function setRequestedPlacesCount($requested_places_count)
-    {
-        $this->container['requested_places_count'] = $requested_places_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets requested_waitinglist_places_count
-     *
-     * @return float
-     */
-    public function getRequestedWaitinglistPlacesCount()
-    {
-        return $this->container['requested_waitinglist_places_count'];
-    }
-
-    /**
-     * Sets requested_waitinglist_places_count
-     *
-     * @param float $requested_waitinglist_places_count Number of member requests with waiting list position
-     *
-     * @return self
-     */
-    public function setRequestedWaitinglistPlacesCount($requested_waitinglist_places_count)
-    {
-        $this->container['requested_waitinglist_places_count'] = $requested_waitinglist_places_count;
-
-        return $this;
-    }
-
-    /**
      * Gets can_sign_up
      *
      * @return bool
@@ -580,9 +388,201 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets children
+     *
+     * @return int[]|null
+     */
+    public function getChildren()
+    {
+        return $this->container['children'];
+    }
+
+    /**
+     * Sets children
+     *
+     * @param int[]|null $children Lists all (direct) child group IDs for the current group.
+     *
+     * @return self
+     */
+    public function setChildren($children)
+    {
+        $this->container['children'] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_member_count
+     *
+     * @return int
+     */
+    public function getCurrentMemberCount()
+    {
+        return $this->container['current_member_count'];
+    }
+
+    /**
+     * Sets current_member_count
+     *
+     * @param int $current_member_count Current number of members in the group.
+     *
+     * @return self
+     */
+    public function setCurrentMemberCount($current_member_count)
+    {
+        $this->container['current_member_count'] = $current_member_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id The public group ID.
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets information
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PublicGroup1Information
+     */
+    public function getInformation()
+    {
+        return $this->container['information'];
+    }
+
+    /**
+     * Sets information
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PublicGroup1Information $information information
+     *
+     * @return self
+     */
+    public function setInformation($information)
+    {
+        $this->container['information'] = $information;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_member_count
+     *
+     * @return int
+     */
+    public function getMaxMemberCount()
+    {
+        return $this->container['max_member_count'];
+    }
+
+    /**
+     * Sets max_member_count
+     *
+     * @param int $max_member_count Maximum number of members until the group is considered as full.
+     *
+     * @return self
+     */
+    public function setMaxMemberCount($max_member_count)
+    {
+        $this->container['max_member_count'] = $max_member_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Name of the group, e.g. to be displayed as title.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets requested_places_count
+     *
+     * @return int
+     */
+    public function getRequestedPlacesCount()
+    {
+        return $this->container['requested_places_count'];
+    }
+
+    /**
+     * Sets requested_places_count
+     *
+     * @param int $requested_places_count Number of member requests
+     *
+     * @return self
+     */
+    public function setRequestedPlacesCount($requested_places_count)
+    {
+        $this->container['requested_places_count'] = $requested_places_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets requested_waitinglist_places_count
+     *
+     * @return int
+     */
+    public function getRequestedWaitinglistPlacesCount()
+    {
+        return $this->container['requested_waitinglist_places_count'];
+    }
+
+    /**
+     * Sets requested_waitinglist_places_count
+     *
+     * @param int $requested_waitinglist_places_count Number of member requests with waiting list position
+     *
+     * @return self
+     */
+    public function setRequestedWaitinglistPlacesCount($requested_waitinglist_places_count)
+    {
+        $this->container['requested_waitinglist_places_count'] = $requested_waitinglist_places_count;
+
+        return $this;
+    }
+
+    /**
      * Gets sign_up_conditions
      *
-     * @return \StevenBuehner\ChurchTools\Model\PublicGroupSignUpConditions
+     * @return \StevenBuehner\ChurchTools\Model\PublicGroup1SignUpConditions
      */
     public function getSignUpConditions()
     {
@@ -592,37 +592,13 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sign_up_conditions
      *
-     * @param \StevenBuehner\ChurchTools\Model\PublicGroupSignUpConditions $sign_up_conditions sign_up_conditions
+     * @param \StevenBuehner\ChurchTools\Model\PublicGroup1SignUpConditions $sign_up_conditions sign_up_conditions
      *
      * @return self
      */
     public function setSignUpConditions($sign_up_conditions)
     {
         $this->container['sign_up_conditions'] = $sign_up_conditions;
-
-        return $this;
-    }
-
-    /**
-     * Gets sign_up_persons
-     *
-     * @return \StevenBuehner\ChurchTools\Model\PublicGroupSignUpPersonsInner[]|null
-     */
-    public function getSignUpPersons()
-    {
-        return $this->container['sign_up_persons'];
-    }
-
-    /**
-     * Sets sign_up_persons
-     *
-     * @param \StevenBuehner\ChurchTools\Model\PublicGroupSignUpPersonsInner[]|null $sign_up_persons Lists all persons the current user is allowed to sign up for. This includes spouses, children below the age of 16 and all persons with the same email address.
-     *
-     * @return self
-     */
-    public function setSignUpPersons($sign_up_persons)
-    {
-        $this->container['sign_up_persons'] = $sign_up_persons;
 
         return $this;
     }
@@ -647,6 +623,30 @@ class PublicGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSignUpHeadline($sign_up_headline)
     {
         $this->container['sign_up_headline'] = $sign_up_headline;
+
+        return $this;
+    }
+
+    /**
+     * Gets sign_up_persons
+     *
+     * @return \StevenBuehner\ChurchTools\Model\PublicGroup1SignUpPersonsInner[]|null
+     */
+    public function getSignUpPersons()
+    {
+        return $this->container['sign_up_persons'];
+    }
+
+    /**
+     * Sets sign_up_persons
+     *
+     * @param \StevenBuehner\ChurchTools\Model\PublicGroup1SignUpPersonsInner[]|null $sign_up_persons Lists all persons the current user is allowed to sign up for. This includes spouses, children below the age of 16 and all persons with the same email address.
+     *
+     * @return self
+     */
+    public function setSignUpPersons($sign_up_persons)
+    {
+        $this->container['sign_up_persons'] = $sign_up_persons;
 
         return $this;
     }

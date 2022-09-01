@@ -59,7 +59,7 @@ class GetAllGroupMembers200ResponseMeta implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'all' => 'int',
         'count' => 'int',
-        'pagination' => '\StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMetaPagination'
+        'pagination' => '\StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta'
     ];
 
     /**
@@ -266,7 +266,7 @@ class GetAllGroupMembers200ResponseMeta implements ModelInterface, ArrayAccess, 
     /**
      * Gets pagination
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMetaPagination|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null
      */
     public function getPagination()
     {
@@ -276,7 +276,7 @@ class GetAllGroupMembers200ResponseMeta implements ModelInterface, ArrayAccess, 
     /**
      * Sets pagination
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllPersons200ResponseMetaPagination|null $pagination pagination
+     * @param \StevenBuehner\ChurchTools\Model\GetAllDonators200ResponseMeta|null $pagination pagination
      *
      * @return self
      */

@@ -58,14 +58,14 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'song_id' => 'int',
-        'arrangement_id' => 'int',
-        'title' => 'string',
         'arrangement' => 'string',
-        'category' => 'string',
-        'key' => 'string',
+        'arrangement_id' => 'int',
         'bpm' => 'string',
-        'default_arrangement' => 'string'
+        'category' => 'string',
+        'default_arrangement' => 'string',
+        'key' => 'string',
+        'song_id' => 'int',
+        'title' => 'string'
     ];
 
     /**
@@ -76,14 +76,14 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'song_id' => null,
-        'arrangement_id' => null,
-        'title' => null,
         'arrangement' => null,
-        'category' => null,
-        'key' => null,
+        'arrangement_id' => null,
         'bpm' => null,
-        'default_arrangement' => null
+        'category' => null,
+        'default_arrangement' => null,
+        'key' => null,
+        'song_id' => null,
+        'title' => null
     ];
 
     /**
@@ -113,14 +113,14 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'song_id' => 'songId',
-        'arrangement_id' => 'arrangementId',
-        'title' => 'title',
         'arrangement' => 'arrangement',
-        'category' => 'category',
-        'key' => 'key',
+        'arrangement_id' => 'arrangementId',
         'bpm' => 'bpm',
-        'default_arrangement' => 'defaultArrangement'
+        'category' => 'category',
+        'default_arrangement' => 'defaultArrangement',
+        'key' => 'key',
+        'song_id' => 'songId',
+        'title' => 'title'
     ];
 
     /**
@@ -129,14 +129,14 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'song_id' => 'setSongId',
-        'arrangement_id' => 'setArrangementId',
-        'title' => 'setTitle',
         'arrangement' => 'setArrangement',
-        'category' => 'setCategory',
-        'key' => 'setKey',
+        'arrangement_id' => 'setArrangementId',
         'bpm' => 'setBpm',
-        'default_arrangement' => 'setDefaultArrangement'
+        'category' => 'setCategory',
+        'default_arrangement' => 'setDefaultArrangement',
+        'key' => 'setKey',
+        'song_id' => 'setSongId',
+        'title' => 'setTitle'
     ];
 
     /**
@@ -145,14 +145,14 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'song_id' => 'getSongId',
-        'arrangement_id' => 'getArrangementId',
-        'title' => 'getTitle',
         'arrangement' => 'getArrangement',
-        'category' => 'getCategory',
-        'key' => 'getKey',
+        'arrangement_id' => 'getArrangementId',
         'bpm' => 'getBpm',
-        'default_arrangement' => 'getDefaultArrangement'
+        'category' => 'getCategory',
+        'default_arrangement' => 'getDefaultArrangement',
+        'key' => 'getKey',
+        'song_id' => 'getSongId',
+        'title' => 'getTitle'
     ];
 
     /**
@@ -212,14 +212,14 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['song_id'] = $data['song_id'] ?? null;
-        $this->container['arrangement_id'] = $data['arrangement_id'] ?? null;
-        $this->container['title'] = $data['title'] ?? null;
         $this->container['arrangement'] = $data['arrangement'] ?? null;
-        $this->container['category'] = $data['category'] ?? null;
-        $this->container['key'] = $data['key'] ?? null;
+        $this->container['arrangement_id'] = $data['arrangement_id'] ?? null;
         $this->container['bpm'] = $data['bpm'] ?? null;
+        $this->container['category'] = $data['category'] ?? null;
         $this->container['default_arrangement'] = $data['default_arrangement'] ?? null;
+        $this->container['key'] = $data['key'] ?? null;
+        $this->container['song_id'] = $data['song_id'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
     }
 
     /**
@@ -247,25 +247,25 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets song_id
+     * Gets arrangement
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getSongId()
+    public function getArrangement()
     {
-        return $this->container['song_id'];
+        return $this->container['arrangement'];
     }
 
     /**
-     * Sets song_id
+     * Sets arrangement
      *
-     * @param int|null $song_id song_id
+     * @param string|null $arrangement arrangement
      *
      * @return self
      */
-    public function setSongId($song_id)
+    public function setArrangement($arrangement)
     {
-        $this->container['song_id'] = $song_id;
+        $this->container['arrangement'] = $arrangement;
 
         return $this;
     }
@@ -295,49 +295,25 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets title
+     * Gets bpm
      *
      * @return string|null
      */
-    public function getTitle()
+    public function getBpm()
     {
-        return $this->container['title'];
+        return $this->container['bpm'];
     }
 
     /**
-     * Sets title
+     * Sets bpm
      *
-     * @param string|null $title title
+     * @param string|null $bpm bpm
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setBpm($bpm)
     {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets arrangement
-     *
-     * @return string|null
-     */
-    public function getArrangement()
-    {
-        return $this->container['arrangement'];
-    }
-
-    /**
-     * Sets arrangement
-     *
-     * @param string|null $arrangement arrangement
-     *
-     * @return self
-     */
-    public function setArrangement($arrangement)
-    {
-        $this->container['arrangement'] = $arrangement;
+        $this->container['bpm'] = $bpm;
 
         return $this;
     }
@@ -367,6 +343,30 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets default_arrangement
+     *
+     * @return string|null
+     */
+    public function getDefaultArrangement()
+    {
+        return $this->container['default_arrangement'];
+    }
+
+    /**
+     * Sets default_arrangement
+     *
+     * @param string|null $default_arrangement default_arrangement
+     *
+     * @return self
+     */
+    public function setDefaultArrangement($default_arrangement)
+    {
+        $this->container['default_arrangement'] = $default_arrangement;
+
+        return $this;
+    }
+
+    /**
      * Gets key
      *
      * @return string|null
@@ -391,49 +391,49 @@ class AgendaItemSong implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets bpm
+     * Gets song_id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getBpm()
+    public function getSongId()
     {
-        return $this->container['bpm'];
+        return $this->container['song_id'];
     }
 
     /**
-     * Sets bpm
+     * Sets song_id
      *
-     * @param string|null $bpm bpm
+     * @param int|null $song_id song_id
      *
      * @return self
      */
-    public function setBpm($bpm)
+    public function setSongId($song_id)
     {
-        $this->container['bpm'] = $bpm;
+        $this->container['song_id'] = $song_id;
 
         return $this;
     }
 
     /**
-     * Gets default_arrangement
+     * Gets title
      *
      * @return string|null
      */
-    public function getDefaultArrangement()
+    public function getTitle()
     {
-        return $this->container['default_arrangement'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets default_arrangement
+     * Sets title
      *
-     * @param string|null $default_arrangement default_arrangement
+     * @param string|null $title title
      *
      * @return self
      */
-    public function setDefaultArrangement($default_arrangement)
+    public function setTitle($title)
     {
-        $this->container['default_arrangement'] = $default_arrangement;
+        $this->container['title'] = $title;
 
         return $this;
     }

@@ -57,15 +57,15 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
+        'addition' => 'string',
+        'city' => 'string',
+        'country' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddressCountry',
+        'district' => 'string',
+        'latitude' => 'string',
+        'longitude' => 'string',
         'meeting_at' => 'string',
         'street' => 'string',
-        'addition' => 'string',
-        'district' => 'string',
-        'zip' => 'string',
-        'city' => 'string',
-        'country' => 'mixed',
-        'latitude' => 'string',
-        'longitude' => 'string'
+        'zip' => 'string'
     ];
 
     /**
@@ -76,15 +76,15 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'meeting_at' => null,
-        'street' => null,
         'addition' => null,
-        'district' => null,
-        'zip' => null,
         'city' => null,
         'country' => null,
+        'district' => null,
         'latitude' => null,
-        'longitude' => null
+        'longitude' => null,
+        'meeting_at' => null,
+        'street' => null,
+        'zip' => null
     ];
 
     /**
@@ -114,15 +114,15 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'meeting_at' => 'meetingAt',
-        'street' => 'street',
         'addition' => 'addition',
-        'district' => 'district',
-        'zip' => 'zip',
         'city' => 'city',
         'country' => 'country',
+        'district' => 'district',
         'latitude' => 'latitude',
-        'longitude' => 'longitude'
+        'longitude' => 'longitude',
+        'meeting_at' => 'meetingAt',
+        'street' => 'street',
+        'zip' => 'zip'
     ];
 
     /**
@@ -131,15 +131,15 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'meeting_at' => 'setMeetingAt',
-        'street' => 'setStreet',
         'addition' => 'setAddition',
-        'district' => 'setDistrict',
-        'zip' => 'setZip',
         'city' => 'setCity',
         'country' => 'setCountry',
+        'district' => 'setDistrict',
         'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude'
+        'longitude' => 'setLongitude',
+        'meeting_at' => 'setMeetingAt',
+        'street' => 'setStreet',
+        'zip' => 'setZip'
     ];
 
     /**
@@ -148,15 +148,15 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'meeting_at' => 'getMeetingAt',
-        'street' => 'getStreet',
         'addition' => 'getAddition',
-        'district' => 'getDistrict',
-        'zip' => 'getZip',
         'city' => 'getCity',
         'country' => 'getCountry',
+        'district' => 'getDistrict',
         'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude'
+        'longitude' => 'getLongitude',
+        'meeting_at' => 'getMeetingAt',
+        'street' => 'getStreet',
+        'zip' => 'getZip'
     ];
 
     /**
@@ -216,15 +216,15 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['meeting_at'] = $data['meeting_at'] ?? null;
-        $this->container['street'] = $data['street'] ?? null;
         $this->container['addition'] = $data['addition'] ?? null;
-        $this->container['district'] = $data['district'] ?? null;
-        $this->container['zip'] = $data['zip'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
         $this->container['country'] = $data['country'] ?? null;
+        $this->container['district'] = $data['district'] ?? null;
         $this->container['latitude'] = $data['latitude'] ?? null;
         $this->container['longitude'] = $data['longitude'] ?? null;
+        $this->container['meeting_at'] = $data['meeting_at'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['zip'] = $data['zip'] ?? null;
     }
 
     /**
@@ -236,20 +236,6 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['meeting_at'] === null) {
-            $invalidProperties[] = "'meeting_at' can't be null";
-        }
-        if ((mb_strlen($this->container['meeting_at']) < 1)) {
-            $invalidProperties[] = "invalid value for 'meeting_at', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['street'] === null) {
-            $invalidProperties[] = "'street' can't be null";
-        }
-        if ((mb_strlen($this->container['street']) < 1)) {
-            $invalidProperties[] = "invalid value for 'street', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['addition'] === null) {
             $invalidProperties[] = "'addition' can't be null";
         }
@@ -257,25 +243,18 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "invalid value for 'addition', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['district'] === null) {
-            $invalidProperties[] = "'district' can't be null";
-        }
-        if ((mb_strlen($this->container['district']) < 1)) {
-            $invalidProperties[] = "invalid value for 'district', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['zip'] === null) {
-            $invalidProperties[] = "'zip' can't be null";
-        }
-        if ((mb_strlen($this->container['zip']) < 1)) {
-            $invalidProperties[] = "invalid value for 'zip', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
         }
         if ((mb_strlen($this->container['city']) < 1)) {
             $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['district'] === null) {
+            $invalidProperties[] = "'district' can't be null";
+        }
+        if ((mb_strlen($this->container['district']) < 1)) {
+            $invalidProperties[] = "invalid value for 'district', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['latitude'] === null) {
@@ -292,6 +271,27 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "invalid value for 'longitude', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['meeting_at'] === null) {
+            $invalidProperties[] = "'meeting_at' can't be null";
+        }
+        if ((mb_strlen($this->container['meeting_at']) < 1)) {
+            $invalidProperties[] = "invalid value for 'meeting_at', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['street'] === null) {
+            $invalidProperties[] = "'street' can't be null";
+        }
+        if ((mb_strlen($this->container['street']) < 1)) {
+            $invalidProperties[] = "invalid value for 'street', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['zip'] === null) {
+            $invalidProperties[] = "'zip' can't be null";
+        }
+        if ((mb_strlen($this->container['zip']) < 1)) {
+            $invalidProperties[] = "invalid value for 'zip', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -306,6 +306,175 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets addition
+     *
+     * @return string
+     */
+    public function getAddition()
+    {
+        return $this->container['addition'];
+    }
+
+    /**
+     * Sets addition
+     *
+     * @param string $addition addition
+     *
+     * @return self
+     */
+    public function setAddition($addition)
+    {
+
+        if ((mb_strlen($addition) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $addition when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
+        }
+
+        $this->container['addition'] = $addition;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city city
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+
+        if ((mb_strlen($city) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
+        }
+
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddressCountry|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerAddressCountry|null $country country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets district
+     *
+     * @return string
+     */
+    public function getDistrict()
+    {
+        return $this->container['district'];
+    }
+
+    /**
+     * Sets district
+     *
+     * @param string $district district
+     *
+     * @return self
+     */
+    public function setDistrict($district)
+    {
+
+        if ((mb_strlen($district) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $district when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
+        }
+
+        $this->container['district'] = $district;
+
+        return $this;
+    }
+
+    /**
+     * Gets latitude
+     *
+     * @return string
+     */
+    public function getLatitude()
+    {
+        return $this->container['latitude'];
+    }
+
+    /**
+     * Sets latitude
+     *
+     * @param string $latitude latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude)
+    {
+
+        if ((mb_strlen($latitude) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $latitude when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
+        }
+
+        $this->container['latitude'] = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets longitude
+     *
+     * @return string
+     */
+    public function getLongitude()
+    {
+        return $this->container['longitude'];
+    }
+
+    /**
+     * Sets longitude
+     *
+     * @param string $longitude longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude)
+    {
+
+        if ((mb_strlen($longitude) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $longitude when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
+        }
+
+        $this->container['longitude'] = $longitude;
+
+        return $this;
+    }
 
     /**
      * Gets meeting_at
@@ -366,64 +535,6 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets addition
-     *
-     * @return string
-     */
-    public function getAddition()
-    {
-        return $this->container['addition'];
-    }
-
-    /**
-     * Sets addition
-     *
-     * @param string $addition addition
-     *
-     * @return self
-     */
-    public function setAddition($addition)
-    {
-
-        if ((mb_strlen($addition) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $addition when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
-        }
-
-        $this->container['addition'] = $addition;
-
-        return $this;
-    }
-
-    /**
-     * Gets district
-     *
-     * @return string
-     */
-    public function getDistrict()
-    {
-        return $this->container['district'];
-    }
-
-    /**
-     * Sets district
-     *
-     * @param string $district district
-     *
-     * @return self
-     */
-    public function setDistrict($district)
-    {
-
-        if ((mb_strlen($district) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $district when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
-        }
-
-        $this->container['district'] = $district;
-
-        return $this;
-    }
-
-    /**
      * Gets zip
      *
      * @return string
@@ -448,117 +559,6 @@ class UpdateCampusRequestAddress implements ModelInterface, ArrayAccess, \JsonSe
         }
 
         $this->container['zip'] = $zip;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string $city city
-     *
-     * @return self
-     */
-    public function setCity($city)
-    {
-
-        if ((mb_strlen($city) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
-        }
-
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return mixed|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param mixed|null $country country
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets latitude
-     *
-     * @return string
-     */
-    public function getLatitude()
-    {
-        return $this->container['latitude'];
-    }
-
-    /**
-     * Sets latitude
-     *
-     * @param string $latitude latitude
-     *
-     * @return self
-     */
-    public function setLatitude($latitude)
-    {
-
-        if ((mb_strlen($latitude) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $latitude when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
-        }
-
-        $this->container['latitude'] = $latitude;
-
-        return $this;
-    }
-
-    /**
-     * Gets longitude
-     *
-     * @return string
-     */
-    public function getLongitude()
-    {
-        return $this->container['longitude'];
-    }
-
-    /**
-     * Sets longitude
-     *
-     * @param string $longitude longitude
-     *
-     * @return self
-     */
-    public function setLongitude($longitude)
-    {
-
-        if ((mb_strlen($longitude) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $longitude when calling UpdateCampusRequestAddress., must be bigger than or equal to 1.');
-        }
-
-        $this->container['longitude'] = $longitude;
 
         return $this;
     }

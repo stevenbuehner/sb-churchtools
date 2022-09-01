@@ -57,13 +57,13 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'domain_type' => 'string',
-        'domain_identifier' => 'string',
         'api_url' => 'string',
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPersonDomainAttributes',
+        'domain_identifier' => 'string',
+        'domain_type' => 'string',
         'frontend_url' => 'string',
         'image_url' => 'string',
-        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseDataInnerPersonDomainAttributes'
+        'title' => 'string'
     ];
 
     /**
@@ -74,13 +74,13 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'domain_type' => null,
-        'domain_identifier' => null,
         'api_url' => null,
+        'domain_attributes' => null,
+        'domain_identifier' => null,
+        'domain_type' => null,
         'frontend_url' => null,
         'image_url' => null,
-        'domain_attributes' => null
+        'title' => null
     ];
 
     /**
@@ -110,13 +110,13 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'domain_type' => 'domainType',
-        'domain_identifier' => 'domainIdentifier',
         'api_url' => 'apiUrl',
+        'domain_attributes' => 'domainAttributes',
+        'domain_identifier' => 'domainIdentifier',
+        'domain_type' => 'domainType',
         'frontend_url' => 'frontendUrl',
         'image_url' => 'imageUrl',
-        'domain_attributes' => 'domainAttributes'
+        'title' => 'title'
     ];
 
     /**
@@ -125,13 +125,13 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'domain_type' => 'setDomainType',
-        'domain_identifier' => 'setDomainIdentifier',
         'api_url' => 'setApiUrl',
+        'domain_attributes' => 'setDomainAttributes',
+        'domain_identifier' => 'setDomainIdentifier',
+        'domain_type' => 'setDomainType',
         'frontend_url' => 'setFrontendUrl',
         'image_url' => 'setImageUrl',
-        'domain_attributes' => 'setDomainAttributes'
+        'title' => 'setTitle'
     ];
 
     /**
@@ -140,13 +140,13 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'domain_type' => 'getDomainType',
-        'domain_identifier' => 'getDomainIdentifier',
         'api_url' => 'getApiUrl',
+        'domain_attributes' => 'getDomainAttributes',
+        'domain_identifier' => 'getDomainIdentifier',
+        'domain_type' => 'getDomainType',
         'frontend_url' => 'getFrontendUrl',
         'image_url' => 'getImageUrl',
-        'domain_attributes' => 'getDomainAttributes'
+        'title' => 'getTitle'
     ];
 
     /**
@@ -206,13 +206,13 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['domain_type'] = $data['domain_type'] ?? null;
-        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
         $this->container['api_url'] = $data['api_url'] ?? null;
+        $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
+        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
         $this->container['frontend_url'] = $data['frontend_url'] ?? null;
         $this->container['image_url'] = $data['image_url'] ?? null;
-        $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
     }
 
     /**
@@ -224,20 +224,16 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
+        if ($this->container['api_url'] === null) {
+            $invalidProperties[] = "'api_url' can't be null";
         }
-        if ((mb_strlen($this->container['title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['domain_type'] === null) {
-            $invalidProperties[] = "'domain_type' can't be null";
-        }
-        if ((mb_strlen($this->container['domain_type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['api_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'api_url', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['domain_attributes'] === null) {
+            $invalidProperties[] = "'domain_attributes' can't be null";
+        }
         if ($this->container['domain_identifier'] === null) {
             $invalidProperties[] = "'domain_identifier' can't be null";
         }
@@ -245,11 +241,11 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'domain_identifier', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['api_url'] === null) {
-            $invalidProperties[] = "'api_url' can't be null";
+        if ($this->container['domain_type'] === null) {
+            $invalidProperties[] = "'domain_type' can't be null";
         }
-        if ((mb_strlen($this->container['api_url']) < 1)) {
-            $invalidProperties[] = "invalid value for 'api_url', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['domain_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'domain_type', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['frontend_url'] === null) {
@@ -262,9 +258,13 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
         if ($this->container['image_url'] === null) {
             $invalidProperties[] = "'image_url' can't be null";
         }
-        if ($this->container['domain_attributes'] === null) {
-            $invalidProperties[] = "'domain_attributes' can't be null";
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
         }
+        if ((mb_strlen($this->container['title']) < 1)) {
+            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -281,59 +281,54 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
 
 
     /**
-     * Gets title
+     * Gets api_url
      *
      * @return string
      */
-    public function getTitle()
+    public function getApiUrl()
     {
-        return $this->container['title'];
+        return $this->container['api_url'];
     }
 
     /**
-     * Sets title
+     * Sets api_url
      *
-     * @param string $title title
+     * @param string $api_url api_url
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setApiUrl($api_url)
     {
 
-        if ((mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling GetPersonsBirthdays200ResponseDataInnerPerson., must be bigger than or equal to 1.');
+        if ((mb_strlen($api_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $api_url when calling GetPersonsBirthdays200ResponseDataInnerPerson., must be bigger than or equal to 1.');
         }
 
-        $this->container['title'] = $title;
+        $this->container['api_url'] = $api_url;
 
         return $this;
     }
 
     /**
-     * Gets domain_type
+     * Gets domain_attributes
      *
-     * @return string
+     * @return \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPersonDomainAttributes
      */
-    public function getDomainType()
+    public function getDomainAttributes()
     {
-        return $this->container['domain_type'];
+        return $this->container['domain_attributes'];
     }
 
     /**
-     * Sets domain_type
+     * Sets domain_attributes
      *
-     * @param string $domain_type domain_type
+     * @param \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPersonDomainAttributes $domain_attributes domain_attributes
      *
      * @return self
      */
-    public function setDomainType($domain_type)
+    public function setDomainAttributes($domain_attributes)
     {
-
-        if ((mb_strlen($domain_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $domain_type when calling GetPersonsBirthdays200ResponseDataInnerPerson., must be bigger than or equal to 1.');
-        }
-
-        $this->container['domain_type'] = $domain_type;
+        $this->container['domain_attributes'] = $domain_attributes;
 
         return $this;
     }
@@ -368,30 +363,30 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
     }
 
     /**
-     * Gets api_url
+     * Gets domain_type
      *
      * @return string
      */
-    public function getApiUrl()
+    public function getDomainType()
     {
-        return $this->container['api_url'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets api_url
+     * Sets domain_type
      *
-     * @param string $api_url api_url
+     * @param string $domain_type domain_type
      *
      * @return self
      */
-    public function setApiUrl($api_url)
+    public function setDomainType($domain_type)
     {
 
-        if ((mb_strlen($api_url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $api_url when calling GetPersonsBirthdays200ResponseDataInnerPerson., must be bigger than or equal to 1.');
+        if ((mb_strlen($domain_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $domain_type when calling GetPersonsBirthdays200ResponseDataInnerPerson., must be bigger than or equal to 1.');
         }
 
-        $this->container['api_url'] = $api_url;
+        $this->container['domain_type'] = $domain_type;
 
         return $this;
     }
@@ -450,25 +445,30 @@ class GetPersonsBirthdays200ResponseDataInnerPerson implements ModelInterface, A
     }
 
     /**
-     * Gets domain_attributes
+     * Gets title
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseDataInnerPersonDomainAttributes
+     * @return string
      */
-    public function getDomainAttributes()
+    public function getTitle()
     {
-        return $this->container['domain_attributes'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets domain_attributes
+     * Sets title
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseDataInnerPersonDomainAttributes $domain_attributes domain_attributes
+     * @param string $title title
      *
      * @return self
      */
-    public function setDomainAttributes($domain_attributes)
+    public function setTitle($title)
     {
-        $this->container['domain_attributes'] = $domain_attributes;
+
+        if ((mb_strlen($title) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $title when calling GetPersonsBirthdays200ResponseDataInnerPerson., must be bigger than or equal to 1.');
+        }
+
+        $this->container['title'] = $title;
 
         return $this;
     }

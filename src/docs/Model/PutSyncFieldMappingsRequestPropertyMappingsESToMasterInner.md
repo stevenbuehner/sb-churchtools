@@ -1,0 +1,14 @@
+# # PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**from** | **string** |  | [optional]
+**from_filter** | **string** |  | [optional]
+**others** | **mixed[]** |  | [optional]
+**to** | **string** |  | [optional]
+**to_filter** | **string** |  | [optional]
+**value_mapping** | **object** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

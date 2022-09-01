@@ -5,10 +5,10 @@ All URIs are relative to /api.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createNewStatus()**](StatusApi.md#createNewStatus) | **POST** /statuses | Save new status
+[**deleteStatus()**](StatusApi.md#deleteStatus) | **DELETE** /statuses/{id} | Delete a status
 [**getAllStatuses()**](StatusApi.md#getAllStatuses) | **GET** /statuses | Get all statuses
-[**statusesIdDelete()**](StatusApi.md#statusesIdDelete) | **DELETE** /statuses/{id} | Delete a status
-[**statusesIdGet()**](StatusApi.md#statusesIdGet) | **GET** /statuses/{id} | Get a specific status
-[**statusesIdPut()**](StatusApi.md#statusesIdPut) | **PUT** /statuses/{id} | Update status
+[**getStatus()**](StatusApi.md#getStatus) | **GET** /statuses/{id} | Get a specific status
+[**putStatus()**](StatusApi.md#putStatus) | **PUT** /statuses/{id} | Update status
 
 
 ## `createNewStatus()`
@@ -26,7 +26,7 @@ Save new status
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -60,12 +60,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`, `application/x-www-form-urlencoded`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteStatus()`
+
+```php
+deleteStatus($id)
+```
+
+Delete a status
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\StatusApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 1; // int | ID of Entity
+
+try {
+    $apiInstance->deleteStatus($id);
+} catch (Exception $e) {
+    echo 'Exception when calling StatusApi->deleteStatus: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| ID of Entity |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -88,7 +147,7 @@ Returns an array of all statuses defined in ChurchTools. Statuses are sorted by 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -119,7 +178,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -130,69 +189,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `statusesIdDelete()`
+## `getStatus()`
 
 ```php
-statusesIdDelete($id)
-```
-
-Delete a status
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login Token (Header)
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\StatusApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = 1; // int | ID of status
-
-try {
-    $apiInstance->statusesIdDelete($id);
-} catch (Exception $e) {
-    echo 'Exception when calling StatusApi->statusesIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of status |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Login Token (Header)](../../README.md#Login Token (Header))
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `statusesIdGet()`
-
-```php
-statusesIdGet($id): \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response
+getStatus($id): \StevenBuehner\ChurchTools\Model\GetStatus200Response
 ```
 
 Get a specific status
@@ -204,7 +204,7 @@ Get a specific status
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -216,13 +216,13 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\StatusApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of status
+$id = 1; // int | ID of Entity
 
 try {
-    $result = $apiInstance->statusesIdGet($id);
+    $result = $apiInstance->getStatus($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StatusApi->statusesIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StatusApi->getStatus: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -230,15 +230,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of status |
+ **id** | **int**| ID of Entity |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response**](../Model/StatusesIdDelete200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetStatus200Response**](../Model/GetStatus200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -249,10 +249,10 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `statusesIdPut()`
+## `putStatus()`
 
 ```php
-statusesIdPut($id, $statuses_id_delete_request): \StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response
+putStatus($id, $put_status_request): \StevenBuehner\ChurchTools\Model\GetStatus200Response
 ```
 
 Update status
@@ -264,7 +264,7 @@ Update status
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Login Token (Header)
+// Configure API key authorization: Login-Token-Header
 $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
@@ -276,14 +276,14 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\StatusApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 1; // int | ID of status
-$statuses_id_delete_request = new \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest(); // \StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest | New values for status
+$id = 1; // int | ID of Entity
+$put_status_request = new \StevenBuehner\ChurchTools\Model\PutStatusRequest(); // \StevenBuehner\ChurchTools\Model\PutStatusRequest | New values for status
 
 try {
-    $result = $apiInstance->statusesIdPut($id, $statuses_id_delete_request);
+    $result = $apiInstance->putStatus($id, $put_status_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StatusApi->statusesIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StatusApi->putStatus: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -291,16 +291,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of status |
- **statuses_id_delete_request** | [**\StevenBuehner\ChurchTools\Model\StatusesIdDeleteRequest**](../Model/StatusesIdDeleteRequest.md)| New values for status |
+ **id** | **int**| ID of Entity |
+ **put_status_request** | [**\StevenBuehner\ChurchTools\Model\PutStatusRequest**](../Model/PutStatusRequest.md)| New values for status |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\StatusesIdDelete200Response**](../Model/StatusesIdDelete200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetStatus200Response**](../Model/GetStatus200Response.md)
 
 ### Authorization
 
-[Login Token (Header)](../../README.md#Login Token (Header))
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 

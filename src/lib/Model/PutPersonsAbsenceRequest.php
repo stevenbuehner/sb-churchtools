@@ -57,12 +57,12 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
+        'absence_reason_id' => 'int',
         'comment' => 'string',
-        'absence_reason_id' => 'float',
-        'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'start_time' => '\DateTime',
-        'end_time' => '\DateTime'
+        'end_time' => '\DateTime',
+        'start_date' => '\DateTime',
+        'start_time' => '\DateTime'
     ];
 
     /**
@@ -73,12 +73,12 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'comment' => null,
         'absence_reason_id' => null,
-        'start_date' => 'date',
+        'comment' => null,
         'end_date' => 'date',
-        'start_time' => 'date-time',
-        'end_time' => 'date-time'
+        'end_time' => 'date-time',
+        'start_date' => 'date',
+        'start_time' => 'date-time'
     ];
 
     /**
@@ -108,12 +108,12 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment' => 'comment',
         'absence_reason_id' => 'absenceReasonId',
-        'start_date' => 'startDate',
+        'comment' => 'comment',
         'end_date' => 'endDate',
-        'start_time' => 'startTime',
-        'end_time' => 'endTime'
+        'end_time' => 'endTime',
+        'start_date' => 'startDate',
+        'start_time' => 'startTime'
     ];
 
     /**
@@ -122,12 +122,12 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'comment' => 'setComment',
         'absence_reason_id' => 'setAbsenceReasonId',
-        'start_date' => 'setStartDate',
+        'comment' => 'setComment',
         'end_date' => 'setEndDate',
-        'start_time' => 'setStartTime',
-        'end_time' => 'setEndTime'
+        'end_time' => 'setEndTime',
+        'start_date' => 'setStartDate',
+        'start_time' => 'setStartTime'
     ];
 
     /**
@@ -136,12 +136,12 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'comment' => 'getComment',
         'absence_reason_id' => 'getAbsenceReasonId',
-        'start_date' => 'getStartDate',
+        'comment' => 'getComment',
         'end_date' => 'getEndDate',
-        'start_time' => 'getStartTime',
-        'end_time' => 'getEndTime'
+        'end_time' => 'getEndTime',
+        'start_date' => 'getStartDate',
+        'start_time' => 'getStartTime'
     ];
 
     /**
@@ -201,12 +201,12 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['absence_reason_id'] = $data['absence_reason_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['start_time'] = $data['start_time'] ?? null;
         $this->container['end_time'] = $data['end_time'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['start_time'] = $data['start_time'] ?? null;
     }
 
     /**
@@ -218,11 +218,11 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['comment'] === null) {
-            $invalidProperties[] = "'comment' can't be null";
-        }
         if ($this->container['absence_reason_id'] === null) {
             $invalidProperties[] = "'absence_reason_id' can't be null";
+        }
+        if ($this->container['comment'] === null) {
+            $invalidProperties[] = "'comment' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,6 +238,30 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets absence_reason_id
+     *
+     * @return int
+     */
+    public function getAbsenceReasonId()
+    {
+        return $this->container['absence_reason_id'];
+    }
+
+    /**
+     * Sets absence_reason_id
+     *
+     * @param int $absence_reason_id absence_reason_id
+     *
+     * @return self
+     */
+    public function setAbsenceReasonId($absence_reason_id)
+    {
+        $this->container['absence_reason_id'] = $absence_reason_id;
+
+        return $this;
+    }
 
     /**
      * Gets comment
@@ -259,54 +283,6 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
     public function setComment($comment)
     {
         $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets absence_reason_id
-     *
-     * @return float
-     */
-    public function getAbsenceReasonId()
-    {
-        return $this->container['absence_reason_id'];
-    }
-
-    /**
-     * Sets absence_reason_id
-     *
-     * @param float $absence_reason_id absence_reason_id
-     *
-     * @return self
-     */
-    public function setAbsenceReasonId($absence_reason_id)
-    {
-        $this->container['absence_reason_id'] = $absence_reason_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime|null $start_date If startTime is present, startDate is ignored.
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
 
         return $this;
     }
@@ -336,30 +312,6 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets start_time
-     *
-     * @return \DateTime|null
-     */
-    public function getStartTime()
-    {
-        return $this->container['start_time'];
-    }
-
-    /**
-     * Sets start_time
-     *
-     * @param \DateTime|null $start_time start_time
-     *
-     * @return self
-     */
-    public function setStartTime($start_time)
-    {
-        $this->container['start_time'] = $start_time;
-
-        return $this;
-    }
-
-    /**
      * Gets end_time
      *
      * @return \DateTime|null
@@ -379,6 +331,54 @@ class PutPersonsAbsenceRequest implements ModelInterface, ArrayAccess, \JsonSeri
     public function setEndTime($end_time)
     {
         $this->container['end_time'] = $end_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime|null $start_date If startTime is present, startDate is ignored.
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_time
+     *
+     * @return \DateTime|null
+     */
+    public function getStartTime()
+    {
+        return $this->container['start_time'];
+    }
+
+    /**
+     * Sets start_time
+     *
+     * @param \DateTime|null $start_time start_time
+     *
+     * @return self
+     */
+    public function setStartTime($start_time)
+    {
+        $this->container['start_time'] = $start_time;
 
         return $this;
     }

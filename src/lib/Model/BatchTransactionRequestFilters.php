@@ -58,18 +58,18 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'accounting_period_id' => 'float',
+        'account_ids' => 'int[]',
+        'accounting_period_id' => 'int',
+        'cost_center_ids' => 'int[]',
         'created_pid' => 'int',
-        'cost_center_ids' => 'float[]',
-        'donator_ids' => 'float[]',
-        'account_ids' => 'float[]',
+        'donator_ids' => 'int[]',
+        'end_date' => '\DateTime',
         'is_donation' => 'bool',
+        'is_immutable' => 'bool',
         'is_income' => 'bool',
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'is_immutable' => 'bool',
-        'include' => 'float[]',
-        'exclude' => 'float[]'
+        'include' => 'int[]',
+        'exclude' => 'int[]'
     ];
 
     /**
@@ -80,16 +80,16 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'accounting_period_id' => null,
-        'created_pid' => null,
-        'cost_center_ids' => null,
-        'donator_ids' => null,
         'account_ids' => null,
+        'accounting_period_id' => null,
+        'cost_center_ids' => null,
+        'created_pid' => null,
+        'donator_ids' => null,
+        'end_date' => 'date',
         'is_donation' => null,
+        'is_immutable' => null,
         'is_income' => null,
         'start_date' => 'date',
-        'end_date' => 'date',
-        'is_immutable' => null,
         'include' => null,
         'exclude' => null
     ];
@@ -121,16 +121,16 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'accounting_period_id' => 'accountingPeriodId',
-        'created_pid' => 'createdPid',
-        'cost_center_ids' => 'costCenterIds',
-        'donator_ids' => 'donatorIds',
         'account_ids' => 'accountIds',
+        'accounting_period_id' => 'accountingPeriodId',
+        'cost_center_ids' => 'costCenterIds',
+        'created_pid' => 'createdPid',
+        'donator_ids' => 'donatorIds',
+        'end_date' => 'endDate',
         'is_donation' => 'isDonation',
+        'is_immutable' => 'isImmutable',
         'is_income' => 'isIncome',
         'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'is_immutable' => 'isImmutable',
         'include' => 'include',
         'exclude' => 'exclude'
     ];
@@ -141,16 +141,16 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'accounting_period_id' => 'setAccountingPeriodId',
-        'created_pid' => 'setCreatedPid',
-        'cost_center_ids' => 'setCostCenterIds',
-        'donator_ids' => 'setDonatorIds',
         'account_ids' => 'setAccountIds',
+        'accounting_period_id' => 'setAccountingPeriodId',
+        'cost_center_ids' => 'setCostCenterIds',
+        'created_pid' => 'setCreatedPid',
+        'donator_ids' => 'setDonatorIds',
+        'end_date' => 'setEndDate',
         'is_donation' => 'setIsDonation',
+        'is_immutable' => 'setIsImmutable',
         'is_income' => 'setIsIncome',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'is_immutable' => 'setIsImmutable',
         'include' => 'setInclude',
         'exclude' => 'setExclude'
     ];
@@ -161,16 +161,16 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'accounting_period_id' => 'getAccountingPeriodId',
-        'created_pid' => 'getCreatedPid',
-        'cost_center_ids' => 'getCostCenterIds',
-        'donator_ids' => 'getDonatorIds',
         'account_ids' => 'getAccountIds',
+        'accounting_period_id' => 'getAccountingPeriodId',
+        'cost_center_ids' => 'getCostCenterIds',
+        'created_pid' => 'getCreatedPid',
+        'donator_ids' => 'getDonatorIds',
+        'end_date' => 'getEndDate',
         'is_donation' => 'getIsDonation',
+        'is_immutable' => 'getIsImmutable',
         'is_income' => 'getIsIncome',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'is_immutable' => 'getIsImmutable',
         'include' => 'getInclude',
         'exclude' => 'getExclude'
     ];
@@ -232,16 +232,16 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
-        $this->container['created_pid'] = $data['created_pid'] ?? null;
-        $this->container['cost_center_ids'] = $data['cost_center_ids'] ?? null;
-        $this->container['donator_ids'] = $data['donator_ids'] ?? null;
         $this->container['account_ids'] = $data['account_ids'] ?? null;
+        $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
+        $this->container['cost_center_ids'] = $data['cost_center_ids'] ?? null;
+        $this->container['created_pid'] = $data['created_pid'] ?? null;
+        $this->container['donator_ids'] = $data['donator_ids'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
         $this->container['is_donation'] = $data['is_donation'] ?? null;
+        $this->container['is_immutable'] = $data['is_immutable'] ?? null;
         $this->container['is_income'] = $data['is_income'] ?? null;
         $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['is_immutable'] = $data['is_immutable'] ?? null;
         $this->container['include'] = $data['include'] ?? null;
         $this->container['exclude'] = $data['exclude'] ?? null;
     }
@@ -280,9 +280,33 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
 
 
     /**
+     * Gets account_ids
+     *
+     * @return int[]|null
+     */
+    public function getAccountIds()
+    {
+        return $this->container['account_ids'];
+    }
+
+    /**
+     * Sets account_ids
+     *
+     * @param int[]|null $account_ids Filter by account/contra account. All transactions match, where either account or contra account is in the list.
+     *
+     * @return self
+     */
+    public function setAccountIds($account_ids)
+    {
+        $this->container['account_ids'] = $account_ids;
+
+        return $this;
+    }
+
+    /**
      * Gets accounting_period_id
      *
-     * @return float
+     * @return int
      */
     public function getAccountingPeriodId()
     {
@@ -292,13 +316,37 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets accounting_period_id
      *
-     * @param float $accounting_period_id Filter by Accounting Period
+     * @param int $accounting_period_id Filter by Accounting Period
      *
      * @return self
      */
     public function setAccountingPeriodId($accounting_period_id)
     {
         $this->container['accounting_period_id'] = $accounting_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost_center_ids
+     *
+     * @return int[]|null
+     */
+    public function getCostCenterIds()
+    {
+        return $this->container['cost_center_ids'];
+    }
+
+    /**
+     * Sets cost_center_ids
+     *
+     * @param int[]|null $cost_center_ids Filter by Cost Centers.
+     *
+     * @return self
+     */
+    public function setCostCenterIds($cost_center_ids)
+    {
+        $this->container['cost_center_ids'] = $cost_center_ids;
 
         return $this;
     }
@@ -328,33 +376,9 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets cost_center_ids
-     *
-     * @return float[]|null
-     */
-    public function getCostCenterIds()
-    {
-        return $this->container['cost_center_ids'];
-    }
-
-    /**
-     * Sets cost_center_ids
-     *
-     * @param float[]|null $cost_center_ids Filter by Cost Centers.
-     *
-     * @return self
-     */
-    public function setCostCenterIds($cost_center_ids)
-    {
-        $this->container['cost_center_ids'] = $cost_center_ids;
-
-        return $this;
-    }
-
-    /**
      * Gets donator_ids
      *
-     * @return float[]|null
+     * @return int[]|null
      */
     public function getDonatorIds()
     {
@@ -364,7 +388,7 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets donator_ids
      *
-     * @param float[]|null $donator_ids Filter by donator or donator spouse. Provide an array of person ids.
+     * @param int[]|null $donator_ids Filter by donator or donator spouse. Provide an array of person ids.
      *
      * @return self
      */
@@ -376,25 +400,25 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets account_ids
+     * Gets end_date
      *
-     * @return float[]|null
+     * @return \DateTime|null
      */
-    public function getAccountIds()
+    public function getEndDate()
     {
-        return $this->container['account_ids'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets account_ids
+     * Sets end_date
      *
-     * @param float[]|null $account_ids Filter by account/contra account. All transactions match, where either account or contra account is in the list.
+     * @param \DateTime|null $end_date Show transactions before this date.
      *
      * @return self
      */
-    public function setAccountIds($account_ids)
+    public function setEndDate($end_date)
     {
-        $this->container['account_ids'] = $account_ids;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }
@@ -419,6 +443,30 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     public function setIsDonation($is_donation)
     {
         $this->container['is_donation'] = $is_donation;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_immutable
+     *
+     * @return bool|null
+     */
+    public function getIsImmutable()
+    {
+        return $this->container['is_immutable'];
+    }
+
+    /**
+     * Sets is_immutable
+     *
+     * @param bool|null $is_immutable Filter transactions, whether transaction is immutable.
+     *
+     * @return self
+     */
+    public function setIsImmutable($is_immutable)
+    {
+        $this->container['is_immutable'] = $is_immutable;
 
         return $this;
     }
@@ -472,57 +520,9 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets end_date
-     *
-     * @return \DateTime|null
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     *
-     * @param \DateTime|null $end_date Show transactions before this date.
-     *
-     * @return self
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_immutable
-     *
-     * @return bool|null
-     */
-    public function getIsImmutable()
-    {
-        return $this->container['is_immutable'];
-    }
-
-    /**
-     * Sets is_immutable
-     *
-     * @param bool|null $is_immutable Filter transactions, whether transaction is immutable.
-     *
-     * @return self
-     */
-    public function setIsImmutable($is_immutable)
-    {
-        $this->container['is_immutable'] = $is_immutable;
-
-        return $this;
-    }
-
-    /**
      * Gets include
      *
-     * @return float[]
+     * @return int[]
      */
     public function getInclude()
     {
@@ -532,7 +532,7 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets include
      *
-     * @param float[] $include List of Transaction IDs. Only those Transactions are updated.
+     * @param int[] $include List of Transaction IDs. Only those Transactions are updated.
      *
      * @return self
      */
@@ -546,7 +546,7 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets exclude
      *
-     * @return float[]
+     * @return int[]
      */
     public function getExclude()
     {
@@ -556,7 +556,7 @@ class BatchTransactionRequestFilters implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets exclude
      *
-     * @param float[] $exclude List of Transaction IDs. All Transactions except this list of IDs are updated in the given Accouting Period.
+     * @param int[] $exclude List of Transaction IDs. All Transactions except this list of IDs are updated in the given Accouting Period.
      *
      * @return self
      */

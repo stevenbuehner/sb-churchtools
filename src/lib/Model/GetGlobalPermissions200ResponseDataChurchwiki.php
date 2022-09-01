@@ -59,7 +59,7 @@ class GetGlobalPermissions200ResponseDataChurchwiki implements ModelInterface, A
       */
     protected static $openAPITypes = [
         'view' => 'bool',
-        'view_category' => 'float[]'
+        'view_category' => 'int[]'
     ];
 
     /**
@@ -237,7 +237,7 @@ class GetGlobalPermissions200ResponseDataChurchwiki implements ModelInterface, A
     /**
      * Gets view_category
      *
-     * @return float[]|null
+     * @return int[]|null
      */
     public function getViewCategory()
     {
@@ -247,7 +247,7 @@ class GetGlobalPermissions200ResponseDataChurchwiki implements ModelInterface, A
     /**
      * Sets view_category
      *
-     * @param float[]|null $view_category view_category
+     * @param int[]|null $view_category view_category
      *
      * @return self
      */

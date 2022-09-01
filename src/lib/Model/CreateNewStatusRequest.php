@@ -57,12 +57,12 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'shorty' => 'string',
         'is_member' => 'bool',
         'is_searchable' => 'bool',
-        'sort_key' => 'int',
-        'security_level_id' => 'int'
+        'name' => 'string',
+        'security_level_id' => 'int',
+        'shorty' => 'string',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -73,12 +73,12 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'shorty' => null,
         'is_member' => null,
         'is_searchable' => null,
-        'sort_key' => null,
-        'security_level_id' => null
+        'name' => null,
+        'security_level_id' => null,
+        'shorty' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -108,12 +108,12 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'shorty' => 'shorty',
         'is_member' => 'isMember',
         'is_searchable' => 'isSearchable',
-        'sort_key' => 'sortKey',
-        'security_level_id' => 'securityLevelId'
+        'name' => 'name',
+        'security_level_id' => 'securityLevelId',
+        'shorty' => 'shorty',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -122,12 +122,12 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'shorty' => 'setShorty',
         'is_member' => 'setIsMember',
         'is_searchable' => 'setIsSearchable',
-        'sort_key' => 'setSortKey',
-        'security_level_id' => 'setSecurityLevelId'
+        'name' => 'setName',
+        'security_level_id' => 'setSecurityLevelId',
+        'shorty' => 'setShorty',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -136,12 +136,12 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'shorty' => 'getShorty',
         'is_member' => 'getIsMember',
         'is_searchable' => 'getIsSearchable',
-        'sort_key' => 'getSortKey',
-        'security_level_id' => 'getSecurityLevelId'
+        'name' => 'getName',
+        'security_level_id' => 'getSecurityLevelId',
+        'shorty' => 'getShorty',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -201,12 +201,12 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['shorty'] = $data['shorty'] ?? null;
         $this->container['is_member'] = $data['is_member'] ?? null;
         $this->container['is_searchable'] = $data['is_searchable'] ?? true;
-        $this->container['sort_key'] = $data['sort_key'] ?? 10;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['security_level_id'] = $data['security_level_id'] ?? 1;
+        $this->container['shorty'] = $data['shorty'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? 10;
     }
 
     /**
@@ -218,14 +218,14 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
+        if ($this->container['is_member'] === null) {
+            $invalidProperties[] = "'is_member' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['shorty'] === null) {
             $invalidProperties[] = "'shorty' can't be null";
-        }
-        if ($this->container['is_member'] === null) {
-            $invalidProperties[] = "'is_member' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,54 +241,6 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets shorty
-     *
-     * @return string
-     */
-    public function getShorty()
-    {
-        return $this->container['shorty'];
-    }
-
-    /**
-     * Sets shorty
-     *
-     * @param string $shorty shorty
-     *
-     * @return self
-     */
-    public function setShorty($shorty)
-    {
-        $this->container['shorty'] = $shorty;
-
-        return $this;
-    }
 
     /**
      * Gets is_member
@@ -339,25 +291,25 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets sort_key
+     * Gets name
      *
-     * @return int|null
+     * @return string
      */
-    public function getSortKey()
+    public function getName()
     {
-        return $this->container['sort_key'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets sort_key
+     * Sets name
      *
-     * @param int|null $sort_key sort_key
+     * @param string $name name
      *
      * @return self
      */
-    public function setSortKey($sort_key)
+    public function setName($name)
     {
-        $this->container['sort_key'] = $sort_key;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -382,6 +334,54 @@ class CreateNewStatusRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSecurityLevelId($security_level_id)
     {
         $this->container['security_level_id'] = $security_level_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shorty
+     *
+     * @return string
+     */
+    public function getShorty()
+    {
+        return $this->container['shorty'];
+    }
+
+    /**
+     * Sets shorty
+     *
+     * @param string $shorty shorty
+     *
+     * @return self
+     */
+    public function setShorty($shorty)
+    {
+        $this->container['shorty'] = $shorty;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int|null
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int|null $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
 
         return $this;
     }

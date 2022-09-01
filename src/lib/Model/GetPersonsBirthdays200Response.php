@@ -59,7 +59,7 @@ class GetPersonsBirthdays200Response implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseDataInner[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseMeta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -252,7 +252,7 @@ class GetPersonsBirthdays200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseMeta
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta
      */
     public function getMeta()
     {
@@ -262,7 +262,7 @@ class GetPersonsBirthdays200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetPersonsBirthdays200ResponseMeta $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta $meta meta
      *
      * @return self
      */

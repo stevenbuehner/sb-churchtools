@@ -58,8 +58,8 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exclude' => 'float[]',
-        'accounting_period_id' => 'float'
+        'accounting_period_id' => 'int',
+        'exclude' => 'int[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'exclude' => null,
-        'accounting_period_id' => null
+        'accounting_period_id' => null,
+        'exclude' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'exclude' => 'exclude',
-        'accounting_period_id' => 'accountingPeriodId'
+        'accounting_period_id' => 'accountingPeriodId',
+        'exclude' => 'exclude'
     ];
 
     /**
@@ -111,8 +111,8 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'exclude' => 'setExclude',
-        'accounting_period_id' => 'setAccountingPeriodId'
+        'accounting_period_id' => 'setAccountingPeriodId',
+        'exclude' => 'setExclude'
     ];
 
     /**
@@ -121,8 +121,8 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'exclude' => 'getExclude',
-        'accounting_period_id' => 'getAccountingPeriodId'
+        'accounting_period_id' => 'getAccountingPeriodId',
+        'exclude' => 'getExclude'
     ];
 
     /**
@@ -182,8 +182,8 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['exclude'] = $data['exclude'] ?? null;
         $this->container['accounting_period_id'] = $data['accounting_period_id'] ?? null;
+        $this->container['exclude'] = $data['exclude'] ?? null;
     }
 
     /**
@@ -195,11 +195,11 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['exclude'] === null) {
-            $invalidProperties[] = "'exclude' can't be null";
-        }
         if ($this->container['accounting_period_id'] === null) {
             $invalidProperties[] = "'accounting_period_id' can't be null";
+        }
+        if ($this->container['exclude'] === null) {
+            $invalidProperties[] = "'exclude' can't be null";
         }
         return $invalidProperties;
     }
@@ -217,33 +217,9 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets exclude
-     *
-     * @return float[]
-     */
-    public function getExclude()
-    {
-        return $this->container['exclude'];
-    }
-
-    /**
-     * Sets exclude
-     *
-     * @param float[] $exclude List of Transaction IDs. All Transactions except this list of IDs are updated in the given Accouting Period.
-     *
-     * @return self
-     */
-    public function setExclude($exclude)
-    {
-        $this->container['exclude'] = $exclude;
-
-        return $this;
-    }
-
-    /**
      * Gets accounting_period_id
      *
-     * @return float
+     * @return int
      */
     public function getAccountingPeriodId()
     {
@@ -253,13 +229,37 @@ class BatchTransactionRequestFiltersAnyOf2 implements ModelInterface, ArrayAcces
     /**
      * Sets accounting_period_id
      *
-     * @param float $accounting_period_id Filter by Accounting Period
+     * @param int $accounting_period_id Filter by Accounting Period
      *
      * @return self
      */
     public function setAccountingPeriodId($accounting_period_id)
     {
         $this->container['accounting_period_id'] = $accounting_period_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets exclude
+     *
+     * @return int[]
+     */
+    public function getExclude()
+    {
+        return $this->container['exclude'];
+    }
+
+    /**
+     * Sets exclude
+     *
+     * @param int[] $exclude List of Transaction IDs. All Transactions except this list of IDs are updated in the given Accouting Period.
+     *
+     * @return self
+     */
+    public function setExclude($exclude)
+    {
+        $this->container['exclude'] = $exclude;
 
         return $this;
     }

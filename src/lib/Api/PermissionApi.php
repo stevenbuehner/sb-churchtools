@@ -671,7 +671,7 @@ class PermissionApi
      *
      * Lookup Group-Related Group Internal Permissions
      *
-     * @param  string $group_id group_id (required)
+     * @param  int $group_id ID of group (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -688,7 +688,7 @@ class PermissionApi
      *
      * Lookup Group-Related Group Internal Permissions
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -787,7 +787,7 @@ class PermissionApi
      *
      * Lookup Group-Related Group Internal Permissions
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -807,7 +807,7 @@ class PermissionApi
      *
      * Lookup Group-Related Group Internal Permissions
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -856,7 +856,7 @@ class PermissionApi
     /**
      * Create request for operation 'getPermissionsInternalGroupsGroupId'
      *
-     * @param  string $group_id (required)
+     * @param  int $group_id ID of group (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

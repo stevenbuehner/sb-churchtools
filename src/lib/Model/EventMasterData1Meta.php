@@ -57,8 +57,8 @@ class EventMasterData1Meta implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'absence_reasons' => 'float',
-        'song_categories' => 'float'
+        'absence_reasons' => 'int',
+        'song_categories' => 'int'
     ];
 
     /**
@@ -218,7 +218,7 @@ class EventMasterData1Meta implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets absence_reasons
      *
-     * @return float
+     * @return int
      */
     public function getAbsenceReasons()
     {
@@ -228,7 +228,7 @@ class EventMasterData1Meta implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets absence_reasons
      *
-     * @param float $absence_reasons Count of available absence reasons
+     * @param int $absence_reasons Count of available absence reasons
      *
      * @return self
      */
@@ -242,7 +242,7 @@ class EventMasterData1Meta implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets song_categories
      *
-     * @return float
+     * @return int
      */
     public function getSongCategories()
     {
@@ -252,7 +252,7 @@ class EventMasterData1Meta implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets song_categories
      *
-     * @param float $song_categories Count of available song categories
+     * @param int $song_categories Count of available song categories
      *
      * @return self
      */

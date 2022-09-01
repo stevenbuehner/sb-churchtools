@@ -120,7 +120,7 @@ class ContactLabelApi
      *
      * Delete Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -136,7 +136,7 @@ class ContactLabelApi
      *
      * Delete Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -195,7 +195,7 @@ class ContactLabelApi
      *
      * Delete Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -215,7 +215,7 @@ class ContactLabelApi
      *
      * Delete Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -251,7 +251,7 @@ class ContactLabelApi
     /**
      * Create request for operation 'deleteContactlabel'
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -351,11 +351,11 @@ class ContactLabelApi
      *
      * Get Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetContactlabel200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetContactlabel200Response|string
      */
     public function getContactlabel($id)
     {
@@ -368,11 +368,11 @@ class ContactLabelApi
      *
      * Get Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetContactlabel200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetContactlabel200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactlabelWithHttpInfo($id)
     {
@@ -429,6 +429,21 @@ class ContactLabelApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\GetContactlabel200Response';
@@ -457,6 +472,14 @@ class ContactLabelApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -467,7 +490,7 @@ class ContactLabelApi
      *
      * Get Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -487,7 +510,7 @@ class ContactLabelApi
      *
      * Get Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -536,7 +559,7 @@ class ContactLabelApi
     /**
      * Create request for operation 'getContactlabel'
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -571,11 +594,11 @@ class ContactLabelApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }
@@ -639,7 +662,7 @@ class ContactLabelApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetContactlabels200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetContactlabels200Response|string
      */
     public function getContactlabels()
     {
@@ -655,7 +678,7 @@ class ContactLabelApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetContactlabels200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetContactlabels200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactlabelsWithHttpInfo()
     {
@@ -712,6 +735,21 @@ class ContactLabelApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\GetContactlabels200Response';
@@ -736,6 +774,14 @@ class ContactLabelApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\StevenBuehner\ChurchTools\Model\GetContactlabels200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -837,11 +883,11 @@ class ContactLabelApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }
@@ -1179,12 +1225,12 @@ class ContactLabelApi
      *
      * Update Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutContactlabelRequest $put_contactlabel_request  (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetContactlabel200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetContactlabel200Response|string
      */
     public function putContactlabel($id, $put_contactlabel_request = null)
     {
@@ -1197,12 +1243,12 @@ class ContactLabelApi
      *
      * Update Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutContactlabelRequest $put_contactlabel_request  (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetContactlabel200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetContactlabel200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function putContactlabelWithHttpInfo($id, $put_contactlabel_request = null)
     {
@@ -1259,6 +1305,21 @@ class ContactLabelApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\GetContactlabel200Response';
@@ -1287,6 +1348,14 @@ class ContactLabelApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1297,7 +1366,7 @@ class ContactLabelApi
      *
      * Update Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutContactlabelRequest $put_contactlabel_request  (optional)
      *
      * @throws \InvalidArgumentException
@@ -1318,7 +1387,7 @@ class ContactLabelApi
      *
      * Update Contact Label
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutContactlabelRequest $put_contactlabel_request  (optional)
      *
      * @throws \InvalidArgumentException
@@ -1368,7 +1437,7 @@ class ContactLabelApi
     /**
      * Create request for operation 'putContactlabel'
      *
-     * @param  string $id Contact Label ID (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\PutContactlabelRequest $put_contactlabel_request  (optional)
      *
      * @throws \InvalidArgumentException
@@ -1404,11 +1473,11 @@ class ContactLabelApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 ['application/json']
             );
         }

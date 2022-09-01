@@ -57,9 +57,9 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'ignore_group_size' => 'bool',
         'fields' => 'object',
+        'id' => 'int',
+        'ignore_group_size' => 'bool',
         'person_fields' => 'object'
     ];
 
@@ -71,9 +71,9 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fields' => null,
         'id' => null,
         'ignore_group_size' => null,
-        'fields' => null,
         'person_fields' => null
     ];
 
@@ -104,9 +104,9 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'fields' => 'fields',
         'id' => 'id',
         'ignore_group_size' => 'ignoreGroupSize',
-        'fields' => 'fields',
         'person_fields' => 'personFields'
     ];
 
@@ -116,9 +116,9 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'fields' => 'setFields',
         'id' => 'setId',
         'ignore_group_size' => 'setIgnoreGroupSize',
-        'fields' => 'setFields',
         'person_fields' => 'setPersonFields'
     ];
 
@@ -128,9 +128,9 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'fields' => 'getFields',
         'id' => 'getId',
         'ignore_group_size' => 'getIgnoreGroupSize',
-        'fields' => 'getFields',
         'person_fields' => 'getPersonFields'
     ];
 
@@ -191,9 +191,9 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
+        $this->container['fields'] = $data['fields'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['ignore_group_size'] = $data['ignore_group_size'] ?? false;
-        $this->container['fields'] = $data['fields'] ?? null;
         $this->container['person_fields'] = $data['person_fields'] ?? null;
     }
 
@@ -206,14 +206,14 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
+        if ($this->container['fields'] === null) {
+            $invalidProperties[] = "'fields' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
         if ($this->container['ignore_group_size'] === null) {
             $invalidProperties[] = "'ignore_group_size' can't be null";
-        }
-        if ($this->container['fields'] === null) {
-            $invalidProperties[] = "'fields' can't be null";
         }
         if ($this->container['person_fields'] === null) {
             $invalidProperties[] = "'person_fields' can't be null";
@@ -234,9 +234,33 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
+     * Gets fields
+     *
+     * @return object
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     *
+     * @param object $fields Key-Value mapping of group member fields. Key: field Id; Value: Input
+     *
+     * @return self
+     */
+    public function setFields($fields)
+    {
+        $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -246,7 +270,7 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param int $id id
      *
      * @return self
      */
@@ -277,30 +301,6 @@ class PutCheckinPersonsRequestGroup implements ModelInterface, ArrayAccess, \Jso
     public function setIgnoreGroupSize($ignore_group_size)
     {
         $this->container['ignore_group_size'] = $ignore_group_size;
-
-        return $this;
-    }
-
-    /**
-     * Gets fields
-     *
-     * @return object
-     */
-    public function getFields()
-    {
-        return $this->container['fields'];
-    }
-
-    /**
-     * Sets fields
-     *
-     * @param object $fields Key-Value mapping of group member fields. Key: field Id; Value: Input
-     *
-     * @return self
-     */
-    public function setFields($fields)
-    {
-        $this->container['fields'] = $fields;
 
         return $this;
     }

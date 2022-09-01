@@ -57,18 +57,18 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'group_type_id' => 'int',
+        'grow_path_id' => 'int',
+        'has_requested' => 'bool',
+        'id' => 'int',
+        'is_default' => 'bool',
+        'is_hidden' => 'bool',
+        'is_leader' => 'bool',
         'name' => 'string',
         'name_translated' => 'string',
         'shorty' => 'string',
         'sort_key' => 'int',
-        'to_delete' => 'bool',
-        'has_requested' => 'bool',
-        'is_leader' => 'bool',
-        'is_default' => 'bool',
-        'is_hidden' => 'bool',
-        'grow_path_id' => 'int'
+        'to_delete' => 'bool'
     ];
 
     /**
@@ -79,18 +79,18 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'group_type_id' => null,
+        'grow_path_id' => null,
+        'has_requested' => null,
+        'id' => null,
+        'is_default' => null,
+        'is_hidden' => null,
+        'is_leader' => null,
         'name' => null,
         'name_translated' => null,
         'shorty' => null,
         'sort_key' => null,
-        'to_delete' => null,
-        'has_requested' => null,
-        'is_leader' => null,
-        'is_default' => null,
-        'is_hidden' => null,
-        'grow_path_id' => null
+        'to_delete' => null
     ];
 
     /**
@@ -120,18 +120,18 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'group_type_id' => 'groupTypeId',
+        'grow_path_id' => 'growPathId',
+        'has_requested' => 'hasRequested',
+        'id' => 'id',
+        'is_default' => 'isDefault',
+        'is_hidden' => 'isHidden',
+        'is_leader' => 'isLeader',
         'name' => 'name',
         'name_translated' => 'nameTranslated',
         'shorty' => 'shorty',
         'sort_key' => 'sortKey',
-        'to_delete' => 'toDelete',
-        'has_requested' => 'hasRequested',
-        'is_leader' => 'isLeader',
-        'is_default' => 'isDefault',
-        'is_hidden' => 'isHidden',
-        'grow_path_id' => 'growPathId'
+        'to_delete' => 'toDelete'
     ];
 
     /**
@@ -140,18 +140,18 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'group_type_id' => 'setGroupTypeId',
+        'grow_path_id' => 'setGrowPathId',
+        'has_requested' => 'setHasRequested',
+        'id' => 'setId',
+        'is_default' => 'setIsDefault',
+        'is_hidden' => 'setIsHidden',
+        'is_leader' => 'setIsLeader',
         'name' => 'setName',
         'name_translated' => 'setNameTranslated',
         'shorty' => 'setShorty',
         'sort_key' => 'setSortKey',
-        'to_delete' => 'setToDelete',
-        'has_requested' => 'setHasRequested',
-        'is_leader' => 'setIsLeader',
-        'is_default' => 'setIsDefault',
-        'is_hidden' => 'setIsHidden',
-        'grow_path_id' => 'setGrowPathId'
+        'to_delete' => 'setToDelete'
     ];
 
     /**
@@ -160,18 +160,18 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'group_type_id' => 'getGroupTypeId',
+        'grow_path_id' => 'getGrowPathId',
+        'has_requested' => 'getHasRequested',
+        'id' => 'getId',
+        'is_default' => 'getIsDefault',
+        'is_hidden' => 'getIsHidden',
+        'is_leader' => 'getIsLeader',
         'name' => 'getName',
         'name_translated' => 'getNameTranslated',
         'shorty' => 'getShorty',
         'sort_key' => 'getSortKey',
-        'to_delete' => 'getToDelete',
-        'has_requested' => 'getHasRequested',
-        'is_leader' => 'getIsLeader',
-        'is_default' => 'getIsDefault',
-        'is_hidden' => 'getIsHidden',
-        'grow_path_id' => 'getGrowPathId'
+        'to_delete' => 'getToDelete'
     ];
 
     /**
@@ -231,18 +231,18 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['group_type_id'] = $data['group_type_id'] ?? null;
+        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
+        $this->container['has_requested'] = $data['has_requested'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_default'] = $data['is_default'] ?? null;
+        $this->container['is_hidden'] = $data['is_hidden'] ?? null;
+        $this->container['is_leader'] = $data['is_leader'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['shorty'] = $data['shorty'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
         $this->container['to_delete'] = $data['to_delete'] ?? null;
-        $this->container['has_requested'] = $data['has_requested'] ?? null;
-        $this->container['is_leader'] = $data['is_leader'] ?? null;
-        $this->container['is_default'] = $data['is_default'] ?? null;
-        $this->container['is_hidden'] = $data['is_hidden'] ?? null;
-        $this->container['grow_path_id'] = $data['grow_path_id'] ?? null;
     }
 
     /**
@@ -270,30 +270,6 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id ID of this group type role.
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets group_type_id
      *
      * @return int|null
@@ -306,7 +282,7 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
     /**
      * Sets group_type_id
      *
-     * @param int|null $group_type_id ID of corresponding group type.
+     * @param int|null $group_type_id group_type_id
      *
      * @return self
      */
@@ -318,121 +294,25 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Name of role.
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets name_translated
-     *
-     * @return string|null
-     */
-    public function getNameTranslated()
-    {
-        return $this->container['name_translated'];
-    }
-
-    /**
-     * Sets name_translated
-     *
-     * @param string|null $name_translated Trasnlated name of role.
-     *
-     * @return self
-     */
-    public function setNameTranslated($name_translated)
-    {
-        $this->container['name_translated'] = $name_translated;
-
-        return $this;
-    }
-
-    /**
-     * Gets shorty
-     *
-     * @return string|null
-     */
-    public function getShorty()
-    {
-        return $this->container['shorty'];
-    }
-
-    /**
-     * Sets shorty
-     *
-     * @param string|null $shorty Abbreviation of the name.
-     *
-     * @return self
-     */
-    public function setShorty($shorty)
-    {
-        $this->container['shorty'] = $shorty;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort_key
+     * Gets grow_path_id
      *
      * @return int|null
      */
-    public function getSortKey()
+    public function getGrowPathId()
     {
-        return $this->container['sort_key'];
+        return $this->container['grow_path_id'];
     }
 
     /**
-     * Sets sort_key
+     * Sets grow_path_id
      *
-     * @param int|null $sort_key Number used for sorting roles.
+     * @param int|null $grow_path_id grow_path_id
      *
      * @return self
      */
-    public function setSortKey($sort_key)
+    public function setGrowPathId($grow_path_id)
     {
-        $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets to_delete
-     *
-     * @return bool|null
-     */
-    public function getToDelete()
-    {
-        return $this->container['to_delete'];
-    }
-
-    /**
-     * Sets to_delete
-     *
-     * @param bool|null $to_delete Flag, if members of this role can be deleted or removed from the group.
-     *
-     * @return self
-     */
-    public function setToDelete($to_delete)
-    {
-        $this->container['to_delete'] = $to_delete;
+        $this->container['grow_path_id'] = $grow_path_id;
 
         return $this;
     }
@@ -450,7 +330,7 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
     /**
      * Sets has_requested
      *
-     * @param bool|null $has_requested Flag, if group member is requesting group access.
+     * @param bool|null $has_requested has_requested
      *
      * @return self
      */
@@ -462,25 +342,25 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets is_leader
+     * Gets id
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getIsLeader()
+    public function getId()
     {
-        return $this->container['is_leader'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets is_leader
+     * Sets id
      *
-     * @param bool|null $is_leader Flag, this role is a leader.
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setIsLeader($is_leader)
+    public function setId($id)
     {
-        $this->container['is_leader'] = $is_leader;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -498,7 +378,7 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
     /**
      * Sets is_default
      *
-     * @param bool|null $is_default Indicator of default roles.
+     * @param bool|null $is_default is_default
      *
      * @return self
      */
@@ -522,7 +402,7 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
     /**
      * Sets is_hidden
      *
-     * @param bool|null $is_hidden Flag, if this role is hidden in groups.
+     * @param bool|null $is_hidden is_hidden
      *
      * @return self
      */
@@ -534,25 +414,145 @@ class GetAllGroupTypeRoles200ResponseDataInner implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets grow_path_id
+     * Gets is_leader
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getGrowPathId()
+    public function getIsLeader()
     {
-        return $this->container['grow_path_id'];
+        return $this->container['is_leader'];
     }
 
     /**
-     * Sets grow_path_id
+     * Sets is_leader
      *
-     * @param int|null $grow_path_id ID of the grow path.
+     * @param bool|null $is_leader is_leader
      *
      * @return self
      */
-    public function setGrowPathId($grow_path_id)
+    public function setIsLeader($is_leader)
     {
-        $this->container['grow_path_id'] = $grow_path_id;
+        $this->container['is_leader'] = $is_leader;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets name_translated
+     *
+     * @return string|null
+     */
+    public function getNameTranslated()
+    {
+        return $this->container['name_translated'];
+    }
+
+    /**
+     * Sets name_translated
+     *
+     * @param string|null $name_translated name_translated
+     *
+     * @return self
+     */
+    public function setNameTranslated($name_translated)
+    {
+        $this->container['name_translated'] = $name_translated;
+
+        return $this;
+    }
+
+    /**
+     * Gets shorty
+     *
+     * @return string|null
+     */
+    public function getShorty()
+    {
+        return $this->container['shorty'];
+    }
+
+    /**
+     * Sets shorty
+     *
+     * @param string|null $shorty shorty
+     *
+     * @return self
+     */
+    public function setShorty($shorty)
+    {
+        $this->container['shorty'] = $shorty;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_key
+     *
+     * @return int|null
+     */
+    public function getSortKey()
+    {
+        return $this->container['sort_key'];
+    }
+
+    /**
+     * Sets sort_key
+     *
+     * @param int|null $sort_key sort_key
+     *
+     * @return self
+     */
+    public function setSortKey($sort_key)
+    {
+        $this->container['sort_key'] = $sort_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets to_delete
+     *
+     * @return bool|null
+     */
+    public function getToDelete()
+    {
+        return $this->container['to_delete'];
+    }
+
+    /**
+     * Sets to_delete
+     *
+     * @param bool|null $to_delete to_delete
+     *
+     * @return self
+     */
+    public function setToDelete($to_delete)
+    {
+        $this->container['to_delete'] = $to_delete;
 
         return $this;
     }

@@ -57,9 +57,9 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
         'account_class_id' => 'int',
         'is_cash_asset_account' => 'bool',
+        'name' => 'string',
         'sort_key' => 'int'
     ];
 
@@ -71,9 +71,9 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
         'account_class_id' => null,
         'is_cash_asset_account' => null,
+        'name' => null,
         'sort_key' => null
     ];
 
@@ -104,9 +104,9 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'account_class_id' => 'accountClassId',
         'is_cash_asset_account' => 'isCashAssetAccount',
+        'name' => 'name',
         'sort_key' => 'sortKey'
     ];
 
@@ -116,9 +116,9 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'account_class_id' => 'setAccountClassId',
         'is_cash_asset_account' => 'setIsCashAssetAccount',
+        'name' => 'setName',
         'sort_key' => 'setSortKey'
     ];
 
@@ -128,9 +128,9 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'account_class_id' => 'getAccountClassId',
         'is_cash_asset_account' => 'getIsCashAssetAccount',
+        'name' => 'getName',
         'sort_key' => 'getSortKey'
     ];
 
@@ -191,9 +191,9 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
         $this->container['account_class_id'] = $data['account_class_id'] ?? null;
         $this->container['is_cash_asset_account'] = $data['is_cash_asset_account'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? 0;
     }
 
@@ -206,14 +206,14 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['account_class_id'] === null) {
             $invalidProperties[] = "'account_class_id' can't be null";
         }
         if ($this->container['is_cash_asset_account'] === null) {
             $invalidProperties[] = "'is_cash_asset_account' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,30 +229,6 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets account_class_id
@@ -298,6 +274,30 @@ class CreateNewAccountGroupRequest implements ModelInterface, ArrayAccess, \Json
     public function setIsCashAssetAccount($is_cash_asset_account)
     {
         $this->container['is_cash_asset_account'] = $is_cash_asset_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

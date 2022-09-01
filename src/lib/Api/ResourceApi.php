@@ -120,16 +120,16 @@ class ResourceApi
      *
      * Your GET endpoint
      *
-     * @param  array $resource_ids resource_ids (optional)
+     * @param  int[] $resource_ids resource_ids (required)
      * @param  \DateTime $from from (optional)
      * @param  \DateTime $to to (optional)
-     * @param  array $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
+     * @param  int[] $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \StevenBuehner\ChurchTools\Model\GetBookings200Response
      */
-    public function getBookings($resource_ids = null, $from = null, $to = null, $status_ids = null)
+    public function getBookings($resource_ids, $from = null, $to = null, $status_ids = null)
     {
         list($response) = $this->getBookingsWithHttpInfo($resource_ids, $from, $to, $status_ids);
         return $response;
@@ -140,16 +140,16 @@ class ResourceApi
      *
      * Your GET endpoint
      *
-     * @param  array $resource_ids (optional)
+     * @param  int[] $resource_ids (required)
      * @param  \DateTime $from (optional)
      * @param  \DateTime $to (optional)
-     * @param  array $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
+     * @param  int[] $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \StevenBuehner\ChurchTools\Model\GetBookings200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBookingsWithHttpInfo($resource_ids = null, $from = null, $to = null, $status_ids = null)
+    public function getBookingsWithHttpInfo($resource_ids, $from = null, $to = null, $status_ids = null)
     {
         $request = $this->getBookingsRequest($resource_ids, $from, $to, $status_ids);
 
@@ -242,15 +242,15 @@ class ResourceApi
      *
      * Your GET endpoint
      *
-     * @param  array $resource_ids (optional)
+     * @param  int[] $resource_ids (required)
      * @param  \DateTime $from (optional)
      * @param  \DateTime $to (optional)
-     * @param  array $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
+     * @param  int[] $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBookingsAsync($resource_ids = null, $from = null, $to = null, $status_ids = null)
+    public function getBookingsAsync($resource_ids, $from = null, $to = null, $status_ids = null)
     {
         return $this->getBookingsAsyncWithHttpInfo($resource_ids, $from, $to, $status_ids)
             ->then(
@@ -265,15 +265,15 @@ class ResourceApi
      *
      * Your GET endpoint
      *
-     * @param  array $resource_ids (optional)
+     * @param  int[] $resource_ids (required)
      * @param  \DateTime $from (optional)
      * @param  \DateTime $to (optional)
-     * @param  array $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
+     * @param  int[] $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBookingsAsyncWithHttpInfo($resource_ids = null, $from = null, $to = null, $status_ids = null)
+    public function getBookingsAsyncWithHttpInfo($resource_ids, $from = null, $to = null, $status_ids = null)
     {
         $returnType = '\StevenBuehner\ChurchTools\Model\GetBookings200Response';
         $request = $this->getBookingsRequest($resource_ids, $from, $to, $status_ids);
@@ -317,16 +317,26 @@ class ResourceApi
     /**
      * Create request for operation 'getBookings'
      *
-     * @param  array $resource_ids (optional)
+     * @param  int[] $resource_ids (required)
      * @param  \DateTime $from (optional)
      * @param  \DateTime $to (optional)
-     * @param  array $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
+     * @param  int[] $status_ids 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBookingsRequest($resource_ids = null, $from = null, $to = null, $status_ids = null)
+    public function getBookingsRequest($resource_ids, $from = null, $to = null, $status_ids = null)
     {
+        // verify the required parameter 'resource_ids' is set
+        if ($resource_ids === null || (is_array($resource_ids) && count($resource_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $resource_ids when calling getBookings'
+            );
+        }
+        if (count($resource_ids) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$resource_ids" when calling ResourceApi.getBookings, number of items must be greater than or equal to 1.');
+        }
+
 
         $resourcePath = '/bookings';
         $formParams = [];
@@ -342,7 +352,7 @@ class ResourceApi
             'array', // openApiType
             'form', // style
             true, // explode
-            false // required
+            true // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(

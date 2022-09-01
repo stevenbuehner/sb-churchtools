@@ -57,12 +57,12 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
+        'comment' => 'string',
         'date_from' => 'string',
         'date_to' => 'string',
-        'is_completed' => 'bool',
         'is_canceled' => 'bool',
+        'is_completed' => 'bool',
         'num_guests' => 'int',
-        'comment' => 'string',
         'poll_result' => 'string'
     ];
 
@@ -74,12 +74,12 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'comment' => null,
         'date_from' => null,
         'date_to' => null,
-        'is_completed' => null,
         'is_canceled' => null,
+        'is_completed' => null,
         'num_guests' => null,
-        'comment' => null,
         'poll_result' => null
     ];
 
@@ -110,12 +110,12 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
+        'comment' => 'comment',
         'date_from' => 'dateFrom',
         'date_to' => 'dateTo',
-        'is_completed' => 'isCompleted',
         'is_canceled' => 'isCanceled',
+        'is_completed' => 'isCompleted',
         'num_guests' => 'numGuests',
-        'comment' => 'comment',
         'poll_result' => 'pollResult'
     ];
 
@@ -125,12 +125,12 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
+        'comment' => 'setComment',
         'date_from' => 'setDateFrom',
         'date_to' => 'setDateTo',
-        'is_completed' => 'setIsCompleted',
         'is_canceled' => 'setIsCanceled',
+        'is_completed' => 'setIsCompleted',
         'num_guests' => 'setNumGuests',
-        'comment' => 'setComment',
         'poll_result' => 'setPollResult'
     ];
 
@@ -140,12 +140,12 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
+        'comment' => 'getComment',
         'date_from' => 'getDateFrom',
         'date_to' => 'getDateTo',
-        'is_completed' => 'getIsCompleted',
         'is_canceled' => 'getIsCanceled',
+        'is_completed' => 'getIsCompleted',
         'num_guests' => 'getNumGuests',
-        'comment' => 'getComment',
         'poll_result' => 'getPollResult'
     ];
 
@@ -206,12 +206,12 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
+        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['date_from'] = $data['date_from'] ?? null;
         $this->container['date_to'] = $data['date_to'] ?? null;
-        $this->container['is_completed'] = $data['is_completed'] ?? null;
         $this->container['is_canceled'] = $data['is_canceled'] ?? null;
+        $this->container['is_completed'] = $data['is_completed'] ?? null;
         $this->container['num_guests'] = $data['num_guests'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
         $this->container['poll_result'] = $data['poll_result'] ?? null;
     }
 
@@ -238,6 +238,30 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets comment
+     *
+     * @return string|null
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     * @param string|null $comment comment
+     *
+     * @return self
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
 
     /**
      * Gets date_from
@@ -288,30 +312,6 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets is_completed
-     *
-     * @return bool|null
-     */
-    public function getIsCompleted()
-    {
-        return $this->container['is_completed'];
-    }
-
-    /**
-     * Sets is_completed
-     *
-     * @param bool|null $is_completed is_completed
-     *
-     * @return self
-     */
-    public function setIsCompleted($is_completed)
-    {
-        $this->container['is_completed'] = $is_completed;
-
-        return $this;
-    }
-
-    /**
      * Gets is_canceled
      *
      * @return bool|null
@@ -336,6 +336,30 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
     }
 
     /**
+     * Gets is_completed
+     *
+     * @return bool|null
+     */
+    public function getIsCompleted()
+    {
+        return $this->container['is_completed'];
+    }
+
+    /**
+     * Sets is_completed
+     *
+     * @param bool|null $is_completed is_completed
+     *
+     * @return self
+     */
+    public function setIsCompleted($is_completed)
+    {
+        $this->container['is_completed'] = $is_completed;
+
+        return $this;
+    }
+
+    /**
      * Gets num_guests
      *
      * @return int|null
@@ -355,30 +379,6 @@ class PutGroupsGroupIdMeetingsMeetingIdRequest implements ModelInterface, ArrayA
     public function setNumGuests($num_guests)
     {
         $this->container['num_guests'] = $num_guests;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string|null
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string|null $comment comment
-     *
-     * @return self
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
 
         return $this;
     }

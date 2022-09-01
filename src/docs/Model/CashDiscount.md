@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional]
-**rate** | **float** |  | [optional]
-**note** | **string** |  | [optional]
 **account_id** | **int** |  | [optional]
-**meta** | [**\StevenBuehner\ChurchTools\Model\EntityMetaData**](EntityMetaData.md) |  | [optional]
+**id** | **int** |  | [optional]
+**meta** | [**\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta**](GetBookings200ResponseMeta.md) |  | [optional]
+**note** | **string** |  | [optional]
+**rate** | **float** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -57,7 +57,7 @@ class CreateMeeting200Response implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting'
     ];
 
     /**
@@ -206,7 +206,7 @@ class CreateMeeting200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class CreateMeeting200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllMeetings200ResponseDataInner|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetGroups200ResponseDataInnerSettingsGroupMeeting|null $data data
      *
      * @return self
      */

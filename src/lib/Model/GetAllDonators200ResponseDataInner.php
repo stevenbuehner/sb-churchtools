@@ -57,11 +57,11 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'persons' => '\StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson[]',
         'count' => 'int',
-        'sum' => 'float',
+        'last_donation_amount' => 'int',
         'last_donation_date' => '\DateTime',
-        'last_donation_amount' => 'float'
+        'persons' => '\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson[]',
+        'sum' => 'int'
     ];
 
     /**
@@ -72,11 +72,11 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'persons' => null,
         'count' => null,
-        'sum' => 'integer',
+        'last_donation_amount' => null,
         'last_donation_date' => 'date',
-        'last_donation_amount' => 'integer'
+        'persons' => null,
+        'sum' => null
     ];
 
     /**
@@ -106,11 +106,11 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'persons' => 'persons',
         'count' => 'count',
-        'sum' => 'sum',
+        'last_donation_amount' => 'lastDonationAmount',
         'last_donation_date' => 'lastDonationDate',
-        'last_donation_amount' => 'lastDonationAmount'
+        'persons' => 'persons',
+        'sum' => 'sum'
     ];
 
     /**
@@ -119,11 +119,11 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'persons' => 'setPersons',
         'count' => 'setCount',
-        'sum' => 'setSum',
+        'last_donation_amount' => 'setLastDonationAmount',
         'last_donation_date' => 'setLastDonationDate',
-        'last_donation_amount' => 'setLastDonationAmount'
+        'persons' => 'setPersons',
+        'sum' => 'setSum'
     ];
 
     /**
@@ -132,11 +132,11 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'persons' => 'getPersons',
         'count' => 'getCount',
-        'sum' => 'getSum',
+        'last_donation_amount' => 'getLastDonationAmount',
         'last_donation_date' => 'getLastDonationDate',
-        'last_donation_amount' => 'getLastDonationAmount'
+        'persons' => 'getPersons',
+        'sum' => 'getSum'
     ];
 
     /**
@@ -196,11 +196,11 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['persons'] = $data['persons'] ?? null;
         $this->container['count'] = $data['count'] ?? null;
-        $this->container['sum'] = $data['sum'] ?? null;
-        $this->container['last_donation_date'] = $data['last_donation_date'] ?? null;
         $this->container['last_donation_amount'] = $data['last_donation_amount'] ?? null;
+        $this->container['last_donation_date'] = $data['last_donation_date'] ?? null;
+        $this->container['persons'] = $data['persons'] ?? null;
+        $this->container['sum'] = $data['sum'] ?? null;
     }
 
     /**
@@ -228,30 +228,6 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets persons
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson[]|null
-     */
-    public function getPersons()
-    {
-        return $this->container['persons'];
-    }
-
-    /**
-     * Sets persons
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetAllGroupMembers200ResponseDataInnerPerson[]|null $persons Contains either one element (a single donator) or two elements (donator and their spouse).
-     *
-     * @return self
-     */
-    public function setPersons($persons)
-    {
-        $this->container['persons'] = $persons;
-
-        return $this;
-    }
-
-    /**
      * Gets count
      *
      * @return int|null
@@ -276,25 +252,25 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets sum
+     * Gets last_donation_amount
      *
-     * @return float|null
+     * @return int|null
      */
-    public function getSum()
+    public function getLastDonationAmount()
     {
-        return $this->container['sum'];
+        return $this->container['last_donation_amount'];
     }
 
     /**
-     * Sets sum
+     * Sets last_donation_amount
      *
-     * @param float|null $sum Value is in cent.
+     * @param int|null $last_donation_amount Value is in cent.
      *
      * @return self
      */
-    public function setSum($sum)
+    public function setLastDonationAmount($last_donation_amount)
     {
-        $this->container['sum'] = $sum;
+        $this->container['last_donation_amount'] = $last_donation_amount;
 
         return $this;
     }
@@ -324,25 +300,49 @@ class GetAllDonators200ResponseDataInner implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets last_donation_amount
+     * Gets persons
      *
-     * @return float|null
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson[]|null
      */
-    public function getLastDonationAmount()
+    public function getPersons()
     {
-        return $this->container['last_donation_amount'];
+        return $this->container['persons'];
     }
 
     /**
-     * Sets last_donation_amount
+     * Sets persons
      *
-     * @param float|null $last_donation_amount Value is in cent.
+     * @param \StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerTeamInnerPerson[]|null $persons Contains either one element (a single donator) or two elements (donator and their spouse).
      *
      * @return self
      */
-    public function setLastDonationAmount($last_donation_amount)
+    public function setPersons($persons)
     {
-        $this->container['last_donation_amount'] = $last_donation_amount;
+        $this->container['persons'] = $persons;
+
+        return $this;
+    }
+
+    /**
+     * Gets sum
+     *
+     * @return int|null
+     */
+    public function getSum()
+    {
+        return $this->container['sum'];
+    }
+
+    /**
+     * Sets sum
+     *
+     * @param int|null $sum Value is in cent.
+     *
+     * @return self
+     */
+    public function setSum($sum)
+    {
+        $this->container['sum'] = $sum;
 
         return $this;
     }

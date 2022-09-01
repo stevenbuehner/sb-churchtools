@@ -5,7 +5,10 @@ All URIs are relative to /api.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getApiInfo()**](GeneralApi.md#getApiInfo) | **GET** /info | Information about API
+[**getCsrftoken()**](GeneralApi.md#getCsrftoken) | **GET** /csrftoken | CSRF token for the current user
 [**getCurrentUser()**](GeneralApi.md#getCurrentUser) | **GET** /whoami | Currently logged in user.
+[**getSearch()**](GeneralApi.md#getSearch) | **GET** /search | Global Search
+[**postLogin()**](GeneralApi.md#postLogin) | **POST** /login | Login with username
 
 
 ## `getApiInfo()`
@@ -61,10 +64,69 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCsrftoken()`
+
+```php
+getCsrftoken(): \StevenBuehner\ChurchTools\Model\GetCsrftoken200Response
+```
+
+CSRF token for the current user
+
+Returns the CSRF-Token for the current user
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GeneralApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getCsrftoken();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GeneralApi->getCsrftoken: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetCsrftoken200Response**](../Model/GetCsrftoken200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getCurrentUser()`
 
 ```php
-getCurrentUser($only_allow_authenticated): \StevenBuehner\ChurchTools\Model\GetCurrentUser200Response
+getCurrentUser($only_allow_authenticated): \StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response
 ```
 
 Currently logged in user.
@@ -102,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetCurrentUser200Response**](../Model/GetCurrentUser200Response.md)
+[**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200Response**](../Model/PutCheckinPersons200Response.md)
 
 ### Authorization
 
@@ -111,6 +173,132 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getSearch()`
+
+```php
+getSearch($query, $domain_types): \StevenBuehner\ChurchTools\Model\GetSearch200Response
+```
+
+Global Search
+
+Search globally for different or all domainTypes.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GeneralApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$query = max; // string
+$domain_types = array('domain_types_example'); // string[]
+
+try {
+    $result = $apiInstance->getSearch($query, $domain_types);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GeneralApi->getSearch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **string**|  |
+ **domain_types** | [**string[]**](../Model/string.md)|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetSearch200Response**](../Model/GetSearch200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postLogin()`
+
+```php
+postLogin($post_login_request): \StevenBuehner\ChurchTools\Model\PostLogin200Response
+```
+
+Login with username
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GeneralApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_login_request = new \StevenBuehner\ChurchTools\Model\PostLoginRequest(); // \StevenBuehner\ChurchTools\Model\PostLoginRequest
+
+try {
+    $result = $apiInstance->postLogin($post_login_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GeneralApi->postLogin: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **post_login_request** | [**\StevenBuehner\ChurchTools\Model\PostLoginRequest**](../Model/PostLoginRequest.md)|  | [optional]
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PostLogin200Response**](../Model/PostLogin200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

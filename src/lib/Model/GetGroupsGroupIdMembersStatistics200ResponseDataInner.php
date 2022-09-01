@@ -57,9 +57,9 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'key' => 'string',
+        'data' => '\StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner[]',
         'field_type' => 'string',
-        'data' => '\StevenBuehner\ChurchTools\Model\SaveSyncConflictRequestDataInner[]'
+        'key' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'key' => null,
+        'data' => null,
         'field_type' => null,
-        'data' => null
+        'key' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
+        'data' => 'data',
         'field_type' => 'fieldType',
-        'data' => 'data'
+        'key' => 'key'
     ];
 
     /**
@@ -113,9 +113,9 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
+        'data' => 'setData',
         'field_type' => 'setFieldType',
-        'data' => 'setData'
+        'key' => 'setKey'
     ];
 
     /**
@@ -124,9 +124,9 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
+        'data' => 'getData',
         'field_type' => 'getFieldType',
-        'data' => 'getData'
+        'key' => 'getKey'
     ];
 
     /**
@@ -186,9 +186,9 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = $data['key'] ?? null;
-        $this->container['field_type'] = $data['field_type'] ?? null;
         $this->container['data'] = $data['data'] ?? null;
+        $this->container['field_type'] = $data['field_type'] ?? null;
+        $this->container['key'] = $data['key'] ?? null;
     }
 
     /**
@@ -216,25 +216,25 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
 
 
     /**
-     * Gets key
+     * Gets data
      *
-     * @return string|null
+     * @return \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner[]|null
      */
-    public function getKey()
+    public function getData()
     {
-        return $this->container['key'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets key
+     * Sets data
      *
-     * @param string|null $key key
+     * @param \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner[]|null $data data
      *
      * @return self
      */
-    public function setKey($key)
+    public function setData($data)
     {
-        $this->container['key'] = $key;
+        $this->container['data'] = $data;
 
         return $this;
     }
@@ -264,25 +264,25 @@ class GetGroupsGroupIdMembersStatistics200ResponseDataInner implements ModelInte
     }
 
     /**
-     * Gets data
+     * Gets key
      *
-     * @return \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequestDataInner[]|null
+     * @return string|null
      */
-    public function getData()
+    public function getKey()
     {
-        return $this->container['data'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets data
+     * Sets key
      *
-     * @param \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequestDataInner[]|null $data data
+     * @param string|null $key key
      *
      * @return self
      */
-    public function setData($data)
+    public function setKey($key)
     {
-        $this->container['data'] = $data;
+        $this->container['key'] = $key;
 
         return $this;
     }

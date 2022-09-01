@@ -59,14 +59,14 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'identifier' => 'string',
-        'wiki_category' => '\StevenBuehner\ChurchTools\Model\WikiCategory1',
+        'is_markdown' => 'bool',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetFileWithDomainType200ResponseDataInnerMeta',
+        'on_startpage' => 'bool',
+        'permissions' => '\StevenBuehner\ChurchTools\Model\WikiPage1Permissions',
+        'redirect_to' => 'string',
         'title' => 'string',
         'version' => 'int',
-        'on_startpage' => 'bool',
-        'redirect_to' => 'string',
-        'permissions' => '\StevenBuehner\ChurchTools\Model\WikiPage1Permissions',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData',
-        'is_markdown' => 'bool'
+        'wiki_category' => '\StevenBuehner\ChurchTools\Model\WikiCategory1'
     ];
 
     /**
@@ -78,14 +78,14 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'identifier' => null,
-        'wiki_category' => null,
+        'is_markdown' => null,
+        'meta' => null,
+        'on_startpage' => null,
+        'permissions' => null,
+        'redirect_to' => null,
         'title' => null,
         'version' => null,
-        'on_startpage' => null,
-        'redirect_to' => null,
-        'permissions' => null,
-        'meta' => null,
-        'is_markdown' => null
+        'wiki_category' => null
     ];
 
     /**
@@ -116,14 +116,14 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'identifier' => 'identifier',
-        'wiki_category' => 'wikiCategory',
+        'is_markdown' => 'isMarkdown',
+        'meta' => 'meta',
+        'on_startpage' => 'onStartpage',
+        'permissions' => 'permissions',
+        'redirect_to' => 'redirectTo',
         'title' => 'title',
         'version' => 'version',
-        'on_startpage' => 'onStartpage',
-        'redirect_to' => 'redirectTo',
-        'permissions' => 'permissions',
-        'meta' => 'meta',
-        'is_markdown' => 'isMarkdown'
+        'wiki_category' => 'wikiCategory'
     ];
 
     /**
@@ -133,14 +133,14 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'identifier' => 'setIdentifier',
-        'wiki_category' => 'setWikiCategory',
+        'is_markdown' => 'setIsMarkdown',
+        'meta' => 'setMeta',
+        'on_startpage' => 'setOnStartpage',
+        'permissions' => 'setPermissions',
+        'redirect_to' => 'setRedirectTo',
         'title' => 'setTitle',
         'version' => 'setVersion',
-        'on_startpage' => 'setOnStartpage',
-        'redirect_to' => 'setRedirectTo',
-        'permissions' => 'setPermissions',
-        'meta' => 'setMeta',
-        'is_markdown' => 'setIsMarkdown'
+        'wiki_category' => 'setWikiCategory'
     ];
 
     /**
@@ -150,14 +150,14 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'identifier' => 'getIdentifier',
-        'wiki_category' => 'getWikiCategory',
+        'is_markdown' => 'getIsMarkdown',
+        'meta' => 'getMeta',
+        'on_startpage' => 'getOnStartpage',
+        'permissions' => 'getPermissions',
+        'redirect_to' => 'getRedirectTo',
         'title' => 'getTitle',
         'version' => 'getVersion',
-        'on_startpage' => 'getOnStartpage',
-        'redirect_to' => 'getRedirectTo',
-        'permissions' => 'getPermissions',
-        'meta' => 'getMeta',
-        'is_markdown' => 'getIsMarkdown'
+        'wiki_category' => 'getWikiCategory'
     ];
 
     /**
@@ -218,14 +218,14 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['identifier'] = $data['identifier'] ?? null;
-        $this->container['wiki_category'] = $data['wiki_category'] ?? null;
+        $this->container['is_markdown'] = $data['is_markdown'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['on_startpage'] = $data['on_startpage'] ?? null;
+        $this->container['permissions'] = $data['permissions'] ?? null;
+        $this->container['redirect_to'] = $data['redirect_to'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
         $this->container['version'] = $data['version'] ?? null;
-        $this->container['on_startpage'] = $data['on_startpage'] ?? null;
-        $this->container['redirect_to'] = $data['redirect_to'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
-        $this->container['is_markdown'] = $data['is_markdown'] ?? null;
+        $this->container['wiki_category'] = $data['wiki_category'] ?? null;
     }
 
     /**
@@ -280,25 +280,121 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets wiki_category
+     * Gets is_markdown
      *
-     * @return \StevenBuehner\ChurchTools\Model\WikiCategory1|null
+     * @return bool|null
      */
-    public function getWikiCategory()
+    public function getIsMarkdown()
     {
-        return $this->container['wiki_category'];
+        return $this->container['is_markdown'];
     }
 
     /**
-     * Sets wiki_category
+     * Sets is_markdown
      *
-     * @param \StevenBuehner\ChurchTools\Model\WikiCategory1|null $wiki_category wiki_category
+     * @param bool|null $is_markdown is_markdown
      *
      * @return self
      */
-    public function setWikiCategory($wiki_category)
+    public function setIsMarkdown($is_markdown)
     {
-        $this->container['wiki_category'] = $wiki_category;
+        $this->container['is_markdown'] = $is_markdown;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetFileWithDomainType200ResponseDataInnerMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetFileWithDomainType200ResponseDataInnerMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_startpage
+     *
+     * @return bool|null
+     */
+    public function getOnStartpage()
+    {
+        return $this->container['on_startpage'];
+    }
+
+    /**
+     * Sets on_startpage
+     *
+     * @param bool|null $on_startpage on_startpage
+     *
+     * @return self
+     */
+    public function setOnStartpage($on_startpage)
+    {
+        $this->container['on_startpage'] = $on_startpage;
+
+        return $this;
+    }
+
+    /**
+     * Gets permissions
+     *
+     * @return \StevenBuehner\ChurchTools\Model\WikiPage1Permissions|null
+     */
+    public function getPermissions()
+    {
+        return $this->container['permissions'];
+    }
+
+    /**
+     * Sets permissions
+     *
+     * @param \StevenBuehner\ChurchTools\Model\WikiPage1Permissions|null $permissions permissions
+     *
+     * @return self
+     */
+    public function setPermissions($permissions)
+    {
+        $this->container['permissions'] = $permissions;
+
+        return $this;
+    }
+
+    /**
+     * Gets redirect_to
+     *
+     * @return string|null
+     */
+    public function getRedirectTo()
+    {
+        return $this->container['redirect_to'];
+    }
+
+    /**
+     * Sets redirect_to
+     *
+     * @param string|null $redirect_to redirect_to
+     *
+     * @return self
+     */
+    public function setRedirectTo($redirect_to)
+    {
+        $this->container['redirect_to'] = $redirect_to;
 
         return $this;
     }
@@ -352,121 +448,25 @@ class SimpleWikiPage implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets on_startpage
+     * Gets wiki_category
      *
-     * @return bool|null
+     * @return \StevenBuehner\ChurchTools\Model\WikiCategory1|null
      */
-    public function getOnStartpage()
+    public function getWikiCategory()
     {
-        return $this->container['on_startpage'];
+        return $this->container['wiki_category'];
     }
 
     /**
-     * Sets on_startpage
+     * Sets wiki_category
      *
-     * @param bool|null $on_startpage on_startpage
+     * @param \StevenBuehner\ChurchTools\Model\WikiCategory1|null $wiki_category wiki_category
      *
      * @return self
      */
-    public function setOnStartpage($on_startpage)
+    public function setWikiCategory($wiki_category)
     {
-        $this->container['on_startpage'] = $on_startpage;
-
-        return $this;
-    }
-
-    /**
-     * Gets redirect_to
-     *
-     * @return string|null
-     */
-    public function getRedirectTo()
-    {
-        return $this->container['redirect_to'];
-    }
-
-    /**
-     * Sets redirect_to
-     *
-     * @param string|null $redirect_to redirect_to
-     *
-     * @return self
-     */
-    public function setRedirectTo($redirect_to)
-    {
-        $this->container['redirect_to'] = $redirect_to;
-
-        return $this;
-    }
-
-    /**
-     * Gets permissions
-     *
-     * @return \StevenBuehner\ChurchTools\Model\WikiPage1Permissions|null
-     */
-    public function getPermissions()
-    {
-        return $this->container['permissions'];
-    }
-
-    /**
-     * Sets permissions
-     *
-     * @param \StevenBuehner\ChurchTools\Model\WikiPage1Permissions|null $permissions permissions
-     *
-     * @return self
-     */
-    public function setPermissions($permissions)
-    {
-        $this->container['permissions'] = $permissions;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_markdown
-     *
-     * @return bool|null
-     */
-    public function getIsMarkdown()
-    {
-        return $this->container['is_markdown'];
-    }
-
-    /**
-     * Sets is_markdown
-     *
-     * @param bool|null $is_markdown is_markdown
-     *
-     * @return self
-     */
-    public function setIsMarkdown($is_markdown)
-    {
-        $this->container['is_markdown'] = $is_markdown;
+        $this->container['wiki_category'] = $wiki_category;
 
         return $this;
     }

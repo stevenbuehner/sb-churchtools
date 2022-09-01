@@ -122,7 +122,7 @@ class CampusApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\CreateNewCampus201Response|\StevenBuehner\ChurchTools\Model\PaymentRequiredV1
+     * @return \StevenBuehner\ChurchTools\Model\CreateNewCampus201Response|string|mixed
      */
     public function createNewCampus($create_new_campus_request = null)
     {
@@ -137,7 +137,7 @@ class CampusApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\CreateNewCampus201Response|\StevenBuehner\ChurchTools\Model\PaymentRequiredV1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\CreateNewCampus201Response|string|mixed, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNewCampusWithHttpInfo($create_new_campus_request = null)
     {
@@ -194,18 +194,33 @@ class CampusApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
-                case 402:
-                    if ('\StevenBuehner\ChurchTools\Model\PaymentRequiredV1' === '\SplFileObject') {
+                case 401:
+                    if ('string' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\StevenBuehner\ChurchTools\Model\PaymentRequiredV1' !== 'string') {
+                        if ('string' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\StevenBuehner\ChurchTools\Model\PaymentRequiredV1', []),
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('mixed' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('mixed' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'mixed', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -237,10 +252,18 @@ class CampusApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 402:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\StevenBuehner\ChurchTools\Model\PaymentRequiredV1',
+                        'mixed',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -341,11 +364,11 @@ class CampusApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 ['application/json']
             );
         }
@@ -410,7 +433,7 @@ class CampusApi
     /**
      * Operation deleteCampus
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -424,7 +447,7 @@ class CampusApi
     /**
      * Operation deleteCampusWithHttpInfo
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -473,6 +496,14 @@ class CampusApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -481,7 +512,7 @@ class CampusApi
     /**
      * Operation deleteCampusAsync
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -499,7 +530,7 @@ class CampusApi
     /**
      * Operation deleteCampusAsyncWithHttpInfo
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -535,7 +566,7 @@ class CampusApi
     /**
      * Create request for operation 'deleteCampus'
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -570,11 +601,11 @@ class CampusApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['text/plain'],
                 []
             );
         }
@@ -638,7 +669,7 @@ class CampusApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200Response
+     * @return \StevenBuehner\ChurchTools\Model\GetAllCampuses200Response|string
      */
     public function getAllCampuses()
     {
@@ -654,7 +685,7 @@ class CampusApi
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \StevenBuehner\ChurchTools\Model\GetAllCampuses200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \StevenBuehner\ChurchTools\Model\GetAllCampuses200Response|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllCampusesWithHttpInfo()
     {
@@ -711,6 +742,21 @@ class CampusApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 401:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\StevenBuehner\ChurchTools\Model\GetAllCampuses200Response';
@@ -735,6 +781,14 @@ class CampusApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\StevenBuehner\ChurchTools\Model\GetAllCampuses200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -836,11 +890,11 @@ class CampusApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 []
             );
         }
@@ -899,7 +953,7 @@ class CampusApi
     /**
      * Operation getCampus
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -914,7 +968,7 @@ class CampusApi
     /**
      * Operation getCampusWithHttpInfo
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1011,7 +1065,7 @@ class CampusApi
     /**
      * Operation getCampusAsync
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1029,7 +1083,7 @@ class CampusApi
     /**
      * Operation getCampusAsyncWithHttpInfo
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1078,7 +1132,7 @@ class CampusApi
     /**
      * Create request for operation 'getCampus'
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1176,7 +1230,7 @@ class CampusApi
     /**
      * Operation updateCampus
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCampusRequest $update_campus_request New values for campus (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1192,7 +1246,7 @@ class CampusApi
     /**
      * Operation updateCampusWithHttpInfo
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCampusRequest $update_campus_request New values for campus (required)
      *
      * @throws \StevenBuehner\ChurchTools\ApiException on non-2xx response
@@ -1290,7 +1344,7 @@ class CampusApi
     /**
      * Operation updateCampusAsync
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCampusRequest $update_campus_request New values for campus (required)
      *
      * @throws \InvalidArgumentException
@@ -1309,7 +1363,7 @@ class CampusApi
     /**
      * Operation updateCampusAsyncWithHttpInfo
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCampusRequest $update_campus_request New values for campus (required)
      *
      * @throws \InvalidArgumentException
@@ -1359,7 +1413,7 @@ class CampusApi
     /**
      * Create request for operation 'updateCampus'
      *
-     * @param  int $id ID of campus (required)
+     * @param  int $id ID of Entity (required)
      * @param  \StevenBuehner\ChurchTools\Model\UpdateCampusRequest $update_campus_request New values for campus (required)
      *
      * @throws \InvalidArgumentException

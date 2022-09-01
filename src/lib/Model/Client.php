@@ -57,17 +57,17 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'street' => 'string',
-        'postal_code' => 'string',
         'city' => 'string',
-        'phone' => 'string',
         'email' => 'string',
-        'treasurer_id' => 'int',
-        'treasurer' => 'object',
+        'id' => 'int',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'name' => 'string',
+        'phone' => 'string',
+        'postal_code' => 'string',
         'sort_key' => 'int',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'street' => 'string',
+        'treasurer' => 'object',
+        'treasurer_id' => 'int'
     ];
 
     /**
@@ -78,17 +78,17 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'street' => null,
-        'postal_code' => null,
         'city' => null,
-        'phone' => null,
         'email' => null,
-        'treasurer_id' => null,
-        'treasurer' => null,
+        'id' => null,
+        'meta' => null,
+        'name' => null,
+        'phone' => null,
+        'postal_code' => null,
         'sort_key' => null,
-        'meta' => null
+        'street' => null,
+        'treasurer' => null,
+        'treasurer_id' => null
     ];
 
     /**
@@ -118,17 +118,17 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'street' => 'street',
-        'postal_code' => 'postalCode',
         'city' => 'city',
-        'phone' => 'phone',
         'email' => 'email',
-        'treasurer_id' => 'treasurerId',
-        'treasurer' => 'treasurer',
+        'id' => 'id',
+        'meta' => 'meta',
+        'name' => 'name',
+        'phone' => 'phone',
+        'postal_code' => 'postalCode',
         'sort_key' => 'sortKey',
-        'meta' => 'meta'
+        'street' => 'street',
+        'treasurer' => 'treasurer',
+        'treasurer_id' => 'treasurerId'
     ];
 
     /**
@@ -137,17 +137,17 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'street' => 'setStreet',
-        'postal_code' => 'setPostalCode',
         'city' => 'setCity',
-        'phone' => 'setPhone',
         'email' => 'setEmail',
-        'treasurer_id' => 'setTreasurerId',
-        'treasurer' => 'setTreasurer',
+        'id' => 'setId',
+        'meta' => 'setMeta',
+        'name' => 'setName',
+        'phone' => 'setPhone',
+        'postal_code' => 'setPostalCode',
         'sort_key' => 'setSortKey',
-        'meta' => 'setMeta'
+        'street' => 'setStreet',
+        'treasurer' => 'setTreasurer',
+        'treasurer_id' => 'setTreasurerId'
     ];
 
     /**
@@ -156,17 +156,17 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'street' => 'getStreet',
-        'postal_code' => 'getPostalCode',
         'city' => 'getCity',
-        'phone' => 'getPhone',
         'email' => 'getEmail',
-        'treasurer_id' => 'getTreasurerId',
-        'treasurer' => 'getTreasurer',
+        'id' => 'getId',
+        'meta' => 'getMeta',
+        'name' => 'getName',
+        'phone' => 'getPhone',
+        'postal_code' => 'getPostalCode',
         'sort_key' => 'getSortKey',
-        'meta' => 'getMeta'
+        'street' => 'getStreet',
+        'treasurer' => 'getTreasurer',
+        'treasurer_id' => 'getTreasurerId'
     ];
 
     /**
@@ -226,17 +226,17 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['street'] = $data['street'] ?? null;
-        $this->container['postal_code'] = $data['postal_code'] ?? null;
         $this->container['city'] = $data['city'] ?? null;
-        $this->container['phone'] = $data['phone'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
-        $this->container['treasurer_id'] = $data['treasurer_id'] ?? null;
-        $this->container['treasurer'] = $data['treasurer'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['postal_code'] = $data['postal_code'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['street'] = $data['street'] ?? null;
+        $this->container['treasurer'] = $data['treasurer'] ?? null;
+        $this->container['treasurer_id'] = $data['treasurer_id'] ?? null;
     }
 
     /**
@@ -264,102 +264,6 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string|null
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string|null $street street
-     *
-     * @return self
-     */
-    public function setStreet($street)
-    {
-        $this->container['street'] = $street;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     *
-     * @return string|null
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     *
-     * @param string|null $postal_code postal_code
-     *
-     * @return self
-     */
-    public function setPostalCode($postal_code)
-    {
-        $this->container['postal_code'] = $postal_code;
-
-        return $this;
-    }
-
-    /**
      * Gets city
      *
      * @return string|null
@@ -379,30 +283,6 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCity($city)
     {
         $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string|null
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string|null $phone phone
-     *
-     * @return self
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
 
         return $this;
     }
@@ -432,49 +312,121 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets treasurer_id
+     * Gets id
      *
      * @return int|null
      */
-    public function getTreasurerId()
+    public function getId()
     {
-        return $this->container['treasurer_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets treasurer_id
+     * Sets id
      *
-     * @param int|null $treasurer_id Person ID
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setTreasurerId($treasurer_id)
+    public function setId($id)
     {
-        $this->container['treasurer_id'] = $treasurer_id;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets treasurer
+     * Gets meta
      *
-     * @return object|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
-    public function getTreasurer()
+    public function getMeta()
     {
-        return $this->container['treasurer'];
+        return $this->container['meta'];
     }
 
     /**
-     * Sets treasurer
+     * Sets meta
      *
-     * @param object|null $treasurer PersonDomainObject
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */
-    public function setTreasurer($treasurer)
+    public function setMeta($meta)
     {
-        $this->container['treasurer'] = $treasurer;
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return self
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string|null
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string|null $postal_code postal_code
+     *
+     * @return self
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
@@ -504,25 +456,73 @@ class Client implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets meta
+     * Gets street
      *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
+     * @return string|null
      */
-    public function getMeta()
+    public function getStreet()
     {
-        return $this->container['meta'];
+        return $this->container['street'];
     }
 
     /**
-     * Sets meta
+     * Sets street
      *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
+     * @param string|null $street street
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setStreet($street)
     {
-        $this->container['meta'] = $meta;
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets treasurer
+     *
+     * @return object|null
+     */
+    public function getTreasurer()
+    {
+        return $this->container['treasurer'];
+    }
+
+    /**
+     * Sets treasurer
+     *
+     * @param object|null $treasurer PersonDomainObject
+     *
+     * @return self
+     */
+    public function setTreasurer($treasurer)
+    {
+        $this->container['treasurer'] = $treasurer;
+
+        return $this;
+    }
+
+    /**
+     * Gets treasurer_id
+     *
+     * @return int|null
+     */
+    public function getTreasurerId()
+    {
+        return $this->container['treasurer_id'];
+    }
+
+    /**
+     * Sets treasurer_id
+     *
+     * @param int|null $treasurer_id Person ID
+     *
+     * @return self
+     */
+    public function setTreasurerId($treasurer_id)
+    {
+        $this->container['treasurer_id'] = $treasurer_id;
 
         return $this;
     }

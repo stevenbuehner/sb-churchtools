@@ -57,22 +57,22 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
       * @var string[]
       */
     protected static $openAPITypes = [
-        'see_persons' => 'int',
-        'see_group' => 'int',
-        'see_group_tags' => 'bool',
         'add_person' => 'bool',
-        'edit_groupmemberstatus' => 'bool',
-        'get_emails' => 'bool',
+        'admin_automatic_emails' => 'bool',
+        'admin_group_chat' => 'bool',
+        'admin_group_fields' => 'bool',
         'do_followup' => 'bool',
         'do_group_meeting' => 'bool',
-        'export_group_members' => 'bool',
-        'edit_group_hierachy' => 'bool',
-        'see_hidden_group' => 'bool',
         'edit_group' => 'bool',
-        'admin_group_fields' => 'bool',
-        'admin_automatic_emails' => 'bool',
+        'edit_group_hierachy' => 'bool',
+        'edit_groupmemberstatus' => 'bool',
+        'export_group_members' => 'bool',
+        'get_emails' => 'bool',
         'remove_from_group' => 'bool',
-        'admin_group_chat' => 'bool'
+        'see_group' => 'int',
+        'see_group_tags' => 'bool',
+        'see_hidden_group' => 'bool',
+        'see_persons' => 'int'
     ];
 
     /**
@@ -83,22 +83,22 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'see_persons' => null,
-        'see_group' => null,
-        'see_group_tags' => null,
         'add_person' => null,
-        'edit_groupmemberstatus' => null,
-        'get_emails' => null,
+        'admin_automatic_emails' => null,
+        'admin_group_chat' => null,
+        'admin_group_fields' => null,
         'do_followup' => null,
         'do_group_meeting' => null,
-        'export_group_members' => null,
-        'edit_group_hierachy' => null,
-        'see_hidden_group' => null,
         'edit_group' => null,
-        'admin_group_fields' => null,
-        'admin_automatic_emails' => null,
+        'edit_group_hierachy' => null,
+        'edit_groupmemberstatus' => null,
+        'export_group_members' => null,
+        'get_emails' => null,
         'remove_from_group' => null,
-        'admin_group_chat' => null
+        'see_group' => null,
+        'see_group_tags' => null,
+        'see_hidden_group' => null,
+        'see_persons' => null
     ];
 
     /**
@@ -128,22 +128,22 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
      * @var string[]
      */
     protected static $attributeMap = [
-        'see_persons' => '+see persons',
-        'see_group' => '+see group',
-        'see_group_tags' => '+see group tags',
         'add_person' => '+add person',
-        'edit_groupmemberstatus' => '+edit groupmemberstatus',
-        'get_emails' => '+get emails',
+        'admin_automatic_emails' => '+admin automatic emails',
+        'admin_group_chat' => '+admin group chat',
+        'admin_group_fields' => '+admin group fields',
         'do_followup' => '+do followup',
         'do_group_meeting' => '+do group meeting',
-        'export_group_members' => '+export group members',
-        'edit_group_hierachy' => '+edit group hierachy',
-        'see_hidden_group' => '+see hidden group',
         'edit_group' => '+edit group',
-        'admin_group_fields' => '+admin group fields',
-        'admin_automatic_emails' => '+admin automatic emails',
+        'edit_group_hierachy' => '+edit group hierachy',
+        'edit_groupmemberstatus' => '+edit groupmemberstatus',
+        'export_group_members' => '+export group members',
+        'get_emails' => '+get emails',
         'remove_from_group' => '+remove from group',
-        'admin_group_chat' => '+admin group chat'
+        'see_group' => '+see group',
+        'see_group_tags' => '+see group tags',
+        'see_hidden_group' => '+see hidden group',
+        'see_persons' => '+see persons'
     ];
 
     /**
@@ -152,22 +152,22 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
      * @var string[]
      */
     protected static $setters = [
-        'see_persons' => 'setSeePersons',
-        'see_group' => 'setSeeGroup',
-        'see_group_tags' => 'setSeeGroupTags',
         'add_person' => 'setAddPerson',
-        'edit_groupmemberstatus' => 'setEditGroupmemberstatus',
-        'get_emails' => 'setGetEmails',
+        'admin_automatic_emails' => 'setAdminAutomaticEmails',
+        'admin_group_chat' => 'setAdminGroupChat',
+        'admin_group_fields' => 'setAdminGroupFields',
         'do_followup' => 'setDoFollowup',
         'do_group_meeting' => 'setDoGroupMeeting',
-        'export_group_members' => 'setExportGroupMembers',
-        'edit_group_hierachy' => 'setEditGroupHierachy',
-        'see_hidden_group' => 'setSeeHiddenGroup',
         'edit_group' => 'setEditGroup',
-        'admin_group_fields' => 'setAdminGroupFields',
-        'admin_automatic_emails' => 'setAdminAutomaticEmails',
+        'edit_group_hierachy' => 'setEditGroupHierachy',
+        'edit_groupmemberstatus' => 'setEditGroupmemberstatus',
+        'export_group_members' => 'setExportGroupMembers',
+        'get_emails' => 'setGetEmails',
         'remove_from_group' => 'setRemoveFromGroup',
-        'admin_group_chat' => 'setAdminGroupChat'
+        'see_group' => 'setSeeGroup',
+        'see_group_tags' => 'setSeeGroupTags',
+        'see_hidden_group' => 'setSeeHiddenGroup',
+        'see_persons' => 'setSeePersons'
     ];
 
     /**
@@ -176,22 +176,22 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
      * @var string[]
      */
     protected static $getters = [
-        'see_persons' => 'getSeePersons',
-        'see_group' => 'getSeeGroup',
-        'see_group_tags' => 'getSeeGroupTags',
         'add_person' => 'getAddPerson',
-        'edit_groupmemberstatus' => 'getEditGroupmemberstatus',
-        'get_emails' => 'getGetEmails',
+        'admin_automatic_emails' => 'getAdminAutomaticEmails',
+        'admin_group_chat' => 'getAdminGroupChat',
+        'admin_group_fields' => 'getAdminGroupFields',
         'do_followup' => 'getDoFollowup',
         'do_group_meeting' => 'getDoGroupMeeting',
-        'export_group_members' => 'getExportGroupMembers',
-        'edit_group_hierachy' => 'getEditGroupHierachy',
-        'see_hidden_group' => 'getSeeHiddenGroup',
         'edit_group' => 'getEditGroup',
-        'admin_group_fields' => 'getAdminGroupFields',
-        'admin_automatic_emails' => 'getAdminAutomaticEmails',
+        'edit_group_hierachy' => 'getEditGroupHierachy',
+        'edit_groupmemberstatus' => 'getEditGroupmemberstatus',
+        'export_group_members' => 'getExportGroupMembers',
+        'get_emails' => 'getGetEmails',
         'remove_from_group' => 'getRemoveFromGroup',
-        'admin_group_chat' => 'getAdminGroupChat'
+        'see_group' => 'getSeeGroup',
+        'see_group_tags' => 'getSeeGroupTags',
+        'see_hidden_group' => 'getSeeHiddenGroup',
+        'see_persons' => 'getSeePersons'
     ];
 
     /**
@@ -251,22 +251,22 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
      */
     public function __construct(array $data = null)
     {
-        $this->container['see_persons'] = $data['see_persons'] ?? null;
-        $this->container['see_group'] = $data['see_group'] ?? null;
-        $this->container['see_group_tags'] = $data['see_group_tags'] ?? null;
         $this->container['add_person'] = $data['add_person'] ?? null;
-        $this->container['edit_groupmemberstatus'] = $data['edit_groupmemberstatus'] ?? null;
-        $this->container['get_emails'] = $data['get_emails'] ?? null;
+        $this->container['admin_automatic_emails'] = $data['admin_automatic_emails'] ?? null;
+        $this->container['admin_group_chat'] = $data['admin_group_chat'] ?? null;
+        $this->container['admin_group_fields'] = $data['admin_group_fields'] ?? null;
         $this->container['do_followup'] = $data['do_followup'] ?? null;
         $this->container['do_group_meeting'] = $data['do_group_meeting'] ?? null;
-        $this->container['export_group_members'] = $data['export_group_members'] ?? null;
-        $this->container['edit_group_hierachy'] = $data['edit_group_hierachy'] ?? null;
-        $this->container['see_hidden_group'] = $data['see_hidden_group'] ?? null;
         $this->container['edit_group'] = $data['edit_group'] ?? null;
-        $this->container['admin_group_fields'] = $data['admin_group_fields'] ?? null;
-        $this->container['admin_automatic_emails'] = $data['admin_automatic_emails'] ?? null;
+        $this->container['edit_group_hierachy'] = $data['edit_group_hierachy'] ?? null;
+        $this->container['edit_groupmemberstatus'] = $data['edit_groupmemberstatus'] ?? null;
+        $this->container['export_group_members'] = $data['export_group_members'] ?? null;
+        $this->container['get_emails'] = $data['get_emails'] ?? null;
         $this->container['remove_from_group'] = $data['remove_from_group'] ?? null;
-        $this->container['admin_group_chat'] = $data['admin_group_chat'] ?? null;
+        $this->container['see_group'] = $data['see_group'] ?? null;
+        $this->container['see_group_tags'] = $data['see_group_tags'] ?? null;
+        $this->container['see_hidden_group'] = $data['see_hidden_group'] ?? null;
+        $this->container['see_persons'] = $data['see_persons'] ?? null;
     }
 
     /**
@@ -294,78 +294,6 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
 
 
     /**
-     * Gets see_persons
-     *
-     * @return int|null
-     */
-    public function getSeePersons()
-    {
-        return $this->container['see_persons'];
-    }
-
-    /**
-     * Sets see_persons
-     *
-     * @param int|null $see_persons see_persons
-     *
-     * @return self
-     */
-    public function setSeePersons($see_persons)
-    {
-        $this->container['see_persons'] = $see_persons;
-
-        return $this;
-    }
-
-    /**
-     * Gets see_group
-     *
-     * @return int|null
-     */
-    public function getSeeGroup()
-    {
-        return $this->container['see_group'];
-    }
-
-    /**
-     * Sets see_group
-     *
-     * @param int|null $see_group see_group
-     *
-     * @return self
-     */
-    public function setSeeGroup($see_group)
-    {
-        $this->container['see_group'] = $see_group;
-
-        return $this;
-    }
-
-    /**
-     * Gets see_group_tags
-     *
-     * @return bool|null
-     */
-    public function getSeeGroupTags()
-    {
-        return $this->container['see_group_tags'];
-    }
-
-    /**
-     * Sets see_group_tags
-     *
-     * @param bool|null $see_group_tags see_group_tags
-     *
-     * @return self
-     */
-    public function setSeeGroupTags($see_group_tags)
-    {
-        $this->container['see_group_tags'] = $see_group_tags;
-
-        return $this;
-    }
-
-    /**
      * Gets add_person
      *
      * @return bool|null
@@ -390,49 +318,73 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
     }
 
     /**
-     * Gets edit_groupmemberstatus
+     * Gets admin_automatic_emails
      *
      * @return bool|null
      */
-    public function getEditGroupmemberstatus()
+    public function getAdminAutomaticEmails()
     {
-        return $this->container['edit_groupmemberstatus'];
+        return $this->container['admin_automatic_emails'];
     }
 
     /**
-     * Sets edit_groupmemberstatus
+     * Sets admin_automatic_emails
      *
-     * @param bool|null $edit_groupmemberstatus edit_groupmemberstatus
+     * @param bool|null $admin_automatic_emails admin_automatic_emails
      *
      * @return self
      */
-    public function setEditGroupmemberstatus($edit_groupmemberstatus)
+    public function setAdminAutomaticEmails($admin_automatic_emails)
     {
-        $this->container['edit_groupmemberstatus'] = $edit_groupmemberstatus;
+        $this->container['admin_automatic_emails'] = $admin_automatic_emails;
 
         return $this;
     }
 
     /**
-     * Gets get_emails
+     * Gets admin_group_chat
      *
      * @return bool|null
      */
-    public function getGetEmails()
+    public function getAdminGroupChat()
     {
-        return $this->container['get_emails'];
+        return $this->container['admin_group_chat'];
     }
 
     /**
-     * Sets get_emails
+     * Sets admin_group_chat
      *
-     * @param bool|null $get_emails get_emails
+     * @param bool|null $admin_group_chat admin_group_chat
      *
      * @return self
      */
-    public function setGetEmails($get_emails)
+    public function setAdminGroupChat($admin_group_chat)
     {
-        $this->container['get_emails'] = $get_emails;
+        $this->container['admin_group_chat'] = $admin_group_chat;
+
+        return $this;
+    }
+
+    /**
+     * Gets admin_group_fields
+     *
+     * @return bool|null
+     */
+    public function getAdminGroupFields()
+    {
+        return $this->container['admin_group_fields'];
+    }
+
+    /**
+     * Sets admin_group_fields
+     *
+     * @param bool|null $admin_group_fields admin_group_fields
+     *
+     * @return self
+     */
+    public function setAdminGroupFields($admin_group_fields)
+    {
+        $this->container['admin_group_fields'] = $admin_group_fields;
 
         return $this;
     }
@@ -486,25 +438,25 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
     }
 
     /**
-     * Gets export_group_members
+     * Gets edit_group
      *
      * @return bool|null
      */
-    public function getExportGroupMembers()
+    public function getEditGroup()
     {
-        return $this->container['export_group_members'];
+        return $this->container['edit_group'];
     }
 
     /**
-     * Sets export_group_members
+     * Sets edit_group
      *
-     * @param bool|null $export_group_members export_group_members
+     * @param bool|null $edit_group edit_group
      *
      * @return self
      */
-    public function setExportGroupMembers($export_group_members)
+    public function setEditGroup($edit_group)
     {
-        $this->container['export_group_members'] = $export_group_members;
+        $this->container['edit_group'] = $edit_group;
 
         return $this;
     }
@@ -534,97 +486,73 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
     }
 
     /**
-     * Gets see_hidden_group
+     * Gets edit_groupmemberstatus
      *
      * @return bool|null
      */
-    public function getSeeHiddenGroup()
+    public function getEditGroupmemberstatus()
     {
-        return $this->container['see_hidden_group'];
+        return $this->container['edit_groupmemberstatus'];
     }
 
     /**
-     * Sets see_hidden_group
+     * Sets edit_groupmemberstatus
      *
-     * @param bool|null $see_hidden_group see_hidden_group
+     * @param bool|null $edit_groupmemberstatus edit_groupmemberstatus
      *
      * @return self
      */
-    public function setSeeHiddenGroup($see_hidden_group)
+    public function setEditGroupmemberstatus($edit_groupmemberstatus)
     {
-        $this->container['see_hidden_group'] = $see_hidden_group;
+        $this->container['edit_groupmemberstatus'] = $edit_groupmemberstatus;
 
         return $this;
     }
 
     /**
-     * Gets edit_group
+     * Gets export_group_members
      *
      * @return bool|null
      */
-    public function getEditGroup()
+    public function getExportGroupMembers()
     {
-        return $this->container['edit_group'];
+        return $this->container['export_group_members'];
     }
 
     /**
-     * Sets edit_group
+     * Sets export_group_members
      *
-     * @param bool|null $edit_group edit_group
+     * @param bool|null $export_group_members export_group_members
      *
      * @return self
      */
-    public function setEditGroup($edit_group)
+    public function setExportGroupMembers($export_group_members)
     {
-        $this->container['edit_group'] = $edit_group;
+        $this->container['export_group_members'] = $export_group_members;
 
         return $this;
     }
 
     /**
-     * Gets admin_group_fields
+     * Gets get_emails
      *
      * @return bool|null
      */
-    public function getAdminGroupFields()
+    public function getGetEmails()
     {
-        return $this->container['admin_group_fields'];
+        return $this->container['get_emails'];
     }
 
     /**
-     * Sets admin_group_fields
+     * Sets get_emails
      *
-     * @param bool|null $admin_group_fields admin_group_fields
+     * @param bool|null $get_emails get_emails
      *
      * @return self
      */
-    public function setAdminGroupFields($admin_group_fields)
+    public function setGetEmails($get_emails)
     {
-        $this->container['admin_group_fields'] = $admin_group_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets admin_automatic_emails
-     *
-     * @return bool|null
-     */
-    public function getAdminAutomaticEmails()
-    {
-        return $this->container['admin_automatic_emails'];
-    }
-
-    /**
-     * Sets admin_automatic_emails
-     *
-     * @param bool|null $admin_automatic_emails admin_automatic_emails
-     *
-     * @return self
-     */
-    public function setAdminAutomaticEmails($admin_automatic_emails)
-    {
-        $this->container['admin_automatic_emails'] = $admin_automatic_emails;
+        $this->container['get_emails'] = $get_emails;
 
         return $this;
     }
@@ -654,25 +582,97 @@ class GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb implements Mode
     }
 
     /**
-     * Gets admin_group_chat
+     * Gets see_group
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getAdminGroupChat()
+    public function getSeeGroup()
     {
-        return $this->container['admin_group_chat'];
+        return $this->container['see_group'];
     }
 
     /**
-     * Sets admin_group_chat
+     * Sets see_group
      *
-     * @param bool|null $admin_group_chat admin_group_chat
+     * @param int|null $see_group see_group
      *
      * @return self
      */
-    public function setAdminGroupChat($admin_group_chat)
+    public function setSeeGroup($see_group)
     {
-        $this->container['admin_group_chat'] = $admin_group_chat;
+        $this->container['see_group'] = $see_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets see_group_tags
+     *
+     * @return bool|null
+     */
+    public function getSeeGroupTags()
+    {
+        return $this->container['see_group_tags'];
+    }
+
+    /**
+     * Sets see_group_tags
+     *
+     * @param bool|null $see_group_tags see_group_tags
+     *
+     * @return self
+     */
+    public function setSeeGroupTags($see_group_tags)
+    {
+        $this->container['see_group_tags'] = $see_group_tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets see_hidden_group
+     *
+     * @return bool|null
+     */
+    public function getSeeHiddenGroup()
+    {
+        return $this->container['see_hidden_group'];
+    }
+
+    /**
+     * Sets see_hidden_group
+     *
+     * @param bool|null $see_hidden_group see_hidden_group
+     *
+     * @return self
+     */
+    public function setSeeHiddenGroup($see_hidden_group)
+    {
+        $this->container['see_hidden_group'] = $see_hidden_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets see_persons
+     *
+     * @return int|null
+     */
+    public function getSeePersons()
+    {
+        return $this->container['see_persons'];
+    }
+
+    /**
+     * Sets see_persons
+     *
+     * @param int|null $see_persons see_persons
+     *
+     * @return self
+     */
+    public function setSeePersons($see_persons)
+    {
+        $this->container['see_persons'] = $see_persons;
 
         return $this;
     }

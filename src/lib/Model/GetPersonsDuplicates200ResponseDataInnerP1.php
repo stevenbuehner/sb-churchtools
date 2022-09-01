@@ -57,8 +57,8 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
         'first_name' => 'string',
+        'id' => 'string',
         'last_name' => 'string'
     ];
 
@@ -70,8 +70,8 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'first_name' => null,
+        'id' => null,
         'last_name' => null
     ];
 
@@ -102,8 +102,8 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'first_name' => 'firstName',
+        'id' => 'id',
         'last_name' => 'lastName'
     ];
 
@@ -113,8 +113,8 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'first_name' => 'setFirstName',
+        'id' => 'setId',
         'last_name' => 'setLastName'
     ];
 
@@ -124,8 +124,8 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'first_name' => 'getFirstName',
+        'id' => 'getId',
         'last_name' => 'getLastName'
     ];
 
@@ -186,8 +186,8 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
         $this->container['first_name'] = $data['first_name'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['last_name'] = $data['last_name'] ?? null;
     }
 
@@ -216,30 +216,6 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
 
 
     /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets first_name
      *
      * @return string|null
@@ -259,6 +235,30 @@ class GetPersonsDuplicates200ResponseDataInnerP1 implements ModelInterface, Arra
     public function setFirstName($first_name)
     {
         $this->container['first_name'] = $first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

@@ -57,9 +57,9 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
+        'count' => 'int',
         'id' => 'int',
-        'name' => 'string',
-        'count' => 'int'
+        'name' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'count' => null,
         'id' => null,
-        'name' => null,
-        'count' => null
+        'name' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
+        'count' => 'count',
         'id' => 'id',
-        'name' => 'name',
-        'count' => 'count'
+        'name' => 'name'
     ];
 
     /**
@@ -113,9 +113,9 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
+        'count' => 'setCount',
         'id' => 'setId',
-        'name' => 'setName',
-        'count' => 'setCount'
+        'name' => 'setName'
     ];
 
     /**
@@ -124,9 +124,9 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
+        'count' => 'getCount',
         'id' => 'getId',
-        'name' => 'getName',
-        'count' => 'getCount'
+        'name' => 'getName'
     ];
 
     /**
@@ -186,9 +186,9 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
+        $this->container['count'] = $data['count'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
     }
 
     /**
@@ -214,6 +214,30 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets count
+     *
+     * @return int|null
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int|null $count count
+     *
+     * @return self
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -259,30 +283,6 @@ class GetPersonTags200ResponseDataInner implements ModelInterface, ArrayAccess, 
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int|null $count count
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
 
         return $this;
     }

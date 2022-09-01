@@ -57,15 +57,15 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'name' => 'string',
-        'label' => 'string',
-        'field_type_code' => 'string',
-        'type' => 'string',
-        'options' => '\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200ResponseFormInnerOptionsInner[]',
         'default' => 'string',
+        'field_type_code' => 'string',
+        'id' => 'int',
+        'label' => 'string',
+        'madatory' => 'bool',
+        'name' => 'string',
+        'options' => '\StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200ResponseFormInnerOptionsInner[]',
         'sort_key' => 'int',
-        'madatory' => 'bool'
+        'type' => 'string'
     ];
 
     /**
@@ -76,15 +76,15 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'label' => null,
-        'field_type_code' => null,
-        'type' => null,
-        'options' => null,
         'default' => null,
+        'field_type_code' => null,
+        'id' => null,
+        'label' => null,
+        'madatory' => null,
+        'name' => null,
+        'options' => null,
         'sort_key' => null,
-        'madatory' => null
+        'type' => null
     ];
 
     /**
@@ -114,15 +114,15 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'label' => 'label',
-        'field_type_code' => 'fieldTypeCode',
-        'type' => 'type',
-        'options' => 'options',
         'default' => 'default',
+        'field_type_code' => 'fieldTypeCode',
+        'id' => 'id',
+        'label' => 'label',
+        'madatory' => 'madatory',
+        'name' => 'name',
+        'options' => 'options',
         'sort_key' => 'sortKey',
-        'madatory' => 'madatory'
+        'type' => 'type'
     ];
 
     /**
@@ -131,15 +131,15 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'label' => 'setLabel',
-        'field_type_code' => 'setFieldTypeCode',
-        'type' => 'setType',
-        'options' => 'setOptions',
         'default' => 'setDefault',
+        'field_type_code' => 'setFieldTypeCode',
+        'id' => 'setId',
+        'label' => 'setLabel',
+        'madatory' => 'setMadatory',
+        'name' => 'setName',
+        'options' => 'setOptions',
         'sort_key' => 'setSortKey',
-        'madatory' => 'setMadatory'
+        'type' => 'setType'
     ];
 
     /**
@@ -148,15 +148,15 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'label' => 'getLabel',
-        'field_type_code' => 'getFieldTypeCode',
-        'type' => 'getType',
-        'options' => 'getOptions',
         'default' => 'getDefault',
+        'field_type_code' => 'getFieldTypeCode',
+        'id' => 'getId',
+        'label' => 'getLabel',
+        'madatory' => 'getMadatory',
+        'name' => 'getName',
+        'options' => 'getOptions',
         'sort_key' => 'getSortKey',
-        'madatory' => 'getMadatory'
+        'type' => 'getType'
     ];
 
     /**
@@ -216,15 +216,15 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['label'] = $data['label'] ?? null;
-        $this->container['field_type_code'] = $data['field_type_code'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['options'] = $data['options'] ?? null;
         $this->container['default'] = $data['default'] ?? null;
-        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['field_type_code'] = $data['field_type_code'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
         $this->container['madatory'] = $data['madatory'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['options'] = $data['options'] ?? null;
+        $this->container['sort_key'] = $data['sort_key'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -236,26 +236,26 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
     {
         $invalidProperties = [];
 
+        if ($this->container['field_type_code'] === null) {
+            $invalidProperties[] = "'field_type_code' can't be null";
+        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['label'] === null) {
             $invalidProperties[] = "'label' can't be null";
         }
-        if ($this->container['field_type_code'] === null) {
-            $invalidProperties[] = "'field_type_code' can't be null";
+        if ($this->container['madatory'] === null) {
+            $invalidProperties[] = "'madatory' can't be null";
         }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['sort_key'] === null) {
             $invalidProperties[] = "'sort_key' can't be null";
         }
-        if ($this->container['madatory'] === null) {
-            $invalidProperties[] = "'madatory' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
         return $invalidProperties;
     }
@@ -273,73 +273,25 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
 
 
     /**
-     * Gets id
+     * Gets default
      *
-     * @return float
+     * @return string|null
      */
-    public function getId()
+    public function getDefault()
     {
-        return $this->container['id'];
+        return $this->container['default'];
     }
 
     /**
-     * Sets id
+     * Sets default
      *
-     * @param float $id ID of the form field. Only IDs within the same form field type are unique, i.e. a form field is identified by its type and its ID.
+     * @param string|null $default The default value set when the user does not set this value.
      *
      * @return self
      */
-    public function setId($id)
+    public function setDefault($default)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name The field's internal name. Not intended to be displayed.
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets label
-     *
-     * @return string
-     */
-    public function getLabel()
-    {
-        return $this->container['label'];
-    }
-
-    /**
-     * Sets label
-     *
-     * @param string $label A human readable label for the form field.
-     *
-     * @return self
-     */
-    public function setLabel($label)
-    {
-        $this->container['label'] = $label;
+        $this->container['default'] = $default;
 
         return $this;
     }
@@ -369,25 +321,97 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
     }
 
     /**
-     * Gets type
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getId()
     {
-        return $this->container['type'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets type
+     * Sets id
      *
-     * @param string $type One of: \"person\" (person fields), \"custom\" (custom group member fields), \"relation\" (when new family members should be signed up, can be \"spouse\" or \"child\"), \"comment\" (general comment field), \"privacy\" (privacy agreement for new users)
+     * @param int $id ID of the form field. Only IDs within the same form field type are unique, i.e. a form field is identified by its type and its ID.
      *
      * @return self
      */
-    public function setType($type)
+    public function setId($id)
     {
-        $this->container['type'] = $type;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets label
+     *
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->container['label'];
+    }
+
+    /**
+     * Sets label
+     *
+     * @param string $label A human readable label for the form field.
+     *
+     * @return self
+     */
+    public function setLabel($label)
+    {
+        $this->container['label'] = $label;
+
+        return $this;
+    }
+
+    /**
+     * Gets madatory
+     *
+     * @return bool
+     */
+    public function getMadatory()
+    {
+        return $this->container['madatory'];
+    }
+
+    /**
+     * Sets madatory
+     *
+     * @param bool $madatory If this is true, the field is required.
+     *
+     * @return self
+     */
+    public function setMadatory($madatory)
+    {
+        $this->container['madatory'] = $madatory;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name The field's internal name. Not intended to be displayed.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -417,30 +441,6 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
     }
 
     /**
-     * Gets default
-     *
-     * @return string|null
-     */
-    public function getDefault()
-    {
-        return $this->container['default'];
-    }
-
-    /**
-     * Sets default
-     *
-     * @param string|null $default The default value set when the user does not set this value.
-     *
-     * @return self
-     */
-    public function setDefault($default)
-    {
-        $this->container['default'] = $default;
-
-        return $this;
-    }
-
-    /**
      * Gets sort_key
      *
      * @return int
@@ -465,25 +465,25 @@ class GetPublicgroupsGroupIdForm200ResponseFormInner implements ModelInterface, 
     }
 
     /**
-     * Gets madatory
+     * Gets type
      *
-     * @return bool
+     * @return string
      */
-    public function getMadatory()
+    public function getType()
     {
-        return $this->container['madatory'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets madatory
+     * Sets type
      *
-     * @param bool $madatory If this is true, the field is required.
+     * @param string $type One of: \"person\" (person fields), \"custom\" (custom group member fields), \"relation\" (when new family members should be signed up, can be \"spouse\" or \"child\"), \"comment\" (general comment field), \"privacy\" (privacy agreement for new users)
      *
      * @return self
      */
-    public function setMadatory($madatory)
+    public function setType($type)
     {
-        $this->container['madatory'] = $madatory;
+        $this->container['type'] = $type;
 
         return $this;
     }

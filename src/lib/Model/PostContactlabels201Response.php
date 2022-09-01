@@ -57,8 +57,8 @@ class PostContactlabels201Response implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\StevenBuehner\ChurchTools\Model\ContactLabel',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'data' => '\StevenBuehner\ChurchTools\Model\GetContactlabels200ResponseDataInner',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -212,7 +212,7 @@ class PostContactlabels201Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets data
      *
-     * @return \StevenBuehner\ChurchTools\Model\ContactLabel|null
+     * @return \StevenBuehner\ChurchTools\Model\GetContactlabels200ResponseDataInner|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class PostContactlabels201Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets data
      *
-     * @param \StevenBuehner\ChurchTools\Model\ContactLabel|null $data data
+     * @param \StevenBuehner\ChurchTools\Model\GetContactlabels200ResponseDataInner|null $data data
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class PostContactlabels201Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class PostContactlabels201Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

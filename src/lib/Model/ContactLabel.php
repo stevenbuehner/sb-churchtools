@@ -50,7 +50,7 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Contact_Label';
+    protected static $openAPIModelName = 'ContactLabel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,11 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
+        'id' => 'int',
+        'is_default' => 'bool',
         'name' => 'string',
         'name_translated' => 'string',
-        'sort_key' => 'float',
-        'is_default' => 'bool'
+        'sort_key' => 'int'
     ];
 
     /**
@@ -74,10 +74,10 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
+        'is_default' => null,
         'name' => null,
         'name_translated' => null,
-        'sort_key' => null,
-        'is_default' => null
+        'sort_key' => null
     ];
 
     /**
@@ -108,10 +108,10 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'is_default' => 'isDefault',
         'name' => 'name',
         'name_translated' => 'nameTranslated',
-        'sort_key' => 'sortKey',
-        'is_default' => 'isDefault'
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -121,10 +121,10 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
+        'is_default' => 'setIsDefault',
         'name' => 'setName',
         'name_translated' => 'setNameTranslated',
-        'sort_key' => 'setSortKey',
-        'is_default' => 'setIsDefault'
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -134,10 +134,10 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
+        'is_default' => 'getIsDefault',
         'name' => 'getName',
         'name_translated' => 'getNameTranslated',
-        'sort_key' => 'getSortKey',
-        'is_default' => 'getIsDefault'
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -198,10 +198,10 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_default'] = $data['is_default'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['name_translated'] = $data['name_translated'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['is_default'] = $data['is_default'] ?? null;
     }
 
     /**
@@ -216,6 +216,9 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
+        if ($this->container['is_default'] === null) {
+            $invalidProperties[] = "'is_default' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -224,9 +227,6 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['sort_key'] === null) {
             $invalidProperties[] = "'sort_key' can't be null";
-        }
-        if ($this->container['is_default'] === null) {
-            $invalidProperties[] = "'is_default' can't be null";
         }
         return $invalidProperties;
     }
@@ -246,7 +246,7 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -256,13 +256,37 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param float $id ID of Record
+     * @param int $id ID of Record
      *
      * @return self
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_default
+     *
+     * @return bool
+     */
+    public function getIsDefault()
+    {
+        return $this->container['is_default'];
+    }
+
+    /**
+     * Sets is_default
+     *
+     * @param bool $is_default Indicator if label is the default. Used for new person emails
+     *
+     * @return self
+     */
+    public function setIsDefault($is_default)
+    {
+        $this->container['is_default'] = $is_default;
 
         return $this;
     }
@@ -318,7 +342,7 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sort_key
      *
-     * @return float
+     * @return int
      */
     public function getSortKey()
     {
@@ -328,37 +352,13 @@ class ContactLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sort_key
      *
-     * @param float $sort_key sort_key
+     * @param int $sort_key sort_key
      *
      * @return self
      */
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default
-     *
-     * @return bool
-     */
-    public function getIsDefault()
-    {
-        return $this->container['is_default'];
-    }
-
-    /**
-     * Sets is_default
-     *
-     * @param bool $is_default Indicator if label is the default. Used for new person emails
-     *
-     * @return self
-     */
-    public function setIsDefault($is_default)
-    {
-        $this->container['is_default'] = $is_default;
 
         return $this;
     }

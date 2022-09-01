@@ -57,10 +57,10 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
+        'd' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerD',
         'key' => 'string',
         'p1' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerP1',
-        'p2' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerP1',
-        'd' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerD'
+        'p2' => '\StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerP1'
     ];
 
     /**
@@ -71,10 +71,10 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'd' => null,
         'key' => null,
         'p1' => null,
-        'p2' => null,
-        'd' => null
+        'p2' => null
     ];
 
     /**
@@ -104,10 +104,10 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
+        'd' => 'd',
         'key' => 'key',
         'p1' => 'p1',
-        'p2' => 'p2',
-        'd' => 'd'
+        'p2' => 'p2'
     ];
 
     /**
@@ -116,10 +116,10 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
+        'd' => 'setD',
         'key' => 'setKey',
         'p1' => 'setP1',
-        'p2' => 'setP2',
-        'd' => 'setD'
+        'p2' => 'setP2'
     ];
 
     /**
@@ -128,10 +128,10 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
+        'd' => 'getD',
         'key' => 'getKey',
         'p1' => 'getP1',
-        'p2' => 'getP2',
-        'd' => 'getD'
+        'p2' => 'getP2'
     ];
 
     /**
@@ -191,10 +191,10 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
+        $this->container['d'] = $data['d'] ?? null;
         $this->container['key'] = $data['key'] ?? null;
         $this->container['p1'] = $data['p1'] ?? null;
         $this->container['p2'] = $data['p2'] ?? null;
-        $this->container['d'] = $data['d'] ?? null;
     }
 
     /**
@@ -220,6 +220,30 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets d
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerD|null
+     */
+    public function getD()
+    {
+        return $this->container['d'];
+    }
+
+    /**
+     * Sets d
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerD|null $d d
+     *
+     * @return self
+     */
+    public function setD($d)
+    {
+        $this->container['d'] = $d;
+
+        return $this;
+    }
 
     /**
      * Gets key
@@ -289,30 +313,6 @@ class GetPersonsDuplicates200ResponseDataInner implements ModelInterface, ArrayA
     public function setP2($p2)
     {
         $this->container['p2'] = $p2;
-
-        return $this;
-    }
-
-    /**
-     * Gets d
-     *
-     * @return \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerD|null
-     */
-    public function getD()
-    {
-        return $this->container['d'];
-    }
-
-    /**
-     * Sets d
-     *
-     * @param \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200ResponseDataInnerD|null $d d
-     *
-     * @return self
-     */
-    public function setD($d)
-    {
-        $this->container['d'] = $d;
 
         return $this;
     }

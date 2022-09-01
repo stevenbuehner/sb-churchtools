@@ -57,7 +57,7 @@ class GetGrupsIdPlaces200ResponseCreatedPerson implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float'
+        'id' => 'int'
     ];
 
     /**
@@ -209,7 +209,7 @@ class GetGrupsIdPlaces200ResponseCreatedPerson implements ModelInterface, ArrayA
     /**
      * Gets id
      *
-     * @return float
+     * @return int
      */
     public function getId()
     {
@@ -219,7 +219,7 @@ class GetGrupsIdPlaces200ResponseCreatedPerson implements ModelInterface, ArrayA
     /**
      * Sets id
      *
-     * @param float $id Person who crated the Place
+     * @param int $id Person who crated the Place
      *
      * @return self
      */

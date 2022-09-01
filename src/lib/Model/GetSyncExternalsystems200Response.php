@@ -58,7 +58,7 @@ class GetSyncExternalsystems200Response implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'data' => '\StevenBuehner\ChurchTools\Model\ExternalSystem1[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\Meta'
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta'
     ];
 
     /**
@@ -236,7 +236,7 @@ class GetSyncExternalsystems200Response implements ModelInterface, ArrayAccess, 
     /**
      * Gets meta
      *
-     * @return \StevenBuehner\ChurchTools\Model\Meta|null
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
      */
     public function getMeta()
     {
@@ -246,7 +246,7 @@ class GetSyncExternalsystems200Response implements ModelInterface, ArrayAccess, 
     /**
      * Sets meta
      *
-     * @param \StevenBuehner\ChurchTools\Model\Meta|null $meta meta
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
      *
      * @return self
      */

@@ -57,14 +57,14 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'cost_center_id' => 'int',
-        'purpose_account_id' => 'int',
-        'sort_key' => 'int',
-        'is_income' => 'bool',
         'account_ids' => 'int[]',
-        'meta' => '\StevenBuehner\ChurchTools\Model\EntityMetaData'
+        'cost_center_id' => 'int',
+        'id' => 'int',
+        'is_income' => 'bool',
+        'meta' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta',
+        'name' => 'string',
+        'purpose_account_id' => 'int',
+        'sort_key' => 'int'
     ];
 
     /**
@@ -75,14 +75,14 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'cost_center_id' => null,
-        'purpose_account_id' => null,
-        'sort_key' => null,
-        'is_income' => null,
         'account_ids' => null,
-        'meta' => null
+        'cost_center_id' => null,
+        'id' => null,
+        'is_income' => null,
+        'meta' => null,
+        'name' => null,
+        'purpose_account_id' => null,
+        'sort_key' => null
     ];
 
     /**
@@ -112,14 +112,14 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'cost_center_id' => 'costCenterId',
-        'purpose_account_id' => 'purposeAccountId',
-        'sort_key' => 'sortKey',
-        'is_income' => 'isIncome',
         'account_ids' => 'accountIds',
-        'meta' => 'meta'
+        'cost_center_id' => 'costCenterId',
+        'id' => 'id',
+        'is_income' => 'isIncome',
+        'meta' => 'meta',
+        'name' => 'name',
+        'purpose_account_id' => 'purposeAccountId',
+        'sort_key' => 'sortKey'
     ];
 
     /**
@@ -128,14 +128,14 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'cost_center_id' => 'setCostCenterId',
-        'purpose_account_id' => 'setPurposeAccountId',
-        'sort_key' => 'setSortKey',
-        'is_income' => 'setIsIncome',
         'account_ids' => 'setAccountIds',
-        'meta' => 'setMeta'
+        'cost_center_id' => 'setCostCenterId',
+        'id' => 'setId',
+        'is_income' => 'setIsIncome',
+        'meta' => 'setMeta',
+        'name' => 'setName',
+        'purpose_account_id' => 'setPurposeAccountId',
+        'sort_key' => 'setSortKey'
     ];
 
     /**
@@ -144,14 +144,14 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'cost_center_id' => 'getCostCenterId',
-        'purpose_account_id' => 'getPurposeAccountId',
-        'sort_key' => 'getSortKey',
-        'is_income' => 'getIsIncome',
         'account_ids' => 'getAccountIds',
-        'meta' => 'getMeta'
+        'cost_center_id' => 'getCostCenterId',
+        'id' => 'getId',
+        'is_income' => 'getIsIncome',
+        'meta' => 'getMeta',
+        'name' => 'getName',
+        'purpose_account_id' => 'getPurposeAccountId',
+        'sort_key' => 'getSortKey'
     ];
 
     /**
@@ -211,14 +211,14 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
+        $this->container['account_ids'] = $data['account_ids'] ?? null;
         $this->container['cost_center_id'] = $data['cost_center_id'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['is_income'] = $data['is_income'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
         $this->container['purpose_account_id'] = $data['purpose_account_id'] ?? null;
         $this->container['sort_key'] = $data['sort_key'] ?? null;
-        $this->container['is_income'] = $data['is_income'] ?? null;
-        $this->container['account_ids'] = $data['account_ids'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -246,49 +246,25 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
 
 
     /**
-     * Gets id
+     * Gets account_ids
      *
-     * @return int|null
+     * @return int[]|null
      */
-    public function getId()
+    public function getAccountIds()
     {
-        return $this->container['id'];
+        return $this->container['account_ids'];
     }
 
     /**
-     * Sets id
+     * Sets account_ids
      *
-     * @param int|null $id id
+     * @param int[]|null $account_ids account_ids
      *
      * @return self
      */
-    public function setId($id)
+    public function setAccountIds($account_ids)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
+        $this->container['account_ids'] = $account_ids;
 
         return $this;
     }
@@ -313,6 +289,102 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
     public function setCostCenterId($cost_center_id)
     {
         $this->container['cost_center_id'] = $cost_center_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_income
+     *
+     * @return bool|null
+     */
+    public function getIsIncome()
+    {
+        return $this->container['is_income'];
+    }
+
+    /**
+     * Sets is_income
+     *
+     * @param bool|null $is_income is_income
+     *
+     * @return self
+     */
+    public function setIsIncome($is_income)
+    {
+        $this->container['is_income'] = $is_income;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -361,78 +433,6 @@ class GetAllData200ResponseDataTransactionPurposesInner implements ModelInterfac
     public function setSortKey($sort_key)
     {
         $this->container['sort_key'] = $sort_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_income
-     *
-     * @return bool|null
-     */
-    public function getIsIncome()
-    {
-        return $this->container['is_income'];
-    }
-
-    /**
-     * Sets is_income
-     *
-     * @param bool|null $is_income is_income
-     *
-     * @return self
-     */
-    public function setIsIncome($is_income)
-    {
-        $this->container['is_income'] = $is_income;
-
-        return $this;
-    }
-
-    /**
-     * Gets account_ids
-     *
-     * @return int[]|null
-     */
-    public function getAccountIds()
-    {
-        return $this->container['account_ids'];
-    }
-
-    /**
-     * Sets account_ids
-     *
-     * @param int[]|null $account_ids account_ids
-     *
-     * @return self
-     */
-    public function setAccountIds($account_ids)
-    {
-        $this->container['account_ids'] = $account_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \StevenBuehner\ChurchTools\Model\EntityMetaData|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \StevenBuehner\ChurchTools\Model\EntityMetaData|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
 
         return $this;
     }
