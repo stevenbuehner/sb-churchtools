@@ -14776,10 +14776,12 @@
                                       "type": "string"
                                     },
                                     "domainAttributes": {
-                                      "items": {
-                                        "type": "object"
+                                      "properties": {
+                                        "note": {
+                                          "type": "string"
+                                        }
                                       },
-                                      "type": "array"
+                                      "type": "object"
                                     },
                                     "domainIdentifier": {
                                       "type": "string"
@@ -39531,10 +39533,12 @@
                                           "type": "string"
                                         },
                                         "domainAttributes": {
-                                          "items": {
-                                            "type": "object"
+                                          "properties": {
+                                            "note": {
+                                              "type": "string"
+                                            }
                                           },
-                                          "type": "array"
+                                          "type": "object"
                                         },
                                         "domainIdentifier": {
                                           "type": "string"
@@ -44830,10 +44834,12 @@
                                 "type": "string"
                               },
                               "domainAttributes": {
-                                "items": {
-                                  "type": "object"
+                                "properties": {
+                                  "note": {
+                                    "type": "string"
+                                  }
                                 },
-                                "type": "array"
+                                "type": "object"
                               },
                               "domainIdentifier": {
                                 "type": "string"
