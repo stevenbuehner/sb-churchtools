@@ -437,7 +437,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -451,7 +450,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -950,7 +948,6 @@
                     "modifiedDate": {
                       "example": "2022-03-16T18:00:00Z",
                       "format": "date-time",
-                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                       "type": "string"
                     },
                     "modifiedPid": {
@@ -1224,7 +1221,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPid": {
@@ -1273,7 +1269,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPid": {
@@ -1563,7 +1558,6 @@
                         "modifiedDate": {
                           "example": "2022-03-16T18:00:00Z",
                           "format": "date-time",
-                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                           "type": "string"
                         },
                         "modifiedPid": {
@@ -1605,7 +1599,6 @@
                       "modifiedDate": {
                         "example": "2022-03-16T18:00:00Z",
                         "format": "date-time",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                         "type": "string"
                       },
                       "modifiedPid": {
@@ -1635,7 +1628,6 @@
               "endDate": {
                 "example": "2021-01-30T08:30:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "exceptions": {
@@ -1654,7 +1646,6 @@
                         "modifiedDate": {
                           "example": "2022-03-16T18:00:00Z",
                           "format": "date-time",
-                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                           "type": "string"
                         },
                         "modifiedPid": {
@@ -1690,7 +1681,6 @@
                   "createdDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "createdPerson": {
@@ -1704,7 +1694,6 @@
                   "modifiedDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "modifiedPerson": {
@@ -1736,7 +1725,6 @@
                 "example": "2021-01-30T08:30:00Z",
                 "format": "date-time",
                 "nullable": true,
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "signup": {
@@ -1766,7 +1754,6 @@
               "startDate": {
                 "example": "2021-01-30T08:30:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "version": {
@@ -1780,13 +1767,11 @@
               "endDate": {
                 "example": "2021-01-30T08:30:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "startDate": {
                 "example": "2021-01-30T08:30:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               }
             },
@@ -1904,7 +1889,6 @@
                     "modifiedDate": {
                       "example": "2022-03-16T18:00:00Z",
                       "format": "date-time",
-                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                       "type": "string"
                     },
                     "modifiedPid": {
@@ -1968,7 +1952,6 @@
                     "modifiedDate": {
                       "example": "2022-03-16T18:00:00Z",
                       "format": "date-time",
-                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                       "type": "string"
                     },
                     "modifiedPid": {
@@ -1996,7 +1979,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -2010,7 +1992,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -2216,7 +2197,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPid": {
@@ -2540,7 +2520,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -2554,7 +2533,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -3245,7 +3223,6 @@
                   "createdDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "createdPerson": {
@@ -3259,7 +3236,6 @@
                   "modifiedDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "modifiedPerson": {
@@ -3709,7 +3685,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -3723,7 +3698,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -5200,7 +5174,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPid": {
@@ -5441,7 +5414,6 @@
                     "createdDate": {
                       "example": "2022-03-16T18:00:00Z",
                       "format": "date-time",
-                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                       "type": "string"
                     },
                     "createdPerson": {
@@ -5455,7 +5427,6 @@
                     "modifiedDate": {
                       "example": "2022-03-16T18:00:00Z",
                       "format": "date-time",
-                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                       "type": "string"
                     },
                     "modifiedPerson": {
@@ -6103,7 +6074,6 @@
                       "createdDate": {
                         "example": "2022-03-16T18:00:00Z",
                         "format": "date-time",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                         "type": "string"
                       },
                       "createdPerson": {
@@ -6117,7 +6087,6 @@
                       "modifiedDate": {
                         "example": "2022-03-16T18:00:00Z",
                         "format": "date-time",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                         "type": "string"
                       },
                       "modifiedPerson": {
@@ -6314,7 +6283,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -6328,7 +6296,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -7105,7 +7072,6 @@
           "createdDate": {
             "example": "2022-03-16T18:00:00Z",
             "format": "date-time",
-            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
             "type": "string"
           },
           "createdPerson": {
@@ -7119,7 +7085,6 @@
           "modifiedDate": {
             "example": "2022-03-16T18:00:00Z",
             "format": "date-time",
-            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
             "type": "string"
           },
           "modifiedPerson": {
@@ -7138,7 +7103,6 @@
           "createdDate": {
             "example": "2022-03-16T18:00:00Z",
             "format": "date-time",
-            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
             "type": "string"
           },
           "createdPerson": {
@@ -7205,7 +7169,6 @@
           "modifiedDate": {
             "example": "2022-03-16T18:00:00Z",
             "format": "date-time",
-            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
             "type": "string"
           },
           "modifiedPerson": {
@@ -7277,7 +7240,6 @@
           "modifiedDate": {
             "example": "2022-03-16T18:00:00Z",
             "format": "date-time",
-            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
             "type": "string"
           },
           "modifiedPid": {
@@ -7508,7 +7470,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -7522,7 +7483,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -9232,7 +9192,6 @@
                   "createdDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "createdPerson": {
@@ -9246,7 +9205,6 @@
                   "modifiedDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "modifiedPerson": {
@@ -9550,7 +9508,6 @@
                   "createdDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "createdPerson": {
@@ -9564,7 +9521,6 @@
                   "modifiedDate": {
                     "example": "2022-03-16T18:00:00Z",
                     "format": "date-time",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                     "type": "string"
                   },
                   "modifiedPerson": {
@@ -9690,7 +9646,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -9757,7 +9712,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -9986,7 +9940,6 @@
                           "modifiedDate": {
                             "example": "2022-03-16T18:00:00Z",
                             "format": "date-time",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                             "type": "string"
                           },
                           "modifiedPid": {
@@ -10050,7 +10003,6 @@
                           "modifiedDate": {
                             "example": "2022-03-16T18:00:00Z",
                             "format": "date-time",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                             "type": "string"
                           },
                           "modifiedPid": {
@@ -10078,7 +10030,6 @@
                     "createdDate": {
                       "example": "2022-03-16T18:00:00Z",
                       "format": "date-time",
-                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                       "type": "string"
                     },
                     "createdPerson": {
@@ -10092,7 +10043,6 @@
                     "modifiedDate": {
                       "example": "2022-03-16T18:00:00Z",
                       "format": "date-time",
-                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                       "type": "string"
                     },
                     "modifiedPerson": {
@@ -10169,7 +10119,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -10183,7 +10132,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -11788,7 +11736,6 @@
               "createdDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "createdPerson": {
@@ -11855,7 +11802,6 @@
               "modifiedDate": {
                 "example": "2022-03-16T18:00:00Z",
                 "format": "date-time",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                 "type": "string"
               },
               "modifiedPerson": {
@@ -12365,7 +12311,6 @@
                                         "modifiedDate": {
                                           "example": "2022-03-16T18:00:00Z",
                                           "format": "date-time",
-                                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                           "type": "string"
                                         },
                                         "modifiedPid": {
@@ -12392,21 +12337,18 @@
                               "endDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "exceptions": {
                                 "items": {
                                   "properties": {
                                     "endDate": {
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "id": {
                                       "type": "string"
                                     },
                                     "startDate": {
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "userId": {
@@ -12429,7 +12371,6 @@
                                   "createdDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "createdPerson": {
@@ -12443,7 +12384,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPerson": {
@@ -12543,7 +12483,6 @@
                               "startDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "statusId": {
@@ -12560,13 +12499,11 @@
                               "endDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "startDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               }
                             },
@@ -12637,7 +12574,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPid": {
@@ -12742,7 +12678,6 @@
                                         "modifiedDate": {
                                           "example": "2022-03-16T18:00:00Z",
                                           "format": "date-time",
-                                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                           "type": "string"
                                         },
                                         "modifiedPid": {
@@ -12784,7 +12719,6 @@
                                       "modifiedDate": {
                                         "example": "2022-03-16T18:00:00Z",
                                         "format": "date-time",
-                                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                         "type": "string"
                                       },
                                       "modifiedPid": {
@@ -12814,7 +12748,6 @@
                               "endDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "exceptions": {
@@ -12833,7 +12766,6 @@
                                         "modifiedDate": {
                                           "example": "2022-03-16T18:00:00Z",
                                           "format": "date-time",
-                                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                           "type": "string"
                                         },
                                         "modifiedPid": {
@@ -12869,7 +12801,6 @@
                                   "createdDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "createdPerson": {
@@ -12883,7 +12814,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPerson": {
@@ -12915,7 +12845,6 @@
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
                                 "nullable": true,
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "signup": {
@@ -12945,7 +12874,6 @@
                               "startDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "version": {
@@ -12959,13 +12887,11 @@
                               "endDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "startDate": {
                                 "example": "2021-01-30T08:30:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               }
                             },
@@ -13803,7 +13729,6 @@
                                         "modifiedDate": {
                                           "example": "2022-03-16T18:00:00Z",
                                           "format": "date-time",
-                                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                           "type": "string"
                                         },
                                         "modifiedPid": {
@@ -13849,7 +13774,6 @@
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
                                   "minLength": 1,
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "exceptions": {
@@ -13875,7 +13799,6 @@
                                     "createdDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "createdPerson": {
@@ -13889,7 +13812,6 @@
                                     "modifiedDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "modifiedPerson": {
@@ -13915,7 +13837,6 @@
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
                                   "nullable": true,
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "signup": {
@@ -13949,7 +13870,6 @@
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
                                   "minLength": 1,
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "version": {
@@ -13982,14 +13902,12 @@
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
                                   "minLength": 1,
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "startDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
                                   "minLength": 1,
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 }
                               },
@@ -14049,7 +13967,6 @@
                                       "createdDate": {
                                         "example": "2022-03-16T18:00:00Z",
                                         "format": "date-time",
-                                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                         "type": "string"
                                       },
                                       "createdPerson": {
@@ -14063,7 +13980,6 @@
                                       "modifiedDate": {
                                         "example": "2022-03-16T18:00:00Z",
                                         "format": "date-time",
-                                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                         "type": "string"
                                       },
                                       "modifiedPerson": {
@@ -14094,7 +14010,6 @@
                                     "format": "date-time",
                                     "minLength": 1,
                                     "nullable": true,
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "resource": {
@@ -14160,7 +14075,6 @@
                                   "startDate": {
                                     "format": "date-time",
                                     "minLength": 1,
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "statusId": {
@@ -14198,13 +14112,11 @@
                                   "endDate": {
                                     "format": "date-time",
                                     "minLength": 1,
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "startDate": {
                                     "format": "date-time",
                                     "minLength": 1,
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   }
                                 },
@@ -14963,7 +14875,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -14977,7 +14888,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -15840,7 +15750,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -15854,7 +15763,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -16735,7 +16643,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -16749,7 +16656,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -18081,7 +17987,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -18095,7 +18000,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -19160,7 +19064,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -19174,7 +19077,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -19627,7 +19529,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -19641,7 +19542,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -21369,7 +21269,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPid": {
@@ -21643,7 +21542,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPid": {
@@ -21760,7 +21658,6 @@
                                           "modifiedDate": {
                                             "example": "2022-03-16T18:00:00Z",
                                             "format": "date-time",
-                                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                             "type": "string"
                                           },
                                           "modifiedPid": {
@@ -21824,7 +21721,6 @@
                                           "modifiedDate": {
                                             "example": "2022-03-16T18:00:00Z",
                                             "format": "date-time",
-                                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                             "type": "string"
                                           },
                                           "modifiedPid": {
@@ -21852,7 +21748,6 @@
                                     "createdDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "createdPerson": {
@@ -21866,7 +21761,6 @@
                                     "modifiedDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "modifiedPerson": {
@@ -21943,7 +21837,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -21957,7 +21850,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -22330,7 +22222,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -22397,7 +22288,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -24872,7 +24762,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -24886,7 +24775,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -25045,7 +24933,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -25059,7 +24946,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -25311,7 +25197,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -25325,7 +25210,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -25496,7 +25380,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -25510,7 +25393,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -28548,7 +28430,6 @@
                                   "createdDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "createdPerson": {
@@ -28562,7 +28443,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPerson": {
@@ -33224,7 +33104,6 @@
                                       "createdDate": {
                                         "example": "2022-03-16T18:00:00Z",
                                         "format": "date-time",
-                                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                         "type": "string"
                                       },
                                       "createdPerson": {
@@ -33238,7 +33117,6 @@
                                       "modifiedDate": {
                                         "example": "2022-03-16T18:00:00Z",
                                         "format": "date-time",
-                                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                         "type": "string"
                                       },
                                       "modifiedPerson": {
@@ -33676,7 +33554,6 @@
                                     "createdDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "createdPerson": {
@@ -33690,7 +33567,6 @@
                                     "modifiedDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "modifiedPerson": {
@@ -34624,7 +34500,6 @@
                                     "createdDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "createdPerson": {
@@ -34638,7 +34513,6 @@
                                     "modifiedDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "modifiedPerson": {
@@ -35121,7 +34995,6 @@
                                 "createdDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "createdPerson": {
@@ -35135,7 +35008,6 @@
                                 "modifiedDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "modifiedPerson": {
@@ -36105,7 +35977,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -36119,7 +35990,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -36292,7 +36162,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -36306,7 +36175,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -39762,7 +39630,6 @@
                                   "createdDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "createdPerson": {
@@ -39776,7 +39643,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPerson": {
@@ -41061,7 +40927,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -41075,7 +40940,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -41673,7 +41537,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -41687,7 +41550,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -42679,7 +42541,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -42693,7 +42554,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -43254,7 +43114,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -43268,7 +43127,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -44140,7 +43998,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -44154,7 +44011,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -44326,7 +44182,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -44340,7 +44195,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -44573,7 +44427,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -44587,7 +44440,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -45903,7 +45755,6 @@
                                   "createdDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "createdPerson": {
@@ -45917,7 +45768,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPerson": {
@@ -46221,7 +46071,6 @@
                                   "createdDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "createdPerson": {
@@ -46235,7 +46084,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPerson": {
@@ -46684,7 +46532,6 @@
                                 "createdDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "createdPerson": {
@@ -46698,7 +46545,6 @@
                                 "modifiedDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "modifiedPerson": {
@@ -47002,7 +46848,6 @@
                                 "createdDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "createdPerson": {
@@ -47016,7 +46861,6 @@
                                 "modifiedDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "modifiedPerson": {
@@ -47425,7 +47269,6 @@
                                 "createdDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "createdPerson": {
@@ -47439,7 +47282,6 @@
                                 "modifiedDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "modifiedPerson": {
@@ -47743,7 +47585,6 @@
                                 "createdDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "createdPerson": {
@@ -47757,7 +47598,6 @@
                                 "modifiedDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "modifiedPerson": {
@@ -48144,7 +47984,6 @@
                                 "createdDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "createdPerson": {
@@ -48158,7 +47997,6 @@
                                 "modifiedDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "modifiedPerson": {
@@ -48462,7 +48300,6 @@
                                 "createdDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "createdPerson": {
@@ -48476,7 +48313,6 @@
                                 "modifiedDate": {
                                   "example": "2022-03-16T18:00:00Z",
                                   "format": "date-time",
-                                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                   "type": "string"
                                 },
                                 "modifiedPerson": {
@@ -49452,7 +49288,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -49466,7 +49301,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -50293,7 +50127,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -50307,7 +50140,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -51620,7 +51452,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -51634,7 +51465,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -55092,7 +54922,6 @@
                                           "modifiedDate": {
                                             "example": "2022-03-16T18:00:00Z",
                                             "format": "date-time",
-                                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                             "type": "string"
                                           },
                                           "modifiedPid": {
@@ -55156,7 +54985,6 @@
                                           "modifiedDate": {
                                             "example": "2022-03-16T18:00:00Z",
                                             "format": "date-time",
-                                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                             "type": "string"
                                           },
                                           "modifiedPid": {
@@ -55184,7 +55012,6 @@
                                     "createdDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "createdPerson": {
@@ -55198,7 +55025,6 @@
                                     "modifiedDate": {
                                       "example": "2022-03-16T18:00:00Z",
                                       "format": "date-time",
-                                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                       "type": "string"
                                     },
                                     "modifiedPerson": {
@@ -55275,7 +55101,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -55289,7 +55114,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -55435,7 +55259,6 @@
                                         "modifiedDate": {
                                           "example": "2022-03-16T18:00:00Z",
                                           "format": "date-time",
-                                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                           "type": "string"
                                         },
                                         "modifiedPid": {
@@ -55499,7 +55322,6 @@
                                         "modifiedDate": {
                                           "example": "2022-03-16T18:00:00Z",
                                           "format": "date-time",
-                                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                           "type": "string"
                                         },
                                         "modifiedPid": {
@@ -55527,7 +55349,6 @@
                                   "createdDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "createdPerson": {
@@ -55541,7 +55362,6 @@
                                   "modifiedDate": {
                                     "example": "2022-03-16T18:00:00Z",
                                     "format": "date-time",
-                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                     "type": "string"
                                   },
                                   "modifiedPerson": {
@@ -55618,7 +55438,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -55632,7 +55451,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -61325,7 +61143,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -61339,7 +61156,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
@@ -61786,7 +61602,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -61853,7 +61668,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -62093,7 +61907,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -62160,7 +61973,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -62413,7 +62225,6 @@
                               "createdDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "createdPerson": {
@@ -62480,7 +62291,6 @@
                               "modifiedDate": {
                                 "example": "2022-03-16T18:00:00Z",
                                 "format": "date-time",
-                                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                                 "type": "string"
                               },
                               "modifiedPerson": {
@@ -62732,7 +62542,6 @@
                             "createdDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "createdPerson": {
@@ -62799,7 +62608,6 @@
                             "modifiedDate": {
                               "example": "2022-03-16T18:00:00Z",
                               "format": "date-time",
-                              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
                               "type": "string"
                             },
                             "modifiedPerson": {
