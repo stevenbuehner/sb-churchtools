@@ -71,7 +71,12 @@ echo join(', ', $camps) . "\n\n";
 
 
 $masterDataApi = new MasterDataApi($client, $config);
-$master = $masterDataApi->getMasterDataPerson()->getData();
+$groupTypes = $masterDataApi->getPersonMasterdata()->getData()->getGroupTypes();
+echo "GroupTypes: ";
+foreach ($groupTypes as $t){
+	echo $t->getName() . ' (' . $t->getId() . '), ';
+}
+echo "\n\n";
 
 
 $done = '';
