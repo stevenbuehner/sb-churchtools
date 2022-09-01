@@ -42,6 +42,17 @@ foreach ($allGroups as $group) {
 }
 echo "\n";
 
+// Nach Grouptype gruppen holen ...
+$groups = $groupApi
+	->getGroups(NULL, NULL, NULL, NULL, NULL, NULL, NULL, [6], NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 100)
+	->getData();
+echo "Grouptype Groups: ";
+foreach ($groups as $g){
+	echo $g->getName() . ', ';
+}
+echo "\n\n";
+
+
 $calApi = new CalendarApi($client, $config);
 echo "Alle sichtbaren Kalender: ";
 $cals = [];
