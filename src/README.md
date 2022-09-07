@@ -217,14 +217,12 @@ Class | Method | HTTP request | Description
 *GeneralApi* | [**postLogin**](docs/Api/GeneralApi.md#postlogin) | **POST** /login | Login with username
 *GroupApi* | [**checkin**](docs/Api/GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
 *GroupApi* | [**createMeeting**](docs/Api/GroupApi.md#createmeeting) | **POST** /groups/{groupId}/meetings | Create a group meeting
-*GroupApi* | [**createOrUpdateMember**](docs/Api/GroupApi.md#createorupdatemember) | **PUT** /groups/members/{personId} | Create/Update a group member
-*GroupApi* | [**createOrUpdateMember_0**](docs/Api/GroupApi.md#createorupdatemember_0) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
+*GroupApi* | [**createOrUpdateMember**](docs/Api/GroupApi.md#createorupdatemember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
 *GroupApi* | [**deleteAutomaticEmail**](docs/Api/GroupApi.md#deleteautomaticemail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email
 *GroupApi* | [**deleteGroup**](docs/Api/GroupApi.md#deletegroup) | **DELETE** /groups/{groupId} | 
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingid) | **DELETE** /groups/{groupId}/meetings/{meetingId} | 
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingidmembersmemberid) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
-*GroupApi* | [**deleteMember**](docs/Api/GroupApi.md#deletemember) | **DELETE** /groups/members/{personId} | Delete a group member
-*GroupApi* | [**deleteMember_0**](docs/Api/GroupApi.md#deletemember_0) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
+*GroupApi* | [**deleteMember**](docs/Api/GroupApi.md#deletemember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
 *GroupApi* | [**getAllGroupMembers**](docs/Api/GroupApi.md#getallgroupmembers) | **GET** /groups/{groupId}/members | Get all group members
 *GroupApi* | [**getAllGroupsForPerson**](docs/Api/GroupApi.md#getallgroupsforperson) | **GET** /persons/{personId}/groups | Get all groups a member is in
 *GroupApi* | [**getAllMeetings**](docs/Api/GroupApi.md#getallmeetings) | **GET** /groups/{groupId}/meetings | Get all group meetings for a specific group
@@ -533,13 +531,10 @@ Class | Method | HTTP request | Description
 - [CreateNewTransactionPurposeRequest](docs/Model/CreateNewTransactionPurposeRequest.md)
 - [CreateNewTransactionRequest](docs/Model/CreateNewTransactionRequest.md)
 - [CreateOrUpdateMember200Response](docs/Model/CreateOrUpdateMember200Response.md)
-- [CreateOrUpdateMember200Response1](docs/Model/CreateOrUpdateMember200Response1.md)
-- [CreateOrUpdateMember200Response1Data](docs/Model/CreateOrUpdateMember200Response1Data.md)
-- [CreateOrUpdateMember200Response1DataPerson](docs/Model/CreateOrUpdateMember200Response1DataPerson.md)
-- [CreateOrUpdateMember200Response1DataPersonDomainAttributes](docs/Model/CreateOrUpdateMember200Response1DataPersonDomainAttributes.md)
 - [CreateOrUpdateMember200ResponseData](docs/Model/CreateOrUpdateMember200ResponseData.md)
+- [CreateOrUpdateMember200ResponseDataPerson](docs/Model/CreateOrUpdateMember200ResponseDataPerson.md)
+- [CreateOrUpdateMember200ResponseDataPersonDomainAttributes](docs/Model/CreateOrUpdateMember200ResponseDataPersonDomainAttributes.md)
 - [CreateOrUpdateMemberRequest](docs/Model/CreateOrUpdateMemberRequest.md)
-- [CreateOrUpdateMemberRequest1](docs/Model/CreateOrUpdateMemberRequest1.md)
 - [CreatePerson400Response](docs/Model/CreatePerson400Response.md)
 - [CreatePersonRequest](docs/Model/CreatePersonRequest.md)
 - [CreatePersonRequestPrivacyPolicyAgreement](docs/Model/CreatePersonRequestPrivacyPolicyAgreement.md)
@@ -920,6 +915,7 @@ Class | Method | HTTP request | Description
 - [JobConfigurationReturn1](docs/Model/JobConfigurationReturn1.md)
 - [Log](docs/Model/Log.md)
 - [Log1](docs/Model/Log1.md)
+- [Member](docs/Model/Member.md)
 - [MembershipNew](docs/Model/MembershipNew.md)
 - [MetaCount](docs/Model/MetaCount.md)
 - [MetaDataEntityId](docs/Model/MetaDataEntityId.md)

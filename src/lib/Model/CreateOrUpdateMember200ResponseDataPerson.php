@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateOrUpdateMember200ResponseData
+ * CreateOrUpdateMember200ResponseDataPerson
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * CreateOrUpdateMember200ResponseData Class Doc Comment
+ * CreateOrUpdateMember200ResponseDataPerson Class Doc Comment
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -40,7 +40,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateOrUpdateMember200ResponseDataPerson implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'createOrUpdateMember_200_response_data';
+    protected static $openAPIModelName = 'createOrUpdateMember_200_response_data_person';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,13 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'int',
-        'person' => '\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPerson',
-        'group_type_role_id' => 'int',
-        'comment' => 'string',
-        'member_start_date' => '\DateTime',
-        'member_end_date' => '\DateTime',
-        'waitinglist_pos' => 'int'
+        'titel' => 'string',
+        'domain_type' => 'string',
+        'domain_identifier' => 'string',
+        'api_url' => 'string',
+        'frontend_url' => 'string',
+        'image_url' => 'string',
+        'domain_attributes' => '\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPersonDomainAttributes'
     ];
 
     /**
@@ -74,13 +74,13 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
-        'person' => null,
-        'group_type_role_id' => null,
-        'comment' => null,
-        'member_start_date' => 'date',
-        'member_end_date' => 'date',
-        'waitinglist_pos' => null
+        'titel' => null,
+        'domain_type' => null,
+        'domain_identifier' => null,
+        'api_url' => null,
+        'frontend_url' => null,
+        'image_url' => null,
+        'domain_attributes' => null
     ];
 
     /**
@@ -110,13 +110,13 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
-        'person' => 'person',
-        'group_type_role_id' => 'groupTypeRoleId',
-        'comment' => 'comment',
-        'member_start_date' => 'memberStartDate',
-        'member_end_date' => 'memberEndDate',
-        'waitinglist_pos' => 'waitinglistPos'
+        'titel' => 'titel',
+        'domain_type' => 'domainType',
+        'domain_identifier' => 'domainIdentifier',
+        'api_url' => 'apiUrl',
+        'frontend_url' => 'frontendUrl',
+        'image_url' => 'imageUrl',
+        'domain_attributes' => 'domainAttributes'
     ];
 
     /**
@@ -125,13 +125,13 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
-        'person' => 'setPerson',
-        'group_type_role_id' => 'setGroupTypeRoleId',
-        'comment' => 'setComment',
-        'member_start_date' => 'setMemberStartDate',
-        'member_end_date' => 'setMemberEndDate',
-        'waitinglist_pos' => 'setWaitinglistPos'
+        'titel' => 'setTitel',
+        'domain_type' => 'setDomainType',
+        'domain_identifier' => 'setDomainIdentifier',
+        'api_url' => 'setApiUrl',
+        'frontend_url' => 'setFrontendUrl',
+        'image_url' => 'setImageUrl',
+        'domain_attributes' => 'setDomainAttributes'
     ];
 
     /**
@@ -140,13 +140,13 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
-        'person' => 'getPerson',
-        'group_type_role_id' => 'getGroupTypeRoleId',
-        'comment' => 'getComment',
-        'member_start_date' => 'getMemberStartDate',
-        'member_end_date' => 'getMemberEndDate',
-        'waitinglist_pos' => 'getWaitinglistPos'
+        'titel' => 'getTitel',
+        'domain_type' => 'getDomainType',
+        'domain_identifier' => 'getDomainIdentifier',
+        'api_url' => 'getApiUrl',
+        'frontend_url' => 'getFrontendUrl',
+        'image_url' => 'getImageUrl',
+        'domain_attributes' => 'getDomainAttributes'
     ];
 
     /**
@@ -190,6 +190,19 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    public const DOMAIN_TYPE_PERSON = 'person';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDomainTypeAllowableValues()
+    {
+        return [
+            self::DOMAIN_TYPE_PERSON,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -206,13 +219,13 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['person'] = $data['person'] ?? null;
-        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
-        $this->container['member_end_date'] = $data['member_end_date'] ?? null;
-        $this->container['waitinglist_pos'] = $data['waitinglist_pos'] ?? null;
+        $this->container['titel'] = $data['titel'] ?? null;
+        $this->container['domain_type'] = $data['domain_type'] ?? null;
+        $this->container['domain_identifier'] = $data['domain_identifier'] ?? null;
+        $this->container['api_url'] = $data['api_url'] ?? null;
+        $this->container['frontend_url'] = $data['frontend_url'] ?? null;
+        $this->container['image_url'] = $data['image_url'] ?? null;
+        $this->container['domain_attributes'] = $data['domain_attributes'] ?? null;
     }
 
     /**
@@ -223,6 +236,15 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getDomainTypeAllowableValues();
+        if (!is_null($this->container['domain_type']) && !in_array($this->container['domain_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'domain_type', must be one of '%s'",
+                $this->container['domain_type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -240,169 +262,179 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_id
-     *
-     * @return int|null
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param int|null $person_id person_id
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPerson|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPerson|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_type_role_id
-     *
-     * @return int|null
-     */
-    public function getGroupTypeRoleId()
-    {
-        return $this->container['group_type_role_id'];
-    }
-
-    /**
-     * Sets group_type_role_id
-     *
-     * @param int|null $group_type_role_id group_type_role_id
-     *
-     * @return self
-     */
-    public function setGroupTypeRoleId($group_type_role_id)
-    {
-        $this->container['group_type_role_id'] = $group_type_role_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
+     * Gets titel
      *
      * @return string|null
      */
-    public function getComment()
+    public function getTitel()
     {
-        return $this->container['comment'];
+        return $this->container['titel'];
     }
 
     /**
-     * Sets comment
+     * Sets titel
      *
-     * @param string|null $comment comment
+     * @param string|null $titel titel
      *
      * @return self
      */
-    public function setComment($comment)
+    public function setTitel($titel)
     {
-        $this->container['comment'] = $comment;
+        $this->container['titel'] = $titel;
 
         return $this;
     }
 
     /**
-     * Gets member_start_date
+     * Gets domain_type
      *
-     * @return \DateTime|null
+     * @return string|null
      */
-    public function getMemberStartDate()
+    public function getDomainType()
     {
-        return $this->container['member_start_date'];
+        return $this->container['domain_type'];
     }
 
     /**
-     * Sets member_start_date
+     * Sets domain_type
      *
-     * @param \DateTime|null $member_start_date member_start_date
+     * @param string|null $domain_type domain_type
      *
      * @return self
      */
-    public function setMemberStartDate($member_start_date)
+    public function setDomainType($domain_type)
     {
-        $this->container['member_start_date'] = $member_start_date;
+        $allowedValues = $this->getDomainTypeAllowableValues();
+        if (!is_null($domain_type) && !in_array($domain_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'domain_type', must be one of '%s'",
+                    $domain_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['domain_type'] = $domain_type;
 
         return $this;
     }
 
     /**
-     * Gets member_end_date
+     * Gets domain_identifier
      *
-     * @return \DateTime|null
+     * @return string|null
      */
-    public function getMemberEndDate()
+    public function getDomainIdentifier()
     {
-        return $this->container['member_end_date'];
+        return $this->container['domain_identifier'];
     }
 
     /**
-     * Sets member_end_date
+     * Sets domain_identifier
      *
-     * @param \DateTime|null $member_end_date member_end_date
+     * @param string|null $domain_identifier domain_identifier
      *
      * @return self
      */
-    public function setMemberEndDate($member_end_date)
+    public function setDomainIdentifier($domain_identifier)
     {
-        $this->container['member_end_date'] = $member_end_date;
+        $this->container['domain_identifier'] = $domain_identifier;
 
         return $this;
     }
 
     /**
-     * Gets waitinglist_pos
+     * Gets api_url
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getWaitinglistPos()
+    public function getApiUrl()
     {
-        return $this->container['waitinglist_pos'];
+        return $this->container['api_url'];
     }
 
     /**
-     * Sets waitinglist_pos
+     * Sets api_url
      *
-     * @param int|null $waitinglist_pos waitinglist_pos
+     * @param string|null $api_url api_url
      *
      * @return self
      */
-    public function setWaitinglistPos($waitinglist_pos)
+    public function setApiUrl($api_url)
     {
-        $this->container['waitinglist_pos'] = $waitinglist_pos;
+        $this->container['api_url'] = $api_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets frontend_url
+     *
+     * @return string|null
+     */
+    public function getFrontendUrl()
+    {
+        return $this->container['frontend_url'];
+    }
+
+    /**
+     * Sets frontend_url
+     *
+     * @param string|null $frontend_url frontend_url
+     *
+     * @return self
+     */
+    public function setFrontendUrl($frontend_url)
+    {
+        $this->container['frontend_url'] = $frontend_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets image_url
+     *
+     * @return string|null
+     */
+    public function getImageUrl()
+    {
+        return $this->container['image_url'];
+    }
+
+    /**
+     * Sets image_url
+     *
+     * @param string|null $image_url image_url
+     *
+     * @return self
+     */
+    public function setImageUrl($image_url)
+    {
+        $this->container['image_url'] = $image_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain_attributes
+     *
+     * @return \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPersonDomainAttributes|null
+     */
+    public function getDomainAttributes()
+    {
+        return $this->container['domain_attributes'];
+    }
+
+    /**
+     * Sets domain_attributes
+     *
+     * @param \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPersonDomainAttributes|null $domain_attributes domain_attributes
+     *
+     * @return self
+     */
+    public function setDomainAttributes($domain_attributes)
+    {
+        $this->container['domain_attributes'] = $domain_attributes;
 
         return $this;
     }

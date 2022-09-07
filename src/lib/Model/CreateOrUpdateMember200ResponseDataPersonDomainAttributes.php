@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateOrUpdateMember200ResponseData
+ * CreateOrUpdateMember200ResponseDataPersonDomainAttributes
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \StevenBuehner\ChurchTools\ObjectSerializer;
 
 /**
- * CreateOrUpdateMember200ResponseData Class Doc Comment
+ * CreateOrUpdateMember200ResponseDataPersonDomainAttributes Class Doc Comment
  *
  * @category Class
  * @package  StevenBuehner\ChurchTools
@@ -40,7 +40,7 @@ use \StevenBuehner\ChurchTools\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateOrUpdateMember200ResponseDataPersonDomainAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'createOrUpdateMember_200_response_data';
+    protected static $openAPIModelName = 'createOrUpdateMember_200_response_data_person_domainAttributes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,8 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_id' => 'int',
-        'person' => '\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPerson',
-        'group_type_role_id' => 'int',
-        'comment' => 'string',
-        'member_start_date' => '\DateTime',
-        'member_end_date' => '\DateTime',
-        'waitinglist_pos' => 'int'
+        'first_name' => 'string',
+        'last_name' => 'string'
     ];
 
     /**
@@ -74,13 +69,8 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person_id' => null,
-        'person' => null,
-        'group_type_role_id' => null,
-        'comment' => null,
-        'member_start_date' => 'date',
-        'member_end_date' => 'date',
-        'waitinglist_pos' => null
+        'first_name' => null,
+        'last_name' => null
     ];
 
     /**
@@ -110,13 +100,8 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_id' => 'personId',
-        'person' => 'person',
-        'group_type_role_id' => 'groupTypeRoleId',
-        'comment' => 'comment',
-        'member_start_date' => 'memberStartDate',
-        'member_end_date' => 'memberEndDate',
-        'waitinglist_pos' => 'waitinglistPos'
+        'first_name' => 'firstName',
+        'last_name' => 'lastName'
     ];
 
     /**
@@ -125,13 +110,8 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_id' => 'setPersonId',
-        'person' => 'setPerson',
-        'group_type_role_id' => 'setGroupTypeRoleId',
-        'comment' => 'setComment',
-        'member_start_date' => 'setMemberStartDate',
-        'member_end_date' => 'setMemberEndDate',
-        'waitinglist_pos' => 'setWaitinglistPos'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName'
     ];
 
     /**
@@ -140,13 +120,8 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_id' => 'getPersonId',
-        'person' => 'getPerson',
-        'group_type_role_id' => 'getGroupTypeRoleId',
-        'comment' => 'getComment',
-        'member_start_date' => 'getMemberStartDate',
-        'member_end_date' => 'getMemberEndDate',
-        'waitinglist_pos' => 'getWaitinglistPos'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName'
     ];
 
     /**
@@ -206,13 +181,8 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = $data['person_id'] ?? null;
-        $this->container['person'] = $data['person'] ?? null;
-        $this->container['group_type_role_id'] = $data['group_type_role_id'] ?? null;
-        $this->container['comment'] = $data['comment'] ?? null;
-        $this->container['member_start_date'] = $data['member_start_date'] ?? null;
-        $this->container['member_end_date'] = $data['member_end_date'] ?? null;
-        $this->container['waitinglist_pos'] = $data['waitinglist_pos'] ?? null;
+        $this->container['first_name'] = $data['first_name'] ?? null;
+        $this->container['last_name'] = $data['last_name'] ?? null;
     }
 
     /**
@@ -240,169 +210,49 @@ class CreateOrUpdateMember200ResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_id
-     *
-     * @return int|null
-     */
-    public function getPersonId()
-    {
-        return $this->container['person_id'];
-    }
-
-    /**
-     * Sets person_id
-     *
-     * @param int|null $person_id person_id
-     *
-     * @return self
-     */
-    public function setPersonId($person_id)
-    {
-        $this->container['person_id'] = $person_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person
-     *
-     * @return \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPerson|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseDataPerson|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_type_role_id
-     *
-     * @return int|null
-     */
-    public function getGroupTypeRoleId()
-    {
-        return $this->container['group_type_role_id'];
-    }
-
-    /**
-     * Sets group_type_role_id
-     *
-     * @param int|null $group_type_role_id group_type_role_id
-     *
-     * @return self
-     */
-    public function setGroupTypeRoleId($group_type_role_id)
-    {
-        $this->container['group_type_role_id'] = $group_type_role_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
+     * Gets first_name
      *
      * @return string|null
      */
-    public function getComment()
+    public function getFirstName()
     {
-        return $this->container['comment'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets comment
+     * Sets first_name
      *
-     * @param string|null $comment comment
+     * @param string|null $first_name first_name
      *
      * @return self
      */
-    public function setComment($comment)
+    public function setFirstName($first_name)
     {
-        $this->container['comment'] = $comment;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets member_start_date
+     * Gets last_name
      *
-     * @return \DateTime|null
+     * @return string|null
      */
-    public function getMemberStartDate()
+    public function getLastName()
     {
-        return $this->container['member_start_date'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets member_start_date
+     * Sets last_name
      *
-     * @param \DateTime|null $member_start_date member_start_date
+     * @param string|null $last_name last_name
      *
      * @return self
      */
-    public function setMemberStartDate($member_start_date)
+    public function setLastName($last_name)
     {
-        $this->container['member_start_date'] = $member_start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets member_end_date
-     *
-     * @return \DateTime|null
-     */
-    public function getMemberEndDate()
-    {
-        return $this->container['member_end_date'];
-    }
-
-    /**
-     * Sets member_end_date
-     *
-     * @param \DateTime|null $member_end_date member_end_date
-     *
-     * @return self
-     */
-    public function setMemberEndDate($member_end_date)
-    {
-        $this->container['member_end_date'] = $member_end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets waitinglist_pos
-     *
-     * @return int|null
-     */
-    public function getWaitinglistPos()
-    {
-        return $this->container['waitinglist_pos'];
-    }
-
-    /**
-     * Sets waitinglist_pos
-     *
-     * @param int|null $waitinglist_pos waitinglist_pos
-     *
-     * @return self
-     */
-    public function setWaitinglistPos($waitinglist_pos)
-    {
-        $this->container['waitinglist_pos'] = $waitinglist_pos;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }

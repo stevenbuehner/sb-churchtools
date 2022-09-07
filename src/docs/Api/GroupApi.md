@@ -6,14 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**checkin()**](GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
 [**createMeeting()**](GroupApi.md#createMeeting) | **POST** /groups/{groupId}/meetings | Create a group meeting
-[**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/members/{personId} | Create/Update a group member
-[**createOrUpdateMember_0()**](GroupApi.md#createOrUpdateMember_0) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
+[**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
 [**deleteAutomaticEmail()**](GroupApi.md#deleteAutomaticEmail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email
 [**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /groups/{groupId} | 
 [**deleteGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingId) | **DELETE** /groups/{groupId}/meetings/{meetingId} | 
 [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
-[**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/members/{personId} | Delete a group member
-[**deleteMember_0()**](GroupApi.md#deleteMember_0) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
+[**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
 [**getAllGroupMembers()**](GroupApi.md#getAllGroupMembers) | **GET** /groups/{groupId}/members | Get all group members
 [**getAllGroupsForPerson()**](GroupApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in
 [**getAllMeetings()**](GroupApi.md#getAllMeetings) | **GET** /groups/{groupId}/meetings | Get all group meetings for a specific group
@@ -179,71 +177,7 @@ Name | Type | Description  | Notes
 ## `createOrUpdateMember()`
 
 ```php
-createOrUpdateMember($person_id, $create_or_update_member_request): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response
-```
-
-Create/Update a group member
-
-Add or update a group member.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login-Token-Header
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$person_id = 42; // int | ID of person
-$create_or_update_member_request = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
-
-try {
-    $result = $apiInstance->createOrUpdateMember($person_id, $create_or_update_member_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GroupApi->createOrUpdateMember: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. |
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response**](../Model/CreateOrUpdateMember200Response.md)
-
-### Authorization
-
-[Login-Token-Header](../../README.md#Login-Token-Header)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`, `text/plain`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `createOrUpdateMember_0()`
-
-```php
-createOrUpdateMember_0($id, $person_id, $create_or_update_member_request1): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response1
+createOrUpdateMember($id, $person_id, $create_or_update_member_request): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response
 ```
 
 Create/Update a group member
@@ -271,13 +205,13 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 $id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
-$create_or_update_member_request1 = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest1(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest1 | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
+$create_or_update_member_request = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
 
 try {
-    $result = $apiInstance->createOrUpdateMember_0($id, $person_id, $create_or_update_member_request1);
+    $result = $apiInstance->createOrUpdateMember($id, $person_id, $create_or_update_member_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->createOrUpdateMember_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->createOrUpdateMember: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -287,11 +221,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of group |
  **person_id** | **int**| ID of person |
- **create_or_update_member_request1** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest1**](../Model/CreateOrUpdateMemberRequest1.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. |
+ **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. |
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response1**](../Model/CreateOrUpdateMember200Response1.md)
+[**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response**](../Model/CreateOrUpdateMember200Response.md)
 
 ### Authorization
 
@@ -561,68 +495,7 @@ void (empty response body)
 ## `deleteMember()`
 
 ```php
-deleteMember($person_id)
-```
-
-Delete a group member
-
-Removes a group member from the group.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login-Token-Header
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$person_id = 42; // int | ID of person
-
-try {
-    $apiInstance->deleteMember($person_id);
-} catch (Exception $e) {
-    echo 'Exception when calling GroupApi->deleteMember: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Login-Token-Header](../../README.md#Login-Token-Header)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `text/plain`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `deleteMember_0()`
-
-```php
-deleteMember_0($id, $person_id)
+deleteMember($id, $person_id)
 ```
 
 Delete a group member
@@ -652,9 +525,9 @@ $id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
 
 try {
-    $apiInstance->deleteMember_0($id, $person_id);
+    $apiInstance->deleteMember($id, $person_id);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->deleteMember_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->deleteMember: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

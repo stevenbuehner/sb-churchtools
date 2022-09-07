@@ -59,7 +59,7 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'is_checked_in' => 'bool',
-        'member' => '\StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData'
+        'member' => '\StevenBuehner\ChurchTools\Model\Member'
     ];
 
     /**
@@ -237,7 +237,7 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets member
      *
-     * @return \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData|null
+     * @return \StevenBuehner\ChurchTools\Model\Member|null
      */
     public function getMember()
     {
@@ -247,7 +247,7 @@ class GroupMeetingMember implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets member
      *
-     * @param \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200ResponseData|null $member member
+     * @param \StevenBuehner\ChurchTools\Model\Member|null $member member
      *
      * @return self
      */
