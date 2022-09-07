@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getAllData()**](MasterDataApi.md#getAllData) | **GET** /finance/masterdata | Get a master data for finance module
 [**getAllGroupTypeRoles()**](MasterDataApi.md#getAllGroupTypeRoles) | **GET** /masterdata/person/roles | Get all group type roles
 [**getEventMasterdata()**](MasterDataApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
-[**getMasterDataPerson()**](MasterDataApi.md#getMasterDataPerson) | **GET** /person/masterdata | Fetch all master data for the module \&quot;People &amp; Groups\&quot;
+[**getPersonMasterdata()**](MasterDataApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
 [**masterdataPersonRolesRoleIdGet()**](MasterDataApi.md#masterdataPersonRolesRoleIdGet) | **GET** /masterdata/person/roles/{roleId} | Get a group type role
 
 
@@ -248,15 +248,15 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getMasterDataPerson()`
+## `getPersonMasterdata()`
 
 ```php
-getMasterDataPerson(): \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response
+getPersonMasterdata(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
 ```
 
-Fetch all master data for the module \"People & Groups\"
+Get person & groups masterdata
 
-The master data are the backbone of ChurchTools. You can add new db fields, or change the available countries. This endpoint returns all data for that module to work with. Different endpoints don't include the master data directly but only state the ID for this data and this endpoint provides the data with all its details.
+Endpoint for getting all relevant masterdata for persons and groups.
 
 ### Example
 
@@ -279,10 +279,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\MasterDataApi(
 );
 
 try {
-    $result = $apiInstance->getMasterDataPerson();
+    $result = $apiInstance->getPersonMasterdata();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MasterDataApi->getMasterDataPerson: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MasterDataApi->getPersonMasterdata: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -292,7 +292,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200Response**](../Model/GetMasterDataPerson200Response.md)
+[**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response**](../Model/GetPersonMasterdata200Response.md)
 
 ### Authorization
 

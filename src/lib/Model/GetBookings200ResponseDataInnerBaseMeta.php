@@ -58,9 +58,9 @@ class GetBookings200ResponseDataInnerBaseMeta implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'created_date' => '\DateTime',
-        'created_person' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMetaCreatedPerson',
+        'created_person' => '\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataCampusesInnerMetaCreatedPerson',
         'modified_date' => '\DateTime',
-        'modified_person' => '\StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMetaCreatedPerson'
+        'modified_person' => '\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataCampusesInnerMetaCreatedPerson'
     ];
 
     /**
@@ -248,7 +248,7 @@ class GetBookings200ResponseDataInnerBaseMeta implements ModelInterface, ArrayAc
     /**
      * Gets created_person
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMetaCreatedPerson|null
+     * @return \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataCampusesInnerMetaCreatedPerson|null
      */
     public function getCreatedPerson()
     {
@@ -258,7 +258,7 @@ class GetBookings200ResponseDataInnerBaseMeta implements ModelInterface, ArrayAc
     /**
      * Sets created_person
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMetaCreatedPerson|null $created_person created_person
+     * @param \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataCampusesInnerMetaCreatedPerson|null $created_person created_person
      *
      * @return self
      */
@@ -296,7 +296,7 @@ class GetBookings200ResponseDataInnerBaseMeta implements ModelInterface, ArrayAc
     /**
      * Gets modified_person
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMetaCreatedPerson|null
+     * @return \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataCampusesInnerMetaCreatedPerson|null
      */
     public function getModifiedPerson()
     {
@@ -306,7 +306,7 @@ class GetBookings200ResponseDataInnerBaseMeta implements ModelInterface, ArrayAc
     /**
      * Sets modified_person
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetBookings200ResponseDataInnerBaseMetaCreatedPerson|null $modified_person modified_person
+     * @param \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataCampusesInnerMetaCreatedPerson|null $modified_person modified_person
      *
      * @return self
      */

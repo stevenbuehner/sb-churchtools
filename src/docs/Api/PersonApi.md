@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**getPersonById()**](PersonApi.md#getPersonById) | **GET** /persons/{id} | Get a person by ID or GUID
 [**getPersonDevices()**](PersonApi.md#getPersonDevices) | **GET** /persons/{personId}/devices | Fetch all registered devices for person
 [**getPersonEvents()**](PersonApi.md#getPersonEvents) | **GET** /persons/{id}/events | Get events that person is involved with
+[**getPersonMasterdata()**](PersonApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
 [**getPersonModuleSettings()**](PersonApi.md#getPersonModuleSettings) | **GET** /persons/{id}/settings/{module} | Get all person settings of a module
 [**getPersonProperties()**](PersonApi.md#getPersonProperties) | **POST** /persons/properties | Retrieve people&#39;s properties, whether they own an email adress
 [**getPersonRelationships()**](PersonApi.md#getPersonRelationships) | **GET** /persons/{id}/relationships | Get all relationships linked to this person
@@ -932,6 +933,65 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPersonMasterdata()`
+
+```php
+getPersonMasterdata(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
+```
+
+Get person & groups masterdata
+
+Endpoint for getting all relevant masterdata for persons and groups.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login Token (Header)
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getPersonMasterdata();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PersonApi->getPersonMasterdata: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response**](../Model/GetPersonMasterdata200Response.md)
+
+### Authorization
+
+[Login Token (Header)](../../README.md#Login Token (Header))
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

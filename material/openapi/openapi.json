@@ -17514,509 +17514,756 @@
     },
     "/person/masterdata": {
       "get": {
-        "summary": "Fetch all master data for the module \"People & Groups\"",
-        "description": "The master data are the backbone of ChurchTools. You can add new db fields, or change the available countries. This endpoint returns all data for that module to work with. Different endpoints don't include the master data directly but only state the ID for this data and this endpoint provides the data with all its details.",
-        "operationId": "getMasterDataPerson",
-        "tags": [
-          "MasterData"
-        ],
+        "description": "Endpoint for getting all relevant masterdata for persons and groups.",
+        "operationId": "getPersonMasterdata",
         "responses": {
           "200": {
-            "description": "Successful request",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
                   "properties": {
                     "data": {
-                      "type": "object",
                       "properties": {
-                        "roles": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer",
-                                "description": "ID of this group type role."
-                              },
-                              "groupTypeId": {
-                                "type": "integer",
-                                "description": "ID of corresponding group type."
-                              },
-                              "name": {
-                                "type": "string",
-                                "description": "Name of role."
-                              },
-                              "nameTranslated": {
-                                "type": "string",
-                                "description": "Trasnlated name of role."
-                              },
-                              "shorty": {
-                                "type": "string",
-                                "description": "Abbreviation of the name."
-                              },
-                              "sortKey": {
-                                "type": "integer",
-                                "description": "Number used for sorting roles."
-                              },
-                              "toDelete": {
-                                "type": "boolean",
-                                "description": "Flag, if members of this role can be deleted or removed from the group."
-                              },
-                              "hasRequested": {
-                                "type": "boolean",
-                                "description": "Flag, if group member is requesting group access."
-                              },
-                              "isLeader": {
-                                "type": "boolean",
-                                "description": "Flag, this role is a leader."
-                              },
-                              "isDefault": {
-                                "type": "boolean",
-                                "description": "Indicator of default roles."
-                              },
-                              "isHidden": {
-                                "type": "boolean",
-                                "description": "Flag, if this role is hidden in groups."
-                              },
-                              "growPathId": {
-                                "type": "integer",
-                                "nullable": true,
-                                "description": "ID of the grow path."
-                              }
-                            },
-                            "example": {
-                              "id": 5,
-                              "groupTypeId": 2,
-                              "name": "Member",
-                              "shorty": "M",
-                              "sortKey": 4,
-                              "toDelete": false,
-                              "hasRequested": false,
-                              "isLeader": false,
-                              "isDefault": true,
-                              "isHidden": false,
-                              "growPathId": null
-                            }
-                          }
-                        },
                         "ageGroups": {
-                          "type": "array",
                           "items": {
-                            "type": "object",
                             "properties": {
+                              "end": {
+                                "example": 5,
+                                "type": "integer"
+                              },
                               "id": {
+                                "example": 10,
                                 "type": "integer"
                               },
                               "name": {
+                                "example": "3-5",
                                 "type": "string"
+                              },
+                              "nameTranslated": {
+                                "example": "3-5",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "example": 3,
+                                "type": "integer"
                               },
                               "start": {
-                                "description": "Starting age of this age group.",
-                                "type": "integer"
-                              },
-                              "end": {
-                                "description": "End age of this age group.",
-                                "type": "integer"
-                              },
-                              "sortKey": {
+                                "example": 3,
                                 "type": "integer"
                               }
                             },
-                            "example": {
-                              "id": 2,
-                              "name": "11-13",
-                              "start": 11,
-                              "end": 13,
-                              "sortKey": 1
-                            }
-                          }
-                        },
-                        "targetGroups": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer"
-                              },
-                              "name": {
-                                "type": "string"
-                              },
-                              "sortKey": {
-                                "type": "integer"
-                              }
-                            },
-                            "example": {
-                              "id": 3,
-                              "name": "everyone",
-                              "sortKey": 3
-                            }
-                          }
-                        },
-                        "groupTypes": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer"
-                              },
-                              "name": {
-                                "type": "string",
-                                "description": "Name of group type."
-                              },
-                              "nameTranslated": {
-                                "type": "string",
-                                "description": "Trasnlated name of group type."
-                              },
-                              "shorty": {
-                                "type": "string",
-                                "description": "Short name for the group type"
-                              },
-                              "isLeaderNecessary": {
-                                "description": "Flag if a group of this group type MUST have a leader.",
-                                "type": "boolean"
-                              },
-                              "availableForNewPerson": {
-                                "description": "Flag if this group type is available during the dialog when creating a new person.",
-                                "type": "boolean"
-                              },
-                              "deepPermission": {
-                                "type": "integer"
-                              },
-                              "sortKey": {
-                                "type": "integer"
-                              }
-                            },
-                            "example": {
-                              "id": 3,
-                              "name": "Smallgroup",
-                              "nameTranslated": "Smallgroup",
-                              "shorty": "SG",
-                              "isLeaderNecessary": true,
-                              "availableForNewPerson": false,
-                              "deepPersmission": 0,
-                              "sortKey": 3
-                            }
-                          }
-                        },
-                        "groupCategories": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer"
-                              },
-                              "name": {
-                                "type": "string"
-                              },
-                              "sortKey": {
-                                "type": "integer"
-                              }
-                            },
-                            "example": {
-                              "id": 4,
-                              "name": "Group Category 1",
-                              "sortKey": 1
-                            }
-                          }
-                        },
-                        "groupStatuses": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer"
-                              },
-                              "name": {
-                                "type": "string"
-                              },
-                              "sortKey": {
-                                "type": "integer"
-                              }
-                            },
-                            "example": {
-                              "id": 44,
-                              "name": "active",
-                              "sortKey": 1
-                            }
-                          }
-                        },
-                        "departments": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer",
-                                "description": "ID of department"
-                              },
-                              "name": {
-                                "type": "string",
-                                "description": "Department name"
-                              },
-                              "shorty": {
-                                "type": "string",
-                                "description": "Abbreviation"
-                              },
-                              "sortKey": {
-                                "type": "integer",
-                                "description": "Used to sort all departments"
-                              }
-                            },
-                            "example": {
-                              "id": 1,
-                              "name": "Gemeindeliste",
-                              "shorty": "G",
-                              "sortKey": 10
-                            }
-                          }
-                        },
-                        "statuses": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer",
-                                "description": "ID of status"
-                              },
-                              "name": {
-                                "type": "string",
-                                "description": "Status name"
-                              },
-                              "shorty": {
-                                "type": "string",
-                                "description": "Abbreviation of name."
-                              },
-                              "isMember": {
-                                "type": "boolean",
-                                "description": "Flag if status is member of the church"
-                              },
-                              "isSearchable": {
-                                "type": "boolean",
-                                "description": "Flag if that status is searchable"
-                              },
-                              "sortKey": {
-                                "type": "integer",
-                                "description": "Used to sort all statuses"
-                              },
-                              "securityLevelId": {
-                                "type": "integer",
-                                "description": "Only persons with that securitylevel can edit/select/delete that status"
-                              }
-                            },
-                            "example": {
-                              "id": 1,
-                              "name": "Mitglied",
-                              "shorty": "M",
-                              "isMember": true,
-                              "isSearchable": true,
-                              "sortKey": 10,
-                              "securityLevelId": 1
-                            }
-                          }
+                            "type": "object"
+                          },
+                          "type": "array"
                         },
                         "campuses": {
-                          "type": "array",
                           "items": {
                             "description": "Profiles are representing campuses and the church itself.",
+                            "properties": {
+                              "address": {
+                                "properties": {
+                                  "addition": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "city": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "country": {
+                                    "description": "The details of a country",
+                                    "nullable": true,
+                                    "properties": {
+                                      "emoji": {
+                                        "type": "string"
+                                      },
+                                      "id": {
+                                        "description": "ChurchTools ID of country",
+                                        "type": "integer"
+                                      },
+                                      "iso2": {
+                                        "description": "two letter iso country code",
+                                        "type": "string"
+                                      },
+                                      "name": {
+                                        "description": "English name of country ",
+                                        "type": "string"
+                                      },
+                                      "nameTranslated": {
+                                        "description": "Translated name of the country",
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "district": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "latitude": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "longitude": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "meetingAt": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "street": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "zip": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "addition",
+                                  "city",
+                                  "district",
+                                  "latitude",
+                                  "longitude",
+                                  "meetingAt",
+                                  "street",
+                                  "zip"
+                                ],
+                                "type": "object"
+                              },
+                              "association": {
+                                "description": "Will be the same for all profiles.",
+                                "type": "object"
+                              },
+                              "banner": {
+                                "properties": {
+                                  "apiUrl": {
+                                    "type": "string"
+                                  },
+                                  "domainAttributes": {
+                                    "items": {
+                                      "type": "object"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "domainIdentifier": {
+                                    "type": "string"
+                                  },
+                                  "domainType": {
+                                    "default": "file",
+                                    "example": "file",
+                                    "type": "string"
+                                  },
+                                  "frontendUrl": {
+                                    "type": "string"
+                                  },
+                                  "icon": {
+                                    "default": "file",
+                                    "example": "file",
+                                    "type": "string"
+                                  },
+                                  "imageUrl": {
+                                    "type": "string"
+                                  },
+                                  "title": {
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "denomination": {
+                                "description": "Will be the same for all profiles.",
+                                "properties": {
+                                  "key": {
+                                    "minLength": 1,
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "minLength": 1,
+                                    "type": "string"
+                                  },
+                                  "nameTranslated": {
+                                    "minLength": 1,
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key",
+                                  "name",
+                                  "nameTranslated"
+                                ],
+                                "type": "object"
+                              },
+                              "description": {
+                                "minLength": 0,
+                                "type": "string"
+                              },
+                              "email": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "finderUrl": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "gallery": {
+                                "items": {
+                                  "properties": {
+                                    "apiUrl": {
+                                      "type": "string"
+                                    },
+                                    "domainAttributes": {
+                                      "items": {
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    },
+                                    "domainIdentifier": {
+                                      "type": "string"
+                                    },
+                                    "domainType": {
+                                      "default": "file",
+                                      "example": "file",
+                                      "type": "string"
+                                    },
+                                    "frontendUrl": {
+                                      "type": "string"
+                                    },
+                                    "icon": {
+                                      "default": "file",
+                                      "example": "file",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "type": "string"
+                                    },
+                                    "title": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "minItems": 0,
+                                "type": "array",
+                                "uniqueItems": true
+                              },
+                              "groups": {
+                                "items": {
+                                  "properties": {
+                                    "group": {
+                                      "properties": {
+                                        "apiUrl": {
+                                          "type": "string"
+                                        },
+                                        "domainAttributes": {
+                                          "items": {
+                                            "type": "object"
+                                          },
+                                          "type": "array"
+                                        },
+                                        "domainIdentifier": {
+                                          "type": "string"
+                                        },
+                                        "domainType": {
+                                          "default": "group",
+                                          "type": "string"
+                                        },
+                                        "frontendUrl": {
+                                          "type": "string"
+                                        },
+                                        "icon": {
+                                          "default": "users",
+                                          "example": "users",
+                                          "type": "string"
+                                        },
+                                        "imageUrl": {
+                                          "type": "string"
+                                        },
+                                        "title": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "groupHomepageApi": {
+                                      "minLength": 1,
+                                      "type": "string"
+                                    },
+                                    "groupHomepageUrl": {
+                                      "minLength": 1,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "groupHomepageApi",
+                                    "groupHomepageUrl"
+                                  ],
+                                  "type": "object"
+                                },
+                                "minItems": 0,
+                                "type": "array",
+                                "uniqueItems": true
+                              },
+                              "guid": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "integer"
+                              },
+                              "isPublished": {
+                                "type": "boolean"
+                              },
+                              "logo": {
+                                "properties": {
+                                  "apiUrl": {
+                                    "type": "string"
+                                  },
+                                  "domainAttributes": {
+                                    "items": {
+                                      "type": "object"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "domainIdentifier": {
+                                    "type": "string"
+                                  },
+                                  "domainType": {
+                                    "default": "file",
+                                    "example": "file",
+                                    "type": "string"
+                                  },
+                                  "frontendUrl": {
+                                    "type": "string"
+                                  },
+                                  "icon": {
+                                    "default": "file",
+                                    "example": "file",
+                                    "type": "string"
+                                  },
+                                  "imageUrl": {
+                                    "type": "string"
+                                  },
+                                  "title": {
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "meta": {
+                                "properties": {
+                                  "createdDate": {
+                                    "example": "2022-03-16T18:00:00Z",
+                                    "format": "date-time",
+                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
+                                    "type": "string"
+                                  },
+                                  "createdPerson": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "modifiedDate": {
+                                    "example": "2022-03-16T18:00:00Z",
+                                    "format": "date-time",
+                                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
+                                    "type": "string"
+                                  },
+                                  "modifiedPerson": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "name": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "phone": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "profileType": {
+                                "description": "church: Church profile for this installation; campus: one specific campus profile",
+                                "enum": [
+                                  "church",
+                                  "campus"
+                                ],
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "serviceBanner": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "services": {
+                                "items": {
+                                  "properties": {
+                                    "day": {
+                                      "type": "integer"
+                                    },
+                                    "note": {
+                                      "type": "string"
+                                    },
+                                    "repetition": {
+                                      "minLength": 1,
+                                      "type": "string"
+                                    },
+                                    "time": {
+                                      "minLength": 1,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "day",
+                                    "note",
+                                    "repetition",
+                                    "time"
+                                  ],
+                                  "type": "object"
+                                },
+                                "minItems": 0,
+                                "type": "array",
+                                "uniqueItems": true
+                              },
+                              "shortName": {
+                                "minLength": 0,
+                                "type": "string"
+                              },
+                              "shorty": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "signUpGroup": {
+                                "properties": {
+                                  "apiUrl": {
+                                    "type": "string"
+                                  },
+                                  "domainAttributes": {
+                                    "items": {
+                                      "type": "object"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "domainIdentifier": {
+                                    "type": "string"
+                                  },
+                                  "domainType": {
+                                    "default": "group",
+                                    "type": "string"
+                                  },
+                                  "frontendUrl": {
+                                    "type": "string"
+                                  },
+                                  "icon": {
+                                    "default": "users",
+                                    "example": "users",
+                                    "type": "string"
+                                  },
+                                  "imageUrl": {
+                                    "type": "string"
+                                  },
+                                  "title": {
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "slug": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "socialMedia": {
+                                "properties": {
+                                  "socialNetworkName": {
+                                    "minLength": 1,
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "socialNetworkName"
+                                ],
+                                "type": "object"
+                              },
+                              "sortKey": {
+                                "type": "integer"
+                              },
+                              "tags": {
+                                "items": {
+                                  "properties": {
+                                    "key": {
+                                      "nullable": true,
+                                      "type": "string"
+                                    },
+                                    "name": {
+                                      "nullable": true,
+                                      "type": "string"
+                                    },
+                                    "nameTranslated": {
+                                      "nullable": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "team": {
+                                "items": {
+                                  "properties": {
+                                    "note": {
+                                      "type": "string"
+                                    },
+                                    "person": {
+                                      "description": "Person as Domain Object",
+                                      "properties": {
+                                        "apiUrl": {
+                                          "description": "API Endpoint to calendar",
+                                          "example": "http://churchtools.test/api/persons/19",
+                                          "type": "string"
+                                        },
+                                        "domainAttributes": {
+                                          "properties": {
+                                            "firstName": {
+                                              "description": "",
+                                              "example": "Vanessa",
+                                              "type": "string"
+                                            },
+                                            "guid": {
+                                              "description": "Globally Unique Identifier",
+                                              "example": "D7AC4C66-8DA4-405A-B492-39B5870D2DB6",
+                                              "type": "string"
+                                            },
+                                            "lastName": {
+                                              "description": "",
+                                              "example": "Fischer",
+                                              "type": "string"
+                                            }
+                                          },
+                                          "type": "object"
+                                        },
+                                        "domainIdentifier": {
+                                          "description": "Person ID",
+                                          "example": "19",
+                                          "type": "string"
+                                        },
+                                        "domainType": {
+                                          "default": "person",
+                                          "description": "ChurchTools domain type",
+                                          "example": "person",
+                                          "type": "string"
+                                        },
+                                        "frontendUrl": {
+                                          "description": "Frontend link",
+                                          "example": "http://churchtools.test/?q=churchdb#PersonView/searchEntry:%2319/",
+                                          "type": "string"
+                                        },
+                                        "icon": {
+                                          "example": "user",
+                                          "type": "string"
+                                        },
+                                        "imageUrl": {
+                                          "description": "Image Url",
+                                          "example": "http://churchtools.test/images/310/d6d0a45779e1e40522e7cbb8552241e763e0c1084de2da094cc1583127b3c34a",
+                                          "type": "string"
+                                        },
+                                        "title": {
+                                          "description": "Fullname of Person",
+                                          "example": "Vanessa Fischer",
+                                          "type": "string"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "sortKey": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "note",
+                                    "sortKey"
+                                  ],
+                                  "type": "object"
+                                },
+                                "minItems": 0,
+                                "type": "array",
+                                "uniqueItems": true
+                              },
+                              "teamTitle": {
+                                "minLength": 1,
+                                "type": "string"
+                              },
+                              "visitors": {
+                                "type": "integer"
+                              },
+                              "website": {
+                                "minLength": 1,
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "address",
+                              "banner",
+                              "denomination",
+                              "description",
+                              "email",
+                              "finderUrl",
+                              "gallery",
+                              "groups",
+                              "guid",
+                              "id",
+                              "isPublished",
+                              "logo",
+                              "meta",
+                              "name",
+                              "nameTranslated",
+                              "phone",
+                              "profileType",
+                              "serviceBanner",
+                              "services",
+                              "shortName",
+                              "shorty",
+                              "slug",
+                              "socialMedia",
+                              "sortKey",
+                              "tags",
+                              "team",
+                              "teamTitle",
+                              "visitors",
+                              "website"
+                            ],
                             "type": "object",
                             "x-examples": {
                               "example-1": {
-                                "id": 0,
-                                "guid": "E9647F71-A01E-41C0-A37D-4F477ABD5044",
-                                "profileType": "campus",
-                                "name": "Fenster Erfahrung",
-                                "nameTranslated": "Fenster Erfahrung",
-                                "shortName": "WXP",
-                                "shorty": "Muss",
-                                "slug": "windows-xp",
-                                "finderUrl": "https://find.ct-srv.de/windows-xp",
-                                "sortKey": 5,
-                                "isPublished": true,
-                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Nulla profecto est, quin suam vim retineat a primo ad extremum. Non autem hoc: igitur ne illud quidem. Duo enim genera quae erant, fecit tria. Quare ad ea primum, si videtur; Duo Reges: constructio interrete. Dicimus aliquem hilare vivere; Mihi enim satis est, ipsis non satis.",
-                                "association": null,
-                                "website": "https://webschale.de",
-                                "email": "mail@hanshelgebuerger.de",
-                                "phone": "12345789",
-                                "denomination": {
-                                  "name": "denomination.protestant",
-                                  "nameTranslated": "evangelisch",
-                                  "key": "PROTESTANT"
-                                },
                                 "address": {
-                                  "meetingAt": "Bürger",
-                                  "street": "Jakoberstr. 51",
                                   "addition": "2. OG",
-                                  "district": "Jakobervorstadt",
-                                  "zip": "86152",
                                   "city": "Augsburg",
                                   "country": null,
+                                  "district": "Jakobervorstadt",
                                   "latitude": "",
-                                  "longitude": ""
+                                  "longitude": "",
+                                  "meetingAt": "BÃ¼rger",
+                                  "street": "Jakoberstr. 51",
+                                  "zip": "86152"
                                 },
+                                "association": null,
+                                "banner": {
+                                  "apiUrl": "http://churchtools.test/api/files/profile_banner/763",
+                                  "domainAttributes": [],
+                                  "domainIdentifier": "763",
+                                  "domainType": "file",
+                                  "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=763&filename=a63489babf8a23b1fe367de13047cbbe03512dd75a4eb1d885259eaf62810565",
+                                  "icon": "file",
+                                  "imageUrl": "http://churchtools.test/images/763/fa8ee7f4cb7a038191827cdc8e6801fc1809159c9ff404a74d46fe88580404f0",
+                                  "title": "wp2754860-windows-xp-wallpaper-hd-1920x1080 (1).jpg"
+                                },
+                                "denomination": {
+                                  "key": "PROTESTANT",
+                                  "name": "denomination.protestant",
+                                  "nameTranslated": "evangelisch"
+                                },
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Nulla profecto est, quin suam vim retineat a primo ad extremum. Non autem hoc: igitur ne illud quidem. Duo enim genera quae erant, fecit tria. Quare ad ea primum, si videtur; Duo Reges: constructio interrete. Dicimus aliquem hilare vivere; Mihi enim satis est, ipsis non satis.",
+                                "email": "mail@hanshelgebuerger.de",
+                                "finderUrl": "https://find.ct-srv.de/windows-xp",
+                                "gallery": [
+                                  {
+                                    "apiUrl": "http://churchtools.test/api/files/profile_gallery/766",
+                                    "domainAttributes": [],
+                                    "domainIdentifier": "766",
+                                    "domainType": "file",
+                                    "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=766&filename=9d75c913cc410888ff50626ff29fd6b85c3e02b0697a79b2339200f4bea3aadf",
+                                    "icon": "file",
+                                    "imageUrl": "http://churchtools.test/images/766/052c85ccf96e1d724003b4900d5d844530592cf88e38a3a3103653f7922f6c06",
+                                    "title": "big_tree_by_richardlayart_deq66if.jpg"
+                                  },
+                                  {
+                                    "apiUrl": "http://churchtools.test/api/files/profile_gallery/767",
+                                    "domainAttributes": [],
+                                    "domainIdentifier": "767",
+                                    "domainType": "file",
+                                    "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=767&filename=ebb8d78eae391de10cf3e6f84083309278485f009b5c4c8de79b8f0b5ebb0e02",
+                                    "icon": "file",
+                                    "imageUrl": "http://churchtools.test/images/767/a8bf4a0c2a09b9bc82c82fc08890fd5cf63065d89d70b569df5923d02592063a",
+                                    "title": "fantasy_house_by_dannaannet_den6jv7.jpg"
+                                  }
+                                ],
                                 "groups": [
                                   {
                                     "group": {
-                                      "title": "Gottesdienst",
-                                      "domainType": "group",
-                                      "domainIdentifier": "10",
                                       "apiUrl": "http://churchtools.test/api/groups/10",
+                                      "domainAttributes": {
+                                        "note": ""
+                                      },
+                                      "domainIdentifier": "10",
+                                      "domainType": "group",
                                       "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%2310/",
-                                      "imageUrl": null,
                                       "icon": "users",
-                                      "domainAttributes": {
-                                        "note": ""
-                                      }
+                                      "imageUrl": null,
+                                      "title": "Gottesdienst"
                                     },
-                                    "groupHomepageUrl": "http://churchtools.test/grouphomepage/5FhATHfzzKxtq6ys4A1z8oyucZEgI0AQ",
-                                    "groupHomepageApi": "http://churchtools.test/api/grouphomepages/5FhATHfzzKxtq6ys4A1z8oyucZEgI0AQ"
+                                    "groupHomepageApi": "http://churchtools.test/api/grouphomepages/5FhATHfzzKxtq6ys4A1z8oyucZEgI0AQ",
+                                    "groupHomepageUrl": "http://churchtools.test/grouphomepage/5FhATHfzzKxtq6ys4A1z8oyucZEgI0AQ"
                                   },
                                   {
                                     "group": {
-                                      "title": "Kleingruppen",
-                                      "domainType": "group",
-                                      "domainIdentifier": "20",
                                       "apiUrl": "http://churchtools.test/api/groups/20",
-                                      "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%2320/",
-                                      "imageUrl": null,
-                                      "icon": "users",
                                       "domainAttributes": {
                                         "note": ""
-                                      }
+                                      },
+                                      "domainIdentifier": "20",
+                                      "domainType": "group",
+                                      "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%2320/",
+                                      "icon": "users",
+                                      "imageUrl": null,
+                                      "title": "Kleingruppen"
                                     },
-                                    "groupHomepageUrl": "http://churchtools.test/grouphomepage/3sCP34eP4HM2TTfiCWCir3lhWNJcvUvM",
-                                    "groupHomepageApi": "http://churchtools.test/api/grouphomepages/3sCP34eP4HM2TTfiCWCir3lhWNJcvUvM"
+                                    "groupHomepageApi": "http://churchtools.test/api/grouphomepages/3sCP34eP4HM2TTfiCWCir3lhWNJcvUvM",
+                                    "groupHomepageUrl": "http://churchtools.test/grouphomepage/3sCP34eP4HM2TTfiCWCir3lhWNJcvUvM"
                                   },
                                   {
                                     "group": {
-                                      "title": "Anmeldungsgruppe",
-                                      "domainType": "group",
-                                      "domainIdentifier": "107",
                                       "apiUrl": "http://churchtools.test/api/groups/107",
-                                      "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%23107/",
-                                      "imageUrl": null,
-                                      "icon": "users",
                                       "domainAttributes": {
                                         "note": ""
-                                      }
+                                      },
+                                      "domainIdentifier": "107",
+                                      "domainType": "group",
+                                      "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%23107/",
+                                      "icon": "users",
+                                      "imageUrl": null,
+                                      "title": "Anmeldungsgruppe"
                                     },
-                                    "groupHomepageUrl": null,
-                                    "groupHomepageApi": null
+                                    "groupHomepageApi": null,
+                                    "groupHomepageUrl": null
                                   }
                                 ],
+                                "guid": "E9647F71-A01E-41C0-A37D-4F477ABD5044",
+                                "id": 0,
+                                "isPublished": true,
                                 "logo": {
-                                  "title": "16-162608_windows-logo-png-windows-xp-logo.jpg",
-                                  "domainType": "file",
-                                  "domainIdentifier": "764",
                                   "apiUrl": "http://churchtools.test/api/files/profile_logo/764",
-                                  "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=764&filename=34c46cd3ec74eff170db49a55ab46c4d88f1c5e67097cef03d66a1b37d27a658",
-                                  "imageUrl": "http://churchtools.test/images/764/4f758ee4dbc91d67867917ab5f092ab3e3e6d04604ffa65b3e8e43b529715391",
-                                  "icon": "file",
-                                  "domainAttributes": []
-                                },
-                                "banner": {
-                                  "title": "wp2754860-windows-xp-wallpaper-hd-1920x1080 (1).jpg",
+                                  "domainAttributes": [],
+                                  "domainIdentifier": "764",
                                   "domainType": "file",
-                                  "domainIdentifier": "763",
-                                  "apiUrl": "http://churchtools.test/api/files/profile_banner/763",
-                                  "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=763&filename=a63489babf8a23b1fe367de13047cbbe03512dd75a4eb1d885259eaf62810565",
-                                  "imageUrl": "http://churchtools.test/images/763/fa8ee7f4cb7a038191827cdc8e6801fc1809159c9ff404a74d46fe88580404f0",
+                                  "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=764&filename=34c46cd3ec74eff170db49a55ab46c4d88f1c5e67097cef03d66a1b37d27a658",
                                   "icon": "file",
-                                  "domainAttributes": []
+                                  "imageUrl": "http://churchtools.test/images/764/4f758ee4dbc91d67867917ab5f092ab3e3e6d04604ffa65b3e8e43b529715391",
+                                  "title": "16-162608_windows-logo-png-windows-xp-logo.jpg"
                                 },
-                                "socialMedia": {
-                                  "Instagram": "https://instagram.com/wxp",
-                                  "Facebook": "https://facebook.com/wxp"
-                                },
-                                "tags": [
-                                  "active",
-                                  "charismatic",
-                                  "personal"
-                                ],
-                                "services": [
-                                  {
-                                    "day": 6,
-                                    "repetition": "weekly",
-                                    "time": "10:30",
-                                    "note": ""
-                                  },
-                                  {
-                                    "day": 0,
-                                    "repetition": "weekly",
-                                    "time": "20:00",
-                                    "note": ""
-                                  }
-                                ],
-                                "visitors": 50,
-                                "serviceBanner": "http://churchtools.test/images/765/b1b813c7b966d47019e3fe80d381fb1fc930dbca0b3b530d1bf464414329b644",
-                                "signUpGroup": null,
-                                "gallery": [
-                                  {
-                                    "title": "big_tree_by_richardlayart_deq66if.jpg",
-                                    "domainType": "file",
-                                    "domainIdentifier": "766",
-                                    "apiUrl": "http://churchtools.test/api/files/profile_gallery/766",
-                                    "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=766&filename=9d75c913cc410888ff50626ff29fd6b85c3e02b0697a79b2339200f4bea3aadf",
-                                    "imageUrl": "http://churchtools.test/images/766/052c85ccf96e1d724003b4900d5d844530592cf88e38a3a3103653f7922f6c06",
-                                    "icon": "file",
-                                    "domainAttributes": []
-                                  },
-                                  {
-                                    "title": "fantasy_house_by_dannaannet_den6jv7.jpg",
-                                    "domainType": "file",
-                                    "domainIdentifier": "767",
-                                    "apiUrl": "http://churchtools.test/api/files/profile_gallery/767",
-                                    "frontendUrl": "http://churchtools.test/?q=public/filedownload&id=767&filename=ebb8d78eae391de10cf3e6f84083309278485f009b5c4c8de79b8f0b5ebb0e02",
-                                    "imageUrl": "http://churchtools.test/images/767/a8bf4a0c2a09b9bc82c82fc08890fd5cf63065d89d70b569df5923d02592063a",
-                                    "icon": "file",
-                                    "domainAttributes": []
-                                  }
-                                ],
-                                "teamTitle": "Unser Team",
-                                "team": [
-                                  {
-                                    "person": {
-                                      "title": "Peter Musterhaus",
-                                      "domainType": "person",
-                                      "domainIdentifier": "31",
-                                      "apiUrl": "http://churchtools.test/api/persons/31",
-                                      "frontendUrl": "http://churchtools.test/?q=churchdb#PersonView/searchEntry:%2331/",
-                                      "imageUrl": null,
-                                      "icon": "user",
-                                      "domainAttributes": {
-                                        "firstName": "Peter",
-                                        "lastName": "Musterhaus",
-                                        "guid": "BAFF526A-9DF2-4B72-9029-3854FC557820"
-                                      }
-                                    },
-                                    "note": "Mein Text",
-                                    "sortKey": 0
-                                  },
-                                  {
-                                    "person": {
-                                      "title": "Hanna Hase",
-                                      "domainType": "person",
-                                      "domainIdentifier": "190",
-                                      "apiUrl": "http://churchtools.test/api/persons/190",
-                                      "frontendUrl": "http://churchtools.test/?q=churchdb#PersonView/searchEntry:%23190/",
-                                      "imageUrl": null,
-                                      "icon": "user",
-                                      "domainAttributes": {
-                                        "firstName": "Hanna",
-                                        "lastName": "Hase",
-                                        "guid": "4E1E355F-3DE0-4476-922E-5C82713144E5"
-                                      }
-                                    },
-                                    "note": "lorema",
-                                    "sortKey": 0
-                                  }
-                                ],
                                 "meta": {
                                   "createdDate": "2022-02-01T15:56:38Z",
                                   "createdPerson": {
@@ -18026,816 +18273,117 @@
                                   "modifiedPerson": {
                                     "id": 1
                                   }
-                                }
+                                },
+                                "name": "Fenster Erfahrung",
+                                "nameTranslated": "Fenster Erfahrung",
+                                "phone": "12345789",
+                                "profileType": "campus",
+                                "serviceBanner": "http://churchtools.test/images/765/b1b813c7b966d47019e3fe80d381fb1fc930dbca0b3b530d1bf464414329b644",
+                                "services": [
+                                  {
+                                    "day": 6,
+                                    "note": "",
+                                    "repetition": "weekly",
+                                    "time": "10:30"
+                                  },
+                                  {
+                                    "day": 0,
+                                    "note": "",
+                                    "repetition": "weekly",
+                                    "time": "20:00"
+                                  }
+                                ],
+                                "shortName": "WXP",
+                                "shorty": "Muss",
+                                "signUpGroup": null,
+                                "slug": "windows-xp",
+                                "socialMedia": {
+                                  "Facebook": "https://facebook.com/wxp",
+                                  "Instagram": "https://instagram.com/wxp"
+                                },
+                                "sortKey": 5,
+                                "tags": [
+                                  "active",
+                                  "charismatic",
+                                  "personal"
+                                ],
+                                "team": [
+                                  {
+                                    "note": "Mein Text",
+                                    "person": {
+                                      "apiUrl": "http://churchtools.test/api/persons/31",
+                                      "domainAttributes": {
+                                        "firstName": "Peter",
+                                        "guid": "BAFF526A-9DF2-4B72-9029-3854FC557820",
+                                        "lastName": "Musterhaus"
+                                      },
+                                      "domainIdentifier": "31",
+                                      "domainType": "person",
+                                      "frontendUrl": "http://churchtools.test/?q=churchdb#PersonView/searchEntry:%2331/",
+                                      "icon": "user",
+                                      "imageUrl": null,
+                                      "title": "Peter Musterhaus"
+                                    },
+                                    "sortKey": 0
+                                  },
+                                  {
+                                    "note": "lorema",
+                                    "person": {
+                                      "apiUrl": "http://churchtools.test/api/persons/190",
+                                      "domainAttributes": {
+                                        "firstName": "Hanna",
+                                        "guid": "4E1E355F-3DE0-4476-922E-5C82713144E5",
+                                        "lastName": "Hase"
+                                      },
+                                      "domainIdentifier": "190",
+                                      "domainType": "person",
+                                      "frontendUrl": "http://churchtools.test/?q=churchdb#PersonView/searchEntry:%23190/",
+                                      "icon": "user",
+                                      "imageUrl": null,
+                                      "title": "Hanna Hase"
+                                    },
+                                    "sortKey": 0
+                                  }
+                                ],
+                                "teamTitle": "Unser Team",
+                                "visitors": 50,
+                                "website": "https://webschale.de"
                               }
                             },
                             "x-tags": [
                               "Profile",
                               "Campus"
-                            ],
-                            "properties": {
-                              "id": {
-                                "type": "integer"
-                              },
-                              "guid": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "profileType": {
-                                "type": "string",
-                                "minLength": 1,
-                                "enum": [
-                                  "church",
-                                  "campus"
-                                ],
-                                "description": "church: Church profile for this installation; campus: one specific campus profile"
-                              },
-                              "name": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "nameTranslated": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "shortName": {
-                                "type": "string",
-                                "minLength": 0
-                              },
-                              "shorty": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "slug": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "finderUrl": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "sortKey": {
-                                "type": "integer"
-                              },
-                              "isPublished": {
-                                "type": "boolean"
-                              },
-                              "description": {
-                                "type": "string",
-                                "minLength": 0
-                              },
-                              "association": {
-                                "type": "object",
-                                "description": "Will be the same for all profiles."
-                              },
-                              "website": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "email": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "phone": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "denomination": {
-                                "type": "object",
-                                "required": [
-                                  "name",
-                                  "nameTranslated",
-                                  "key"
-                                ],
-                                "description": "Will be the same for all profiles.",
-                                "properties": {
-                                  "name": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "nameTranslated": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "key": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  }
-                                }
-                              },
-                              "address": {
-                                "type": "object",
-                                "required": [
-                                  "meetingAt",
-                                  "street",
-                                  "addition",
-                                  "district",
-                                  "zip",
-                                  "city",
-                                  "latitude",
-                                  "longitude"
-                                ],
-                                "properties": {
-                                  "meetingAt": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "street": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "addition": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "district": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "zip": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "city": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "country": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "latitude": {
-                                    "type": "string",
-                                    "nullable": true
-                                  },
-                                  "longitude": {
-                                    "type": "string",
-                                    "nullable": true
-                                  }
-                                }
-                              },
-                              "groups": {
-                                "type": "array",
-                                "uniqueItems": true,
-                                "minItems": 0,
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "group": {
-                                      "title": "GroupDomainObject",
-                                      "type": "object",
-                                      "nullable": true,
-                                      "properties": {
-                                        "imageUrl": {
-                                          "type": "string",
-                                          "example": "http://churchtools.test/images/310/d6d0a45779e1e40522e7cbb8552241e763e0c1084de2da094cc1583127b3c34a"
-                                        },
-                                        "frontendUrl": {
-                                          "type": "string",
-                                          "example": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%236/"
-                                        },
-                                        "apiUrl": {
-                                          "type": "string",
-                                          "example": "http://churchtools.test/api/groups/6"
-                                        },
-                                        "domainType": {
-                                          "type": "string",
-                                          "enum": [
-                                            "group"
-                                          ]
-                                        },
-                                        "title": {
-                                          "type": "string",
-                                          "example": "Technik"
-                                        },
-                                        "domainIdentifier": {
-                                          "type": "string",
-                                          "example": "6"
-                                        },
-                                        "domainAttributes": {
-                                          "type": "object",
-                                          "properties": {
-                                            "note": {
-                                              "type": "string"
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "required": [
-                                        "frontendUrl",
-                                        "apiUrl",
-                                        "title"
-                                      ]
-                                    },
-                                    "groupHomepageUrl": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "groupHomepageApi": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    }
-                                  },
-                                  "required": [
-                                    "groupHomepageUrl",
-                                    "groupHomepageApi"
-                                  ]
-                                }
-                              },
-                              "logo": {
-                                "description": "",
-                                "type": "object",
-                                "x-examples": {
-                                  "example-1": {
-                                    "title": "Gottesdienst",
-                                    "domainType": "group",
-                                    "domainIdentifier": "10",
-                                    "apiUrl": "http://churchtools.test/api/groups/10",
-                                    "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%2310/",
-                                    "imageUrl": null,
-                                    "icon": "users",
-                                    "domainAttributes": {
-                                      "note": ""
-                                    }
-                                  }
-                                },
-                                "properties": {
-                                  "title": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "domainType": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "domainIdentifier": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "apiUrl": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "frontendUrl": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "imageUrl": {},
-                                  "icon": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "domainAttributes": {
-                                    "type": "object",
-                                    "description": "Additional attributes. Depends on domainType."
-                                  }
-                                },
-                                "required": [
-                                  "title",
-                                  "domainType",
-                                  "domainIdentifier",
-                                  "apiUrl",
-                                  "frontendUrl",
-                                  "icon",
-                                  "domainAttributes"
-                                ]
-                              },
-                              "banner": {
-                                "description": "",
-                                "type": "object",
-                                "x-examples": {
-                                  "example-1": {
-                                    "title": "Gottesdienst",
-                                    "domainType": "group",
-                                    "domainIdentifier": "10",
-                                    "apiUrl": "http://churchtools.test/api/groups/10",
-                                    "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%2310/",
-                                    "imageUrl": null,
-                                    "icon": "users",
-                                    "domainAttributes": {
-                                      "note": ""
-                                    }
-                                  }
-                                },
-                                "properties": {
-                                  "title": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "domainType": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "domainIdentifier": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "apiUrl": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "frontendUrl": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "imageUrl": {},
-                                  "icon": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  },
-                                  "domainAttributes": {
-                                    "type": "object",
-                                    "description": "Additional attributes. Depends on domainType."
-                                  }
-                                },
-                                "required": [
-                                  "title",
-                                  "domainType",
-                                  "domainIdentifier",
-                                  "apiUrl",
-                                  "frontendUrl",
-                                  "icon",
-                                  "domainAttributes"
-                                ]
-                              },
-                              "socialMedia": {
-                                "type": "object",
-                                "required": [
-                                  "socialNetworkName"
-                                ],
-                                "properties": {
-                                  "socialNetworkName": {
-                                    "type": "string",
-                                    "minLength": 1
-                                  }
-                                }
-                              },
-                              "tags": {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "name": {
-                                      "type": "string",
-                                      "nullable": true
-                                    },
-                                    "nameTranslated": {
-                                      "type": "string",
-                                      "nullable": true
-                                    },
-                                    "key": {
-                                      "type": "string",
-                                      "nullable": true
-                                    }
-                                  }
-                                }
-                              },
-                              "services": {
-                                "type": "array",
-                                "uniqueItems": true,
-                                "minItems": 0,
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "day": {
-                                      "type": "number"
-                                    },
-                                    "repetition": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "time": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "note": {
-                                      "type": "string"
-                                    }
-                                  },
-                                  "required": [
-                                    "day",
-                                    "repetition",
-                                    "time",
-                                    "note"
-                                  ]
-                                }
-                              },
-                              "visitors": {
-                                "type": "integer"
-                              },
-                              "serviceBanner": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "signUpGroup": {
-                                "title": "GroupDomainObject",
-                                "type": "object",
-                                "nullable": true,
-                                "properties": {
-                                  "imageUrl": {
-                                    "type": "string",
-                                    "example": "http://churchtools.test/images/310/d6d0a45779e1e40522e7cbb8552241e763e0c1084de2da094cc1583127b3c34a"
-                                  },
-                                  "frontendUrl": {
-                                    "type": "string",
-                                    "example": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%236/"
-                                  },
-                                  "apiUrl": {
-                                    "type": "string",
-                                    "example": "http://churchtools.test/api/groups/6"
-                                  },
-                                  "domainType": {
-                                    "type": "string",
-                                    "enum": [
-                                      "group"
-                                    ]
-                                  },
-                                  "title": {
-                                    "type": "string",
-                                    "example": "Technik"
-                                  },
-                                  "domainIdentifier": {
-                                    "type": "string",
-                                    "example": "6"
-                                  },
-                                  "domainAttributes": {
-                                    "type": "object",
-                                    "properties": {
-                                      "note": {
-                                        "type": "string"
-                                      }
-                                    }
-                                  }
-                                },
-                                "required": [
-                                  "frontendUrl",
-                                  "apiUrl",
-                                  "title"
-                                ]
-                              },
-                              "gallery": {
-                                "type": "array",
-                                "uniqueItems": true,
-                                "minItems": 0,
-                                "items": {
-                                  "description": "",
-                                  "type": "object",
-                                  "x-examples": {
-                                    "example-1": {
-                                      "title": "Gottesdienst",
-                                      "domainType": "group",
-                                      "domainIdentifier": "10",
-                                      "apiUrl": "http://churchtools.test/api/groups/10",
-                                      "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%2310/",
-                                      "imageUrl": null,
-                                      "icon": "users",
-                                      "domainAttributes": {
-                                        "note": ""
-                                      }
-                                    }
-                                  },
-                                  "properties": {
-                                    "title": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "domainType": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "domainIdentifier": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "apiUrl": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "frontendUrl": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "imageUrl": {},
-                                    "icon": {
-                                      "type": "string",
-                                      "minLength": 1
-                                    },
-                                    "domainAttributes": {
-                                      "type": "object",
-                                      "description": "Additional attributes. Depends on domainType."
-                                    }
-                                  },
-                                  "required": [
-                                    "title",
-                                    "domainType",
-                                    "domainIdentifier",
-                                    "apiUrl",
-                                    "frontendUrl",
-                                    "icon",
-                                    "domainAttributes"
-                                  ]
-                                }
-                              },
-                              "teamTitle": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "team": {
-                                "type": "array",
-                                "uniqueItems": true,
-                                "minItems": 0,
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "person": {
-                                      "title": "Person DomainObject",
-                                      "type": "object",
-                                      "x-tags": [
-                                        "Person"
-                                      ],
-                                      "description": "Person as Domain Object",
-                                      "properties": {
-                                        "domainAttributes": {
-                                          "type": "object",
-                                          "properties": {
-                                            "firstName": {
-                                              "type": "string",
-                                              "description": "",
-                                              "example": "Vanessa"
-                                            },
-                                            "lastName": {
-                                              "type": "string",
-                                              "example": "Fischer",
-                                              "description": ""
-                                            },
-                                            "guid": {
-                                              "type": "string",
-                                              "example": "D7AC4C66-8DA4-405A-B492-39B5870D2DB6",
-                                              "description": "Globally Unique Identifier"
-                                            }
-                                          }
-                                        },
-                                        "imageUrl": {
-                                          "type": "string",
-                                          "description": "Image Url",
-                                          "example": "http://churchtools.test/images/310/d6d0a45779e1e40522e7cbb8552241e763e0c1084de2da094cc1583127b3c34a"
-                                        },
-                                        "frontendUrl": {
-                                          "type": "string",
-                                          "description": "Frontend link",
-                                          "example": "http://churchtools.test/?q=churchdb#PersonView/searchEntry:%2319/"
-                                        },
-                                        "apiUrl": {
-                                          "type": "string",
-                                          "description": "API Endpoint to calendar",
-                                          "example": "http://churchtools.test/api/persons/19"
-                                        },
-                                        "domainType": {
-                                          "type": "string",
-                                          "description": "ChurchTools domain type",
-                                          "example": "person"
-                                        },
-                                        "title": {
-                                          "type": "string",
-                                          "description": "Fullname of Person",
-                                          "example": "Vanessa Fischer"
-                                        },
-                                        "domainIdentifier": {
-                                          "type": "string",
-                                          "example": "19",
-                                          "description": "Person ID"
-                                        }
-                                      }
-                                    },
-                                    "note": {
-                                      "type": "string"
-                                    },
-                                    "sortKey": {
-                                      "type": "integer"
-                                    }
-                                  },
-                                  "required": [
-                                    "note",
-                                    "sortKey"
-                                  ]
-                                }
-                              },
-                              "meta": {
-                                "title": "Meta",
-                                "type": "object",
-                                "properties": {
-                                  "count": {
-                                    "type": "number",
-                                    "example": 10,
-                                    "description": "Size of data array."
-                                  }
-                                },
-                                "description": "Basic meta object for API repsonses."
-                              }
-                            },
-                            "required": [
-                              "id",
-                              "guid",
-                              "profileType",
-                              "name",
-                              "nameTranslated",
-                              "shortName",
-                              "shorty",
-                              "slug",
-                              "finderUrl",
-                              "sortKey",
-                              "isPublished",
-                              "description",
-                              "website",
-                              "email",
-                              "phone",
-                              "denomination",
-                              "address",
-                              "groups",
-                              "logo",
-                              "banner",
-                              "socialMedia",
-                              "tags",
-                              "services",
-                              "visitors",
-                              "serviceBanner",
-                              "gallery",
-                              "teamTitle",
-                              "team",
-                              "meta"
-                            ],
-                            "example": {
-                              "id": 0,
-                              "guid": "string",
-                              "profileType": "church",
-                              "name": "string",
-                              "nameTranslated": "string",
-                              "shortName": "string",
-                              "shorty": "string",
-                              "slug": "string",
-                              "finderUrl": "string",
-                              "sortKey": 0,
-                              "isPublished": true,
-                              "description": "string",
-                              "association": {},
-                              "website": "string",
-                              "email": "string",
-                              "phone": "string",
-                              "denomination": {
-                                "name": "string",
-                                "nameTranslated": "string",
-                                "key": "string"
-                              },
-                              "address": {
-                                "meetingAt": "string",
-                                "street": "string",
-                                "addition": "string",
-                                "district": "string",
-                                "zip": "string",
-                                "city": "string",
-                                "country": null,
-                                "latitude": "string",
-                                "longitude": "string"
-                              },
-                              "groups": [
-                                {
-                                  "group": {
-                                    "imageUrl": "http://churchtools.test/images/310/d6d0a45779e1e40522e7cbb8552241e763e0c1084de2da094cc1583127b3c34a",
-                                    "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%236/",
-                                    "apiUrl": "http://churchtools.test/api/groups/6",
-                                    "domainType": "group",
-                                    "title": "Technik",
-                                    "domainIdentifier": "6",
-                                    "domainAttributes": {
-                                      "note": "string"
-                                    }
-                                  },
-                                  "groupHomepageUrl": "string",
-                                  "groupHomepageApi": "string"
-                                }
-                              ],
-                              "logo": {
-                                "title": "string",
-                                "domainType": "string",
-                                "domainIdentifier": "string",
-                                "apiUrl": "string",
-                                "frontendUrl": "string",
-                                "imageUrl": null,
-                                "icon": "string",
-                                "domainAttributes": {}
-                              },
-                              "banner": {
-                                "title": "string",
-                                "domainType": "string",
-                                "domainIdentifier": "string",
-                                "apiUrl": "string",
-                                "frontendUrl": "string",
-                                "imageUrl": null,
-                                "icon": "string",
-                                "domainAttributes": {}
-                              },
-                              "socialMedia": {
-                                "socialNetworkName": "string"
-                              },
-                              "tags": [
-                                {
-                                  "name": "the Tag",
-                                  "nameTranslated": "der übersetzte Tag",
-                                  "key": "theTag"
-                                }
-                              ],
-                              "services": [
-                                {
-                                  "day": 0,
-                                  "repetition": "string",
-                                  "time": "string",
-                                  "note": "string"
-                                }
-                              ],
-                              "visitors": 0,
-                              "serviceBanner": "string",
-                              "signUpGroup": {
-                                "imageUrl": "http://churchtools.test/images/310/d6d0a45779e1e40522e7cbb8552241e763e0c1084de2da094cc1583127b3c34a",
-                                "frontendUrl": "http://churchtools.test/?q=churchdb#GroupView/searchEntry:%236/",
-                                "apiUrl": "http://churchtools.test/api/groups/6",
-                                "domainType": "group",
-                                "title": "Technik",
-                                "domainIdentifier": "6",
-                                "domainAttributes": {
-                                  "note": "string"
-                                }
-                              },
-                              "gallery": [
-                                {
-                                  "title": "string",
-                                  "domainType": "string",
-                                  "domainIdentifier": "string",
-                                  "apiUrl": "string",
-                                  "frontendUrl": "string",
-                                  "imageUrl": null,
-                                  "icon": "string",
-                                  "domainAttributes": {}
-                                }
-                              ],
-                              "teamTitle": "string",
-                              "team": [
-                                {
-                                  "person": {
-                                    "domainAttributes": {
-                                      "firstName": "Vanessa",
-                                      "lastName": "Fischer",
-                                      "guid": "D7AC4C66-8DA4-405A-B492-39B5870D2DB6"
-                                    },
-                                    "imageUrl": "http://churchtools.test/images/310/d6d0a45779e1e40522e7cbb8552241e763e0c1084de2da094cc1583127b3c34a",
-                                    "frontendUrl": "http://churchtools.test/?q=churchdb#PersonView/searchEntry:%2319/",
-                                    "apiUrl": "http://churchtools.test/api/persons/19",
-                                    "domainType": "person",
-                                    "title": "Vanessa Fischer",
-                                    "domainIdentifier": "19"
-                                  },
-                                  "note": "string",
-                                  "sortKey": 0
-                                }
-                              ],
-                              "meta": {
-                                "count": 10
-                              }
-                            }
-                          }
+                            ]
+                          },
+                          "type": "array"
                         },
                         "contactLabels": {
-                          "type": "array",
                           "items": {
-                            "title": "Contact Label",
-                            "type": "object",
-                            "x-tags": [
-                              "Contact Label"
-                            ],
                             "description": "Master Data for Contact Labels. Used to label E-Mail Adresses.",
                             "properties": {
                               "id": {
-                                "type": "number",
                                 "description": "ID of Record",
-                                "example": 1
-                              },
-                              "name": {
-                                "type": "string",
-                                "description": "Name of Label",
-                                "example": "Private"
-                              },
-                              "nameTranslated": {
-                                "type": "string",
-                                "description": "Translated Name of Label",
-                                "example": "Privat"
-                              },
-                              "sortKey": {
-                                "type": "number",
-                                "example": 10
+                                "example": 1,
+                                "type": "integer"
                               },
                               "isDefault": {
-                                "type": "boolean",
+                                "description": "Indicator if label is the default. Used for new person emails",
                                 "example": false,
-                                "description": "Indicator if label is the default. Used for new person emails"
+                                "type": "boolean"
+                              },
+                              "name": {
+                                "description": "Name of Label",
+                                "example": "Private",
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "description": "Translated Name of Label",
+                                "example": "Privat",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "example": 10,
+                                "type": "integer"
                               }
                             },
                             "required": [
@@ -18844,138 +18392,403 @@
                               "nameTranslated",
                               "sortKey",
                               "isDefault"
-                            ]
-                          }
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
                         },
-                        "growPaths": {
-                          "type": "array",
+                        "departments": {
                           "items": {
-                            "title": "Grow Path",
-                            "type": "object",
                             "properties": {
                               "id": {
-                                "type": "number"
+                                "example": 1,
+                                "type": "integer"
                               },
                               "name": {
+                                "example": "Gemeindeliste",
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "example": "Gemeindeliste",
                                 "type": "string"
                               },
                               "sortKey": {
+                                "example": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "followUpIntervals": {
+                          "items": {
+                            "properties": {
+                              "count": {
+                                "example": 1,
                                 "type": "integer"
                               },
-                              "color": {
+                              "daysDiff": {
+                                "example": 7,
+                                "type": "integer"
+                              },
+                              "followUpId": {
+                                "example": 1,
+                                "type": "integer"
+                              },
+                              "id": {
+                                "example": 1,
+                                "type": "integer"
+                              },
+                              "info": {
+                                "example": "Anruf 1 soll erfolgen.<br>Bitte sei nett zu der Person:)",
                                 "type": "string"
                               }
                             },
-                            "description": ""
-                          }
+                            "type": "object"
+                          },
+                          "type": "array"
                         },
                         "followUps": {
-                          "type": "array",
                           "items": {
-                            "description": "",
-                            "type": "object",
                             "properties": {
+                              "commentViewerId": {
+                                "example": 0,
+                                "type": "integer"
+                              },
                               "id": {
-                                "type": "number"
+                                "example": 1,
+                                "type": "integer"
                               },
                               "name": {
-                                "type": "string",
-                                "minLength": 1
+                                "example": "Integration Kontaktkarte",
+                                "type": "string"
                               },
                               "nameTranslated": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "commentViewerId": {
-                                "type": "number"
+                                "example": "Integration Kontaktkarte",
+                                "type": "string"
                               }
                             },
-                            "required": [
-                              "id",
-                              "name",
-                              "nameTranslated",
-                              "commentViewerId"
-                            ],
-                            "x-examples": {
-                              "example": {
-                                "id": 1,
-                                "name": "Integration Kontaktkarte",
-                                "nameTranslated": "Integration Kontaktkarte",
-                                "commentViewerId": 0,
-                                "value": {
-                                  "id": 1,
-                                  "name": "Integration Kontaktkarte",
-                                  "nameTranslated": "Integration Kontaktkarte",
-                                  "commentViewerId": 0
-                                }
-                              }
-                            }
-                          }
+                            "type": "object"
+                          },
+                          "type": "array"
                         },
-                        "followUpIntervals": {
-                          "type": "array",
+                        "groupCategories": {
                           "items": {
-                            "description": "",
-                            "type": "object",
-                            "x-examples": {
-                              "example": {
-                                "id": 1,
-                                "followUpId": 1,
-                                "count": 1,
-                                "daysDiff": 7,
-                                "info": "Anruf 1 soll erfolgen.<br>Bitte sei nett zu der Person:)",
-                                "value": {
-                                  "id": 1,
-                                  "followUpId": 1,
-                                  "count": 1,
-                                  "daysDiff": 7,
-                                  "info": "Anruf 1 soll erfolgen.<br>Bitte sei nett zu der Person:)"
-                                }
-                              }
-                            },
                             "properties": {
                               "id": {
-                                "type": "number"
+                                "example": 4,
+                                "type": "integer"
                               },
-                              "followUpId": {
-                                "type": "number"
+                              "name": {
+                                "example": "Gottesdienst",
+                                "type": "string"
                               },
-                              "count": {
-                                "type": "number",
-                                "description": "Count defines the step of that interval entry. Intervals are ordered by count."
+                              "nameTranslated": {
+                                "example": "Gottesdienst",
+                                "type": "string"
                               },
-                              "daysDiff": {
-                                "type": "number",
-                                "description": "Duration after that interval step is due."
-                              },
-                              "info": {
-                                "type": "string",
-                                "minLength": 1
+                              "sortKey": {
+                                "example": 5,
+                                "type": "integer"
                               }
                             },
-                            "required": [
-                              "id",
-                              "followUpId",
-                              "count",
-                              "daysDiff",
-                              "info"
-                            ]
-                          }
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "groupMeetingTemplates": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "example": 1,
+                                "type": "integer"
+                              },
+                              "name": {
+                                "example": "Lowlights / Highlights",
+                                "type": "string"
+                              },
+                              "template": {
+                                "example": "\"type\": \"textarea\", \"label\": \"Gab es eher schwierige Momente?\"\n\"type\": \"textarea\", \"label\": \"Gab es besonders erwÃ¤hnenswerte Momente?\"\n\"type\": \"textarea\", \"label\": \"Sonstige Infos zum Treffen\"\n",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "groupStatuses": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "example": 1,
+                                "type": "integer"
+                              },
+                              "name": {
+                                "example": "active",
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "example": "Aktiv",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "example": 1,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "groupTypes": {
+                          "items": {
+                            "properties": {
+                              "availableForNewPerson": {
+                                "example": false,
+                                "type": "boolean"
+                              },
+                              "deepPermission": {
+                                "example": 0,
+                                "type": "integer"
+                              },
+                              "id": {
+                                "example": 7,
+                                "type": "integer"
+                              },
+                              "isLeaderNecessary": {
+                                "example": false,
+                                "type": "boolean"
+                              },
+                              "name": {
+                                "example": "Kleingruppe",
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "example": "Kleingruppe",
+                                "type": "string"
+                              },
+                              "shorty": {
+                                "example": "KG",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "example": 2,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "growPaths": {
+                          "items": {
+                            "properties": {
+                              "color": {
+                                "example": "gray",
+                                "type": "string"
+                              },
+                              "id": {
+                                "example": 1,
+                                "type": "integer"
+                              },
+                              "name": {
+                                "example": "Willkommen",
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "example": "Willkommen",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "example": 1,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "roles": {
+                          "items": {
+                            "properties": {
+                              "groupTypeId": {
+                                "example": 2,
+                                "type": "integer"
+                              },
+                              "growPathId": {
+                                "example": 4,
+                                "type": "integer"
+                              },
+                              "hasRequested": {
+                                "example": false,
+                                "type": "boolean"
+                              },
+                              "id": {
+                                "example": 16,
+                                "type": "integer"
+                              },
+                              "isDefault": {
+                                "example": false,
+                                "type": "boolean"
+                              },
+                              "isHidden": {
+                                "example": false,
+                                "type": "boolean"
+                              },
+                              "isLeader": {
+                                "example": true,
+                                "type": "boolean"
+                              },
+                              "name": {
+                                "example": "Leiter",
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "example": "Leiter",
+                                "type": "string"
+                              },
+                              "shorty": {
+                                "example": "L",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "example": 1,
+                                "type": "integer"
+                              },
+                              "toDelete": {
+                                "example": false,
+                                "type": "boolean"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "statuses": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "description": "ID of status",
+                                "type": "integer"
+                              },
+                              "isMember": {
+                                "description": "Flag if status is member of the church",
+                                "type": "boolean"
+                              },
+                              "isSearchable": {
+                                "description": "Flag if that status is searchable",
+                                "type": "boolean"
+                              },
+                              "name": {
+                                "description": "Status name",
+                                "type": "string"
+                              },
+                              "securityLevelId": {
+                                "description": "Only persons with that securitylevel can edit/select/delete that status",
+                                "type": "integer"
+                              },
+                              "shorty": {
+                                "description": "Abbreviation of name.",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "description": "Used to sort all statuses",
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "targetGroups": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "example": 2,
+                                "type": "integer"
+                              },
+                              "name": {
+                                "example": "men",
+                                "type": "string"
+                              },
+                              "nameTranslated": {
+                                "example": "MÃ¤nner",
+                                "type": "string"
+                              },
+                              "sortKey": {
+                                "example": 2,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
                         }
-                      }
+                      },
+                      "type": "object"
+                    },
+                    "meta": {
+                      "properties": {
+                        "ageGroups": {
+                          "type": "integer"
+                        },
+                        "campuses": {
+                          "type": "integer"
+                        },
+                        "contactLabels": {
+                          "type": "integer"
+                        },
+                        "departments": {
+                          "type": "integer"
+                        },
+                        "followUpIntervals": {
+                          "type": "integer"
+                        },
+                        "followUps": {
+                          "type": "integer"
+                        },
+                        "groupCategories": {
+                          "type": "integer"
+                        },
+                        "groupMeetingTemplates": {
+                          "type": "integer"
+                        },
+                        "groupStatuses": {
+                          "type": "integer"
+                        },
+                        "groupTypes": {
+                          "type": "integer"
+                        },
+                        "growPaths": {
+                          "type": "integer"
+                        },
+                        "roles": {
+                          "type": "integer"
+                        },
+                        "statuses": {
+                          "type": "integer"
+                        },
+                        "targetGroups": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
                     }
-                  }
+                  },
+                  "type": "object"
                 }
               }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden to View"
+            },
+            "description": "OK"
           }
-        }
+        },
+        "summary": "Get person & groups masterdata",
+        "tags": [
+          "MasterData",
+          "Person",
+          "Group"
+        ]
       }
     },
     "/finance/masterdata": {

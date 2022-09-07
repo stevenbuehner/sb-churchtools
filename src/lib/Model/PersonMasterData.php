@@ -58,18 +58,18 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'roles' => '\StevenBuehner\ChurchTools\Model\GetAllGroupTypeRoles200ResponseDataInner[]',
-        'age_groups' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataAgeGroupsInner[]',
-        'target_groups' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataTargetGroupsInner[]',
-        'group_types' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupTypesInner[]',
-        'group_categories' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupCategoriesInner[]',
-        'group_statuses' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupStatusesInner[]',
+        'age_groups' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataAgeGroupsInner[]',
+        'target_groups' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataTargetGroupsInner[]',
+        'group_types' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataGroupTypesInner[]',
+        'group_categories' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataGroupCategoriesInner[]',
+        'group_statuses' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataGroupStatusesInner[]',
         'departments' => '\StevenBuehner\ChurchTools\Model\GetAllDepartments200ResponseDataInner[]',
         'statuses' => '\StevenBuehner\ChurchTools\Model\GetAllStatuses200ResponseDataInner[]',
         'campuses' => '\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseData[]',
         'contact_labels' => '\StevenBuehner\ChurchTools\Model\ContactLabel[]',
         'grow_paths' => '\StevenBuehner\ChurchTools\Model\GrowPath[]',
-        'follow_ups' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpsInner[]',
-        'follow_up_intervals' => '\StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpIntervalsInner[]'
+        'follow_ups' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataFollowUpsInner[]',
+        'follow_up_intervals' => '\StevenBuehner\ChurchTools\Model\PersonMasterDataFollowUpIntervalsInner[]'
     ];
 
     /**
@@ -302,7 +302,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets age_groups
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataAgeGroupsInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataAgeGroupsInner[]|null
      */
     public function getAgeGroups()
     {
@@ -312,7 +312,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets age_groups
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataAgeGroupsInner[]|null $age_groups age_groups
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataAgeGroupsInner[]|null $age_groups age_groups
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets target_groups
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataTargetGroupsInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataTargetGroupsInner[]|null
      */
     public function getTargetGroups()
     {
@@ -336,7 +336,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets target_groups
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataTargetGroupsInner[]|null $target_groups target_groups
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataTargetGroupsInner[]|null $target_groups target_groups
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group_types
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupTypesInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataGroupTypesInner[]|null
      */
     public function getGroupTypes()
     {
@@ -360,7 +360,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group_types
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupTypesInner[]|null $group_types group_types
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataGroupTypesInner[]|null $group_types group_types
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group_categories
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupCategoriesInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataGroupCategoriesInner[]|null
      */
     public function getGroupCategories()
     {
@@ -384,7 +384,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group_categories
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupCategoriesInner[]|null $group_categories group_categories
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataGroupCategoriesInner[]|null $group_categories group_categories
      *
      * @return self
      */
@@ -398,7 +398,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group_statuses
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupStatusesInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataGroupStatusesInner[]|null
      */
     public function getGroupStatuses()
     {
@@ -408,7 +408,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group_statuses
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataGroupStatusesInner[]|null $group_statuses group_statuses
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataGroupStatusesInner[]|null $group_statuses group_statuses
      *
      * @return self
      */
@@ -542,7 +542,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets follow_ups
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpsInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataFollowUpsInner[]|null
      */
     public function getFollowUps()
     {
@@ -552,7 +552,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets follow_ups
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpsInner[]|null $follow_ups follow_ups
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataFollowUpsInner[]|null $follow_ups follow_ups
      *
      * @return self
      */
@@ -566,7 +566,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets follow_up_intervals
      *
-     * @return \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpIntervalsInner[]|null
+     * @return \StevenBuehner\ChurchTools\Model\PersonMasterDataFollowUpIntervalsInner[]|null
      */
     public function getFollowUpIntervals()
     {
@@ -576,7 +576,7 @@ class PersonMasterData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets follow_up_intervals
      *
-     * @param \StevenBuehner\ChurchTools\Model\GetMasterDataPerson200ResponseDataFollowUpIntervalsInner[]|null $follow_up_intervals follow_up_intervals
+     * @param \StevenBuehner\ChurchTools\Model\PersonMasterDataFollowUpIntervalsInner[]|null $follow_up_intervals follow_up_intervals
      *
      * @return self
      */
