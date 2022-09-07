@@ -116,8 +116,13 @@ docs/Model/CreateNewTransaction200Response.md
 docs/Model/CreateNewTransactionPurposeRequest.md
 docs/Model/CreateNewTransactionRequest.md
 docs/Model/CreateOrUpdateMember200Response.md
+docs/Model/CreateOrUpdateMember200Response1.md
+docs/Model/CreateOrUpdateMember200Response1Data.md
+docs/Model/CreateOrUpdateMember200Response1DataPerson.md
+docs/Model/CreateOrUpdateMember200Response1DataPersonDomainAttributes.md
 docs/Model/CreateOrUpdateMember200ResponseData.md
 docs/Model/CreateOrUpdateMemberRequest.md
+docs/Model/CreateOrUpdateMemberRequest1.md
 docs/Model/CreatePerson400Response.md
 docs/Model/CreatePersonRequest.md
 docs/Model/CreatePersonRequestPrivacyPolicyAgreement.md
@@ -797,8 +802,13 @@ lib/Model/CreateNewTransaction200Response.php
 lib/Model/CreateNewTransactionPurposeRequest.php
 lib/Model/CreateNewTransactionRequest.php
 lib/Model/CreateOrUpdateMember200Response.php
+lib/Model/CreateOrUpdateMember200Response1.php
+lib/Model/CreateOrUpdateMember200Response1Data.php
+lib/Model/CreateOrUpdateMember200Response1DataPerson.php
+lib/Model/CreateOrUpdateMember200Response1DataPersonDomainAttributes.php
 lib/Model/CreateOrUpdateMember200ResponseData.php
 lib/Model/CreateOrUpdateMemberRequest.php
+lib/Model/CreateOrUpdateMemberRequest1.php
 lib/Model/CreatePerson400Response.php
 lib/Model/CreatePersonRequest.php
 lib/Model/CreatePersonRequestPrivacyPolicyAgreement.php
@@ -1364,3 +1374,8 @@ lib/Model/WikiPage1Permissions.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/CreateOrUpdateMember200Response1DataPersonDomainAttributesTest.php
+test/Model/CreateOrUpdateMember200Response1DataPersonTest.php
+test/Model/CreateOrUpdateMember200Response1DataTest.php
+test/Model/CreateOrUpdateMember200Response1Test.php
+test/Model/CreateOrUpdateMemberRequest1Test.php
