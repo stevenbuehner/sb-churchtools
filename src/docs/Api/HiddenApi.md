@@ -1,76 +1,256 @@
 # StevenBuehner\ChurchTools\HiddenApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deletePersonLoginToken()**](HiddenApi.md#deletePersonLoginToken) | **DELETE** /persons/{personId}/logintoken | TODO
-[**deletePersonPrivacyPolicy()**](HiddenApi.md#deletePersonPrivacyPolicy) | **DELETE** /persons/{personId}/privacypolicy | TODO
-[**deletePersonTwofactor()**](HiddenApi.md#deletePersonTwofactor) | **DELETE** /persons/{personId}/settings/twofactor | TODO
-[**deleteStatement()**](HiddenApi.md#deleteStatement) | **DELETE** /finance/accountingperiods/{id}/statements/{statementId} | TODO
-[**fetchLicense()**](HiddenApi.md#fetchLicense) | **GET** /license/fetch | TODO
-[**generateSuggestions()**](HiddenApi.md#generateSuggestions) | **POST** /finance/accountingperiods/{id}/statements/{statementId}/suggestions | TODO
-[**getAccountMovements()**](HiddenApi.md#getAccountMovements) | **GET** /finance/accountingperiods/{id}/accounts/{accountId}/movements | TODO
-[**getAccountStatementMovements()**](HiddenApi.md#getAccountStatementMovements) | **GET** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements | TODO
-[**getAccountStatements()**](HiddenApi.md#getAccountStatements) | **GET** /finance/accountingperiods/{id}/accounts/{accountId}/statements | TODO
-[**getAccountsExport()**](HiddenApi.md#getAccountsExport) | **GET** /finance/accounts/export | TODO
-[**getApiProfiles()**](HiddenApi.md#getApiProfiles) | **GET** /profiles | Get all profiles
-[**getCalendarMeetingRequests()**](HiddenApi.md#getCalendarMeetingRequests) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/meetingrequests | TODO
-[**getConfig()**](HiddenApi.md#getConfig) | **GET** /config | TODO
-[**getFile()**](HiddenApi.md#getFile) | **GET** /files/{id} | TODO
-[**getGroupQRCodeCheckin()**](HiddenApi.md#getGroupQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin | TODO
-[**getGroupQRCodeCheckinPerson()**](HiddenApi.md#getGroupQRCodeCheckinPerson) | **GET** /groups/{groupId}/qrcodecheckin/{personId} | TODO
-[**getGroupQRCodeCheckinPersonSend()**](HiddenApi.md#getGroupQRCodeCheckinPersonSend) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/send | TODO
-[**getLabelsTotal()**](HiddenApi.md#getLabelsTotal) | **GET** /labels/totals | TODO
-[**getMenu()**](HiddenApi.md#getMenu) | **GET** /menu | TODO
-[**getPRMasterdata()**](HiddenApi.md#getPRMasterdata) | **GET** /pr/masterdata | TODO
-[**getPersonLoginstring()**](HiddenApi.md#getPersonLoginstring) | **GET** /person/{personId}/loginstring | TODO
-[**getPersonPrivacyPolicy()**](HiddenApi.md#getPersonPrivacyPolicy) | **GET** /persons/{personId}/privacypolicy | TODO
-[**getPersonTwofactor()**](HiddenApi.md#getPersonTwofactor) | **GET** /persons/{personId}/settings/twofactor | TODO
-[**getPersonTwofactorForce()**](HiddenApi.md#getPersonTwofactorForce) | **GET** /persons/{personId}/settings/twofactor/force | TODO
-[**getPersonsEventServices()**](HiddenApi.md#getPersonsEventServices) | **GET** /persons/{personId}/events/{eventId}/services | TODO
-[**getPersonsExport()**](HiddenApi.md#getPersonsExport) | **GET** /persons/export | TODO
-[**getPersonsSearchOld()**](HiddenApi.md#getPersonsSearchOld) | **GET** /persons/search_old | TODO
-[**getProfilesChurch()**](HiddenApi.md#getProfilesChurch) | **GET** /profiles/church | Get a profile
-[**getPublicGroupSignout()**](HiddenApi.md#getPublicGroupSignout) | **GET** /publicgroups/{groupId}/signout | TODO
-[**getSamlLogin()**](HiddenApi.md#getSamlLogin) | **GET** /saml/login | TODO
-[**getSamlMetadata()**](HiddenApi.md#getSamlMetadata) | **GET** /saml/metadata | TODO
-[**getSlugcheck()**](HiddenApi.md#getSlugcheck) | **GET** /profiles/slugcheck/{slug} | Check if a finder slug is free
-[**getStatements()**](HiddenApi.md#getStatements) | **GET** /finance/accountingperiods/{id}/accounts/statements | TODO
-[**getTransactionsCSV()**](HiddenApi.md#getTransactionsCSV) | **GET** /finance/transactions/csv | TODO deprecated
-[**getTransactionsExport()**](HiddenApi.md#getTransactionsExport) | **GET** /finance/transactions/export | TODO
-[**getTransactionsSummary()**](HiddenApi.md#getTransactionsSummary) | **GET** /finance/transactions/summary | TODO
-[**getUserRules()**](HiddenApi.md#getUserRules) | **GET** /finance/accountingperiods/{id}/userrules | TODO
-[**patchAccountStatementMovementSuggestion()**](HiddenApi.md#patchAccountStatementMovementSuggestion) | **PATCH** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId}/suggestions | TODO
-[**patchFileWithDomainType()**](HiddenApi.md#patchFileWithDomainType) | **PATCH** /files/{domainType}/{domainIdentifier} | TODO
-[**patchGroup()**](HiddenApi.md#patchGroup) | **PATCH** /groups/{groupId} | TODO
-[**postAccountStatementMovement()**](HiddenApi.md#postAccountStatementMovement) | **POST** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId} | TODO
-[**postBulkAccounts()**](HiddenApi.md#postBulkAccounts) | **POST** /finance/accounts/bulkcreate | TODO
-[**postBulkTransactions()**](HiddenApi.md#postBulkTransactions) | **POST** /finance/transactions/bulkcreate | TODO
-[**postCostCenterExport()**](HiddenApi.md#postCostCenterExport) | **POST** /finance/costcenters/export | TODO
-[**postEventIcal()**](HiddenApi.md#postEventIcal) | **POST** /events/ical | TODO
-[**postJobLogs()**](HiddenApi.md#postJobLogs) | **POST** /jobs/{id}/logs | TODO
-[**postLabels()**](HiddenApi.md#postLabels) | **POST** /labels | TODO
-[**postLoginTotp()**](HiddenApi.md#postLoginTotp) | **POST** /login/totp | TODO
-[**postNps()**](HiddenApi.md#postNps) | **POST** /nps | Save NPS score
-[**postPersonTwofactor()**](HiddenApi.md#postPersonTwofactor) | **POST** /persons/{personId}/settings/twofactor | TODO
-[**postSamlAcs()**](HiddenApi.md#postSamlAcs) | **POST** /saml/acs | TODO
-[**postStatements()**](HiddenApi.md#postStatements) | **POST** /finance/accountingperiods/{id}/statements | TODO
-[**postTwofactorTotp()**](HiddenApi.md#postTwofactorTotp) | **POST** /twofactor/totp | TODO
-[**postWikiCategory()**](HiddenApi.md#postWikiCategory) | **POST** /wiki/categories | TODO
-[**putCalendarMeetingRequests()**](HiddenApi.md#putCalendarMeetingRequests) | **PUT** /calendars/{calendarId}/appointments/{appointmentId}/meetingrequests/{meetingRequestId} | TODO
-[**putConfig()**](HiddenApi.md#putConfig) | **PUT** /config | TODO
-[**putJobStatus()**](HiddenApi.md#putJobStatus) | **PUT** /jobs/{id}/status | TODO
-[**putPersonPassword()**](HiddenApi.md#putPersonPassword) | **PUT** /persons/{personId}/password | TODO
-[**putPersonPrivacyPolicy()**](HiddenApi.md#putPersonPrivacyPolicy) | **PUT** /persons/{personId}/privacypolicy | TODO
-[**putPersonTwofactor()**](HiddenApi.md#putPersonTwofactor) | **PUT** /persons/{personId}/settings/twofactor | TODO
-[**putPersonTwofactorForce()**](HiddenApi.md#putPersonTwofactorForce) | **PUT** /persons/{personId}/settings/twofactor/force | TODO
-[**putProfilesChurch()**](HiddenApi.md#putProfilesChurch) | **PUT** /profiles/church | 
-[**putStatement()**](HiddenApi.md#putStatement) | **PUT** /finance/accountingperiods/{id}/statements/{statementId} | TODO
-[**putUserRules()**](HiddenApi.md#putUserRules) | **PUT** /finance/accountingperiods/{id}/userrules | TODO
-[**putWikiCategory()**](HiddenApi.md#putWikiCategory) | **PUT** /wiki/categories/{wikiCategoryId} | TODO
-[**startWebsiteTest()**](HiddenApi.md#startWebsiteTest) | **GET** /website/starttest | TODO
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteBookings()**](HiddenApi.md#deleteBookings) | **DELETE** /bookings |  |
+| [**deleteCalendarsCalendarIdAppointmentsAppointmentId()**](HiddenApi.md#deleteCalendarsCalendarIdAppointmentsAppointmentId) | **DELETE** /calendars/{calendarId}/appointments/{appointmentId} | deleteAppointment |
+| [**deleteFinanceDonators()**](HiddenApi.md#deleteFinanceDonators) | **DELETE** /finance/donators |  |
+| [**deletePersonLoginToken()**](HiddenApi.md#deletePersonLoginToken) | **DELETE** /persons/{personId}/logintoken | TODO |
+| [**deletePersonPrivacyPolicy()**](HiddenApi.md#deletePersonPrivacyPolicy) | **DELETE** /persons/{personId}/privacypolicy | TODO |
+| [**deletePersonTwofactor()**](HiddenApi.md#deletePersonTwofactor) | **DELETE** /persons/{personId}/settings/twofactor | TODO |
+| [**deleteStatement()**](HiddenApi.md#deleteStatement) | **DELETE** /finance/accountingperiods/{id}/statements/{statementId} | TODO |
+| [**fetchLicense()**](HiddenApi.md#fetchLicense) | **GET** /license/fetch | TODO |
+| [**generateSuggestions()**](HiddenApi.md#generateSuggestions) | **POST** /finance/accountingperiods/{id}/statements/{statementId}/suggestions | TODO |
+| [**getAccountMovements()**](HiddenApi.md#getAccountMovements) | **GET** /finance/accountingperiods/{id}/accounts/{accountId}/movements | TODO |
+| [**getAccountStatementMovements()**](HiddenApi.md#getAccountStatementMovements) | **GET** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements | TODO |
+| [**getAccountStatements()**](HiddenApi.md#getAccountStatements) | **GET** /finance/accountingperiods/{id}/accounts/{accountId}/statements | TODO |
+| [**getAccountsExport()**](HiddenApi.md#getAccountsExport) | **GET** /finance/accounts/export | TODO |
+| [**getApiProfiles()**](HiddenApi.md#getApiProfiles) | **GET** /profiles | Get all profiles |
+| [**getCalendarMeetingRequests()**](HiddenApi.md#getCalendarMeetingRequests) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/meetingrequests | TODO |
+| [**getConfig()**](HiddenApi.md#getConfig) | **GET** /config | TODO |
+| [**getFile()**](HiddenApi.md#getFile) | **GET** /files/{id} | TODO |
+| [**getFinanceTransactionsDatevexport()**](HiddenApi.md#getFinanceTransactionsDatevexport) | **GET** /finance/transactions/datevexport | datevExport |
+| [**getGroupQRCodeCheckin()**](HiddenApi.md#getGroupQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin | TODO |
+| [**getGroupQRCodeCheckinPerson()**](HiddenApi.md#getGroupQRCodeCheckinPerson) | **GET** /groups/{groupId}/qrcodecheckin/{personId} | TODO |
+| [**getGroupQRCodeCheckinPersonSend()**](HiddenApi.md#getGroupQRCodeCheckinPersonSend) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/send | TODO |
+| [**getLabelsTotal()**](HiddenApi.md#getLabelsTotal) | **GET** /labels/totals | TODO |
+| [**getMenu()**](HiddenApi.md#getMenu) | **GET** /menu | TODO |
+| [**getPRMasterdata()**](HiddenApi.md#getPRMasterdata) | **GET** /pr/masterdata | TODO |
+| [**getPersonLoginstring()**](HiddenApi.md#getPersonLoginstring) | **GET** /person/{personId}/loginstring | TODO |
+| [**getPersonPrivacyPolicy()**](HiddenApi.md#getPersonPrivacyPolicy) | **GET** /persons/{personId}/privacypolicy | TODO |
+| [**getPersonTwofactor()**](HiddenApi.md#getPersonTwofactor) | **GET** /persons/{personId}/settings/twofactor | TODO |
+| [**getPersonTwofactorForce()**](HiddenApi.md#getPersonTwofactorForce) | **GET** /persons/{personId}/settings/twofactor/force | TODO |
+| [**getPersonsEventServices()**](HiddenApi.md#getPersonsEventServices) | **GET** /persons/{personId}/events/{eventId}/services | TODO |
+| [**getPersonsExport()**](HiddenApi.md#getPersonsExport) | **GET** /persons/export | TODO |
+| [**getPersonsSearchOld()**](HiddenApi.md#getPersonsSearchOld) | **GET** /persons/search_old | TODO |
+| [**getProfilesChurch()**](HiddenApi.md#getProfilesChurch) | **GET** /profiles/church | Get a profile |
+| [**getPublicGroupSignout()**](HiddenApi.md#getPublicGroupSignout) | **GET** /publicgroups/{groupId}/signout | TODO |
+| [**getSamlLogin()**](HiddenApi.md#getSamlLogin) | **GET** /saml/login | TODO |
+| [**getSamlMetadata()**](HiddenApi.md#getSamlMetadata) | **GET** /saml/metadata | TODO |
+| [**getSlugcheck()**](HiddenApi.md#getSlugcheck) | **GET** /profiles/slugcheck/{slug} | Check if a finder slug is free |
+| [**getStatements()**](HiddenApi.md#getStatements) | **GET** /finance/accountingperiods/{id}/accounts/statements | TODO |
+| [**getTransactionsCSV()**](HiddenApi.md#getTransactionsCSV) | **GET** /finance/transactions/csv | TODO deprecated |
+| [**getTransactionsExport()**](HiddenApi.md#getTransactionsExport) | **GET** /finance/transactions/export | TODO |
+| [**getTransactionsSummary()**](HiddenApi.md#getTransactionsSummary) | **GET** /finance/transactions/summary | TODO |
+| [**getUserRules()**](HiddenApi.md#getUserRules) | **GET** /finance/accountingperiods/{id}/userrules | TODO |
+| [**patchAccountStatementMovementSuggestion()**](HiddenApi.md#patchAccountStatementMovementSuggestion) | **PATCH** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId}/suggestions | TODO |
+| [**patchFileWithDomainType()**](HiddenApi.md#patchFileWithDomainType) | **PATCH** /files/{domainType}/{domainIdentifier} | TODO |
+| [**patchGroup()**](HiddenApi.md#patchGroup) | **PATCH** /groups/{groupId} | TODO |
+| [**postAccountStatementMovement()**](HiddenApi.md#postAccountStatementMovement) | **POST** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId} | TODO |
+| [**postBookings()**](HiddenApi.md#postBookings) | **POST** /bookings |  |
+| [**postBulkAccounts()**](HiddenApi.md#postBulkAccounts) | **POST** /finance/accounts/bulkcreate | TODO |
+| [**postBulkTransactions()**](HiddenApi.md#postBulkTransactions) | **POST** /finance/transactions/bulkcreate | TODO |
+| [**postCostCenterExport()**](HiddenApi.md#postCostCenterExport) | **POST** /finance/costcenters/export | TODO |
+| [**postEventIcal()**](HiddenApi.md#postEventIcal) | **POST** /events/ical | TODO |
+| [**postJobLogs()**](HiddenApi.md#postJobLogs) | **POST** /jobs/{id}/logs | TODO |
+| [**postLabels()**](HiddenApi.md#postLabels) | **POST** /labels | TODO |
+| [**postLoginTotp()**](HiddenApi.md#postLoginTotp) | **POST** /login/totp | TODO |
+| [**postNps()**](HiddenApi.md#postNps) | **POST** /nps | Save NPS score |
+| [**postPersonTwofactor()**](HiddenApi.md#postPersonTwofactor) | **POST** /persons/{personId}/settings/twofactor | TODO |
+| [**postSamlAcs()**](HiddenApi.md#postSamlAcs) | **POST** /saml/acs | TODO |
+| [**postStatements()**](HiddenApi.md#postStatements) | **POST** /finance/accountingperiods/{id}/statements | TODO |
+| [**postTwofactorTotp()**](HiddenApi.md#postTwofactorTotp) | **POST** /twofactor/totp | TODO |
+| [**postWikiCategory()**](HiddenApi.md#postWikiCategory) | **POST** /wiki/categories | TODO |
+| [**putBookings()**](HiddenApi.md#putBookings) | **PUT** /bookings |  |
+| [**putCalendarMeetingRequests()**](HiddenApi.md#putCalendarMeetingRequests) | **PUT** /calendars/{calendarId}/appointments/{appointmentId}/meetingrequests/{meetingRequestId} | TODO |
+| [**putCalendarsCalendarIdAppointmentsAppointmentId()**](HiddenApi.md#putCalendarsCalendarIdAppointmentsAppointmentId) | **PUT** /calendars/{calendarId}/appointments/{appointmentId} | updateAppointment |
+| [**putConfig()**](HiddenApi.md#putConfig) | **PUT** /config | TODO |
+| [**putJobStatus()**](HiddenApi.md#putJobStatus) | **PUT** /jobs/{id}/status | TODO |
+| [**putPersonPassword()**](HiddenApi.md#putPersonPassword) | **PUT** /persons/{personId}/password | TODO |
+| [**putPersonPrivacyPolicy()**](HiddenApi.md#putPersonPrivacyPolicy) | **PUT** /persons/{personId}/privacypolicy | TODO |
+| [**putPersonTwofactor()**](HiddenApi.md#putPersonTwofactor) | **PUT** /persons/{personId}/settings/twofactor | TODO |
+| [**putPersonTwofactorForce()**](HiddenApi.md#putPersonTwofactorForce) | **PUT** /persons/{personId}/settings/twofactor/force | TODO |
+| [**putProfilesChurch()**](HiddenApi.md#putProfilesChurch) | **PUT** /profiles/church |  |
+| [**putStatement()**](HiddenApi.md#putStatement) | **PUT** /finance/accountingperiods/{id}/statements/{statementId} | TODO |
+| [**putUserRules()**](HiddenApi.md#putUserRules) | **PUT** /finance/accountingperiods/{id}/userrules | TODO |
+| [**putWikiCategory()**](HiddenApi.md#putWikiCategory) | **PUT** /wiki/categories/{wikiCategoryId} | TODO |
+| [**startWebsiteTest()**](HiddenApi.md#startWebsiteTest) | **GET** /website/starttest | TODO |
 
+
+## `deleteBookings()`
+
+```php
+deleteBookings()
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->deleteBookings();
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->deleteBookings: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteCalendarsCalendarIdAppointmentsAppointmentId()`
+
+```php
+deleteCalendarsCalendarIdAppointmentsAppointmentId($calendar_id, $appointment_id)
+```
+
+deleteAppointment
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$calendar_id = 'calendar_id_example'; // string
+$appointment_id = 'appointment_id_example'; // string
+
+try {
+    $apiInstance->deleteCalendarsCalendarIdAppointmentsAppointmentId($calendar_id, $appointment_id);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->deleteCalendarsCalendarIdAppointmentsAppointmentId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_id** | **string**|  | |
+| **appointment_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteFinanceDonators()`
+
+```php
+deleteFinanceDonators()
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->deleteFinanceDonators();
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->deleteFinanceDonators: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `deletePersonLoginToken()`
 
@@ -110,9 +290,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -169,9 +349,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -228,9 +408,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -288,10 +468,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **statement_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **statement_id** | **string**|  | |
 
 ### Return type
 
@@ -405,10 +585,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **statement_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **statement_id** | **string**|  | |
 
 ### Return type
 
@@ -466,10 +646,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **account_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **account_id** | **string**|  | |
 
 ### Return type
 
@@ -528,11 +708,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **account_id** | **string**|  |
- **statement_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **account_id** | **string**|  | |
+| **statement_id** | **string**|  | |
 
 ### Return type
 
@@ -590,10 +770,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **account_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **account_id** | **string**|  | |
 
 ### Return type
 
@@ -766,10 +946,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_id** | **int**| ID of Calendar |
- **appointment_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_id** | **int**| ID of Calendar | |
+| **appointment_id** | **string**|  | |
 
 ### Return type
 
@@ -882,9 +1062,65 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getFinanceTransactionsDatevexport()`
+
+```php
+getFinanceTransactionsDatevexport()
+```
+
+datevExport
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->getFinanceTransactionsDatevexport();
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->getFinanceTransactionsDatevexport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -941,9 +1177,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -1001,10 +1237,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **person_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **person_id** | **string**|  | |
 
 ### Return type
 
@@ -1062,10 +1298,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **person_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **person_id** | **string**|  | |
 
 ### Return type
 
@@ -1291,9 +1527,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **string**|  | |
 
 ### Return type
 
@@ -1350,9 +1586,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -1409,9 +1645,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -1468,9 +1704,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -1528,10 +1764,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **event_id** | **int**| ID of Event |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **event_id** | **int**| ID of Event | |
 
 ### Return type
 
@@ -1759,9 +1995,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
 
 ### Return type
 
@@ -1932,9 +2168,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slug** | **string**| Slug to check |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **slug** | **string**| Slug to check | |
 
 ### Return type
 
@@ -1991,9 +2227,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -2056,15 +2292,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **string**|  | [optional]
- **order_by** | **string**|  | [optional]
- **direction** | **string**|  | [optional]
- **accounting_period_id** | **string**|  | [optional]
- **target** | **string**| select special Columns for particular target | [optional]
- **page** | **string**|  | [optional]
- **body** | **object**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **string**|  | [optional] |
+| **order_by** | **string**|  | [optional] |
+| **direction** | **string**|  | [optional] |
+| **accounting_period_id** | **string**|  | [optional] |
+| **target** | **string**| select special Columns for particular target | [optional] |
+| **page** | **string**|  | [optional] |
+| **body** | **object**|  | [optional] |
 
 ### Return type
 
@@ -2126,14 +2362,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **string**|  | [optional]
- **order_by** | **string**|  | [optional]
- **direction** | **string**|  | [optional]
- **accounting_period_id** | **string**|  | [optional]
- **target** | **string**| select special Columns for particular target | [optional]
- **page** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **string**|  | [optional] |
+| **order_by** | **string**|  | [optional] |
+| **direction** | **string**|  | [optional] |
+| **accounting_period_id** | **string**|  | [optional] |
+| **target** | **string**| select special Columns for particular target | [optional] |
+| **page** | **string**|  | [optional] |
 
 ### Return type
 
@@ -2246,9 +2482,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -2308,12 +2544,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **account_id** | **string**|  |
- **statement_id** | **string**|  |
- **movement_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **account_id** | **string**|  | |
+| **statement_id** | **string**|  | |
+| **movement_id** | **string**|  | |
 
 ### Return type
 
@@ -2371,10 +2607,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. |
- **domain_identifier** | **int**| the domain identifier |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. | |
+| **domain_identifier** | **int**| the domain identifier | |
 
 ### Return type
 
@@ -2431,9 +2667,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -2493,12 +2729,68 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **account_id** | **string**|  |
- **statement_id** | **string**|  |
- **movement_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **account_id** | **string**|  | |
+| **statement_id** | **string**|  | |
+| **movement_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postBookings()`
+
+```php
+postBookings()
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->postBookings();
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->postBookings: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -2779,9 +3071,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -2951,9 +3243,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **post_nps_request** | [**\StevenBuehner\ChurchTools\Model\PostNpsRequest**](../Model/PostNpsRequest.md)| A valid score between 1 and 10 is stored to the database. Any other number than that is intepreted as decline. Thas means, no score is saved but the user is marked as he has voted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_nps_request** | [**\StevenBuehner\ChurchTools\Model\PostNpsRequest**](../Model/PostNpsRequest.md)| A valid score between 1 and 10 is stored to the database. Any other number than that is intepreted as decline. Thas means, no score is saved but the user is marked as he has voted. | [optional] |
 
 ### Return type
 
@@ -3010,9 +3302,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -3125,9 +3417,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3258,6 +3550,62 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putBookings()`
+
+```php
+putBookings()
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->putBookings();
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->putBookings: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `putCalendarMeetingRequests()`
 
 ```php
@@ -3298,11 +3646,72 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_id** | **int**| ID of Calendar |
- **appointment_id** | **string**|  |
- **meeting_request_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_id** | **int**| ID of Calendar | |
+| **appointment_id** | **string**|  | |
+| **meeting_request_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putCalendarsCalendarIdAppointmentsAppointmentId()`
+
+```php
+putCalendarsCalendarIdAppointmentsAppointmentId($calendar_id, $appointment_id)
+```
+
+updateAppointment
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$calendar_id = 'calendar_id_example'; // string
+$appointment_id = 'appointment_id_example'; // string
+
+try {
+    $apiInstance->putCalendarsCalendarIdAppointmentsAppointmentId($calendar_id, $appointment_id);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->putCalendarsCalendarIdAppointmentsAppointmentId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_id** | **string**|  | |
+| **appointment_id** | **string**|  | |
 
 ### Return type
 
@@ -3415,9 +3824,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3474,9 +3883,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -3533,9 +3942,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -3592,9 +4001,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -3651,9 +4060,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -3713,9 +4122,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **update_campus_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequest**](../Model/UpdateCampusRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **update_campus_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequest**](../Model/UpdateCampusRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -3773,10 +4182,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **statement_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **statement_id** | **string**|  | |
 
 ### Return type
 
@@ -3833,9 +4242,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3892,9 +4301,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **int**| ID of WikiCategory |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wiki_category_id** | **int**| ID of WikiCategory | |
 
 ### Return type
 

@@ -1,15 +1,76 @@
 # StevenBuehner\ChurchTools\GeneralApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getApiInfo()**](GeneralApi.md#getApiInfo) | **GET** /info | Information about API
-[**getCsrftoken()**](GeneralApi.md#getCsrftoken) | **GET** /csrftoken | CSRF token for the current user
-[**getCurrentUser()**](GeneralApi.md#getCurrentUser) | **GET** /whoami | Currently logged in user.
-[**getSearch()**](GeneralApi.md#getSearch) | **GET** /search | Global Search
-[**postLogin()**](GeneralApi.md#postLogin) | **POST** /login | Login with username
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteSimulate()**](GeneralApi.md#deleteSimulate) | **DELETE** /simulate |  |
+| [**getApiInfo()**](GeneralApi.md#getApiInfo) | **GET** /info | Information about API |
+| [**getCsrftoken()**](GeneralApi.md#getCsrftoken) | **GET** /csrftoken | CSRF token for the current user |
+| [**getCurrentUser()**](GeneralApi.md#getCurrentUser) | **GET** /whoami | Currently logged in user. |
+| [**getSearch()**](GeneralApi.md#getSearch) | **GET** /search | Global Search |
+| [**postLogin()**](GeneralApi.md#postLogin) | **POST** /login | Login with username |
+| [**postSimulate()**](GeneralApi.md#postSimulate) | **POST** /simulate |  |
 
+
+## `deleteSimulate()`
+
+```php
+deleteSimulate(): \StevenBuehner\ChurchTools\Model\DeleteSimulate200Response
+```
+
+
+
+Stops the current simulation
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GeneralApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->deleteSimulate();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GeneralApi->deleteSimulate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\DeleteSimulate200Response**](../Model/DeleteSimulate200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `getApiInfo()`
 
@@ -158,9 +219,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **only_allow_authenticated** | **bool**| If set to &#x60;true&#x60; the route will return 401 Unauthorized if the user is not logged in. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **only_allow_authenticated** | **bool**| If set to &#x60;true&#x60; the route will return 401 Unauthorized if the user is not logged in. | [optional] |
 
 ### Return type
 
@@ -221,10 +282,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**|  |
- **domain_types** | [**string[]**](../Model/string.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**|  | |
+| **domain_types** | [**string[]**](../Model/string.md)|  | [optional] |
 
 ### Return type
 
@@ -284,9 +345,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **post_login_request** | [**\StevenBuehner\ChurchTools\Model\PostLoginRequest**](../Model/PostLoginRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_login_request** | [**\StevenBuehner\ChurchTools\Model\PostLoginRequest**](../Model/PostLoginRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -300,6 +361,67 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postSimulate()`
+
+```php
+postSimulate($post_simulate_request)
+```
+
+
+
+Starts the simulation of another person
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GeneralApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_simulate_request = new \StevenBuehner\ChurchTools\Model\PostSimulateRequest(); // \StevenBuehner\ChurchTools\Model\PostSimulateRequest
+
+try {
+    $apiInstance->postSimulate($post_simulate_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GeneralApi->postSimulate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_simulate_request** | [**\StevenBuehner\ChurchTools\Model\PostSimulateRequest**](../Model/PostSimulateRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

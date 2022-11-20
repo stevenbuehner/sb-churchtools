@@ -122,6 +122,8 @@ Class | Method | HTTP request | Description
 *ContactLabelApi* | [**putContactlabel**](docs/Api/ContactLabelApi.md#putcontactlabel) | **PUT** /contactlabels/{id} | Update Contact Label
 *DepartmentApi* | [**getDepartments**](docs/Api/DepartmentApi.md#getdepartments) | **GET** /departments | Get all departments
 *EventApi* | [**agendaExport**](docs/Api/EventApi.md#agendaexport) | **POST** /agendas/{agendaId}/export | Exports the agenda
+*EventApi* | [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy**](docs/Api/EventApi.md#deletepersonideventseventidservicesserviceidexchangerequestscopy) | **DELETE** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request
+*EventApi* | [**deletePersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#deletepersonidexchangerequestsrequestid) | **DELETE** /{personId}/exchangerequests/{requestId} | Decline a service exchange request
 *EventApi* | [**getAgendaForEvent**](docs/Api/EventApi.md#getagendaforevent) | **GET** /events/{eventId}/agenda | Get agenda for event
 *EventApi* | [**getAllEvents**](docs/Api/EventApi.md#getallevents) | **GET** /events | Get all events
 *EventApi* | [**getEvent**](docs/Api/EventApi.md#getevent) | **GET** /events/{eventId} | Get a single event
@@ -129,6 +131,11 @@ Class | Method | HTTP request | Description
 *EventApi* | [**getEventMasterdata**](docs/Api/EventApi.md#geteventmasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
 *EventApi* | [**getPersonEvents**](docs/Api/EventApi.md#getpersonevents) | **GET** /persons/{personId}/events | Get events that person is involved with
 *EventApi* | [**getSongsOfAgenda**](docs/Api/EventApi.md#getsongsofagenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
+*EventApi* | [**personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet**](docs/Api/EventApi.md#personideventseventidservicesserviceidexchangerequestscandidatesget) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request
+*EventApi* | [**personIdEventsEventIdServicesServiceIdExchangerequestsGet**](docs/Api/EventApi.md#personideventseventidservicesserviceidexchangerequestsget) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service
+*EventApi* | [**personIdExchangerequestsGet**](docs/Api/EventApi.md#personidexchangerequestsget) | **GET** /{personId}/exchangerequests | Get all service exchange requests that a user got
+*EventApi* | [**postPersonIdEventsEventIdServicesServiceIdExchangerequests**](docs/Api/EventApi.md#postpersonideventseventidservicesserviceidexchangerequests) | **POST** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request
+*EventApi* | [**putPersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#putpersonidexchangerequestsrequestid) | **PUT** /{personId}/exchangerequests/{requestId} | Accept a service exchange request
 *EventApi* | [**sendAgendaEmail**](docs/Api/EventApi.md#sendagendaemail) | **POST** /agendas/send | Send agenda email to recipients
 *EventApi* | [**sendEventEmail**](docs/Api/EventApi.md#sendeventemail) | **POST** /events/send | Send Mail to Event Participants
 *EventApi* | [**startStopEventChat**](docs/Api/EventApi.md#startstopeventchat) | **POST** /events/{eventId}/chat | Start or stop an event chat
@@ -142,6 +149,7 @@ Class | Method | HTTP request | Description
 *FileApi* | [**uploadFiles**](docs/Api/FileApi.md#uploadfiles) | **POST** /files/{domainType}/{domainIdentifier} | Upload files
 *FinanceApi* | [**applyFinanceTemplate**](docs/Api/FinanceApi.md#applyfinancetemplate) | **POST** /finance/templates/{id} | Apply finance template
 *FinanceApi* | [**batchTransaction**](docs/Api/FinanceApi.md#batchtransaction) | **PATCH** /finance/transactions | Transaction Batch Processing
+*FinanceApi* | [**createAllFinanceDonationReceipts**](docs/Api/FinanceApi.md#createallfinancedonationreceipts) | **POST** /finance/donators/receipts | Create donation receipts
 *FinanceApi* | [**createCashDiscount**](docs/Api/FinanceApi.md#createcashdiscount) | **POST** /finance/cashdiscounts | Create new cash discout
 *FinanceApi* | [**createCostCenter**](docs/Api/FinanceApi.md#createcostcenter) | **POST** /finance/costcenters | Create new cost center
 *FinanceApi* | [**createNewAccount**](docs/Api/FinanceApi.md#createnewaccount) | **POST** /finance/accounts | Create new account
@@ -163,6 +171,8 @@ Class | Method | HTTP request | Description
 *FinanceApi* | [**deleteCashDiscount**](docs/Api/FinanceApi.md#deletecashdiscount) | **DELETE** /finance/cashdiscounts/{id} | Delete cash discount
 *FinanceApi* | [**deleteClient**](docs/Api/FinanceApi.md#deleteclient) | **DELETE** /finance/clients/{id} | Delete client
 *FinanceApi* | [**deleteCostCenter**](docs/Api/FinanceApi.md#deletecostcenter) | **DELETE** /finance/costcenters/{id} | Delete cost center
+*FinanceApi* | [**deleteFinanceDonationReceipts**](docs/Api/FinanceApi.md#deletefinancedonationreceipts) | **DELETE** /finance/donators/receipts | Delete all donation receipts
+*FinanceApi* | [**deleteFinanceDonatorsDonatorCoupleId**](docs/Api/FinanceApi.md#deletefinancedonatorsdonatorcoupleid) | **DELETE** /finance/donators/{donatorCoupleId}/receipts | delete-donation-receipt
 *FinanceApi* | [**deleteTaxRate**](docs/Api/FinanceApi.md#deletetaxrate) | **DELETE** /finance/taxrates/{id} | Delete tax rate
 *FinanceApi* | [**deleteTaxType**](docs/Api/FinanceApi.md#deletetaxtype) | **DELETE** /finance/taxtypes/{id} | Delete tax type
 *FinanceApi* | [**deleteTransaction**](docs/Api/FinanceApi.md#deletetransaction) | **DELETE** /finance/transactions/{id} | Delete transaction
@@ -181,6 +191,7 @@ Class | Method | HTTP request | Description
 *FinanceApi* | [**getAllCashDiscounts**](docs/Api/FinanceApi.md#getallcashdiscounts) | **GET** /finance/cashdiscounts | Get all cash discounts ordered by id
 *FinanceApi* | [**getAllClients**](docs/Api/FinanceApi.md#getallclients) | **GET** /finance/clients | Get all clients
 *FinanceApi* | [**getAllCostCenters**](docs/Api/FinanceApi.md#getallcostcenters) | **GET** /finance/costcenters | Get all cost centers ordered by accounting period and number ascending
+*FinanceApi* | [**getAllDonationReceipts**](docs/Api/FinanceApi.md#getalldonationreceipts) | **GET** /finance/donators/receipts | Get all donators including their donation information (e.g. donation amount)
 *FinanceApi* | [**getAllDonators**](docs/Api/FinanceApi.md#getalldonators) | **GET** /finance/donators | Get all donators including their donation information (e.g. donation amount)
 *FinanceApi* | [**getAllFinanceTemplates**](docs/Api/FinanceApi.md#getallfinancetemplates) | **GET** /finance/templates | Get all finance templates
 *FinanceApi* | [**getAllTaxRates**](docs/Api/FinanceApi.md#getalltaxrates) | **GET** /finance/taxrates | Get all tax rates ordered by id
@@ -192,6 +203,7 @@ Class | Method | HTTP request | Description
 *FinanceApi* | [**getCostCenter**](docs/Api/FinanceApi.md#getcostcenter) | **GET** /finance/costcenters/{id} | Get a cost center
 *FinanceApi* | [**getDonationReceipt**](docs/Api/FinanceApi.md#getdonationreceipt) | **GET** /finance/donationreceipt | Get donation receipt PDFs (cover letter and attachment)
 *FinanceApi* | [**getFinanceAccountsCsv**](docs/Api/FinanceApi.md#getfinanceaccountscsv) | **GET** /finance/accounts/csv | Your GET endpoint
+*FinanceApi* | [**getFinanceDonatorsDonatorCoupleId**](docs/Api/FinanceApi.md#getfinancedonatorsdonatorcoupleid) | **GET** /finance/donators/{donatorCoupleId}/receipts | Get donation receipt PDFs (cover letter and attachment)
 *FinanceApi* | [**getTaxRate**](docs/Api/FinanceApi.md#gettaxrate) | **GET** /finance/taxrates/{id} | Get a tax rate
 *FinanceApi* | [**getTaxType**](docs/Api/FinanceApi.md#gettaxtype) | **GET** /finance/taxtypes/{id} | Get a tax type
 *FinanceApi* | [**getTransactionById**](docs/Api/FinanceApi.md#gettransactionbyid) | **GET** /finance/transactions/{id} | Get a transaction
@@ -210,19 +222,21 @@ Class | Method | HTTP request | Description
 *FinanceApi* | [**updateTaxType**](docs/Api/FinanceApi.md#updatetaxtype) | **PUT** /finance/taxtypes/{id} | Update tax type
 *FinanceApi* | [**updateTransaction**](docs/Api/FinanceApi.md#updatetransaction) | **PUT** /finance/transactions/{id} | Update transaction
 *FinanceApi* | [**updateTransactionPurpose**](docs/Api/FinanceApi.md#updatetransactionpurpose) | **PUT** /finance/transactionpurposes/{id} | Update transaction purpose
+*GeneralApi* | [**deleteSimulate**](docs/Api/GeneralApi.md#deletesimulate) | **DELETE** /simulate | 
 *GeneralApi* | [**getApiInfo**](docs/Api/GeneralApi.md#getapiinfo) | **GET** /info | Information about API
 *GeneralApi* | [**getCsrftoken**](docs/Api/GeneralApi.md#getcsrftoken) | **GET** /csrftoken | CSRF token for the current user
 *GeneralApi* | [**getCurrentUser**](docs/Api/GeneralApi.md#getcurrentuser) | **GET** /whoami | Currently logged in user.
 *GeneralApi* | [**getSearch**](docs/Api/GeneralApi.md#getsearch) | **GET** /search | Global Search
 *GeneralApi* | [**postLogin**](docs/Api/GeneralApi.md#postlogin) | **POST** /login | Login with username
+*GeneralApi* | [**postSimulate**](docs/Api/GeneralApi.md#postsimulate) | **POST** /simulate | 
 *GroupApi* | [**checkin**](docs/Api/GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
 *GroupApi* | [**createMeeting**](docs/Api/GroupApi.md#createmeeting) | **POST** /groups/{groupId}/meetings | Create a group meeting
-*GroupApi* | [**createOrUpdateMember**](docs/Api/GroupApi.md#createorupdatemember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
+*GroupApi* | [**createOrUpdateMember**](docs/Api/GroupApi.md#createorupdatemember) | **PUT** /groups/{groupId}/members/{personId} | Create/Update a group member
 *GroupApi* | [**deleteAutomaticEmail**](docs/Api/GroupApi.md#deleteautomaticemail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email
 *GroupApi* | [**deleteGroup**](docs/Api/GroupApi.md#deletegroup) | **DELETE** /groups/{groupId} | 
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingid) | **DELETE** /groups/{groupId}/meetings/{meetingId} | 
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingidmembersmemberid) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
-*GroupApi* | [**deleteMember**](docs/Api/GroupApi.md#deletemember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
+*GroupApi* | [**deleteMember**](docs/Api/GroupApi.md#deletemember) | **DELETE** /groups/{groupId}/members/{personId} | Delete a group member
 *GroupApi* | [**getAllGroupMembers**](docs/Api/GroupApi.md#getallgroupmembers) | **GET** /groups/{groupId}/members | Get all group members
 *GroupApi* | [**getAllGroupsForPerson**](docs/Api/GroupApi.md#getallgroupsforperson) | **GET** /persons/{personId}/groups | Get all groups a member is in
 *GroupApi* | [**getAllMeetings**](docs/Api/GroupApi.md#getallmeetings) | **GET** /groups/{groupId}/meetings | Get all group meetings for a specific group
@@ -265,6 +279,9 @@ Class | Method | HTTP request | Description
 *GroupHomepageApi* | [**issueSignUpToken**](docs/Api/GroupHomepageApi.md#issuesignuptoken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
 *GroupHomepageApi* | [**postPublicgroupsGroupIdMailToLeaders**](docs/Api/GroupHomepageApi.md#postpublicgroupsgroupidmailtoleaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
 *GroupHomepageApi* | [**postPublicgroupsGroupIdSignup**](docs/Api/GroupHomepageApi.md#postpublicgroupsgroupidsignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
+*HiddenApi* | [**deleteBookings**](docs/Api/HiddenApi.md#deletebookings) | **DELETE** /bookings | 
+*HiddenApi* | [**deleteCalendarsCalendarIdAppointmentsAppointmentId**](docs/Api/HiddenApi.md#deletecalendarscalendaridappointmentsappointmentid) | **DELETE** /calendars/{calendarId}/appointments/{appointmentId} | deleteAppointment
+*HiddenApi* | [**deleteFinanceDonators**](docs/Api/HiddenApi.md#deletefinancedonators) | **DELETE** /finance/donators | 
 *HiddenApi* | [**deletePersonLoginToken**](docs/Api/HiddenApi.md#deletepersonlogintoken) | **DELETE** /persons/{personId}/logintoken | TODO
 *HiddenApi* | [**deletePersonPrivacyPolicy**](docs/Api/HiddenApi.md#deletepersonprivacypolicy) | **DELETE** /persons/{personId}/privacypolicy | TODO
 *HiddenApi* | [**deletePersonTwofactor**](docs/Api/HiddenApi.md#deletepersontwofactor) | **DELETE** /persons/{personId}/settings/twofactor | TODO
@@ -279,6 +296,7 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**getCalendarMeetingRequests**](docs/Api/HiddenApi.md#getcalendarmeetingrequests) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/meetingrequests | TODO
 *HiddenApi* | [**getConfig**](docs/Api/HiddenApi.md#getconfig) | **GET** /config | TODO
 *HiddenApi* | [**getFile**](docs/Api/HiddenApi.md#getfile) | **GET** /files/{id} | TODO
+*HiddenApi* | [**getFinanceTransactionsDatevexport**](docs/Api/HiddenApi.md#getfinancetransactionsdatevexport) | **GET** /finance/transactions/datevexport | datevExport
 *HiddenApi* | [**getGroupQRCodeCheckin**](docs/Api/HiddenApi.md#getgroupqrcodecheckin) | **GET** /groups/{groupId}/qrcodecheckin | TODO
 *HiddenApi* | [**getGroupQRCodeCheckinPerson**](docs/Api/HiddenApi.md#getgroupqrcodecheckinperson) | **GET** /groups/{groupId}/qrcodecheckin/{personId} | TODO
 *HiddenApi* | [**getGroupQRCodeCheckinPersonSend**](docs/Api/HiddenApi.md#getgroupqrcodecheckinpersonsend) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/send | TODO
@@ -306,6 +324,7 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**patchFileWithDomainType**](docs/Api/HiddenApi.md#patchfilewithdomaintype) | **PATCH** /files/{domainType}/{domainIdentifier} | TODO
 *HiddenApi* | [**patchGroup**](docs/Api/HiddenApi.md#patchgroup) | **PATCH** /groups/{groupId} | TODO
 *HiddenApi* | [**postAccountStatementMovement**](docs/Api/HiddenApi.md#postaccountstatementmovement) | **POST** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId} | TODO
+*HiddenApi* | [**postBookings**](docs/Api/HiddenApi.md#postbookings) | **POST** /bookings | 
 *HiddenApi* | [**postBulkAccounts**](docs/Api/HiddenApi.md#postbulkaccounts) | **POST** /finance/accounts/bulkcreate | TODO
 *HiddenApi* | [**postBulkTransactions**](docs/Api/HiddenApi.md#postbulktransactions) | **POST** /finance/transactions/bulkcreate | TODO
 *HiddenApi* | [**postCostCenterExport**](docs/Api/HiddenApi.md#postcostcenterexport) | **POST** /finance/costcenters/export | TODO
@@ -319,7 +338,9 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**postStatements**](docs/Api/HiddenApi.md#poststatements) | **POST** /finance/accountingperiods/{id}/statements | TODO
 *HiddenApi* | [**postTwofactorTotp**](docs/Api/HiddenApi.md#posttwofactortotp) | **POST** /twofactor/totp | TODO
 *HiddenApi* | [**postWikiCategory**](docs/Api/HiddenApi.md#postwikicategory) | **POST** /wiki/categories | TODO
+*HiddenApi* | [**putBookings**](docs/Api/HiddenApi.md#putbookings) | **PUT** /bookings | 
 *HiddenApi* | [**putCalendarMeetingRequests**](docs/Api/HiddenApi.md#putcalendarmeetingrequests) | **PUT** /calendars/{calendarId}/appointments/{appointmentId}/meetingrequests/{meetingRequestId} | TODO
+*HiddenApi* | [**putCalendarsCalendarIdAppointmentsAppointmentId**](docs/Api/HiddenApi.md#putcalendarscalendaridappointmentsappointmentid) | **PUT** /calendars/{calendarId}/appointments/{appointmentId} | updateAppointment
 *HiddenApi* | [**putConfig**](docs/Api/HiddenApi.md#putconfig) | **PUT** /config | TODO
 *HiddenApi* | [**putJobStatus**](docs/Api/HiddenApi.md#putjobstatus) | **PUT** /jobs/{id}/status | TODO
 *HiddenApi* | [**putPersonPassword**](docs/Api/HiddenApi.md#putpersonpassword) | **PUT** /persons/{personId}/password | TODO
@@ -449,6 +470,9 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [](docs/Model/.md)
+- [1](docs/Model/1.md)
+- [1Meta](docs/Model/1Meta.md)
+- [200Response](docs/Model/200Response.md)
 - [Absence](docs/Model/Absence.md)
 - [Absence1](docs/Model/Absence1.md)
 - [AbsenceReason](docs/Model/AbsenceReason.md)
@@ -520,8 +544,6 @@ Class | Method | HTTP request | Description
 - [CreateNewAccountingPeriod201Response](docs/Model/CreateNewAccountingPeriod201Response.md)
 - [CreateNewAccountingPeriodRequest](docs/Model/CreateNewAccountingPeriodRequest.md)
 - [CreateNewCampus201Response](docs/Model/CreateNewCampus201Response.md)
-- [CreateNewCampus201ResponseData](docs/Model/CreateNewCampus201ResponseData.md)
-- [CreateNewCampus201ResponseDataGroupsInner](docs/Model/CreateNewCampus201ResponseDataGroupsInner.md)
 - [CreateNewCampusRequest](docs/Model/CreateNewCampusRequest.md)
 - [CreateNewChatRequest](docs/Model/CreateNewChatRequest.md)
 - [CreateNewClientRequest](docs/Model/CreateNewClientRequest.md)
@@ -531,9 +553,6 @@ Class | Method | HTTP request | Description
 - [CreateNewTransactionPurposeRequest](docs/Model/CreateNewTransactionPurposeRequest.md)
 - [CreateNewTransactionRequest](docs/Model/CreateNewTransactionRequest.md)
 - [CreateOrUpdateMember200Response](docs/Model/CreateOrUpdateMember200Response.md)
-- [CreateOrUpdateMember200ResponseData](docs/Model/CreateOrUpdateMember200ResponseData.md)
-- [CreateOrUpdateMember200ResponseDataPerson](docs/Model/CreateOrUpdateMember200ResponseDataPerson.md)
-- [CreateOrUpdateMember200ResponseDataPersonDomainAttributes](docs/Model/CreateOrUpdateMember200ResponseDataPersonDomainAttributes.md)
 - [CreateOrUpdateMemberRequest](docs/Model/CreateOrUpdateMemberRequest.md)
 - [CreatePerson400Response](docs/Model/CreatePerson400Response.md)
 - [CreatePersonRequest](docs/Model/CreatePersonRequest.md)
@@ -548,10 +567,19 @@ Class | Method | HTTP request | Description
 - [DeleteAccountClass409ResponseData](docs/Model/DeleteAccountClass409ResponseData.md)
 - [DeleteAccountClass409ResponseDataReferencesInner](docs/Model/DeleteAccountClass409ResponseDataReferencesInner.md)
 - [DeleteAccountsForAccountingPeriod400Response](docs/Model/DeleteAccountsForAccountingPeriod400Response.md)
+- [DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest](docs/Model/DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest.md)
+- [DeleteSimulate200Response](docs/Model/DeleteSimulate200Response.md)
+- [DeleteSimulate200ResponseData](docs/Model/DeleteSimulate200ResponseData.md)
 - [Department](docs/Model/Department.md)
 - [Device](docs/Model/Device.md)
 - [Device1](docs/Model/Device1.md)
 - [DomainObjectAny](docs/Model/DomainObjectAny.md)
+- [DomainObjectAnyAnyOf](docs/Model/DomainObjectAnyAnyOf.md)
+- [DomainObjectAnyAnyOf1](docs/Model/DomainObjectAnyAnyOf1.md)
+- [DomainObjectAnyAnyOf1DomainAttributes](docs/Model/DomainObjectAnyAnyOf1DomainAttributes.md)
+- [DomainObjectAnyAnyOf2](docs/Model/DomainObjectAnyAnyOf2.md)
+- [DomainObjectAnyAnyOf3](docs/Model/DomainObjectAnyAnyOf3.md)
+- [DomainObjectAnyAnyOfDomainAttributes](docs/Model/DomainObjectAnyAnyOfDomainAttributes.md)
 - [DomainObjectFile](docs/Model/DomainObjectFile.md)
 - [DomainObjectGroup](docs/Model/DomainObjectGroup.md)
 - [DomainObjectGrouphomepage](docs/Model/DomainObjectGrouphomepage.md)
@@ -564,6 +592,9 @@ Class | Method | HTTP request | Description
 - [EventMasterData1](docs/Model/EventMasterData1.md)
 - [EventMasterData1Data](docs/Model/EventMasterData1Data.md)
 - [EventMasterData1DataAbsenceReasonsInner](docs/Model/EventMasterData1DataAbsenceReasonsInner.md)
+- [EventMasterData1DataServiceGroupsInner](docs/Model/EventMasterData1DataServiceGroupsInner.md)
+- [EventMasterData1DataServicesInner](docs/Model/EventMasterData1DataServicesInner.md)
+- [EventMasterData1DataServicesInnerData](docs/Model/EventMasterData1DataServicesInnerData.md)
 - [EventMasterData1Meta](docs/Model/EventMasterData1Meta.md)
 - [EventService](docs/Model/EventService.md)
 - [ExternalSystem](docs/Model/ExternalSystem.md)
@@ -608,7 +639,6 @@ Class | Method | HTTP request | Description
 - [GetAllCampuses200ResponseDataInnerGroupsInnerGroup](docs/Model/GetAllCampuses200ResponseDataInnerGroupsInnerGroup.md)
 - [GetAllCampuses200ResponseDataInnerGroupsInnerGroupDomainAttributes](docs/Model/GetAllCampuses200ResponseDataInnerGroupsInnerGroupDomainAttributes.md)
 - [GetAllCampuses200ResponseDataInnerServicesInner](docs/Model/GetAllCampuses200ResponseDataInnerServicesInner.md)
-- [GetAllCampuses200ResponseDataInnerSignUpGroup](docs/Model/GetAllCampuses200ResponseDataInnerSignUpGroup.md)
 - [GetAllCampuses200ResponseDataInnerSocialMedia](docs/Model/GetAllCampuses200ResponseDataInnerSocialMedia.md)
 - [GetAllCampuses200ResponseDataInnerTagsInner](docs/Model/GetAllCampuses200ResponseDataInnerTagsInner.md)
 - [GetAllCampuses200ResponseDataInnerTeamInner](docs/Model/GetAllCampuses200ResponseDataInnerTeamInner.md)
@@ -843,11 +873,8 @@ Class | Method | HTTP request | Description
 - [GetService200Response](docs/Model/GetService200Response.md)
 - [GetServiceGroup200Response](docs/Model/GetServiceGroup200Response.md)
 - [GetServiceGroups200Response](docs/Model/GetServiceGroups200Response.md)
-- [GetServiceGroups200ResponseDataInner](docs/Model/GetServiceGroups200ResponseDataInner.md)
 - [GetServiceRequestById200Response](docs/Model/GetServiceRequestById200Response.md)
 - [GetServices200Response](docs/Model/GetServices200Response.md)
-- [GetServices200ResponseDataInner](docs/Model/GetServices200ResponseDataInner.md)
-- [GetServices200ResponseDataInnerData](docs/Model/GetServices200ResponseDataInnerData.md)
 - [GetSong200Response](docs/Model/GetSong200Response.md)
 - [GetSongs200Response](docs/Model/GetSongs200Response.md)
 - [GetSongsOfAgenda200Response](docs/Model/GetSongsOfAgenda200Response.md)
@@ -965,6 +992,7 @@ Class | Method | HTTP request | Description
 - [PostPublicgroupsGroupIdSignupRequestFormsInnerFormInner](docs/Model/PostPublicgroupsGroupIdSignupRequestFormsInnerFormInner.md)
 - [PostSecuritylevelId200Response](docs/Model/PostSecuritylevelId200Response.md)
 - [PostSecuritylevelIdRequest](docs/Model/PostSecuritylevelIdRequest.md)
+- [PostSimulateRequest](docs/Model/PostSimulateRequest.md)
 - [PostSyncExternalsystemsExternalSystemIdJobconfigs201Response](docs/Model/PostSyncExternalsystemsExternalSystemIdJobconfigs201Response.md)
 - [PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest](docs/Model/PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest.md)
 - [PostSyncExternalsystemsIdTest400Response](docs/Model/PostSyncExternalsystemsIdTest400Response.md)
@@ -1019,6 +1047,7 @@ Class | Method | HTTP request | Description
 - [SendEventEmail200Response](docs/Model/SendEventEmail200Response.md)
 - [SendEventEmailRequest](docs/Model/SendEventEmailRequest.md)
 - [Service](docs/Model/Service.md)
+- [ServiceExchangeRequest](docs/Model/ServiceExchangeRequest.md)
 - [ServiceGroup](docs/Model/ServiceGroup.md)
 - [ServiceRequest](docs/Model/ServiceRequest.md)
 - [SimpleWikiPage](docs/Model/SimpleWikiPage.md)
@@ -1089,7 +1118,6 @@ Class | Method | HTTP request | Description
 - [WidgetAction1](docs/Model/WidgetAction1.md)
 - [WidgetItem](docs/Model/WidgetItem.md)
 - [WidgetItem1](docs/Model/WidgetItem1.md)
-- [WidgetItem1ActionData](docs/Model/WidgetItem1ActionData.md)
 - [WidgetItem1Details](docs/Model/WidgetItem1Details.md)
 - [WidgetItem1InfosInner](docs/Model/WidgetItem1InfosInner.md)
 - [WikiCategory](docs/Model/WikiCategory.md)

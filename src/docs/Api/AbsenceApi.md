@@ -1,15 +1,15 @@
 # StevenBuehner\ChurchTools\AbsenceApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deletePersonsAbsence()**](AbsenceApi.md#deletePersonsAbsence) | **DELETE** /persons/{personId}/absences/{id} | Delete absence
-[**getGroupsAbsences()**](AbsenceApi.md#getGroupsAbsences) | **GET** /groups/{groupId}/absences | Fetch all absences for persons in a group
-[**getPersonsAbsence()**](AbsenceApi.md#getPersonsAbsence) | **GET** /persons/{personId}/absences/{id} | Fetch one absence
-[**getPersonsAbsences()**](AbsenceApi.md#getPersonsAbsences) | **GET** /persons/{personId}/absences | Fetch all absences for a person
-[**postPersonsAbsences()**](AbsenceApi.md#postPersonsAbsences) | **POST** /persons/{personId}/absences | Create new absence for person
-[**putPersonsAbsence()**](AbsenceApi.md#putPersonsAbsence) | **PUT** /persons/{personId}/absences/{id} | Update absence
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deletePersonsAbsence()**](AbsenceApi.md#deletePersonsAbsence) | **DELETE** /persons/{personId}/absences/{id} | Delete absence |
+| [**getGroupsAbsences()**](AbsenceApi.md#getGroupsAbsences) | **GET** /groups/{groupId}/absences | Fetch all absences for persons in a group |
+| [**getPersonsAbsence()**](AbsenceApi.md#getPersonsAbsence) | **GET** /persons/{personId}/absences/{id} | Fetch one absence |
+| [**getPersonsAbsences()**](AbsenceApi.md#getPersonsAbsences) | **GET** /persons/{personId}/absences | Fetch all absences for a person |
+| [**postPersonsAbsences()**](AbsenceApi.md#postPersonsAbsences) | **POST** /persons/{personId}/absences | Create new absence for person |
+| [**putPersonsAbsence()**](AbsenceApi.md#putPersonsAbsence) | **PUT** /persons/{personId}/absences/{id} | Update absence |
 
 
 ## `deletePersonsAbsence()`
@@ -53,10 +53,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -118,11 +118,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **from_date** | **\DateTime**| Return absences starting from this date. | [optional]
- **to_date** | **\DateTime**| Return absences till this date. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **from_date** | **\DateTime**| Return absences starting from this date. | [optional] |
+| **to_date** | **\DateTime**| Return absences till this date. | [optional] |
 
 ### Return type
 
@@ -183,10 +183,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -248,11 +248,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **from_date** | **\DateTime**| Return absences starting from this date. | [optional]
- **to_date** | **\DateTime**| Return absences till this date. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **from_date** | **\DateTime**| Return absences starting from this date. | [optional] |
+| **to_date** | **\DateTime**| Return absences till this date. | [optional] |
 
 ### Return type
 
@@ -313,10 +313,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **post_persons_absences_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest**](../Model/PostPersonsAbsencesRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **post_persons_absences_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsAbsencesRequest**](../Model/PostPersonsAbsencesRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional] |
 
 ### Return type
 
@@ -378,11 +378,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **id** | **int**| ID of Entity |
- **put_persons_absence_request** | [**\StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest**](../Model/PutPersonsAbsenceRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **id** | **int**| ID of Entity | |
+| **put_persons_absence_request** | [**\StevenBuehner\ChurchTools\Model\PutPersonsAbsenceRequest**](../Model/PutPersonsAbsenceRequest.md)| Absences can be all-day or with a specific time. Either &#x60;startDate&#x60;, &#x60;endDate&#x60;  or &#x60;startTime&#x60;, &#x60;endTime&#x60; MUST be present. If &#x60;*Time&#x60; is given, the &#x60;*Date&#x60; value will be ignored. | [optional] |
 
 ### Return type
 

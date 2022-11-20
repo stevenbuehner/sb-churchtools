@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **services** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[]**](GetAllCampuses200ResponseDataInnerServicesInner.md) |  |
 **short_name** | **string** |  |
 **shorty** | **string** |  |
-**sign_up_group** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup**](GetAllCampuses200ResponseDataInnerSignUpGroup.md) |  | [optional]
+**sign_up_group** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup**](GetAllCampuses200ResponseDataInnerGroupsInnerGroup.md) |  | [optional]
 **slug** | **string** |  |
 **social_media** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSocialMedia**](GetAllCampuses200ResponseDataInnerSocialMedia.md) |  |
 **sort_key** | **int** |  |

@@ -1,45 +1,45 @@
 # StevenBuehner\ChurchTools\SyncApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createSyncMapping()**](SyncApi.md#createSyncMapping) | **POST** /sync/entitymappings | Create new mapping
-[**deleteEntityMapping()**](SyncApi.md#deleteEntityMapping) | **DELETE** /sync/entitymappings/{id} | Delete Mapping from Database.
-[**deleteSyncConflict()**](SyncApi.md#deleteSyncConflict) | **DELETE** /sync/conflicts/{id} | Delete Conflict
-[**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobId()**](SyncApi.md#deleteSyncExternalsystemsExternalSystemIdJobconfigsJobId) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Delete job config
-[**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()**](SyncApi.md#deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Delete all filter entities
-[**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](SyncApi.md#deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Delete all Properties for This Job
-[**deleteSyncExternalsystemsId()**](SyncApi.md#deleteSyncExternalsystemsId) | **DELETE** /sync/externalsystems/{id} | DELETE external system
-[**deleteSyncFieldMappings()**](SyncApi.md#deleteSyncFieldMappings) | **DELETE** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Delete Mapping for Domain Type
-[**getEntityMapping()**](SyncApi.md#getEntityMapping) | **GET** /sync/entitymappings/{id} | Get One Entity Mapping
-[**getSyncAdapters()**](SyncApi.md#getSyncAdapters) | **GET** /sync/adapters | GET Sync Adapters
-[**getSyncConflict()**](SyncApi.md#getSyncConflict) | **GET** /sync/conflicts/{id} | Fetch One Conflict
-[**getSyncConflicts()**](SyncApi.md#getSyncConflicts) | **GET** /sync/conflicts | Fetch all conflicts
-[**getSyncExecutions()**](SyncApi.md#getSyncExecutions) | **GET** /sync/executions | Statistical Information about Sync Executions
-[**getSyncExternalsystems()**](SyncApi.md#getSyncExternalsystems) | **GET** /sync/externalsystems | GET External Systems
-[**getSyncExternalsystemsExternalSystemIdJobconfigsJobId()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigsJobId) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Your Job Configuration
-[**getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Fetch all entity filters for this job
-[**getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Fetch all Properties for This Job
-[**getSyncExternalsystemsExternalSystemIdJobconfigurations()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigurations) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs | GET Job configurations
-[**getSyncExternalsystemsId()**](SyncApi.md#getSyncExternalsystemsId) | **GET** /sync/externalsystems/{id} | GET an external system by id
-[**getSyncFieldMappings()**](SyncApi.md#getSyncFieldMappings) | **GET** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Get Mapping for Domain Type
-[**getSyncJobconfigs()**](SyncApi.md#getSyncJobconfigs) | **GET** /sync/jobconfigs | Your GET endpoint
-[**getSyncLogs()**](SyncApi.md#getSyncLogs) | **GET** /sync/logs | Get Sync Logs
-[**getSyncMappings()**](SyncApi.md#getSyncMappings) | **GET** /sync/entitymappings | Fetch all registered mappings
-[**postSyncExternalsystems()**](SyncApi.md#postSyncExternalsystems) | **POST** /sync/externalsystems | Create external system
-[**postSyncExternalsystemsExternalSystemIdJobconfigs()**](SyncApi.md#postSyncExternalsystemsExternalSystemIdJobconfigs) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs | Create job configuration
-[**postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()**](SyncApi.md#postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/start | Start Execution
-[**postSyncExternalsystemsIdTest()**](SyncApi.md#postSyncExternalsystemsIdTest) | **POST** /sync/externalsystems/{externalSystemId}/test | Test the external system
-[**postSyncLogs()**](SyncApi.md#postSyncLogs) | **POST** /sync/logs | Save Sync Logs
-[**putSyncExternalsystemsExternalSystemIdJobconfigs()**](SyncApi.md#putSyncExternalsystemsExternalSystemIdJobconfigs) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Update job configuration
-[**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()**](SyncApi.md#putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Save entity filters
-[**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](SyncApi.md#putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Save Properties, Which Should Be Synced
-[**putSyncExternalsystemsId()**](SyncApi.md#putSyncExternalsystemsId) | **PUT** /sync/externalsystems/{id} | Update external system
-[**putSyncFieldMappings()**](SyncApi.md#putSyncFieldMappings) | **PUT** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Save Mapping for Domain Type
-[**saveSyncConflict()**](SyncApi.md#saveSyncConflict) | **POST** /sync/conflicts | Save new detected conflict
-[**updateEntityMapping()**](SyncApi.md#updateEntityMapping) | **PUT** /sync/entitymappings/{id} | Update or Create Mapping
-[**updateSyncConflict()**](SyncApi.md#updateSyncConflict) | **PUT** /sync/conflicts/{id} | Update Conflict
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createSyncMapping()**](SyncApi.md#createSyncMapping) | **POST** /sync/entitymappings | Create new mapping |
+| [**deleteEntityMapping()**](SyncApi.md#deleteEntityMapping) | **DELETE** /sync/entitymappings/{id} | Delete Mapping from Database. |
+| [**deleteSyncConflict()**](SyncApi.md#deleteSyncConflict) | **DELETE** /sync/conflicts/{id} | Delete Conflict |
+| [**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobId()**](SyncApi.md#deleteSyncExternalsystemsExternalSystemIdJobconfigsJobId) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Delete job config |
+| [**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()**](SyncApi.md#deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Delete all filter entities |
+| [**deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](SyncApi.md#deleteSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **DELETE** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Delete all Properties for This Job |
+| [**deleteSyncExternalsystemsId()**](SyncApi.md#deleteSyncExternalsystemsId) | **DELETE** /sync/externalsystems/{id} | DELETE external system |
+| [**deleteSyncFieldMappings()**](SyncApi.md#deleteSyncFieldMappings) | **DELETE** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Delete Mapping for Domain Type |
+| [**getEntityMapping()**](SyncApi.md#getEntityMapping) | **GET** /sync/entitymappings/{id} | Get One Entity Mapping |
+| [**getSyncAdapters()**](SyncApi.md#getSyncAdapters) | **GET** /sync/adapters | GET Sync Adapters |
+| [**getSyncConflict()**](SyncApi.md#getSyncConflict) | **GET** /sync/conflicts/{id} | Fetch One Conflict |
+| [**getSyncConflicts()**](SyncApi.md#getSyncConflicts) | **GET** /sync/conflicts | Fetch all conflicts |
+| [**getSyncExecutions()**](SyncApi.md#getSyncExecutions) | **GET** /sync/executions | Statistical Information about Sync Executions |
+| [**getSyncExternalsystems()**](SyncApi.md#getSyncExternalsystems) | **GET** /sync/externalsystems | GET External Systems |
+| [**getSyncExternalsystemsExternalSystemIdJobconfigsJobId()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigsJobId) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Your Job Configuration |
+| [**getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Fetch all entity filters for this job |
+| [**getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Fetch all Properties for This Job |
+| [**getSyncExternalsystemsExternalSystemIdJobconfigurations()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigurations) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs | GET Job configurations |
+| [**getSyncExternalsystemsId()**](SyncApi.md#getSyncExternalsystemsId) | **GET** /sync/externalsystems/{id} | GET an external system by id |
+| [**getSyncFieldMappings()**](SyncApi.md#getSyncFieldMappings) | **GET** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Get Mapping for Domain Type |
+| [**getSyncJobconfigs()**](SyncApi.md#getSyncJobconfigs) | **GET** /sync/jobconfigs | Your GET endpoint |
+| [**getSyncLogs()**](SyncApi.md#getSyncLogs) | **GET** /sync/logs | Get Sync Logs |
+| [**getSyncMappings()**](SyncApi.md#getSyncMappings) | **GET** /sync/entitymappings | Fetch all registered mappings |
+| [**postSyncExternalsystems()**](SyncApi.md#postSyncExternalsystems) | **POST** /sync/externalsystems | Create external system |
+| [**postSyncExternalsystemsExternalSystemIdJobconfigs()**](SyncApi.md#postSyncExternalsystemsExternalSystemIdJobconfigs) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs | Create job configuration |
+| [**postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart()**](SyncApi.md#postSyncExternalsystemsExternalSystemIdJobconfigsJobIdStart) | **POST** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/start | Start Execution |
+| [**postSyncExternalsystemsIdTest()**](SyncApi.md#postSyncExternalsystemsIdTest) | **POST** /sync/externalsystems/{externalSystemId}/test | Test the external system |
+| [**postSyncLogs()**](SyncApi.md#postSyncLogs) | **POST** /sync/logs | Save Sync Logs |
+| [**putSyncExternalsystemsExternalSystemIdJobconfigs()**](SyncApi.md#putSyncExternalsystemsExternalSystemIdJobconfigs) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId} | Update job configuration |
+| [**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter()**](SyncApi.md#putSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/filter | Save entity filters |
+| [**putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties()**](SyncApi.md#putSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties) | **PUT** /sync/externalsystems/{externalSystemId}/jobconfigs/{jobId}/properties | Save Properties, Which Should Be Synced |
+| [**putSyncExternalsystemsId()**](SyncApi.md#putSyncExternalsystemsId) | **PUT** /sync/externalsystems/{id} | Update external system |
+| [**putSyncFieldMappings()**](SyncApi.md#putSyncFieldMappings) | **PUT** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Save Mapping for Domain Type |
+| [**saveSyncConflict()**](SyncApi.md#saveSyncConflict) | **POST** /sync/conflicts | Save new detected conflict |
+| [**updateEntityMapping()**](SyncApi.md#updateEntityMapping) | **PUT** /sync/entitymappings/{id} | Update or Create Mapping |
+| [**updateSyncConflict()**](SyncApi.md#updateSyncConflict) | **PUT** /sync/conflicts/{id} | Update Conflict |
 
 
 ## `createSyncMapping()`
@@ -83,9 +83,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_sync_mapping_request** | [**\StevenBuehner\ChurchTools\Model\CreateSyncMappingRequest**](../Model/CreateSyncMappingRequest.md)| New Entity Mapping of a Person. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_sync_mapping_request** | [**\StevenBuehner\ChurchTools\Model\CreateSyncMappingRequest**](../Model/CreateSyncMappingRequest.md)| New Entity Mapping of a Person. | [optional] |
 
 ### Return type
 
@@ -144,9 +144,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -205,9 +205,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -267,10 +267,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**|  |
- **job_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**|  | |
+| **job_id** | **string**|  | |
 
 ### Return type
 
@@ -335,10 +335,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**| External System ID |
- **job_id** | **string**| Job Configuration ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**| External System ID | |
+| **job_id** | **string**| Job Configuration ID | |
 
 ### Return type
 
@@ -403,10 +403,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**| External System ID |
- **job_id** | **string**| Job Configuration ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**| External System ID | |
+| **job_id** | **string**| Job Configuration ID | |
 
 ### Return type
 
@@ -465,9 +465,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -527,10 +527,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | **string**| Domatin Type |
- **external_system_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| Domatin Type | |
+| **external_system_id** | **string**|  | |
 
 ### Return type
 
@@ -590,9 +590,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -711,9 +711,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -775,11 +775,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **types** | [**string[]**](../Model/string.md)| Filter Response by Conflict Type | [optional]
- **domain_types** | [**string[]**](../Model/string.md)| Filter Response by Domain Types of Related Entity Mappings | [optional]
- **source_ids** | [**int[]**](../Model/int.md)| Filter Response by Source Ids of Related Entity Mappings | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **types** | [**string[]**](../Model/string.md)| Filter Response by Conflict Type | [optional] |
+| **domain_types** | [**string[]**](../Model/string.md)| Filter Response by Domain Types of Related Entity Mappings | [optional] |
+| **source_ids** | [**int[]**](../Model/int.md)| Filter Response by Source Ids of Related Entity Mappings | [optional] |
 
 ### Return type
 
@@ -846,16 +846,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **es_ids** | [**int[]**](../Model/int.md)| Filter by external system | [optional]
- **job_ids** | [**int[]**](../Model/int.md)| Filter by sync job configuration | [optional]
- **start_date** | **\DateTime**| Return executions after that date | [optional]
- **end_date** | **\DateTime**| Return executions before that date | [optional]
- **statuses** | [**string[]**](../Model/string.md)| Filter by status | [optional]
- **page** | **int**| Query page | [optional]
- **limit** | **int**| Number of results per page | [optional]
- **is_dry_run** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **es_ids** | [**int[]**](../Model/int.md)| Filter by external system | [optional] |
+| **job_ids** | [**int[]**](../Model/int.md)| Filter by sync job configuration | [optional] |
+| **start_date** | **\DateTime**| Return executions after that date | [optional] |
+| **end_date** | **\DateTime**| Return executions before that date | [optional] |
+| **statuses** | [**string[]**](../Model/string.md)| Filter by status | [optional] |
+| **page** | **int**| Query page | [optional] |
+| **limit** | **int**| Number of results per page | [optional] |
+| **is_dry_run** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -975,10 +975,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**|  |
- **job_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**|  | |
+| **job_id** | **string**|  | |
 
 ### Return type
 
@@ -1044,10 +1044,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**| External System ID |
- **job_id** | **string**| Job Configuration ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**| External System ID | |
+| **job_id** | **string**| Job Configuration ID | |
 
 ### Return type
 
@@ -1113,10 +1113,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**| External System ID |
- **job_id** | **string**| Job Configuration ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**| External System ID | |
+| **job_id** | **string**| Job Configuration ID | |
 
 ### Return type
 
@@ -1176,9 +1176,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**|  | |
 
 ### Return type
 
@@ -1238,9 +1238,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -1301,10 +1301,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | **string**| Domatin Type |
- **external_system_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| Domatin Type | |
+| **external_system_id** | **string**|  | |
 
 ### Return type
 
@@ -1364,9 +1364,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_ids** | [**int[]**](../Model/int.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_ids** | [**int[]**](../Model/int.md)|  | [optional] |
 
 ### Return type
 
@@ -1435,18 +1435,18 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page Number | [optional] [default to 1]
- **limit** | **int**| Number of Logs per Page | [optional] [default to 10]
- **es_ids** | [**int[]**](../Model/int.md)| Filter by External Systems | [optional]
- **job_ids** | [**int[]**](../Model/int.md)| Filter by Jobs | [optional]
- **start_date** | **\DateTime**| Show Logs From This Date on | [optional]
- **end_date** | **\DateTime**| Show Logs Until This Date | [optional]
- **types** | [**int[]**](../Model/int.md)| Filter by Types | [optional]
- **query** | **string**| Search Through Log Messages | [optional]
- **levels** | [**string[]**](../Model/string.md)| the log levels | [optional]
- **is_dry_run** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **page** | **int**| Page Number | [optional] [default to 1] |
+| **limit** | **int**| Number of Logs per Page | [optional] [default to 10] |
+| **es_ids** | [**int[]**](../Model/int.md)| Filter by External Systems | [optional] |
+| **job_ids** | [**int[]**](../Model/int.md)| Filter by Jobs | [optional] |
+| **start_date** | **\DateTime**| Show Logs From This Date on | [optional] |
+| **end_date** | **\DateTime**| Show Logs Until This Date | [optional] |
+| **types** | [**int[]**](../Model/int.md)| Filter by Types | [optional] |
+| **query** | **string**| Search Through Log Messages | [optional] |
+| **levels** | [**string[]**](../Model/string.md)| the log levels | [optional] |
+| **is_dry_run** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -1508,11 +1508,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | [**string[]**](../Model/string.md)| Filter by Domain Types | [optional]
- **domain_id** | **string**| Filter by Domain Id | [optional]
- **source_id** | **string**| Filter by Source Id | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | [**string[]**](../Model/string.md)| Filter by Domain Types | [optional] |
+| **domain_id** | **string**| Filter by Domain Id | [optional] |
+| **source_id** | **string**| Filter by Source Id | [optional] |
 
 ### Return type
 
@@ -1571,9 +1571,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system2** | [**\StevenBuehner\ChurchTools\Model\ExternalSystem2**](../Model/ExternalSystem2.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system2** | [**\StevenBuehner\ChurchTools\Model\ExternalSystem2**](../Model/ExternalSystem2.md)|  | [optional] |
 
 ### Return type
 
@@ -1634,10 +1634,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**|  |
- **job_configuration1** | [**\StevenBuehner\ChurchTools\Model\JobConfiguration1**](../Model/JobConfiguration1.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**|  | |
+| **job_configuration1** | [**\StevenBuehner\ChurchTools\Model\JobConfiguration1**](../Model/JobConfiguration1.md)|  | [optional] |
 
 ### Return type
 
@@ -1698,11 +1698,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**|  |
- **job_id** | **string**|  |
- **post_sync_externalsystems_external_system_id_jobconfigs_job_id_start_request** | [**\StevenBuehner\ChurchTools\Model\PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest**](../Model/PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**|  | |
+| **job_id** | **string**|  | |
+| **post_sync_externalsystems_external_system_id_jobconfigs_job_id_start_request** | [**\StevenBuehner\ChurchTools\Model\PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest**](../Model/PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1761,9 +1761,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**|  | |
 
 ### Return type
 
@@ -1823,9 +1823,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **post_sync_logs_request** | [**\StevenBuehner\ChurchTools\Model\PostSyncLogsRequest**](../Model/PostSyncLogsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_sync_logs_request** | [**\StevenBuehner\ChurchTools\Model\PostSyncLogsRequest**](../Model/PostSyncLogsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1887,11 +1887,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**|  |
- **job_id** | **string**|  |
- **job_configuration1** | [**\StevenBuehner\ChurchTools\Model\JobConfiguration1**](../Model/JobConfiguration1.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**|  | |
+| **job_id** | **string**|  | |
+| **job_configuration1** | [**\StevenBuehner\ChurchTools\Model\JobConfiguration1**](../Model/JobConfiguration1.md)|  | [optional] |
 
 ### Return type
 
@@ -1958,11 +1958,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**| External System ID |
- **job_id** | **string**| Job Configuration ID |
- **put_sync_externalsystems_external_system_id_jobconfigs_job_id_filter_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest**](../Model/PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**| External System ID | |
+| **job_id** | **string**| Job Configuration ID | |
+| **put_sync_externalsystems_external_system_id_jobconfigs_job_id_filter_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest**](../Model/PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilterRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2029,11 +2029,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **external_system_id** | **string**| External System ID |
- **job_id** | **string**| Job Configuration ID |
- **put_sync_externalsystems_external_system_id_jobconfigs_job_id_properties_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest**](../Model/PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_system_id** | **string**| External System ID | |
+| **job_id** | **string**| Job Configuration ID | |
+| **put_sync_externalsystems_external_system_id_jobconfigs_job_id_properties_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest**](../Model/PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2093,10 +2093,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **external_system2** | [**\StevenBuehner\ChurchTools\Model\ExternalSystem2**](../Model/ExternalSystem2.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **external_system2** | [**\StevenBuehner\ChurchTools\Model\ExternalSystem2**](../Model/ExternalSystem2.md)|  | [optional] |
 
 ### Return type
 
@@ -2158,11 +2158,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | **string**| Domatin Type |
- **external_system_id** | **string**|  |
- **put_sync_field_mappings_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequest**](../Model/PutSyncFieldMappingsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| Domatin Type | |
+| **external_system_id** | **string**|  | |
+| **put_sync_field_mappings_request** | [**\StevenBuehner\ChurchTools\Model\PutSyncFieldMappingsRequest**](../Model/PutSyncFieldMappingsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2210,7 +2210,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
     new GuzzleHttp\Client(),
     $config
 );
-$save_sync_conflict_request = new \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest(); // \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest | 
+$save_sync_conflict_request = new \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest(); // \StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest |  
 
 try {
     $result = $apiInstance->saveSyncConflict($save_sync_conflict_request);
@@ -2222,9 +2222,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **save_sync_conflict_request** | [**\StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest**](../Model/SaveSyncConflictRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **save_sync_conflict_request** | [**\StevenBuehner\ChurchTools\Model\SaveSyncConflictRequest**](../Model/SaveSyncConflictRequest.md)|   | [optional] |
 
 ### Return type
 
@@ -2285,10 +2285,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **update_entity_mapping_request** | [**\StevenBuehner\ChurchTools\Model\UpdateEntityMappingRequest**](../Model/UpdateEntityMappingRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **update_entity_mapping_request** | [**\StevenBuehner\ChurchTools\Model\UpdateEntityMappingRequest**](../Model/UpdateEntityMappingRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2349,10 +2349,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **update_sync_conflict_request** | [**\StevenBuehner\ChurchTools\Model\UpdateSyncConflictRequest**](../Model/UpdateSyncConflictRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **update_sync_conflict_request** | [**\StevenBuehner\ChurchTools\Model\UpdateSyncConflictRequest**](../Model/UpdateSyncConflictRequest.md)|  | [optional] |
 
 ### Return type
 

@@ -1,17 +1,17 @@
 # StevenBuehner\ChurchTools\AdminApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteSecuritylevelId()**](AdminApi.md#deleteSecuritylevelId) | **DELETE** /securitylevels/{id} | Delete the Security Level
-[**getAllLogs()**](AdminApi.md#getAllLogs) | **GET** /logs | Get all log messages
-[**getLogById()**](AdminApi.md#getLogById) | **GET** /logs/{id} | Get a log message
-[**getLoginStatistics()**](AdminApi.md#getLoginStatistics) | **GET** /logs/statistics/login | 
-[**getSecuritylevelId()**](AdminApi.md#getSecuritylevelId) | **GET** /securitylevels/{id} | Get a particular security level
-[**getSecuritylevels()**](AdminApi.md#getSecuritylevels) | **GET** /securitylevels | get all securitylevels
-[**patchSecuritylevelId()**](AdminApi.md#patchSecuritylevelId) | **PATCH** /securitylevels/{id} | Update the security level
-[**postSecuritylevelId()**](AdminApi.md#postSecuritylevelId) | **POST** /securitylevels/{id} | Create a new security Level
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteSecuritylevelId()**](AdminApi.md#deleteSecuritylevelId) | **DELETE** /securitylevels/{id} | Delete the Security Level |
+| [**getAllLogs()**](AdminApi.md#getAllLogs) | **GET** /logs | Get all log messages |
+| [**getLogById()**](AdminApi.md#getLogById) | **GET** /logs/{id} | Get a log message |
+| [**getLoginStatistics()**](AdminApi.md#getLoginStatistics) | **GET** /logs/statistics/login |  |
+| [**getSecuritylevelId()**](AdminApi.md#getSecuritylevelId) | **GET** /securitylevels/{id} | Get a particular security level |
+| [**getSecuritylevels()**](AdminApi.md#getSecuritylevels) | **GET** /securitylevels | get all securitylevels |
+| [**patchSecuritylevelId()**](AdminApi.md#patchSecuritylevelId) | **PATCH** /securitylevels/{id} | Update the security level |
+| [**postSecuritylevelId()**](AdminApi.md#postSecuritylevelId) | **POST** /securitylevels/{id} | Create a new security Level |
 
 
 ## `deleteSecuritylevelId()`
@@ -54,9 +54,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -122,15 +122,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **message** | **string**| Filter by text | [optional]
- **levels** | [**string[]**](../Model/string.md)| Filter by log level ID | [optional]
- **before** | **\DateTime**| Filter log messages before that date. (Use ISO-Format) | [optional]
- **after** | **\DateTime**| Filter log messages after that date. (Use ISO-Format) | [optional]
- **person_id** | **int**| Filter by person | [optional]
- **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **int**| Number of results per page. | [optional] [default to 10]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **message** | **string**| Filter by text | [optional] |
+| **levels** | [**string[]**](../Model/string.md)| Filter by log level ID | [optional] |
+| **before** | **\DateTime**| Filter log messages before that date. (Use ISO-Format) | [optional] |
+| **after** | **\DateTime**| Filter log messages after that date. (Use ISO-Format) | [optional] |
+| **person_id** | **int**| Filter by person | [optional] |
+| **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
+| **limit** | **int**| Number of results per page. | [optional] [default to 10] |
 
 ### Return type
 
@@ -190,9 +190,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -254,11 +254,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_by** | **string**| Order the pagination result. Allowed values: &#x60;frequent&#x60; and &#x60;last&#x60; | [optional]
- **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **int**| Number of results per page. | [optional] [default to 10]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **order_by** | **string**| Order the pagination result. Allowed values: &#x60;frequent&#x60; and &#x60;last&#x60; | [optional] |
+| **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
+| **limit** | **int**| Number of results per page. | [optional] [default to 10] |
 
 ### Return type
 
@@ -317,9 +317,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -438,11 +438,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **forcereorder** | **bool**| Need to be true, if securitylevel shall be reordered | [optional]
- **patch_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest**](../Model/PatchSecuritylevelIdRequest.md)| Information to patch the security level | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **forcereorder** | **bool**| Need to be true, if securitylevel shall be reordered | [optional] |
+| **patch_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchSecuritylevelIdRequest**](../Model/PatchSecuritylevelIdRequest.md)| Information to patch the security level | [optional] |
 
 ### Return type
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`, `application/xml`
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -503,10 +503,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **post_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest**](../Model/PostSecuritylevelIdRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **post_securitylevel_id_request** | [**\StevenBuehner\ChurchTools\Model\PostSecuritylevelIdRequest**](../Model/PostSecuritylevelIdRequest.md)|  | [optional] |
 
 ### Return type
 

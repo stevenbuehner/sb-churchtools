@@ -1,16 +1,16 @@
 # StevenBuehner\ChurchTools\MasterDataApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchMasterDataPerson()**](MasterDataApi.md#fetchMasterDataPerson) | **GET** /masterdata/person | Fetch all master data for the module \&quot;People &amp; Groups\&quot;
-[**getAllData()**](MasterDataApi.md#getAllData) | **GET** /finance/masterdata | Get a master data for finance module
-[**getAllGroupTypeRoles()**](MasterDataApi.md#getAllGroupTypeRoles) | **GET** /masterdata/person/roles | Get all group type roles
-[**getEventMasterdata()**](MasterDataApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
-[**getPersonMasterdata()**](MasterDataApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
-[**getPersonMasterdataRole()**](MasterDataApi.md#getPersonMasterdataRole) | **GET** /masterdata/person/roles/{roleId} | Get a group type role
-[**getResourceMasterdata()**](MasterDataApi.md#getResourceMasterdata) | **GET** /resource/masterdata | Your GET endpoint
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchMasterDataPerson()**](MasterDataApi.md#fetchMasterDataPerson) | **GET** /masterdata/person | Fetch all master data for the module \&quot;People &amp; Groups\&quot; |
+| [**getAllData()**](MasterDataApi.md#getAllData) | **GET** /finance/masterdata | Get a master data for finance module |
+| [**getAllGroupTypeRoles()**](MasterDataApi.md#getAllGroupTypeRoles) | **GET** /masterdata/person/roles | Get all group type roles |
+| [**getEventMasterdata()**](MasterDataApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot; |
+| [**getPersonMasterdata()**](MasterDataApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
+| [**getPersonMasterdataRole()**](MasterDataApi.md#getPersonMasterdataRole) | **GET** /masterdata/person/roles/{roleId} | Get a group type role |
+| [**getResourceMasterdata()**](MasterDataApi.md#getResourceMasterdata) | **GET** /resource/masterdata | Your GET endpoint |
 
 
 ## `fetchMasterDataPerson()`
@@ -110,9 +110,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
 
 ### Return type
 
@@ -347,9 +347,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **role_id** | **int**| ID of group type role |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **int**| ID of group type role | |
 
 ### Return type
 

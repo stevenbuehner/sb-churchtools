@@ -1,12 +1,12 @@
 # StevenBuehner\ChurchTools\WidgetsApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getStartpage()**](WidgetsApi.md#getStartpage) | **GET** /startpage | Widgets and data for startpage
-[**getWidgetBlog()**](WidgetsApi.md#getWidgetBlog) | **GET** /widgets/blog | 
-[**getWidgetRss()**](WidgetsApi.md#getWidgetRss) | **GET** /widgets/rss | 
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getStartpage()**](WidgetsApi.md#getStartpage) | **GET** /startpage | Widgets and data for startpage |
+| [**getWidgetBlog()**](WidgetsApi.md#getWidgetBlog) | **GET** /widgets/blog |  |
+| [**getWidgetRss()**](WidgetsApi.md#getWidgetRss) | **GET** /widgets/rss |  |
 
 
 ## `getStartpage()`

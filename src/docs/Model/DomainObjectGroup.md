@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_url** | **string** |  | [optional]
-**domain_attributes** | **object[]** |  | [optional]
+**domain_attributes** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroupDomainAttributes**](GetAllCampuses200ResponseDataInnerGroupsInnerGroupDomainAttributes.md) |  | [optional]
 **domain_identifier** | **string** |  | [optional]
 **domain_type** | **string** |  | [optional] [default to 'group']
 **frontend_url** | **string** |  | [optional]

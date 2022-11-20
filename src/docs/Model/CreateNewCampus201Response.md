@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseData**](CreateNewCampus201ResponseData.md) |  | [optional]
+**data** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInner**](GetAllCampuses200ResponseDataInner.md) |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\GetBookings200ResponseMeta**](GetBookings200ResponseMeta.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

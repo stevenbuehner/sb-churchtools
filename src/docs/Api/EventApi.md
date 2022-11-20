@@ -1,20 +1,27 @@
 # StevenBuehner\ChurchTools\EventApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**agendaExport()**](EventApi.md#agendaExport) | **POST** /agendas/{agendaId}/export | Exports the agenda
-[**getAgendaForEvent()**](EventApi.md#getAgendaForEvent) | **GET** /events/{eventId}/agenda | Get agenda for event
-[**getAllEvents()**](EventApi.md#getAllEvents) | **GET** /events | Get all events
-[**getEvent()**](EventApi.md#getEvent) | **GET** /events/{eventId} | Get a single event
-[**getEventIcal()**](EventApi.md#getEventIcal) | **GET** /events/ical | 
-[**getEventMasterdata()**](EventApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
-[**getPersonEvents()**](EventApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with
-[**getSongsOfAgenda()**](EventApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
-[**sendAgendaEmail()**](EventApi.md#sendAgendaEmail) | **POST** /agendas/send | Send agenda email to recipients
-[**sendEventEmail()**](EventApi.md#sendEventEmail) | **POST** /events/send | Send Mail to Event Participants
-[**startStopEventChat()**](EventApi.md#startStopEventChat) | **POST** /events/{eventId}/chat | Start or stop an event chat
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**agendaExport()**](EventApi.md#agendaExport) | **POST** /agendas/{agendaId}/export | Exports the agenda |
+| [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy()**](EventApi.md#deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy) | **DELETE** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request |
+| [**deletePersonIdExchangerequestsRequestId()**](EventApi.md#deletePersonIdExchangerequestsRequestId) | **DELETE** /{personId}/exchangerequests/{requestId} | Decline a service exchange request |
+| [**getAgendaForEvent()**](EventApi.md#getAgendaForEvent) | **GET** /events/{eventId}/agenda | Get agenda for event |
+| [**getAllEvents()**](EventApi.md#getAllEvents) | **GET** /events | Get all events |
+| [**getEvent()**](EventApi.md#getEvent) | **GET** /events/{eventId} | Get a single event |
+| [**getEventIcal()**](EventApi.md#getEventIcal) | **GET** /events/ical |  |
+| [**getEventMasterdata()**](EventApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot; |
+| [**getPersonEvents()**](EventApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with |
+| [**getSongsOfAgenda()**](EventApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda |
+| [**personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()**](EventApi.md#personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request |
+| [**personIdEventsEventIdServicesServiceIdExchangerequestsGet()**](EventApi.md#personIdEventsEventIdServicesServiceIdExchangerequestsGet) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service |
+| [**personIdExchangerequestsGet()**](EventApi.md#personIdExchangerequestsGet) | **GET** /{personId}/exchangerequests | Get all service exchange requests that a user got |
+| [**postPersonIdEventsEventIdServicesServiceIdExchangerequests()**](EventApi.md#postPersonIdEventsEventIdServicesServiceIdExchangerequests) | **POST** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request |
+| [**putPersonIdExchangerequestsRequestId()**](EventApi.md#putPersonIdExchangerequestsRequestId) | **PUT** /{personId}/exchangerequests/{requestId} | Accept a service exchange request |
+| [**sendAgendaEmail()**](EventApi.md#sendAgendaEmail) | **POST** /agendas/send | Send agenda email to recipients |
+| [**sendEventEmail()**](EventApi.md#sendEventEmail) | **POST** /events/send | Send Mail to Event Participants |
+| [**startStopEventChat()**](EventApi.md#startStopEventChat) | **POST** /events/{eventId}/chat | Start or stop an event chat |
 
 
 ## `agendaExport()`
@@ -60,11 +67,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **agenda_id** | **string**|  |
- **target** | **string**|  |
- **agenda_export_request** | [**\StevenBuehner\ChurchTools\Model\AgendaExportRequest**](../Model/AgendaExportRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agenda_id** | **string**|  | |
+| **target** | **string**|  | |
+| **agenda_export_request** | [**\StevenBuehner\ChurchTools\Model\AgendaExportRequest**](../Model/AgendaExportRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -78,6 +85,136 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy()`
+
+```php
+deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy($person_id, $event_id, $service_id, $request_id, $delete_person_id_events_event_id_services_service_id_exchangerequests_copy_request)
+```
+
+Delete a service exchange request
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+$event_id = 42; // int | ID of Event
+$service_id = 'service_id_example'; // string
+$request_id = 'request_id_example'; // string
+$delete_person_id_events_event_id_services_service_id_exchangerequests_copy_request = new \StevenBuehner\ChurchTools\Model\DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest(); // \StevenBuehner\ChurchTools\Model\DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest
+
+try {
+    $apiInstance->deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy($person_id, $event_id, $service_id, $request_id, $delete_person_id_events_event_id_services_service_id_exchangerequests_copy_request);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **event_id** | **int**| ID of Event | |
+| **service_id** | **string**|  | |
+| **request_id** | **string**|  | |
+| **delete_person_id_events_event_id_services_service_id_exchangerequests_copy_request** | [**\StevenBuehner\ChurchTools\Model\DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest**](../Model/DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deletePersonIdExchangerequestsRequestId()`
+
+```php
+deletePersonIdExchangerequestsRequestId($person_id, $request_id)
+```
+
+Decline a service exchange request
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+$request_id = 'request_id_example'; // string
+
+try {
+    $apiInstance->deletePersonIdExchangerequestsRequestId($person_id, $request_id);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->deletePersonIdExchangerequestsRequestId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -124,9 +261,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of Event |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **int**| ID of Event | |
 
 ### Return type
 
@@ -148,7 +285,7 @@ Name | Type | Description  | Notes
 ## `getAllEvents()`
 
 ```php
-getAllEvents($from, $to, $canceled): \StevenBuehner\ChurchTools\Model\GetAllEvents200Response
+getAllEvents($from, $to, $canceled, $direction, $page, $limit, $include): \StevenBuehner\ChurchTools\Model\GetAllEvents200Response
 ```
 
 Get all events
@@ -177,9 +314,13 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
 $from = Thu Aug 08 02:00:00 CEST 2019; // \DateTime | Start date from when events are returned. Default value: today
 $to = Thu Aug 08 02:00:00 CEST 2019; // \DateTime | End date until when events are returned. Default value: two month from now
 $canceled = True; // bool | If true, include also canceled events
+$direction = forward; // string
+$page = 56; // int
+$limit = 56; // int
+$include = eventServices; // string | to include the eventServices
 
 try {
-    $result = $apiInstance->getAllEvents($from, $to, $canceled);
+    $result = $apiInstance->getAllEvents($from, $to, $canceled, $direction, $page, $limit, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->getAllEvents: ', $e->getMessage(), PHP_EOL;
@@ -188,11 +329,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **\DateTime**| Start date from when events are returned. Default value: today | [optional]
- **to** | **\DateTime**| End date until when events are returned. Default value: two month from now | [optional]
- **canceled** | **bool**| If true, include also canceled events | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **from** | **\DateTime**| Start date from when events are returned. Default value: today | [optional] |
+| **to** | **\DateTime**| End date until when events are returned. Default value: two month from now | [optional] |
+| **canceled** | **bool**| If true, include also canceled events | [optional] |
+| **direction** | **string**|  | [optional] |
+| **page** | **int**|  | [optional] |
+| **limit** | **int**|  | [optional] |
+| **include** | **string**| to include the eventServices | [optional] |
 
 ### Return type
 
@@ -252,9 +397,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of Event |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **int**| ID of Event | |
 
 ### Return type
 
@@ -312,9 +457,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**|  | |
 
 ### Return type
 
@@ -433,9 +578,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -495,9 +640,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of Event |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **int**| ID of Event | |
 
 ### Return type
 
@@ -511,6 +656,330 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()`
+
+```php
+personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet($person_id, $event_id, $service_id): \StevenBuehner\ChurchTools\Model\200Response
+```
+
+Get candidates for service exchange request
+
+Returns all possible candidates for an exchange of a service
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+$event_id = 42; // int | ID of Event
+$service_id = 'service_id_example'; // string
+
+try {
+    $result = $apiInstance->personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet($person_id, $event_id, $service_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **event_id** | **int**| ID of Event | |
+| **service_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\200Response**](../Model/200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `personIdEventsEventIdServicesServiceIdExchangerequestsGet()`
+
+```php
+personIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id): \StevenBuehner\ChurchTools\Model\1[]
+```
+
+Get all service exchange requests of a user for a service
+
+Returns all exchange requests that a user requested for a certain service
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+$event_id = 42; // int | ID of Event
+$service_id = 'service_id_example'; // string
+
+try {
+    $result = $apiInstance->personIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->personIdEventsEventIdServicesServiceIdExchangerequestsGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **event_id** | **int**| ID of Event | |
+| **service_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\1[]**](../Model/1.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `personIdExchangerequestsGet()`
+
+```php
+personIdExchangerequestsGet($person_id): \StevenBuehner\ChurchTools\Model\1[]
+```
+
+Get all service exchange requests that a user got
+
+Returns all exchange requests that other users requested for a certain user
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+
+try {
+    $result = $apiInstance->personIdExchangerequestsGet($person_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->personIdExchangerequestsGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\1[]**](../Model/1.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postPersonIdEventsEventIdServicesServiceIdExchangerequests()`
+
+```php
+postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $_1)
+```
+
+Create a new service exchange request
+
+Creates a new service exchange request
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+$event_id = 42; // int | ID of Event
+$service_id = 'service_id_example'; // string
+$_1 = new \StevenBuehner\ChurchTools\Model\1(); // \StevenBuehner\ChurchTools\Model\1
+
+try {
+    $apiInstance->postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $_1);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->postPersonIdEventsEventIdServicesServiceIdExchangerequests: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **event_id** | **int**| ID of Event | |
+| **service_id** | **string**|  | |
+| **_1** | [**\StevenBuehner\ChurchTools\Model\1**](../Model/1.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putPersonIdExchangerequestsRequestId()`
+
+```php
+putPersonIdExchangerequestsRequestId($person_id, $request_id)
+```
+
+Accept a service exchange request
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+$request_id = 'request_id_example'; // string
+
+try {
+    $apiInstance->putPersonIdExchangerequestsRequestId($person_id, $request_id);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->putPersonIdExchangerequestsRequestId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -557,9 +1026,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **send_agenda_email_request** | [**\StevenBuehner\ChurchTools\Model\SendAgendaEmailRequest**](../Model/SendAgendaEmailRequest.md)| E-Mail information and recipients |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **send_agenda_email_request** | [**\StevenBuehner\ChurchTools\Model\SendAgendaEmailRequest**](../Model/SendAgendaEmailRequest.md)| E-Mail information and recipients | |
 
 ### Return type
 
@@ -619,9 +1088,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **send_event_email_request** | [**\StevenBuehner\ChurchTools\Model\SendEventEmailRequest**](../Model/SendEventEmailRequest.md)| E-Mail information and recipients |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **send_event_email_request** | [**\StevenBuehner\ChurchTools\Model\SendEventEmailRequest**](../Model/SendEventEmailRequest.md)| E-Mail information and recipients | |
 
 ### Return type
 
@@ -679,10 +1148,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of Event |
- **start_stop_event_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopEventChatRequest**](../Model/StartStopEventChatRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **int**| ID of Event | |
+| **start_stop_event_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopEventChatRequest**](../Model/StartStopEventChatRequest.md)|  | |
 
 ### Return type
 

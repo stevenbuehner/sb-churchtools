@@ -1,12 +1,12 @@
 # StevenBuehner\ChurchTools\PermissionApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getGlobalPermissions()**](PermissionApi.md#getGlobalPermissions) | **GET** /permissions/global | All Permissions for the Current User
-[**getInternalPermissionsForPerson()**](PermissionApi.md#getInternalPermissionsForPerson) | **GET** /permissions/internal/persons/{personId} | Lookup Person-Related Group Internal Permissions
-[**getPermissionsInternalGroupsGroupId()**](PermissionApi.md#getPermissionsInternalGroupsGroupId) | **GET** /permissions/internal/groups/{groupId} | Lookup Group-Related Group Internal Permissions
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getGlobalPermissions()**](PermissionApi.md#getGlobalPermissions) | **GET** /permissions/global | All Permissions for the Current User |
+| [**getInternalPermissionsForPerson()**](PermissionApi.md#getInternalPermissionsForPerson) | **GET** /permissions/internal/persons/{personId} | Lookup Person-Related Group Internal Permissions |
+| [**getPermissionsInternalGroupsGroupId()**](PermissionApi.md#getPermissionsInternalGroupsGroupId) | **GET** /permissions/internal/groups/{groupId} | Lookup Group-Related Group Internal Permissions |
 
 
 ## `getGlobalPermissions()`
@@ -109,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **string**|  | |
 
 ### Return type
 
@@ -171,9 +171,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 

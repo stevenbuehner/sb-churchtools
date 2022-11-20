@@ -1,49 +1,49 @@
 # StevenBuehner\ChurchTools\GroupApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**checkin()**](GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
-[**createMeeting()**](GroupApi.md#createMeeting) | **POST** /groups/{groupId}/meetings | Create a group meeting
-[**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/{id}/members/{personId} | Create/Update a group member
-[**deleteAutomaticEmail()**](GroupApi.md#deleteAutomaticEmail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email
-[**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /groups/{groupId} | 
-[**deleteGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingId) | **DELETE** /groups/{groupId}/meetings/{meetingId} | 
-[**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
-[**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/{id}/members/{personId} | Delete a group member
-[**getAllGroupMembers()**](GroupApi.md#getAllGroupMembers) | **GET** /groups/{groupId}/members | Get all group members
-[**getAllGroupsForPerson()**](GroupApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in
-[**getAllMeetings()**](GroupApi.md#getAllMeetings) | **GET** /groups/{groupId}/meetings | Get all group meetings for a specific group
-[**getAutomaticEmail()**](GroupApi.md#getAutomaticEmail) | **GET** /groups/{groupId}/emails/{emailId} | Get one automatic email
-[**getAutomaticEmails()**](GroupApi.md#getAutomaticEmails) | **GET** /groups/{groupId}/emails | Get all automatic emails of a group
-[**getGroup()**](GroupApi.md#getGroup) | **GET** /groups/{groupId} | Get a group
-[**getGroupForHomepage()**](GroupApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
-[**getGroupHomepage()**](GroupApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
-[**getGroupRoles()**](GroupApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get all roles for this group
-[**getGroupStatistics()**](GroupApi.md#getGroupStatistics) | **GET** /groups/{groupId}/statistics | Fetch facts about group
-[**getGroups()**](GroupApi.md#getGroups) | **GET** /groups | Get all groups
-[**getGroupsGroupIdMeetingsMeetingIdMembers()**](GroupApi.md#getGroupsGroupIdMeetingsMeetingIdMembers) | **GET** /groups/{groupId}/meetings/{meetingId}/members | Get Group Meeting Members
-[**getGroupsGroupIdMemberfields()**](GroupApi.md#getGroupsGroupIdMemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields
-[**getGroupsGroupIdMembersStatistics()**](GroupApi.md#getGroupsGroupIdMembersStatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members
-[**getGroupsGroupIdTags()**](GroupApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags
-[**getGroupsHierarchies()**](GroupApi.md#getGroupsHierarchies) | **GET** /groups/hierarchies | Get all group hierarchies
-[**getGroupsMembers()**](GroupApi.md#getGroupsMembers) | **GET** /groups/members | Get all group members
-[**getGrupsIdPlaces()**](GroupApi.md#getGrupsIdPlaces) | **GET** /groups/{groupId}/places | Get all places of a group
-[**getPersonMasterdata()**](GroupApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
-[**getPublicgroupsGroupIdForm()**](GroupApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
-[**getQRCodeCheckin()**](GroupApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
-[**issueSignUpToken()**](GroupApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
-[**optIns()**](GroupApi.md#optIns) | **GET** /groups/{groupId}/optins | Get Opt In status of group members
-[**patchGroupsGroupIdRolesRoleId()**](GroupApi.md#patchGroupsGroupIdRolesRoleId) | **PATCH** /groups/{groupId}/roles/{roleId} | save role
-[**postAutomaticEmail()**](GroupApi.md#postAutomaticEmail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role
-[**postGroups()**](GroupApi.md#postGroups) | **POST** /groups | Create Group
-[**postGroupsGroupIdMeetingsMeetingIdMembersMissing()**](GroupApi.md#postGroupsGroupIdMeetingsMeetingIdMembersMissing) | **POST** /groups/{groupId}/meetings/{meetingId}/members/missing | 
-[**postPublicgroupsGroupIdMailToLeaders()**](GroupApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
-[**postPublicgroupsGroupIdSignup()**](GroupApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
-[**putAutomaticEmail()**](GroupApi.md#putAutomaticEmail) | **PUT** /groups/{groupId}/emails/{emailId} | Update automatic email
-[**putGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#putGroupsGroupIdMeetingsMeetingId) | **PUT** /groups/{groupId}/meetings/{meetingId} | 
-[**startStopGroupChat()**](GroupApi.md#startStopGroupChat) | **POST** /groups/{groupId}/chat | Start or stop an event chat
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**checkin()**](GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group |
+| [**createMeeting()**](GroupApi.md#createMeeting) | **POST** /groups/{groupId}/meetings | Create a group meeting |
+| [**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/{groupId}/members/{personId} | Create/Update a group member |
+| [**deleteAutomaticEmail()**](GroupApi.md#deleteAutomaticEmail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email |
+| [**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /groups/{groupId} |  |
+| [**deleteGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingId) | **DELETE** /groups/{groupId}/meetings/{meetingId} |  |
+| [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin |
+| [**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/{groupId}/members/{personId} | Delete a group member |
+| [**getAllGroupMembers()**](GroupApi.md#getAllGroupMembers) | **GET** /groups/{groupId}/members | Get all group members |
+| [**getAllGroupsForPerson()**](GroupApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in |
+| [**getAllMeetings()**](GroupApi.md#getAllMeetings) | **GET** /groups/{groupId}/meetings | Get all group meetings for a specific group |
+| [**getAutomaticEmail()**](GroupApi.md#getAutomaticEmail) | **GET** /groups/{groupId}/emails/{emailId} | Get one automatic email |
+| [**getAutomaticEmails()**](GroupApi.md#getAutomaticEmails) | **GET** /groups/{groupId}/emails | Get all automatic emails of a group |
+| [**getGroup()**](GroupApi.md#getGroup) | **GET** /groups/{groupId} | Get a group |
+| [**getGroupForHomepage()**](GroupApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group |
+| [**getGroupHomepage()**](GroupApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings |
+| [**getGroupRoles()**](GroupApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get all roles for this group |
+| [**getGroupStatistics()**](GroupApi.md#getGroupStatistics) | **GET** /groups/{groupId}/statistics | Fetch facts about group |
+| [**getGroups()**](GroupApi.md#getGroups) | **GET** /groups | Get all groups |
+| [**getGroupsGroupIdMeetingsMeetingIdMembers()**](GroupApi.md#getGroupsGroupIdMeetingsMeetingIdMembers) | **GET** /groups/{groupId}/meetings/{meetingId}/members | Get Group Meeting Members |
+| [**getGroupsGroupIdMemberfields()**](GroupApi.md#getGroupsGroupIdMemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields |
+| [**getGroupsGroupIdMembersStatistics()**](GroupApi.md#getGroupsGroupIdMembersStatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members |
+| [**getGroupsGroupIdTags()**](GroupApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags |
+| [**getGroupsHierarchies()**](GroupApi.md#getGroupsHierarchies) | **GET** /groups/hierarchies | Get all group hierarchies |
+| [**getGroupsMembers()**](GroupApi.md#getGroupsMembers) | **GET** /groups/members | Get all group members |
+| [**getGrupsIdPlaces()**](GroupApi.md#getGrupsIdPlaces) | **GET** /groups/{groupId}/places | Get all places of a group |
+| [**getPersonMasterdata()**](GroupApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
+| [**getPublicgroupsGroupIdForm()**](GroupApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form |
+| [**getQRCodeCheckin()**](GroupApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF |
+| [**issueSignUpToken()**](GroupApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token. |
+| [**optIns()**](GroupApi.md#optIns) | **GET** /groups/{groupId}/optins | Get Opt In status of group members |
+| [**patchGroupsGroupIdRolesRoleId()**](GroupApi.md#patchGroupsGroupIdRolesRoleId) | **PATCH** /groups/{groupId}/roles/{roleId} | save role |
+| [**postAutomaticEmail()**](GroupApi.md#postAutomaticEmail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role |
+| [**postGroups()**](GroupApi.md#postGroups) | **POST** /groups | Create Group |
+| [**postGroupsGroupIdMeetingsMeetingIdMembersMissing()**](GroupApi.md#postGroupsGroupIdMeetingsMeetingIdMembersMissing) | **POST** /groups/{groupId}/meetings/{meetingId}/members/missing |  |
+| [**postPublicgroupsGroupIdMailToLeaders()**](GroupApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders |
+| [**postPublicgroupsGroupIdSignup()**](GroupApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group |
+| [**putAutomaticEmail()**](GroupApi.md#putAutomaticEmail) | **PUT** /groups/{groupId}/emails/{emailId} | Update automatic email |
+| [**putGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#putGroupsGroupIdMeetingsMeetingId) | **PUT** /groups/{groupId}/meetings/{meetingId} |  |
+| [**startStopGroupChat()**](GroupApi.md#startStopGroupChat) | **POST** /groups/{groupId}/chat | Start or stop an event chat |
 
 
 ## `checkin()`
@@ -88,10 +88,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  | |
 
 ### Return type
 
@@ -152,10 +152,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **create_meeting_request** | [**\StevenBuehner\ChurchTools\Model\CreateMeetingRequest**](../Model/CreateMeetingRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **create_meeting_request** | [**\StevenBuehner\ChurchTools\Model\CreateMeetingRequest**](../Model/CreateMeetingRequest.md)|  | |
 
 ### Return type
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 ## `createOrUpdateMember()`
 
 ```php
-createOrUpdateMember($id, $person_id, $create_or_update_member_request): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response
+createOrUpdateMember($person_id, $group_id, $create_or_update_member_request): \StevenBuehner\ChurchTools\Model\CreateOrUpdateMember200Response
 ```
 
 Create/Update a group member
@@ -203,12 +203,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
+$group_id = 42; // int | ID of group
 $create_or_update_member_request = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
 
 try {
-    $result = $apiInstance->createOrUpdateMember($id, $person_id, $create_or_update_member_request);
+    $result = $apiInstance->createOrUpdateMember($person_id, $group_id, $create_or_update_member_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->createOrUpdateMember: ', $e->getMessage(), PHP_EOL;
@@ -217,11 +217,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
- **person_id** | **int**| ID of person |
- **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **group_id** | **int**| ID of group | |
+| **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. | |
 
 ### Return type
 
@@ -279,10 +279,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email_id** | **string**|  |
- **group_id** | **int**| ID or chat GUID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **email_id** | **string**|  | |
+| **group_id** | **int**| ID or chat GUID of group | |
 
 ### Return type
 
@@ -342,10 +342,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -405,10 +405,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **meeting_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **meeting_id** | **string**|  | |
 
 ### Return type
 
@@ -469,11 +469,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **meeting_id** | **string**|  |
- **member_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **meeting_id** | **string**|  | |
+| **member_id** | **string**|  | |
 
 ### Return type
 
@@ -495,7 +495,7 @@ void (empty response body)
 ## `deleteMember()`
 
 ```php
-deleteMember($id, $person_id)
+deleteMember($person_id, $group_id)
 ```
 
 Delete a group member
@@ -521,11 +521,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
+$group_id = 42; // int | ID of group
 
 try {
-    $apiInstance->deleteMember($id, $person_id);
+    $apiInstance->deleteMember($person_id, $group_id);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->deleteMember: ', $e->getMessage(), PHP_EOL;
 }
@@ -533,10 +533,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of group |
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -601,14 +601,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **int**| Number of results per page. | [optional] [default to 10]
- **role_ids** | [**int[]**](../Model/int.md)| roles to filter the members | [optional]
- **allowed_chat_users_only** | **bool**| If true, return only group members, that are allowed to chat in this group | [optional]
- **query** | **string**| searches in first and second name of group member | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
+| **limit** | **int**| Number of results per page. | [optional] [default to 10] |
+| **role_ids** | [**int[]**](../Model/int.md)| roles to filter the members | [optional] |
+| **allowed_chat_users_only** | **bool**| If true, return only group members, that are allowed to chat in this group | [optional] |
+| **query** | **string**| searches in first and second name of group member | [optional] |
 
 ### Return type
 
@@ -668,9 +668,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 ## `getAllMeetings()`
 
 ```php
-getAllMeetings($group_id, $is_canceled, $is_completed): \StevenBuehner\ChurchTools\Model\GetAllMeetings200Response
+getAllMeetings($group_id, $is_canceled, $is_completed, $start_date, $end_date): \StevenBuehner\ChurchTools\Model\GetAllMeetings200Response
 ```
 
 Get all group meetings for a specific group
@@ -721,9 +721,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 $group_id = 42; // int | ID of group
 $is_canceled = True; // bool | Whether to show canceled group meetings
 $is_completed = True; // bool | Whether to show done group meetings
+$start_date = Thu Sep 01 02:00:00 CEST 2022; // \DateTime
+$end_date = Sat Oct 01 02:00:00 CEST 2022; // \DateTime
 
 try {
-    $result = $apiInstance->getAllMeetings($group_id, $is_canceled, $is_completed);
+    $result = $apiInstance->getAllMeetings($group_id, $is_canceled, $is_completed, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getAllMeetings: ', $e->getMessage(), PHP_EOL;
@@ -732,11 +734,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **is_canceled** | **bool**| Whether to show canceled group meetings | [optional]
- **is_completed** | **bool**| Whether to show done group meetings | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **is_canceled** | **bool**| Whether to show canceled group meetings | [optional] |
+| **is_completed** | **bool**| Whether to show done group meetings | [optional] |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -795,10 +799,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **email_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **email_id** | **string**|  | |
 
 ### Return type
 
@@ -858,9 +862,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -912,9 +916,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID or chat GUID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID or chat GUID of group | |
 
 ### Return type
 
@@ -969,10 +973,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **hash** | **string**| Group Homepage Hash |
- **group_id** | **string**| Group ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **hash** | **string**| Group Homepage Hash | |
+| **group_id** | **string**| Group ID | |
 
 ### Return type
 
@@ -1032,9 +1036,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **hash** | **string**| Random hash for public groups |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **hash** | **string**| Random hash for public groups | |
 
 ### Return type
 
@@ -1094,9 +1098,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -1156,9 +1160,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -1180,7 +1184,7 @@ Name | Type | Description  | Notes
 ## `getGroups()`
 
 ```php
-getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit): \StevenBuehner\ChurchTools\Model\GetGroups200Response
+getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit, $is_hidden): \StevenBuehner\ChurchTools\Model\GetGroups200Response
 ```
 
 Get all groups
@@ -1223,9 +1227,10 @@ $without_my_groups = True; // bool | Determines if groups should be omitted wher
 $query = 'query_example'; // string
 $page = 1; // int | Page number to show page in pagenation. If empty, start at first page.
 $limit = 10; // int | Number of results per page.
+$is_hidden = True; // bool | Filters groups by hidden flag
 
 try {
-    $result = $apiInstance->getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit);
+    $result = $apiInstance->getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit, $is_hidden);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getGroups: ', $e->getMessage(), PHP_EOL;
@@ -1234,25 +1239,26 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ids** | [**int[]**](../Model/int.md)| Array of group ids | [optional]
- **campus_ids** | [**int[]**](../Model/int.md)| Array of campus ids to filter the groups | [optional]
- **agegroup_ids** | [**int[]**](../Model/int.md)| Array of age group ids to filter the groups | [optional]
- **group_status_ids** | [**int[]**](../Model/int.md)| Array of group status ids to filter the groups | [optional]
- **group_category_ids** | [**int[]**](../Model/int.md)| Array of group category ids to filter the groups | [optional]
- **target_group_ids** | [**int[]**](../Model/int.md)| Array of target group ids to filter the groups | [optional]
- **weekdays** | [**int[]**](../Model/int.md)| Array of weekdays to filter the groups. Sunday &#x3D; 0, Monday &#x3D; 1 ... | [optional]
- **group_type_ids** | [**int[]**](../Model/int.md)| Array of group type ids to filter the groups | [optional]
- **is_open_for_members** | **bool**| Filters groups by its open status | [optional]
- **is_public** | **bool**| Filters groups by its public status | [optional]
- **show_overdue_groups** | **bool**| Determines if groups with overdue enddate should still be shown. | [optional]
- **show_overdue_groups_respect_settings** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups. | [optional]
- **show_inactive_groups** | **bool**| Determines if inactive groups should be returned | [optional]
- **without_my_groups** | **bool**| Determines if groups should be omitted where I am in | [optional]
- **query** | **string**|  | [optional]
- **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **int**| Number of results per page. | [optional] [default to 10]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | [**int[]**](../Model/int.md)| Array of group ids | [optional] |
+| **campus_ids** | [**int[]**](../Model/int.md)| Array of campus ids to filter the groups | [optional] |
+| **agegroup_ids** | [**int[]**](../Model/int.md)| Array of age group ids to filter the groups | [optional] |
+| **group_status_ids** | [**int[]**](../Model/int.md)| Array of group status ids to filter the groups | [optional] |
+| **group_category_ids** | [**int[]**](../Model/int.md)| Array of group category ids to filter the groups | [optional] |
+| **target_group_ids** | [**int[]**](../Model/int.md)| Array of target group ids to filter the groups | [optional] |
+| **weekdays** | [**int[]**](../Model/int.md)| Array of weekdays to filter the groups. Sunday &#x3D; 0, Monday &#x3D; 1 ... | [optional] |
+| **group_type_ids** | [**int[]**](../Model/int.md)| Array of group type ids to filter the groups | [optional] |
+| **is_open_for_members** | **bool**| Filters groups by its open status | [optional] |
+| **is_public** | **bool**| Filters groups by its public status | [optional] |
+| **show_overdue_groups** | **bool**| Determines if groups with overdue enddate should still be shown. | [optional] |
+| **show_overdue_groups_respect_settings** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups. | [optional] |
+| **show_inactive_groups** | **bool**| Determines if inactive groups should be returned | [optional] |
+| **without_my_groups** | **bool**| Determines if groups should be omitted where I am in | [optional] |
+| **query** | **string**|  | [optional] |
+| **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
+| **limit** | **int**| Number of results per page. | [optional] [default to 10] |
+| **is_hidden** | **bool**| Filters groups by hidden flag | [optional] |
 
 ### Return type
 
@@ -1313,10 +1319,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **meeting_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **meeting_id** | **string**|  | |
 
 ### Return type
 
@@ -1376,9 +1382,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -1441,12 +1447,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **group_type_role_ids** | [**int[]**](../Model/int.md)|  | [optional]
- **person_fields** | [**string[]**](../Model/string.md)| person field keys | [optional]
- **group_member_fields** | [**int[]**](../Model/int.md)| group member field ids | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **group_type_role_ids** | [**int[]**](../Model/int.md)|  | [optional] |
+| **person_fields** | [**string[]**](../Model/string.md)| person field keys | [optional] |
+| **group_member_fields** | [**int[]**](../Model/int.md)| group member field ids | [optional] |
 
 ### Return type
 
@@ -1506,9 +1512,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -1582,23 +1588,23 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ids** | [**int[]**](../Model/int.md)| Array of group ids | [optional]
- **campus_ids** | [**int[]**](../Model/int.md)| Array of campus ids to filter the groups | [optional]
- **agegroup_ids** | [**int[]**](../Model/int.md)| Array of age group ids to filter the groups | [optional]
- **group_status_ids** | [**int[]**](../Model/int.md)| Array of group status ids to filter the groups | [optional]
- **group_category_ids** | [**int[]**](../Model/int.md)| Array of group category ids to filter the groups | [optional]
- **target_group_ids** | [**int[]**](../Model/int.md)| Array of target group ids to filter the groups | [optional]
- **weekdays** | [**int[]**](../Model/int.md)| Array of weekdays to filter the groups. Sunday &#x3D; 0, Monday &#x3D; 1 ... | [optional]
- **group_type_ids** | [**int[]**](../Model/int.md)| Array of group type ids to filter the groups | [optional]
- **is_open_for_members** | **bool**| Filters groups by its open status | [optional]
- **is_public** | **bool**| Filters groups by its public status | [optional]
- **show_overdue_groups** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups | [optional]
- **show_overdue_groups_respect_settings** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups. | [optional]
- **show_inactive_groups** | **bool**| Determines if inactive groups should be returned | [optional]
- **without_my_groups** | **bool**| Determines if groups should be omitted where I am in | [optional]
- **query** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | [**int[]**](../Model/int.md)| Array of group ids | [optional] |
+| **campus_ids** | [**int[]**](../Model/int.md)| Array of campus ids to filter the groups | [optional] |
+| **agegroup_ids** | [**int[]**](../Model/int.md)| Array of age group ids to filter the groups | [optional] |
+| **group_status_ids** | [**int[]**](../Model/int.md)| Array of group status ids to filter the groups | [optional] |
+| **group_category_ids** | [**int[]**](../Model/int.md)| Array of group category ids to filter the groups | [optional] |
+| **target_group_ids** | [**int[]**](../Model/int.md)| Array of target group ids to filter the groups | [optional] |
+| **weekdays** | [**int[]**](../Model/int.md)| Array of weekdays to filter the groups. Sunday &#x3D; 0, Monday &#x3D; 1 ... | [optional] |
+| **group_type_ids** | [**int[]**](../Model/int.md)| Array of group type ids to filter the groups | [optional] |
+| **is_open_for_members** | **bool**| Filters groups by its open status | [optional] |
+| **is_public** | **bool**| Filters groups by its public status | [optional] |
+| **show_overdue_groups** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups | [optional] |
+| **show_overdue_groups_respect_settings** | **bool**| Determines if groups with overdue enddate should still be shown. To the enddate x dates are added specified by the admin settings for person &amp; groups. | [optional] |
+| **show_inactive_groups** | **bool**| Determines if inactive groups should be returned | [optional] |
+| **without_my_groups** | **bool**| Determines if groups should be omitted where I am in | [optional] |
+| **query** | **string**|  | [optional] |
 
 ### Return type
 
@@ -1659,10 +1665,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ids** | [**int[]**](../Model/int.md)| Array of group ids | [optional]
- **with_deleted** | **bool**| If true, return also deleted group members | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | [**int[]**](../Model/int.md)| Array of group ids | [optional] |
+| **with_deleted** | **bool**| If true, return also deleted group members | [optional] |
 
 ### Return type
 
@@ -1722,9 +1728,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -1839,11 +1845,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Group ID of the public group |
- **token** | **string**| Sign Up Token |
- **person_id** | **string**| The name for which the signup should be made |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Group ID of the public group | |
+| **token** | **string**| Sign Up Token | |
+| **person_id** | **string**| The name for which the signup should be made | |
 
 ### Return type
 
@@ -1904,10 +1910,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -1962,10 +1968,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| Group id of public group |
- **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| Group id of public group | |
+| **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional] |
 
 ### Return type
 
@@ -2017,9 +2023,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -2080,11 +2086,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **role_id** | **int**| ID of group type role |
- **patch_groups_group_id_roles_role_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest**](../Model/PatchGroupsGroupIdRolesRoleIdRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **role_id** | **int**| ID of group type role | |
+| **patch_groups_group_id_roles_role_id_request** | [**\StevenBuehner\ChurchTools\Model\PatchGroupsGroupIdRolesRoleIdRequest**](../Model/PatchGroupsGroupIdRolesRoleIdRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2143,10 +2149,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **post_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest**](../Model/PostAutomaticEmailRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **post_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PostAutomaticEmailRequest**](../Model/PostAutomaticEmailRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2206,9 +2212,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **post_groups_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsRequest**](../Model/PostGroupsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_groups_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsRequest**](../Model/PostGroupsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2269,11 +2275,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
- **meeting_id** | **string**|  |
- **post_groups_group_id_meetings_meeting_id_members_missing_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest**](../Model/PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **meeting_id** | **string**|  | |
+| **post_groups_group_id_meetings_meeting_id_members_missing_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest**](../Model/PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2327,10 +2333,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Group ID of the public group |
- **post_publicgroups_group_id_mail_to_leaders_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest**](../Model/PostPublicgroupsGroupIdMailToLeadersRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Group ID of the public group | |
+| **post_publicgroups_group_id_mail_to_leaders_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest**](../Model/PostPublicgroupsGroupIdMailToLeadersRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2385,10 +2391,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Group ID of the public group |
- **post_publicgroups_group_id_signup_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest**](../Model/PostPublicgroupsGroupIdSignupRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Group ID of the public group | |
+| **post_publicgroups_group_id_signup_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest**](../Model/PostPublicgroupsGroupIdSignupRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2447,11 +2453,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **email_id** | **string**|  |
- **put_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest**](../Model/PutAutomaticEmailRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **email_id** | **string**|  | |
+| **put_automatic_email_request** | [**\StevenBuehner\ChurchTools\Model\PutAutomaticEmailRequest**](../Model/PutAutomaticEmailRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2512,11 +2518,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **meeting_id** | **string**|  |
- **put_groups_group_id_meetings_meeting_id_request** | [**\StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest**](../Model/PutGroupsGroupIdMeetingsMeetingIdRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **meeting_id** | **string**|  | |
+| **put_groups_group_id_meetings_meeting_id_request** | [**\StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest**](../Model/PutGroupsGroupIdMeetingsMeetingIdRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2574,10 +2580,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **start_stop_event_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopEventChatRequest**](../Model/StartStopEventChatRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **start_stop_event_chat_request** | [**\StevenBuehner\ChurchTools\Model\StartStopEventChatRequest**](../Model/StartStopEventChatRequest.md)|  | |
 
 ### Return type
 

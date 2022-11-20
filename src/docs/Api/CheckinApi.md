@@ -1,13 +1,13 @@
 # StevenBuehner\ChurchTools\CheckinApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**checkin()**](CheckinApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
-[**getQRCodeCheckin()**](CheckinApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
-[**postCheckinPersons()**](CheckinApi.md#postCheckinPersons) | **POST** /checkin/persons | Create new person and add to group
-[**putCheckinPersons()**](CheckinApi.md#putCheckinPersons) | **PUT** /checkin/persons | Put existing person into group
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**checkin()**](CheckinApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group |
+| [**getQRCodeCheckin()**](CheckinApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF |
+| [**postCheckinPersons()**](CheckinApi.md#postCheckinPersons) | **POST** /checkin/persons | Create new person and add to group |
+| [**putCheckinPersons()**](CheckinApi.md#putCheckinPersons) | **PUT** /checkin/persons | Put existing person into group |
 
 
 ## `checkin()`
@@ -52,10 +52,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **checkin_request** | [**\StevenBuehner\ChurchTools\Model\CheckinRequest**](../Model/CheckinRequest.md)|  | |
 
 ### Return type
 
@@ -116,10 +116,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -179,9 +179,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **post_checkin_persons_request** | [**\StevenBuehner\ChurchTools\Model\PostCheckinPersonsRequest**](../Model/PostCheckinPersonsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_checkin_persons_request** | [**\StevenBuehner\ChurchTools\Model\PostCheckinPersonsRequest**](../Model/PostCheckinPersonsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -239,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **put_checkin_persons_request** | [**\StevenBuehner\ChurchTools\Model\PutCheckinPersonsRequest**](../Model/PutCheckinPersonsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **put_checkin_persons_request** | [**\StevenBuehner\ChurchTools\Model\PutCheckinPersonsRequest**](../Model/PutCheckinPersonsRequest.md)|  | [optional] |
 
 ### Return type
 

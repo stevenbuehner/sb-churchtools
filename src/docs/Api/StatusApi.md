@@ -1,14 +1,14 @@
 # StevenBuehner\ChurchTools\StatusApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createNewStatus()**](StatusApi.md#createNewStatus) | **POST** /statuses | Save new status
-[**deleteStatus()**](StatusApi.md#deleteStatus) | **DELETE** /statuses/{id} | Delete a status
-[**getAllStatuses()**](StatusApi.md#getAllStatuses) | **GET** /statuses | Get all statuses
-[**getStatus()**](StatusApi.md#getStatus) | **GET** /statuses/{id} | Get a specific status
-[**putStatus()**](StatusApi.md#putStatus) | **PUT** /statuses/{id} | Update status
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createNewStatus()**](StatusApi.md#createNewStatus) | **POST** /statuses | Save new status |
+| [**deleteStatus()**](StatusApi.md#deleteStatus) | **DELETE** /statuses/{id} | Delete a status |
+| [**getAllStatuses()**](StatusApi.md#getAllStatuses) | **GET** /statuses | Get all statuses |
+| [**getStatus()**](StatusApi.md#getStatus) | **GET** /statuses/{id} | Get a specific status |
+| [**putStatus()**](StatusApi.md#putStatus) | **PUT** /statuses/{id} | Update status |
 
 
 ## `createNewStatus()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_status_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewStatusRequest**](../Model/CreateNewStatusRequest.md)| Status to add |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_status_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewStatusRequest**](../Model/CreateNewStatusRequest.md)| Status to add | |
 
 ### Return type
 
@@ -109,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -228,9 +228,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -289,10 +289,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **put_status_request** | [**\StevenBuehner\ChurchTools\Model\PutStatusRequest**](../Model/PutStatusRequest.md)| New values for status |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **put_status_request** | [**\StevenBuehner\ChurchTools\Model\PutStatusRequest**](../Model/PutStatusRequest.md)| New values for status | |
 
 ### Return type
 

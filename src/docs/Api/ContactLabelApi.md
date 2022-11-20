@@ -1,14 +1,14 @@
 # StevenBuehner\ChurchTools\ContactLabelApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteContactlabel()**](ContactLabelApi.md#deleteContactlabel) | **DELETE** /contactlabels/{id} | Delete Contact Label
-[**getContactlabel()**](ContactLabelApi.md#getContactlabel) | **GET** /contactlabels/{id} | Get Contact Label
-[**getContactlabels()**](ContactLabelApi.md#getContactlabels) | **GET** /contactlabels | Get All Contact Labels
-[**postContactlabels()**](ContactLabelApi.md#postContactlabels) | **POST** /contactlabels | Create new Contact Label
-[**putContactlabel()**](ContactLabelApi.md#putContactlabel) | **PUT** /contactlabels/{id} | Update Contact Label
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteContactlabel()**](ContactLabelApi.md#deleteContactlabel) | **DELETE** /contactlabels/{id} | Delete Contact Label |
+| [**getContactlabel()**](ContactLabelApi.md#getContactlabel) | **GET** /contactlabels/{id} | Get Contact Label |
+| [**getContactlabels()**](ContactLabelApi.md#getContactlabels) | **GET** /contactlabels | Get All Contact Labels |
+| [**postContactlabels()**](ContactLabelApi.md#postContactlabels) | **POST** /contactlabels | Create new Contact Label |
+| [**putContactlabel()**](ContactLabelApi.md#putContactlabel) | **PUT** /contactlabels/{id} | Update Contact Label |
 
 
 ## `deleteContactlabel()`
@@ -51,9 +51,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -113,9 +113,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -234,9 +234,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **post_contactlabels_request** | [**\StevenBuehner\ChurchTools\Model\PostContactlabelsRequest**](../Model/PostContactlabelsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_contactlabels_request** | [**\StevenBuehner\ChurchTools\Model\PostContactlabelsRequest**](../Model/PostContactlabelsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -297,10 +297,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **put_contactlabel_request** | [**\StevenBuehner\ChurchTools\Model\PutContactlabelRequest**](../Model/PutContactlabelRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **put_contactlabel_request** | [**\StevenBuehner\ChurchTools\Model\PutContactlabelRequest**](../Model/PutContactlabelRequest.md)|  | [optional] |
 
 ### Return type
 

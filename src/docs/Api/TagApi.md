@@ -1,12 +1,12 @@
 # StevenBuehner\ChurchTools\TagApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getGroupsGroupIdTags()**](TagApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags
-[**getTags()**](TagApi.md#getTags) | **GET** /tags | Get all tags of a type
-[**saveTag()**](TagApi.md#saveTag) | **POST** /tags | Create new tag
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getGroupsGroupIdTags()**](TagApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags |
+| [**getTags()**](TagApi.md#getTags) | **GET** /tags | Get all tags of a type |
+| [**saveTag()**](TagApi.md#saveTag) | **POST** /tags | Create new tag |
 
 
 ## `getGroupsGroupIdTags()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of group |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
 
 ### Return type
 
@@ -112,9 +112,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **string**| Type of tags |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **string**| Type of tags | |
 
 ### Return type
 
@@ -172,9 +172,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **save_tag_request** | [**\StevenBuehner\ChurchTools\Model\SaveTagRequest**](../Model/SaveTagRequest.md)| Tax rate data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **save_tag_request** | [**\StevenBuehner\ChurchTools\Model\SaveTagRequest**](../Model/SaveTagRequest.md)| Tax rate data | |
 
 ### Return type
 

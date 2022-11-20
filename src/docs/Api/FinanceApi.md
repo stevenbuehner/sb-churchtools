@@ -1,79 +1,84 @@
 # StevenBuehner\ChurchTools\FinanceApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**applyFinanceTemplate()**](FinanceApi.md#applyFinanceTemplate) | **POST** /finance/templates/{id} | Apply finance template
-[**batchTransaction()**](FinanceApi.md#batchTransaction) | **PATCH** /finance/transactions | Transaction Batch Processing
-[**createCashDiscount()**](FinanceApi.md#createCashDiscount) | **POST** /finance/cashdiscounts | Create new cash discout
-[**createCostCenter()**](FinanceApi.md#createCostCenter) | **POST** /finance/costcenters | Create new cost center
-[**createNewAccount()**](FinanceApi.md#createNewAccount) | **POST** /finance/accounts | Create new account
-[**createNewAccountClass()**](FinanceApi.md#createNewAccountClass) | **POST** /finance/accountclasses | Create new account class
-[**createNewAccountGroup()**](FinanceApi.md#createNewAccountGroup) | **POST** /finance/accountgroups | Create new account group
-[**createNewAccountType()**](FinanceApi.md#createNewAccountType) | **POST** /finance/accounttypes | Create new account type
-[**createNewAccountingPeriod()**](FinanceApi.md#createNewAccountingPeriod) | **POST** /finance/accountingperiods | Create new accounting period
-[**createNewClient()**](FinanceApi.md#createNewClient) | **POST** /finance/clients | Create new client
-[**createNewTransaction()**](FinanceApi.md#createNewTransaction) | **POST** /finance/transactions | Create new transaction
-[**createNewTransactionPurpose()**](FinanceApi.md#createNewTransactionPurpose) | **POST** /finance/transactionpurposes | Create new transaction purpose
-[**createTaxRate()**](FinanceApi.md#createTaxRate) | **POST** /finance/taxrates | Create new tax rate
-[**createTaxType()**](FinanceApi.md#createTaxType) | **POST** /finance/taxtypes | Create new tax type
-[**deleteAccount()**](FinanceApi.md#deleteAccount) | **DELETE** /finance/accounts/{id} | Delete account
-[**deleteAccountClass()**](FinanceApi.md#deleteAccountClass) | **DELETE** /finance/accountclasses/{id} | Delete account class
-[**deleteAccountGroup()**](FinanceApi.md#deleteAccountGroup) | **DELETE** /finance/accountgroups/{id} | Delete account group
-[**deleteAccountType()**](FinanceApi.md#deleteAccountType) | **DELETE** /finance/accounttypes/{id} | Delete account type
-[**deleteAccountingPeriod()**](FinanceApi.md#deleteAccountingPeriod) | **DELETE** /finance/accountingperiods/{id} | Delete accounting period
-[**deleteAccountsForAccountingPeriod()**](FinanceApi.md#deleteAccountsForAccountingPeriod) | **DELETE** /finance/accountingperiods/{id}/accounts | Delete accounts for accounting period
-[**deleteCashDiscount()**](FinanceApi.md#deleteCashDiscount) | **DELETE** /finance/cashdiscounts/{id} | Delete cash discount
-[**deleteClient()**](FinanceApi.md#deleteClient) | **DELETE** /finance/clients/{id} | Delete client
-[**deleteCostCenter()**](FinanceApi.md#deleteCostCenter) | **DELETE** /finance/costcenters/{id} | Delete cost center
-[**deleteTaxRate()**](FinanceApi.md#deleteTaxRate) | **DELETE** /finance/taxrates/{id} | Delete tax rate
-[**deleteTaxType()**](FinanceApi.md#deleteTaxType) | **DELETE** /finance/taxtypes/{id} | Delete tax type
-[**deleteTransaction()**](FinanceApi.md#deleteTransaction) | **DELETE** /finance/transactions/{id} | Delete transaction
-[**deleteTransactionPurpose()**](FinanceApi.md#deleteTransactionPurpose) | **DELETE** /finance/transactionpurposes/{id} | Delete transaction purpose
-[**exportFinanceTemplate()**](FinanceApi.md#exportFinanceTemplate) | **GET** /finance/templates/export | Epports a finance template based on the masterdata for a given accounting period
-[**getAccountById()**](FinanceApi.md#getAccountById) | **GET** /finance/accounts/{id} | Get a account
-[**getAccountClassById()**](FinanceApi.md#getAccountClassById) | **GET** /finance/accountclasses/{id} | Get a account class
-[**getAccountGroupById()**](FinanceApi.md#getAccountGroupById) | **GET** /finance/accountgroups/{id} | Get a account group
-[**getAccountTypeById()**](FinanceApi.md#getAccountTypeById) | **GET** /finance/accounttypes/{id} | Get a account type
-[**getAccountingPeriodById()**](FinanceApi.md#getAccountingPeriodById) | **GET** /finance/accountingperiods/{id} | Get a accounting period
-[**getAllAccountClasses()**](FinanceApi.md#getAllAccountClasses) | **GET** /finance/accountclasses | Get all account classes ordered by id
-[**getAllAccountGroups()**](FinanceApi.md#getAllAccountGroups) | **GET** /finance/accountgroups | Get all account groups ordered by id
-[**getAllAccountTypes()**](FinanceApi.md#getAllAccountTypes) | **GET** /finance/accounttypes | Get all account types ordered by id
-[**getAllAccountingPeriods()**](FinanceApi.md#getAllAccountingPeriods) | **GET** /finance/accountingperiods | Get all accounting periods
-[**getAllAccounts()**](FinanceApi.md#getAllAccounts) | **GET** /finance/accounts | Get all accounts ordered by accounting period and number
-[**getAllCashDiscounts()**](FinanceApi.md#getAllCashDiscounts) | **GET** /finance/cashdiscounts | Get all cash discounts ordered by id
-[**getAllClients()**](FinanceApi.md#getAllClients) | **GET** /finance/clients | Get all clients
-[**getAllCostCenters()**](FinanceApi.md#getAllCostCenters) | **GET** /finance/costcenters | Get all cost centers ordered by accounting period and number ascending
-[**getAllDonators()**](FinanceApi.md#getAllDonators) | **GET** /finance/donators | Get all donators including their donation information (e.g. donation amount)
-[**getAllFinanceTemplates()**](FinanceApi.md#getAllFinanceTemplates) | **GET** /finance/templates | Get all finance templates
-[**getAllTaxRates()**](FinanceApi.md#getAllTaxRates) | **GET** /finance/taxrates | Get all tax rates ordered by id
-[**getAllTaxTypes()**](FinanceApi.md#getAllTaxTypes) | **GET** /finance/taxtypes | Get all tax types
-[**getAllTransactionPurposes()**](FinanceApi.md#getAllTransactionPurposes) | **GET** /finance/transactionpurposes | Get all transaction purposes
-[**getAllTransactions()**](FinanceApi.md#getAllTransactions) | **GET** /finance/transactions | Get all transaction
-[**getCashDiscount()**](FinanceApi.md#getCashDiscount) | **GET** /finance/cashdiscounts/{id} | Get a cash discount
-[**getClientById()**](FinanceApi.md#getClientById) | **GET** /finance/clients/{id} | Get a client
-[**getCostCenter()**](FinanceApi.md#getCostCenter) | **GET** /finance/costcenters/{id} | Get a cost center
-[**getDonationReceipt()**](FinanceApi.md#getDonationReceipt) | **GET** /finance/donationreceipt | Get donation receipt PDFs (cover letter and attachment)
-[**getFinanceAccountsCsv()**](FinanceApi.md#getFinanceAccountsCsv) | **GET** /finance/accounts/csv | Your GET endpoint
-[**getTaxRate()**](FinanceApi.md#getTaxRate) | **GET** /finance/taxrates/{id} | Get a tax rate
-[**getTaxType()**](FinanceApi.md#getTaxType) | **GET** /finance/taxtypes/{id} | Get a tax type
-[**getTransactionById()**](FinanceApi.md#getTransactionById) | **GET** /finance/transactions/{id} | Get a transaction
-[**getTransactionPurposeById()**](FinanceApi.md#getTransactionPurposeById) | **GET** /finance/transactionpurposes/{id} | Get a transaction purpose
-[**postFinanceCostcentersBulkcreate()**](FinanceApi.md#postFinanceCostcentersBulkcreate) | **POST** /finance/costcenters/bulkcreate | Import many cost centers
-[**postFinanceReports()**](FinanceApi.md#postFinanceReports) | **POST** /finance/reports/{reportType} | Issue new Finance Report
-[**updateAccount()**](FinanceApi.md#updateAccount) | **PUT** /finance/accounts/{id} | Update account
-[**updateAccountClass()**](FinanceApi.md#updateAccountClass) | **PUT** /finance/accountclasses/{id} | Update account class
-[**updateAccountGroup()**](FinanceApi.md#updateAccountGroup) | **PUT** /finance/accountgroups/{id} | Update account group
-[**updateAccountType()**](FinanceApi.md#updateAccountType) | **PUT** /finance/accounttypes/{id} | Update account type
-[**updateAccountingPeriod()**](FinanceApi.md#updateAccountingPeriod) | **PUT** /finance/accountingperiods/{id} | Update accounting period
-[**updateCashDiscount()**](FinanceApi.md#updateCashDiscount) | **PUT** /finance/cashdiscounts/{id} | Update cash discount
-[**updateClient()**](FinanceApi.md#updateClient) | **PUT** /finance/clients/{id} | Update client
-[**updateCostCenter()**](FinanceApi.md#updateCostCenter) | **PUT** /finance/costcenters/{id} | Update cost center
-[**updateTaxRate()**](FinanceApi.md#updateTaxRate) | **PUT** /finance/taxrates/{id} | Update tax rate
-[**updateTaxType()**](FinanceApi.md#updateTaxType) | **PUT** /finance/taxtypes/{id} | Update tax type
-[**updateTransaction()**](FinanceApi.md#updateTransaction) | **PUT** /finance/transactions/{id} | Update transaction
-[**updateTransactionPurpose()**](FinanceApi.md#updateTransactionPurpose) | **PUT** /finance/transactionpurposes/{id} | Update transaction purpose
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**applyFinanceTemplate()**](FinanceApi.md#applyFinanceTemplate) | **POST** /finance/templates/{id} | Apply finance template |
+| [**batchTransaction()**](FinanceApi.md#batchTransaction) | **PATCH** /finance/transactions | Transaction Batch Processing |
+| [**createAllFinanceDonationReceipts()**](FinanceApi.md#createAllFinanceDonationReceipts) | **POST** /finance/donators/receipts | Create donation receipts |
+| [**createCashDiscount()**](FinanceApi.md#createCashDiscount) | **POST** /finance/cashdiscounts | Create new cash discout |
+| [**createCostCenter()**](FinanceApi.md#createCostCenter) | **POST** /finance/costcenters | Create new cost center |
+| [**createNewAccount()**](FinanceApi.md#createNewAccount) | **POST** /finance/accounts | Create new account |
+| [**createNewAccountClass()**](FinanceApi.md#createNewAccountClass) | **POST** /finance/accountclasses | Create new account class |
+| [**createNewAccountGroup()**](FinanceApi.md#createNewAccountGroup) | **POST** /finance/accountgroups | Create new account group |
+| [**createNewAccountType()**](FinanceApi.md#createNewAccountType) | **POST** /finance/accounttypes | Create new account type |
+| [**createNewAccountingPeriod()**](FinanceApi.md#createNewAccountingPeriod) | **POST** /finance/accountingperiods | Create new accounting period |
+| [**createNewClient()**](FinanceApi.md#createNewClient) | **POST** /finance/clients | Create new client |
+| [**createNewTransaction()**](FinanceApi.md#createNewTransaction) | **POST** /finance/transactions | Create new transaction |
+| [**createNewTransactionPurpose()**](FinanceApi.md#createNewTransactionPurpose) | **POST** /finance/transactionpurposes | Create new transaction purpose |
+| [**createTaxRate()**](FinanceApi.md#createTaxRate) | **POST** /finance/taxrates | Create new tax rate |
+| [**createTaxType()**](FinanceApi.md#createTaxType) | **POST** /finance/taxtypes | Create new tax type |
+| [**deleteAccount()**](FinanceApi.md#deleteAccount) | **DELETE** /finance/accounts/{id} | Delete account |
+| [**deleteAccountClass()**](FinanceApi.md#deleteAccountClass) | **DELETE** /finance/accountclasses/{id} | Delete account class |
+| [**deleteAccountGroup()**](FinanceApi.md#deleteAccountGroup) | **DELETE** /finance/accountgroups/{id} | Delete account group |
+| [**deleteAccountType()**](FinanceApi.md#deleteAccountType) | **DELETE** /finance/accounttypes/{id} | Delete account type |
+| [**deleteAccountingPeriod()**](FinanceApi.md#deleteAccountingPeriod) | **DELETE** /finance/accountingperiods/{id} | Delete accounting period |
+| [**deleteAccountsForAccountingPeriod()**](FinanceApi.md#deleteAccountsForAccountingPeriod) | **DELETE** /finance/accountingperiods/{id}/accounts | Delete accounts for accounting period |
+| [**deleteCashDiscount()**](FinanceApi.md#deleteCashDiscount) | **DELETE** /finance/cashdiscounts/{id} | Delete cash discount |
+| [**deleteClient()**](FinanceApi.md#deleteClient) | **DELETE** /finance/clients/{id} | Delete client |
+| [**deleteCostCenter()**](FinanceApi.md#deleteCostCenter) | **DELETE** /finance/costcenters/{id} | Delete cost center |
+| [**deleteFinanceDonationReceipts()**](FinanceApi.md#deleteFinanceDonationReceipts) | **DELETE** /finance/donators/receipts | Delete all donation receipts |
+| [**deleteFinanceDonatorsDonatorCoupleId()**](FinanceApi.md#deleteFinanceDonatorsDonatorCoupleId) | **DELETE** /finance/donators/{donatorCoupleId}/receipts | delete-donation-receipt |
+| [**deleteTaxRate()**](FinanceApi.md#deleteTaxRate) | **DELETE** /finance/taxrates/{id} | Delete tax rate |
+| [**deleteTaxType()**](FinanceApi.md#deleteTaxType) | **DELETE** /finance/taxtypes/{id} | Delete tax type |
+| [**deleteTransaction()**](FinanceApi.md#deleteTransaction) | **DELETE** /finance/transactions/{id} | Delete transaction |
+| [**deleteTransactionPurpose()**](FinanceApi.md#deleteTransactionPurpose) | **DELETE** /finance/transactionpurposes/{id} | Delete transaction purpose |
+| [**exportFinanceTemplate()**](FinanceApi.md#exportFinanceTemplate) | **GET** /finance/templates/export | Epports a finance template based on the masterdata for a given accounting period |
+| [**getAccountById()**](FinanceApi.md#getAccountById) | **GET** /finance/accounts/{id} | Get a account |
+| [**getAccountClassById()**](FinanceApi.md#getAccountClassById) | **GET** /finance/accountclasses/{id} | Get a account class |
+| [**getAccountGroupById()**](FinanceApi.md#getAccountGroupById) | **GET** /finance/accountgroups/{id} | Get a account group |
+| [**getAccountTypeById()**](FinanceApi.md#getAccountTypeById) | **GET** /finance/accounttypes/{id} | Get a account type |
+| [**getAccountingPeriodById()**](FinanceApi.md#getAccountingPeriodById) | **GET** /finance/accountingperiods/{id} | Get a accounting period |
+| [**getAllAccountClasses()**](FinanceApi.md#getAllAccountClasses) | **GET** /finance/accountclasses | Get all account classes ordered by id |
+| [**getAllAccountGroups()**](FinanceApi.md#getAllAccountGroups) | **GET** /finance/accountgroups | Get all account groups ordered by id |
+| [**getAllAccountTypes()**](FinanceApi.md#getAllAccountTypes) | **GET** /finance/accounttypes | Get all account types ordered by id |
+| [**getAllAccountingPeriods()**](FinanceApi.md#getAllAccountingPeriods) | **GET** /finance/accountingperiods | Get all accounting periods |
+| [**getAllAccounts()**](FinanceApi.md#getAllAccounts) | **GET** /finance/accounts | Get all accounts ordered by accounting period and number |
+| [**getAllCashDiscounts()**](FinanceApi.md#getAllCashDiscounts) | **GET** /finance/cashdiscounts | Get all cash discounts ordered by id |
+| [**getAllClients()**](FinanceApi.md#getAllClients) | **GET** /finance/clients | Get all clients |
+| [**getAllCostCenters()**](FinanceApi.md#getAllCostCenters) | **GET** /finance/costcenters | Get all cost centers ordered by accounting period and number ascending |
+| [**getAllDonationReceipts()**](FinanceApi.md#getAllDonationReceipts) | **GET** /finance/donators/receipts | Get all donators including their donation information (e.g. donation amount) |
+| [**getAllDonators()**](FinanceApi.md#getAllDonators) | **GET** /finance/donators | Get all donators including their donation information (e.g. donation amount) |
+| [**getAllFinanceTemplates()**](FinanceApi.md#getAllFinanceTemplates) | **GET** /finance/templates | Get all finance templates |
+| [**getAllTaxRates()**](FinanceApi.md#getAllTaxRates) | **GET** /finance/taxrates | Get all tax rates ordered by id |
+| [**getAllTaxTypes()**](FinanceApi.md#getAllTaxTypes) | **GET** /finance/taxtypes | Get all tax types |
+| [**getAllTransactionPurposes()**](FinanceApi.md#getAllTransactionPurposes) | **GET** /finance/transactionpurposes | Get all transaction purposes |
+| [**getAllTransactions()**](FinanceApi.md#getAllTransactions) | **GET** /finance/transactions | Get all transaction |
+| [**getCashDiscount()**](FinanceApi.md#getCashDiscount) | **GET** /finance/cashdiscounts/{id} | Get a cash discount |
+| [**getClientById()**](FinanceApi.md#getClientById) | **GET** /finance/clients/{id} | Get a client |
+| [**getCostCenter()**](FinanceApi.md#getCostCenter) | **GET** /finance/costcenters/{id} | Get a cost center |
+| [**getDonationReceipt()**](FinanceApi.md#getDonationReceipt) | **GET** /finance/donationreceipt | Get donation receipt PDFs (cover letter and attachment) |
+| [**getFinanceAccountsCsv()**](FinanceApi.md#getFinanceAccountsCsv) | **GET** /finance/accounts/csv | Your GET endpoint |
+| [**getFinanceDonatorsDonatorCoupleId()**](FinanceApi.md#getFinanceDonatorsDonatorCoupleId) | **GET** /finance/donators/{donatorCoupleId}/receipts | Get donation receipt PDFs (cover letter and attachment) |
+| [**getTaxRate()**](FinanceApi.md#getTaxRate) | **GET** /finance/taxrates/{id} | Get a tax rate |
+| [**getTaxType()**](FinanceApi.md#getTaxType) | **GET** /finance/taxtypes/{id} | Get a tax type |
+| [**getTransactionById()**](FinanceApi.md#getTransactionById) | **GET** /finance/transactions/{id} | Get a transaction |
+| [**getTransactionPurposeById()**](FinanceApi.md#getTransactionPurposeById) | **GET** /finance/transactionpurposes/{id} | Get a transaction purpose |
+| [**postFinanceCostcentersBulkcreate()**](FinanceApi.md#postFinanceCostcentersBulkcreate) | **POST** /finance/costcenters/bulkcreate | Import many cost centers |
+| [**postFinanceReports()**](FinanceApi.md#postFinanceReports) | **POST** /finance/reports/{reportType} | Issue new Finance Report |
+| [**updateAccount()**](FinanceApi.md#updateAccount) | **PUT** /finance/accounts/{id} | Update account |
+| [**updateAccountClass()**](FinanceApi.md#updateAccountClass) | **PUT** /finance/accountclasses/{id} | Update account class |
+| [**updateAccountGroup()**](FinanceApi.md#updateAccountGroup) | **PUT** /finance/accountgroups/{id} | Update account group |
+| [**updateAccountType()**](FinanceApi.md#updateAccountType) | **PUT** /finance/accounttypes/{id} | Update account type |
+| [**updateAccountingPeriod()**](FinanceApi.md#updateAccountingPeriod) | **PUT** /finance/accountingperiods/{id} | Update accounting period |
+| [**updateCashDiscount()**](FinanceApi.md#updateCashDiscount) | **PUT** /finance/cashdiscounts/{id} | Update cash discount |
+| [**updateClient()**](FinanceApi.md#updateClient) | **PUT** /finance/clients/{id} | Update client |
+| [**updateCostCenter()**](FinanceApi.md#updateCostCenter) | **PUT** /finance/costcenters/{id} | Update cost center |
+| [**updateTaxRate()**](FinanceApi.md#updateTaxRate) | **PUT** /finance/taxrates/{id} | Update tax rate |
+| [**updateTaxType()**](FinanceApi.md#updateTaxType) | **PUT** /finance/taxtypes/{id} | Update tax type |
+| [**updateTransaction()**](FinanceApi.md#updateTransaction) | **PUT** /finance/transactions/{id} | Update transaction |
+| [**updateTransactionPurpose()**](FinanceApi.md#updateTransactionPurpose) | **PUT** /finance/transactionpurposes/{id} | Update transaction purpose |
 
 
 ## `applyFinanceTemplate()`
@@ -115,10 +120,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
 
 ### Return type
 
@@ -178,9 +183,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **batch_transaction_request** | [**\StevenBuehner\ChurchTools\Model\BatchTransactionRequest**](../Model/BatchTransactionRequest.md)| Batch information consists of changeset and filters. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **batch_transaction_request** | [**\StevenBuehner\ChurchTools\Model\BatchTransactionRequest**](../Model/BatchTransactionRequest.md)| Batch information consists of changeset and filters. | [optional] |
 
 ### Return type
 
@@ -194,6 +199,67 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createAllFinanceDonationReceipts()`
+
+```php
+createAllFinanceDonationReceipts($accounting_period_id)
+```
+
+Create donation receipts
+
+Create all donation receipts for an accounting period.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
+
+try {
+    $apiInstance->createAllFinanceDonationReceipts($accounting_period_id);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->createAllFinanceDonationReceipts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -238,9 +304,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_cash_discount_request** | [**\StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest**](../Model/CreateCashDiscountRequest.md)| Cash discount data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_cash_discount_request** | [**\StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest**](../Model/CreateCashDiscountRequest.md)| Cash discount data | |
 
 ### Return type
 
@@ -300,9 +366,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_cost_center_request** | [**\StevenBuehner\ChurchTools\Model\CreateCostCenterRequest**](../Model/CreateCostCenterRequest.md)| cost center data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_cost_center_request** | [**\StevenBuehner\ChurchTools\Model\CreateCostCenterRequest**](../Model/CreateCostCenterRequest.md)| cost center data | |
 
 ### Return type
 
@@ -360,9 +426,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_account_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountRequest**](../Model/CreateNewAccountRequest.md)| Account data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_account_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountRequest**](../Model/CreateNewAccountRequest.md)| Account data | |
 
 ### Return type
 
@@ -420,9 +486,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_account_class_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest**](../Model/CreateNewAccountClassRequest.md)| Account classes sorted by sort key. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_account_class_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest**](../Model/CreateNewAccountClassRequest.md)| Account classes sorted by sort key. | |
 
 ### Return type
 
@@ -480,9 +546,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_account_group_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest**](../Model/CreateNewAccountGroupRequest.md)| Account groups sorted by sort key. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_account_group_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest**](../Model/CreateNewAccountGroupRequest.md)| Account groups sorted by sort key. | |
 
 ### Return type
 
@@ -540,9 +606,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_account_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest**](../Model/CreateNewAccountTypeRequest.md)| Account Type data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_account_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest**](../Model/CreateNewAccountTypeRequest.md)| Account Type data | |
 
 ### Return type
 
@@ -600,9 +666,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_accounting_period_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriodRequest**](../Model/CreateNewAccountingPeriodRequest.md)| Accounting period data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_accounting_period_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountingPeriodRequest**](../Model/CreateNewAccountingPeriodRequest.md)| Accounting period data | |
 
 ### Return type
 
@@ -660,9 +726,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_client_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewClientRequest**](../Model/CreateNewClientRequest.md)| Client data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_client_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewClientRequest**](../Model/CreateNewClientRequest.md)| Client data | |
 
 ### Return type
 
@@ -720,9 +786,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_transaction_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionRequest**](../Model/CreateNewTransactionRequest.md)| Transaction data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_transaction_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionRequest**](../Model/CreateNewTransactionRequest.md)| Transaction data | |
 
 ### Return type
 
@@ -780,9 +846,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_transaction_purpose_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest**](../Model/CreateNewTransactionPurposeRequest.md)| Transaction purpose data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_transaction_purpose_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest**](../Model/CreateNewTransactionPurposeRequest.md)| Transaction purpose data | |
 
 ### Return type
 
@@ -840,9 +906,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_tax_rate_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxRateRequest**](../Model/CreateTaxRateRequest.md)| Tax rate data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_tax_rate_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxRateRequest**](../Model/CreateTaxRateRequest.md)| Tax rate data | |
 
 ### Return type
 
@@ -900,9 +966,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_tax_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest**](../Model/CreateTaxTypeRequest.md)| tax type data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_tax_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest**](../Model/CreateTaxTypeRequest.md)| tax type data | |
 
 ### Return type
 
@@ -960,10 +1026,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1020,9 +1086,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -1079,9 +1145,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -1139,10 +1205,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1200,10 +1266,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1260,9 +1326,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -1320,10 +1386,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1381,10 +1447,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1444,10 +1510,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1461,6 +1527,132 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: `text/plain`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteFinanceDonationReceipts()`
+
+```php
+deleteFinanceDonationReceipts($accounting_period_id)
+```
+
+Delete all donation receipts
+
+Delete all donation receipts such that you can regenerate the same.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
+
+try {
+    $apiInstance->deleteFinanceDonationReceipts($accounting_period_id);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->deleteFinanceDonationReceipts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteFinanceDonatorsDonatorCoupleId()`
+
+```php
+deleteFinanceDonatorsDonatorCoupleId($, $accounting_period_id, $donator_couple_id)
+```
+
+delete-donation-receipt
+
+Delete the donation receipts of a parcticular donator
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ = '_example'; // string
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
+$donator_couple_id = 42-43; // string | ID of Donator or Couple
+
+try {
+    $apiInstance->deleteFinanceDonatorsDonatorCoupleId($, $accounting_period_id, $donator_couple_id);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->deleteFinanceDonatorsDonatorCoupleId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **** | **string**|  | |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+| **donator_couple_id** | **string**| ID of Donator or Couple | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1505,10 +1697,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1566,10 +1758,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1627,10 +1819,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1688,10 +1880,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **dry_run** | **bool**| If set to true, the deletion is simulated but nothing will be deleted. | [optional] |
 
 ### Return type
 
@@ -1748,9 +1940,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
 
 ### Return type
 
@@ -1808,9 +2000,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -1868,9 +2060,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -1928,9 +2120,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -1988,9 +2180,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -2048,9 +2240,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -2337,10 +2529,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
- **calculate_balance** | **bool**| Calculate balance for accounts | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+| **calculate_balance** | **bool**| Calculate balance for accounts | [optional] |
 
 ### Return type
 
@@ -2514,13 +2706,79 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
 
 ### Return type
 
 [**\StevenBuehner\ChurchTools\Model\GetAllCostCenters200Response**](../Model/GetAllCostCenters200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAllDonationReceipts()`
+
+```php
+getAllDonationReceipts($accounting_period_id, $mode, $cleardoublepage): \StevenBuehner\ChurchTools\Model\GetAllDonators200Response
+```
+
+Get all donators including their donation information (e.g. donation amount)
+
+Download all donation receipts.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
+$mode = 'twofiles'; // string | mode: seperate letter and attachtment in two files
+$cleardoublepage = 'none'; // string | add empty pages to clear double page for  'all', 'letter', 'attachment'
+
+try {
+    $result = $apiInstance->getAllDonationReceipts($accounting_period_id, $mode, $cleardoublepage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->getAllDonationReceipts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+| **mode** | **string**| mode: seperate letter and attachtment in two files | [optional] [default to &#39;twofiles&#39;] |
+| **cleardoublepage** | **string**| add empty pages to clear double page for  &#39;all&#39;, &#39;letter&#39;, &#39;attachment&#39; | [optional] [default to &#39;none&#39;] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetAllDonators200Response**](../Model/GetAllDonators200Response.md)
 
 ### Authorization
 
@@ -2578,13 +2836,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
- **order_by** | **string**| Default is &#x60;name&#x60;. | [optional]
- **order_direction** | **string**| Way of direction: ascending or descending | [optional]
- **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **int**| Number of results per page. | [optional] [default to 10]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+| **order_by** | **string**| Default is &#x60;name&#x60;. | [optional] |
+| **order_direction** | **string**| Way of direction: ascending or descending | [optional] |
+| **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
+| **limit** | **int**| Number of results per page. | [optional] [default to 10] |
 
 ### Return type
 
@@ -2699,9 +2957,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
 
 ### Return type
 
@@ -2886,22 +3144,22 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
- **created_pid** | **int**| Filter by person ID. Get all transactions the person has created. But only show those the user can see. | [optional]
- **cost_center_ids** | [**int[]**](../Model/int.md)| Filter by cost centers. | [optional]
- **donator_ids** | [**int[]**](../Model/int.md)| Filter by donator or donator spouse. Provide an array of person ids. | [optional]
- **account_ids** | [**int[]**](../Model/int.md)| Filter by account/contra account. All transactions match, where either account or contra account is in the list. | [optional]
- **is_donation** | **bool**| Filter by donations. &#x60;true&#x60; &#x3D; Only donations, &#x60;false&#x60; &#x3D; Other than donation. | [optional]
- **is_income** | **bool**| Filter transactions by income or outcome transactions. An account group has a flag &#x60;cash asset account&#x60; to indicate accounts for income/outcome. | [optional]
- **start_date** | **\DateTime**| Show transactions after this date. | [optional]
- **end_date** | **\DateTime**| Show transactions before this date. | [optional]
- **is_immutable** | **bool**| Filter transactions, whether transaction is immutable. | [optional]
- **order_by** | **string**| Default is &#x60;date&#x60;. Order transactions either by document date, amount, or modified date. For &#x60;date&#x60; and &#x60;amount&#x60; a second sorting happens by modified. The order direction for modified date is the same as for date and amount. | [optional]
- **order_direction** | **string**| Way of direction: ascending or descending | [optional]
- **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **int**| Number of results per page. | [optional] [default to 10]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+| **created_pid** | **int**| Filter by person ID. Get all transactions the person has created. But only show those the user can see. | [optional] |
+| **cost_center_ids** | [**int[]**](../Model/int.md)| Filter by cost centers. | [optional] |
+| **donator_ids** | [**int[]**](../Model/int.md)| Filter by donator or donator spouse. Provide an array of person ids. | [optional] |
+| **account_ids** | [**int[]**](../Model/int.md)| Filter by account/contra account. All transactions match, where either account or contra account is in the list. | [optional] |
+| **is_donation** | **bool**| Filter by donations. &#x60;true&#x60; &#x3D; Only donations, &#x60;false&#x60; &#x3D; Other than donation. | [optional] |
+| **is_income** | **bool**| Filter transactions by income or outcome transactions. An account group has a flag &#x60;cash asset account&#x60; to indicate accounts for income/outcome. | [optional] |
+| **start_date** | **\DateTime**| Show transactions after this date. | [optional] |
+| **end_date** | **\DateTime**| Show transactions before this date. | [optional] |
+| **is_immutable** | **bool**| Filter transactions, whether transaction is immutable. | [optional] |
+| **order_by** | **string**| Default is &#x60;date&#x60;. Order transactions either by document date, amount, or modified date. For &#x60;date&#x60; and &#x60;amount&#x60; a second sorting happens by modified. The order direction for modified date is the same as for date and amount. | [optional] |
+| **order_direction** | **string**| Way of direction: ascending or descending | [optional] |
+| **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
+| **limit** | **int**| Number of results per page. | [optional] [default to 10] |
 
 ### Return type
 
@@ -2959,9 +3217,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3019,9 +3277,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3081,9 +3339,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3143,11 +3401,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| ID of accounting period to get master data for |
- **donator_id** | **int**| ID of the donator person to create the donation receipt for |
- **donator_spouse_id** | **int**| ID of the donator spouse to create the donation receipt for | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+| **donator_id** | **int**| ID of the donator person to create the donation receipt for | |
+| **donator_spouse_id** | **int**| ID of the donator spouse to create the donation receipt for | [optional] |
 
 ### Return type
 
@@ -3206,9 +3464,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accounting_period_id** | **int**| The accounting period to get the result set from | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accounting_period_id** | **int**| The accounting period to get the result set from | [optional] |
 
 ### Return type
 
@@ -3222,6 +3480,72 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getFinanceDonatorsDonatorCoupleId()`
+
+```php
+getFinanceDonatorsDonatorCoupleId($, $accounting_period_id, $donator_couple_id): \StevenBuehner\ChurchTools\Model\GetDonationReceipt200Response
+```
+
+Get donation receipt PDFs (cover letter and attachment)
+
+Get the donation receipts of a particular donator
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ = '_example'; // string
+$accounting_period_id = 1; // int | ID of accounting period to get master data for
+$donator_couple_id = 42-43; // string | ID of Donator or Couple
+
+try {
+    $result = $apiInstance->getFinanceDonatorsDonatorCoupleId($, $accounting_period_id, $donator_couple_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->getFinanceDonatorsDonatorCoupleId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **** | **string**|  | |
+| **accounting_period_id** | **int**| ID of accounting period to get master data for | |
+| **donator_couple_id** | **string**| ID of Donator or Couple | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetDonationReceipt200Response**](../Model/GetDonationReceipt200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -3266,9 +3590,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3326,9 +3650,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3386,9 +3710,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3446,9 +3770,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -3506,9 +3830,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **post_finance_costcenters_bulkcreate_request** | [**\StevenBuehner\ChurchTools\Model\PostFinanceCostcentersBulkcreateRequest**](../Model/PostFinanceCostcentersBulkcreateRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_finance_costcenters_bulkcreate_request** | [**\StevenBuehner\ChurchTools\Model\PostFinanceCostcentersBulkcreateRequest**](../Model/PostFinanceCostcentersBulkcreateRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -3569,10 +3893,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **report_type** | **string**| Report Key |
- **post_finance_reports_request** | [**\StevenBuehner\ChurchTools\Model\PostFinanceReportsRequest**](../Model/PostFinanceReportsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **report_type** | **string**| Report Key | |
+| **post_finance_reports_request** | [**\StevenBuehner\ChurchTools\Model\PostFinanceReportsRequest**](../Model/PostFinanceReportsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -3631,10 +3955,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_new_account_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountRequest**](../Model/CreateNewAccountRequest.md)| Account data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_new_account_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountRequest**](../Model/CreateNewAccountRequest.md)| Account data | |
 
 ### Return type
 
@@ -3693,10 +4017,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_new_account_class_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest**](../Model/CreateNewAccountClassRequest.md)| Account Class data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_new_account_class_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountClassRequest**](../Model/CreateNewAccountClassRequest.md)| Account Class data | |
 
 ### Return type
 
@@ -3755,10 +4079,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_new_account_group_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest**](../Model/CreateNewAccountGroupRequest.md)| Account Group data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_new_account_group_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountGroupRequest**](../Model/CreateNewAccountGroupRequest.md)| Account Group data | |
 
 ### Return type
 
@@ -3817,10 +4141,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_new_account_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest**](../Model/CreateNewAccountTypeRequest.md)| Account Type data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_new_account_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewAccountTypeRequest**](../Model/CreateNewAccountTypeRequest.md)| Account Type data | |
 
 ### Return type
 
@@ -3879,10 +4203,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **update_accounting_period_request** | [**\StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest**](../Model/UpdateAccountingPeriodRequest.md)| Accounting period data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **update_accounting_period_request** | [**\StevenBuehner\ChurchTools\Model\UpdateAccountingPeriodRequest**](../Model/UpdateAccountingPeriodRequest.md)| Accounting period data | |
 
 ### Return type
 
@@ -3941,10 +4265,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_cash_discount_request** | [**\StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest**](../Model/CreateCashDiscountRequest.md)| cash discount data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_cash_discount_request** | [**\StevenBuehner\ChurchTools\Model\CreateCashDiscountRequest**](../Model/CreateCashDiscountRequest.md)| cash discount data | |
 
 ### Return type
 
@@ -4003,10 +4327,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_new_client_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewClientRequest**](../Model/CreateNewClientRequest.md)| Client data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_new_client_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewClientRequest**](../Model/CreateNewClientRequest.md)| Client data | |
 
 ### Return type
 
@@ -4067,10 +4391,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **update_cost_center_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest**](../Model/UpdateCostCenterRequest.md)| cost center data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **update_cost_center_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCostCenterRequest**](../Model/UpdateCostCenterRequest.md)| cost center data | |
 
 ### Return type
 
@@ -4129,10 +4453,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_tax_rate_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxRateRequest**](../Model/CreateTaxRateRequest.md)| Tax rate data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_tax_rate_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxRateRequest**](../Model/CreateTaxRateRequest.md)| Tax rate data | |
 
 ### Return type
 
@@ -4191,10 +4515,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_tax_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest**](../Model/CreateTaxTypeRequest.md)| tax type data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_tax_type_request** | [**\StevenBuehner\ChurchTools\Model\CreateTaxTypeRequest**](../Model/CreateTaxTypeRequest.md)| tax type data | |
 
 ### Return type
 
@@ -4253,10 +4577,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **update_transaction_request** | [**\StevenBuehner\ChurchTools\Model\UpdateTransactionRequest**](../Model/UpdateTransactionRequest.md)| Transaction data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **update_transaction_request** | [**\StevenBuehner\ChurchTools\Model\UpdateTransactionRequest**](../Model/UpdateTransactionRequest.md)| Transaction data | |
 
 ### Return type
 
@@ -4315,10 +4639,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **create_new_transaction_purpose_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest**](../Model/CreateNewTransactionPurposeRequest.md)| transaction purpose data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **create_new_transaction_purpose_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewTransactionPurposeRequest**](../Model/CreateNewTransactionPurposeRequest.md)| transaction purpose data | |
 
 ### Return type
 

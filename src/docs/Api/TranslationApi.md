@@ -1,10 +1,10 @@
 # StevenBuehner\ChurchTools\TranslationApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAllTranslations()**](TranslationApi.md#getAllTranslations) | **GET** /translations | Get all translations
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getAllTranslations()**](TranslationApi.md#getAllTranslations) | **GET** /translations | Get all translations |
 
 
 ## `getAllTranslations()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updated_by_church** | **bool**| Only return Translations created or updated by the church | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updated_by_church** | **bool**| Only return Translations created or updated by the church | [optional] |
 
 ### Return type
 

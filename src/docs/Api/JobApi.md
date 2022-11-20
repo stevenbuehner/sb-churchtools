@@ -1,10 +1,10 @@
 # StevenBuehner\ChurchTools\JobApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getJobs()**](JobApi.md#getJobs) | **GET** /jobs | Your GET endpoint
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getJobs()**](JobApi.md#getJobs) | **GET** /jobs | Your GET endpoint |
 
 
 ## `getJobs()`
@@ -53,16 +53,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **status** | [**string[]**](../Model/string.md)|  | [optional]
- **identifier** | **string**|  | [optional]
- **name** | **string**|  | [optional]
- **domain_ids** | [**int[]**](../Model/int.md)|  | [optional]
- **created_start_date** | **string**|  | [optional]
- **created_end_date** | **string**|  | [optional]
- **modified_start_date** | **string**|  | [optional]
- **modified_end_date** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **status** | [**string[]**](../Model/string.md)|  | [optional] |
+| **identifier** | **string**|  | [optional] |
+| **name** | **string**|  | [optional] |
+| **domain_ids** | [**int[]**](../Model/int.md)|  | [optional] |
+| **created_start_date** | **string**|  | [optional] |
+| **created_end_date** | **string**|  | [optional] |
+| **modified_start_date** | **string**|  | [optional] |
+| **modified_end_date** | **string**|  | [optional] |
 
 ### Return type
 

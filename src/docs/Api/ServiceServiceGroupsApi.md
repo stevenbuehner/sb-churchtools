@@ -1,18 +1,18 @@
 # StevenBuehner\ChurchTools\ServiceServiceGroupsApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**declineServiceRequestById()**](ServiceServiceGroupsApi.md#declineServiceRequestById) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person
-[**getOpenServiceRequestsForPerson()**](ServiceServiceGroupsApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person
-[**getService()**](ServiceServiceGroupsApi.md#getService) | **GET** /services/{serviceId} | 
-[**getServiceGroup()**](ServiceServiceGroupsApi.md#getServiceGroup) | **GET** /servicegroups/{serviceGroupId} | 
-[**getServiceGroups()**](ServiceServiceGroupsApi.md#getServiceGroups) | **GET** /servicegroups | 
-[**getServiceRequestById()**](ServiceServiceGroupsApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person
-[**getServices()**](ServiceServiceGroupsApi.md#getServices) | **GET** /services | 
-[**undoServiceRequestById()**](ServiceServiceGroupsApi.md#undoServiceRequestById) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action
-[**updateServiceRequestById()**](ServiceServiceGroupsApi.md#updateServiceRequestById) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**declineServiceRequestById()**](ServiceServiceGroupsApi.md#declineServiceRequestById) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person |
+| [**getOpenServiceRequestsForPerson()**](ServiceServiceGroupsApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person |
+| [**getService()**](ServiceServiceGroupsApi.md#getService) | **GET** /services/{serviceId} |  |
+| [**getServiceGroup()**](ServiceServiceGroupsApi.md#getServiceGroup) | **GET** /servicegroups/{serviceGroupId} |  |
+| [**getServiceGroups()**](ServiceServiceGroupsApi.md#getServiceGroups) | **GET** /servicegroups |  |
+| [**getServiceRequestById()**](ServiceServiceGroupsApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person |
+| [**getServices()**](ServiceServiceGroupsApi.md#getServices) | **GET** /services |  |
+| [**undoServiceRequestById()**](ServiceServiceGroupsApi.md#undoServiceRequestById) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action |
+| [**updateServiceRequestById()**](ServiceServiceGroupsApi.md#updateServiceRequestById) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person |
 
 
 ## `declineServiceRequestById()`
@@ -57,11 +57,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
- **comment** | **string**| Comment | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
+| **comment** | **string**| Comment | [optional] |
 
 ### Return type
 
@@ -121,9 +121,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -181,9 +181,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **service_id** | **string**|  | |
 
 ### Return type
 
@@ -241,9 +241,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_group_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **service_group_id** | **string**|  | |
 
 ### Return type
 
@@ -361,10 +361,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
 
 ### Return type
 
@@ -482,10 +482,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
 
 ### Return type
 
@@ -547,11 +547,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
- **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
+| **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. | |
 
 ### Return type
 

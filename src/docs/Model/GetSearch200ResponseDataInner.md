@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_url** | **string** |  | [optional]
-**domain_attributes** | **object[]** |  | [optional]
+**domain_attributes** | **object** |  | [optional]
 **domain_identifier** | **string** |  | [optional]
 **domain_type** | **string** |  | [optional] [default to 'song']
 **frontend_url** | **string** |  | [optional]

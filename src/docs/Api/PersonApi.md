@@ -1,42 +1,42 @@
 # StevenBuehner\ChurchTools\PersonApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPerson()**](PersonApi.md#createPerson) | **POST** /persons | Create new person
-[**declineServiceRequestById()**](PersonApi.md#declineServiceRequestById) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person
-[**deleteDeviceForPerson()**](PersonApi.md#deleteDeviceForPerson) | **DELETE** /persons/{personId}/devices/{deviceId} | Remove device for person
-[**deletePerson()**](PersonApi.md#deletePerson) | **DELETE** /persons/{personId} | Delete person
-[**deletePersonSetting()**](PersonApi.md#deletePersonSetting) | **DELETE** /persons/{personId}/settings/{module}/{attribute} | Delete a person setting
-[**getAllGroupsForPerson()**](PersonApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in
-[**getAllPersonSettings()**](PersonApi.md#getAllPersonSettings) | **GET** /persons/{personId}/settings | Get all person settings
-[**getAllPersons()**](PersonApi.md#getAllPersons) | **GET** /persons | Get all persons
-[**getDeviceForPerson()**](PersonApi.md#getDeviceForPerson) | **GET** /persons/{personId}/devices/{deviceId} | Fetch one device
-[**getOpenServiceRequestsForPerson()**](PersonApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person
-[**getPersonById()**](PersonApi.md#getPersonById) | **GET** /persons/{personId} | Get a person by ID or GUID
-[**getPersonDevices()**](PersonApi.md#getPersonDevices) | **GET** /persons/{personId}/devices | Fetch all registered devices for person
-[**getPersonEvents()**](PersonApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with
-[**getPersonInformation()**](PersonApi.md#getPersonInformation) | **GET** /person/{personId}/information | Get PDF with privacy-information
-[**getPersonMasterdata()**](PersonApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
-[**getPersonModuleSettings()**](PersonApi.md#getPersonModuleSettings) | **GET** /persons/{personId}/settings/{module} | Get all person settings of a module
-[**getPersonProperties()**](PersonApi.md#getPersonProperties) | **POST** /persons/properties | Retrieve people&#39;s properties, whether they own an email adress
-[**getPersonRelationships()**](PersonApi.md#getPersonRelationships) | **GET** /persons/{personId}/relationships | Get all relationships linked to this person
-[**getPersonSetting()**](PersonApi.md#getPersonSetting) | **GET** /persons/{personId}/settings/{module}/{attribute} | Get person setting
-[**getPersonTags()**](PersonApi.md#getPersonTags) | **GET** /persons/{personId}/tags | Get all tags attached to a person
-[**getPersonsBirthdays()**](PersonApi.md#getPersonsBirthdays) | **GET** /persons/birthdays | Fetch Birthdays
-[**getPersonsDuplicates()**](PersonApi.md#getPersonsDuplicates) | **GET** /persons/duplicates | get potential duplicates of persons
-[**getPersonsIdLogintoken()**](PersonApi.md#getPersonsIdLogintoken) | **GET** /persons/{personId}/logintoken | Fetch Login Token
-[**getPersonsPersonidMergeDuplicateid()**](PersonApi.md#getPersonsPersonidMergeDuplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a  merge
-[**getServiceRequestById()**](PersonApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person
-[**invitePerson()**](PersonApi.md#invitePerson) | **POST** /persons/{personId}/invite | Invite Person to ChurchTools
-[**patchPerson()**](PersonApi.md#patchPerson) | **PATCH** /persons/{personId} | Updates a person
-[**patchPersonsPersonidMergeDuplicateid()**](PersonApi.md#patchPersonsPersonidMergeDuplicateid) | **PATCH** /persons/{personId}/merge/{duplicateId} | Merge two person records
-[**postPersonsPersonIdArchive()**](PersonApi.md#postPersonsPersonIdArchive) | **POST** /persons/{personId}/archive | 
-[**undoServiceRequestById()**](PersonApi.md#undoServiceRequestById) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action
-[**updateDeviceForPerson()**](PersonApi.md#updateDeviceForPerson) | **PUT** /persons/{personId}/devices/{deviceId} | Create / Update new device for person
-[**updatePersonSetting()**](PersonApi.md#updatePersonSetting) | **PUT** /persons/{personId}/settings/{module}/{attribute} | Create/Update person setting
-[**updateServiceRequestById()**](PersonApi.md#updateServiceRequestById) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createPerson()**](PersonApi.md#createPerson) | **POST** /persons | Create new person |
+| [**declineServiceRequestById()**](PersonApi.md#declineServiceRequestById) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person |
+| [**deleteDeviceForPerson()**](PersonApi.md#deleteDeviceForPerson) | **DELETE** /persons/{personId}/devices/{deviceId} | Remove device for person |
+| [**deletePerson()**](PersonApi.md#deletePerson) | **DELETE** /persons/{personId} | Delete person |
+| [**deletePersonSetting()**](PersonApi.md#deletePersonSetting) | **DELETE** /persons/{personId}/settings/{module}/{attribute} | Delete a person setting |
+| [**getAllGroupsForPerson()**](PersonApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in |
+| [**getAllPersonSettings()**](PersonApi.md#getAllPersonSettings) | **GET** /persons/{personId}/settings | Get all person settings |
+| [**getAllPersons()**](PersonApi.md#getAllPersons) | **GET** /persons | Get all persons |
+| [**getDeviceForPerson()**](PersonApi.md#getDeviceForPerson) | **GET** /persons/{personId}/devices/{deviceId} | Fetch one device |
+| [**getOpenServiceRequestsForPerson()**](PersonApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person |
+| [**getPersonById()**](PersonApi.md#getPersonById) | **GET** /persons/{personId} | Get a person by ID or GUID |
+| [**getPersonDevices()**](PersonApi.md#getPersonDevices) | **GET** /persons/{personId}/devices | Fetch all registered devices for person |
+| [**getPersonEvents()**](PersonApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with |
+| [**getPersonInformation()**](PersonApi.md#getPersonInformation) | **GET** /person/{personId}/information | Get PDF with privacy-information |
+| [**getPersonMasterdata()**](PersonApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
+| [**getPersonModuleSettings()**](PersonApi.md#getPersonModuleSettings) | **GET** /persons/{personId}/settings/{module} | Get all person settings of a module |
+| [**getPersonProperties()**](PersonApi.md#getPersonProperties) | **POST** /persons/properties | Retrieve people&#39;s properties, whether they own an email adress |
+| [**getPersonRelationships()**](PersonApi.md#getPersonRelationships) | **GET** /persons/{personId}/relationships | Get all relationships linked to this person |
+| [**getPersonSetting()**](PersonApi.md#getPersonSetting) | **GET** /persons/{personId}/settings/{module}/{attribute} | Get person setting |
+| [**getPersonTags()**](PersonApi.md#getPersonTags) | **GET** /persons/{personId}/tags | Get all tags attached to a person |
+| [**getPersonsBirthdays()**](PersonApi.md#getPersonsBirthdays) | **GET** /persons/birthdays | Fetch Birthdays |
+| [**getPersonsDuplicates()**](PersonApi.md#getPersonsDuplicates) | **GET** /persons/duplicates | get potential duplicates of persons |
+| [**getPersonsIdLogintoken()**](PersonApi.md#getPersonsIdLogintoken) | **GET** /persons/{personId}/logintoken | Fetch Login Token |
+| [**getPersonsPersonidMergeDuplicateid()**](PersonApi.md#getPersonsPersonidMergeDuplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a  merge |
+| [**getServiceRequestById()**](PersonApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person |
+| [**invitePerson()**](PersonApi.md#invitePerson) | **POST** /persons/{personId}/invite | Invite Person to ChurchTools |
+| [**patchPerson()**](PersonApi.md#patchPerson) | **PATCH** /persons/{personId} | Updates a person |
+| [**patchPersonsPersonidMergeDuplicateid()**](PersonApi.md#patchPersonsPersonidMergeDuplicateid) | **PATCH** /persons/{personId}/merge/{duplicateId} | Merge two person records |
+| [**postPersonsPersonIdArchive()**](PersonApi.md#postPersonsPersonIdArchive) | **POST** /persons/{personId}/archive |  |
+| [**undoServiceRequestById()**](PersonApi.md#undoServiceRequestById) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action |
+| [**updateDeviceForPerson()**](PersonApi.md#updateDeviceForPerson) | **PUT** /persons/{personId}/devices/{deviceId} | Create / Update new device for person |
+| [**updatePersonSetting()**](PersonApi.md#updatePersonSetting) | **PUT** /persons/{personId}/settings/{module}/{attribute} | Create/Update person setting |
+| [**updateServiceRequestById()**](PersonApi.md#updateServiceRequestById) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person |
 
 
 ## `createPerson()`
@@ -82,11 +82,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_person_request** | [**\StevenBuehner\ChurchTools\Model\CreatePersonRequest**](../Model/CreatePersonRequest.md)| Include those fields you want to add and are allowed to write. |
- **force** | **bool**| Force the action, which would otherwise fail. | [optional]
- **without_privacy_policy_agreement** | **bool**| If given fields for privacy policy agreements are not mandotory. Can only be used if setting is allowed in admin settings. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_person_request** | [**\StevenBuehner\ChurchTools\Model\CreatePersonRequest**](../Model/CreatePersonRequest.md)| Include those fields you want to add and are allowed to write. | |
+| **force** | **bool**| Force the action, which would otherwise fail. | [optional] |
+| **without_privacy_policy_agreement** | **bool**| If given fields for privacy policy agreements are not mandotory. Can only be used if setting is allowed in admin settings. | [optional] |
 
 ### Return type
 
@@ -147,11 +147,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
- **comment** | **string**| Comment | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
+| **comment** | **string**| Comment | [optional] |
 
 ### Return type
 
@@ -211,10 +211,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **device_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **device_id** | **string**|  | |
 
 ### Return type
 
@@ -273,9 +273,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -336,11 +336,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **attribute** | **string**| Attribute name of setting |
- **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **attribute** | **string**| Attribute name of setting | |
+| **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; | |
 
 ### Return type
 
@@ -400,9 +400,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -462,9 +462,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -531,16 +531,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ids** | [**int[]**](../Model/int.md)| Array of person ids | [optional]
- **status_ids** | [**int[]**](../Model/int.md)| Filter by status id | [optional]
- **campus_ids** | [**int[]**](../Model/int.md)| Filter by campus id | [optional]
- **birthday_before** | **\DateTime**| Filter by birthdays before that date (Format: YYYY-MM-DD) | [optional]
- **birthday_after** | **\DateTime**| Filter by birthdays after that date (Format: YYYY-MM-DD) | [optional]
- **is_archived** | **bool**| Show only archived or not archived people | [optional]
- **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1]
- **limit** | **int**| Number of results per page. | [optional] [default to 10]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | [**int[]**](../Model/int.md)| Array of person ids | [optional] |
+| **status_ids** | [**int[]**](../Model/int.md)| Filter by status id | [optional] |
+| **campus_ids** | [**int[]**](../Model/int.md)| Filter by campus id | [optional] |
+| **birthday_before** | **\DateTime**| Filter by birthdays before that date (Format: YYYY-MM-DD) | [optional] |
+| **birthday_after** | **\DateTime**| Filter by birthdays after that date (Format: YYYY-MM-DD) | [optional] |
+| **is_archived** | **bool**| Show only archived or not archived people | [optional] |
+| **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
+| **limit** | **int**| Number of results per page. | [optional] [default to 10] |
 
 ### Return type
 
@@ -601,10 +601,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **device_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **device_id** | **string**|  | |
 
 ### Return type
 
@@ -664,9 +664,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -726,9 +726,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -786,9 +786,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -848,9 +848,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -908,9 +908,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **string**|  | |
 
 ### Return type
 
@@ -1030,10 +1030,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; | |
 
 ### Return type
 
@@ -1091,9 +1091,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **get_person_properties_request** | [**\StevenBuehner\ChurchTools\Model\GetPersonPropertiesRequest**](../Model/GetPersonPropertiesRequest.md)| List all person IDs for which you want the property information. If empty, all person IDs are used | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **get_person_properties_request** | [**\StevenBuehner\ChurchTools\Model\GetPersonPropertiesRequest**](../Model/GetPersonPropertiesRequest.md)| List all person IDs for which you want the property information. If empty, all person IDs are used | [optional] |
 
 ### Return type
 
@@ -1153,9 +1153,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -1217,11 +1217,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **attribute** | **string**| Attribute name of setting |
- **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **attribute** | **string**| Attribute name of setting | |
+| **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; | |
 
 ### Return type
 
@@ -1279,9 +1279,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -1345,13 +1345,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**| Birthdays from that date on defaults to yesterday | [optional]
- **end_date** | **\DateTime**| Birthdays up to that date, defaults to 30 deays from now | [optional]
- **campus_ids** | [**int[]**](../Model/int.md)| filter by campus ids | [optional]
- **my_groups** | **bool**| filter by people in my groups | [optional]
- **group_ids** | [**int[]**](../Model/int.md)| filter by group ids | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**| Birthdays from that date on defaults to yesterday | [optional] |
+| **end_date** | **\DateTime**| Birthdays up to that date, defaults to 30 deays from now | [optional] |
+| **campus_ids** | [**int[]**](../Model/int.md)| filter by campus ids | [optional] |
+| **my_groups** | **bool**| filter by people in my groups | [optional] |
+| **group_ids** | [**int[]**](../Model/int.md)| filter by group ids | [optional] |
 
 ### Return type
 
@@ -1412,10 +1412,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tolerance** | **int**| Tolerance for matching; defaults to 30 | [optional] [default to 30]
- **relation_name_for_duplicate** | **string**| Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tolerance** | **int**| Tolerance for matching; defaults to 30 | [optional] [default to 30] |
+| **relation_name_for_duplicate** | **string**| Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. | [optional] |
 
 ### Return type
 
@@ -1475,9 +1475,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
 
 ### Return type
 
@@ -1537,10 +1537,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **duplicate_id** | **string**| Id of the doublette person |
- **person_id** | **string**| id of the original person |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **duplicate_id** | **string**| Id of the doublette person | |
+| **person_id** | **string**| id of the original person | |
 
 ### Return type
 
@@ -1601,10 +1601,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
 
 ### Return type
 
@@ -1664,10 +1664,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **set_password_url_template** | **string**| Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **set_password_url_template** | **string**| Url used in the mail sent to the user. Esample: https://homepage.de/$loginString/$userId | [optional] |
 
 ### Return type
 
@@ -1728,10 +1728,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **patch_person_request** | [**\StevenBuehner\ChurchTools\Model\PatchPersonRequest**](../Model/PatchPersonRequest.md)| Include those fields you want to update and are allowed to write. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **patch_person_request** | [**\StevenBuehner\ChurchTools\Model\PatchPersonRequest**](../Model/PatchPersonRequest.md)| Include those fields you want to update and are allowed to write. | |
 
 ### Return type
 
@@ -1793,12 +1793,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **duplicate_id** | **string**| Id of the doublette person |
- **person_id** | **string**| id of the original person |
- **delete_duplicate** | **bool**| Flag to delete the doublette | [optional]
- **patch_persons_personid_merge_duplicateid_request** | [**\StevenBuehner\ChurchTools\Model\PatchPersonsPersonidMergeDuplicateidRequest**](../Model/PatchPersonsPersonidMergeDuplicateidRequest.md)| * the fields to be changed in the original person * see also &#x60;Patch: updatePerson&#x60; | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **duplicate_id** | **string**| Id of the doublette person | |
+| **person_id** | **string**| id of the original person | |
+| **delete_duplicate** | **bool**| Flag to delete the doublette | [optional] |
+| **patch_persons_personid_merge_duplicateid_request** | [**\StevenBuehner\ChurchTools\Model\PatchPersonsPersonidMergeDuplicateidRequest**](../Model/PatchPersonsPersonidMergeDuplicateidRequest.md)| * the fields to be changed in the original person * see also &#x60;Patch: updatePerson&#x60; | [optional] |
 
 ### Return type
 
@@ -1858,10 +1858,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **post_persons_person_id_archive_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest**](../Model/PostPersonsPersonIdArchiveRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **post_persons_person_id_archive_request** | [**\StevenBuehner\ChurchTools\Model\PostPersonsPersonIdArchiveRequest**](../Model/PostPersonsPersonIdArchiveRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1922,10 +1922,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
 
 ### Return type
 
@@ -1987,11 +1987,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **device_id** | **string**|  |
- **update_device_for_person_request** | [**\StevenBuehner\ChurchTools\Model\UpdateDeviceForPersonRequest**](../Model/UpdateDeviceForPersonRequest.md)| Device information. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **device_id** | **string**|  | |
+| **update_device_for_person_request** | [**\StevenBuehner\ChurchTools\Model\UpdateDeviceForPersonRequest**](../Model/UpdateDeviceForPersonRequest.md)| Device information. | [optional] |
 
 ### Return type
 
@@ -2053,11 +2053,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **attribute** | **string**| Attribute name of setting |
- **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **attribute** | **string**| Attribute name of setting | |
+| **module** | **string**| Module name like &#x60;churchdb&#x60; or &#x60;churchservice&#x60; | |
 
 ### Return type
 
@@ -2119,11 +2119,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **person_id** | **int**| ID of person |
- **request_id** | **int**| ID of a service request |
- **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **request_id** | **int**| ID of a service request | |
+| **update_service_request_by_id_request** | [**\StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest**](../Model/UpdateServiceRequestByIdRequest.md)| Send the agreed state and optionally a comment. | |
 
 ### Return type
 

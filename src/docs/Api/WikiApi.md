@@ -1,15 +1,15 @@
 # StevenBuehner\ChurchTools\WikiApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getWikiCategories()**](WikiApi.md#getWikiCategories) | **GET** /wiki/categories | Get all wiki categories.
-[**getWikiCategoriesWikiCategoryIdPages()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPages) | **GET** /wiki/categories/{wikiCategoryId}/pages | Returns all Wiki Pages in the given Category.
-[**getWikiCategoriesWikiCategoryIdPagesIdentifier()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPagesIdentifier) | **GET** /wiki/categories/{wikiCategoryId}/pages/{identifier} | Returns the latest version of the wiki page with the given identifier.
-[**getWikiCategoriesWikiCategoryIdPagesIdentifierVersions()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPagesIdentifierVersions) | **GET** /wiki/categories/{wikiCategoryId}/pages/{identifier}/versions | Returns all version of the wiki page for the given
-[**getWikiCategoriesWikiCategoryIdPagesVersionsVersion()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPagesVersionsVersion) | **GET** /wiki/categories/{wikiCategoryId}/pages/{identifier}/versions/{version} | Returns the wiki page with the given identifier and version.
-[**getWikiCategoriesWikiCategoryIdSearch()**](WikiApi.md#getWikiCategoriesWikiCategoryIdSearch) | **GET** /wiki/search | Your GET endpoint
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getWikiCategories()**](WikiApi.md#getWikiCategories) | **GET** /wiki/categories | Get all wiki categories. |
+| [**getWikiCategoriesWikiCategoryIdPages()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPages) | **GET** /wiki/categories/{wikiCategoryId}/pages | Returns all Wiki Pages in the given Category. |
+| [**getWikiCategoriesWikiCategoryIdPagesIdentifier()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPagesIdentifier) | **GET** /wiki/categories/{wikiCategoryId}/pages/{identifier} | Returns the latest version of the wiki page with the given identifier. |
+| [**getWikiCategoriesWikiCategoryIdPagesIdentifierVersions()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPagesIdentifierVersions) | **GET** /wiki/categories/{wikiCategoryId}/pages/{identifier}/versions | Returns all version of the wiki page for the given |
+| [**getWikiCategoriesWikiCategoryIdPagesVersionsVersion()**](WikiApi.md#getWikiCategoriesWikiCategoryIdPagesVersionsVersion) | **GET** /wiki/categories/{wikiCategoryId}/pages/{identifier}/versions/{version} | Returns the wiki page with the given identifier and version. |
+| [**getWikiCategoriesWikiCategoryIdSearch()**](WikiApi.md#getWikiCategoriesWikiCategoryIdSearch) | **GET** /wiki/search | Your GET endpoint |
 
 
 ## `getWikiCategories()`
@@ -112,9 +112,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **int**| ID of WikiCategory |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wiki_category_id** | **int**| ID of WikiCategory | |
 
 ### Return type
 
@@ -175,10 +175,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **int**| ID of WikiCategory |
- **identifier** | **string**| Can either be the pages identifier or its title |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wiki_category_id** | **int**| ID of WikiCategory | |
+| **identifier** | **string**| Can either be the pages identifier or its title | |
 
 ### Return type
 
@@ -239,10 +239,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **int**| ID of WikiCategory |
- **identifier** | **string**| Can either be the pages identifier or its title |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wiki_category_id** | **int**| ID of WikiCategory | |
+| **identifier** | **string**| Can either be the pages identifier or its title | |
 
 ### Return type
 
@@ -304,11 +304,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wiki_category_id** | **int**| ID of WikiCategory |
- **version** | **string**|  |
- **identifier** | **string**| Can either be the pages identifier or its title |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wiki_category_id** | **int**| ID of WikiCategory | |
+| **version** | **string**|  | |
+| **identifier** | **string**| Can either be the pages identifier or its title | |
 
 ### Return type
 
@@ -369,10 +369,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**|  | [optional]
- **wiki_category_ids** | [**int[]**](../Model/int.md)| wiki categories that should be searched. if noone is given all categories are searched | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**|  | [optional] |
+| **wiki_category_ids** | [**int[]**](../Model/int.md)| wiki categories that should be searched. if noone is given all categories are searched | [optional] |
 
 ### Return type
 

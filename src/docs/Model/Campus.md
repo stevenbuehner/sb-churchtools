@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **email** | **string** |  |
 **finder_url** | **string** |  |
 **gallery** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerBanner[]**](GetAllCampuses200ResponseDataInnerBanner.md) |  |
-**groups** | [**\StevenBuehner\ChurchTools\Model\CreateNewCampus201ResponseDataGroupsInner[]**](CreateNewCampus201ResponseDataGroupsInner.md) |  |
+**groups** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInner[]**](GetAllCampuses200ResponseDataInnerGroupsInner.md) |  |
 **guid** | **string** |  |
 **id** | **int** |  |
 **is_published** | **bool** |  |
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **services** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerServicesInner[]**](GetAllCampuses200ResponseDataInnerServicesInner.md) |  |
 **short_name** | **string** |  |
 **shorty** | **string** |  |
-**sign_up_group** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup**](GetAllCampuses200ResponseDataInnerSignUpGroup.md) |  | [optional]
+**sign_up_group** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup**](GetAllCampuses200ResponseDataInnerGroupsInnerGroup.md) |  | [optional]
 **slug** | **string** |  |
 **social_media** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSocialMedia**](GetAllCampuses200ResponseDataInnerSocialMedia.md) |  |
 **sort_key** | **int** |  |

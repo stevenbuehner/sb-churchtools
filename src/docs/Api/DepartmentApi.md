@@ -1,10 +1,10 @@
 # StevenBuehner\ChurchTools\DepartmentApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getDepartments()**](DepartmentApi.md#getDepartments) | **GET** /departments | Get all departments
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getDepartments()**](DepartmentApi.md#getDepartments) | **GET** /departments | Get all departments |
 
 
 ## `getDepartments()`

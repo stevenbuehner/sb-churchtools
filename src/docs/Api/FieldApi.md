@@ -1,10 +1,10 @@
 # StevenBuehner\ChurchTools\FieldApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAllFields()**](FieldApi.md#getAllFields) | **GET** /fields | Get all fields
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getAllFields()**](FieldApi.md#getAllFields) | **GET** /fields | Get all fields |
 
 
 ## `getAllFields()`

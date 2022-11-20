@@ -1,18 +1,18 @@
 # StevenBuehner\ChurchTools\CalendarApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createTemplate()**](CalendarApi.md#createTemplate) | **POST** /calendars/appointments/templates | Create new appointment template
-[**deleteTemplate()**](CalendarApi.md#deleteTemplate) | **DELETE** /calendars/appointments/templates/{templateId} | Delete a appointment template identified by id
-[**getAllTemplates()**](CalendarApi.md#getAllTemplates) | **GET** /calendars/appointments/templates | get all appointment templates
-[**getCalendars()**](CalendarApi.md#getCalendars) | **GET** /calendars | Your GET endpoint
-[**getCalendarsAppointments()**](CalendarApi.md#getCalendarsAppointments) | **GET** /calendars/appointments | Your GET endpoint
-[**getCalendarsCalendarIdAppointmentsAppointmentIdStartDate()**](CalendarApi.md#getCalendarsCalendarIdAppointmentsAppointmentIdStartDate) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/{startDate} | Your GET endpoint
-[**getTemplateById()**](CalendarApi.md#getTemplateById) | **GET** /calendars/appointments/templates/{templateId} | get a appointment template
-[**postCalendarsCalendarIdAppointments()**](CalendarApi.md#postCalendarsCalendarIdAppointments) | **POST** /calendars/{calendarId}/appointments | 
-[**updateTemplate()**](CalendarApi.md#updateTemplate) | **PUT** /calendars/appointments/templates/{templateId} | update a appointment template identified by id
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createTemplate()**](CalendarApi.md#createTemplate) | **POST** /calendars/appointments/templates | Create new appointment template |
+| [**deleteTemplate()**](CalendarApi.md#deleteTemplate) | **DELETE** /calendars/appointments/templates/{templateId} | Delete a appointment template identified by id |
+| [**getAllTemplates()**](CalendarApi.md#getAllTemplates) | **GET** /calendars/appointments/templates | get all appointment templates |
+| [**getCalendars()**](CalendarApi.md#getCalendars) | **GET** /calendars | Your GET endpoint |
+| [**getCalendarsAppointments()**](CalendarApi.md#getCalendarsAppointments) | **GET** /calendars/appointments | Your GET endpoint |
+| [**getCalendarsCalendarIdAppointmentsAppointmentIdStartDate()**](CalendarApi.md#getCalendarsCalendarIdAppointmentsAppointmentIdStartDate) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/{startDate} | Your GET endpoint |
+| [**getTemplateById()**](CalendarApi.md#getTemplateById) | **GET** /calendars/appointments/templates/{templateId} | get a appointment template |
+| [**postCalendarsCalendarIdAppointments()**](CalendarApi.md#postCalendarsCalendarIdAppointments) | **POST** /calendars/{calendarId}/appointments |  |
+| [**updateTemplate()**](CalendarApi.md#updateTemplate) | **PUT** /calendars/appointments/templates/{templateId} | update a appointment template identified by id |
 
 
 ## `createTemplate()`
@@ -56,9 +56,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_template_request** | [**\StevenBuehner\ChurchTools\Model\CreateTemplateRequest**](../Model/CreateTemplateRequest.md)| appointment template data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_template_request** | [**\StevenBuehner\ChurchTools\Model\CreateTemplateRequest**](../Model/CreateTemplateRequest.md)| appointment template data | |
 
 ### Return type
 
@@ -117,9 +117,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **template_id** | **int**| ID of appointment template |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **template_id** | **int**| ID of appointment template | |
 
 ### Return type
 
@@ -295,11 +295,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_ids** | [**int[]**](../Model/int.md)|  |
- **from** | **\DateTime**|  | [optional]
- **to** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_ids** | [**int[]**](../Model/int.md)|  | |
+| **from** | **\DateTime**|  | [optional] |
+| **to** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -359,11 +359,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_id** | **int**| ID of Calendar |
- **appointment_id** | **string**|  |
- **start_date** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_id** | **int**| ID of Calendar | |
+| **appointment_id** | **string**|  | |
+| **start_date** | **string**|  | |
 
 ### Return type
 
@@ -423,9 +423,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **template_id** | **int**| ID of appointment template |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **template_id** | **int**| ID of appointment template | |
 
 ### Return type
 
@@ -483,10 +483,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_id** | **int**| ID of Calendar |
- **post_calendars_calendar_id_appointments_request** | [**\StevenBuehner\ChurchTools\Model\PostCalendarsCalendarIdAppointmentsRequest**](../Model/PostCalendarsCalendarIdAppointmentsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_id** | **int**| ID of Calendar | |
+| **post_calendars_calendar_id_appointments_request** | [**\StevenBuehner\ChurchTools\Model\PostCalendarsCalendarIdAppointmentsRequest**](../Model/PostCalendarsCalendarIdAppointmentsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -547,10 +547,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **template_id** | **int**| ID of appointment template |
- **create_template_request** | [**\StevenBuehner\ChurchTools\Model\CreateTemplateRequest**](../Model/CreateTemplateRequest.md)| appointment template data |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **template_id** | **int**| ID of appointment template | |
+| **create_template_request** | [**\StevenBuehner\ChurchTools\Model\CreateTemplateRequest**](../Model/CreateTemplateRequest.md)| appointment template data | |
 
 ### Return type
 

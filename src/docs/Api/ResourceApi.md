@@ -1,11 +1,11 @@
 # StevenBuehner\ChurchTools\ResourceApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getBookings()**](ResourceApi.md#getBookings) | **GET** /bookings | Your GET endpoint
-[**getResourceMasterdata()**](ResourceApi.md#getResourceMasterdata) | **GET** /resource/masterdata | Your GET endpoint
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getBookings()**](ResourceApi.md#getBookings) | **GET** /bookings | Your GET endpoint |
+| [**getResourceMasterdata()**](ResourceApi.md#getResourceMasterdata) | **GET** /resource/masterdata | Your GET endpoint |
 
 
 ## `getBookings()`
@@ -50,12 +50,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resource_ids** | [**int[]**](../Model/int.md)|  |
- **from** | **\DateTime**|  | [optional]
- **to** | **\DateTime**|  | [optional]
- **status_ids** | [**int[]**](../Model/int.md)| 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resource_ids** | [**int[]**](../Model/int.md)|  | |
+| **from** | **\DateTime**|  | [optional] |
+| **to** | **\DateTime**|  | [optional] |
+| **status_ids** | [**int[]**](../Model/int.md)| 1 Wartet auf Bestätigung 2 Bestätigt 3 Abgelehnt 99 Gelöscht | [optional] |
 
 ### Return type
 

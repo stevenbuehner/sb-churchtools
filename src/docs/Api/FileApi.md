@@ -1,16 +1,16 @@
 # StevenBuehner\ChurchTools\FileApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteFiles()**](FileApi.md#deleteFiles) | **DELETE** /files/{domainType}/{domainIdentifier} | Delete files that are matching the domainType and domainIdentifier
-[**deleteFilesId()**](FileApi.md#deleteFilesId) | **DELETE** /files/{id} | 
-[**getFileWithDomainType()**](FileApi.md#getFileWithDomainType) | **GET** /files/{domainType}/{domainIdentifier} | CRUD for files
-[**getFilesMetadata()**](FileApi.md#getFilesMetadata) | **GET** /files/{fileId}/metadata | Get Metadata for file
-[**patchFilesId()**](FileApi.md#patchFilesId) | **PATCH** /files/{id} | 
-[**putImageOptions()**](FileApi.md#putImageOptions) | **PUT** /images/{id}/options | set image-options
-[**uploadFiles()**](FileApi.md#uploadFiles) | **POST** /files/{domainType}/{domainIdentifier} | Upload files
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteFiles()**](FileApi.md#deleteFiles) | **DELETE** /files/{domainType}/{domainIdentifier} | Delete files that are matching the domainType and domainIdentifier |
+| [**deleteFilesId()**](FileApi.md#deleteFilesId) | **DELETE** /files/{id} |  |
+| [**getFileWithDomainType()**](FileApi.md#getFileWithDomainType) | **GET** /files/{domainType}/{domainIdentifier} | CRUD for files |
+| [**getFilesMetadata()**](FileApi.md#getFilesMetadata) | **GET** /files/{fileId}/metadata | Get Metadata for file |
+| [**patchFilesId()**](FileApi.md#patchFilesId) | **PATCH** /files/{id} |  |
+| [**putImageOptions()**](FileApi.md#putImageOptions) | **PUT** /images/{id}/options | set image-options |
+| [**uploadFiles()**](FileApi.md#uploadFiles) | **POST** /files/{domainType}/{domainIdentifier} | Upload files |
 
 
 ## `deleteFiles()`
@@ -52,10 +52,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. |
- **domain_identifier** | **int**| the domain identifier |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. | |
+| **domain_identifier** | **int**| the domain identifier | |
 
 ### Return type
 
@@ -114,9 +114,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -175,10 +175,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. |
- **domain_identifier** | **int**| the domain identifier |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. | |
+| **domain_identifier** | **int**| the domain identifier | |
 
 ### Return type
 
@@ -236,9 +236,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **file_id** | **string**|  | |
 
 ### Return type
 
@@ -298,9 +298,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -361,10 +361,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **put_image_options_request** | [**\StevenBuehner\ChurchTools\Model\PutImageOptionsRequest**](../Model/PutImageOptionsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **put_image_options_request** | [**\StevenBuehner\ChurchTools\Model\PutImageOptionsRequest**](../Model/PutImageOptionsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 ## `uploadFiles()`
 
 ```php
-uploadFiles($domain_type, $domain_identifier, $files): \StevenBuehner\ChurchTools\Model\UploadFiles200Response
+uploadFiles($domain_type, $domain_identifier, $files, $image_options, $max_height, $max_width): \StevenBuehner\ChurchTools\Model\UploadFiles200Response
 ```
 
 Upload files
@@ -413,9 +413,12 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FileApi(
 $domain_type = logo; // string | The domain type. Currently supported are 'avatar', 'groupimage', 'logo', 'attatchments', 'html_template', 'service', 'song_arrangement', 'importtable', 'person', 'familyavatar', 'wiki_.?'.
 $domain_identifier = 35; // int | the domain identifier
 $files = array("/path/to/file.txt"); // \SplFileObject[]
+$image_options = array('key' => new \stdClass); // object
+$max_height = 'max_height_example'; // string
+$max_width = 'max_width_example'; // string
 
 try {
-    $result = $apiInstance->uploadFiles($domain_type, $domain_identifier, $files);
+    $result = $apiInstance->uploadFiles($domain_type, $domain_identifier, $files, $image_options, $max_height, $max_width);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FileApi->uploadFiles: ', $e->getMessage(), PHP_EOL;
@@ -424,11 +427,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. |
- **domain_identifier** | **int**| the domain identifier |
- **files** | **\SplFileObject[]**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| The domain type. Currently supported are &#39;avatar&#39;, &#39;groupimage&#39;, &#39;logo&#39;, &#39;attatchments&#39;, &#39;html_template&#39;, &#39;service&#39;, &#39;song_arrangement&#39;, &#39;importtable&#39;, &#39;person&#39;, &#39;familyavatar&#39;, &#39;wiki_.?&#39;. | |
+| **domain_identifier** | **int**| the domain identifier | |
+| **files** | **\SplFileObject[]**|  | [optional] |
+| **image_options** | [**object**](../Model/object.md)|  | [optional] |
+| **max_height** | **string**|  | [optional] |
+| **max_width** | **string**|  | [optional] |
 
 ### Return type
 

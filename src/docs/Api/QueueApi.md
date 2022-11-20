@@ -1,11 +1,11 @@
 # StevenBuehner\ChurchTools\QueueApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getQueueJobGroupsStatus()**](QueueApi.md#getQueueJobGroupsStatus) | **GET** /queues/{queue}/jobgroups/status | Status Information About Job Groups in Queue
-[**startQueueWorker()**](QueueApi.md#startQueueWorker) | **POST** /queues/{queue} | Start Worker For Queue
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getQueueJobGroupsStatus()**](QueueApi.md#getQueueJobGroupsStatus) | **GET** /queues/{queue}/jobgroups/status | Status Information About Job Groups in Queue |
+| [**startQueueWorker()**](QueueApi.md#startQueueWorker) | **POST** /queues/{queue} | Start Worker For Queue |
 
 
 ## `getQueueJobGroupsStatus()`
@@ -50,10 +50,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **queue** | **string**|  |
- **job_groups** | **string**| Limit result to this job group. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queue** | **string**|  | |
+| **job_groups** | **string**| Limit result to this job group. | [optional] |
 
 ### Return type
 
@@ -107,9 +107,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **queue** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queue** | **string**|  | |
 
 ### Return type
 

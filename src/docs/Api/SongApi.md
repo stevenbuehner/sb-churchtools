@@ -1,12 +1,12 @@
 # StevenBuehner\ChurchTools\SongApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getSong()**](SongApi.md#getSong) | **GET** /songs/{songId} | Get Song
-[**getSongs()**](SongApi.md#getSongs) | **GET** /songs | Get All Songs
-[**getSongsOfAgenda()**](SongApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getSong()**](SongApi.md#getSong) | **GET** /songs/{songId} | Get Song |
+| [**getSongs()**](SongApi.md#getSongs) | **GET** /songs | Get All Songs |
+| [**getSongsOfAgenda()**](SongApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda |
 
 
 ## `getSong()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **song_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **song_id** | **string**|  | |
 
 ### Return type
 
@@ -116,13 +116,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **song_category_ids** | [**int[]**](../Model/int.md)| Filter response by category IDs. | [optional]
- **ids** | [**int[]**](../Model/int.md)| Filter by Song IDs. | [optional]
- **practice** | **bool**| Filter by field &#x60;shouldPractice&#x60;. | [optional]
- **key_of_arrangement** | **string**| Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) | [optional]
- **name** | **string**| Search by song title | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **song_category_ids** | [**int[]**](../Model/int.md)| Filter response by category IDs. | [optional] |
+| **ids** | [**int[]**](../Model/int.md)| Filter by Song IDs. | [optional] |
+| **practice** | **bool**| Filter by field &#x60;shouldPractice&#x60;. | [optional] |
+| **key_of_arrangement** | **string**| Filter by arrangement key. (Song + all Arrangements are returned, if one arrangement fulfills the filter) | [optional] |
+| **name** | **string**| Search by song title | [optional] |
 
 ### Return type
 
@@ -182,9 +182,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **event_id** | **int**| ID of Event |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **int**| ID of Event | |
 
 ### Return type
 

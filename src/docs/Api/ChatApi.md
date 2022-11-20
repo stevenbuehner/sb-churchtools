@@ -1,13 +1,13 @@
 # StevenBuehner\ChurchTools\ChatApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createNewChat()**](ChatApi.md#createNewChat) | **POST** /chat | Start new chat
-[**deleteChat()**](ChatApi.md#deleteChat) | **DELETE** /chat/{guid} | Delete a chat
-[**getAllChats()**](ChatApi.md#getAllChats) | **GET** /chat | Get all chats
-[**updateChat()**](ChatApi.md#updateChat) | **PATCH** /chat/{guid} | Update a chat
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createNewChat()**](ChatApi.md#createNewChat) | **POST** /chat | Start new chat |
+| [**deleteChat()**](ChatApi.md#deleteChat) | **DELETE** /chat/{guid} | Delete a chat |
+| [**getAllChats()**](ChatApi.md#getAllChats) | **GET** /chat | Get all chats |
+| [**updateChat()**](ChatApi.md#updateChat) | **PATCH** /chat/{guid} | Update a chat |
 
 
 ## `createNewChat()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_chat_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewChatRequest**](../Model/CreateNewChatRequest.md)| Chat to start |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_chat_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewChatRequest**](../Model/CreateNewChatRequest.md)| Chat to start | |
 
 ### Return type
 
@@ -108,9 +108,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guid** | **string**| GUID for Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **guid** | **string**| GUID for Entity | |
 
 ### Return type
 
@@ -228,10 +228,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guid** | **string**| GUID for Entity |
- **update_chat_request** | [**\StevenBuehner\ChurchTools\Model\UpdateChatRequest**](../Model/UpdateChatRequest.md)| data to update |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **guid** | **string**| GUID for Entity | |
+| **update_chat_request** | [**\StevenBuehner\ChurchTools\Model\UpdateChatRequest**](../Model/UpdateChatRequest.md)| data to update | |
 
 ### Return type
 

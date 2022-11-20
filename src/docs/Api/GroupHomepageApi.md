@@ -1,19 +1,19 @@
 # StevenBuehner\ChurchTools\GroupHomepageApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getGroupForHomepage()**](GroupHomepageApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
-[**getGroupHomepage()**](GroupHomepageApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
-[**getGroupHomepages()**](GroupHomepageApi.md#getGroupHomepages) | **GET** /grouphomepages | Get all Grouphomepages
-[**getPublicGroupSignoutData()**](GroupHomepageApi.md#getPublicGroupSignoutData) | **GET** /publicgroups/{groupId}/signoutdata | 
-[**getPublicgroup()**](GroupHomepageApi.md#getPublicgroup) | **GET** /publicgroups/{groupId} | 
-[**getPublicgroupsGroupIdForm()**](GroupHomepageApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
-[**getPublicgroupsGroupIdPossiblerequesters()**](GroupHomepageApi.md#getPublicgroupsGroupIdPossiblerequesters) | **GET** /publicgroups/{groupId}/possiblerequesters | Your GET endpoint
-[**issueSignUpToken()**](GroupHomepageApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
-[**postPublicgroupsGroupIdMailToLeaders()**](GroupHomepageApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
-[**postPublicgroupsGroupIdSignup()**](GroupHomepageApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getGroupForHomepage()**](GroupHomepageApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group |
+| [**getGroupHomepage()**](GroupHomepageApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings |
+| [**getGroupHomepages()**](GroupHomepageApi.md#getGroupHomepages) | **GET** /grouphomepages | Get all Grouphomepages |
+| [**getPublicGroupSignoutData()**](GroupHomepageApi.md#getPublicGroupSignoutData) | **GET** /publicgroups/{groupId}/signoutdata |  |
+| [**getPublicgroup()**](GroupHomepageApi.md#getPublicgroup) | **GET** /publicgroups/{groupId} |  |
+| [**getPublicgroupsGroupIdForm()**](GroupHomepageApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form |
+| [**getPublicgroupsGroupIdPossiblerequesters()**](GroupHomepageApi.md#getPublicgroupsGroupIdPossiblerequesters) | **GET** /publicgroups/{groupId}/possiblerequesters | Your GET endpoint |
+| [**issueSignUpToken()**](GroupHomepageApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token. |
+| [**postPublicgroupsGroupIdMailToLeaders()**](GroupHomepageApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders |
+| [**postPublicgroupsGroupIdSignup()**](GroupHomepageApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group |
 
 
 ## `getGroupForHomepage()`
@@ -52,10 +52,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **hash** | **string**| Group Homepage Hash |
- **group_id** | **string**| Group ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **hash** | **string**| Group Homepage Hash | |
+| **group_id** | **string**| Group ID | |
 
 ### Return type
 
@@ -115,9 +115,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **hash** | **string**| Random hash for public groups |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **hash** | **string**| Random hash for public groups | |
 
 ### Return type
 
@@ -232,9 +232,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
 
 ### Return type
 
@@ -292,9 +292,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
 
 ### Return type
 
@@ -350,11 +350,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Group ID of the public group |
- **token** | **string**| Sign Up Token |
- **person_id** | **string**| The name for which the signup should be made |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Group ID of the public group | |
+| **token** | **string**| Sign Up Token | |
+| **person_id** | **string**| The name for which the signup should be made | |
 
 ### Return type
 
@@ -415,10 +415,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
- **token** | **string**| The signup token for the registration |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **token** | **string**| The signup token for the registration | |
 
 ### Return type
 
@@ -473,10 +473,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **int**| Group id of public group |
- **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| Group id of public group | |
+| **issue_sign_up_token_request** | [**\StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest**](../Model/IssueSignUpTokenRequest.md)| You MUST provide either &#x60;personId&#x60; OR &#x60;email&#x60;. Both fields cannot be present at the same time. | [optional] |
 
 ### Return type
 
@@ -530,10 +530,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Group ID of the public group |
- **post_publicgroups_group_id_mail_to_leaders_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest**](../Model/PostPublicgroupsGroupIdMailToLeadersRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Group ID of the public group | |
+| **post_publicgroups_group_id_mail_to_leaders_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest**](../Model/PostPublicgroupsGroupIdMailToLeadersRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -588,10 +588,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **group_id** | **string**| Group ID of the public group |
- **post_publicgroups_group_id_signup_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest**](../Model/PostPublicgroupsGroupIdSignupRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**| Group ID of the public group | |
+| **post_publicgroups_group_id_signup_request** | [**\StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest**](../Model/PostPublicgroupsGroupIdSignupRequest.md)|  | [optional] |
 
 ### Return type
 

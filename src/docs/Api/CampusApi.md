@@ -1,14 +1,14 @@
 # StevenBuehner\ChurchTools\CampusApi
 
-All URIs are relative to /api.
+All URIs are relative to /api, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createNewCampus()**](CampusApi.md#createNewCampus) | **POST** /campuses | 
-[**deleteCampus()**](CampusApi.md#deleteCampus) | **DELETE** /campuses/{id} | 
-[**getAllCampuses()**](CampusApi.md#getAllCampuses) | **GET** /campuses | Get all campuses
-[**getCampus()**](CampusApi.md#getCampus) | **GET** /campuses/{id} | 
-[**updateCampus()**](CampusApi.md#updateCampus) | **PUT** /campuses/{id} | 
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createNewCampus()**](CampusApi.md#createNewCampus) | **POST** /campuses |  |
+| [**deleteCampus()**](CampusApi.md#deleteCampus) | **DELETE** /campuses/{id} |  |
+| [**getAllCampuses()**](CampusApi.md#getAllCampuses) | **GET** /campuses | Get all campuses |
+| [**getCampus()**](CampusApi.md#getCampus) | **GET** /campuses/{id} |  |
+| [**updateCampus()**](CampusApi.md#updateCampus) | **PUT** /campuses/{id} |  |
 
 
 ## `createNewCampus()`
@@ -52,9 +52,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_new_campus_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewCampusRequest**](../Model/CreateNewCampusRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_new_campus_request** | [**\StevenBuehner\ChurchTools\Model\CreateNewCampusRequest**](../Model/CreateNewCampusRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -113,9 +113,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -234,9 +234,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
 
 ### Return type
 
@@ -297,10 +297,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Entity |
- **update_campus_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequest**](../Model/UpdateCampusRequest.md)| New values for campus |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **update_campus_request** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequest**](../Model/UpdateCampusRequest.md)| New values for campus | |
 
 ### Return type
 

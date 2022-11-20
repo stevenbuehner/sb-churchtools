@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **children** | **int[]** |  | [optional]
-**group** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerSignUpGroup**](GetAllCampuses200ResponseDataInnerSignUpGroup.md) |  | [optional]
+**group** | [**\StevenBuehner\ChurchTools\Model\GetAllCampuses200ResponseDataInnerGroupsInnerGroup**](GetAllCampuses200ResponseDataInnerGroupsInnerGroup.md) |  | [optional]
 **id** | **int** |  | [optional]
 **parents** | **int[]** |  | [optional]
 
