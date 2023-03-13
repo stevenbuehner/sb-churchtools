@@ -24,6 +24,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getSyncExternalsystemsExternalSystemIdJobconfigurations()**](SyncApi.md#getSyncExternalsystemsExternalSystemIdJobconfigurations) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs | GET Job configurations |
 | [**getSyncExternalsystemsId()**](SyncApi.md#getSyncExternalsystemsId) | **GET** /sync/externalsystems/{id} | GET an external system by id |
 | [**getSyncFieldMappings()**](SyncApi.md#getSyncFieldMappings) | **GET** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Get Mapping for Domain Type |
+| [**getSyncFieldMappingsNoSuggestions()**](SyncApi.md#getSyncFieldMappingsNoSuggestions) | **GET** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType}/nosuggestions | Get fields for which no suggestions should be shown |
 | [**getSyncJobconfigs()**](SyncApi.md#getSyncJobconfigs) | **GET** /sync/jobconfigs | Your GET endpoint |
 | [**getSyncLogs()**](SyncApi.md#getSyncLogs) | **GET** /sync/logs | Get Sync Logs |
 | [**getSyncMappings()**](SyncApi.md#getSyncMappings) | **GET** /sync/entitymappings | Fetch all registered mappings |
@@ -1309,6 +1310,70 @@ try {
 ### Return type
 
 [**\StevenBuehner\ChurchTools\Model\GetSyncFieldMappings200Response**](../Model/GetSyncFieldMappings200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getSyncFieldMappingsNoSuggestions()`
+
+```php
+getSyncFieldMappingsNoSuggestions($domain_type, $external_system_id): \StevenBuehner\ChurchTools\Model\GetSyncFieldMappingsNoSuggestions200Response
+```
+
+Get fields for which no suggestions should be shown
+
+Get fields for which no suggestions should be shown, for an external system of a specific domain type.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$domain_type = 'domain_type_example'; // string | Domatin Type
+$external_system_id = 'external_system_id_example'; // string
+
+try {
+    $result = $apiInstance->getSyncFieldMappingsNoSuggestions($domain_type, $external_system_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SyncApi->getSyncFieldMappingsNoSuggestions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_type** | **string**| Domatin Type | |
+| **external_system_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetSyncFieldMappingsNoSuggestions200Response**](../Model/GetSyncFieldMappingsNoSuggestions200Response.md)
 
 ### Authorization
 

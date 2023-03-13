@@ -19,6 +19,5 @@ Name | Type | Description | Notes
 **new_person_department_is_set** | **bool** |  | [optional]
 **new_person_station_is_set** | **bool** |  | [optional]
 **new_person_status_is_set** | **bool** |  | [optional]
-**requester_role_set_in_group** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

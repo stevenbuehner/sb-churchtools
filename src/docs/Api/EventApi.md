@@ -5,8 +5,8 @@ All URIs are relative to /api, except if the operation defines another base path
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**agendaExport()**](EventApi.md#agendaExport) | **POST** /agendas/{agendaId}/export | Exports the agenda |
-| [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy()**](EventApi.md#deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy) | **DELETE** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request |
-| [**deletePersonIdExchangerequestsRequestId()**](EventApi.md#deletePersonIdExchangerequestsRequestId) | **DELETE** /{personId}/exchangerequests/{requestId} | Decline a service exchange request |
+| [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy()**](EventApi.md#deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy) | **DELETE** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request |
+| [**deletePersonIdExchangerequestsRequestId()**](EventApi.md#deletePersonIdExchangerequestsRequestId) | **DELETE** /persons/{personId}/exchangerequests/{requestId} | Decline a service exchange request |
 | [**getAgendaForEvent()**](EventApi.md#getAgendaForEvent) | **GET** /events/{eventId}/agenda | Get agenda for event |
 | [**getAllEvents()**](EventApi.md#getAllEvents) | **GET** /events | Get all events |
 | [**getEvent()**](EventApi.md#getEvent) | **GET** /events/{eventId} | Get a single event |
@@ -14,11 +14,11 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getEventMasterdata()**](EventApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot; |
 | [**getPersonEvents()**](EventApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with |
 | [**getSongsOfAgenda()**](EventApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda |
-| [**personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()**](EventApi.md#personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request |
-| [**personIdEventsEventIdServicesServiceIdExchangerequestsGet()**](EventApi.md#personIdEventsEventIdServicesServiceIdExchangerequestsGet) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service |
-| [**personIdExchangerequestsGet()**](EventApi.md#personIdExchangerequestsGet) | **GET** /{personId}/exchangerequests | Get all service exchange requests that a user got |
-| [**postPersonIdEventsEventIdServicesServiceIdExchangerequests()**](EventApi.md#postPersonIdEventsEventIdServicesServiceIdExchangerequests) | **POST** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request |
-| [**putPersonIdExchangerequestsRequestId()**](EventApi.md#putPersonIdExchangerequestsRequestId) | **PUT** /{personId}/exchangerequests/{requestId} | Accept a service exchange request |
+| [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()**](EventApi.md#personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request |
+| [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet()**](EventApi.md#personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service |
+| [**personsPersonIdExchangerequestsGet()**](EventApi.md#personsPersonIdExchangerequestsGet) | **GET** /persons/{personId}/exchangerequests | Get all service exchange requests for a user |
+| [**postPersonIdEventsEventIdServicesServiceIdExchangerequests()**](EventApi.md#postPersonIdEventsEventIdServicesServiceIdExchangerequests) | **POST** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request |
+| [**putPersonIdExchangerequestsRequestId()**](EventApi.md#putPersonIdExchangerequestsRequestId) | **PUT** /persons/{personId}/exchangerequests/{requestId} | Accept a service exchange request |
 | [**sendAgendaEmail()**](EventApi.md#sendAgendaEmail) | **POST** /agendas/send | Send agenda email to recipients |
 | [**sendEventEmail()**](EventApi.md#sendEventEmail) | **POST** /events/send | Send Mail to Event Participants |
 | [**startStopEventChat()**](EventApi.md#startStopEventChat) | **POST** /events/{eventId}/chat | Start or stop an event chat |
@@ -661,10 +661,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()`
+## `personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()`
 
 ```php
-personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet($person_id, $event_id, $service_id): \StevenBuehner\ChurchTools\Model\200Response
+personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet($person_id, $event_id, $service_id): \StevenBuehner\ChurchTools\Model\200Response
 ```
 
 Get candidates for service exchange request
@@ -695,10 +695,10 @@ $event_id = 42; // int | ID of Event
 $service_id = 'service_id_example'; // string
 
 try {
-    $result = $apiInstance->personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet($person_id, $event_id, $service_id);
+    $result = $apiInstance->personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet($person_id, $event_id, $service_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventApi->personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventApi->personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -727,10 +727,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `personIdEventsEventIdServicesServiceIdExchangerequestsGet()`
+## `personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet()`
 
 ```php
-personIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id): \StevenBuehner\ChurchTools\Model\1[]
+personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id, $incoming): \StevenBuehner\ChurchTools\Model\1[]
 ```
 
 Get all service exchange requests of a user for a service
@@ -759,12 +759,13 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
 $person_id = 42; // int | ID of person
 $event_id = 42; // int | ID of Event
 $service_id = 'service_id_example'; // string
+$incoming = false; // bool | If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned.
 
 try {
-    $result = $apiInstance->personIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id);
+    $result = $apiInstance->personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id, $incoming);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventApi->personIdEventsEventIdServicesServiceIdExchangerequestsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventApi->personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -775,6 +776,7 @@ try {
 | **person_id** | **int**| ID of person | |
 | **event_id** | **int**| ID of Event | |
 | **service_id** | **string**|  | |
+| **incoming** | **bool**| If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned. | [optional] |
 
 ### Return type
 
@@ -793,15 +795,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `personIdExchangerequestsGet()`
+## `personsPersonIdExchangerequestsGet()`
 
 ```php
-personIdExchangerequestsGet($person_id): \StevenBuehner\ChurchTools\Model\1[]
+personsPersonIdExchangerequestsGet($person_id, $person_is_requester): \StevenBuehner\ChurchTools\Model\1[]
 ```
 
-Get all service exchange requests that a user got
+Get all service exchange requests for a user
 
-Returns all exchange requests that other users requested for a certain user
+Returns all exchange requests for a certain user
 
 ### Example
 
@@ -823,12 +825,13 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
     $config
 );
 $person_id = 42; // int | ID of person
+$person_is_requester = false; // bool | If set to true, service exchange requests that the user requested are returned. Otherwise (default) requests from other users for the user are returned.
 
 try {
-    $result = $apiInstance->personIdExchangerequestsGet($person_id);
+    $result = $apiInstance->personsPersonIdExchangerequestsGet($person_id, $person_is_requester);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventApi->personIdExchangerequestsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventApi->personsPersonIdExchangerequestsGet: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -837,6 +840,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **person_id** | **int**| ID of person | |
+| **person_is_requester** | **bool**| If set to true, service exchange requests that the user requested are returned. Otherwise (default) requests from other users for the user are returned. | [optional] |
 
 ### Return type
 
@@ -858,7 +862,7 @@ try {
 ## `postPersonIdEventsEventIdServicesServiceIdExchangerequests()`
 
 ```php
-postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $_1)
+postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $incoming, $_1)
 ```
 
 Create a new service exchange request
@@ -887,10 +891,11 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
 $person_id = 42; // int | ID of person
 $event_id = 42; // int | ID of Event
 $service_id = 'service_id_example'; // string
+$incoming = false; // bool | If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned.
 $_1 = new \StevenBuehner\ChurchTools\Model\1(); // \StevenBuehner\ChurchTools\Model\1
 
 try {
-    $apiInstance->postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $_1);
+    $apiInstance->postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $incoming, $_1);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->postPersonIdEventsEventIdServicesServiceIdExchangerequests: ', $e->getMessage(), PHP_EOL;
 }
@@ -903,6 +908,7 @@ try {
 | **person_id** | **int**| ID of person | |
 | **event_id** | **int**| ID of Event | |
 | **service_id** | **string**|  | |
+| **incoming** | **bool**| If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned. | [optional] |
 | **_1** | [**\StevenBuehner\ChurchTools\Model\1**](../Model/1.md)|  | [optional] |
 
 ### Return type

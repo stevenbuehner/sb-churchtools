@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **string** |  | [optional]
 **fields** | **object** | Group member fields as key value pairs, where the key is the ID of the field to be set. | [optional]
+**group_member_status** | **string** |  | [optional]
 **group_type_role_id** | **int** |  | [optional]
 **member_end_date** | **\DateTime** |  | [optional]
 **member_start_date** | **\DateTime** |  | [optional]

@@ -10,6 +10,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getCalendars()**](CalendarApi.md#getCalendars) | **GET** /calendars | Your GET endpoint |
 | [**getCalendarsAppointments()**](CalendarApi.md#getCalendarsAppointments) | **GET** /calendars/appointments | Your GET endpoint |
 | [**getCalendarsCalendarIdAppointmentsAppointmentIdStartDate()**](CalendarApi.md#getCalendarsCalendarIdAppointmentsAppointmentIdStartDate) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/{startDate} | Your GET endpoint |
+| [**getCalendarsCalendarIdMeetingrequestpersons()**](CalendarApi.md#getCalendarsCalendarIdMeetingrequestpersons) | **GET** /calendars/{calendarId}/meetingrequestpersons | Your GET endpoint |
 | [**getTemplateById()**](CalendarApi.md#getTemplateById) | **GET** /calendars/appointments/templates/{templateId} | get a appointment template |
 | [**postCalendarsCalendarIdAppointments()**](CalendarApi.md#postCalendarsCalendarIdAppointments) | **POST** /calendars/{calendarId}/appointments |  |
 | [**updateTemplate()**](CalendarApi.md#updateTemplate) | **PUT** /calendars/appointments/templates/{templateId} | update a appointment template identified by id |
@@ -368,6 +369,68 @@ try {
 ### Return type
 
 [**\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200Response**](../Model/GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getCalendarsCalendarIdMeetingrequestpersons()`
+
+```php
+getCalendarsCalendarIdMeetingrequestpersons($calendar_id): \StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdMeetingrequestpersons200Response
+```
+
+Your GET endpoint
+
+Get possible persons to request for meeting
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\CalendarApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$calendar_id = 'calendar_id_example'; // string
+
+try {
+    $result = $apiInstance->getCalendarsCalendarIdMeetingrequestpersons($calendar_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CalendarApi->getCalendarsCalendarIdMeetingrequestpersons: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendar_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetCalendarsCalendarIdMeetingrequestpersons200Response**](../Model/GetCalendarsCalendarIdMeetingrequestpersons200Response.md)
 
 ### Authorization
 

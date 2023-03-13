@@ -7,7 +7,11 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional]
 **is_archived** | **bool** |  | [optional]
 **meta** | [**\StevenBuehner\ChurchTools\Model\1Meta**](1Meta.md) |  | [optional]
+**requested_event** | [**\StevenBuehner\ChurchTools\Model\1RequestedEvent**](1RequestedEvent.md) |  | [optional]
+**requested_person** | [**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData**](PutCheckinPersons200ResponseData.md) |  | [optional]
 **requested_service_id** | **int** |  | [optional]
+**requesting_event** | [**\StevenBuehner\ChurchTools\Model\1RequestedEvent**](1RequestedEvent.md) |  | [optional]
+**requesting_person** | [**\StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData**](PutCheckinPersons200ResponseData.md) |  | [optional]
 **requesting_service_id** | **int** |  | [optional]
 **status** | **string** |  | [optional]
 

@@ -6,6 +6,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | ------------- | ------------- | ------------- |
 | [**applyFinanceTemplate()**](FinanceApi.md#applyFinanceTemplate) | **POST** /finance/templates/{id} | Apply finance template |
 | [**batchTransaction()**](FinanceApi.md#batchTransaction) | **PATCH** /finance/transactions | Transaction Batch Processing |
+| [**cancelTransaction()**](FinanceApi.md#cancelTransaction) | **PUT** /finance/transactions/{id}/storno | Cancel transaction |
 | [**createAllFinanceDonationReceipts()**](FinanceApi.md#createAllFinanceDonationReceipts) | **POST** /finance/donators/receipts | Create donation receipts |
 | [**createCashDiscount()**](FinanceApi.md#createCashDiscount) | **POST** /finance/cashdiscounts | Create new cash discout |
 | [**createCostCenter()**](FinanceApi.md#createCostCenter) | **POST** /finance/costcenters | Create new cost center |
@@ -67,6 +68,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getTransactionPurposeById()**](FinanceApi.md#getTransactionPurposeById) | **GET** /finance/transactionpurposes/{id} | Get a transaction purpose |
 | [**postFinanceCostcentersBulkcreate()**](FinanceApi.md#postFinanceCostcentersBulkcreate) | **POST** /finance/costcenters/bulkcreate | Import many cost centers |
 | [**postFinanceReports()**](FinanceApi.md#postFinanceReports) | **POST** /finance/reports/{reportType} | Issue new Finance Report |
+| [**postFinanceTurnoverReport()**](FinanceApi.md#postFinanceTurnoverReport) | **POST** /finance/reports/turnover | Issue new Turnover Report |
 | [**updateAccount()**](FinanceApi.md#updateAccount) | **PUT** /finance/accounts/{id} | Update account |
 | [**updateAccountClass()**](FinanceApi.md#updateAccountClass) | **PUT** /finance/accountclasses/{id} | Update account class |
 | [**updateAccountGroup()**](FinanceApi.md#updateAccountGroup) | **PUT** /finance/accountgroups/{id} | Update account group |
@@ -199,6 +201,68 @@ try {
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `cancelTransaction()`
+
+```php
+cancelTransaction($id, $cancel_transaction_request): \StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response
+```
+
+Cancel transaction
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 1; // int | ID of Entity
+$cancel_transaction_request = new \StevenBuehner\ChurchTools\Model\CancelTransactionRequest(); // \StevenBuehner\ChurchTools\Model\CancelTransactionRequest | Storno data
+
+try {
+    $result = $apiInstance->cancelTransaction($id, $cancel_transaction_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->cancelTransaction: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID of Entity | |
+| **cancel_transaction_request** | [**\StevenBuehner\ChurchTools\Model\CancelTransactionRequest**](../Model/CancelTransactionRequest.md)| Storno data | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\CreateNewTransaction200Response**](../Model/CreateNewTransaction200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`, `text/plain`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -2796,7 +2860,7 @@ try {
 ## `getAllDonators()`
 
 ```php
-getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit): \StevenBuehner\ChurchTools\Model\GetAllDonators200Response
+getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit, $query): \StevenBuehner\ChurchTools\Model\GetAllDonators200Response
 ```
 
 Get all donators including their donation information (e.g. donation amount)
@@ -2825,9 +2889,10 @@ $order_by = 'order_by_example'; // string | Default is `name`.
 $order_direction = 'order_direction_example'; // string | Way of direction: ascending or descending
 $page = 1; // int | Page number to show page in pagenation. If empty, start at first page.
 $limit = 10; // int | Number of results per page.
+$query = 'query_example'; // string | String to be included in donator's first name or last name
 
 try {
-    $result = $apiInstance->getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit);
+    $result = $apiInstance->getAllDonators($accounting_period_id, $order_by, $order_direction, $page, $limit, $query);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinanceApi->getAllDonators: ', $e->getMessage(), PHP_EOL;
@@ -2843,6 +2908,7 @@ try {
 | **order_direction** | **string**| Way of direction: ascending or descending | [optional] |
 | **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
 | **limit** | **int**| Number of results per page. | [optional] [default to 10] |
+| **query** | **string**| String to be included in donator&#39;s first name or last name | [optional] |
 
 ### Return type
 
@@ -3854,7 +3920,7 @@ try {
 ## `postFinanceReports()`
 
 ```php
-postFinanceReports($report_type, $post_finance_reports_request): \StevenBuehner\ChurchTools\Model\PostFinanceReports200Response
+postFinanceReports($report_type, $post_finance_reports_request): \StevenBuehner\ChurchTools\Model\PostFinanceTurnoverReport200Response
 ```
 
 Issue new Finance Report
@@ -3900,7 +3966,69 @@ try {
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\PostFinanceReports200Response**](../Model/PostFinanceReports200Response.md)
+[**\StevenBuehner\ChurchTools\Model\PostFinanceTurnoverReport200Response**](../Model/PostFinanceTurnoverReport200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postFinanceTurnoverReport()`
+
+```php
+postFinanceTurnoverReport($post_finance_turnover_report_request): \StevenBuehner\ChurchTools\Model\PostFinanceTurnoverReport200Response
+```
+
+Issue new Turnover Report
+
+Issue new turnover report. _Monthly_ and _Quarterly_ reports are available. The result provides the URI to the generated PDF file.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\FinanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_finance_turnover_report_request = new \StevenBuehner\ChurchTools\Model\PostFinanceTurnoverReportRequest(); // \StevenBuehner\ChurchTools\Model\PostFinanceTurnoverReportRequest | 
+
+try {
+    $result = $apiInstance->postFinanceTurnoverReport($post_finance_turnover_report_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FinanceApi->postFinanceTurnoverReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_finance_turnover_report_request** | [**\StevenBuehner\ChurchTools\Model\PostFinanceTurnoverReportRequest**](../Model/PostFinanceTurnoverReportRequest.md)|  | [optional] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PostFinanceTurnoverReport200Response**](../Model/PostFinanceTurnoverReport200Response.md)
 
 ### Authorization
 

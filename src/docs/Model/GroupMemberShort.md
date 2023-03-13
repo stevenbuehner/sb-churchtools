@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **group_id** | **int** |  | [optional]
+**group_member_status** | **string** |  | [optional]
 **group_type_role_id** | **int** |  | [optional]
 **last_change** | **\DateTime** |  | [optional]
 **person_id** | **int** |  | [optional]

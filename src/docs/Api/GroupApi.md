@@ -35,6 +35,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getQRCodeCheckin()**](GroupApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF |
 | [**issueSignUpToken()**](GroupApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token. |
 | [**optIns()**](GroupApi.md#optIns) | **GET** /groups/{groupId}/optins | Get Opt In status of group members |
+| [**patchGroup()**](GroupApi.md#patchGroup) | **PATCH** /groups/{groupId} | Update Group |
 | [**patchGroupsGroupIdRolesRoleId()**](GroupApi.md#patchGroupsGroupIdRolesRoleId) | **PATCH** /groups/{groupId}/roles/{roleId} | save role |
 | [**postAutomaticEmail()**](GroupApi.md#postAutomaticEmail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role |
 | [**postGroups()**](GroupApi.md#postGroups) | **POST** /groups | Create Group |
@@ -205,7 +206,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 $person_id = 42; // int | ID of person
 $group_id = 42; // int | ID of group
-$create_or_update_member_request = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
+$create_or_update_member_request = new \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest(); // \StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest | All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group's grouptype, groupMemberStatus to the active status, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API.
 
 try {
     $result = $apiInstance->createOrUpdateMember($person_id, $group_id, $create_or_update_member_request);
@@ -221,7 +222,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **person_id** | **int**| ID of person | |
 | **group_id** | **int**| ID of group | |
-| **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. | |
+| **create_or_update_member_request** | [**\StevenBuehner\ChurchTools\Model\CreateOrUpdateMemberRequest**](../Model/CreateOrUpdateMemberRequest.md)| All fields are optional. If not set, default values are used. groupTypeRoleId defaults to the standard role of the group&#39;s grouptype, groupMemberStatus to the active status, comment and member start/end dates default to null. Additional custom group fields are not yet supported through this API. | |
 
 ### Return type
 
@@ -2039,6 +2040,70 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `patchGroup()`
+
+```php
+patchGroup($group_id, $body): \StevenBuehner\ChurchTools\Model\PatchGroup200Response
+```
+
+Update Group
+
+Update a group by id. All group fields can be updated here. Use the fields api to get all fields that can be updated here.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 42; // int | ID of group
+$body = {"2023-04-04":"2023-04-04","ageGroupIds":[4,5],"campusId":1,"groupStatusId":2}; // object
+
+try {
+    $result = $apiInstance->patchGroup($group_id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->patchGroup: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PatchGroup200Response**](../Model/PatchGroup200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

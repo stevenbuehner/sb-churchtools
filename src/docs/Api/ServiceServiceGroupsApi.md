@@ -83,7 +83,7 @@ void (empty response body)
 ## `getOpenServiceRequestsForPerson()`
 
 ```php
-getOpenServiceRequestsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
+getOpenServiceRequestsForPerson($person_id, $get_all_in_future): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
 ```
 
 Get all service requests for a person
@@ -110,9 +110,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\ServiceServiceGroupsApi(
     $config
 );
 $person_id = 42; // int | ID of person
+$get_all_in_future = false; // bool | If set to true, all service requests in future are returned (no matter which state). Otherwise (default) open requests from past and future are returned.
 
 try {
-    $result = $apiInstance->getOpenServiceRequestsForPerson($person_id);
+    $result = $apiInstance->getOpenServiceRequestsForPerson($person_id, $get_all_in_future);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceServiceGroupsApi->getOpenServiceRequestsForPerson: ', $e->getMessage(), PHP_EOL;
@@ -124,6 +125,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **person_id** | **int**| ID of person | |
+| **get_all_in_future** | **bool**| If set to true, all service requests in future are returned (no matter which state). Otherwise (default) open requests from past and future are returned. | [optional] |
 
 ### Return type
 

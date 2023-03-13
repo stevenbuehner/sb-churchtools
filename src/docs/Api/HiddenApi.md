@@ -7,6 +7,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**deleteBookings()**](HiddenApi.md#deleteBookings) | **DELETE** /bookings |  |
 | [**deleteCalendarsCalendarIdAppointmentsAppointmentId()**](HiddenApi.md#deleteCalendarsCalendarIdAppointmentsAppointmentId) | **DELETE** /calendars/{calendarId}/appointments/{appointmentId} | deleteAppointment |
 | [**deleteFinanceDonators()**](HiddenApi.md#deleteFinanceDonators) | **DELETE** /finance/donators |  |
+| [**deleteOauthclientsIdentifier()**](HiddenApi.md#deleteOauthclientsIdentifier) | **DELETE** /oauthclients/{identifier} |  |
 | [**deletePersonLoginToken()**](HiddenApi.md#deletePersonLoginToken) | **DELETE** /persons/{personId}/logintoken | TODO |
 | [**deletePersonPrivacyPolicy()**](HiddenApi.md#deletePersonPrivacyPolicy) | **DELETE** /persons/{personId}/privacypolicy | TODO |
 | [**deletePersonTwofactor()**](HiddenApi.md#deletePersonTwofactor) | **DELETE** /persons/{personId}/settings/twofactor | TODO |
@@ -27,6 +28,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getGroupQRCodeCheckinPersonSend()**](HiddenApi.md#getGroupQRCodeCheckinPersonSend) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/send | TODO |
 | [**getLabelsTotal()**](HiddenApi.md#getLabelsTotal) | **GET** /labels/totals | TODO |
 | [**getMenu()**](HiddenApi.md#getMenu) | **GET** /menu | TODO |
+| [**getOauthclients()**](HiddenApi.md#getOauthclients) | **GET** /oauthclients |  |
 | [**getPRMasterdata()**](HiddenApi.md#getPRMasterdata) | **GET** /pr/masterdata | TODO |
 | [**getPersonLoginstring()**](HiddenApi.md#getPersonLoginstring) | **GET** /person/{personId}/loginstring | TODO |
 | [**getPersonPrivacyPolicy()**](HiddenApi.md#getPersonPrivacyPolicy) | **GET** /persons/{personId}/privacypolicy | TODO |
@@ -47,7 +49,6 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getUserRules()**](HiddenApi.md#getUserRules) | **GET** /finance/accountingperiods/{id}/userrules | TODO |
 | [**patchAccountStatementMovementSuggestion()**](HiddenApi.md#patchAccountStatementMovementSuggestion) | **PATCH** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId}/suggestions | TODO |
 | [**patchFileWithDomainType()**](HiddenApi.md#patchFileWithDomainType) | **PATCH** /files/{domainType}/{domainIdentifier} | TODO |
-| [**patchGroup()**](HiddenApi.md#patchGroup) | **PATCH** /groups/{groupId} | TODO |
 | [**postAccountStatementMovement()**](HiddenApi.md#postAccountStatementMovement) | **POST** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId} | TODO |
 | [**postBookings()**](HiddenApi.md#postBookings) | **POST** /bookings |  |
 | [**postBulkAccounts()**](HiddenApi.md#postBulkAccounts) | **POST** /finance/accounts/bulkcreate | TODO |
@@ -58,6 +59,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**postLabels()**](HiddenApi.md#postLabels) | **POST** /labels | TODO |
 | [**postLoginTotp()**](HiddenApi.md#postLoginTotp) | **POST** /login/totp | TODO |
 | [**postNps()**](HiddenApi.md#postNps) | **POST** /nps | Save NPS score |
+| [**postOauthclients()**](HiddenApi.md#postOauthclients) | **POST** /oauthclients |  |
 | [**postPersonTwofactor()**](HiddenApi.md#postPersonTwofactor) | **POST** /persons/{personId}/settings/twofactor | TODO |
 | [**postSamlAcs()**](HiddenApi.md#postSamlAcs) | **POST** /saml/acs | TODO |
 | [**postStatements()**](HiddenApi.md#postStatements) | **POST** /finance/accountingperiods/{id}/statements | TODO |
@@ -68,6 +70,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**putCalendarsCalendarIdAppointmentsAppointmentId()**](HiddenApi.md#putCalendarsCalendarIdAppointmentsAppointmentId) | **PUT** /calendars/{calendarId}/appointments/{appointmentId} | updateAppointment |
 | [**putConfig()**](HiddenApi.md#putConfig) | **PUT** /config | TODO |
 | [**putJobStatus()**](HiddenApi.md#putJobStatus) | **PUT** /jobs/{id}/status | TODO |
+| [**putOauthclientsIdentifier()**](HiddenApi.md#putOauthclientsIdentifier) | **PUT** /oauthclients/{identifier} |  |
 | [**putPersonPassword()**](HiddenApi.md#putPersonPassword) | **PUT** /persons/{personId}/password | TODO |
 | [**putPersonPrivacyPolicy()**](HiddenApi.md#putPersonPrivacyPolicy) | **PUT** /persons/{personId}/privacypolicy | TODO |
 | [**putPersonTwofactor()**](HiddenApi.md#putPersonTwofactor) | **PUT** /persons/{personId}/settings/twofactor | TODO |
@@ -234,6 +237,67 @@ try {
 ### Parameters
 
 This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteOauthclientsIdentifier()`
+
+```php
+deleteOauthclientsIdentifier($identifier)
+```
+
+
+
+Delete an existing client entity
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$identifier = 'identifier_example'; // string
+
+try {
+    $apiInstance->deleteOauthclientsIdentifier($identifier);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->deleteOauthclientsIdentifier: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **identifier** | **string**|  | |
 
 ### Return type
 
@@ -1428,6 +1492,65 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getOauthclients()`
+
+```php
+getOauthclients(): \StevenBuehner\ChurchTools\Model\GetOauthclients200Response
+```
+
+
+
+Get all OAuth client entities
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getOauthclients();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->getOauthclients: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetOauthclients200Response**](../Model/GetOauthclients200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -2629,65 +2752,6 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `patchGroup()`
-
-```php
-patchGroup($group_id)
-```
-
-TODO
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login-Token-Header
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$group_id = 42; // int | ID of group
-
-try {
-    $apiInstance->patchGroup($group_id);
-} catch (Exception $e) {
-    echo 'Exception when calling HiddenApi->patchGroup: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **group_id** | **int**| ID of group | |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Login-Token-Header](../../README.md#Login-Token-Header)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `postAccountStatementMovement()`
 
 ```php
@@ -3258,6 +3322,68 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postOauthclients()`
+
+```php
+postOauthclients($post_oauthclients_request): \StevenBuehner\ChurchTools\Model\PostOauthclients200Response
+```
+
+
+
+Create a new OAuth client entity
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_oauthclients_request = new \StevenBuehner\ChurchTools\Model\PostOauthclientsRequest(); // \StevenBuehner\ChurchTools\Model\PostOauthclientsRequest | 
+
+try {
+    $result = $apiInstance->postOauthclients($post_oauthclients_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->postOauthclients: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_oauthclients_request** | [**\StevenBuehner\ChurchTools\Model\PostOauthclientsRequest**](../Model/PostOauthclientsRequest.md)|  | [optional] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PostOauthclients200Response**](../Model/PostOauthclients200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `application/xml`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -3840,6 +3966,70 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putOauthclientsIdentifier()`
+
+```php
+putOauthclientsIdentifier($identifier, $post_oauthclients_request): \StevenBuehner\ChurchTools\Model\PutOauthclientsIdentifier200Response
+```
+
+
+
+Update an existing client entity
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\HiddenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$identifier = 'identifier_example'; // string
+$post_oauthclients_request = new \StevenBuehner\ChurchTools\Model\PostOauthclientsRequest(); // \StevenBuehner\ChurchTools\Model\PostOauthclientsRequest
+
+try {
+    $result = $apiInstance->putOauthclientsIdentifier($identifier, $post_oauthclients_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling HiddenApi->putOauthclientsIdentifier: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **identifier** | **string**|  | |
+| **post_oauthclients_request** | [**\StevenBuehner\ChurchTools\Model\PostOauthclientsRequest**](../Model/PostOauthclientsRequest.md)|  | [optional] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PutOauthclientsIdentifier200Response**](../Model/PutOauthclientsIdentifier200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

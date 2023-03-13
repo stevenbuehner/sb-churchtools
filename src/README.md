@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *CalendarApi* | [**getCalendars**](docs/Api/CalendarApi.md#getcalendars) | **GET** /calendars | Your GET endpoint
 *CalendarApi* | [**getCalendarsAppointments**](docs/Api/CalendarApi.md#getcalendarsappointments) | **GET** /calendars/appointments | Your GET endpoint
 *CalendarApi* | [**getCalendarsCalendarIdAppointmentsAppointmentIdStartDate**](docs/Api/CalendarApi.md#getcalendarscalendaridappointmentsappointmentidstartdate) | **GET** /calendars/{calendarId}/appointments/{appointmentId}/{startDate} | Your GET endpoint
+*CalendarApi* | [**getCalendarsCalendarIdMeetingrequestpersons**](docs/Api/CalendarApi.md#getcalendarscalendaridmeetingrequestpersons) | **GET** /calendars/{calendarId}/meetingrequestpersons | Your GET endpoint
 *CalendarApi* | [**getTemplateById**](docs/Api/CalendarApi.md#gettemplatebyid) | **GET** /calendars/appointments/templates/{templateId} | get a appointment template
 *CalendarApi* | [**postCalendarsCalendarIdAppointments**](docs/Api/CalendarApi.md#postcalendarscalendaridappointments) | **POST** /calendars/{calendarId}/appointments | 
 *CalendarApi* | [**updateTemplate**](docs/Api/CalendarApi.md#updatetemplate) | **PUT** /calendars/appointments/templates/{templateId} | update a appointment template identified by id
@@ -122,8 +123,8 @@ Class | Method | HTTP request | Description
 *ContactLabelApi* | [**putContactlabel**](docs/Api/ContactLabelApi.md#putcontactlabel) | **PUT** /contactlabels/{id} | Update Contact Label
 *DepartmentApi* | [**getDepartments**](docs/Api/DepartmentApi.md#getdepartments) | **GET** /departments | Get all departments
 *EventApi* | [**agendaExport**](docs/Api/EventApi.md#agendaexport) | **POST** /agendas/{agendaId}/export | Exports the agenda
-*EventApi* | [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy**](docs/Api/EventApi.md#deletepersonideventseventidservicesserviceidexchangerequestscopy) | **DELETE** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request
-*EventApi* | [**deletePersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#deletepersonidexchangerequestsrequestid) | **DELETE** /{personId}/exchangerequests/{requestId} | Decline a service exchange request
+*EventApi* | [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy**](docs/Api/EventApi.md#deletepersonideventseventidservicesserviceidexchangerequestscopy) | **DELETE** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request
+*EventApi* | [**deletePersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#deletepersonidexchangerequestsrequestid) | **DELETE** /persons/{personId}/exchangerequests/{requestId} | Decline a service exchange request
 *EventApi* | [**getAgendaForEvent**](docs/Api/EventApi.md#getagendaforevent) | **GET** /events/{eventId}/agenda | Get agenda for event
 *EventApi* | [**getAllEvents**](docs/Api/EventApi.md#getallevents) | **GET** /events | Get all events
 *EventApi* | [**getEvent**](docs/Api/EventApi.md#getevent) | **GET** /events/{eventId} | Get a single event
@@ -131,11 +132,11 @@ Class | Method | HTTP request | Description
 *EventApi* | [**getEventMasterdata**](docs/Api/EventApi.md#geteventmasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
 *EventApi* | [**getPersonEvents**](docs/Api/EventApi.md#getpersonevents) | **GET** /persons/{personId}/events | Get events that person is involved with
 *EventApi* | [**getSongsOfAgenda**](docs/Api/EventApi.md#getsongsofagenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
-*EventApi* | [**personIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet**](docs/Api/EventApi.md#personideventseventidservicesserviceidexchangerequestscandidatesget) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request
-*EventApi* | [**personIdEventsEventIdServicesServiceIdExchangerequestsGet**](docs/Api/EventApi.md#personideventseventidservicesserviceidexchangerequestsget) | **GET** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service
-*EventApi* | [**personIdExchangerequestsGet**](docs/Api/EventApi.md#personidexchangerequestsget) | **GET** /{personId}/exchangerequests | Get all service exchange requests that a user got
-*EventApi* | [**postPersonIdEventsEventIdServicesServiceIdExchangerequests**](docs/Api/EventApi.md#postpersonideventseventidservicesserviceidexchangerequests) | **POST** /{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request
-*EventApi* | [**putPersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#putpersonidexchangerequestsrequestid) | **PUT** /{personId}/exchangerequests/{requestId} | Accept a service exchange request
+*EventApi* | [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet**](docs/Api/EventApi.md#personspersonideventseventidservicesserviceidexchangerequestscandidatesget) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request
+*EventApi* | [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet**](docs/Api/EventApi.md#personspersonideventseventidservicesserviceidexchangerequestsget) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service
+*EventApi* | [**personsPersonIdExchangerequestsGet**](docs/Api/EventApi.md#personspersonidexchangerequestsget) | **GET** /persons/{personId}/exchangerequests | Get all service exchange requests for a user
+*EventApi* | [**postPersonIdEventsEventIdServicesServiceIdExchangerequests**](docs/Api/EventApi.md#postpersonideventseventidservicesserviceidexchangerequests) | **POST** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request
+*EventApi* | [**putPersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#putpersonidexchangerequestsrequestid) | **PUT** /persons/{personId}/exchangerequests/{requestId} | Accept a service exchange request
 *EventApi* | [**sendAgendaEmail**](docs/Api/EventApi.md#sendagendaemail) | **POST** /agendas/send | Send agenda email to recipients
 *EventApi* | [**sendEventEmail**](docs/Api/EventApi.md#sendeventemail) | **POST** /events/send | Send Mail to Event Participants
 *EventApi* | [**startStopEventChat**](docs/Api/EventApi.md#startstopeventchat) | **POST** /events/{eventId}/chat | Start or stop an event chat
@@ -149,6 +150,7 @@ Class | Method | HTTP request | Description
 *FileApi* | [**uploadFiles**](docs/Api/FileApi.md#uploadfiles) | **POST** /files/{domainType}/{domainIdentifier} | Upload files
 *FinanceApi* | [**applyFinanceTemplate**](docs/Api/FinanceApi.md#applyfinancetemplate) | **POST** /finance/templates/{id} | Apply finance template
 *FinanceApi* | [**batchTransaction**](docs/Api/FinanceApi.md#batchtransaction) | **PATCH** /finance/transactions | Transaction Batch Processing
+*FinanceApi* | [**cancelTransaction**](docs/Api/FinanceApi.md#canceltransaction) | **PUT** /finance/transactions/{id}/storno | Cancel transaction
 *FinanceApi* | [**createAllFinanceDonationReceipts**](docs/Api/FinanceApi.md#createallfinancedonationreceipts) | **POST** /finance/donators/receipts | Create donation receipts
 *FinanceApi* | [**createCashDiscount**](docs/Api/FinanceApi.md#createcashdiscount) | **POST** /finance/cashdiscounts | Create new cash discout
 *FinanceApi* | [**createCostCenter**](docs/Api/FinanceApi.md#createcostcenter) | **POST** /finance/costcenters | Create new cost center
@@ -210,6 +212,7 @@ Class | Method | HTTP request | Description
 *FinanceApi* | [**getTransactionPurposeById**](docs/Api/FinanceApi.md#gettransactionpurposebyid) | **GET** /finance/transactionpurposes/{id} | Get a transaction purpose
 *FinanceApi* | [**postFinanceCostcentersBulkcreate**](docs/Api/FinanceApi.md#postfinancecostcentersbulkcreate) | **POST** /finance/costcenters/bulkcreate | Import many cost centers
 *FinanceApi* | [**postFinanceReports**](docs/Api/FinanceApi.md#postfinancereports) | **POST** /finance/reports/{reportType} | Issue new Finance Report
+*FinanceApi* | [**postFinanceTurnoverReport**](docs/Api/FinanceApi.md#postfinanceturnoverreport) | **POST** /finance/reports/turnover | Issue new Turnover Report
 *FinanceApi* | [**updateAccount**](docs/Api/FinanceApi.md#updateaccount) | **PUT** /finance/accounts/{id} | Update account
 *FinanceApi* | [**updateAccountClass**](docs/Api/FinanceApi.md#updateaccountclass) | **PUT** /finance/accountclasses/{id} | Update account class
 *FinanceApi* | [**updateAccountGroup**](docs/Api/FinanceApi.md#updateaccountgroup) | **PUT** /finance/accountgroups/{id} | Update account group
@@ -260,6 +263,7 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**getQRCodeCheckin**](docs/Api/GroupApi.md#getqrcodecheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
 *GroupApi* | [**issueSignUpToken**](docs/Api/GroupApi.md#issuesignuptoken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
 *GroupApi* | [**optIns**](docs/Api/GroupApi.md#optins) | **GET** /groups/{groupId}/optins | Get Opt In status of group members
+*GroupApi* | [**patchGroup**](docs/Api/GroupApi.md#patchgroup) | **PATCH** /groups/{groupId} | Update Group
 *GroupApi* | [**patchGroupsGroupIdRolesRoleId**](docs/Api/GroupApi.md#patchgroupsgroupidrolesroleid) | **PATCH** /groups/{groupId}/roles/{roleId} | save role
 *GroupApi* | [**postAutomaticEmail**](docs/Api/GroupApi.md#postautomaticemail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role
 *GroupApi* | [**postGroups**](docs/Api/GroupApi.md#postgroups) | **POST** /groups | Create Group
@@ -282,6 +286,7 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**deleteBookings**](docs/Api/HiddenApi.md#deletebookings) | **DELETE** /bookings | 
 *HiddenApi* | [**deleteCalendarsCalendarIdAppointmentsAppointmentId**](docs/Api/HiddenApi.md#deletecalendarscalendaridappointmentsappointmentid) | **DELETE** /calendars/{calendarId}/appointments/{appointmentId} | deleteAppointment
 *HiddenApi* | [**deleteFinanceDonators**](docs/Api/HiddenApi.md#deletefinancedonators) | **DELETE** /finance/donators | 
+*HiddenApi* | [**deleteOauthclientsIdentifier**](docs/Api/HiddenApi.md#deleteoauthclientsidentifier) | **DELETE** /oauthclients/{identifier} | 
 *HiddenApi* | [**deletePersonLoginToken**](docs/Api/HiddenApi.md#deletepersonlogintoken) | **DELETE** /persons/{personId}/logintoken | TODO
 *HiddenApi* | [**deletePersonPrivacyPolicy**](docs/Api/HiddenApi.md#deletepersonprivacypolicy) | **DELETE** /persons/{personId}/privacypolicy | TODO
 *HiddenApi* | [**deletePersonTwofactor**](docs/Api/HiddenApi.md#deletepersontwofactor) | **DELETE** /persons/{personId}/settings/twofactor | TODO
@@ -302,6 +307,7 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**getGroupQRCodeCheckinPersonSend**](docs/Api/HiddenApi.md#getgroupqrcodecheckinpersonsend) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/send | TODO
 *HiddenApi* | [**getLabelsTotal**](docs/Api/HiddenApi.md#getlabelstotal) | **GET** /labels/totals | TODO
 *HiddenApi* | [**getMenu**](docs/Api/HiddenApi.md#getmenu) | **GET** /menu | TODO
+*HiddenApi* | [**getOauthclients**](docs/Api/HiddenApi.md#getoauthclients) | **GET** /oauthclients | 
 *HiddenApi* | [**getPRMasterdata**](docs/Api/HiddenApi.md#getprmasterdata) | **GET** /pr/masterdata | TODO
 *HiddenApi* | [**getPersonLoginstring**](docs/Api/HiddenApi.md#getpersonloginstring) | **GET** /person/{personId}/loginstring | TODO
 *HiddenApi* | [**getPersonPrivacyPolicy**](docs/Api/HiddenApi.md#getpersonprivacypolicy) | **GET** /persons/{personId}/privacypolicy | TODO
@@ -322,7 +328,6 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**getUserRules**](docs/Api/HiddenApi.md#getuserrules) | **GET** /finance/accountingperiods/{id}/userrules | TODO
 *HiddenApi* | [**patchAccountStatementMovementSuggestion**](docs/Api/HiddenApi.md#patchaccountstatementmovementsuggestion) | **PATCH** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId}/suggestions | TODO
 *HiddenApi* | [**patchFileWithDomainType**](docs/Api/HiddenApi.md#patchfilewithdomaintype) | **PATCH** /files/{domainType}/{domainIdentifier} | TODO
-*HiddenApi* | [**patchGroup**](docs/Api/HiddenApi.md#patchgroup) | **PATCH** /groups/{groupId} | TODO
 *HiddenApi* | [**postAccountStatementMovement**](docs/Api/HiddenApi.md#postaccountstatementmovement) | **POST** /finance/accountingperiods/{id}/accounts/{accountId}/statements/{statementId}/movements/{movementId} | TODO
 *HiddenApi* | [**postBookings**](docs/Api/HiddenApi.md#postbookings) | **POST** /bookings | 
 *HiddenApi* | [**postBulkAccounts**](docs/Api/HiddenApi.md#postbulkaccounts) | **POST** /finance/accounts/bulkcreate | TODO
@@ -333,6 +338,7 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**postLabels**](docs/Api/HiddenApi.md#postlabels) | **POST** /labels | TODO
 *HiddenApi* | [**postLoginTotp**](docs/Api/HiddenApi.md#postlogintotp) | **POST** /login/totp | TODO
 *HiddenApi* | [**postNps**](docs/Api/HiddenApi.md#postnps) | **POST** /nps | Save NPS score
+*HiddenApi* | [**postOauthclients**](docs/Api/HiddenApi.md#postoauthclients) | **POST** /oauthclients | 
 *HiddenApi* | [**postPersonTwofactor**](docs/Api/HiddenApi.md#postpersontwofactor) | **POST** /persons/{personId}/settings/twofactor | TODO
 *HiddenApi* | [**postSamlAcs**](docs/Api/HiddenApi.md#postsamlacs) | **POST** /saml/acs | TODO
 *HiddenApi* | [**postStatements**](docs/Api/HiddenApi.md#poststatements) | **POST** /finance/accountingperiods/{id}/statements | TODO
@@ -343,6 +349,7 @@ Class | Method | HTTP request | Description
 *HiddenApi* | [**putCalendarsCalendarIdAppointmentsAppointmentId**](docs/Api/HiddenApi.md#putcalendarscalendaridappointmentsappointmentid) | **PUT** /calendars/{calendarId}/appointments/{appointmentId} | updateAppointment
 *HiddenApi* | [**putConfig**](docs/Api/HiddenApi.md#putconfig) | **PUT** /config | TODO
 *HiddenApi* | [**putJobStatus**](docs/Api/HiddenApi.md#putjobstatus) | **PUT** /jobs/{id}/status | TODO
+*HiddenApi* | [**putOauthclientsIdentifier**](docs/Api/HiddenApi.md#putoauthclientsidentifier) | **PUT** /oauthclients/{identifier} | 
 *HiddenApi* | [**putPersonPassword**](docs/Api/HiddenApi.md#putpersonpassword) | **PUT** /persons/{personId}/password | TODO
 *HiddenApi* | [**putPersonPrivacyPolicy**](docs/Api/HiddenApi.md#putpersonprivacypolicy) | **PUT** /persons/{personId}/privacypolicy | TODO
 *HiddenApi* | [**putPersonTwofactor**](docs/Api/HiddenApi.md#putpersontwofactor) | **PUT** /persons/{personId}/settings/twofactor | TODO
@@ -386,7 +393,7 @@ Class | Method | HTTP request | Description
 *PersonApi* | [**getPersonsBirthdays**](docs/Api/PersonApi.md#getpersonsbirthdays) | **GET** /persons/birthdays | Fetch Birthdays
 *PersonApi* | [**getPersonsDuplicates**](docs/Api/PersonApi.md#getpersonsduplicates) | **GET** /persons/duplicates | get potential duplicates of persons
 *PersonApi* | [**getPersonsIdLogintoken**](docs/Api/PersonApi.md#getpersonsidlogintoken) | **GET** /persons/{personId}/logintoken | Fetch Login Token
-*PersonApi* | [**getPersonsPersonidMergeDuplicateid**](docs/Api/PersonApi.md#getpersonspersonidmergeduplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a  merge
+*PersonApi* | [**getPersonsPersonidMergeDuplicateid**](docs/Api/PersonApi.md#getpersonspersonidmergeduplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a merge
 *PersonApi* | [**getServiceRequestById**](docs/Api/PersonApi.md#getservicerequestbyid) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person
 *PersonApi* | [**invitePerson**](docs/Api/PersonApi.md#inviteperson) | **POST** /persons/{personId}/invite | Invite Person to ChurchTools
 *PersonApi* | [**patchPerson**](docs/Api/PersonApi.md#patchperson) | **PATCH** /persons/{personId} | Updates a person
@@ -437,6 +444,7 @@ Class | Method | HTTP request | Description
 *SyncApi* | [**getSyncExternalsystemsExternalSystemIdJobconfigurations**](docs/Api/SyncApi.md#getsyncexternalsystemsexternalsystemidjobconfigurations) | **GET** /sync/externalsystems/{externalSystemId}/jobconfigs | GET Job configurations
 *SyncApi* | [**getSyncExternalsystemsId**](docs/Api/SyncApi.md#getsyncexternalsystemsid) | **GET** /sync/externalsystems/{id} | GET an external system by id
 *SyncApi* | [**getSyncFieldMappings**](docs/Api/SyncApi.md#getsyncfieldmappings) | **GET** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType} | Get Mapping for Domain Type
+*SyncApi* | [**getSyncFieldMappingsNoSuggestions**](docs/Api/SyncApi.md#getsyncfieldmappingsnosuggestions) | **GET** /sync/externalsystems/{externalSystemId}/fieldmappings/{domainType}/nosuggestions | Get fields for which no suggestions should be shown
 *SyncApi* | [**getSyncJobconfigs**](docs/Api/SyncApi.md#getsyncjobconfigs) | **GET** /sync/jobconfigs | Your GET endpoint
 *SyncApi* | [**getSyncLogs**](docs/Api/SyncApi.md#getsynclogs) | **GET** /sync/logs | Get Sync Logs
 *SyncApi* | [**getSyncMappings**](docs/Api/SyncApi.md#getsyncmappings) | **GET** /sync/entitymappings | Fetch all registered mappings
@@ -472,6 +480,7 @@ Class | Method | HTTP request | Description
 - [](docs/Model/.md)
 - [1](docs/Model/1.md)
 - [1Meta](docs/Model/1Meta.md)
+- [1RequestedEvent](docs/Model/1RequestedEvent.md)
 - [200Response](docs/Model/200Response.md)
 - [Absence](docs/Model/Absence.md)
 - [Absence1](docs/Model/Absence1.md)
@@ -514,6 +523,7 @@ Class | Method | HTTP request | Description
 - [BlogItem](docs/Model/BlogItem.md)
 - [Calendar](docs/Model/Calendar.md)
 - [Campus](docs/Model/Campus.md)
+- [CancelTransactionRequest](docs/Model/CancelTransactionRequest.md)
 - [CashDiscount](docs/Model/CashDiscount.md)
 - [CashDiscountNew](docs/Model/CashDiscountNew.md)
 - [Chat](docs/Model/Chat.md)
@@ -731,6 +741,10 @@ Class | Method | HTTP request | Description
 - [GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInner](docs/Model/GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInner.md)
 - [GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson](docs/Model/GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson.md)
 - [GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPersonDomainAttributes](docs/Model/GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPersonDomainAttributes.md)
+- [GetCalendarsCalendarIdMeetingrequestpersons200Response](docs/Model/GetCalendarsCalendarIdMeetingrequestpersons200Response.md)
+- [GetCalendarsCalendarIdMeetingrequestpersons200ResponseDataInner](docs/Model/GetCalendarsCalendarIdMeetingrequestpersons200ResponseDataInner.md)
+- [GetCalendarsCalendarIdMeetingrequestpersons200ResponseDataInnerPerson](docs/Model/GetCalendarsCalendarIdMeetingrequestpersons200ResponseDataInnerPerson.md)
+- [GetCalendarsCalendarIdMeetingrequestpersons200ResponseDataInnerPersonDomainAttributes](docs/Model/GetCalendarsCalendarIdMeetingrequestpersons200ResponseDataInnerPersonDomainAttributes.md)
 - [GetCampus200Response](docs/Model/GetCampus200Response.md)
 - [GetClientById200Response](docs/Model/GetClientById200Response.md)
 - [GetContactlabel200Response](docs/Model/GetContactlabel200Response.md)
@@ -803,6 +817,8 @@ Class | Method | HTTP request | Description
 - [GetLabelsTotal200ResponseDataIgnoreAddress](docs/Model/GetLabelsTotal200ResponseDataIgnoreAddress.md)
 - [GetLogById200Response](docs/Model/GetLogById200Response.md)
 - [GetLoginStatistics200Response](docs/Model/GetLoginStatistics200Response.md)
+- [GetOauthclients200Response](docs/Model/GetOauthclients200Response.md)
+- [GetOauthclients200ResponseDataInner](docs/Model/GetOauthclients200ResponseDataInner.md)
 - [GetOpenServiceRequestsForPerson200Response](docs/Model/GetOpenServiceRequestsForPerson200Response.md)
 - [GetOpenServiceRequestsForPerson200ResponseDataInner](docs/Model/GetOpenServiceRequestsForPerson200ResponseDataInner.md)
 - [GetPermissionsInternalGroupsGroupId200Response](docs/Model/GetPermissionsInternalGroupsGroupId200Response.md)
@@ -838,9 +854,13 @@ Class | Method | HTTP request | Description
 - [GetPersonsBirthdays200ResponseDataInner](docs/Model/GetPersonsBirthdays200ResponseDataInner.md)
 - [GetPersonsBirthdays200ResponseDataInnerPerson](docs/Model/GetPersonsBirthdays200ResponseDataInnerPerson.md)
 - [GetPersonsDuplicates200Response](docs/Model/GetPersonsDuplicates200Response.md)
-- [GetPersonsDuplicates200ResponseDataInner](docs/Model/GetPersonsDuplicates200ResponseDataInner.md)
-- [GetPersonsDuplicates200ResponseDataInnerD](docs/Model/GetPersonsDuplicates200ResponseDataInnerD.md)
-- [GetPersonsDuplicates200ResponseDataInnerP1](docs/Model/GetPersonsDuplicates200ResponseDataInnerP1.md)
+- [GetPersonsDuplicates200ResponseData](docs/Model/GetPersonsDuplicates200ResponseData.md)
+- [GetPersonsDuplicates200ResponseDataCandidatesInner](docs/Model/GetPersonsDuplicates200ResponseDataCandidatesInner.md)
+- [GetPersonsDuplicates200ResponseDataCandidatesInnerD](docs/Model/GetPersonsDuplicates200ResponseDataCandidatesInnerD.md)
+- [GetPersonsDuplicates200ResponseDataCandidatesInnerP1](docs/Model/GetPersonsDuplicates200ResponseDataCandidatesInnerP1.md)
+- [GetPersonsDuplicates200ResponseDataKnownDuplicateRelations](docs/Model/GetPersonsDuplicates200ResponseDataKnownDuplicateRelations.md)
+- [GetPersonsDuplicates200ResponseDataKnownDuplicateRelations3Inner](docs/Model/GetPersonsDuplicates200ResponseDataKnownDuplicateRelations3Inner.md)
+- [GetPersonsDuplicates200ResponseDataKnownDuplicateRelations3InnerP1](docs/Model/GetPersonsDuplicates200ResponseDataKnownDuplicateRelations3InnerP1.md)
 - [GetPersonsIdLogintoken200Response](docs/Model/GetPersonsIdLogintoken200Response.md)
 - [GetPublicGroupSignoutData200Response](docs/Model/GetPublicGroupSignoutData200Response.md)
 - [GetPublicGroupSignoutData200ResponseData](docs/Model/GetPublicGroupSignoutData200ResponseData.md)
@@ -899,6 +919,7 @@ Class | Method | HTTP request | Description
 - [GetSyncExternalsystemsExternalSystemIdJobconfigurations200Response](docs/Model/GetSyncExternalsystemsExternalSystemIdJobconfigurations200Response.md)
 - [GetSyncExternalsystemsId200Response](docs/Model/GetSyncExternalsystemsId200Response.md)
 - [GetSyncFieldMappings200Response](docs/Model/GetSyncFieldMappings200Response.md)
+- [GetSyncFieldMappingsNoSuggestions200Response](docs/Model/GetSyncFieldMappingsNoSuggestions200Response.md)
 - [GetSyncLogs200Response](docs/Model/GetSyncLogs200Response.md)
 - [GetSyncMappings200Response](docs/Model/GetSyncMappings200Response.md)
 - [GetTags200Response](docs/Model/GetTags200Response.md)
@@ -952,6 +973,13 @@ Class | Method | HTTP request | Description
 - [OptIns200Response](docs/Model/OptIns200Response.md)
 - [OptIns200ResponseData](docs/Model/OptIns200ResponseData.md)
 - [PatchFilesId204Response](docs/Model/PatchFilesId204Response.md)
+- [PatchGroup200Response](docs/Model/PatchGroup200Response.md)
+- [PatchGroup200ResponseFollowUp](docs/Model/PatchGroup200ResponseFollowUp.md)
+- [PatchGroup200ResponseInformation](docs/Model/PatchGroup200ResponseInformation.md)
+- [PatchGroup200ResponsePermissions](docs/Model/PatchGroup200ResponsePermissions.md)
+- [PatchGroup200ResponseSettings](docs/Model/PatchGroup200ResponseSettings.md)
+- [PatchGroup200ResponseSettingsGroupMeeting](docs/Model/PatchGroup200ResponseSettingsGroupMeeting.md)
+- [PatchGroup200ResponseSettingsNewMember](docs/Model/PatchGroup200ResponseSettingsNewMember.md)
 - [PatchGroupsGroupIdRolesRoleIdRequest](docs/Model/PatchGroupsGroupIdRolesRoleIdRequest.md)
 - [PatchPerson400Response](docs/Model/PatchPerson400Response.md)
 - [PatchPersonRequest](docs/Model/PatchPersonRequest.md)
@@ -972,8 +1000,9 @@ Class | Method | HTTP request | Description
 - [PostContactlabelsRequest](docs/Model/PostContactlabelsRequest.md)
 - [PostFinanceCostcentersBulkcreateRequest](docs/Model/PostFinanceCostcentersBulkcreateRequest.md)
 - [PostFinanceCostcentersBulkcreateRequestCostCentersInner](docs/Model/PostFinanceCostcentersBulkcreateRequestCostCentersInner.md)
-- [PostFinanceReports200Response](docs/Model/PostFinanceReports200Response.md)
 - [PostFinanceReportsRequest](docs/Model/PostFinanceReportsRequest.md)
+- [PostFinanceTurnoverReport200Response](docs/Model/PostFinanceTurnoverReport200Response.md)
+- [PostFinanceTurnoverReportRequest](docs/Model/PostFinanceTurnoverReportRequest.md)
 - [PostGroups201Response](docs/Model/PostGroups201Response.md)
 - [PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest](docs/Model/PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest.md)
 - [PostGroupsRequest](docs/Model/PostGroupsRequest.md)
@@ -982,6 +1011,10 @@ Class | Method | HTTP request | Description
 - [PostLoginRequest](docs/Model/PostLoginRequest.md)
 - [PostNps201Response](docs/Model/PostNps201Response.md)
 - [PostNpsRequest](docs/Model/PostNpsRequest.md)
+- [PostOauthclients200Response](docs/Model/PostOauthclients200Response.md)
+- [PostOauthclients200ResponseData](docs/Model/PostOauthclients200ResponseData.md)
+- [PostOauthclientsRequest](docs/Model/PostOauthclientsRequest.md)
+- [PostOauthclientsRequest1](docs/Model/PostOauthclientsRequest1.md)
 - [PostPersonsAbsences201Response](docs/Model/PostPersonsAbsences201Response.md)
 - [PostPersonsAbsencesRequest](docs/Model/PostPersonsAbsencesRequest.md)
 - [PostPersonsPersonIdArchiveRequest](docs/Model/PostPersonsPersonIdArchiveRequest.md)
@@ -1021,6 +1054,7 @@ Class | Method | HTTP request | Description
 - [PutImageOptions200Response](docs/Model/PutImageOptions200Response.md)
 - [PutImageOptions200ResponseData](docs/Model/PutImageOptions200ResponseData.md)
 - [PutImageOptionsRequest](docs/Model/PutImageOptionsRequest.md)
+- [PutOauthclientsIdentifier200Response](docs/Model/PutOauthclientsIdentifier200Response.md)
 - [PutPersonsAbsenceRequest](docs/Model/PutPersonsAbsenceRequest.md)
 - [PutStatusRequest](docs/Model/PutStatusRequest.md)
 - [PutSyncExternalsystemsExternalSystemIdJobconfigs200Response](docs/Model/PutSyncExternalsystemsExternalSystemIdJobconfigs200Response.md)
@@ -1082,6 +1116,7 @@ Class | Method | HTTP request | Description
 - [TransactionNew](docs/Model/TransactionNew.md)
 - [TransactionPurpose](docs/Model/TransactionPurpose.md)
 - [TransactionPurposeNew](docs/Model/TransactionPurposeNew.md)
+- [TransactionStorno](docs/Model/TransactionStorno.md)
 - [TransactionUpdate](docs/Model/TransactionUpdate.md)
 - [Translation](docs/Model/Translation.md)
 - [Translation1](docs/Model/Translation1.md)

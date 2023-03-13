@@ -27,7 +27,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getPersonsBirthdays()**](PersonApi.md#getPersonsBirthdays) | **GET** /persons/birthdays | Fetch Birthdays |
 | [**getPersonsDuplicates()**](PersonApi.md#getPersonsDuplicates) | **GET** /persons/duplicates | get potential duplicates of persons |
 | [**getPersonsIdLogintoken()**](PersonApi.md#getPersonsIdLogintoken) | **GET** /persons/{personId}/logintoken | Fetch Login Token |
-| [**getPersonsPersonidMergeDuplicateid()**](PersonApi.md#getPersonsPersonidMergeDuplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a  merge |
+| [**getPersonsPersonidMergeDuplicateid()**](PersonApi.md#getPersonsPersonidMergeDuplicateid) | **GET** /persons/{personId}/merge/{duplicateId} | Get information to compare two person records in order to prepare a merge |
 | [**getServiceRequestById()**](PersonApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person |
 | [**invitePerson()**](PersonApi.md#invitePerson) | **POST** /persons/{personId}/invite | Invite Person to ChurchTools |
 | [**patchPerson()**](PersonApi.md#patchPerson) | **PATCH** /persons/{personId} | Updates a person |
@@ -626,7 +626,7 @@ try {
 ## `getOpenServiceRequestsForPerson()`
 
 ```php
-getOpenServiceRequestsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
+getOpenServiceRequestsForPerson($person_id, $get_all_in_future): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
 ```
 
 Get all service requests for a person
@@ -653,9 +653,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     $config
 );
 $person_id = 42; // int | ID of person
+$get_all_in_future = false; // bool | If set to true, all service requests in future are returned (no matter which state). Otherwise (default) open requests from past and future are returned.
 
 try {
-    $result = $apiInstance->getOpenServiceRequestsForPerson($person_id);
+    $result = $apiInstance->getOpenServiceRequestsForPerson($person_id, $get_all_in_future);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getOpenServiceRequestsForPerson: ', $e->getMessage(), PHP_EOL;
@@ -667,6 +668,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **person_id** | **int**| ID of person | |
+| **get_all_in_future** | **bool**| If set to true, all service requests in future are returned (no matter which state). Otherwise (default) open requests from past and future are returned. | [optional] |
 
 ### Return type
 
@@ -1373,12 +1375,12 @@ try {
 ## `getPersonsDuplicates()`
 
 ```php
-getPersonsDuplicates($tolerance, $relation_name_for_duplicate): \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200Response
+getPersonsDuplicates($reset_cache): \StevenBuehner\ChurchTools\Model\GetPersonsDuplicates200Response
 ```
 
 get potential duplicates of persons
 
-**Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  Provide a list of potential duplicate person records. You can suppress some duplicates  The other parameters are used to filter duplicates.  Returns an array of duplicates  * `p1` - properties of Person 1 * `p2` - properties of Person 2 * `d`  - distances of fields - this represents number of changes needed to convert P1 to P2           related to the length. e.g. `Maier` -> `Mayer` yields `d=20`
+**Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  Provide a list of potential duplicate person records. You can suppress some duplicates  The other parameters are used to filter duplicates.  Returns an array of duplicates  * `p1` - properties of Person 1 * `p2` - properties of Person 2
 
 ### Example
 
@@ -1399,11 +1401,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tolerance = 30; // int | Tolerance for matching; defaults to 30
-$relation_name_for_duplicate = 'relation_name_for_duplicate_example'; // string | Name of `Duplicate` Relationship; Persons with this relationship will never be reported as duplicates.
+$reset_cache = True; // bool
 
 try {
-    $result = $apiInstance->getPersonsDuplicates($tolerance, $relation_name_for_duplicate);
+    $result = $apiInstance->getPersonsDuplicates($reset_cache);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonApi->getPersonsDuplicates: ', $e->getMessage(), PHP_EOL;
@@ -1414,8 +1415,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tolerance** | **int**| Tolerance for matching; defaults to 30 | [optional] [default to 30] |
-| **relation_name_for_duplicate** | **string**| Name of &#x60;Duplicate&#x60; Relationship; Persons with this relationship will never be reported as duplicates. | [optional] |
+| **reset_cache** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -1502,7 +1502,7 @@ try {
 getPersonsPersonidMergeDuplicateid($duplicate_id, $person_id)
 ```
 
-Get information to compare two person records in order to prepare a  merge
+Get information to compare two person records in order to prepare a merge
 
 **Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  This retrieves the basis for a merge of two person records You will receive person data, relationships, groups etc. for both persons.
 
@@ -1758,7 +1758,7 @@ patchPersonsPersonidMergeDuplicateid($duplicate_id, $person_id, $delete_duplicat
 
 Merge two person records
 
-**Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  Generally, you can provide any person field to save, but be aware that write access to the provided ields is required. Beware, that not all fields which are listed in the Person schema can be updated. E.g. `imageUrl` or `familyUrl`  (see `PATCH /api/person/{id}`)  * using PATCH you can perform the eventual merge, it will   + patch the person record    + replace the personId of the doublette with the Original in all related records.     * Group memberships     * Person relation     * Bookings     * Wiki-Entries     * Financial transactions     * ... * delete the doublette if `deleteDuplicate` is true  all to be done within one transaction.
+**Caution:** This API is published as Beta and subject to be changed. It is published such that customers can play evaluate it with production data.  Generally, you can provide any person field to save, but be aware that write access to the provided ields is required. Beware, that not all fields which are listed in the Person schema can be updated. E.g. `imageUrl` or `familyUrl` (see `PATCH /api/person/{id}`)  * using PATCH you can perform the eventual merge, it will   + patch the person record   + replace the personId of the doublette with the Original in all related records.     * Group memberships     * Person relation     * Bookings     * Wiki-Entries     * Financial transactions     * ... * delete the doublette if `deleteDuplicate` is true  all to be done within one transaction.
 
 ### Example
 
