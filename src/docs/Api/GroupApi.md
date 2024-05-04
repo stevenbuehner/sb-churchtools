@@ -9,8 +9,16 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**createOrUpdateMember()**](GroupApi.md#createOrUpdateMember) | **PUT** /groups/{groupId}/members/{personId} | Create/Update a group member |
 | [**deleteAutomaticEmail()**](GroupApi.md#deleteAutomaticEmail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email |
 | [**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /groups/{groupId} |  |
+| [**deleteGroupAgegroupsAgeGroupId()**](GroupApi.md#deleteGroupAgegroupsAgeGroupId) | **DELETE** /group/agegroups/{ageGroupId} | Delete agegroup |
+| [**deleteGroupGroupcategoriesGroupCategoryId()**](GroupApi.md#deleteGroupGroupcategoriesGroupCategoryId) | **DELETE** /group/groupcategories/{groupCategoryId} |  |
+| [**deleteGroupGrouptypesGroupTypeId()**](GroupApi.md#deleteGroupGrouptypesGroupTypeId) | **DELETE** /group/grouptypes/{groupTypeId} | Delete group type |
+| [**deleteGroupRolesRoleId()**](GroupApi.md#deleteGroupRolesRoleId) | **DELETE** /group/roles/{roleId} | Delete role |
+| [**deleteGroupTargetgroupsTargetGroupId()**](GroupApi.md#deleteGroupTargetgroupsTargetGroupId) | **DELETE** /group/targetgroups/{targetGroupId} | delete target group |
 | [**deleteGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingId) | **DELETE** /groups/{groupId}/meetings/{meetingId} |  |
 | [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId()**](GroupApi.md#deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin |
+| [**deleteGroupsGroupIdParentsParentGroupId()**](GroupApi.md#deleteGroupsGroupIdParentsParentGroupId) | **DELETE** /groups/{groupId}/parents/{parentGroupId} | Delete Parent Group connection |
+| [**deleteGroupsGroupIdPlacesPlaceId()**](GroupApi.md#deleteGroupsGroupIdPlacesPlaceId) | **DELETE** /groups/{groupId}/places/{placeId} |  |
+| [**deleteGroupsGroupIdTagsTagId()**](GroupApi.md#deleteGroupsGroupIdTagsTagId) | **DELETE** /groups/{groupId}/tags/{tagId} | Delete group Tag |
 | [**deleteMember()**](GroupApi.md#deleteMember) | **DELETE** /groups/{groupId}/members/{personId} | Delete a group member |
 | [**getAllGroupMembers()**](GroupApi.md#getAllGroupMembers) | **GET** /groups/{groupId}/members | Get all group members |
 | [**getAllGroupsForPerson()**](GroupApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in |
@@ -18,17 +26,29 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getAutomaticEmail()**](GroupApi.md#getAutomaticEmail) | **GET** /groups/{groupId}/emails/{emailId} | Get one automatic email |
 | [**getAutomaticEmails()**](GroupApi.md#getAutomaticEmails) | **GET** /groups/{groupId}/emails | Get all automatic emails of a group |
 | [**getGroup()**](GroupApi.md#getGroup) | **GET** /groups/{groupId} | Get a group |
+| [**getGroupAgegroups()**](GroupApi.md#getGroupAgegroups) | **GET** /group/agegroups | Get agegroups |
+| [**getGroupAgegroupsAgeGroupId()**](GroupApi.md#getGroupAgegroupsAgeGroupId) | **GET** /group/agegroups/{ageGroupId} | Get agegroup |
 | [**getGroupForHomepage()**](GroupApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group |
+| [**getGroupGroupcategories()**](GroupApi.md#getGroupGroupcategories) | **GET** /group/groupcategories | GET Group Categories |
+| [**getGroupGroupcategoriesGroupCategoryId()**](GroupApi.md#getGroupGroupcategoriesGroupCategoryId) | **GET** /group/groupcategories/{groupCategoryId} | Get Group Category |
+| [**getGroupGrouptypes()**](GroupApi.md#getGroupGrouptypes) | **GET** /group/grouptypes | Get all group types |
+| [**getGroupGrouptypesGroupTypeId()**](GroupApi.md#getGroupGrouptypesGroupTypeId) | **GET** /group/grouptypes/{groupTypeId} | Get grouptype |
 | [**getGroupHomepage()**](GroupApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings |
-| [**getGroupRoles()**](GroupApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get all roles for this group |
+| [**getGroupRoles()**](GroupApi.md#getGroupRoles) | **GET** /group/roles | Get roles |
+| [**getGroupRolesRoleId()**](GroupApi.md#getGroupRolesRoleId) | **GET** /group/roles/{roleId} | Get role |
+| [**getGroupRoles_0()**](GroupApi.md#getGroupRoles_0) | **GET** /groups/{groupId}/roles | Get all roles for this group |
 | [**getGroupStatistics()**](GroupApi.md#getGroupStatistics) | **GET** /groups/{groupId}/statistics | Fetch facts about group |
+| [**getGroupTargetgroups()**](GroupApi.md#getGroupTargetgroups) | **GET** /group/targetgroups | Get target groups |
+| [**getGroupTargetgroupsTargetGroupId()**](GroupApi.md#getGroupTargetgroupsTargetGroupId) | **GET** /group/targetgroups/{targetGroupId} | Get target group |
 | [**getGroups()**](GroupApi.md#getGroups) | **GET** /groups | Get all groups |
 | [**getGroupsGroupIdMeetingsMeetingIdMembers()**](GroupApi.md#getGroupsGroupIdMeetingsMeetingIdMembers) | **GET** /groups/{groupId}/meetings/{meetingId}/members | Get Group Meeting Members |
 | [**getGroupsGroupIdMemberfields()**](GroupApi.md#getGroupsGroupIdMemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields |
+| [**getGroupsGroupIdMembersExport()**](GroupApi.md#getGroupsGroupIdMembersExport) | **GET** /groups/{groupId}/members/export | Export Groupmebers |
 | [**getGroupsGroupIdMembersStatistics()**](GroupApi.md#getGroupsGroupIdMembersStatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members |
 | [**getGroupsGroupIdTags()**](GroupApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags |
 | [**getGroupsHierarchies()**](GroupApi.md#getGroupsHierarchies) | **GET** /groups/hierarchies | Get all group hierarchies |
 | [**getGroupsMembers()**](GroupApi.md#getGroupsMembers) | **GET** /groups/members | Get all group members |
+| [**getGroupsTags()**](GroupApi.md#getGroupsTags) | **GET** /groups/tags | Your GET endpoint |
 | [**getGrupsIdPlaces()**](GroupApi.md#getGrupsIdPlaces) | **GET** /groups/{groupId}/places | Get all places of a group |
 | [**getPersonMasterdata()**](GroupApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
 | [**getPublicgroupsGroupIdForm()**](GroupApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form |
@@ -38,12 +58,26 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**patchGroup()**](GroupApi.md#patchGroup) | **PATCH** /groups/{groupId} | Update Group |
 | [**patchGroupsGroupIdRolesRoleId()**](GroupApi.md#patchGroupsGroupIdRolesRoleId) | **PATCH** /groups/{groupId}/roles/{roleId} | save role |
 | [**postAutomaticEmail()**](GroupApi.md#postAutomaticEmail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role |
+| [**postGroupAgegroups()**](GroupApi.md#postGroupAgegroups) | **POST** /group/agegroups | Create agegroup |
+| [**postGroupGroupcategories()**](GroupApi.md#postGroupGroupcategories) | **POST** /group/groupcategories | Create Group Category |
+| [**postGroupGrouptypes()**](GroupApi.md#postGroupGrouptypes) | **POST** /group/grouptypes | Create group type |
+| [**postGroupRoles()**](GroupApi.md#postGroupRoles) | **POST** /group/roles | Create Role |
+| [**postGroupTargetgroups()**](GroupApi.md#postGroupTargetgroups) | **POST** /group/targetgroups |  |
 | [**postGroups()**](GroupApi.md#postGroups) | **POST** /groups | Create Group |
+| [**postGroupsGroupIdGroupstatus()**](GroupApi.md#postGroupsGroupIdGroupstatus) | **POST** /groups/{groupId}/grouptype |  |
 | [**postGroupsGroupIdMeetingsMeetingIdMembersMissing()**](GroupApi.md#postGroupsGroupIdMeetingsMeetingIdMembersMissing) | **POST** /groups/{groupId}/meetings/{meetingId}/members/missing |  |
+| [**postGroupsGroupIdPlaces()**](GroupApi.md#postGroupsGroupIdPlaces) | **POST** /groups/{groupId}/places |  |
 | [**postPublicgroupsGroupIdMailToLeaders()**](GroupApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders |
 | [**postPublicgroupsGroupIdSignup()**](GroupApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group |
 | [**putAutomaticEmail()**](GroupApi.md#putAutomaticEmail) | **PUT** /groups/{groupId}/emails/{emailId} | Update automatic email |
+| [**putGroupAgegroupsAgeGroupId()**](GroupApi.md#putGroupAgegroupsAgeGroupId) | **PUT** /group/agegroups/{ageGroupId} | Update agegroup |
+| [**putGroupGroupcategoriesGroupCategoryId()**](GroupApi.md#putGroupGroupcategoriesGroupCategoryId) | **PUT** /group/groupcategories/{groupCategoryId} | Update Group Category |
+| [**putGroupGrouptypesGroupTypeId()**](GroupApi.md#putGroupGrouptypesGroupTypeId) | **PUT** /group/grouptypes/{groupTypeId} | Update GroupType |
+| [**putGroupRolesRoleId()**](GroupApi.md#putGroupRolesRoleId) | **PUT** /group/roles/{roleId} | Update Role |
+| [**putGroupTargetgroupsTargetGroupId()**](GroupApi.md#putGroupTargetgroupsTargetGroupId) | **PUT** /group/targetgroups/{targetGroupId} | Update target group |
 | [**putGroupsGroupIdMeetingsMeetingId()**](GroupApi.md#putGroupsGroupIdMeetingsMeetingId) | **PUT** /groups/{groupId}/meetings/{meetingId} |  |
+| [**putGroupsGroupIdParentsParentGroupId()**](GroupApi.md#putGroupsGroupIdParentsParentGroupId) | **PUT** /groups/{groupId}/parents/{parentGroupId} | Add Parent Group |
+| [**putGroupsGroupIdPlacesPlaceId()**](GroupApi.md#putGroupsGroupIdPlacesPlaceId) | **PUT** /groups/{groupId}/places/{placeId} |  |
 | [**startStopGroupChat()**](GroupApi.md#startStopGroupChat) | **POST** /groups/{groupId}/chat | Start or stop an event chat |
 
 
@@ -365,6 +399,303 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteGroupAgegroupsAgeGroupId()`
+
+```php
+deleteGroupAgegroupsAgeGroupId($age_group_id)
+```
+
+Delete agegroup
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$age_group_id = 'age_group_id_example'; // string
+
+try {
+    $apiInstance->deleteGroupAgegroupsAgeGroupId($age_group_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupAgegroupsAgeGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **age_group_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroupGroupcategoriesGroupCategoryId()`
+
+```php
+deleteGroupGroupcategoriesGroupCategoryId($group_category_id)
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_category_id = 'group_category_id_example'; // string
+
+try {
+    $apiInstance->deleteGroupGroupcategoriesGroupCategoryId($group_category_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupGroupcategoriesGroupCategoryId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_category_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroupGrouptypesGroupTypeId()`
+
+```php
+deleteGroupGrouptypesGroupTypeId($group_type_id, $dry_run)
+```
+
+Delete group type
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_type_id = 'group_type_id_example'; // string
+$dry_run = True; // bool
+
+try {
+    $apiInstance->deleteGroupGrouptypesGroupTypeId($group_type_id, $dry_run);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupGrouptypesGroupTypeId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_type_id** | **string**|  | |
+| **dry_run** | **bool**|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroupRolesRoleId()`
+
+```php
+deleteGroupRolesRoleId($role_id)
+```
+
+Delete role
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$role_id = 'role_id_example'; // string
+
+try {
+    $apiInstance->deleteGroupRolesRoleId($role_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupRolesRoleId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroupTargetgroupsTargetGroupId()`
+
+```php
+deleteGroupTargetgroupsTargetGroupId($target_group_id)
+```
+
+delete target group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$target_group_id = 'target_group_id_example'; // string
+
+try {
+    $apiInstance->deleteGroupTargetgroupsTargetGroupId($target_group_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupTargetgroupsTargetGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **target_group_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `deleteGroupsGroupIdMeetingsMeetingId()`
 
 ```php
@@ -475,6 +806,191 @@ try {
 | **group_id** | **int**| ID of group | |
 | **meeting_id** | **string**|  | |
 | **member_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroupsGroupIdParentsParentGroupId()`
+
+```php
+deleteGroupsGroupIdParentsParentGroupId($group_id, $parent_group_id)
+```
+
+Delete Parent Group connection
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$parent_group_id = 'parent_group_id_example'; // string
+
+try {
+    $apiInstance->deleteGroupsGroupIdParentsParentGroupId($group_id, $parent_group_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupsGroupIdParentsParentGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **parent_group_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroupsGroupIdPlacesPlaceId()`
+
+```php
+deleteGroupsGroupIdPlacesPlaceId($group_id, $place_id)
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$place_id = 'place_id_example'; // string
+
+try {
+    $apiInstance->deleteGroupsGroupIdPlacesPlaceId($group_id, $place_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupsGroupIdPlacesPlaceId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **place_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteGroupsGroupIdTagsTagId()`
+
+```php
+deleteGroupsGroupIdTagsTagId($group_id, $tag_id)
+```
+
+Delete group Tag
+
+Delete a group tag
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$tag_id = 'tag_id_example'; // string
+
+try {
+    $apiInstance->deleteGroupsGroupIdTagsTagId($group_id, $tag_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->deleteGroupsGroupIdTagsTagId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **tag_id** | **string**|  | |
 
 ### Return type
 
@@ -938,6 +1454,123 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getGroupAgegroups()`
+
+```php
+getGroupAgegroups(): \StevenBuehner\ChurchTools\Model\GetGroupAgegroups200Response
+```
+
+Get agegroups
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getGroupAgegroups();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupAgegroups: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupAgegroups200Response**](../Model/GetGroupAgegroups200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupAgegroupsAgeGroupId()`
+
+```php
+getGroupAgegroupsAgeGroupId($age_group_id): \StevenBuehner\ChurchTools\Model\GetGroupAgegroupsAgeGroupId200Response
+```
+
+Get agegroup
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$age_group_id = 'age_group_id_example'; // string
+
+try {
+    $result = $apiInstance->getGroupAgegroupsAgeGroupId($age_group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupAgegroupsAgeGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **age_group_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupAgegroupsAgeGroupId200Response**](../Model/GetGroupAgegroupsAgeGroupId200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getGroupForHomepage()`
 
 ```php
@@ -986,6 +1619,240 @@ try {
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupGroupcategories()`
+
+```php
+getGroupGroupcategories(): \StevenBuehner\ChurchTools\Model\GetGroupGroupcategories200Response
+```
+
+GET Group Categories
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getGroupGroupcategories();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupGroupcategories: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupGroupcategories200Response**](../Model/GetGroupGroupcategories200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupGroupcategoriesGroupCategoryId()`
+
+```php
+getGroupGroupcategoriesGroupCategoryId($group_category_id): \StevenBuehner\ChurchTools\Model\GetGroupGroupcategoriesGroupCategoryId200Response
+```
+
+Get Group Category
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_category_id = 'group_category_id_example'; // string
+
+try {
+    $result = $apiInstance->getGroupGroupcategoriesGroupCategoryId($group_category_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupGroupcategoriesGroupCategoryId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_category_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupGroupcategoriesGroupCategoryId200Response**](../Model/GetGroupGroupcategoriesGroupCategoryId200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupGrouptypes()`
+
+```php
+getGroupGrouptypes(): \StevenBuehner\ChurchTools\Model\GetGroupGrouptypes200Response
+```
+
+Get all group types
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getGroupGrouptypes();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupGrouptypes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupGrouptypes200Response**](../Model/GetGroupGrouptypes200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupGrouptypesGroupTypeId()`
+
+```php
+getGroupGrouptypesGroupTypeId($group_type_id): \StevenBuehner\ChurchTools\Model\GetGroupGrouptypesGroupTypeId200Response
+```
+
+Get grouptype
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_type_id = 'group_type_id_example'; // string
+
+try {
+    $result = $apiInstance->getGroupGrouptypesGroupTypeId($group_type_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupGrouptypesGroupTypeId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_type_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupGrouptypesGroupTypeId200Response**](../Model/GetGroupGrouptypesGroupTypeId200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
 
 ### HTTP request headers
 
@@ -1061,7 +1928,124 @@ try {
 ## `getGroupRoles()`
 
 ```php
-getGroupRoles($group_id): \StevenBuehner\ChurchTools\Model\GetGroupRoles200Response
+getGroupRoles(): \StevenBuehner\ChurchTools\Model\GetGroupRoles200Response
+```
+
+Get roles
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getGroupRoles();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupRoles: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupRoles200Response**](../Model/GetGroupRoles200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupRolesRoleId()`
+
+```php
+getGroupRolesRoleId($role_id): \StevenBuehner\ChurchTools\Model\GetGroupRolesRoleId200Response
+```
+
+Get role
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$role_id = 'role_id_example'; // string
+
+try {
+    $result = $apiInstance->getGroupRolesRoleId($role_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupRolesRoleId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupRolesRoleId200Response**](../Model/GetGroupRolesRoleId200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupRoles_0()`
+
+```php
+getGroupRoles_0($group_id): \StevenBuehner\ChurchTools\Model\GetGroupRoles200Response
 ```
 
 Get all roles for this group
@@ -1090,10 +2074,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 $group_id = 42; // int | ID of group
 
 try {
-    $result = $apiInstance->getGroupRoles($group_id);
+    $result = $apiInstance->getGroupRoles_0($group_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->getGroupRoles: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getGroupRoles_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1182,10 +2166,127 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getGroupTargetgroups()`
+
+```php
+getGroupTargetgroups(): \StevenBuehner\ChurchTools\Model\GetGroupTargetgroups200Response
+```
+
+Get target groups
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getGroupTargetgroups();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupTargetgroups: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupTargetgroups200Response**](../Model/GetGroupTargetgroups200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupTargetgroupsTargetGroupId()`
+
+```php
+getGroupTargetgroupsTargetGroupId($target_group_id): \StevenBuehner\ChurchTools\Model\GetGroupTargetgroupsTargetGroupId200Response
+```
+
+Get target group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$target_group_id = 'target_group_id_example'; // string
+
+try {
+    $result = $apiInstance->getGroupTargetgroupsTargetGroupId($target_group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupTargetgroupsTargetGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **target_group_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupTargetgroupsTargetGroupId200Response**](../Model/GetGroupTargetgroupsTargetGroupId200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getGroups()`
 
 ```php
-getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit, $is_hidden): \StevenBuehner\ChurchTools\Model\GetGroups200Response
+getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit, $is_hidden, $order_fields, $order_directions): \StevenBuehner\ChurchTools\Model\GetGroups200Response
 ```
 
 Get all groups
@@ -1229,9 +2330,11 @@ $query = 'query_example'; // string
 $page = 1; // int | Page number to show page in pagenation. If empty, start at first page.
 $limit = 10; // int | Number of results per page.
 $is_hidden = True; // bool | Filters groups by hidden flag
+$order_fields = array('order_fields_example'); // string[] | The fields to order by
+$order_directions = 'order_directions_example'; // string | The order direction ASC or DESC for the order_fields
 
 try {
-    $result = $apiInstance->getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit, $is_hidden);
+    $result = $apiInstance->getGroups($ids, $campus_ids, $agegroup_ids, $group_status_ids, $group_category_ids, $target_group_ids, $weekdays, $group_type_ids, $is_open_for_members, $is_public, $show_overdue_groups, $show_overdue_groups_respect_settings, $show_inactive_groups, $without_my_groups, $query, $page, $limit, $is_hidden, $order_fields, $order_directions);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupApi->getGroups: ', $e->getMessage(), PHP_EOL;
@@ -1260,6 +2363,8 @@ try {
 | **page** | **int**| Page number to show page in pagenation. If empty, start at first page. | [optional] [default to 1] |
 | **limit** | **int**| Number of results per page. | [optional] [default to 10] |
 | **is_hidden** | **bool**| Filters groups by hidden flag | [optional] |
+| **order_fields** | [**string[]**](../Model/string.md)| The fields to order by | [optional] |
+| **order_directions** | **string**| The order direction ASC or DESC for the order_fields | [optional] |
 
 ### Return type
 
@@ -1399,6 +2504,69 @@ try {
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupsGroupIdMembersExport()`
+
+```php
+getGroupsGroupIdMembersExport($group_id, $type)
+```
+
+Export Groupmebers
+
+Export the members of a group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$type = 'type_example'; // string | Type of export file
+
+try {
+    $apiInstance->getGroupsGroupIdMembersExport($group_id, $type);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupsGroupIdMembersExport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **type** | **string**| Type of export file | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1674,6 +2842,66 @@ try {
 ### Return type
 
 [**\StevenBuehner\ChurchTools\Model\GetGroupsMembers200Response**](../Model/GetGroupsMembers200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getGroupsTags()`
+
+```php
+getGroupsTags($ids): \StevenBuehner\ChurchTools\Model\GetGroupsTags200Response
+```
+
+Your GET endpoint
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ids = array('ids_example'); // string[] | Group Ids
+
+try {
+    $result = $apiInstance->getGroupsTags($ids);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->getGroupsTags: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | [**string[]**](../Model/string.md)| Group Ids | [optional] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetGroupsTags200Response**](../Model/GetGroupsTags200Response.md)
 
 ### Authorization
 
@@ -2236,6 +3464,301 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postGroupAgegroups()`
+
+```php
+postGroupAgegroups($post_group_agegroups_request)
+```
+
+Create agegroup
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_group_agegroups_request = new \StevenBuehner\ChurchTools\Model\PostGroupAgegroupsRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupAgegroupsRequest
+
+try {
+    $apiInstance->postGroupAgegroups($post_group_agegroups_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroupAgegroups: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_group_agegroups_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupAgegroupsRequest**](../Model/PostGroupAgegroupsRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postGroupGroupcategories()`
+
+```php
+postGroupGroupcategories($post_group_groupcategories_request)
+```
+
+Create Group Category
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_group_groupcategories_request = new \StevenBuehner\ChurchTools\Model\PostGroupGroupcategoriesRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupGroupcategoriesRequest
+
+try {
+    $apiInstance->postGroupGroupcategories($post_group_groupcategories_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroupGroupcategories: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_group_groupcategories_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupGroupcategoriesRequest**](../Model/PostGroupGroupcategoriesRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postGroupGrouptypes()`
+
+```php
+postGroupGrouptypes($post_group_grouptypes_request)
+```
+
+Create group type
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_group_grouptypes_request = new \StevenBuehner\ChurchTools\Model\PostGroupGrouptypesRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupGrouptypesRequest
+
+try {
+    $apiInstance->postGroupGrouptypes($post_group_grouptypes_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroupGrouptypes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_group_grouptypes_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupGrouptypesRequest**](../Model/PostGroupGrouptypesRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postGroupRoles()`
+
+```php
+postGroupRoles($post_group_roles_request)
+```
+
+Create Role
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_group_roles_request = new \StevenBuehner\ChurchTools\Model\PostGroupRolesRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupRolesRequest
+
+try {
+    $apiInstance->postGroupRoles($post_group_roles_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroupRoles: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_group_roles_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupRolesRequest**](../Model/PostGroupRolesRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postGroupTargetgroups()`
+
+```php
+postGroupTargetgroups($post_group_targetgroups_request)
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_group_targetgroups_request = new \StevenBuehner\ChurchTools\Model\PostGroupTargetgroupsRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupTargetgroupsRequest
+
+try {
+    $apiInstance->postGroupTargetgroups($post_group_targetgroups_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroupTargetgroups: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_group_targetgroups_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupTargetgroupsRequest**](../Model/PostGroupTargetgroupsRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `postGroups()`
 
 ```php
@@ -2298,6 +3821,67 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postGroupsGroupIdGroupstatus()`
+
+```php
+postGroupsGroupIdGroupstatus($group_id, $post_groups_group_id_groupstatus_request)
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$post_groups_group_id_groupstatus_request = new \StevenBuehner\ChurchTools\Model\PostGroupsGroupIdGroupstatusRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupsGroupIdGroupstatusRequest
+
+try {
+    $apiInstance->postGroupsGroupIdGroupstatus($group_id, $post_groups_group_id_groupstatus_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroupsGroupIdGroupstatus: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **post_groups_group_id_groupstatus_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsGroupIdGroupstatusRequest**](../Model/PostGroupsGroupIdGroupstatusRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `postGroupsGroupIdMeetingsMeetingIdMembersMissing()`
 
 ```php
@@ -2345,6 +3929,67 @@ try {
 | **group_id** | **string**|  | |
 | **meeting_id** | **string**|  | |
 | **post_groups_group_id_meetings_meeting_id_members_missing_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest**](../Model/PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postGroupsGroupIdPlaces()`
+
+```php
+postGroupsGroupIdPlaces($group_id, $post_groups_group_id_places_request)
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 42; // int | ID of group
+$post_groups_group_id_places_request = new \StevenBuehner\ChurchTools\Model\PostGroupsGroupIdPlacesRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupsGroupIdPlacesRequest
+
+try {
+    $apiInstance->postGroupsGroupIdPlaces($group_id, $post_groups_group_id_places_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->postGroupsGroupIdPlaces: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **int**| ID of group | |
+| **post_groups_group_id_places_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupsGroupIdPlacesRequest**](../Model/PostGroupsGroupIdPlacesRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2541,6 +4186,310 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putGroupAgegroupsAgeGroupId()`
+
+```php
+putGroupAgegroupsAgeGroupId($age_group_id, $post_group_agegroups_request)
+```
+
+Update agegroup
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$age_group_id = 'age_group_id_example'; // string
+$post_group_agegroups_request = new \StevenBuehner\ChurchTools\Model\PostGroupAgegroupsRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupAgegroupsRequest
+
+try {
+    $apiInstance->putGroupAgegroupsAgeGroupId($age_group_id, $post_group_agegroups_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->putGroupAgegroupsAgeGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **age_group_id** | **string**|  | |
+| **post_group_agegroups_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupAgegroupsRequest**](../Model/PostGroupAgegroupsRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putGroupGroupcategoriesGroupCategoryId()`
+
+```php
+putGroupGroupcategoriesGroupCategoryId($group_category_id, $post_group_groupcategories_request)
+```
+
+Update Group Category
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_category_id = 'group_category_id_example'; // string
+$post_group_groupcategories_request = new \StevenBuehner\ChurchTools\Model\PostGroupGroupcategoriesRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupGroupcategoriesRequest
+
+try {
+    $apiInstance->putGroupGroupcategoriesGroupCategoryId($group_category_id, $post_group_groupcategories_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->putGroupGroupcategoriesGroupCategoryId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_category_id** | **string**|  | |
+| **post_group_groupcategories_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupGroupcategoriesRequest**](../Model/PostGroupGroupcategoriesRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putGroupGrouptypesGroupTypeId()`
+
+```php
+putGroupGrouptypesGroupTypeId($group_type_id, $put_group_grouptypes_group_type_id_request)
+```
+
+Update GroupType
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_type_id = 'group_type_id_example'; // string
+$put_group_grouptypes_group_type_id_request = new \StevenBuehner\ChurchTools\Model\PutGroupGrouptypesGroupTypeIdRequest(); // \StevenBuehner\ChurchTools\Model\PutGroupGrouptypesGroupTypeIdRequest
+
+try {
+    $apiInstance->putGroupGrouptypesGroupTypeId($group_type_id, $put_group_grouptypes_group_type_id_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->putGroupGrouptypesGroupTypeId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_type_id** | **string**|  | |
+| **put_group_grouptypes_group_type_id_request** | [**\StevenBuehner\ChurchTools\Model\PutGroupGrouptypesGroupTypeIdRequest**](../Model/PutGroupGrouptypesGroupTypeIdRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putGroupRolesRoleId()`
+
+```php
+putGroupRolesRoleId($role_id, $post_group_roles_request)
+```
+
+Update Role
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$role_id = 'role_id_example'; // string
+$post_group_roles_request = new \StevenBuehner\ChurchTools\Model\PostGroupRolesRequest(); // \StevenBuehner\ChurchTools\Model\PostGroupRolesRequest
+
+try {
+    $apiInstance->putGroupRolesRoleId($role_id, $post_group_roles_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->putGroupRolesRoleId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
+| **post_group_roles_request** | [**\StevenBuehner\ChurchTools\Model\PostGroupRolesRequest**](../Model/PostGroupRolesRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putGroupTargetgroupsTargetGroupId()`
+
+```php
+putGroupTargetgroupsTargetGroupId($target_group_id): \StevenBuehner\ChurchTools\Model\PostGroupTargetgroupsRequest
+```
+
+Update target group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$target_group_id = 'target_group_id_example'; // string
+
+try {
+    $result = $apiInstance->putGroupTargetgroupsTargetGroupId($target_group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->putGroupTargetgroupsTargetGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **target_group_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PostGroupTargetgroupsRequest**](../Model/PostGroupTargetgroupsRequest.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `putGroupsGroupIdMeetingsMeetingId()`
 
 ```php
@@ -2588,6 +4537,130 @@ try {
 | **group_id** | **int**| ID of group | |
 | **meeting_id** | **string**|  | |
 | **put_groups_group_id_meetings_meeting_id_request** | [**\StevenBuehner\ChurchTools\Model\PutGroupsGroupIdMeetingsMeetingIdRequest**](../Model/PutGroupsGroupIdMeetingsMeetingIdRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putGroupsGroupIdParentsParentGroupId()`
+
+```php
+putGroupsGroupIdParentsParentGroupId($group_id, $parent_group_id)
+```
+
+Add Parent Group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$parent_group_id = 'parent_group_id_example'; // string
+
+try {
+    $apiInstance->putGroupsGroupIdParentsParentGroupId($group_id, $parent_group_id);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->putGroupsGroupIdParentsParentGroupId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **parent_group_id** | **string**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putGroupsGroupIdPlacesPlaceId()`
+
+```php
+putGroupsGroupIdPlacesPlaceId($group_id, $place_id, $put_groups_group_id_places_place_id_request)
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$group_id = 'group_id_example'; // string
+$place_id = 'place_id_example'; // string
+$put_groups_group_id_places_place_id_request = new \StevenBuehner\ChurchTools\Model\PutGroupsGroupIdPlacesPlaceIdRequest(); // \StevenBuehner\ChurchTools\Model\PutGroupsGroupIdPlacesPlaceIdRequest
+
+try {
+    $apiInstance->putGroupsGroupIdPlacesPlaceId($group_id, $place_id, $put_groups_group_id_places_place_id_request);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupApi->putGroupsGroupIdPlacesPlaceId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **group_id** | **string**|  | |
+| **place_id** | **string**|  | |
+| **put_groups_group_id_places_place_id_request** | [**\StevenBuehner\ChurchTools\Model\PutGroupsGroupIdPlacesPlaceIdRequest**](../Model/PutGroupsGroupIdPlacesPlaceIdRequest.md)|  | [optional] |
 
 ### Return type
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age_groups** | [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataAgeGroupsInner[]**](GetPersonMasterdata200ResponseDataAgeGroupsInner.md) |  | [optional]
 **campus** | **mixed** |  | [optional]
-**group_category** | [**\StevenBuehner\ChurchTools\Model\GetPublicgroup200ResponseDataInformationGroupCategory**](GetPublicgroup200ResponseDataInformationGroupCategory.md) |  | [optional]
+**group_category** | [**\StevenBuehner\ChurchTools\Model\GetGroupGroupcategories200ResponseDataInner**](GetGroupGroupcategories200ResponseDataInner.md) |  | [optional]
 **group_places** | [**\StevenBuehner\ChurchTools\Model\GetGrupsIdPlaces200Response[]**](GetGrupsIdPlaces200Response.md) |  | [optional]
 **image_url** | **string** |  | [optional]
 **meeting_time** | **string** |  | [optional]

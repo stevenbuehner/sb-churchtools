@@ -116,13 +116,25 @@ Class | Method | HTTP request | Description
 *CheckinApi* | [**getQRCodeCheckin**](docs/Api/CheckinApi.md#getqrcodecheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
 *CheckinApi* | [**postCheckinPersons**](docs/Api/CheckinApi.md#postcheckinpersons) | **POST** /checkin/persons | Create new person and add to group
 *CheckinApi* | [**putCheckinPersons**](docs/Api/CheckinApi.md#putcheckinpersons) | **PUT** /checkin/persons | Put existing person into group
+*ChurchQueryApi* | [**postChurchqueryDebugExport**](docs/Api/ChurchQueryApi.md#postchurchquerydebugexport) | **POST** /churchquery/debug/export | Export result of ChurchQuery
 *ContactLabelApi* | [**deleteContactlabel**](docs/Api/ContactLabelApi.md#deletecontactlabel) | **DELETE** /contactlabels/{id} | Delete Contact Label
 *ContactLabelApi* | [**getContactlabel**](docs/Api/ContactLabelApi.md#getcontactlabel) | **GET** /contactlabels/{id} | Get Contact Label
 *ContactLabelApi* | [**getContactlabels**](docs/Api/ContactLabelApi.md#getcontactlabels) | **GET** /contactlabels | Get All Contact Labels
 *ContactLabelApi* | [**postContactlabels**](docs/Api/ContactLabelApi.md#postcontactlabels) | **POST** /contactlabels | Create new Contact Label
 *ContactLabelApi* | [**putContactlabel**](docs/Api/ContactLabelApi.md#putcontactlabel) | **PUT** /contactlabels/{id} | Update Contact Label
+*DefaultApi* | [**deleteRuleset**](docs/Api/DefaultApi.md#deleteruleset) | **DELETE** /dynamicgroups/{groupId}/ruleset | 
+*DefaultApi* | [**getDbfieldsFieldId**](docs/Api/DefaultApi.md#getdbfieldsfieldid) | **GET** /dbfields/{fieldId} | GET DB Field
+*DefaultApi* | [**getGroupsGroupIdTagsTagId**](docs/Api/DefaultApi.md#getgroupsgroupidtagstagid) | **GET** /groups/{groupId}/tags/{tagId} | Your GET endpoint
 *DepartmentApi* | [**getDepartments**](docs/Api/DepartmentApi.md#getdepartments) | **GET** /departments | Get all departments
+*DynamicGroupsApi* | [**editRuleset**](docs/Api/DynamicGroupsApi.md#editruleset) | **PUT** /dynamicgroups/{groupId}/ruleset | ut ruleset
+*DynamicGroupsApi* | [**getDynamicgroupRuleset**](docs/Api/DynamicGroupsApi.md#getdynamicgroupruleset) | **GET** /dynamicgroups/{groupId}/ruleset | get ruleset
+*DynamicGroupsApi* | [**getDynamicgroupStatus**](docs/Api/DynamicGroupsApi.md#getdynamicgroupstatus) | **GET** /dynamicgroups/{groupId}/status | status of dynamic group
+*DynamicGroupsApi* | [**getDynamicgroups**](docs/Api/DynamicGroupsApi.md#getdynamicgroups) | **GET** /dynamicgroups | get all dynamic groups
+*DynamicGroupsApi* | [**getDynamicgroups_0**](docs/Api/DynamicGroupsApi.md#getdynamicgroups_0) | **POST** /dynamicgroups/refresh | refresh all dynamic groups
+*DynamicGroupsApi* | [**putDynamicgrouopStatus**](docs/Api/DynamicGroupsApi.md#putdynamicgrouopstatus) | **PUT** /dynamicgroups/{groupId}/status | get status of dynamic Group
+*DynamicGroupsApi* | [**refreshDynamicgroups**](docs/Api/DynamicGroupsApi.md#refreshdynamicgroups) | **POST** /dynamicgroups/{groupId}/refresh | refresh one dynamic Group
 *EventApi* | [**agendaExport**](docs/Api/EventApi.md#agendaexport) | **POST** /agendas/{agendaId}/export | Exports the agenda
+*EventApi* | [**deleteEventsEventIdFactsFactId**](docs/Api/EventApi.md#deleteeventseventidfactsfactid) | **DELETE** /events/{eventId}/facts/{factId} | Delete event fact
 *EventApi* | [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy**](docs/Api/EventApi.md#deletepersonideventseventidservicesserviceidexchangerequestscopy) | **DELETE** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request
 *EventApi* | [**deletePersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#deletepersonidexchangerequestsrequestid) | **DELETE** /persons/{personId}/exchangerequests/{requestId} | Decline a service exchange request
 *EventApi* | [**getAgendaForEvent**](docs/Api/EventApi.md#getagendaforevent) | **GET** /events/{eventId}/agenda | Get agenda for event
@@ -130,16 +142,28 @@ Class | Method | HTTP request | Description
 *EventApi* | [**getEvent**](docs/Api/EventApi.md#getevent) | **GET** /events/{eventId} | Get a single event
 *EventApi* | [**getEventIcal**](docs/Api/EventApi.md#geteventical) | **GET** /events/ical | 
 *EventApi* | [**getEventMasterdata**](docs/Api/EventApi.md#geteventmasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
+*EventApi* | [**getEventsEventIdFacts**](docs/Api/EventApi.md#geteventseventidfacts) | **GET** /events/{eventId}/facts | Read facts for event
+*EventApi* | [**getEventsEventIdFactsFactId**](docs/Api/EventApi.md#geteventseventidfactsfactid) | **GET** /events/{eventId}/facts/{factId} | Read one event fact
 *EventApi* | [**getPersonEvents**](docs/Api/EventApi.md#getpersonevents) | **GET** /persons/{personId}/events | Get events that person is involved with
 *EventApi* | [**getSongsOfAgenda**](docs/Api/EventApi.md#getsongsofagenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
+*EventApi* | [**personEventsServices**](docs/Api/EventApi.md#personeventsservices) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service
 *EventApi* | [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet**](docs/Api/EventApi.md#personspersonideventseventidservicesserviceidexchangerequestscandidatesget) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request
-*EventApi* | [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet**](docs/Api/EventApi.md#personspersonideventseventidservicesserviceidexchangerequestsget) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service
 *EventApi* | [**personsPersonIdExchangerequestsGet**](docs/Api/EventApi.md#personspersonidexchangerequestsget) | **GET** /persons/{personId}/exchangerequests | Get all service exchange requests for a user
 *EventApi* | [**postPersonIdEventsEventIdServicesServiceIdExchangerequests**](docs/Api/EventApi.md#postpersonideventseventidservicesserviceidexchangerequests) | **POST** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request
+*EventApi* | [**putEventsEventIdFactsFactId**](docs/Api/EventApi.md#puteventseventidfactsfactid) | **PUT** /events/{eventId}/facts/{factId} | Create or update event fact
 *EventApi* | [**putPersonIdExchangerequestsRequestId**](docs/Api/EventApi.md#putpersonidexchangerequestsrequestid) | **PUT** /persons/{personId}/exchangerequests/{requestId} | Accept a service exchange request
 *EventApi* | [**sendAgendaEmail**](docs/Api/EventApi.md#sendagendaemail) | **POST** /agendas/send | Send agenda email to recipients
 *EventApi* | [**sendEventEmail**](docs/Api/EventApi.md#sendeventemail) | **POST** /events/send | Send Mail to Event Participants
 *EventApi* | [**startStopEventChat**](docs/Api/EventApi.md#startstopeventchat) | **POST** /events/{eventId}/chat | Start or stop an event chat
+*FactApi* | [**deleteEventsEventIdFactsFactId**](docs/Api/FactApi.md#deleteeventseventidfactsfactid) | **DELETE** /events/{eventId}/facts/{factId} | Delete event fact
+*FactApi* | [**deleteFactsId**](docs/Api/FactApi.md#deletefactsid) | **DELETE** /facts/{id} | Delete Fact
+*FactApi* | [**getEventsEventIdFacts**](docs/Api/FactApi.md#geteventseventidfacts) | **GET** /events/{eventId}/facts | Read facts for event
+*FactApi* | [**getEventsEventIdFactsFactId**](docs/Api/FactApi.md#geteventseventidfactsfactid) | **GET** /events/{eventId}/facts/{factId} | Read one event fact
+*FactApi* | [**getFacts**](docs/Api/FactApi.md#getfacts) | **GET** /facts | Get all facts
+*FactApi* | [**getFactsId**](docs/Api/FactApi.md#getfactsid) | **GET** /facts/{id} | Get One Fact
+*FactApi* | [**postFacts**](docs/Api/FactApi.md#postfacts) | **POST** /facts | Create new fact
+*FactApi* | [**putEventsEventIdFactsFactId**](docs/Api/FactApi.md#puteventseventidfactsfactid) | **PUT** /events/{eventId}/facts/{factId} | Create or update event fact
+*FactApi* | [**putFactsId**](docs/Api/FactApi.md#putfactsid) | **PUT** /facts/{id} | Update Fact
 *FieldApi* | [**getAllFields**](docs/Api/FieldApi.md#getallfields) | **GET** /fields | Get all fields
 *FileApi* | [**deleteFiles**](docs/Api/FileApi.md#deletefiles) | **DELETE** /files/{domainType}/{domainIdentifier} | Delete files that are matching the domainType and domainIdentifier
 *FileApi* | [**deleteFilesId**](docs/Api/FileApi.md#deletefilesid) | **DELETE** /files/{id} | 
@@ -225,20 +249,37 @@ Class | Method | HTTP request | Description
 *FinanceApi* | [**updateTaxType**](docs/Api/FinanceApi.md#updatetaxtype) | **PUT** /finance/taxtypes/{id} | Update tax type
 *FinanceApi* | [**updateTransaction**](docs/Api/FinanceApi.md#updatetransaction) | **PUT** /finance/transactions/{id} | Update transaction
 *FinanceApi* | [**updateTransactionPurpose**](docs/Api/FinanceApi.md#updatetransactionpurpose) | **PUT** /finance/transactionpurposes/{id} | Update transaction purpose
+*GeneralApi* | [**deleteDbfieldsFieldId**](docs/Api/GeneralApi.md#deletedbfieldsfieldid) | **DELETE** /dbfields/{fieldId} | Delete db field
+*GeneralApi* | [**deleteDbfieldsFieldIdOptionsOptionId**](docs/Api/GeneralApi.md#deletedbfieldsfieldidoptionsoptionid) | **DELETE** /dbfields/{fieldId}/options/{optionId} | Delete db field option
 *GeneralApi* | [**deleteSimulate**](docs/Api/GeneralApi.md#deletesimulate) | **DELETE** /simulate | 
+*GeneralApi* | [**getApiFields**](docs/Api/GeneralApi.md#getapifields) | **GET** /dbfields | GET DB Fields
 *GeneralApi* | [**getApiInfo**](docs/Api/GeneralApi.md#getapiinfo) | **GET** /info | Information about API
 *GeneralApi* | [**getCsrftoken**](docs/Api/GeneralApi.md#getcsrftoken) | **GET** /csrftoken | CSRF token for the current user
 *GeneralApi* | [**getCurrentUser**](docs/Api/GeneralApi.md#getcurrentuser) | **GET** /whoami | Currently logged in user.
+*GeneralApi* | [**getDbfieldsFieldIdOptions**](docs/Api/GeneralApi.md#getdbfieldsfieldidoptions) | **GET** /dbfields/{fieldId}/options | Get options for a db field
+*GeneralApi* | [**getDbfieldsFieldIdOptionsMetadata**](docs/Api/GeneralApi.md#getdbfieldsfieldidoptionsmetadata) | **GET** /dbfields/{fieldId}/options/metadata | Get metadata for field options
 *GeneralApi* | [**getSearch**](docs/Api/GeneralApi.md#getsearch) | **GET** /search | Global Search
+*GeneralApi* | [**postApiDbfields**](docs/Api/GeneralApi.md#postapidbfields) | **POST** /dbfields | Create DB Field
+*GeneralApi* | [**postDbfieldsFieldIdOptions**](docs/Api/GeneralApi.md#postdbfieldsfieldidoptions) | **POST** /dbfields/{fieldId}/options | Create db field option
 *GeneralApi* | [**postLogin**](docs/Api/GeneralApi.md#postlogin) | **POST** /login | Login with username
 *GeneralApi* | [**postSimulate**](docs/Api/GeneralApi.md#postsimulate) | **POST** /simulate | 
+*GeneralApi* | [**putDbfieldsFieldId**](docs/Api/GeneralApi.md#putdbfieldsfieldid) | **PUT** /dbfields/{fieldId} | Update db field
+*GeneralApi* | [**putDbfieldsFieldIdOptionsOptionId**](docs/Api/GeneralApi.md#putdbfieldsfieldidoptionsoptionid) | **PUT** /dbfields/{fieldId}/options/{optionId} | Update db field option
 *GroupApi* | [**checkin**](docs/Api/GroupApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
 *GroupApi* | [**createMeeting**](docs/Api/GroupApi.md#createmeeting) | **POST** /groups/{groupId}/meetings | Create a group meeting
 *GroupApi* | [**createOrUpdateMember**](docs/Api/GroupApi.md#createorupdatemember) | **PUT** /groups/{groupId}/members/{personId} | Create/Update a group member
 *GroupApi* | [**deleteAutomaticEmail**](docs/Api/GroupApi.md#deleteautomaticemail) | **DELETE** /groups/{groupId}/emails/{emailId} | Delete automatic email
 *GroupApi* | [**deleteGroup**](docs/Api/GroupApi.md#deletegroup) | **DELETE** /groups/{groupId} | 
+*GroupApi* | [**deleteGroupAgegroupsAgeGroupId**](docs/Api/GroupApi.md#deletegroupagegroupsagegroupid) | **DELETE** /group/agegroups/{ageGroupId} | Delete agegroup
+*GroupApi* | [**deleteGroupGroupcategoriesGroupCategoryId**](docs/Api/GroupApi.md#deletegroupgroupcategoriesgroupcategoryid) | **DELETE** /group/groupcategories/{groupCategoryId} | 
+*GroupApi* | [**deleteGroupGrouptypesGroupTypeId**](docs/Api/GroupApi.md#deletegroupgrouptypesgrouptypeid) | **DELETE** /group/grouptypes/{groupTypeId} | Delete group type
+*GroupApi* | [**deleteGroupRolesRoleId**](docs/Api/GroupApi.md#deletegrouprolesroleid) | **DELETE** /group/roles/{roleId} | Delete role
+*GroupApi* | [**deleteGroupTargetgroupsTargetGroupId**](docs/Api/GroupApi.md#deletegrouptargetgroupstargetgroupid) | **DELETE** /group/targetgroups/{targetGroupId} | delete target group
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingid) | **DELETE** /groups/{groupId}/meetings/{meetingId} | 
 *GroupApi* | [**deleteGroupsGroupIdMeetingsMeetingIdMembersMemberId**](docs/Api/GroupApi.md#deletegroupsgroupidmeetingsmeetingidmembersmemberid) | **DELETE** /groups/{groupId}/meetings/{meetingId}/members/{memberId} | Revoke checkin
+*GroupApi* | [**deleteGroupsGroupIdParentsParentGroupId**](docs/Api/GroupApi.md#deletegroupsgroupidparentsparentgroupid) | **DELETE** /groups/{groupId}/parents/{parentGroupId} | Delete Parent Group connection
+*GroupApi* | [**deleteGroupsGroupIdPlacesPlaceId**](docs/Api/GroupApi.md#deletegroupsgroupidplacesplaceid) | **DELETE** /groups/{groupId}/places/{placeId} | 
+*GroupApi* | [**deleteGroupsGroupIdTagsTagId**](docs/Api/GroupApi.md#deletegroupsgroupidtagstagid) | **DELETE** /groups/{groupId}/tags/{tagId} | Delete group Tag
 *GroupApi* | [**deleteMember**](docs/Api/GroupApi.md#deletemember) | **DELETE** /groups/{groupId}/members/{personId} | Delete a group member
 *GroupApi* | [**getAllGroupMembers**](docs/Api/GroupApi.md#getallgroupmembers) | **GET** /groups/{groupId}/members | Get all group members
 *GroupApi* | [**getAllGroupsForPerson**](docs/Api/GroupApi.md#getallgroupsforperson) | **GET** /persons/{personId}/groups | Get all groups a member is in
@@ -246,17 +287,29 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**getAutomaticEmail**](docs/Api/GroupApi.md#getautomaticemail) | **GET** /groups/{groupId}/emails/{emailId} | Get one automatic email
 *GroupApi* | [**getAutomaticEmails**](docs/Api/GroupApi.md#getautomaticemails) | **GET** /groups/{groupId}/emails | Get all automatic emails of a group
 *GroupApi* | [**getGroup**](docs/Api/GroupApi.md#getgroup) | **GET** /groups/{groupId} | Get a group
+*GroupApi* | [**getGroupAgegroups**](docs/Api/GroupApi.md#getgroupagegroups) | **GET** /group/agegroups | Get agegroups
+*GroupApi* | [**getGroupAgegroupsAgeGroupId**](docs/Api/GroupApi.md#getgroupagegroupsagegroupid) | **GET** /group/agegroups/{ageGroupId} | Get agegroup
 *GroupApi* | [**getGroupForHomepage**](docs/Api/GroupApi.md#getgroupforhomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
+*GroupApi* | [**getGroupGroupcategories**](docs/Api/GroupApi.md#getgroupgroupcategories) | **GET** /group/groupcategories | GET Group Categories
+*GroupApi* | [**getGroupGroupcategoriesGroupCategoryId**](docs/Api/GroupApi.md#getgroupgroupcategoriesgroupcategoryid) | **GET** /group/groupcategories/{groupCategoryId} | Get Group Category
+*GroupApi* | [**getGroupGrouptypes**](docs/Api/GroupApi.md#getgroupgrouptypes) | **GET** /group/grouptypes | Get all group types
+*GroupApi* | [**getGroupGrouptypesGroupTypeId**](docs/Api/GroupApi.md#getgroupgrouptypesgrouptypeid) | **GET** /group/grouptypes/{groupTypeId} | Get grouptype
 *GroupApi* | [**getGroupHomepage**](docs/Api/GroupApi.md#getgrouphomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
-*GroupApi* | [**getGroupRoles**](docs/Api/GroupApi.md#getgrouproles) | **GET** /groups/{groupId}/roles | Get all roles for this group
+*GroupApi* | [**getGroupRoles**](docs/Api/GroupApi.md#getgrouproles) | **GET** /group/roles | Get roles
+*GroupApi* | [**getGroupRolesRoleId**](docs/Api/GroupApi.md#getgrouprolesroleid) | **GET** /group/roles/{roleId} | Get role
+*GroupApi* | [**getGroupRoles_0**](docs/Api/GroupApi.md#getgrouproles_0) | **GET** /groups/{groupId}/roles | Get all roles for this group
 *GroupApi* | [**getGroupStatistics**](docs/Api/GroupApi.md#getgroupstatistics) | **GET** /groups/{groupId}/statistics | Fetch facts about group
+*GroupApi* | [**getGroupTargetgroups**](docs/Api/GroupApi.md#getgrouptargetgroups) | **GET** /group/targetgroups | Get target groups
+*GroupApi* | [**getGroupTargetgroupsTargetGroupId**](docs/Api/GroupApi.md#getgrouptargetgroupstargetgroupid) | **GET** /group/targetgroups/{targetGroupId} | Get target group
 *GroupApi* | [**getGroups**](docs/Api/GroupApi.md#getgroups) | **GET** /groups | Get all groups
 *GroupApi* | [**getGroupsGroupIdMeetingsMeetingIdMembers**](docs/Api/GroupApi.md#getgroupsgroupidmeetingsmeetingidmembers) | **GET** /groups/{groupId}/meetings/{meetingId}/members | Get Group Meeting Members
 *GroupApi* | [**getGroupsGroupIdMemberfields**](docs/Api/GroupApi.md#getgroupsgroupidmemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields
+*GroupApi* | [**getGroupsGroupIdMembersExport**](docs/Api/GroupApi.md#getgroupsgroupidmembersexport) | **GET** /groups/{groupId}/members/export | Export Groupmebers
 *GroupApi* | [**getGroupsGroupIdMembersStatistics**](docs/Api/GroupApi.md#getgroupsgroupidmembersstatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members
 *GroupApi* | [**getGroupsGroupIdTags**](docs/Api/GroupApi.md#getgroupsgroupidtags) | **GET** /groups/{groupId}/tags | Fetch group tags
 *GroupApi* | [**getGroupsHierarchies**](docs/Api/GroupApi.md#getgroupshierarchies) | **GET** /groups/hierarchies | Get all group hierarchies
 *GroupApi* | [**getGroupsMembers**](docs/Api/GroupApi.md#getgroupsmembers) | **GET** /groups/members | Get all group members
+*GroupApi* | [**getGroupsTags**](docs/Api/GroupApi.md#getgroupstags) | **GET** /groups/tags | Your GET endpoint
 *GroupApi* | [**getGrupsIdPlaces**](docs/Api/GroupApi.md#getgrupsidplaces) | **GET** /groups/{groupId}/places | Get all places of a group
 *GroupApi* | [**getPersonMasterdata**](docs/Api/GroupApi.md#getpersonmasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
 *GroupApi* | [**getPublicgroupsGroupIdForm**](docs/Api/GroupApi.md#getpublicgroupsgroupidform) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
@@ -266,12 +319,26 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**patchGroup**](docs/Api/GroupApi.md#patchgroup) | **PATCH** /groups/{groupId} | Update Group
 *GroupApi* | [**patchGroupsGroupIdRolesRoleId**](docs/Api/GroupApi.md#patchgroupsgroupidrolesroleid) | **PATCH** /groups/{groupId}/roles/{roleId} | save role
 *GroupApi* | [**postAutomaticEmail**](docs/Api/GroupApi.md#postautomaticemail) | **POST** /groups/{groupId}/emails | Save new automatic email for a group role
+*GroupApi* | [**postGroupAgegroups**](docs/Api/GroupApi.md#postgroupagegroups) | **POST** /group/agegroups | Create agegroup
+*GroupApi* | [**postGroupGroupcategories**](docs/Api/GroupApi.md#postgroupgroupcategories) | **POST** /group/groupcategories | Create Group Category
+*GroupApi* | [**postGroupGrouptypes**](docs/Api/GroupApi.md#postgroupgrouptypes) | **POST** /group/grouptypes | Create group type
+*GroupApi* | [**postGroupRoles**](docs/Api/GroupApi.md#postgrouproles) | **POST** /group/roles | Create Role
+*GroupApi* | [**postGroupTargetgroups**](docs/Api/GroupApi.md#postgrouptargetgroups) | **POST** /group/targetgroups | 
 *GroupApi* | [**postGroups**](docs/Api/GroupApi.md#postgroups) | **POST** /groups | Create Group
+*GroupApi* | [**postGroupsGroupIdGroupstatus**](docs/Api/GroupApi.md#postgroupsgroupidgroupstatus) | **POST** /groups/{groupId}/grouptype | 
 *GroupApi* | [**postGroupsGroupIdMeetingsMeetingIdMembersMissing**](docs/Api/GroupApi.md#postgroupsgroupidmeetingsmeetingidmembersmissing) | **POST** /groups/{groupId}/meetings/{meetingId}/members/missing | 
+*GroupApi* | [**postGroupsGroupIdPlaces**](docs/Api/GroupApi.md#postgroupsgroupidplaces) | **POST** /groups/{groupId}/places | 
 *GroupApi* | [**postPublicgroupsGroupIdMailToLeaders**](docs/Api/GroupApi.md#postpublicgroupsgroupidmailtoleaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
 *GroupApi* | [**postPublicgroupsGroupIdSignup**](docs/Api/GroupApi.md#postpublicgroupsgroupidsignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
 *GroupApi* | [**putAutomaticEmail**](docs/Api/GroupApi.md#putautomaticemail) | **PUT** /groups/{groupId}/emails/{emailId} | Update automatic email
+*GroupApi* | [**putGroupAgegroupsAgeGroupId**](docs/Api/GroupApi.md#putgroupagegroupsagegroupid) | **PUT** /group/agegroups/{ageGroupId} | Update agegroup
+*GroupApi* | [**putGroupGroupcategoriesGroupCategoryId**](docs/Api/GroupApi.md#putgroupgroupcategoriesgroupcategoryid) | **PUT** /group/groupcategories/{groupCategoryId} | Update Group Category
+*GroupApi* | [**putGroupGrouptypesGroupTypeId**](docs/Api/GroupApi.md#putgroupgrouptypesgrouptypeid) | **PUT** /group/grouptypes/{groupTypeId} | Update GroupType
+*GroupApi* | [**putGroupRolesRoleId**](docs/Api/GroupApi.md#putgrouprolesroleid) | **PUT** /group/roles/{roleId} | Update Role
+*GroupApi* | [**putGroupTargetgroupsTargetGroupId**](docs/Api/GroupApi.md#putgrouptargetgroupstargetgroupid) | **PUT** /group/targetgroups/{targetGroupId} | Update target group
 *GroupApi* | [**putGroupsGroupIdMeetingsMeetingId**](docs/Api/GroupApi.md#putgroupsgroupidmeetingsmeetingid) | **PUT** /groups/{groupId}/meetings/{meetingId} | 
+*GroupApi* | [**putGroupsGroupIdParentsParentGroupId**](docs/Api/GroupApi.md#putgroupsgroupidparentsparentgroupid) | **PUT** /groups/{groupId}/parents/{parentGroupId} | Add Parent Group
+*GroupApi* | [**putGroupsGroupIdPlacesPlaceId**](docs/Api/GroupApi.md#putgroupsgroupidplacesplaceid) | **PUT** /groups/{groupId}/places/{placeId} | 
 *GroupApi* | [**startStopGroupChat**](docs/Api/GroupApi.md#startstopgroupchat) | **POST** /groups/{groupId}/chat | Start or stop an event chat
 *GroupHomepageApi* | [**getGroupForHomepage**](docs/Api/GroupHomepageApi.md#getgroupforhomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
 *GroupHomepageApi* | [**getGroupHomepage**](docs/Api/GroupHomepageApi.md#getgrouphomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
@@ -362,10 +429,8 @@ Class | Method | HTTP request | Description
 *JobApi* | [**getJobs**](docs/Api/JobApi.md#getjobs) | **GET** /jobs | Your GET endpoint
 *MasterDataApi* | [**fetchMasterDataPerson**](docs/Api/MasterDataApi.md#fetchmasterdataperson) | **GET** /masterdata/person | Fetch all master data for the module \&quot;People &amp; Groups\&quot;
 *MasterDataApi* | [**getAllData**](docs/Api/MasterDataApi.md#getalldata) | **GET** /finance/masterdata | Get a master data for finance module
-*MasterDataApi* | [**getAllGroupTypeRoles**](docs/Api/MasterDataApi.md#getallgrouptyperoles) | **GET** /masterdata/person/roles | Get all group type roles
 *MasterDataApi* | [**getEventMasterdata**](docs/Api/MasterDataApi.md#geteventmasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
 *MasterDataApi* | [**getPersonMasterdata**](docs/Api/MasterDataApi.md#getpersonmasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
-*MasterDataApi* | [**getPersonMasterdataRole**](docs/Api/MasterDataApi.md#getpersonmasterdatarole) | **GET** /masterdata/person/roles/{roleId} | Get a group type role
 *MasterDataApi* | [**getResourceMasterdata**](docs/Api/MasterDataApi.md#getresourcemasterdata) | **GET** /resource/masterdata | Your GET endpoint
 *PermissionApi* | [**getGlobalPermissions**](docs/Api/PermissionApi.md#getglobalpermissions) | **GET** /permissions/global | All Permissions for the Current User
 *PermissionApi* | [**getInternalPermissionsForPerson**](docs/Api/PermissionApi.md#getinternalpermissionsforperson) | **GET** /permissions/internal/persons/{personId} | Lookup Person-Related Group Internal Permissions
@@ -477,10 +542,6 @@ Class | Method | HTTP request | Description
 
 ## Models
 
-- [](docs/Model/.md)
-- [1](docs/Model/1.md)
-- [1Meta](docs/Model/1Meta.md)
-- [1RequestedEvent](docs/Model/1RequestedEvent.md)
 - [200Response](docs/Model/200Response.md)
 - [Absence](docs/Model/Absence.md)
 - [Absence1](docs/Model/Absence1.md)
@@ -516,10 +577,6 @@ Class | Method | HTTP request | Description
 - [BatchTransaction200ResponseData](docs/Model/BatchTransaction200ResponseData.md)
 - [BatchTransactionRequest](docs/Model/BatchTransactionRequest.md)
 - [BatchTransactionRequestChangeset](docs/Model/BatchTransactionRequestChangeset.md)
-- [BatchTransactionRequestFilters](docs/Model/BatchTransactionRequestFilters.md)
-- [BatchTransactionRequestFiltersAnyOf](docs/Model/BatchTransactionRequestFiltersAnyOf.md)
-- [BatchTransactionRequestFiltersAnyOf1](docs/Model/BatchTransactionRequestFiltersAnyOf1.md)
-- [BatchTransactionRequestFiltersAnyOf2](docs/Model/BatchTransactionRequestFiltersAnyOf2.md)
 - [BlogItem](docs/Model/BlogItem.md)
 - [Calendar](docs/Model/Calendar.md)
 - [Campus](docs/Model/Campus.md)
@@ -584,12 +641,6 @@ Class | Method | HTTP request | Description
 - [Device](docs/Model/Device.md)
 - [Device1](docs/Model/Device1.md)
 - [DomainObjectAny](docs/Model/DomainObjectAny.md)
-- [DomainObjectAnyAnyOf](docs/Model/DomainObjectAnyAnyOf.md)
-- [DomainObjectAnyAnyOf1](docs/Model/DomainObjectAnyAnyOf1.md)
-- [DomainObjectAnyAnyOf1DomainAttributes](docs/Model/DomainObjectAnyAnyOf1DomainAttributes.md)
-- [DomainObjectAnyAnyOf2](docs/Model/DomainObjectAnyAnyOf2.md)
-- [DomainObjectAnyAnyOf3](docs/Model/DomainObjectAnyAnyOf3.md)
-- [DomainObjectAnyAnyOfDomainAttributes](docs/Model/DomainObjectAnyAnyOfDomainAttributes.md)
 - [DomainObjectFile](docs/Model/DomainObjectFile.md)
 - [DomainObjectGroup](docs/Model/DomainObjectGroup.md)
 - [DomainObjectGrouphomepage](docs/Model/DomainObjectGrouphomepage.md)
@@ -597,7 +648,17 @@ Class | Method | HTTP request | Description
 - [DomainObjectSong](docs/Model/DomainObjectSong.md)
 - [DomainObjectWiki](docs/Model/DomainObjectWiki.md)
 - [Donator](docs/Model/Donator.md)
+- [EditRulesetRequest](docs/Model/EditRulesetRequest.md)
+- [EditRulesetRequestDynamicGroupRuleSet](docs/Model/EditRulesetRequestDynamicGroupRuleSet.md)
+- [EditRulesetRequestDynamicGroupRuleSetFilter](docs/Model/EditRulesetRequestDynamicGroupRuleSetFilter.md)
+- [EditRulesetRequestDynamicGroupRuleSetFilterParams](docs/Model/EditRulesetRequestDynamicGroupRuleSetFilterParams.md)
+- [EditRulesetRequestDynamicGroupRuleSetFilterParamsFilter](docs/Model/EditRulesetRequestDynamicGroupRuleSetFilterParamsFilter.md)
+- [EditRulesetRequestDynamicGroupRuleSetFilterParamsFilterOrInner](docs/Model/EditRulesetRequestDynamicGroupRuleSetFilterParamsFilterOrInner.md)
+- [EditRulesetRequestDynamicGroupRuleSetProcess](docs/Model/EditRulesetRequestDynamicGroupRuleSetProcess.md)
+- [EditRulesetRequestDynamicGroupRuleSetProcessFilterOnly](docs/Model/EditRulesetRequestDynamicGroupRuleSetProcessFilterOnly.md)
 - [Event](docs/Model/Event.md)
+- [EventFact](docs/Model/EventFact.md)
+- [EventFact1](docs/Model/EventFact1.md)
 - [EventMasterData](docs/Model/EventMasterData.md)
 - [EventMasterData1](docs/Model/EventMasterData1.md)
 - [EventMasterData1Data](docs/Model/EventMasterData1Data.md)
@@ -611,6 +672,8 @@ Class | Method | HTTP request | Description
 - [ExternalSystem1](docs/Model/ExternalSystem1.md)
 - [ExternalSystem2](docs/Model/ExternalSystem2.md)
 - [ExternalSystemReturn](docs/Model/ExternalSystemReturn.md)
+- [Fact](docs/Model/Fact.md)
+- [Fact1](docs/Model/Fact1.md)
 - [Field](docs/Model/Field.md)
 - [FieldMapping](docs/Model/FieldMapping.md)
 - [FieldMappingEntries](docs/Model/FieldMappingEntries.md)
@@ -680,8 +743,6 @@ Class | Method | HTTP request | Description
 - [GetAllFields200ResponseMeta](docs/Model/GetAllFields200ResponseMeta.md)
 - [GetAllGroupMembers200Response](docs/Model/GetAllGroupMembers200Response.md)
 - [GetAllGroupMembers200ResponseMeta](docs/Model/GetAllGroupMembers200ResponseMeta.md)
-- [GetAllGroupTypeRoles200Response](docs/Model/GetAllGroupTypeRoles200Response.md)
-- [GetAllGroupTypeRoles200ResponseDataInner](docs/Model/GetAllGroupTypeRoles200ResponseDataInner.md)
 - [GetAllGroupsForPerson200Response](docs/Model/GetAllGroupsForPerson200Response.md)
 - [GetAllGroupsForPerson200ResponseDataInner](docs/Model/GetAllGroupsForPerson200ResponseDataInner.md)
 - [GetAllLogs200Response](docs/Model/GetAllLogs200Response.md)
@@ -700,6 +761,10 @@ Class | Method | HTTP request | Description
 - [GetAllTransactions200ResponseDataInner](docs/Model/GetAllTransactions200ResponseDataInner.md)
 - [GetAllTransactions200ResponseDataInnerPermissions](docs/Model/GetAllTransactions200ResponseDataInnerPermissions.md)
 - [GetAllTranslations200Response](docs/Model/GetAllTranslations200Response.md)
+- [GetApiFields200Response](docs/Model/GetApiFields200Response.md)
+- [GetApiFields200ResponseDataInner](docs/Model/GetApiFields200ResponseDataInner.md)
+- [GetApiFields200ResponseDataInnerFieldCategory](docs/Model/GetApiFields200ResponseDataInnerFieldCategory.md)
+- [GetApiFields200ResponseDataInnerFieldType](docs/Model/GetApiFields200ResponseDataInnerFieldType.md)
 - [GetApiInfo200Response](docs/Model/GetApiInfo200Response.md)
 - [GetApiProfiles200Response](docs/Model/GetApiProfiles200Response.md)
 - [GetApiProfiles200ResponseMeta](docs/Model/GetApiProfiles200ResponseMeta.md)
@@ -751,6 +816,10 @@ Class | Method | HTTP request | Description
 - [GetContactlabels200Response](docs/Model/GetContactlabels200Response.md)
 - [GetContactlabels200ResponseDataInner](docs/Model/GetContactlabels200ResponseDataInner.md)
 - [GetCsrftoken200Response](docs/Model/GetCsrftoken200Response.md)
+- [GetDbfieldsFieldIdOptions200Response](docs/Model/GetDbfieldsFieldIdOptions200Response.md)
+- [GetDbfieldsFieldIdOptions200ResponseDataInner](docs/Model/GetDbfieldsFieldIdOptions200ResponseDataInner.md)
+- [GetDbfieldsFieldIdOptionsMetadata200Response](docs/Model/GetDbfieldsFieldIdOptionsMetadata200Response.md)
+- [GetDbfieldsFieldIdOptionsMetadata200ResponseDataInner](docs/Model/GetDbfieldsFieldIdOptionsMetadata200ResponseDataInner.md)
 - [GetDepartments200Response](docs/Model/GetDepartments200Response.md)
 - [GetDepartments200ResponseDataInner](docs/Model/GetDepartments200ResponseDataInner.md)
 - [GetDeviceForPerson200Response](docs/Model/GetDeviceForPerson200Response.md)
@@ -760,6 +829,9 @@ Class | Method | HTTP request | Description
 - [GetEventIcal200Response](docs/Model/GetEventIcal200Response.md)
 - [GetEventIcal200ResponseData](docs/Model/GetEventIcal200ResponseData.md)
 - [GetEventIcal200ResponseMeta](docs/Model/GetEventIcal200ResponseMeta.md)
+- [GetEventsEventIdFacts200Response](docs/Model/GetEventsEventIdFacts200Response.md)
+- [GetEventsEventIdFactsFactId200Response](docs/Model/GetEventsEventIdFactsFactId200Response.md)
+- [GetFacts200Response](docs/Model/GetFacts200Response.md)
 - [GetFileWithDomainType200Response](docs/Model/GetFileWithDomainType200Response.md)
 - [GetFileWithDomainType200ResponseDataInner](docs/Model/GetFileWithDomainType200ResponseDataInner.md)
 - [GetFileWithDomainType200ResponseDataInnerMeta](docs/Model/GetFileWithDomainType200ResponseDataInnerMeta.md)
@@ -776,12 +848,27 @@ Class | Method | HTTP request | Description
 - [GetGlobalPermissions200ResponseDataChurchservice](docs/Model/GetGlobalPermissions200ResponseDataChurchservice.md)
 - [GetGlobalPermissions200ResponseDataChurchwiki](docs/Model/GetGlobalPermissions200ResponseDataChurchwiki.md)
 - [GetGlobalPermissions200ResponseDataFinance](docs/Model/GetGlobalPermissions200ResponseDataFinance.md)
+- [GetGroupAgegroups200Response](docs/Model/GetGroupAgegroups200Response.md)
+- [GetGroupAgegroups200ResponseDataInner](docs/Model/GetGroupAgegroups200ResponseDataInner.md)
+- [GetGroupAgegroupsAgeGroupId200Response](docs/Model/GetGroupAgegroupsAgeGroupId200Response.md)
+- [GetGroupGroupcategories200Response](docs/Model/GetGroupGroupcategories200Response.md)
+- [GetGroupGroupcategories200ResponseDataInner](docs/Model/GetGroupGroupcategories200ResponseDataInner.md)
+- [GetGroupGroupcategoriesGroupCategoryId200Response](docs/Model/GetGroupGroupcategoriesGroupCategoryId200Response.md)
+- [GetGroupGrouptypes200Response](docs/Model/GetGroupGrouptypes200Response.md)
+- [GetGroupGrouptypes200ResponseDataInner](docs/Model/GetGroupGrouptypes200ResponseDataInner.md)
+- [GetGroupGrouptypesGroupTypeId200Response](docs/Model/GetGroupGrouptypesGroupTypeId200Response.md)
+- [GetGroupGrouptypesGroupTypeId200ResponseData](docs/Model/GetGroupGrouptypesGroupTypeId200ResponseData.md)
 - [GetGroupHomepage200Response](docs/Model/GetGroupHomepage200Response.md)
 - [GetGroupHomepages200Response](docs/Model/GetGroupHomepages200Response.md)
 - [GetGroupHomepages200ResponseDataInner](docs/Model/GetGroupHomepages200ResponseDataInner.md)
 - [GetGroupHomepages200ResponseDataInnerDomainAttributes](docs/Model/GetGroupHomepages200ResponseDataInnerDomainAttributes.md)
 - [GetGroupRoles200Response](docs/Model/GetGroupRoles200Response.md)
+- [GetGroupRoles200ResponseDataInner](docs/Model/GetGroupRoles200ResponseDataInner.md)
+- [GetGroupRolesRoleId200Response](docs/Model/GetGroupRolesRoleId200Response.md)
+- [GetGroupRolesRoleId200ResponseData](docs/Model/GetGroupRolesRoleId200ResponseData.md)
 - [GetGroupStatistics200Response](docs/Model/GetGroupStatistics200Response.md)
+- [GetGroupTargetgroups200Response](docs/Model/GetGroupTargetgroups200Response.md)
+- [GetGroupTargetgroupsTargetGroupId200Response](docs/Model/GetGroupTargetgroupsTargetGroupId200Response.md)
 - [GetGroups200Response](docs/Model/GetGroups200Response.md)
 - [GetGroups200ResponseDataInner](docs/Model/GetGroups200ResponseDataInner.md)
 - [GetGroups200ResponseDataInnerFollowUp](docs/Model/GetGroups200ResponseDataInnerFollowUp.md)
@@ -794,6 +881,8 @@ Class | Method | HTTP request | Description
 - [GetGroups200ResponseDataInnerSettingsNewMember](docs/Model/GetGroups200ResponseDataInnerSettingsNewMember.md)
 - [GetGroupsAbsences200Response](docs/Model/GetGroupsAbsences200Response.md)
 - [GetGroupsGroupIdMeetingsMeetingIdMembers200Response](docs/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200Response.md)
+- [GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInner](docs/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInner.md)
+- [GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInnerMember](docs/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInnerMember.md)
 - [GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseMeta](docs/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseMeta.md)
 - [GetGroupsGroupIdMemberfields200Response](docs/Model/GetGroupsGroupIdMemberfields200Response.md)
 - [GetGroupsGroupIdMemberfields200ResponseData](docs/Model/GetGroupsGroupIdMemberfields200ResponseData.md)
@@ -806,6 +895,9 @@ Class | Method | HTTP request | Description
 - [GetGroupsHierarchies200Response](docs/Model/GetGroupsHierarchies200Response.md)
 - [GetGroupsMembers200Response](docs/Model/GetGroupsMembers200Response.md)
 - [GetGroupsMembers200ResponseDataInner](docs/Model/GetGroupsMembers200ResponseDataInner.md)
+- [GetGroupsTags200Response](docs/Model/GetGroupsTags200Response.md)
+- [GetGroupsTags200ResponseDataValueInner](docs/Model/GetGroupsTags200ResponseDataValueInner.md)
+- [GetGroupsTags200ResponseDataValueInnerTag](docs/Model/GetGroupsTags200ResponseDataValueInnerTag.md)
 - [GetGrupsIdPlaces200Response](docs/Model/GetGrupsIdPlaces200Response.md)
 - [GetGrupsIdPlaces200ResponseCreatedPerson](docs/Model/GetGrupsIdPlaces200ResponseCreatedPerson.md)
 - [GetInternalPermissionsForPerson200Response](docs/Model/GetInternalPermissionsForPerson200Response.md)
@@ -838,10 +930,10 @@ Class | Method | HTTP request | Description
 - [GetPersonMasterdata200ResponseDataGroupStatusesInner](docs/Model/GetPersonMasterdata200ResponseDataGroupStatusesInner.md)
 - [GetPersonMasterdata200ResponseDataGroupTypesInner](docs/Model/GetPersonMasterdata200ResponseDataGroupTypesInner.md)
 - [GetPersonMasterdata200ResponseDataGrowPathsInner](docs/Model/GetPersonMasterdata200ResponseDataGrowPathsInner.md)
+- [GetPersonMasterdata200ResponseDataRolesInner](docs/Model/GetPersonMasterdata200ResponseDataRolesInner.md)
 - [GetPersonMasterdata200ResponseDataStatusesInner](docs/Model/GetPersonMasterdata200ResponseDataStatusesInner.md)
 - [GetPersonMasterdata200ResponseDataTargetGroupsInner](docs/Model/GetPersonMasterdata200ResponseDataTargetGroupsInner.md)
 - [GetPersonMasterdata200ResponseMeta](docs/Model/GetPersonMasterdata200ResponseMeta.md)
-- [GetPersonMasterdataRole200Response](docs/Model/GetPersonMasterdataRole200Response.md)
 - [GetPersonProperties200Response](docs/Model/GetPersonProperties200Response.md)
 - [GetPersonProperties200ResponseData](docs/Model/GetPersonProperties200ResponseData.md)
 - [GetPersonProperties200ResponseData1](docs/Model/GetPersonProperties200ResponseData1.md)
@@ -867,7 +959,6 @@ Class | Method | HTTP request | Description
 - [GetPublicgroup200Response](docs/Model/GetPublicgroup200Response.md)
 - [GetPublicgroup200ResponseData](docs/Model/GetPublicgroup200ResponseData.md)
 - [GetPublicgroup200ResponseDataInformation](docs/Model/GetPublicgroup200ResponseDataInformation.md)
-- [GetPublicgroup200ResponseDataInformationGroupCategory](docs/Model/GetPublicgroup200ResponseDataInformationGroupCategory.md)
 - [GetPublicgroup200ResponseDataSettings](docs/Model/GetPublicgroup200ResponseDataSettings.md)
 - [GetPublicgroup200ResponseDataSignUpConditions](docs/Model/GetPublicgroup200ResponseDataSignUpConditions.md)
 - [GetPublicgroup200ResponseDataSignUpPersonsInner](docs/Model/GetPublicgroup200ResponseDataSignUpPersonsInner.md)
@@ -963,7 +1054,6 @@ Class | Method | HTTP request | Description
 - [JobConfigurationReturn1](docs/Model/JobConfigurationReturn1.md)
 - [Log](docs/Model/Log.md)
 - [Log1](docs/Model/Log1.md)
-- [Member](docs/Model/Member.md)
 - [MembershipNew](docs/Model/MembershipNew.md)
 - [MetaCount](docs/Model/MetaCount.md)
 - [MetaDataEntityId](docs/Model/MetaDataEntityId.md)
@@ -988,23 +1078,39 @@ Class | Method | HTTP request | Description
 - [Person](docs/Model/Person.md)
 - [PersonEmail](docs/Model/PersonEmail.md)
 - [PersonEmail1](docs/Model/PersonEmail1.md)
+- [PersonEventsServices200ResponseInner](docs/Model/PersonEventsServices200ResponseInner.md)
+- [PersonEventsServices200ResponseInnerMeta](docs/Model/PersonEventsServices200ResponseInnerMeta.md)
+- [PersonEventsServices200ResponseInnerRequestedEvent](docs/Model/PersonEventsServices200ResponseInnerRequestedEvent.md)
 - [PersonRelationship](docs/Model/PersonRelationship.md)
 - [PersonSetting](docs/Model/PersonSetting.md)
 - [PersonUpdateable](docs/Model/PersonUpdateable.md)
 - [Place](docs/Model/Place.md)
+- [PostApiDbfields200Response](docs/Model/PostApiDbfields200Response.md)
+- [PostApiDbfieldsRequest](docs/Model/PostApiDbfieldsRequest.md)
 - [PostAutomaticEmail201Response](docs/Model/PostAutomaticEmail201Response.md)
 - [PostAutomaticEmailRequest](docs/Model/PostAutomaticEmailRequest.md)
 - [PostCalendarsCalendarIdAppointmentsRequest](docs/Model/PostCalendarsCalendarIdAppointmentsRequest.md)
 - [PostCheckinPersonsRequest](docs/Model/PostCheckinPersonsRequest.md)
 - [PostContactlabels201Response](docs/Model/PostContactlabels201Response.md)
 - [PostContactlabelsRequest](docs/Model/PostContactlabelsRequest.md)
+- [PostDbfieldsFieldIdOptions200Response](docs/Model/PostDbfieldsFieldIdOptions200Response.md)
+- [PostDbfieldsFieldIdOptionsRequest](docs/Model/PostDbfieldsFieldIdOptionsRequest.md)
+- [PostFacts201Response](docs/Model/PostFacts201Response.md)
+- [PostFactsRequest](docs/Model/PostFactsRequest.md)
 - [PostFinanceCostcentersBulkcreateRequest](docs/Model/PostFinanceCostcentersBulkcreateRequest.md)
 - [PostFinanceCostcentersBulkcreateRequestCostCentersInner](docs/Model/PostFinanceCostcentersBulkcreateRequestCostCentersInner.md)
 - [PostFinanceReportsRequest](docs/Model/PostFinanceReportsRequest.md)
 - [PostFinanceTurnoverReport200Response](docs/Model/PostFinanceTurnoverReport200Response.md)
 - [PostFinanceTurnoverReportRequest](docs/Model/PostFinanceTurnoverReportRequest.md)
+- [PostGroupAgegroupsRequest](docs/Model/PostGroupAgegroupsRequest.md)
+- [PostGroupGroupcategoriesRequest](docs/Model/PostGroupGroupcategoriesRequest.md)
+- [PostGroupGrouptypesRequest](docs/Model/PostGroupGrouptypesRequest.md)
+- [PostGroupRolesRequest](docs/Model/PostGroupRolesRequest.md)
+- [PostGroupTargetgroupsRequest](docs/Model/PostGroupTargetgroupsRequest.md)
 - [PostGroups201Response](docs/Model/PostGroups201Response.md)
+- [PostGroupsGroupIdGroupstatusRequest](docs/Model/PostGroupsGroupIdGroupstatusRequest.md)
 - [PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest](docs/Model/PostGroupsGroupIdMeetingsMeetingIdMembersMissingRequest.md)
+- [PostGroupsGroupIdPlacesRequest](docs/Model/PostGroupsGroupIdPlacesRequest.md)
 - [PostGroupsRequest](docs/Model/PostGroupsRequest.md)
 - [PostLogin200Response](docs/Model/PostLogin200Response.md)
 - [PostLogin200ResponseData](docs/Model/PostLogin200ResponseData.md)
@@ -1050,7 +1156,16 @@ Class | Method | HTTP request | Description
 - [PutCheckinPersonsRequest](docs/Model/PutCheckinPersonsRequest.md)
 - [PutCheckinPersonsRequestGroup](docs/Model/PutCheckinPersonsRequestGroup.md)
 - [PutContactlabelRequest](docs/Model/PutContactlabelRequest.md)
+- [PutDbfieldsFieldIdRequest](docs/Model/PutDbfieldsFieldIdRequest.md)
+- [PutDynamicgrouopStatusRequest](docs/Model/PutDynamicgrouopStatusRequest.md)
+- [PutEventsEventIdFactsFactId400Response](docs/Model/PutEventsEventIdFactsFactId400Response.md)
+- [PutEventsEventIdFactsFactId400ResponseErrorsInner](docs/Model/PutEventsEventIdFactsFactId400ResponseErrorsInner.md)
+- [PutEventsEventIdFactsFactId400ResponseErrorsInnerArgs](docs/Model/PutEventsEventIdFactsFactId400ResponseErrorsInnerArgs.md)
+- [PutEventsEventIdFactsFactIdRequest](docs/Model/PutEventsEventIdFactsFactIdRequest.md)
+- [PutFactsIdRequest](docs/Model/PutFactsIdRequest.md)
+- [PutGroupGrouptypesGroupTypeIdRequest](docs/Model/PutGroupGrouptypesGroupTypeIdRequest.md)
 - [PutGroupsGroupIdMeetingsMeetingIdRequest](docs/Model/PutGroupsGroupIdMeetingsMeetingIdRequest.md)
+- [PutGroupsGroupIdPlacesPlaceIdRequest](docs/Model/PutGroupsGroupIdPlacesPlaceIdRequest.md)
 - [PutImageOptions200Response](docs/Model/PutImageOptions200Response.md)
 - [PutImageOptions200ResponseData](docs/Model/PutImageOptions200ResponseData.md)
 - [PutImageOptionsRequest](docs/Model/PutImageOptionsRequest.md)
@@ -1164,12 +1279,12 @@ Class | Method | HTTP request | Description
 
 ## Authorization
 
+Authentication schemes defined for the API:
 ### Login-Token-Header
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
-
 
 
 ### Login-Token-Query
@@ -1197,4 +1312,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `0.1.0`
+    - Generator version: `7.5.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

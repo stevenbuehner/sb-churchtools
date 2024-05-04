@@ -65,7 +65,7 @@ $campusApi = new CampusApi($client, $config);
 echo "Alle sichtbaren Campuses: ";
 $camps = [];
 foreach ($campusApi->getAllCampuses()->getData() as $c) {
-	$camps[] = $c->getName() . '(' . $c->getId() . ')';
+	$camps[] = $c->getName() . ' (' . $c->getId() . ')';
 }
 echo join(', ', $camps) . "\n\n";
 

@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **available_for_new_person** | **bool** |  | [optional]
-**deep_permission** | **int** |  | [optional]
 **id** | **int** |  | [optional]
 **is_leader_necessary** | **bool** |  | [optional]
 **name** | **string** |  | [optional]
 **name_translated** | **string** |  | [optional]
+**permission_depth** | **int** |  | [optional]
 **shorty** | **string** |  | [optional]
 **sort_key** | **int** |  | [optional]
 

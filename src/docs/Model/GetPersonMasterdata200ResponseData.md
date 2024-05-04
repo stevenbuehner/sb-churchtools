@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **group_statuses** | [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataGroupStatusesInner[]**](GetPersonMasterdata200ResponseDataGroupStatusesInner.md) |  | [optional]
 **group_types** | [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataGroupTypesInner[]**](GetPersonMasterdata200ResponseDataGroupTypesInner.md) |  | [optional]
 **grow_paths** | [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataGrowPathsInner[]**](GetPersonMasterdata200ResponseDataGrowPathsInner.md) |  | [optional]
-**roles** | [**\StevenBuehner\ChurchTools\Model\GetAllGroupTypeRoles200ResponseDataInner[]**](GetAllGroupTypeRoles200ResponseDataInner.md) |  | [optional]
+**roles** | [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataRolesInner[]**](GetPersonMasterdata200ResponseDataRolesInner.md) |  | [optional]
 **statuses** | [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataStatusesInner[]**](GetPersonMasterdata200ResponseDataStatusesInner.md) |  | [optional]
 **target_groups** | [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200ResponseDataTargetGroupsInner[]**](GetPersonMasterdata200ResponseDataTargetGroupsInner.md) |  | [optional]
 

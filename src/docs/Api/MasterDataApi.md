@@ -6,10 +6,8 @@ All URIs are relative to /api, except if the operation defines another base path
 | ------------- | ------------- | ------------- |
 | [**fetchMasterDataPerson()**](MasterDataApi.md#fetchMasterDataPerson) | **GET** /masterdata/person | Fetch all master data for the module \&quot;People &amp; Groups\&quot; |
 | [**getAllData()**](MasterDataApi.md#getAllData) | **GET** /finance/masterdata | Get a master data for finance module |
-| [**getAllGroupTypeRoles()**](MasterDataApi.md#getAllGroupTypeRoles) | **GET** /masterdata/person/roles | Get all group type roles |
 | [**getEventMasterdata()**](MasterDataApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot; |
 | [**getPersonMasterdata()**](MasterDataApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
-| [**getPersonMasterdataRole()**](MasterDataApi.md#getPersonMasterdataRole) | **GET** /masterdata/person/roles/{roleId} | Get a group type role |
 | [**getResourceMasterdata()**](MasterDataApi.md#getResourceMasterdata) | **GET** /resource/masterdata | Your GET endpoint |
 
 
@@ -131,65 +129,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getAllGroupTypeRoles()`
-
-```php
-getAllGroupTypeRoles(): \StevenBuehner\ChurchTools\Model\GetAllGroupTypeRoles200Response
-```
-
-Get all group type roles
-
-This endpoint returns an array with all roles of a group type.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login-Token-Header
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\MasterDataApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->getAllGroupTypeRoles();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MasterDataApi->getAllGroupTypeRoles: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\GetAllGroupTypeRoles200Response**](../Model/GetAllGroupTypeRoles200Response.md)
-
-### Authorization
-
-[Login-Token-Header](../../README.md#Login-Token-Header)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `getEventMasterdata()`
 
 ```php
@@ -294,66 +233,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response**](../Model/GetPersonMasterdata200Response.md)
-
-### Authorization
-
-[Login-Token-Header](../../README.md#Login-Token-Header)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getPersonMasterdataRole()`
-
-```php
-getPersonMasterdataRole($role_id): \StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response
-```
-
-Get a group type role
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login-Token-Header
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\MasterDataApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$role_id = 1; // int | ID of group type role
-
-try {
-    $result = $apiInstance->getPersonMasterdataRole($role_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MasterDataApi->getPersonMasterdataRole: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **role_id** | **int**| ID of group type role | |
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\GetPersonMasterdataRole200Response**](../Model/GetPersonMasterdataRole200Response.md)
 
 ### Authorization
 

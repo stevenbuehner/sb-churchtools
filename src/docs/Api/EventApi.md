@@ -5,6 +5,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**agendaExport()**](EventApi.md#agendaExport) | **POST** /agendas/{agendaId}/export | Exports the agenda |
+| [**deleteEventsEventIdFactsFactId()**](EventApi.md#deleteEventsEventIdFactsFactId) | **DELETE** /events/{eventId}/facts/{factId} | Delete event fact |
 | [**deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy()**](EventApi.md#deletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopy) | **DELETE** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/{requestId} | Delete a service exchange request |
 | [**deletePersonIdExchangerequestsRequestId()**](EventApi.md#deletePersonIdExchangerequestsRequestId) | **DELETE** /persons/{personId}/exchangerequests/{requestId} | Decline a service exchange request |
 | [**getAgendaForEvent()**](EventApi.md#getAgendaForEvent) | **GET** /events/{eventId}/agenda | Get agenda for event |
@@ -12,12 +13,15 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getEvent()**](EventApi.md#getEvent) | **GET** /events/{eventId} | Get a single event |
 | [**getEventIcal()**](EventApi.md#getEventIcal) | **GET** /events/ical |  |
 | [**getEventMasterdata()**](EventApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot; |
+| [**getEventsEventIdFacts()**](EventApi.md#getEventsEventIdFacts) | **GET** /events/{eventId}/facts | Read facts for event |
+| [**getEventsEventIdFactsFactId()**](EventApi.md#getEventsEventIdFactsFactId) | **GET** /events/{eventId}/facts/{factId} | Read one event fact |
 | [**getPersonEvents()**](EventApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with |
 | [**getSongsOfAgenda()**](EventApi.md#getSongsOfAgenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda |
+| [**personEventsServices()**](EventApi.md#personEventsServices) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service |
 | [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()**](EventApi.md#personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request |
-| [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet()**](EventApi.md#personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service |
 | [**personsPersonIdExchangerequestsGet()**](EventApi.md#personsPersonIdExchangerequestsGet) | **GET** /persons/{personId}/exchangerequests | Get all service exchange requests for a user |
 | [**postPersonIdEventsEventIdServicesServiceIdExchangerequests()**](EventApi.md#postPersonIdEventsEventIdServicesServiceIdExchangerequests) | **POST** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Create a new service exchange request |
+| [**putEventsEventIdFactsFactId()**](EventApi.md#putEventsEventIdFactsFactId) | **PUT** /events/{eventId}/facts/{factId} | Create or update event fact |
 | [**putPersonIdExchangerequestsRequestId()**](EventApi.md#putPersonIdExchangerequestsRequestId) | **PUT** /persons/{personId}/exchangerequests/{requestId} | Accept a service exchange request |
 | [**sendAgendaEmail()**](EventApi.md#sendAgendaEmail) | **POST** /agendas/send | Send agenda email to recipients |
 | [**sendEventEmail()**](EventApi.md#sendEventEmail) | **POST** /events/send | Send Mail to Event Participants |
@@ -85,6 +89,69 @@ try {
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteEventsEventIdFactsFactId()`
+
+```php
+deleteEventsEventIdFactsFactId($event_id, $fact_id, $dry_run)
+```
+
+Delete event fact
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$event_id = 'event_id_example'; // string
+$fact_id = 'fact_id_example'; // string
+$dry_run = True; // bool
+
+try {
+    $apiInstance->deleteEventsEventIdFactsFactId($event_id, $fact_id, $dry_run);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->deleteEventsEventIdFactsFactId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **string**|  | |
+| **fact_id** | **string**|  | |
+| **dry_run** | **bool**|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -537,6 +604,128 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getEventsEventIdFacts()`
+
+```php
+getEventsEventIdFacts($event_id): \StevenBuehner\ChurchTools\Model\GetEventsEventIdFacts200Response
+```
+
+Read facts for event
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$event_id = 'event_id_example'; // string
+
+try {
+    $result = $apiInstance->getEventsEventIdFacts($event_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->getEventsEventIdFacts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetEventsEventIdFacts200Response**](../Model/GetEventsEventIdFacts200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getEventsEventIdFactsFactId()`
+
+```php
+getEventsEventIdFactsFactId($event_id, $fact_id): \StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response
+```
+
+Read one event fact
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$event_id = 'event_id_example'; // string
+$fact_id = 'fact_id_example'; // string
+
+try {
+    $result = $apiInstance->getEventsEventIdFactsFactId($event_id, $fact_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->getEventsEventIdFactsFactId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **string**|  | |
+| **fact_id** | **string**|  | |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response**](../Model/GetEventsEventIdFactsFactId200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getPersonEvents()`
 
 ```php
@@ -661,6 +850,74 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `personEventsServices()`
+
+```php
+personEventsServices($person_id, $event_id, $service_id, $incoming): \StevenBuehner\ChurchTools\Model\PersonEventsServices200ResponseInner[]
+```
+
+Get all service exchange requests of a user for a service
+
+Returns all exchange requests that a user requested for a certain service
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$person_id = 42; // int | ID of person
+$event_id = 42; // int | ID of Event
+$service_id = 'service_id_example'; // string
+$incoming = false; // bool | If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned.
+
+try {
+    $result = $apiInstance->personEventsServices($person_id, $event_id, $service_id, $incoming);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->personEventsServices: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **person_id** | **int**| ID of person | |
+| **event_id** | **int**| ID of Event | |
+| **service_id** | **string**|  | |
+| **incoming** | **bool**| If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned. | [optional] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\PersonEventsServices200ResponseInner[]**](../Model/PersonEventsServices200ResponseInner.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet()`
 
 ```php
@@ -727,78 +984,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet()`
-
-```php
-personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id, $incoming): \StevenBuehner\ChurchTools\Model\1[]
-```
-
-Get all service exchange requests of a user for a service
-
-Returns all exchange requests that a user requested for a certain service
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Login-Token-Header
-$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$person_id = 42; // int | ID of person
-$event_id = 42; // int | ID of Event
-$service_id = 'service_id_example'; // string
-$incoming = false; // bool | If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned.
-
-try {
-    $result = $apiInstance->personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet($person_id, $event_id, $service_id, $incoming);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling EventApi->personsPersonIdEventsEventIdServicesServiceIdExchangerequestsGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **person_id** | **int**| ID of person | |
-| **event_id** | **int**| ID of Event | |
-| **service_id** | **string**|  | |
-| **incoming** | **bool**| If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned. | [optional] |
-
-### Return type
-
-[**\StevenBuehner\ChurchTools\Model\1[]**](../Model/1.md)
-
-### Authorization
-
-[Login-Token-Header](../../README.md#Login-Token-Header)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `personsPersonIdExchangerequestsGet()`
 
 ```php
-personsPersonIdExchangerequestsGet($person_id, $person_is_requester): \StevenBuehner\ChurchTools\Model\1[]
+personsPersonIdExchangerequestsGet($person_id, $person_is_requester): \StevenBuehner\ChurchTools\Model\PersonEventsServices200ResponseInner[]
 ```
 
 Get all service exchange requests for a user
@@ -844,7 +1033,7 @@ try {
 
 ### Return type
 
-[**\StevenBuehner\ChurchTools\Model\1[]**](../Model/1.md)
+[**\StevenBuehner\ChurchTools\Model\PersonEventsServices200ResponseInner[]**](../Model/PersonEventsServices200ResponseInner.md)
 
 ### Authorization
 
@@ -862,7 +1051,7 @@ try {
 ## `postPersonIdEventsEventIdServicesServiceIdExchangerequests()`
 
 ```php
-postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $incoming, $_1)
+postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $incoming, $person_events_services200_response_inner)
 ```
 
 Create a new service exchange request
@@ -892,10 +1081,10 @@ $person_id = 42; // int | ID of person
 $event_id = 42; // int | ID of Event
 $service_id = 'service_id_example'; // string
 $incoming = false; // bool | If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned.
-$_1 = new \StevenBuehner\ChurchTools\Model\1(); // \StevenBuehner\ChurchTools\Model\1
+$person_events_services200_response_inner = new \StevenBuehner\ChurchTools\Model\PersonEventsServices200ResponseInner(); // \StevenBuehner\ChurchTools\Model\PersonEventsServices200ResponseInner
 
 try {
-    $apiInstance->postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $incoming, $_1);
+    $apiInstance->postPersonIdEventsEventIdServicesServiceIdExchangerequests($person_id, $event_id, $service_id, $incoming, $person_events_services200_response_inner);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->postPersonIdEventsEventIdServicesServiceIdExchangerequests: ', $e->getMessage(), PHP_EOL;
 }
@@ -909,7 +1098,7 @@ try {
 | **event_id** | **int**| ID of Event | |
 | **service_id** | **string**|  | |
 | **incoming** | **bool**| If set to true, service exchange requests from other users for the user are returned. Otherwise (default) requests from this user for other users are returned. | [optional] |
-| **_1** | [**\StevenBuehner\ChurchTools\Model\1**](../Model/1.md)|  | [optional] |
+| **person_events_services200_response_inner** | [**\StevenBuehner\ChurchTools\Model\PersonEventsServices200ResponseInner**](../Model/PersonEventsServices200ResponseInner.md)|  | [optional] |
 
 ### Return type
 
@@ -923,6 +1112,72 @@ void (empty response body)
 
 - **Content-Type**: `application/json`
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putEventsEventIdFactsFactId()`
+
+```php
+putEventsEventIdFactsFactId($event_id, $fact_id, $put_events_event_id_facts_fact_id_request): \StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response
+```
+
+Create or update event fact
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Login-Token-Header
+$config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = StevenBuehner\ChurchTools\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new StevenBuehner\ChurchTools\Api\EventApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$event_id = 'event_id_example'; // string
+$fact_id = 'fact_id_example'; // string
+$put_events_event_id_facts_fact_id_request = new \StevenBuehner\ChurchTools\Model\PutEventsEventIdFactsFactIdRequest(); // \StevenBuehner\ChurchTools\Model\PutEventsEventIdFactsFactIdRequest | Pass the `value` for that fact as payload. The value is always a `string`. For numeric facts the value MUST be a numeric value. For select facts the value MUST be a valid option.
+
+try {
+    $result = $apiInstance->putEventsEventIdFactsFactId($event_id, $fact_id, $put_events_event_id_facts_fact_id_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventApi->putEventsEventIdFactsFactId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **event_id** | **string**|  | |
+| **fact_id** | **string**|  | |
+| **put_events_event_id_facts_fact_id_request** | [**\StevenBuehner\ChurchTools\Model\PutEventsEventIdFactsFactIdRequest**](../Model/PutEventsEventIdFactsFactIdRequest.md)| Pass the &#x60;value&#x60; for that fact as payload. The value is always a &#x60;string&#x60;. For numeric facts the value MUST be a numeric value. For select facts the value MUST be a valid option. | [optional] |
+
+### Return type
+
+[**\StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response**](../Model/GetEventsEventIdFactsFactId200Response.md)
+
+### Authorization
+
+[Login-Token-Header](../../README.md#Login-Token-Header)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
