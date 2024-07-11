@@ -24,7 +24,9 @@
     }
   },
   "autoload-dev": {
-    "psr-4": { "StevenBuehner\\ChurchTools\\Test\\" : "src/test/" }
+    "psr-4": {
+      "StevenBuehner\\ChurchTools\\Test\\": "src/test/"
+    }
   },
   "require-dev": {
     "phpunit/phpunit": "^8.0 || ^9.0",
