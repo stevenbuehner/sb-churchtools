@@ -72,6 +72,10 @@ docs/Model/BatchTransaction200Response.md
 docs/Model/BatchTransaction200ResponseData.md
 docs/Model/BatchTransactionRequest.md
 docs/Model/BatchTransactionRequestChangeset.md
+docs/Model/BatchTransactionRequestFilters.md
+docs/Model/BatchTransactionRequestFiltersAnyOf.md
+docs/Model/BatchTransactionRequestFiltersAnyOf1.md
+docs/Model/BatchTransactionRequestFiltersAnyOf2.md
 docs/Model/BlogItem.md
 docs/Model/Calendar.md
 docs/Model/Campus.md
@@ -735,7 +739,6 @@ docs/Model/TranslationKeyTranslations.md
 docs/Model/UpdateAccountingPeriodRequest.md
 docs/Model/UpdateCampusRequest.md
 docs/Model/UpdateCampusRequestAddress.md
-docs/Model/UpdateCampusRequestDenomination.md
 docs/Model/UpdateCampusRequestGroupsInner.md
 docs/Model/UpdateCampusRequestGroupsInnerGroup.md
 docs/Model/UpdateCampusRequestServicesInner.md
@@ -844,6 +847,10 @@ lib/Model/BatchTransaction200Response.php
 lib/Model/BatchTransaction200ResponseData.php
 lib/Model/BatchTransactionRequest.php
 lib/Model/BatchTransactionRequestChangeset.php
+lib/Model/BatchTransactionRequestFilters.php
+lib/Model/BatchTransactionRequestFiltersAnyOf.php
+lib/Model/BatchTransactionRequestFiltersAnyOf1.php
+lib/Model/BatchTransactionRequestFiltersAnyOf2.php
 lib/Model/BlogItem.php
 lib/Model/Calendar.php
 lib/Model/Campus.php
@@ -1508,7 +1515,6 @@ lib/Model/TranslationKeyTranslations.php
 lib/Model/UpdateAccountingPeriodRequest.php
 lib/Model/UpdateCampusRequest.php
 lib/Model/UpdateCampusRequestAddress.php
-lib/Model/UpdateCampusRequestDenomination.php
 lib/Model/UpdateCampusRequestGroupsInner.php
 lib/Model/UpdateCampusRequestGroupsInnerGroup.php
 lib/Model/UpdateCampusRequestServicesInner.php
@@ -1546,3 +1552,7 @@ lib/Model/WikiPage1Permissions.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/BatchTransactionRequestFiltersAnyOf1Test.php
+test/Model/BatchTransactionRequestFiltersAnyOf2Test.php
+test/Model/BatchTransactionRequestFiltersAnyOfTest.php
+test/Model/BatchTransactionRequestFiltersTest.php

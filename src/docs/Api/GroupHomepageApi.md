@@ -4,22 +4,22 @@ All URIs are relative to /api, except if the operation defines another base path
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getGroupForHomepage()**](GroupHomepageApi.md#getGroupForHomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group |
-| [**getGroupHomepage()**](GroupHomepageApi.md#getGroupHomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings |
+| [**getGroupForHomepage_0()**](GroupHomepageApi.md#getGroupForHomepage_0) | **GET** /publicgroups/{groupId}/{hash} | Public information of group |
+| [**getGroupHomepage_0()**](GroupHomepageApi.md#getGroupHomepage_0) | **GET** /grouphomepages/{hash} | Get information about public groups with settings |
 | [**getGroupHomepages()**](GroupHomepageApi.md#getGroupHomepages) | **GET** /grouphomepages | Get all Grouphomepages |
 | [**getPublicGroupSignoutData()**](GroupHomepageApi.md#getPublicGroupSignoutData) | **GET** /publicgroups/{groupId}/signoutdata |  |
 | [**getPublicgroup()**](GroupHomepageApi.md#getPublicgroup) | **GET** /publicgroups/{groupId} |  |
 | [**getPublicgroupsGroupIdForm()**](GroupHomepageApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form |
 | [**getPublicgroupsGroupIdPossiblerequesters()**](GroupHomepageApi.md#getPublicgroupsGroupIdPossiblerequesters) | **GET** /publicgroups/{groupId}/possiblerequesters | Your GET endpoint |
 | [**issueSignUpToken()**](GroupHomepageApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token. |
-| [**postPublicgroupsGroupIdMailToLeaders()**](GroupHomepageApi.md#postPublicgroupsGroupIdMailToLeaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders |
-| [**postPublicgroupsGroupIdSignup()**](GroupHomepageApi.md#postPublicgroupsGroupIdSignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group |
+| [**postPublicgroupsGroupIdMailToLeaders_0()**](GroupHomepageApi.md#postPublicgroupsGroupIdMailToLeaders_0) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders |
+| [**postPublicgroupsGroupIdSignup_0()**](GroupHomepageApi.md#postPublicgroupsGroupIdSignup_0) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group |
 
 
-## `getGroupForHomepage()`
+## `getGroupForHomepage_0()`
 
 ```php
-getGroupForHomepage($hash, $group_id): \StevenBuehner\ChurchTools\Model\PublicGroup1
+getGroupForHomepage_0($hash, $group_id): \StevenBuehner\ChurchTools\Model\PublicGroup1
 ```
 
 Public information of group
@@ -43,10 +43,10 @@ $hash = 'hash_example'; // string | Group Homepage Hash
 $group_id = 'group_id_example'; // string | Group ID
 
 try {
-    $result = $apiInstance->getGroupForHomepage($hash, $group_id);
+    $result = $apiInstance->getGroupForHomepage_0($hash, $group_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupHomepageApi->getGroupForHomepage: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupHomepageApi->getGroupForHomepage_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -74,10 +74,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getGroupHomepage()`
+## `getGroupHomepage_0()`
 
 ```php
-getGroupHomepage($hash): \StevenBuehner\ChurchTools\Model\GetGroupHomepage200Response
+getGroupHomepage_0($hash): \StevenBuehner\ChurchTools\Model\GetGroupHomepage200Response
 ```
 
 Get information about public groups with settings
@@ -106,10 +106,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupHomepageApi(
 $hash = RNdjTK0tGp1N1afoblczGbFb8ikLfa9b; // string | Random hash for public groups
 
 try {
-    $result = $apiInstance->getGroupHomepage($hash);
+    $result = $apiInstance->getGroupHomepage_0($hash);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupHomepageApi->getGroupHomepage: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupHomepageApi->getGroupHomepage_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -495,10 +495,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `postPublicgroupsGroupIdMailToLeaders()`
+## `postPublicgroupsGroupIdMailToLeaders_0()`
 
 ```php
-postPublicgroupsGroupIdMailToLeaders($group_id, $post_publicgroups_group_id_mail_to_leaders_request)
+postPublicgroupsGroupIdMailToLeaders_0($group_id, $post_publicgroups_group_id_mail_to_leaders_request)
 ```
 
 Send a Mail to Public Group Leaders
@@ -522,9 +522,9 @@ $group_id = 'group_id_example'; // string | Group ID of the public group
 $post_publicgroups_group_id_mail_to_leaders_request = new \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest(); // \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdMailToLeadersRequest
 
 try {
-    $apiInstance->postPublicgroupsGroupIdMailToLeaders($group_id, $post_publicgroups_group_id_mail_to_leaders_request);
+    $apiInstance->postPublicgroupsGroupIdMailToLeaders_0($group_id, $post_publicgroups_group_id_mail_to_leaders_request);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupHomepageApi->postPublicgroupsGroupIdMailToLeaders: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupHomepageApi->postPublicgroupsGroupIdMailToLeaders_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -552,10 +552,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `postPublicgroupsGroupIdSignup()`
+## `postPublicgroupsGroupIdSignup_0()`
 
 ```php
-postPublicgroupsGroupIdSignup($group_id, $post_publicgroups_group_id_signup_request): \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignup200Response
+postPublicgroupsGroupIdSignup_0($group_id, $post_publicgroups_group_id_signup_request): \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignup200Response
 ```
 
 Send a Sign Up Form to Get Signed Up into a Public Group
@@ -579,10 +579,10 @@ $group_id = 'group_id_example'; // string | Group ID of the public group
 $post_publicgroups_group_id_signup_request = new \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest(); // \StevenBuehner\ChurchTools\Model\PostPublicgroupsGroupIdSignupRequest
 
 try {
-    $result = $apiInstance->postPublicgroupsGroupIdSignup($group_id, $post_publicgroups_group_id_signup_request);
+    $result = $apiInstance->postPublicgroupsGroupIdSignup_0($group_id, $post_publicgroups_group_id_signup_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupHomepageApi->postPublicgroupsGroupIdSignup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupHomepageApi->postPublicgroupsGroupIdSignup_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

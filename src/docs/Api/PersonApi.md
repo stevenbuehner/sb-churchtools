@@ -9,16 +9,16 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**deleteDeviceForPerson()**](PersonApi.md#deleteDeviceForPerson) | **DELETE** /persons/{personId}/devices/{deviceId} | Remove device for person |
 | [**deletePerson()**](PersonApi.md#deletePerson) | **DELETE** /persons/{personId} | Delete person |
 | [**deletePersonSetting()**](PersonApi.md#deletePersonSetting) | **DELETE** /persons/{personId}/settings/{module}/{attribute} | Delete a person setting |
-| [**getAllGroupsForPerson()**](PersonApi.md#getAllGroupsForPerson) | **GET** /persons/{personId}/groups | Get all groups a member is in |
+| [**getAllGroupsForPerson_0()**](PersonApi.md#getAllGroupsForPerson_0) | **GET** /persons/{personId}/groups | Get all groups a member is in |
 | [**getAllPersonSettings()**](PersonApi.md#getAllPersonSettings) | **GET** /persons/{personId}/settings | Get all person settings |
 | [**getAllPersons()**](PersonApi.md#getAllPersons) | **GET** /persons | Get all persons |
 | [**getDeviceForPerson()**](PersonApi.md#getDeviceForPerson) | **GET** /persons/{personId}/devices/{deviceId} | Fetch one device |
 | [**getOpenServiceRequestsForPerson()**](PersonApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person |
 | [**getPersonById()**](PersonApi.md#getPersonById) | **GET** /persons/{personId} | Get a person by ID or GUID |
 | [**getPersonDevices()**](PersonApi.md#getPersonDevices) | **GET** /persons/{personId}/devices | Fetch all registered devices for person |
-| [**getPersonEvents()**](PersonApi.md#getPersonEvents) | **GET** /persons/{personId}/events | Get events that person is involved with |
+| [**getPersonEvents_0()**](PersonApi.md#getPersonEvents_0) | **GET** /persons/{personId}/events | Get events that person is involved with |
 | [**getPersonInformation()**](PersonApi.md#getPersonInformation) | **GET** /person/{personId}/information | Get PDF with privacy-information |
-| [**getPersonMasterdata()**](PersonApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
+| [**getPersonMasterdata_0()**](PersonApi.md#getPersonMasterdata_0) | **GET** /person/masterdata | Get person &amp; groups masterdata |
 | [**getPersonModuleSettings()**](PersonApi.md#getPersonModuleSettings) | **GET** /persons/{personId}/settings/{module} | Get all person settings of a module |
 | [**getPersonProperties()**](PersonApi.md#getPersonProperties) | **POST** /persons/properties | Retrieve people&#39;s properties, whether they own an email adress |
 | [**getPersonRelationships()**](PersonApi.md#getPersonRelationships) | **GET** /persons/{personId}/relationships | Get all relationships linked to this person |
@@ -359,10 +359,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getAllGroupsForPerson()`
+## `getAllGroupsForPerson_0()`
 
 ```php
-getAllGroupsForPerson($person_id): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
+getAllGroupsForPerson_0($person_id): \StevenBuehner\ChurchTools\Model\GetAllGroupsForPerson200Response
 ```
 
 Get all groups a member is in
@@ -391,10 +391,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
 $person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getAllGroupsForPerson($person_id);
+    $result = $apiInstance->getAllGroupsForPerson_0($person_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonApi->getAllGroupsForPerson: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonApi->getAllGroupsForPerson_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -809,10 +809,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getPersonEvents()`
+## `getPersonEvents_0()`
 
 ```php
-getPersonEvents($person_id): \StevenBuehner\ChurchTools\Model\GetEvent200Response
+getPersonEvents_0($person_id): \StevenBuehner\ChurchTools\Model\GetEvent200Response
 ```
 
 Get events that person is involved with
@@ -841,10 +841,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
 $person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getPersonEvents($person_id);
+    $result = $apiInstance->getPersonEvents_0($person_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonApi->getPersonEvents: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonApi->getPersonEvents_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -931,10 +931,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getPersonMasterdata()`
+## `getPersonMasterdata_0()`
 
 ```php
-getPersonMasterdata(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
+getPersonMasterdata_0(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
 ```
 
 Get person & groups masterdata
@@ -962,10 +962,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\PersonApi(
 );
 
 try {
-    $result = $apiInstance->getPersonMasterdata();
+    $result = $apiInstance->getPersonMasterdata_0();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PersonApi->getPersonMasterdata: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PersonApi->getPersonMasterdata_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

@@ -47,7 +47,7 @@ $groups = $groupApi
 	->getGroups(NULL, NULL, NULL, NULL, NULL, NULL, NULL, [6], NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 100)
 	->getData();
 echo "Grouptype Groups: ";
-foreach ($groups as $g){
+foreach ($groups as $g) {
 	echo $g->getName() . ', ';
 }
 echo "\n\n";
@@ -70,10 +70,11 @@ foreach ($campusApi->getAllCampuses()->getData() as $c) {
 echo join(', ', $camps) . "\n\n";
 
 
-$masterDataApi = new MasterDataApi($client, $config);
-$groupTypes = $masterDataApi->getPersonMasterdata()->getData()->getGroupTypes();
+$masterDataApi  = new MasterDataApi($client, $config);
+$persMasterData = @$masterDataApi->getPersonMasterdata();
+$groupTypes     = $persMasterData->getData()->getGroupTypes();
 echo "GroupTypes: ";
-foreach ($groupTypes as $t){
+foreach ($groupTypes as $t) {
 	echo $t->getName() . ' (' . $t->getId() . '), ';
 }
 echo "\n\n";

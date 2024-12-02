@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequestAddress**](UpdateCampusRequestAddress.md) |  |
 **association_id** | **int** |  |
-**denomination** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequestDenomination**](UpdateCampusRequestDenomination.md) |  |
+**denomination** | **string** | Either exact string or denomination object with name property |
 **description** | **string** |  |
 **email** | **string** |  |
 **groups** | [**\StevenBuehner\ChurchTools\Model\UpdateCampusRequestGroupsInner[]**](UpdateCampusRequestGroupsInner.md) | Either array of group IDs or array of objects with group-property, which is a domain object wiht &#39;domainIdentifier&#39; |

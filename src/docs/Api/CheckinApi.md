@@ -4,16 +4,16 @@ All URIs are relative to /api, except if the operation defines another base path
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**checkin()**](CheckinApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group |
-| [**getQRCodeCheckin()**](CheckinApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF |
+| [**checkin_0()**](CheckinApi.md#checkin_0) | **POST** /groups/{groupId}/checkin | Checkin a person to a group |
+| [**getQRCodeCheckin_0()**](CheckinApi.md#getQRCodeCheckin_0) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF |
 | [**postCheckinPersons()**](CheckinApi.md#postCheckinPersons) | **POST** /checkin/persons | Create new person and add to group |
 | [**putCheckinPersons()**](CheckinApi.md#putCheckinPersons) | **PUT** /checkin/persons | Put existing person into group |
 
 
-## `checkin()`
+## `checkin_0()`
 
 ```php
-checkin($group_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
+checkin_0($group_id, $checkin_request): \StevenBuehner\ChurchTools\Model\Checkin200Response
 ```
 
 Checkin a person to a group
@@ -43,10 +43,10 @@ $group_id = 42; // int | ID of group
 $checkin_request = new \StevenBuehner\ChurchTools\Model\CheckinRequest(); // \StevenBuehner\ChurchTools\Model\CheckinRequest
 
 try {
-    $result = $apiInstance->checkin($group_id, $checkin_request);
+    $result = $apiInstance->checkin_0($group_id, $checkin_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CheckinApi->checkin: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CheckinApi->checkin_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -74,10 +74,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getQRCodeCheckin()`
+## `getQRCodeCheckin_0()`
 
 ```php
-getQRCodeCheckin($group_id, $person_id): \StevenBuehner\ChurchTools\Model\GetQRCodeCheckin200Response
+getQRCodeCheckin_0($group_id, $person_id): \StevenBuehner\ChurchTools\Model\GetQRCodeCheckin200Response
 ```
 
 Get link to QR-Code for CheckIn PDF
@@ -107,10 +107,10 @@ $group_id = 42; // int | ID of group
 $person_id = 42; // int | ID of person
 
 try {
-    $result = $apiInstance->getQRCodeCheckin($group_id, $person_id);
+    $result = $apiInstance->getQRCodeCheckin_0($group_id, $person_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CheckinApi->getQRCodeCheckin: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CheckinApi->getQRCodeCheckin_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

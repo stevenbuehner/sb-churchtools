@@ -4,21 +4,21 @@ All URIs are relative to /api, except if the operation defines another base path
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**declineServiceRequestById()**](ServiceServiceGroupsApi.md#declineServiceRequestById) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person |
-| [**getOpenServiceRequestsForPerson()**](ServiceServiceGroupsApi.md#getOpenServiceRequestsForPerson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person |
+| [**declineServiceRequestById_0()**](ServiceServiceGroupsApi.md#declineServiceRequestById_0) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person |
+| [**getOpenServiceRequestsForPerson_0()**](ServiceServiceGroupsApi.md#getOpenServiceRequestsForPerson_0) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person |
 | [**getService()**](ServiceServiceGroupsApi.md#getService) | **GET** /services/{serviceId} |  |
 | [**getServiceGroup()**](ServiceServiceGroupsApi.md#getServiceGroup) | **GET** /servicegroups/{serviceGroupId} |  |
 | [**getServiceGroups()**](ServiceServiceGroupsApi.md#getServiceGroups) | **GET** /servicegroups |  |
-| [**getServiceRequestById()**](ServiceServiceGroupsApi.md#getServiceRequestById) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person |
+| [**getServiceRequestById_0()**](ServiceServiceGroupsApi.md#getServiceRequestById_0) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person |
 | [**getServices()**](ServiceServiceGroupsApi.md#getServices) | **GET** /services |  |
-| [**undoServiceRequestById()**](ServiceServiceGroupsApi.md#undoServiceRequestById) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action |
-| [**updateServiceRequestById()**](ServiceServiceGroupsApi.md#updateServiceRequestById) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person |
+| [**undoServiceRequestById_0()**](ServiceServiceGroupsApi.md#undoServiceRequestById_0) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action |
+| [**updateServiceRequestById_0()**](ServiceServiceGroupsApi.md#updateServiceRequestById_0) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person |
 
 
-## `declineServiceRequestById()`
+## `declineServiceRequestById_0()`
 
 ```php
-declineServiceRequestById($person_id, $request_id, $comment)
+declineServiceRequestById_0($person_id, $request_id, $comment)
 ```
 
 Decline a service request for a person
@@ -49,9 +49,9 @@ $request_id = 42; // int | ID of a service request
 $comment = ; // string | Comment
 
 try {
-    $apiInstance->declineServiceRequestById($person_id, $request_id, $comment);
+    $apiInstance->declineServiceRequestById_0($person_id, $request_id, $comment);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceServiceGroupsApi->declineServiceRequestById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServiceServiceGroupsApi->declineServiceRequestById_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -80,10 +80,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getOpenServiceRequestsForPerson()`
+## `getOpenServiceRequestsForPerson_0()`
 
 ```php
-getOpenServiceRequestsForPerson($person_id, $get_all_in_future): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
+getOpenServiceRequestsForPerson_0($person_id, $get_all_in_future): \StevenBuehner\ChurchTools\Model\GetOpenServiceRequestsForPerson200Response
 ```
 
 Get all service requests for a person
@@ -113,10 +113,10 @@ $person_id = 42; // int | ID of person
 $get_all_in_future = false; // bool | If set to true, all service requests in future are returned (no matter which state). Otherwise (default) open requests from past and future are returned.
 
 try {
-    $result = $apiInstance->getOpenServiceRequestsForPerson($person_id, $get_all_in_future);
+    $result = $apiInstance->getOpenServiceRequestsForPerson_0($person_id, $get_all_in_future);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceServiceGroupsApi->getOpenServiceRequestsForPerson: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServiceServiceGroupsApi->getOpenServiceRequestsForPerson_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -321,10 +321,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getServiceRequestById()`
+## `getServiceRequestById_0()`
 
 ```php
-getServiceRequestById($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+getServiceRequestById_0($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Get a specific service request for a person
@@ -354,10 +354,10 @@ $person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 
 try {
-    $result = $apiInstance->getServiceRequestById($person_id, $request_id);
+    $result = $apiInstance->getServiceRequestById_0($person_id, $request_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceServiceGroupsApi->getServiceRequestById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServiceServiceGroupsApi->getServiceRequestById_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -442,10 +442,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `undoServiceRequestById()`
+## `undoServiceRequestById_0()`
 
 ```php
-undoServiceRequestById($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+undoServiceRequestById_0($person_id, $request_id): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Undo last service request action
@@ -475,10 +475,10 @@ $person_id = 42; // int | ID of person
 $request_id = 42; // int | ID of a service request
 
 try {
-    $result = $apiInstance->undoServiceRequestById($person_id, $request_id);
+    $result = $apiInstance->undoServiceRequestById_0($person_id, $request_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceServiceGroupsApi->undoServiceRequestById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServiceServiceGroupsApi->undoServiceRequestById_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -506,10 +506,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `updateServiceRequestById()`
+## `updateServiceRequestById_0()`
 
 ```php
-updateServiceRequestById($person_id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
+updateServiceRequestById_0($person_id, $request_id, $update_service_request_by_id_request): \StevenBuehner\ChurchTools\Model\GetServiceRequestById200Response
 ```
 
 Agree to a service request for a person
@@ -540,10 +540,10 @@ $request_id = 42; // int | ID of a service request
 $update_service_request_by_id_request = new \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest(); // \StevenBuehner\ChurchTools\Model\UpdateServiceRequestByIdRequest | Send the agreed state and optionally a comment.
 
 try {
-    $result = $apiInstance->updateServiceRequestById($person_id, $request_id, $update_service_request_by_id_request);
+    $result = $apiInstance->updateServiceRequestById_0($person_id, $request_id, $update_service_request_by_id_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceServiceGroupsApi->updateServiceRequestById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServiceServiceGroupsApi->updateServiceRequestById_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

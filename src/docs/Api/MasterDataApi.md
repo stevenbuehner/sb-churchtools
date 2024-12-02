@@ -8,7 +8,7 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getAllData()**](MasterDataApi.md#getAllData) | **GET** /finance/masterdata | Get a master data for finance module |
 | [**getEventMasterdata()**](MasterDataApi.md#getEventMasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot; |
 | [**getPersonMasterdata()**](MasterDataApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
-| [**getResourceMasterdata()**](MasterDataApi.md#getResourceMasterdata) | **GET** /resource/masterdata | Your GET endpoint |
+| [**getResourceMasterdata_0()**](MasterDataApi.md#getResourceMasterdata_0) | **GET** /resource/masterdata | Your GET endpoint |
 
 
 ## `fetchMasterDataPerson()`
@@ -247,10 +247,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getResourceMasterdata()`
+## `getResourceMasterdata_0()`
 
 ```php
-getResourceMasterdata(): \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response
+getResourceMasterdata_0(): \StevenBuehner\ChurchTools\Model\GetResourceMasterdata200Response
 ```
 
 Your GET endpoint
@@ -276,10 +276,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\MasterDataApi(
 );
 
 try {
-    $result = $apiInstance->getResourceMasterdata();
+    $result = $apiInstance->getResourceMasterdata_0();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MasterDataApi->getResourceMasterdata: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MasterDataApi->getResourceMasterdata_0: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
