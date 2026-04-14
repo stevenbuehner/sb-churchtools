@@ -39,7 +39,7 @@ use PHPUnit\Framework\TestCase;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class 200ResponseTest extends TestCase
+class Response200Test extends TestCase
 {
 
     /**
