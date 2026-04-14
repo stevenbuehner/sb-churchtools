@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerTeamInnerPersonDomainAttributes
+# GetAllCampuses200ResponseDataInnerTeamInnerPersonDomainAttributes
 
 ## Properties
 

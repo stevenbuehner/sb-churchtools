@@ -1,4 +1,4 @@
-# # JobConfiguration
+# JobConfiguration
 
 ## Properties
 

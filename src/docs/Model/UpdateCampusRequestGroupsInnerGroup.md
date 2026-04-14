@@ -1,4 +1,4 @@
-# # UpdateCampusRequestGroupsInnerGroup
+# UpdateCampusRequestGroupsInnerGroup
 
 ## Properties
 

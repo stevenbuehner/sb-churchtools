@@ -1,4 +1,4 @@
-# # GetGroupAgegroupsAgeGroupId200Response
+# GetGroupAgegroupsAgeGroupId200Response
 
 ## Properties
 

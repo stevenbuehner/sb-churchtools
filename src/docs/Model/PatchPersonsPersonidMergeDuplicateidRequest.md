@@ -1,4 +1,4 @@
-# # PatchPersonsPersonidMergeDuplicateidRequest
+# PatchPersonsPersonidMergeDuplicateidRequest
 
 ## Properties
 

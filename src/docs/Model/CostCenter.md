@@ -1,4 +1,4 @@
-# # CostCenter
+# CostCenter
 
 ## Properties
 

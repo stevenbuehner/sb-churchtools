@@ -1,4 +1,4 @@
-# # GetSearch200ResponseDataInnerAnyOf
+# GetSearch200ResponseDataInnerAnyOf
 
 ## Properties
 

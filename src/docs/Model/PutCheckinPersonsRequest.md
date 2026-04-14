@@ -1,4 +1,4 @@
-# # PutCheckinPersonsRequest
+# PutCheckinPersonsRequest
 
 ## Properties
 

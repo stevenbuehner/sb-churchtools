@@ -1,4 +1,4 @@
-# # ContactLabel
+# ContactLabel
 
 ## Properties
 

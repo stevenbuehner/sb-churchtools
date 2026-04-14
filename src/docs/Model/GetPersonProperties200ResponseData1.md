@@ -1,4 +1,4 @@
-# # GetPersonProperties200ResponseData1
+# GetPersonProperties200ResponseData1
 
 ## Properties
 

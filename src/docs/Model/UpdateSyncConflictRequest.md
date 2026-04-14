@@ -1,4 +1,4 @@
-# # UpdateSyncConflictRequest
+# UpdateSyncConflictRequest
 
 ## Properties
 

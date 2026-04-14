@@ -1,4 +1,4 @@
-# # PostPersonsPersonIdArchiveRequest
+# PostPersonsPersonIdArchiveRequest
 
 ## Properties
 

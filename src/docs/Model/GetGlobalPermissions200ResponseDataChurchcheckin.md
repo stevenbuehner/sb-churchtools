@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseDataChurchcheckin
+# GetGlobalPermissions200ResponseDataChurchcheckin
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetAllTaxRates200Response
+# GetAllTaxRates200Response
 
 ## Properties
 

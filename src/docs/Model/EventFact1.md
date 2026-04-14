@@ -1,4 +1,4 @@
-# # EventFact1
+# EventFact1
 
 ## Properties
 

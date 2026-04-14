@@ -1,4 +1,4 @@
-# # PersonRelationship
+# PersonRelationship
 
 ## Properties
 

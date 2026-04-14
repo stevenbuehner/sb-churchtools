@@ -1,4 +1,4 @@
-# # PostGroups201Response
+# PostGroups201Response
 
 ## Properties
 

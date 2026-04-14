@@ -1,4 +1,4 @@
-# # GetAllPersonSettings200Response
+# GetAllPersonSettings200Response
 
 ## Properties
 

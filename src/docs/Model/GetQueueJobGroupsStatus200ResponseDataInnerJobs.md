@@ -1,4 +1,4 @@
-# # GetQueueJobGroupsStatus200ResponseDataInnerJobs
+# GetQueueJobGroupsStatus200ResponseDataInnerJobs
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SearchResult1
+# SearchResult1
 
 ## Properties
 

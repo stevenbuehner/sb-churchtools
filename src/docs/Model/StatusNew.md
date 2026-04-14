@@ -1,4 +1,4 @@
-# # StatusNew
+# StatusNew
 
 ## Properties
 

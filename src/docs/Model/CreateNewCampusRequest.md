@@ -1,4 +1,4 @@
-# # CreateNewCampusRequest
+# CreateNewCampusRequest
 
 ## Properties
 

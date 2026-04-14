@@ -1,4 +1,4 @@
-# # PostPublicgroupsGroupIdSignup200Response
+# PostPublicgroupsGroupIdSignup200Response
 
 ## Properties
 

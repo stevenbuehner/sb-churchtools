@@ -1,4 +1,4 @@
-# # GetLoginStatistics200Response
+# GetLoginStatistics200Response
 
 ## Properties
 

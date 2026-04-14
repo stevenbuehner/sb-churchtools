@@ -1,4 +1,4 @@
-# # Absence
+# Absence
 
 ## Properties
 

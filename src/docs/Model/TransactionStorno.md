@@ -1,4 +1,4 @@
-# # TransactionStorno
+# TransactionStorno
 
 ## Properties
 

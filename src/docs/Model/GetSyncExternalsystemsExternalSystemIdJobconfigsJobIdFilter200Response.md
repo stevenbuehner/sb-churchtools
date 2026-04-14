@@ -1,4 +1,4 @@
-# # GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response
+# GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdFilter200Response
 
 ## Properties
 

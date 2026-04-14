@@ -1,4 +1,4 @@
-# # StartQueueWorker200ResponseData
+# StartQueueWorker200ResponseData
 
 ## Properties
 

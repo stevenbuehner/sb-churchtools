@@ -1,4 +1,4 @@
-# # CreateOrUpdateMember200Response
+# CreateOrUpdateMember200Response
 
 ## Properties
 

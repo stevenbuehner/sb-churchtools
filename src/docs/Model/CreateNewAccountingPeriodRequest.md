@@ -1,4 +1,4 @@
-# # CreateNewAccountingPeriodRequest
+# CreateNewAccountingPeriodRequest
 
 ## Properties
 

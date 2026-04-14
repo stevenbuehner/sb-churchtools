@@ -1,4 +1,4 @@
-# # PostApiDbfieldsRequest
+# PostApiDbfieldsRequest
 
 ## Properties
 

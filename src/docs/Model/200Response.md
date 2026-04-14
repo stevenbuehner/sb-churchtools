@@ -1,4 +1,4 @@
-# # 200Response
+# 200Response
 
 ## Properties
 

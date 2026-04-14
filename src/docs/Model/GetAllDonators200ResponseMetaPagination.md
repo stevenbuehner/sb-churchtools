@@ -1,4 +1,4 @@
-# # GetAllDonators200ResponseMetaPagination
+# GetAllDonators200ResponseMetaPagination
 
 ## Properties
 

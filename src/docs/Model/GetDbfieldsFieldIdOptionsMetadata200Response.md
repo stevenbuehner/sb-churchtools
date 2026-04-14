@@ -1,4 +1,4 @@
-# # GetDbfieldsFieldIdOptionsMetadata200Response
+# GetDbfieldsFieldIdOptionsMetadata200Response
 
 ## Properties
 

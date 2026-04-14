@@ -1,4 +1,4 @@
-# # UpdateCampusRequestAddress
+# UpdateCampusRequestAddress
 
 ## Properties
 

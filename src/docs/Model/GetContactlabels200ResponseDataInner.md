@@ -1,4 +1,4 @@
-# # GetContactlabels200ResponseDataInner
+# GetContactlabels200ResponseDataInner
 
 ## Properties
 

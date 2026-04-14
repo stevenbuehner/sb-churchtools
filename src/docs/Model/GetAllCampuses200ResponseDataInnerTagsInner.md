@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerTagsInner
+# GetAllCampuses200ResponseDataInnerTagsInner
 
 ## Properties
 

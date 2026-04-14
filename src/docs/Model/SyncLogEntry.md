@@ -1,4 +1,4 @@
-# # SyncLogEntry
+# SyncLogEntry
 
 ## Properties
 

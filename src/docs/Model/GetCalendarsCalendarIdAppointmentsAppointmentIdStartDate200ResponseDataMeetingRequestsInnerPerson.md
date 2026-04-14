@@ -1,4 +1,4 @@
-# # GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson
+# GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataMeetingRequestsInnerPerson
 
 ## Properties
 

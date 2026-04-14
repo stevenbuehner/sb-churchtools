@@ -1,4 +1,4 @@
-# # DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest
+# DeletePersonIdEventsEventIdServicesServiceIdExchangerequestsCopyRequest
 
 ## Properties
 

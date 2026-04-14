@@ -1,4 +1,4 @@
-# # GetGroupRoles200ResponseDataInner
+# GetGroupRoles200ResponseDataInner
 
 ## Properties
 

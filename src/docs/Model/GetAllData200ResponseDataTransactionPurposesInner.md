@@ -1,4 +1,4 @@
-# # GetAllData200ResponseDataTransactionPurposesInner
+# GetAllData200ResponseDataTransactionPurposesInner
 
 ## Properties
 

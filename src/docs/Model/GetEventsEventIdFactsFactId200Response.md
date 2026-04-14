@@ -1,4 +1,4 @@
-# # GetEventsEventIdFactsFactId200Response
+# GetEventsEventIdFactsFactId200Response
 
 ## Properties
 

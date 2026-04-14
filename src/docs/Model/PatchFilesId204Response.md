@@ -1,4 +1,4 @@
-# # PatchFilesId204Response
+# PatchFilesId204Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # Donator
+# Donator
 
 ## Properties
 

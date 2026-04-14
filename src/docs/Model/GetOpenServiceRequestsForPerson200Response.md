@@ -1,4 +1,4 @@
-# # GetOpenServiceRequestsForPerson200Response
+# GetOpenServiceRequestsForPerson200Response
 
 ## Properties
 

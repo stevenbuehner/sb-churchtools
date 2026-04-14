@@ -1,4 +1,4 @@
-# # CreateNewStatus201Response
+# CreateNewStatus201Response
 
 ## Properties
 

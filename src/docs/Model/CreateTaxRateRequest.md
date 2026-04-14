@@ -1,4 +1,4 @@
-# # CreateTaxRateRequest
+# CreateTaxRateRequest
 
 ## Properties
 

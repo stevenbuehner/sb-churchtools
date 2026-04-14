@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseData
+# GetGlobalPermissions200ResponseData
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerServicesInner
+# GetAllCampuses200ResponseDataInnerServicesInner
 
 ## Properties
 

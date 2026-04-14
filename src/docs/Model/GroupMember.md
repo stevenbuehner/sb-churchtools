@@ -1,4 +1,4 @@
-# # GroupMember
+# GroupMember
 
 ## Properties
 

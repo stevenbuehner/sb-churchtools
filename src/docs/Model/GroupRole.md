@@ -1,4 +1,4 @@
-# # GroupRole
+# GroupRole
 
 ## Properties
 

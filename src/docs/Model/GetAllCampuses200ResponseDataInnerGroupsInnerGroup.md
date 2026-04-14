@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerGroupsInnerGroup
+# GetAllCampuses200ResponseDataInnerGroupsInnerGroup
 
 ## Properties
 

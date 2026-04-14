@@ -1,4 +1,4 @@
-# # PostFinanceCostcentersBulkcreateRequest
+# PostFinanceCostcentersBulkcreateRequest
 
 ## Properties
 

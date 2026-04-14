@@ -1,4 +1,4 @@
-# # PutEventsEventIdFactsFactId400ResponseErrorsInner
+# PutEventsEventIdFactsFactId400ResponseErrorsInner
 
 ## Properties
 

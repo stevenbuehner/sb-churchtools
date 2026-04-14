@@ -1,4 +1,4 @@
-# # GetInternalPermissionsForPerson200Response
+# GetInternalPermissionsForPerson200Response
 
 ## Properties
 

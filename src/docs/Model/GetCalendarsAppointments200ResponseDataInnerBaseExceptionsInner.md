@@ -1,4 +1,4 @@
-# # GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner
+# GetCalendarsAppointments200ResponseDataInnerBaseExceptionsInner
 
 ## Properties
 

@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\DepartmentApi
 
+CRUD methods for department field
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

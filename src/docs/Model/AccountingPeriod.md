@@ -1,4 +1,4 @@
-# # AccountingPeriod
+# AccountingPeriod
 
 ## Properties
 

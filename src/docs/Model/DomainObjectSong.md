@@ -1,4 +1,4 @@
-# # DomainObjectSong
+# DomainObjectSong
 
 ## Properties
 

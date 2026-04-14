@@ -1,4 +1,4 @@
-# # CheckinRequest
+# CheckinRequest
 
 ## Properties
 

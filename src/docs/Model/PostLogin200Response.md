@@ -1,4 +1,4 @@
-# # PostLogin200Response
+# PostLogin200Response
 
 ## Properties
 

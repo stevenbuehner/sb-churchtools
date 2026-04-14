@@ -1,4 +1,4 @@
-# # CreateNewClientRequest
+# CreateNewClientRequest
 
 ## Properties
 

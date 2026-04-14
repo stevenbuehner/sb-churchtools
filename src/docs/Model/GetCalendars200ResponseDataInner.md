@@ -1,4 +1,4 @@
-# # GetCalendars200ResponseDataInner
+# GetCalendars200ResponseDataInner
 
 ## Properties
 

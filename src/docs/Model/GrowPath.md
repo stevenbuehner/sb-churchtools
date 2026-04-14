@@ -1,4 +1,4 @@
-# # GrowPath
+# GrowPath
 
 ## Properties
 

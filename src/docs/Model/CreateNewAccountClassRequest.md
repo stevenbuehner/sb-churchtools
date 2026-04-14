@@ -1,4 +1,4 @@
-# # CreateNewAccountClassRequest
+# CreateNewAccountClassRequest
 
 ## Properties
 

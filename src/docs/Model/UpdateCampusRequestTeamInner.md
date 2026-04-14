@@ -1,4 +1,4 @@
-# # UpdateCampusRequestTeamInner
+# UpdateCampusRequestTeamInner
 
 ## Properties
 

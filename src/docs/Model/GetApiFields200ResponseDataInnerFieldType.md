@@ -1,4 +1,4 @@
-# # GetApiFields200ResponseDataInnerFieldType
+# GetApiFields200ResponseDataInnerFieldType
 
 ## Properties
 

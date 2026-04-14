@@ -1,4 +1,4 @@
-# # PostFactsRequest
+# PostFactsRequest
 
 ## Properties
 

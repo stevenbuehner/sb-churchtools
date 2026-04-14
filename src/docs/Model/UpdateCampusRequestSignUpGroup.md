@@ -1,4 +1,4 @@
-# # UpdateCampusRequestSignUpGroup
+# UpdateCampusRequestSignUpGroup
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetApiProfiles200ResponseMeta
+# GetApiProfiles200ResponseMeta
 
 ## Properties
 

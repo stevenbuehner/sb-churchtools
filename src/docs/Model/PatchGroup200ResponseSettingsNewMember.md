@@ -1,4 +1,4 @@
-# # PatchGroup200ResponseSettingsNewMember
+# PatchGroup200ResponseSettingsNewMember
 
 ## Properties
 

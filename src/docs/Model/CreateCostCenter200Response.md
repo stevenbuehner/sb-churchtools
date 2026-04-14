@@ -1,4 +1,4 @@
-# # CreateCostCenter200Response
+# CreateCostCenter200Response
 
 ## Properties
 

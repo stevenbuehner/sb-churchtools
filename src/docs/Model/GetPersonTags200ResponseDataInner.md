@@ -1,4 +1,4 @@
-# # GetPersonTags200ResponseDataInner
+# GetPersonTags200ResponseDataInner
 
 ## Properties
 

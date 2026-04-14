@@ -1,4 +1,4 @@
-# # GetWidgetRss200Response
+# GetWidgetRss200Response
 
 ## Properties
 

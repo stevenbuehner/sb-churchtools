@@ -1,4 +1,4 @@
-# # GetDepartments200Response
+# GetDepartments200Response
 
 ## Properties
 

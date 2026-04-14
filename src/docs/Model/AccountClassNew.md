@@ -1,4 +1,4 @@
-# # AccountClassNew
+# AccountClassNew
 
 ## Properties
 

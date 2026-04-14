@@ -1,4 +1,4 @@
-# # PutCheckinPersons200ResponseDataEmailsInner
+# PutCheckinPersons200ResponseDataEmailsInner
 
 ## Properties
 

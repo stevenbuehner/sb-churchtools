@@ -1,4 +1,4 @@
-# # PatchGroup200ResponseSettingsGroupMeeting
+# PatchGroup200ResponseSettingsGroupMeeting
 
 ## Properties
 

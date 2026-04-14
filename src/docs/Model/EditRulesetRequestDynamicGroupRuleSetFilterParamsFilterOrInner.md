@@ -1,4 +1,4 @@
-# # EditRulesetRequestDynamicGroupRuleSetFilterParamsFilterOrInner
+# EditRulesetRequestDynamicGroupRuleSetFilterParamsFilterOrInner
 
 ## Properties
 

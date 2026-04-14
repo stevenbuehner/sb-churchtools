@@ -1,4 +1,4 @@
-# # SyncConflictsDataInner
+# SyncConflictsDataInner
 
 ## Properties
 

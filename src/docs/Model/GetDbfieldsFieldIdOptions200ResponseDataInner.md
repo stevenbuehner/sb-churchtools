@@ -1,4 +1,4 @@
-# # GetDbfieldsFieldIdOptions200ResponseDataInner
+# GetDbfieldsFieldIdOptions200ResponseDataInner
 
 ## Properties
 

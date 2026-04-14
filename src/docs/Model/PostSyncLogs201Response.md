@@ -1,4 +1,4 @@
-# # PostSyncLogs201Response
+# PostSyncLogs201Response
 
 ## Properties
 

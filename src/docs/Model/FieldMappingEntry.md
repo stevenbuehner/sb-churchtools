@@ -1,4 +1,4 @@
-# # FieldMappingEntry
+# FieldMappingEntry
 
 ## Properties
 

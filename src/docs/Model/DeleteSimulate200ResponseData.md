@@ -1,4 +1,4 @@
-# # DeleteSimulate200ResponseData
+# DeleteSimulate200ResponseData
 
 ## Properties
 

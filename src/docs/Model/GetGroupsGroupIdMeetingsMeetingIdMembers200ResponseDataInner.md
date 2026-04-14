@@ -1,4 +1,4 @@
-# # GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInner
+# GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PublicGroup1Information
+# PublicGroup1Information
 
 ## Properties
 

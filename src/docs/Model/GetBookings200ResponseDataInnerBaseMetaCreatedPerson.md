@@ -1,4 +1,4 @@
-# # GetBookings200ResponseDataInnerBaseMetaCreatedPerson
+# GetBookings200ResponseDataInnerBaseMetaCreatedPerson
 
 ## Properties
 

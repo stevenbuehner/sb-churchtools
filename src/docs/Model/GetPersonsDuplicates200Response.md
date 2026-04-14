@@ -1,4 +1,4 @@
-# # GetPersonsDuplicates200Response
+# GetPersonsDuplicates200Response
 
 ## Properties
 

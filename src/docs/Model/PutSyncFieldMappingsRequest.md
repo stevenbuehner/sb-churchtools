@@ -1,4 +1,4 @@
-# # PutSyncFieldMappingsRequest
+# PutSyncFieldMappingsRequest
 
 ## Properties
 

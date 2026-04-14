@@ -1,4 +1,4 @@
-# # GetGrupsIdPlaces200ResponseCreatedPerson
+# GetGrupsIdPlaces200ResponseCreatedPerson
 
 ## Properties
 

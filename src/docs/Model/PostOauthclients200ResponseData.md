@@ -1,4 +1,4 @@
-# # PostOauthclients200ResponseData
+# PostOauthclients200ResponseData
 
 ## Properties
 

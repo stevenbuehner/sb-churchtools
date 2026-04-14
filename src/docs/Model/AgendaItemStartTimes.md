@@ -1,4 +1,4 @@
-# # AgendaItemStartTimes
+# AgendaItemStartTimes
 
 ## Properties
 

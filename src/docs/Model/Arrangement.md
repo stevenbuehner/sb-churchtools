@@ -1,4 +1,4 @@
-# # Arrangement
+# Arrangement
 
 ## Properties
 

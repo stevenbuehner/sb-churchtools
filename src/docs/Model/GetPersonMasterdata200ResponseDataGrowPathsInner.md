@@ -1,4 +1,4 @@
-# # GetPersonMasterdata200ResponseDataGrowPathsInner
+# GetPersonMasterdata200ResponseDataGrowPathsInner
 
 ## Properties
 

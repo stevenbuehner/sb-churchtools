@@ -1,4 +1,4 @@
-# # GetBookings200ResponseDataInnerBaseResource
+# GetBookings200ResponseDataInnerBaseResource
 
 ## Properties
 

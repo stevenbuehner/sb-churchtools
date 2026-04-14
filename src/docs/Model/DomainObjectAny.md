@@ -1,4 +1,4 @@
-# # DomainObjectAny
+# DomainObjectAny
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # TransactionPurpose
+# TransactionPurpose
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetPublicgroup200ResponseDataSignUpConditions
+# GetPublicgroup200ResponseDataSignUpConditions
 
 ## Properties
 

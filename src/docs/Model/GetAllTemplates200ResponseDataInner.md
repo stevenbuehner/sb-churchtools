@@ -1,4 +1,4 @@
-# # GetAllTemplates200ResponseDataInner
+# GetAllTemplates200ResponseDataInner
 
 ## Properties
 

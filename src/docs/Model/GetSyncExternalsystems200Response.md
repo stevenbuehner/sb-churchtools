@@ -1,4 +1,4 @@
-# # GetSyncExternalsystems200Response
+# GetSyncExternalsystems200Response
 
 ## Properties
 

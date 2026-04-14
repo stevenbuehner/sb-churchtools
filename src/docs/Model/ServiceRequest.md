@@ -1,4 +1,4 @@
-# # ServiceRequest
+# ServiceRequest
 
 ## Properties
 

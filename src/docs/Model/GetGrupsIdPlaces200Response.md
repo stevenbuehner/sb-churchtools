@@ -1,4 +1,4 @@
-# # GetGrupsIdPlaces200Response
+# GetGrupsIdPlaces200Response
 
 ## Properties
 

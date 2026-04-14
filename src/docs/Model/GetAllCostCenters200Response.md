@@ -1,4 +1,4 @@
-# # GetAllCostCenters200Response
+# GetAllCostCenters200Response
 
 ## Properties
 

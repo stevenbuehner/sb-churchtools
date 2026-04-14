@@ -1,4 +1,4 @@
-# # GetWidgetBlog200ResponseData
+# GetWidgetBlog200ResponseData
 
 ## Properties
 

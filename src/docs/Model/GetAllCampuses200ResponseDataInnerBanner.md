@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerBanner
+# GetAllCampuses200ResponseDataInnerBanner
 
 ## Properties
 

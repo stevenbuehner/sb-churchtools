@@ -1,4 +1,4 @@
-# # GetCalendarsCalendarIdMeetingrequestpersons200Response
+# GetCalendarsCalendarIdMeetingrequestpersons200Response
 
 ## Properties
 

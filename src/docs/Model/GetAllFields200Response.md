@@ -1,4 +1,4 @@
-# # GetAllFields200Response
+# GetAllFields200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CreateNewAccountGroupRequest
+# CreateNewAccountGroupRequest
 
 ## Properties
 

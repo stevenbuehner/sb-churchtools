@@ -1,4 +1,4 @@
-# # BatchTransaction200ResponseData
+# BatchTransaction200ResponseData
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # DeleteAccountClass409Response
+# DeleteAccountClass409Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # MembershipNew
+# MembershipNew
 
 ## Properties
 

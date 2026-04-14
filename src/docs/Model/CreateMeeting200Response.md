@@ -1,4 +1,4 @@
-# # CreateMeeting200Response
+# CreateMeeting200Response
 
 ## Properties
 

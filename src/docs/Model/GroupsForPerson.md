@@ -1,4 +1,4 @@
-# # GroupsForPerson
+# GroupsForPerson
 
 ## Properties
 

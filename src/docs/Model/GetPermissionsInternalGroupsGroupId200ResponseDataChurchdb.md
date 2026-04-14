@@ -1,4 +1,4 @@
-# # GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb
+# GetPermissionsInternalGroupsGroupId200ResponseDataChurchdb
 
 ## Properties
 

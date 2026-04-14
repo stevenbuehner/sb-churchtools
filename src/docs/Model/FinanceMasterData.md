@@ -1,4 +1,4 @@
-# # FinanceMasterData
+# FinanceMasterData
 
 ## Properties
 

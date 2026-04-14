@@ -1,4 +1,4 @@
-# # WidgetAction1
+# WidgetAction1
 
 ## Properties
 

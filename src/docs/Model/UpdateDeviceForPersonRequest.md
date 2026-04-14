@@ -1,4 +1,4 @@
-# # UpdateDeviceForPersonRequest
+# UpdateDeviceForPersonRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetSyncFieldMappings200Response
+# GetSyncFieldMappings200Response
 
 ## Properties
 

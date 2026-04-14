@@ -1,4 +1,4 @@
-# # PostAutomaticEmail201Response
+# PostAutomaticEmail201Response
 
 ## Properties
 

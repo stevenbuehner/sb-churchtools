@@ -1,4 +1,4 @@
-# # GetPersonDevices200Response
+# GetPersonDevices200Response
 
 ## Properties
 

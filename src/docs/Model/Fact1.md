@@ -1,4 +1,4 @@
-# # Fact1
+# Fact1
 
 ## Properties
 

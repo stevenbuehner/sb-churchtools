@@ -1,4 +1,4 @@
-# # GetAllAccounts200ResponseDataInner
+# GetAllAccounts200ResponseDataInner
 
 ## Properties
 

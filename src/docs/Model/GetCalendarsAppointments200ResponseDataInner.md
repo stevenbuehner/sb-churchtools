@@ -1,4 +1,4 @@
-# # GetCalendarsAppointments200ResponseDataInner
+# GetCalendarsAppointments200ResponseDataInner
 
 ## Properties
 

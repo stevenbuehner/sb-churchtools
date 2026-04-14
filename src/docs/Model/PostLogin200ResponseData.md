@@ -1,4 +1,4 @@
-# # PostLogin200ResponseData
+# PostLogin200ResponseData
 
 ## Properties
 

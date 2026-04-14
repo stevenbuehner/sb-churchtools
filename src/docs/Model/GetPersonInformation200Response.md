@@ -1,4 +1,4 @@
-# # GetPersonInformation200Response
+# GetPersonInformation200Response
 
 ## Properties
 

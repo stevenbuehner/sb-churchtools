@@ -1,4 +1,4 @@
-# # GetJobs200Response
+# GetJobs200Response
 
 ## Properties
 

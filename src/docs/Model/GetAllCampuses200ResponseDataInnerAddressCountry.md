@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerAddressCountry
+# GetAllCampuses200ResponseDataInnerAddressCountry
 
 ## Properties
 

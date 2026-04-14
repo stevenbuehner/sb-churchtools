@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\FinanceApi
 
+New Finance Endpoints
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -3192,8 +3194,8 @@ $donator_ids = array(56); // int[] | Filter by donator or donator spouse. Provid
 $account_ids = array(56); // int[] | Filter by account/contra account. All transactions match, where either account or contra account is in the list.
 $is_donation = True; // bool | Filter by donations. `true` = Only donations, `false` = Other than donation.
 $is_income = True; // bool | Filter transactions by income or outcome transactions. An account group has a flag `cash asset account` to indicate accounts for income/outcome.
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Show transactions after this date.
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Show transactions before this date.
+$start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Show transactions after this date.
+$end_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Show transactions before this date.
 $is_immutable = True; // bool | Filter transactions, whether transaction is immutable.
 $order_by = 'order_by_example'; // string | Default is `date`. Order transactions either by document date, amount, or modified date. For `date` and `amount` a second sorting happens by modified. The order direction for modified date is the same as for date and amount.
 $order_direction = 'order_direction_example'; // string | Way of direction: ascending or descending

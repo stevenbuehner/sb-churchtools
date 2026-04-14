@@ -1,4 +1,4 @@
-# # SendAgendaEmail200Response
+# SendAgendaEmail200Response
 
 ## Properties
 

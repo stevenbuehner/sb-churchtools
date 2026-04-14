@@ -1,4 +1,4 @@
-# # OptIns200ResponseData
+# OptIns200ResponseData
 
 ## Properties
 

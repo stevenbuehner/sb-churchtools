@@ -1,4 +1,4 @@
-# # GroupType
+# GroupType
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetSyncExecutions200ResponseMetaPagination
+# GetSyncExecutions200ResponseMetaPagination
 
 ## Properties
 

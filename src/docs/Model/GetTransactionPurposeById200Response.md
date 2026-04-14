@@ -1,4 +1,4 @@
-# # GetTransactionPurposeById200Response
+# GetTransactionPurposeById200Response
 
 ## Properties
 

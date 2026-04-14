@@ -1,4 +1,4 @@
-# # CreateSyncMappingRequest
+# CreateSyncMappingRequest
 
 ## Properties
 

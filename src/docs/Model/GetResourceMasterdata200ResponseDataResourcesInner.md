@@ -1,4 +1,4 @@
-# # GetResourceMasterdata200ResponseDataResourcesInner
+# GetResourceMasterdata200ResponseDataResourcesInner
 
 ## Properties
 

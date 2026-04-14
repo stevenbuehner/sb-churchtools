@@ -1,4 +1,4 @@
-# # PutImageOptions200ResponseData
+# PutImageOptions200ResponseData
 
 ## Properties
 

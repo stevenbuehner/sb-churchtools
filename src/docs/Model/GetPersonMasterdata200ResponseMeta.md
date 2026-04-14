@@ -1,4 +1,4 @@
-# # GetPersonMasterdata200ResponseMeta
+# GetPersonMasterdata200ResponseMeta
 
 ## Properties
 

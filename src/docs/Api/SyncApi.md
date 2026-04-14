@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\SyncApi
 
+Endpoints for Upcoming Sync Module
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -830,8 +832,8 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\SyncApi(
 );
 $es_ids = array(56); // int[] | Filter by external system
 $job_ids = array(56); // int[] | Filter by sync job configuration
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Return executions after that date
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Return executions before that date
+$start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Return executions after that date
+$end_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Return executions before that date
 $statuses = array('statuses_example'); // string[] | Filter by status
 $page = 56; // int | Query page
 $limit = 56; // int | Number of results per page

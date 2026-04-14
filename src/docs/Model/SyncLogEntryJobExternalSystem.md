@@ -1,4 +1,4 @@
-# # SyncLogEntryJobExternalSystem
+# SyncLogEntryJobExternalSystem
 
 ## Properties
 

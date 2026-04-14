@@ -1,4 +1,4 @@
-# # FollowUp
+# FollowUp
 
 ## Properties
 

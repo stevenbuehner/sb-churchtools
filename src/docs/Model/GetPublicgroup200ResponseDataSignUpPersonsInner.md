@@ -1,4 +1,4 @@
-# # GetPublicgroup200ResponseDataSignUpPersonsInner
+# GetPublicgroup200ResponseDataSignUpPersonsInner
 
 ## Properties
 

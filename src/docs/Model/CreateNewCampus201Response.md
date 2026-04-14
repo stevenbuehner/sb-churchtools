@@ -1,4 +1,4 @@
-# # CreateNewCampus201Response
+# CreateNewCampus201Response
 
 ## Properties
 

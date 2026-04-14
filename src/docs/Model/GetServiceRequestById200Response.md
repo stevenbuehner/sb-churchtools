@@ -1,4 +1,4 @@
-# # GetServiceRequestById200Response
+# GetServiceRequestById200Response
 
 ## Properties
 

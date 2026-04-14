@@ -1,4 +1,4 @@
-# # SyncLogEntryJob
+# SyncLogEntryJob
 
 ## Properties
 

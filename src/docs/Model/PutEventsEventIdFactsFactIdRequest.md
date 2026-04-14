@@ -1,4 +1,4 @@
-# # PutEventsEventIdFactsFactIdRequest
+# PutEventsEventIdFactsFactIdRequest
 
 ## Properties
 

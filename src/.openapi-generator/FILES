@@ -385,7 +385,6 @@ docs/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInnerMember.md
 docs/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseMeta.md
 docs/Model/GetGroupsGroupIdMemberfields200Response.md
 docs/Model/GetGroupsGroupIdMemberfields200ResponseData.md
-docs/Model/GetGroupsGroupIdMemberfields200ResponseDataField.md
 docs/Model/GetGroupsGroupIdMembersStatistics200Response.md
 docs/Model/GetGroupsGroupIdMembersStatistics200ResponseDataInner.md
 docs/Model/GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner.md
@@ -811,6 +810,7 @@ lib/Api/WidgetsApi.php
 lib/Api/WikiApi.php
 lib/ApiException.php
 lib/Configuration.php
+lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/Model/200Response.php
 lib/Model/Absence.php
@@ -1160,7 +1160,6 @@ lib/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseDataInnerMember.php
 lib/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseMeta.php
 lib/Model/GetGroupsGroupIdMemberfields200Response.php
 lib/Model/GetGroupsGroupIdMemberfields200ResponseData.php
-lib/Model/GetGroupsGroupIdMemberfields200ResponseDataField.php
 lib/Model/GetGroupsGroupIdMembersStatistics200Response.php
 lib/Model/GetGroupsGroupIdMembersStatistics200ResponseDataInner.php
 lib/Model/GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner.php
@@ -1552,7 +1551,3 @@ lib/Model/WikiPage1Permissions.php
 lib/Model/WikiPage2.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/BatchTransactionRequestFiltersAnyOf1Test.php
-test/Model/BatchTransactionRequestFiltersAnyOf2Test.php
-test/Model/BatchTransactionRequestFiltersAnyOfTest.php
-test/Model/BatchTransactionRequestFiltersTest.php

@@ -1,4 +1,4 @@
-# # GetCsrftoken200Response
+# GetCsrftoken200Response
 
 ## Properties
 

@@ -1,24 +1,26 @@
 # StevenBuehner\ChurchTools\FactApi
 
+Endpoints for Facts.
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteEventsEventIdFactsFactId_0()**](FactApi.md#deleteEventsEventIdFactsFactId_0) | **DELETE** /events/{eventId}/facts/{factId} | Delete event fact |
+| [**deleteEventsEventIdFactsFactId()**](FactApi.md#deleteEventsEventIdFactsFactId) | **DELETE** /events/{eventId}/facts/{factId} | Delete event fact |
 | [**deleteFactsId()**](FactApi.md#deleteFactsId) | **DELETE** /facts/{id} | Delete Fact |
 | [**getEventsEventIdFacts()**](FactApi.md#getEventsEventIdFacts) | **GET** /events/{eventId}/facts | Read facts for event |
-| [**getEventsEventIdFactsFactId_0()**](FactApi.md#getEventsEventIdFactsFactId_0) | **GET** /events/{eventId}/facts/{factId} | Read one event fact |
+| [**getEventsEventIdFactsFactId()**](FactApi.md#getEventsEventIdFactsFactId) | **GET** /events/{eventId}/facts/{factId} | Read one event fact |
 | [**getFacts()**](FactApi.md#getFacts) | **GET** /facts | Get all facts |
 | [**getFactsId()**](FactApi.md#getFactsId) | **GET** /facts/{id} | Get One Fact |
 | [**postFacts()**](FactApi.md#postFacts) | **POST** /facts | Create new fact |
-| [**putEventsEventIdFactsFactId_0()**](FactApi.md#putEventsEventIdFactsFactId_0) | **PUT** /events/{eventId}/facts/{factId} | Create or update event fact |
+| [**putEventsEventIdFactsFactId()**](FactApi.md#putEventsEventIdFactsFactId) | **PUT** /events/{eventId}/facts/{factId} | Create or update event fact |
 | [**putFactsId()**](FactApi.md#putFactsId) | **PUT** /facts/{id} | Update Fact |
 
 
-## `deleteEventsEventIdFactsFactId_0()`
+## `deleteEventsEventIdFactsFactId()`
 
 ```php
-deleteEventsEventIdFactsFactId_0($event_id, $fact_id, $dry_run)
+deleteEventsEventIdFactsFactId($event_id, $fact_id, $dry_run)
 ```
 
 Delete event fact
@@ -47,9 +49,9 @@ $fact_id = 'fact_id_example'; // string
 $dry_run = True; // bool
 
 try {
-    $apiInstance->deleteEventsEventIdFactsFactId_0($event_id, $fact_id, $dry_run);
+    $apiInstance->deleteEventsEventIdFactsFactId($event_id, $fact_id, $dry_run);
 } catch (Exception $e) {
-    echo 'Exception when calling FactApi->deleteEventsEventIdFactsFactId_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FactApi->deleteEventsEventIdFactsFactId: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -199,10 +201,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getEventsEventIdFactsFactId_0()`
+## `getEventsEventIdFactsFactId()`
 
 ```php
-getEventsEventIdFactsFactId_0($event_id, $fact_id): \StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response
+getEventsEventIdFactsFactId($event_id, $fact_id): \StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response
 ```
 
 Read one event fact
@@ -230,10 +232,10 @@ $event_id = 'event_id_example'; // string
 $fact_id = 'fact_id_example'; // string
 
 try {
-    $result = $apiInstance->getEventsEventIdFactsFactId_0($event_id, $fact_id);
+    $result = $apiInstance->getEventsEventIdFactsFactId($event_id, $fact_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FactApi->getEventsEventIdFactsFactId_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FactApi->getEventsEventIdFactsFactId: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -444,10 +446,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `putEventsEventIdFactsFactId_0()`
+## `putEventsEventIdFactsFactId()`
 
 ```php
-putEventsEventIdFactsFactId_0($event_id, $fact_id, $put_events_event_id_facts_fact_id_request): \StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response
+putEventsEventIdFactsFactId($event_id, $fact_id, $put_events_event_id_facts_fact_id_request): \StevenBuehner\ChurchTools\Model\GetEventsEventIdFactsFactId200Response
 ```
 
 Create or update event fact
@@ -478,10 +480,10 @@ $fact_id = 'fact_id_example'; // string
 $put_events_event_id_facts_fact_id_request = new \StevenBuehner\ChurchTools\Model\PutEventsEventIdFactsFactIdRequest(); // \StevenBuehner\ChurchTools\Model\PutEventsEventIdFactsFactIdRequest | Pass the `value` for that fact as payload. The value is always a `string`. For numeric facts the value MUST be a numeric value. For select facts the value MUST be a valid option.
 
 try {
-    $result = $apiInstance->putEventsEventIdFactsFactId_0($event_id, $fact_id, $put_events_event_id_facts_fact_id_request);
+    $result = $apiInstance->putEventsEventIdFactsFactId($event_id, $fact_id, $put_events_event_id_facts_fact_id_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FactApi->putEventsEventIdFactsFactId_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FactApi->putEventsEventIdFactsFactId: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

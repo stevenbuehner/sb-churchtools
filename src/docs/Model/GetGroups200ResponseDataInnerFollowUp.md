@@ -1,4 +1,4 @@
-# # GetGroups200ResponseDataInnerFollowUp
+# GetGroups200ResponseDataInnerFollowUp
 
 ## Properties
 

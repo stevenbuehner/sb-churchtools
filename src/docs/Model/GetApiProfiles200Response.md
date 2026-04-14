@@ -1,4 +1,4 @@
-# # GetApiProfiles200Response
+# GetApiProfiles200Response
 
 ## Properties
 

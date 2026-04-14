@@ -1,4 +1,4 @@
-# # Checkin403Response
+# Checkin403Response
 
 ## Properties
 

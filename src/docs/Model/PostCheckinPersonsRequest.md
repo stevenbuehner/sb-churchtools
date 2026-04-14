@@ -1,4 +1,4 @@
-# # PostCheckinPersonsRequest
+# PostCheckinPersonsRequest
 
 ## Properties
 

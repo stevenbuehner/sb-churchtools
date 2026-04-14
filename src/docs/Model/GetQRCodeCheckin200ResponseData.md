@@ -1,4 +1,4 @@
-# # GetQRCodeCheckin200ResponseData
+# GetQRCodeCheckin200ResponseData
 
 ## Properties
 

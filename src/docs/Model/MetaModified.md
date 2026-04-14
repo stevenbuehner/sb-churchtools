@@ -1,4 +1,4 @@
-# # MetaModified
+# MetaModified
 
 ## Properties
 

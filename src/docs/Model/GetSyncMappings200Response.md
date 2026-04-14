@@ -1,4 +1,4 @@
-# # GetSyncMappings200Response
+# GetSyncMappings200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetSyncFieldMappingsNoSuggestions200Response
+# GetSyncFieldMappingsNoSuggestions200Response
 
 ## Properties
 

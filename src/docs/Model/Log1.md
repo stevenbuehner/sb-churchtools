@@ -1,4 +1,4 @@
-# # Log1
+# Log1
 
 ## Properties
 

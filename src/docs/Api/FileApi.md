@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\FileApi
 
+CRUD methods for files
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -412,7 +414,7 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\FileApi(
 );
 $domain_type = logo; // string | The domain type. Currently supported are 'avatar', 'groupimage', 'logo', 'attatchments', 'html_template', 'service', 'song_arrangement', 'importtable', 'person', 'familyavatar', 'wiki_.?'.
 $domain_identifier = 35; // int | the domain identifier
-$files = array("/path/to/file.txt"); // \SplFileObject[]
+$files = array('/path/to/file.txt'); // \SplFileObject[]
 $image_options = array('key' => new \stdClass); // object
 $max_height = 'max_height_example'; // string
 $max_width = 'max_width_example'; // string

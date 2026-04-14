@@ -1,4 +1,4 @@
-# # PutGroupsGroupIdPlacesPlaceIdRequest
+# PutGroupsGroupIdPlacesPlaceIdRequest
 
 ## Properties
 

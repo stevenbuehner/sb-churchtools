@@ -1,4 +1,4 @@
-# # GetSyncLogs200Response
+# GetSyncLogs200Response
 
 ## Properties
 

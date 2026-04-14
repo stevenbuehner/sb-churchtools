@@ -1,4 +1,4 @@
-# # GetAllChats200Response
+# GetAllChats200Response
 
 ## Properties
 

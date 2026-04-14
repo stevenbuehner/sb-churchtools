@@ -1,4 +1,4 @@
-# # Widget1WidgetSettings
+# Widget1WidgetSettings
 
 ## Properties
 

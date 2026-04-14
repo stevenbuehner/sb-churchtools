@@ -1,4 +1,4 @@
-# # GetTemplateById200Response
+# GetTemplateById200Response
 
 ## Properties
 

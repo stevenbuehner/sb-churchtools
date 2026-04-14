@@ -1,4 +1,4 @@
-# # CreateNewAccountingPeriod201Response
+# CreateNewAccountingPeriod201Response
 
 ## Properties
 

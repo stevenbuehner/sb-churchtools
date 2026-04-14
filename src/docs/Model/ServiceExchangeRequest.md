@@ -1,4 +1,4 @@
-# # ServiceExchangeRequest
+# ServiceExchangeRequest
 
 ## Properties
 

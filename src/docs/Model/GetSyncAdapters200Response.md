@@ -1,4 +1,4 @@
-# # GetSyncAdapters200Response
+# GetSyncAdapters200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostApiDbfields200Response
+# PostApiDbfields200Response
 
 ## Properties
 

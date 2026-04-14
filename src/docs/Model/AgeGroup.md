@@ -1,4 +1,4 @@
-# # AgeGroup
+# AgeGroup
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # DeleteAccountClass409ResponseData
+# DeleteAccountClass409ResponseData
 
 ## Properties
 

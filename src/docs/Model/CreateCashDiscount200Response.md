@@ -1,4 +1,4 @@
-# # CreateCashDiscount200Response
+# CreateCashDiscount200Response
 
 ## Properties
 

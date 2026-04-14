@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseDataChurchcore
+# GetGlobalPermissions200ResponseDataChurchcore
 
 ## Properties
 

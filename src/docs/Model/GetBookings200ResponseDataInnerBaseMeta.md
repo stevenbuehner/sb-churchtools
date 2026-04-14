@@ -1,4 +1,4 @@
-# # GetBookings200ResponseDataInnerBaseMeta
+# GetBookings200ResponseDataInnerBaseMeta
 
 ## Properties
 

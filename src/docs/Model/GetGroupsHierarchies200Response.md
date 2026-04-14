@@ -1,4 +1,4 @@
-# # GetGroupsHierarchies200Response
+# GetGroupsHierarchies200Response
 
 ## Properties
 

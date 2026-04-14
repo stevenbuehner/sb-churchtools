@@ -1,4 +1,4 @@
-# # GetDonationReceipt200Response
+# GetDonationReceipt200Response
 
 ## Properties
 

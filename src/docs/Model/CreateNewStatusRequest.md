@@ -1,4 +1,4 @@
-# # CreateNewStatusRequest
+# CreateNewStatusRequest
 
 ## Properties
 

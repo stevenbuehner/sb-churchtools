@@ -1,4 +1,4 @@
-# # GetCalendars200Response
+# GetCalendars200Response
 
 ## Properties
 

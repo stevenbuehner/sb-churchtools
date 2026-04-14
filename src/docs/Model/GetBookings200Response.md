@@ -1,4 +1,4 @@
-# # GetBookings200Response
+# GetBookings200Response
 
 ## Properties
 

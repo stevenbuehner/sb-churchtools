@@ -1,4 +1,4 @@
-# # GetPersonsBirthdays200ResponseDataInner
+# GetPersonsBirthdays200ResponseDataInner
 
 ## Properties
 

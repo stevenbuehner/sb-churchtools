@@ -1,4 +1,4 @@
-# # DomainObjectGroup
+# DomainObjectGroup
 
 ## Properties
 

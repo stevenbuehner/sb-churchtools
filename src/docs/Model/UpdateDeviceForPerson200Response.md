@@ -1,4 +1,4 @@
-# # UpdateDeviceForPerson200Response
+# UpdateDeviceForPerson200Response
 
 ## Properties
 

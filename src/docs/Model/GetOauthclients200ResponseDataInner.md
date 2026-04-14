@@ -1,4 +1,4 @@
-# # GetOauthclients200ResponseDataInner
+# GetOauthclients200ResponseDataInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PutOauthclientsIdentifier200Response
+# PutOauthclientsIdentifier200Response
 
 ## Properties
 

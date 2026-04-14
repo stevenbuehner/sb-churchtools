@@ -1,4 +1,4 @@
-# # DeleteAccountsForAccountingPeriod400Response
+# DeleteAccountsForAccountingPeriod400Response
 
 ## Properties
 

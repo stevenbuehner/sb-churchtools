@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\GroupApi
 
+Groups we love
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -45,15 +47,15 @@ All URIs are relative to /api, except if the operation defines another base path
 | [**getGroupsGroupIdMemberfields()**](GroupApi.md#getGroupsGroupIdMemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields |
 | [**getGroupsGroupIdMembersExport()**](GroupApi.md#getGroupsGroupIdMembersExport) | **GET** /groups/{groupId}/members/export | Export Groupmebers |
 | [**getGroupsGroupIdMembersStatistics()**](GroupApi.md#getGroupsGroupIdMembersStatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members |
-| [**getGroupsGroupIdTags_0()**](GroupApi.md#getGroupsGroupIdTags_0) | **GET** /groups/{groupId}/tags | Fetch group tags |
+| [**getGroupsGroupIdTags()**](GroupApi.md#getGroupsGroupIdTags) | **GET** /groups/{groupId}/tags | Fetch group tags |
 | [**getGroupsHierarchies()**](GroupApi.md#getGroupsHierarchies) | **GET** /groups/hierarchies | Get all group hierarchies |
 | [**getGroupsMembers()**](GroupApi.md#getGroupsMembers) | **GET** /groups/members | Get all group members |
 | [**getGroupsTags()**](GroupApi.md#getGroupsTags) | **GET** /groups/tags | Your GET endpoint |
 | [**getGrupsIdPlaces()**](GroupApi.md#getGrupsIdPlaces) | **GET** /groups/{groupId}/places | Get all places of a group |
-| [**getPersonMasterdata_1()**](GroupApi.md#getPersonMasterdata_1) | **GET** /person/masterdata | Get person &amp; groups masterdata |
-| [**getPublicgroupsGroupIdForm_0()**](GroupApi.md#getPublicgroupsGroupIdForm_0) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form |
+| [**getPersonMasterdata()**](GroupApi.md#getPersonMasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata |
+| [**getPublicgroupsGroupIdForm()**](GroupApi.md#getPublicgroupsGroupIdForm) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form |
 | [**getQRCodeCheckin()**](GroupApi.md#getQRCodeCheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF |
-| [**issueSignUpToken_0()**](GroupApi.md#issueSignUpToken_0) | **POST** /publicgroups/{groupId}/token | Issue new sign up token. |
+| [**issueSignUpToken()**](GroupApi.md#issueSignUpToken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token. |
 | [**optIns()**](GroupApi.md#optIns) | **GET** /groups/{groupId}/optins | Get Opt In status of group members |
 | [**patchGroup()**](GroupApi.md#patchGroup) | **PATCH** /groups/{groupId} | Update Group |
 | [**patchGroupsGroupIdRolesRoleId()**](GroupApi.md#patchGroupsGroupIdRolesRoleId) | **PATCH** /groups/{groupId}/roles/{roleId} | save role |
@@ -2640,10 +2642,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getGroupsGroupIdTags_0()`
+## `getGroupsGroupIdTags()`
 
 ```php
-getGroupsGroupIdTags_0($group_id): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response
+getGroupsGroupIdTags($group_id): \StevenBuehner\ChurchTools\Model\GetGroupsGroupIdTags200Response
 ```
 
 Fetch group tags
@@ -2672,10 +2674,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 $group_id = 42; // int | ID of group
 
 try {
-    $result = $apiInstance->getGroupsGroupIdTags_0($group_id);
+    $result = $apiInstance->getGroupsGroupIdTags($group_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->getGroupsGroupIdTags_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getGroupsGroupIdTags: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -2978,10 +2980,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getPersonMasterdata_1()`
+## `getPersonMasterdata()`
 
 ```php
-getPersonMasterdata_1(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
+getPersonMasterdata(): \StevenBuehner\ChurchTools\Model\GetPersonMasterdata200Response
 ```
 
 Get person & groups masterdata
@@ -3009,10 +3011,10 @@ $apiInstance = new StevenBuehner\ChurchTools\Api\GroupApi(
 );
 
 try {
-    $result = $apiInstance->getPersonMasterdata_1();
+    $result = $apiInstance->getPersonMasterdata();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->getPersonMasterdata_1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getPersonMasterdata: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -3037,10 +3039,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getPublicgroupsGroupIdForm_0()`
+## `getPublicgroupsGroupIdForm()`
 
 ```php
-getPublicgroupsGroupIdForm_0($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200Response
+getPublicgroupsGroupIdForm($group_id, $token, $person_id): \StevenBuehner\ChurchTools\Model\GetPublicgroupsGroupIdForm200Response
 ```
 
 Get a Group Sign Up Form
@@ -3065,10 +3067,10 @@ $token = 'token_example'; // string | Sign Up Token
 $person_id = 'person_id_example'; // string | The name for which the signup should be made
 
 try {
-    $result = $apiInstance->getPublicgroupsGroupIdForm_0($group_id, $token, $person_id);
+    $result = $apiInstance->getPublicgroupsGroupIdForm($group_id, $token, $person_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->getPublicgroupsGroupIdForm_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getPublicgroupsGroupIdForm: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -3161,10 +3163,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `issueSignUpToken_0()`
+## `issueSignUpToken()`
 
 ```php
-issueSignUpToken_0($group_id, $issue_sign_up_token_request): \StevenBuehner\ChurchTools\Model\IssueSignUpToken200Response
+issueSignUpToken($group_id, $issue_sign_up_token_request): \StevenBuehner\ChurchTools\Model\IssueSignUpToken200Response
 ```
 
 Issue new sign up token.
@@ -3188,10 +3190,10 @@ $group_id = 56; // int | Group id of public group
 $issue_sign_up_token_request = {"email":"jean-de-martin@rau-en.fr","groupHomepageHash":"kukiOq4WofxbacqWFEa3FgbioX0kUr6p"}; // \StevenBuehner\ChurchTools\Model\IssueSignUpTokenRequest | You MUST provide either `personId` OR `email`. Both fields cannot be present at the same time.
 
 try {
-    $result = $apiInstance->issueSignUpToken_0($group_id, $issue_sign_up_token_request);
+    $result = $apiInstance->issueSignUpToken($group_id, $issue_sign_up_token_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->issueSignUpToken_0: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->issueSignUpToken: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

@@ -1,4 +1,4 @@
-# # PutCheckinPersons200Response
+# PutCheckinPersons200Response
 
 ## Properties
 

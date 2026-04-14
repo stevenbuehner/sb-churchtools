@@ -1,4 +1,4 @@
-# # GetPersonMasterdata200ResponseDataTargetGroupsInner
+# GetPersonMasterdata200ResponseDataTargetGroupsInner
 
 ## Properties
 

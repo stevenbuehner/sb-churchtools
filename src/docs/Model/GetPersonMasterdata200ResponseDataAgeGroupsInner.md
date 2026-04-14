@@ -1,4 +1,4 @@
-# # GetPersonMasterdata200ResponseDataAgeGroupsInner
+# GetPersonMasterdata200ResponseDataAgeGroupsInner
 
 ## Properties
 

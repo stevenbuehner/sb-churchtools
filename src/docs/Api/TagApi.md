@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\TagApi
 
+Create and Update Tags for Persons &amp; Groups or songs
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

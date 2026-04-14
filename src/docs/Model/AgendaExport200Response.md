@@ -1,4 +1,4 @@
-# # AgendaExport200Response
+# AgendaExport200Response
 
 ## Properties
 

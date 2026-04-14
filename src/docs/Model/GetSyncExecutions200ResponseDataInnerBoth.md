@@ -1,4 +1,4 @@
-# # GetSyncExecutions200ResponseDataInnerBoth
+# GetSyncExecutions200ResponseDataInnerBoth
 
 ## Properties
 

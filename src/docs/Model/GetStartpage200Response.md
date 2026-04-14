@@ -1,4 +1,4 @@
-# # GetStartpage200Response
+# GetStartpage200Response
 
 ## Properties
 

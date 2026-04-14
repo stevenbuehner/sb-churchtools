@@ -1,4 +1,4 @@
-# # DomainObjectWiki
+# DomainObjectWiki
 
 ## Properties
 

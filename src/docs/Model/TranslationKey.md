@@ -1,4 +1,4 @@
-# # TranslationKey
+# TranslationKey
 
 ## Properties
 

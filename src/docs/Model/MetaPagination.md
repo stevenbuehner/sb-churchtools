@@ -1,4 +1,4 @@
-# # MetaPagination
+# MetaPagination
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetSyncExecutions200Response
+# GetSyncExecutions200Response
 
 ## Properties
 

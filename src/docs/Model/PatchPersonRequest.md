@@ -1,4 +1,4 @@
-# # PatchPersonRequest
+# PatchPersonRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SearchResult1DomainAttributes
+# SearchResult1DomainAttributes
 
 ## Properties
 

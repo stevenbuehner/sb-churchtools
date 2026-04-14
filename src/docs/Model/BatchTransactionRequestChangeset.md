@@ -1,4 +1,4 @@
-# # BatchTransactionRequestChangeset
+# BatchTransactionRequestChangeset
 
 ## Properties
 

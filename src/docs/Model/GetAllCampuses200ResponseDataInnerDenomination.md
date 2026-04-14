@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerDenomination
+# GetAllCampuses200ResponseDataInnerDenomination
 
 ## Properties
 

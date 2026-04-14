@@ -1,4 +1,4 @@
-# # GetAccountClassById200Response
+# GetAccountClassById200Response
 
 ## Properties
 

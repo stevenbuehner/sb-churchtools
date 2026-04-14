@@ -1,4 +1,4 @@
-# # SaveTag200Response
+# SaveTag200Response
 
 ## Properties
 

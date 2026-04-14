@@ -1,4 +1,4 @@
-# # Checkin200ResponseData
+# Checkin200ResponseData
 
 ## Properties
 

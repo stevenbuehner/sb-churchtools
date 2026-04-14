@@ -1,4 +1,4 @@
-# # GetSecuritylevels200ResponseDataInner
+# GetSecuritylevels200ResponseDataInner
 
 ## Properties
 

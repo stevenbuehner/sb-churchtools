@@ -1,4 +1,4 @@
-# # AgendaItemServiceGroupNotesInner
+# AgendaItemServiceGroupNotesInner
 
 ## Properties
 

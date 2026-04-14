@@ -1,4 +1,4 @@
-# # MetaCount
+# MetaCount
 
 ## Properties
 

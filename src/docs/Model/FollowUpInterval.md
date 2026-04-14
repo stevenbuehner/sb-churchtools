@@ -1,4 +1,4 @@
-# # FollowUpInterval
+# FollowUpInterval
 
 ## Properties
 

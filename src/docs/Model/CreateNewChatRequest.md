@@ -1,4 +1,4 @@
-# # CreateNewChatRequest
+# CreateNewChatRequest
 
 ## Properties
 

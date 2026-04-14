@@ -1,4 +1,4 @@
-# # GetPublicgroupsGroupIdForm200ResponseFormInner
+# GetPublicgroupsGroupIdForm200ResponseFormInner
 
 ## Properties
 

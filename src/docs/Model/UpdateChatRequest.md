@@ -1,4 +1,4 @@
-# # UpdateChatRequest
+# UpdateChatRequest
 
 ## Properties
 

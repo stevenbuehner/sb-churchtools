@@ -1,4 +1,4 @@
-# # PostPublicgroupsGroupIdSignupRequestFormsInner
+# PostPublicgroupsGroupIdSignupRequestFormsInner
 
 ## Properties
 

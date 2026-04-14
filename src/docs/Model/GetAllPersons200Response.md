@@ -1,4 +1,4 @@
-# # GetAllPersons200Response
+# GetAllPersons200Response
 
 ## Properties
 

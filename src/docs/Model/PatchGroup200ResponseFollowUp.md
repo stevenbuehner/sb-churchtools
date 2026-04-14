@@ -1,4 +1,4 @@
-# # PatchGroup200ResponseFollowUp
+# PatchGroup200ResponseFollowUp
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PutImageOptionsRequest
+# PutImageOptionsRequest
 
 ## Properties
 

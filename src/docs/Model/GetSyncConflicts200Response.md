@@ -1,4 +1,4 @@
-# # GetSyncConflicts200Response
+# GetSyncConflicts200Response
 
 ## Properties
 

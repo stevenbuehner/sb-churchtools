@@ -1,4 +1,4 @@
-# # GetLabelsTotal200ResponseDataIgnoreAddress
+# GetLabelsTotal200ResponseDataIgnoreAddress
 
 ## Properties
 

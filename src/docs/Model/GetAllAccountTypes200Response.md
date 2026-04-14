@@ -1,4 +1,4 @@
-# # GetAllAccountTypes200Response
+# GetAllAccountTypes200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseDataChurchcal
+# GetGlobalPermissions200ResponseDataChurchcal
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerAddress
+# GetAllCampuses200ResponseDataInnerAddress
 
 ## Properties
 

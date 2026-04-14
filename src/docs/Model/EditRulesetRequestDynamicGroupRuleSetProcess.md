@@ -1,4 +1,4 @@
-# # EditRulesetRequestDynamicGroupRuleSetProcess
+# EditRulesetRequestDynamicGroupRuleSetProcess
 
 ## Properties
 

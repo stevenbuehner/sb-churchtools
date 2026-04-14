@@ -1,4 +1,4 @@
-# # GetAllGroupsForPerson200ResponseDataInner
+# GetAllGroupsForPerson200ResponseDataInner
 
 ## Properties
 

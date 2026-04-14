@@ -1,4 +1,4 @@
-# # GetPermissionsInternalGroupsGroupId200Response
+# GetPermissionsInternalGroupsGroupId200Response
 
 ## Properties
 

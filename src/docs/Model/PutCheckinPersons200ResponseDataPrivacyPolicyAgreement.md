@@ -1,4 +1,4 @@
-# # PutCheckinPersons200ResponseDataPrivacyPolicyAgreement
+# PutCheckinPersons200ResponseDataPrivacyPolicyAgreement
 
 ## Properties
 

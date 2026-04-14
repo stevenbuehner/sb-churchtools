@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseDataFinance
+# GetGlobalPermissions200ResponseDataFinance
 
 ## Properties
 

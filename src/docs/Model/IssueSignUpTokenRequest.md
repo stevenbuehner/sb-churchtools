@@ -1,4 +1,4 @@
-# # IssueSignUpTokenRequest
+# IssueSignUpTokenRequest
 
 ## Properties
 

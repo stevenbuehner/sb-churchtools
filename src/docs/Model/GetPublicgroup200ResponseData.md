@@ -1,4 +1,4 @@
-# # GetPublicgroup200ResponseData
+# GetPublicgroup200ResponseData
 
 ## Properties
 

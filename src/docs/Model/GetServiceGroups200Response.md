@@ -1,4 +1,4 @@
-# # GetServiceGroups200Response
+# GetServiceGroups200Response
 
 ## Properties
 

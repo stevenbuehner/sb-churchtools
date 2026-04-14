@@ -1,4 +1,4 @@
-# # CreateNewAccountRequest
+# CreateNewAccountRequest
 
 ## Properties
 

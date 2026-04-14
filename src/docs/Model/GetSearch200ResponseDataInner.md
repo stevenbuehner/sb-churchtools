@@ -1,4 +1,4 @@
-# # GetSearch200ResponseDataInner
+# GetSearch200ResponseDataInner
 
 ## Properties
 

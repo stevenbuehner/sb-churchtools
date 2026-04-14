@@ -1,4 +1,4 @@
-# # GetAllLogs200Response
+# GetAllLogs200Response
 
 ## Properties
 

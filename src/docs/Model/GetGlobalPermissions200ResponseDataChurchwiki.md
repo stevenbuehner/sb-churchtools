@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseDataChurchwiki
+# GetGlobalPermissions200ResponseDataChurchwiki
 
 ## Properties
 

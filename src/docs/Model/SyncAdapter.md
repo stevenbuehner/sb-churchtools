@@ -1,4 +1,4 @@
-# # SyncAdapter
+# SyncAdapter
 
 ## Properties
 

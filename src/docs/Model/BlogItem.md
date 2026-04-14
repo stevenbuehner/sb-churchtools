@@ -1,4 +1,4 @@
-# # BlogItem
+# BlogItem
 
 ## Properties
 

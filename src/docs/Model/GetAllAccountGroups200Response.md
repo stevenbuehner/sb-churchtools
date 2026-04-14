@@ -1,4 +1,4 @@
-# # GetAllAccountGroups200Response
+# GetAllAccountGroups200Response
 
 ## Properties
 

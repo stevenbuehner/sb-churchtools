@@ -1,4 +1,4 @@
-# # GroupStatistics
+# GroupStatistics
 
 ## Properties
 

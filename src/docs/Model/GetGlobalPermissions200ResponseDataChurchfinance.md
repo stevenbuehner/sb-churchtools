@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseDataChurchfinance
+# GetGlobalPermissions200ResponseDataChurchfinance
 
 ## Properties
 

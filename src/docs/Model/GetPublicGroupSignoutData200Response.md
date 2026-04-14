@@ -1,4 +1,4 @@
-# # GetPublicGroupSignoutData200Response
+# GetPublicGroupSignoutData200Response
 
 ## Properties
 

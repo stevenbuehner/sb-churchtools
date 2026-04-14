@@ -1,4 +1,4 @@
-# # SendEventEmailRequest
+# SendEventEmailRequest
 
 ## Properties
 

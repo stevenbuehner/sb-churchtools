@@ -1,4 +1,4 @@
-# # CancelTransactionRequest
+# CancelTransactionRequest
 
 ## Properties
 

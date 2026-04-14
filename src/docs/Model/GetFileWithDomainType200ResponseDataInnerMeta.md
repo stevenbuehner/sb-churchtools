@@ -1,4 +1,4 @@
-# # GetFileWithDomainType200ResponseDataInnerMeta
+# GetFileWithDomainType200ResponseDataInnerMeta
 
 ## Properties
 

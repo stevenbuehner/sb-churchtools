@@ -1,4 +1,4 @@
-# # PatchGroup200Response
+# PatchGroup200Response
 
 ## Properties
 

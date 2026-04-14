@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\WikiApi
 
+Endpoints for Wiki
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

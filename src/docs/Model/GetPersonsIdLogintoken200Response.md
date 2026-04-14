@@ -1,4 +1,4 @@
-# # GetPersonsIdLogintoken200Response
+# GetPersonsIdLogintoken200Response
 
 ## Properties
 

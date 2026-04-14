@@ -1,4 +1,4 @@
-# # StatisticLogin
+# StatisticLogin
 
 ## Properties
 

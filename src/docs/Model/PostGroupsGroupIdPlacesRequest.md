@@ -1,4 +1,4 @@
-# # PostGroupsGroupIdPlacesRequest
+# PostGroupsGroupIdPlacesRequest
 
 ## Properties
 

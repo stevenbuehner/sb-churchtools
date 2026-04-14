@@ -1,4 +1,4 @@
-# # PostFinanceTurnoverReport200Response
+# PostFinanceTurnoverReport200Response
 
 ## Properties
 

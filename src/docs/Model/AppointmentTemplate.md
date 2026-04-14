@@ -1,4 +1,4 @@
-# # AppointmentTemplate
+# AppointmentTemplate
 
 ## Properties
 

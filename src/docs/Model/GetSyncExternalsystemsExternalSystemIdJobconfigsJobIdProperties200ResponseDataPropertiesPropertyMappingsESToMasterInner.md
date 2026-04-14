@@ -1,4 +1,4 @@
-# # GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner
+# GetSyncExternalsystemsExternalSystemIdJobconfigsJobIdProperties200ResponseDataPropertiesPropertyMappingsESToMasterInner
 
 ## Properties
 

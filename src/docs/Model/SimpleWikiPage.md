@@ -1,4 +1,4 @@
-# # SimpleWikiPage
+# SimpleWikiPage
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # MetaDataEntityPerson
+# MetaDataEntityPerson
 
 ## Properties
 

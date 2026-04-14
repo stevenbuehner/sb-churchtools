@@ -1,4 +1,4 @@
-# # GetAllTranslations200Response
+# GetAllTranslations200Response
 
 ## Properties
 

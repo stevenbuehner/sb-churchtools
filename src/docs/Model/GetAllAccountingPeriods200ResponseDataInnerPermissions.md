@@ -1,4 +1,4 @@
-# # GetAllAccountingPeriods200ResponseDataInnerPermissions
+# GetAllAccountingPeriods200ResponseDataInnerPermissions
 
 ## Properties
 

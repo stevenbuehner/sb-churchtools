@@ -1,4 +1,4 @@
-# # PostSyncLogsRequestLogsInner
+# PostSyncLogsRequestLogsInner
 
 ## Properties
 

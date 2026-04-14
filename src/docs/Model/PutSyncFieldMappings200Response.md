@@ -1,4 +1,4 @@
-# # PutSyncFieldMappings200Response
+# PutSyncFieldMappings200Response
 
 ## Properties
 

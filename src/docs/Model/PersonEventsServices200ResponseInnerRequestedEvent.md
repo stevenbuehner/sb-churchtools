@@ -1,4 +1,4 @@
-# # PersonEventsServices200ResponseInnerRequestedEvent
+# PersonEventsServices200ResponseInnerRequestedEvent
 
 ## Properties
 

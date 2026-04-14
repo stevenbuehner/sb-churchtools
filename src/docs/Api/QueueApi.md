@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\QueueApi
 
+Endpoints for Fetching Queue Information and Triggering Workers
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

@@ -1,4 +1,4 @@
-# # DomainObjectPerson
+# DomainObjectPerson
 
 ## Properties
 

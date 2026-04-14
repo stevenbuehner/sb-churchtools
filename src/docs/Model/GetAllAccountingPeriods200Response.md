@@ -1,4 +1,4 @@
-# # GetAllAccountingPeriods200Response
+# GetAllAccountingPeriods200Response
 
 ## Properties
 

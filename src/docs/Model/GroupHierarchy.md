@@ -1,4 +1,4 @@
-# # GroupHierarchy
+# GroupHierarchy
 
 ## Properties
 

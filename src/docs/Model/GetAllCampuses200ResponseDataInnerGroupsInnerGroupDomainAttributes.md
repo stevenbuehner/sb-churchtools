@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerGroupsInnerGroupDomainAttributes
+# GetAllCampuses200ResponseDataInnerGroupsInnerGroupDomainAttributes
 
 ## Properties
 

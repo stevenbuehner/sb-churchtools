@@ -1,4 +1,4 @@
-# # GetAllCampuses200Response
+# GetAllCampuses200Response
 
 ## Properties
 

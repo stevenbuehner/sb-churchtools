@@ -1,4 +1,4 @@
-# # PutAutomaticEmailRequest
+# PutAutomaticEmailRequest
 
 ## Properties
 

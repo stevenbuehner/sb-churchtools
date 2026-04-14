@@ -1,4 +1,4 @@
-# # TargetGroup
+# TargetGroup
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # StatusUpdate
+# StatusUpdate
 
 ## Properties
 

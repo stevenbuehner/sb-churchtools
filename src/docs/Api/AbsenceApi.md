@@ -1,5 +1,7 @@
 # StevenBuehner\ChurchTools\AbsenceApi
 
+Endpoints for absences of persons.
+
 All URIs are relative to /api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

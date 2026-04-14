@@ -1,4 +1,4 @@
-# # PublicGroup1SignUpConditions
+# PublicGroup1SignUpConditions
 
 ## Properties
 

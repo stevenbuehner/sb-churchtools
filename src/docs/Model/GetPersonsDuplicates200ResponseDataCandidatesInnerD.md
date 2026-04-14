@@ -1,4 +1,4 @@
-# # GetPersonsDuplicates200ResponseDataCandidatesInnerD
+# GetPersonsDuplicates200ResponseDataCandidatesInnerD
 
 ## Properties
 

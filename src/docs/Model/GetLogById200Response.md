@@ -1,4 +1,4 @@
-# # GetLogById200Response
+# GetLogById200Response
 
 ## Properties
 

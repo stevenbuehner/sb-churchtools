@@ -1,4 +1,4 @@
-# # GetAllCampuses200ResponseDataInnerSocialMedia
+# GetAllCampuses200ResponseDataInnerSocialMedia
 
 ## Properties
 

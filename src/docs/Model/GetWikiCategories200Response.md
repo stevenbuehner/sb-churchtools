@@ -1,4 +1,4 @@
-# # GetWikiCategories200Response
+# GetWikiCategories200Response
 
 ## Properties
 

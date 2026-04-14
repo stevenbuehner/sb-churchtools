@@ -1,4 +1,4 @@
-# # ChatNew
+# ChatNew
 
 ## Properties
 

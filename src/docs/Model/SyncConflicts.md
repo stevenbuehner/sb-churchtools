@@ -1,4 +1,4 @@
-# # SyncConflicts
+# SyncConflicts
 
 ## Properties
 

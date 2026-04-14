@@ -1,4 +1,4 @@
-# # GetLabelsTotal200ResponseData
+# GetLabelsTotal200ResponseData
 
 ## Properties
 

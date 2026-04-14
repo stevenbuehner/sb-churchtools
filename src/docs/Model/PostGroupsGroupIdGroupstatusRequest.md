@@ -1,4 +1,4 @@
-# # PostGroupsGroupIdGroupstatusRequest
+# PostGroupsGroupIdGroupstatusRequest
 
 ## Properties
 

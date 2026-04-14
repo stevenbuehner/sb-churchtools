@@ -1,4 +1,4 @@
-# # GetPersonsDuplicates200ResponseDataKnownDuplicateRelations
+# GetPersonsDuplicates200ResponseDataKnownDuplicateRelations
 
 ## Properties
 

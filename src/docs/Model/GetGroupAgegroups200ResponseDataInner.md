@@ -1,4 +1,4 @@
-# # GetGroupAgegroups200ResponseDataInner
+# GetGroupAgegroups200ResponseDataInner
 
 ## Properties
 

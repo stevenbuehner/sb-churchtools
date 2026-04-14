@@ -1,4 +1,4 @@
-# # GetPublicgroupsGroupIdPossiblerequesters200Response
+# GetPublicgroupsGroupIdPossiblerequesters200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EventMasterData1DataAbsenceReasonsInner
+# EventMasterData1DataAbsenceReasonsInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetOpenServiceRequestsForPerson200ResponseDataInner
+# GetOpenServiceRequestsForPerson200ResponseDataInner
 
 ## Properties
 

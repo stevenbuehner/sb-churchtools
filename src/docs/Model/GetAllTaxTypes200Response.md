@@ -1,4 +1,4 @@
-# # GetAllTaxTypes200Response
+# GetAllTaxTypes200Response
 
 ## Properties
 

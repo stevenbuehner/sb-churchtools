@@ -1,4 +1,4 @@
-# # GetPersonMasterdata200ResponseDataFollowUpsInner
+# GetPersonMasterdata200ResponseDataFollowUpsInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # Checkin200Response
+# Checkin200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetBookings200ResponseDataInnerBaseExceptionsInner
+# GetBookings200ResponseDataInnerBaseExceptionsInner
 
 ## Properties
 

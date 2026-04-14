@@ -1,4 +1,4 @@
-# # PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequestPropertyMappingsESToMasterInner
+# PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequestPropertyMappingsESToMasterInner
 
 ## Properties
 

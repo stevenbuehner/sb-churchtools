@@ -1,4 +1,4 @@
-# # ServiceGroup
+# ServiceGroup
 
 ## Properties
 

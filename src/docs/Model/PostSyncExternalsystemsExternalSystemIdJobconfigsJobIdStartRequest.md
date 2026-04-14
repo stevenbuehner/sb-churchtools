@@ -1,4 +1,4 @@
-# # PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest
+# PostSyncExternalsystemsExternalSystemIdJobconfigsJobIdStartRequest
 
 ## Properties
 

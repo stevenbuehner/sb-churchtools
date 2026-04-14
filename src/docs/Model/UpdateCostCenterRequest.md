@@ -1,4 +1,4 @@
-# # UpdateCostCenterRequest
+# UpdateCostCenterRequest
 
 ## Properties
 

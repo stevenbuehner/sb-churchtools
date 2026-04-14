@@ -1,4 +1,4 @@
-# # GetApiFields200Response
+# GetApiFields200Response
 
 ## Properties
 

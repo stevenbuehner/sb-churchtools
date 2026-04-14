@@ -1,4 +1,4 @@
-# # CreateCashDiscountRequest
+# CreateCashDiscountRequest
 
 ## Properties
 

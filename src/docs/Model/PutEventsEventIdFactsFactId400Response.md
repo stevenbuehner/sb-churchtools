@@ -1,4 +1,4 @@
-# # PutEventsEventIdFactsFactId400Response
+# PutEventsEventIdFactsFactId400Response
 
 ## Properties
 

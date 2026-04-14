@@ -1,4 +1,4 @@
-# # CreateOrUpdateMemberRequest
+# CreateOrUpdateMemberRequest
 
 ## Properties
 

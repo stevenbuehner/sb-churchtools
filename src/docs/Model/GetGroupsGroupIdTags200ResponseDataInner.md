@@ -1,4 +1,4 @@
-# # GetGroupsGroupIdTags200ResponseDataInner
+# GetGroupsGroupIdTags200ResponseDataInner
 
 ## Properties
 

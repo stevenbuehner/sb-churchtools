@@ -1,4 +1,4 @@
-# # GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response
+# GetWikiCategoriesWikiCategoryIdPagesVersionsVersion200Response
 
 ## Properties
 

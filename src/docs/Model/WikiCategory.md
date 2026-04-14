@@ -1,4 +1,4 @@
-# # WikiCategory
+# WikiCategory
 
 ## Properties
 

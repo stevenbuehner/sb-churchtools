@@ -1,4 +1,4 @@
-# # GetSongsOfAgenda200Response
+# GetSongsOfAgenda200Response
 
 ## Properties
 

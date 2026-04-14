@@ -1,4 +1,4 @@
-# # PostFinanceReportsRequest
+# PostFinanceReportsRequest
 
 ## Properties
 

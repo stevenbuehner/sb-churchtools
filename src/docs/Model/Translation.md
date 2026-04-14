@@ -1,4 +1,4 @@
-# # Translation
+# Translation
 
 ## Properties
 

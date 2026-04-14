@@ -1,4 +1,4 @@
-# # CashDiscountNew
+# CashDiscountNew
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ExternalSystem1
+# ExternalSystem1
 
 ## Properties
 

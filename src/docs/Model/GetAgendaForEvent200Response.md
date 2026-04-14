@@ -1,4 +1,4 @@
-# # GetAgendaForEvent200Response
+# GetAgendaForEvent200Response
 
 ## Properties
 

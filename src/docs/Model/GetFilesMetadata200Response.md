@@ -1,4 +1,4 @@
-# # GetFilesMetadata200Response
+# GetFilesMetadata200Response
 
 ## Properties
 

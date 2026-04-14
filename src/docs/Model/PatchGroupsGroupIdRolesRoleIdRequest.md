@@ -1,4 +1,4 @@
-# # PatchGroupsGroupIdRolesRoleIdRequest
+# PatchGroupsGroupIdRolesRoleIdRequest
 
 ## Properties
 

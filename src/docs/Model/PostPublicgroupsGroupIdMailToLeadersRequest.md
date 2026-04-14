@@ -1,4 +1,4 @@
-# # PostPublicgroupsGroupIdMailToLeadersRequest
+# PostPublicgroupsGroupIdMailToLeadersRequest
 
 ## Properties
 

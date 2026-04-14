@@ -1,4 +1,4 @@
-# # GetWikiCategoriesWikiCategoryIdPages200Response
+# GetWikiCategoriesWikiCategoryIdPages200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PutSyncExternalsystemsExternalSystemIdJobconfigs200Response
+# PutSyncExternalsystemsExternalSystemIdJobconfigs200Response
 
 ## Properties
 

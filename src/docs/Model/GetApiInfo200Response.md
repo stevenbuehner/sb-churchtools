@@ -1,4 +1,4 @@
-# # GetApiInfo200Response
+# GetApiInfo200Response
 
 ## Properties
 

@@ -8,8 +8,7 @@ For more information, please visit [https://forum.church.tools/category/22/churc
 
 ### Requirements
 
-PHP 7.4 and later.
-Should also work with PHP 8.0.
+PHP 8.1 and later.
 
 ### Composer
 
@@ -112,8 +111,8 @@ Class | Method | HTTP request | Description
 *ChatApi* | [**deleteChat**](docs/Api/ChatApi.md#deletechat) | **DELETE** /chat/{guid} | Delete a chat
 *ChatApi* | [**getAllChats**](docs/Api/ChatApi.md#getallchats) | **GET** /chat | Get all chats
 *ChatApi* | [**updateChat**](docs/Api/ChatApi.md#updatechat) | **PATCH** /chat/{guid} | Update a chat
-*CheckinApi* | [**checkin_0**](docs/Api/CheckinApi.md#checkin_0) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
-*CheckinApi* | [**getQRCodeCheckin_0**](docs/Api/CheckinApi.md#getqrcodecheckin_0) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
+*CheckinApi* | [**checkin**](docs/Api/CheckinApi.md#checkin) | **POST** /groups/{groupId}/checkin | Checkin a person to a group
+*CheckinApi* | [**getQRCodeCheckin**](docs/Api/CheckinApi.md#getqrcodecheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
 *CheckinApi* | [**postCheckinPersons**](docs/Api/CheckinApi.md#postcheckinpersons) | **POST** /checkin/persons | Create new person and add to group
 *CheckinApi* | [**putCheckinPersons**](docs/Api/CheckinApi.md#putcheckinpersons) | **PUT** /checkin/persons | Put existing person into group
 *ChurchQueryApi* | [**postChurchqueryDebugExport**](docs/Api/ChurchQueryApi.md#postchurchquerydebugexport) | **POST** /churchquery/debug/export | Export result of ChurchQuery
@@ -141,11 +140,11 @@ Class | Method | HTTP request | Description
 *EventApi* | [**getAllEvents**](docs/Api/EventApi.md#getallevents) | **GET** /events | Get all events
 *EventApi* | [**getEvent**](docs/Api/EventApi.md#getevent) | **GET** /events/{eventId} | Get a single event
 *EventApi* | [**getEventIcal**](docs/Api/EventApi.md#geteventical) | **GET** /events/ical | 
-*EventApi* | [**getEventMasterdata_0**](docs/Api/EventApi.md#geteventmasterdata_0) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
+*EventApi* | [**getEventMasterdata**](docs/Api/EventApi.md#geteventmasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
+*EventApi* | [**getEventsEventIdFacts**](docs/Api/EventApi.md#geteventseventidfacts) | **GET** /events/{eventId}/facts | Read facts for event
 *EventApi* | [**getEventsEventIdFactsFactId**](docs/Api/EventApi.md#geteventseventidfactsfactid) | **GET** /events/{eventId}/facts/{factId} | Read one event fact
-*EventApi* | [**getEventsEventIdFacts_0**](docs/Api/EventApi.md#geteventseventidfacts_0) | **GET** /events/{eventId}/facts | Read facts for event
 *EventApi* | [**getPersonEvents**](docs/Api/EventApi.md#getpersonevents) | **GET** /persons/{personId}/events | Get events that person is involved with
-*EventApi* | [**getSongsOfAgenda_0**](docs/Api/EventApi.md#getsongsofagenda_0) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
+*EventApi* | [**getSongsOfAgenda**](docs/Api/EventApi.md#getsongsofagenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
 *EventApi* | [**personEventsServices**](docs/Api/EventApi.md#personeventsservices) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests | Get all service exchange requests of a user for a service
 *EventApi* | [**personsPersonIdEventsEventIdServicesServiceIdExchangerequestsCandidatesGet**](docs/Api/EventApi.md#personspersonideventseventidservicesserviceidexchangerequestscandidatesget) | **GET** /persons/{personId}/events/{eventId}/services/{serviceId}/exchangerequests/candidates | Get candidates for service exchange request
 *EventApi* | [**personsPersonIdExchangerequestsGet**](docs/Api/EventApi.md#personspersonidexchangerequestsget) | **GET** /persons/{personId}/exchangerequests | Get all service exchange requests for a user
@@ -155,14 +154,14 @@ Class | Method | HTTP request | Description
 *EventApi* | [**sendAgendaEmail**](docs/Api/EventApi.md#sendagendaemail) | **POST** /agendas/send | Send agenda email to recipients
 *EventApi* | [**sendEventEmail**](docs/Api/EventApi.md#sendeventemail) | **POST** /events/send | Send Mail to Event Participants
 *EventApi* | [**startStopEventChat**](docs/Api/EventApi.md#startstopeventchat) | **POST** /events/{eventId}/chat | Start or stop an event chat
-*FactApi* | [**deleteEventsEventIdFactsFactId_0**](docs/Api/FactApi.md#deleteeventseventidfactsfactid_0) | **DELETE** /events/{eventId}/facts/{factId} | Delete event fact
+*FactApi* | [**deleteEventsEventIdFactsFactId**](docs/Api/FactApi.md#deleteeventseventidfactsfactid) | **DELETE** /events/{eventId}/facts/{factId} | Delete event fact
 *FactApi* | [**deleteFactsId**](docs/Api/FactApi.md#deletefactsid) | **DELETE** /facts/{id} | Delete Fact
 *FactApi* | [**getEventsEventIdFacts**](docs/Api/FactApi.md#geteventseventidfacts) | **GET** /events/{eventId}/facts | Read facts for event
-*FactApi* | [**getEventsEventIdFactsFactId_0**](docs/Api/FactApi.md#geteventseventidfactsfactid_0) | **GET** /events/{eventId}/facts/{factId} | Read one event fact
+*FactApi* | [**getEventsEventIdFactsFactId**](docs/Api/FactApi.md#geteventseventidfactsfactid) | **GET** /events/{eventId}/facts/{factId} | Read one event fact
 *FactApi* | [**getFacts**](docs/Api/FactApi.md#getfacts) | **GET** /facts | Get all facts
 *FactApi* | [**getFactsId**](docs/Api/FactApi.md#getfactsid) | **GET** /facts/{id} | Get One Fact
 *FactApi* | [**postFacts**](docs/Api/FactApi.md#postfacts) | **POST** /facts | Create new fact
-*FactApi* | [**putEventsEventIdFactsFactId_0**](docs/Api/FactApi.md#puteventseventidfactsfactid_0) | **PUT** /events/{eventId}/facts/{factId} | Create or update event fact
+*FactApi* | [**putEventsEventIdFactsFactId**](docs/Api/FactApi.md#puteventseventidfactsfactid) | **PUT** /events/{eventId}/facts/{factId} | Create or update event fact
 *FactApi* | [**putFactsId**](docs/Api/FactApi.md#putfactsid) | **PUT** /facts/{id} | Update Fact
 *FieldApi* | [**getAllFields**](docs/Api/FieldApi.md#getallfields) | **GET** /fields | Get all fields
 *FileApi* | [**deleteFiles**](docs/Api/FileApi.md#deletefiles) | **DELETE** /files/{domainType}/{domainIdentifier} | Delete files that are matching the domainType and domainIdentifier
@@ -306,15 +305,15 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**getGroupsGroupIdMemberfields**](docs/Api/GroupApi.md#getgroupsgroupidmemberfields) | **GET** /groups/{groupId}/memberfields | Get Group member fields
 *GroupApi* | [**getGroupsGroupIdMembersExport**](docs/Api/GroupApi.md#getgroupsgroupidmembersexport) | **GET** /groups/{groupId}/members/export | Export Groupmebers
 *GroupApi* | [**getGroupsGroupIdMembersStatistics**](docs/Api/GroupApi.md#getgroupsgroupidmembersstatistics) | **GET** /groups/{groupId}/members/statistics | Get statistics for group members
-*GroupApi* | [**getGroupsGroupIdTags_0**](docs/Api/GroupApi.md#getgroupsgroupidtags_0) | **GET** /groups/{groupId}/tags | Fetch group tags
+*GroupApi* | [**getGroupsGroupIdTags**](docs/Api/GroupApi.md#getgroupsgroupidtags) | **GET** /groups/{groupId}/tags | Fetch group tags
 *GroupApi* | [**getGroupsHierarchies**](docs/Api/GroupApi.md#getgroupshierarchies) | **GET** /groups/hierarchies | Get all group hierarchies
 *GroupApi* | [**getGroupsMembers**](docs/Api/GroupApi.md#getgroupsmembers) | **GET** /groups/members | Get all group members
 *GroupApi* | [**getGroupsTags**](docs/Api/GroupApi.md#getgroupstags) | **GET** /groups/tags | Your GET endpoint
 *GroupApi* | [**getGrupsIdPlaces**](docs/Api/GroupApi.md#getgrupsidplaces) | **GET** /groups/{groupId}/places | Get all places of a group
-*GroupApi* | [**getPersonMasterdata_1**](docs/Api/GroupApi.md#getpersonmasterdata_1) | **GET** /person/masterdata | Get person &amp; groups masterdata
-*GroupApi* | [**getPublicgroupsGroupIdForm_0**](docs/Api/GroupApi.md#getpublicgroupsgroupidform_0) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
+*GroupApi* | [**getPersonMasterdata**](docs/Api/GroupApi.md#getpersonmasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
+*GroupApi* | [**getPublicgroupsGroupIdForm**](docs/Api/GroupApi.md#getpublicgroupsgroupidform) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
 *GroupApi* | [**getQRCodeCheckin**](docs/Api/GroupApi.md#getqrcodecheckin) | **GET** /groups/{groupId}/qrcodecheckin/{personId}/pdf | Get link to QR-Code for CheckIn PDF
-*GroupApi* | [**issueSignUpToken_0**](docs/Api/GroupApi.md#issuesignuptoken_0) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
+*GroupApi* | [**issueSignUpToken**](docs/Api/GroupApi.md#issuesignuptoken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
 *GroupApi* | [**optIns**](docs/Api/GroupApi.md#optins) | **GET** /groups/{groupId}/optins | Get Opt In status of group members
 *GroupApi* | [**patchGroup**](docs/Api/GroupApi.md#patchgroup) | **PATCH** /groups/{groupId} | Update Group
 *GroupApi* | [**patchGroupsGroupIdRolesRoleId**](docs/Api/GroupApi.md#patchgroupsgroupidrolesroleid) | **PATCH** /groups/{groupId}/roles/{roleId} | save role
@@ -340,16 +339,16 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**putGroupsGroupIdParentsParentGroupId**](docs/Api/GroupApi.md#putgroupsgroupidparentsparentgroupid) | **PUT** /groups/{groupId}/parents/{parentGroupId} | Add Parent Group
 *GroupApi* | [**putGroupsGroupIdPlacesPlaceId**](docs/Api/GroupApi.md#putgroupsgroupidplacesplaceid) | **PUT** /groups/{groupId}/places/{placeId} | 
 *GroupApi* | [**startStopGroupChat**](docs/Api/GroupApi.md#startstopgroupchat) | **POST** /groups/{groupId}/chat | Start or stop an event chat
-*GroupHomepageApi* | [**getGroupForHomepage_0**](docs/Api/GroupHomepageApi.md#getgroupforhomepage_0) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
-*GroupHomepageApi* | [**getGroupHomepage_0**](docs/Api/GroupHomepageApi.md#getgrouphomepage_0) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
+*GroupHomepageApi* | [**getGroupForHomepage**](docs/Api/GroupHomepageApi.md#getgroupforhomepage) | **GET** /publicgroups/{groupId}/{hash} | Public information of group
+*GroupHomepageApi* | [**getGroupHomepage**](docs/Api/GroupHomepageApi.md#getgrouphomepage) | **GET** /grouphomepages/{hash} | Get information about public groups with settings
 *GroupHomepageApi* | [**getGroupHomepages**](docs/Api/GroupHomepageApi.md#getgrouphomepages) | **GET** /grouphomepages | Get all Grouphomepages
 *GroupHomepageApi* | [**getPublicGroupSignoutData**](docs/Api/GroupHomepageApi.md#getpublicgroupsignoutdata) | **GET** /publicgroups/{groupId}/signoutdata | 
 *GroupHomepageApi* | [**getPublicgroup**](docs/Api/GroupHomepageApi.md#getpublicgroup) | **GET** /publicgroups/{groupId} | 
 *GroupHomepageApi* | [**getPublicgroupsGroupIdForm**](docs/Api/GroupHomepageApi.md#getpublicgroupsgroupidform) | **GET** /publicgroups/{groupId}/form | Get a Group Sign Up Form
 *GroupHomepageApi* | [**getPublicgroupsGroupIdPossiblerequesters**](docs/Api/GroupHomepageApi.md#getpublicgroupsgroupidpossiblerequesters) | **GET** /publicgroups/{groupId}/possiblerequesters | Your GET endpoint
 *GroupHomepageApi* | [**issueSignUpToken**](docs/Api/GroupHomepageApi.md#issuesignuptoken) | **POST** /publicgroups/{groupId}/token | Issue new sign up token.
-*GroupHomepageApi* | [**postPublicgroupsGroupIdMailToLeaders_0**](docs/Api/GroupHomepageApi.md#postpublicgroupsgroupidmailtoleaders_0) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
-*GroupHomepageApi* | [**postPublicgroupsGroupIdSignup_0**](docs/Api/GroupHomepageApi.md#postpublicgroupsgroupidsignup_0) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
+*GroupHomepageApi* | [**postPublicgroupsGroupIdMailToLeaders**](docs/Api/GroupHomepageApi.md#postpublicgroupsgroupidmailtoleaders) | **POST** /publicgroups/{groupId}/mailToLeaders | Send a Mail to Public Group Leaders
+*GroupHomepageApi* | [**postPublicgroupsGroupIdSignup**](docs/Api/GroupHomepageApi.md#postpublicgroupsgroupidsignup) | **POST** /publicgroups/{groupId}/signup | Send a Sign Up Form to Get Signed Up into a Public Group
 *HiddenApi* | [**deleteBookings**](docs/Api/HiddenApi.md#deletebookings) | **DELETE** /bookings | 
 *HiddenApi* | [**deleteCalendarsCalendarIdAppointmentsAppointmentId**](docs/Api/HiddenApi.md#deletecalendarscalendaridappointmentsappointmentid) | **DELETE** /calendars/{calendarId}/appointments/{appointmentId} | deleteAppointment
 *HiddenApi* | [**deleteFinanceDonators**](docs/Api/HiddenApi.md#deletefinancedonators) | **DELETE** /finance/donators | 
@@ -431,7 +430,7 @@ Class | Method | HTTP request | Description
 *MasterDataApi* | [**getAllData**](docs/Api/MasterDataApi.md#getalldata) | **GET** /finance/masterdata | Get a master data for finance module
 *MasterDataApi* | [**getEventMasterdata**](docs/Api/MasterDataApi.md#geteventmasterdata) | **GET** /event/masterdata | Fetch MasterData for Module \&quot;Event\&quot;
 *MasterDataApi* | [**getPersonMasterdata**](docs/Api/MasterDataApi.md#getpersonmasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
-*MasterDataApi* | [**getResourceMasterdata_0**](docs/Api/MasterDataApi.md#getresourcemasterdata_0) | **GET** /resource/masterdata | Your GET endpoint
+*MasterDataApi* | [**getResourceMasterdata**](docs/Api/MasterDataApi.md#getresourcemasterdata) | **GET** /resource/masterdata | Your GET endpoint
 *PermissionApi* | [**getGlobalPermissions**](docs/Api/PermissionApi.md#getglobalpermissions) | **GET** /permissions/global | All Permissions for the Current User
 *PermissionApi* | [**getInternalPermissionsForPerson**](docs/Api/PermissionApi.md#getinternalpermissionsforperson) | **GET** /permissions/internal/persons/{personId} | Lookup Person-Related Group Internal Permissions
 *PermissionApi* | [**getPermissionsInternalGroupsGroupId**](docs/Api/PermissionApi.md#getpermissionsinternalgroupsgroupid) | **GET** /permissions/internal/groups/{groupId} | Lookup Group-Related Group Internal Permissions
@@ -440,16 +439,16 @@ Class | Method | HTTP request | Description
 *PersonApi* | [**deleteDeviceForPerson**](docs/Api/PersonApi.md#deletedeviceforperson) | **DELETE** /persons/{personId}/devices/{deviceId} | Remove device for person
 *PersonApi* | [**deletePerson**](docs/Api/PersonApi.md#deleteperson) | **DELETE** /persons/{personId} | Delete person
 *PersonApi* | [**deletePersonSetting**](docs/Api/PersonApi.md#deletepersonsetting) | **DELETE** /persons/{personId}/settings/{module}/{attribute} | Delete a person setting
-*PersonApi* | [**getAllGroupsForPerson_0**](docs/Api/PersonApi.md#getallgroupsforperson_0) | **GET** /persons/{personId}/groups | Get all groups a member is in
+*PersonApi* | [**getAllGroupsForPerson**](docs/Api/PersonApi.md#getallgroupsforperson) | **GET** /persons/{personId}/groups | Get all groups a member is in
 *PersonApi* | [**getAllPersonSettings**](docs/Api/PersonApi.md#getallpersonsettings) | **GET** /persons/{personId}/settings | Get all person settings
 *PersonApi* | [**getAllPersons**](docs/Api/PersonApi.md#getallpersons) | **GET** /persons | Get all persons
 *PersonApi* | [**getDeviceForPerson**](docs/Api/PersonApi.md#getdeviceforperson) | **GET** /persons/{personId}/devices/{deviceId} | Fetch one device
 *PersonApi* | [**getOpenServiceRequestsForPerson**](docs/Api/PersonApi.md#getopenservicerequestsforperson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person
 *PersonApi* | [**getPersonById**](docs/Api/PersonApi.md#getpersonbyid) | **GET** /persons/{personId} | Get a person by ID or GUID
 *PersonApi* | [**getPersonDevices**](docs/Api/PersonApi.md#getpersondevices) | **GET** /persons/{personId}/devices | Fetch all registered devices for person
-*PersonApi* | [**getPersonEvents_0**](docs/Api/PersonApi.md#getpersonevents_0) | **GET** /persons/{personId}/events | Get events that person is involved with
+*PersonApi* | [**getPersonEvents**](docs/Api/PersonApi.md#getpersonevents) | **GET** /persons/{personId}/events | Get events that person is involved with
 *PersonApi* | [**getPersonInformation**](docs/Api/PersonApi.md#getpersoninformation) | **GET** /person/{personId}/information | Get PDF with privacy-information
-*PersonApi* | [**getPersonMasterdata_0**](docs/Api/PersonApi.md#getpersonmasterdata_0) | **GET** /person/masterdata | Get person &amp; groups masterdata
+*PersonApi* | [**getPersonMasterdata**](docs/Api/PersonApi.md#getpersonmasterdata) | **GET** /person/masterdata | Get person &amp; groups masterdata
 *PersonApi* | [**getPersonModuleSettings**](docs/Api/PersonApi.md#getpersonmodulesettings) | **GET** /persons/{personId}/settings/{module} | Get all person settings of a module
 *PersonApi* | [**getPersonProperties**](docs/Api/PersonApi.md#getpersonproperties) | **POST** /persons/properties | Retrieve people&#39;s properties, whether they own an email adress
 *PersonApi* | [**getPersonRelationships**](docs/Api/PersonApi.md#getpersonrelationships) | **GET** /persons/{personId}/relationships | Get all relationships linked to this person
@@ -472,15 +471,15 @@ Class | Method | HTTP request | Description
 *QueueApi* | [**startQueueWorker**](docs/Api/QueueApi.md#startqueueworker) | **POST** /queues/{queue} | Start Worker For Queue
 *ResourceApi* | [**getBookings**](docs/Api/ResourceApi.md#getbookings) | **GET** /bookings | Your GET endpoint
 *ResourceApi* | [**getResourceMasterdata**](docs/Api/ResourceApi.md#getresourcemasterdata) | **GET** /resource/masterdata | Your GET endpoint
-*ServiceServiceGroupsApi* | [**declineServiceRequestById_0**](docs/Api/ServiceServiceGroupsApi.md#declineservicerequestbyid_0) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person
-*ServiceServiceGroupsApi* | [**getOpenServiceRequestsForPerson_0**](docs/Api/ServiceServiceGroupsApi.md#getopenservicerequestsforperson_0) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person
+*ServiceServiceGroupsApi* | [**declineServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#declineservicerequestbyid) | **DELETE** /persons/{personId}/servicerequests/{requestId} | Decline a service request for a person
+*ServiceServiceGroupsApi* | [**getOpenServiceRequestsForPerson**](docs/Api/ServiceServiceGroupsApi.md#getopenservicerequestsforperson) | **GET** /persons/{personId}/servicerequests | Get all service requests for a person
 *ServiceServiceGroupsApi* | [**getService**](docs/Api/ServiceServiceGroupsApi.md#getservice) | **GET** /services/{serviceId} | 
 *ServiceServiceGroupsApi* | [**getServiceGroup**](docs/Api/ServiceServiceGroupsApi.md#getservicegroup) | **GET** /servicegroups/{serviceGroupId} | 
 *ServiceServiceGroupsApi* | [**getServiceGroups**](docs/Api/ServiceServiceGroupsApi.md#getservicegroups) | **GET** /servicegroups | 
-*ServiceServiceGroupsApi* | [**getServiceRequestById_0**](docs/Api/ServiceServiceGroupsApi.md#getservicerequestbyid_0) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person
+*ServiceServiceGroupsApi* | [**getServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#getservicerequestbyid) | **GET** /persons/{personId}/servicerequests/{requestId} | Get a specific service request for a person
 *ServiceServiceGroupsApi* | [**getServices**](docs/Api/ServiceServiceGroupsApi.md#getservices) | **GET** /services | 
-*ServiceServiceGroupsApi* | [**undoServiceRequestById_0**](docs/Api/ServiceServiceGroupsApi.md#undoservicerequestbyid_0) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action
-*ServiceServiceGroupsApi* | [**updateServiceRequestById_0**](docs/Api/ServiceServiceGroupsApi.md#updateservicerequestbyid_0) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person
+*ServiceServiceGroupsApi* | [**undoServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#undoservicerequestbyid) | **POST** /persons/{personId}/servicerequests/{requestId}/undo | Undo last service request action
+*ServiceServiceGroupsApi* | [**updateServiceRequestById**](docs/Api/ServiceServiceGroupsApi.md#updateservicerequestbyid) | **PUT** /persons/{personId}/servicerequests/{requestId} | Agree to a service request for a person
 *SongApi* | [**getSong**](docs/Api/SongApi.md#getsong) | **GET** /songs/{songId} | Get Song
 *SongApi* | [**getSongs**](docs/Api/SongApi.md#getsongs) | **GET** /songs | Get All Songs
 *SongApi* | [**getSongsOfAgenda**](docs/Api/SongApi.md#getsongsofagenda) | **GET** /events/{eventId}/agenda/songs | Get All Songs of Agenda
@@ -890,7 +889,6 @@ Class | Method | HTTP request | Description
 - [GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseMeta](docs/Model/GetGroupsGroupIdMeetingsMeetingIdMembers200ResponseMeta.md)
 - [GetGroupsGroupIdMemberfields200Response](docs/Model/GetGroupsGroupIdMemberfields200Response.md)
 - [GetGroupsGroupIdMemberfields200ResponseData](docs/Model/GetGroupsGroupIdMemberfields200ResponseData.md)
-- [GetGroupsGroupIdMemberfields200ResponseDataField](docs/Model/GetGroupsGroupIdMemberfields200ResponseDataField.md)
 - [GetGroupsGroupIdMembersStatistics200Response](docs/Model/GetGroupsGroupIdMembersStatistics200Response.md)
 - [GetGroupsGroupIdMembersStatistics200ResponseDataInner](docs/Model/GetGroupsGroupIdMembersStatistics200ResponseDataInner.md)
 - [GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner](docs/Model/GetGroupsGroupIdMembersStatistics200ResponseDataInnerDataInner.md)
@@ -1315,5 +1313,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `0.1.0`
-    - Generator version: `7.9.0`
+    - Generator version: `7.21.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

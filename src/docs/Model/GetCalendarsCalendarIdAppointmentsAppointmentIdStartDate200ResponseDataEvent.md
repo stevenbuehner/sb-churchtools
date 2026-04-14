@@ -1,4 +1,4 @@
-# # GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataEvent
+# GetCalendarsCalendarIdAppointmentsAppointmentIdStartDate200ResponseDataEvent
 
 ## Properties
 

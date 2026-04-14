@@ -1,4 +1,4 @@
-# # PersonSetting
+# PersonSetting
 
 ## Properties
 

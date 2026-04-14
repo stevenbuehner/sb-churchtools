@@ -1,4 +1,4 @@
-# # WikiPage1Permissions
+# WikiPage1Permissions
 
 ## Properties
 

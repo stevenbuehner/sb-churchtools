@@ -1,4 +1,4 @@
-# # GetClientById200Response
+# GetClientById200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # IssueSignUpToken200Response
+# IssueSignUpToken200Response
 
 ## Properties
 

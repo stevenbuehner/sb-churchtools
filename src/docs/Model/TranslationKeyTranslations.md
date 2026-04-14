@@ -1,4 +1,4 @@
-# # TranslationKeyTranslations
+# TranslationKeyTranslations
 
 ## Properties
 

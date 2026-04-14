@@ -1,4 +1,4 @@
-# # CreatePerson400Response
+# CreatePerson400Response
 
 ## Properties
 

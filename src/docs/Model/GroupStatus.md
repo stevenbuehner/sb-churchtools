@@ -1,4 +1,4 @@
-# # GroupStatus
+# GroupStatus
 
 ## Properties
 

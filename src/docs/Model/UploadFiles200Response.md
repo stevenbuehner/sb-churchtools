@@ -1,4 +1,4 @@
-# # UploadFiles200Response
+# UploadFiles200Response
 
 ## Properties
 

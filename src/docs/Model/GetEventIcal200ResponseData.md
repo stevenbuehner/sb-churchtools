@@ -1,4 +1,4 @@
-# # GetEventIcal200ResponseData
+# GetEventIcal200ResponseData
 
 ## Properties
 

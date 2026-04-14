@@ -1,4 +1,4 @@
-# # UpdateAccountingPeriodRequest
+# UpdateAccountingPeriodRequest
 
 ## Properties
 

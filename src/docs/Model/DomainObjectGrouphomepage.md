@@ -1,4 +1,4 @@
-# # DomainObjectGrouphomepage
+# DomainObjectGrouphomepage
 
 ## Properties
 

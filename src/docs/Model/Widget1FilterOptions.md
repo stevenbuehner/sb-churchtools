@@ -1,4 +1,4 @@
-# # Widget1FilterOptions
+# Widget1FilterOptions
 
 ## Properties
 

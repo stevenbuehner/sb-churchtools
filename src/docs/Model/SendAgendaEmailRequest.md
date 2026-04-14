@@ -1,4 +1,4 @@
-# # SendAgendaEmailRequest
+# SendAgendaEmailRequest
 
 ## Properties
 

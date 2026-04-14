@@ -1,4 +1,4 @@
-# # PersonEventsServices200ResponseInner
+# PersonEventsServices200ResponseInner
 
 ## Properties
 

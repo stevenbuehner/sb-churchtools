@@ -1,4 +1,4 @@
-# # GetAllDonators200ResponseDataInner
+# GetAllDonators200ResponseDataInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetGroupsMembers200ResponseDataInner
+# GetGroupsMembers200ResponseDataInner
 
 ## Properties
 

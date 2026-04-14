@@ -1,4 +1,4 @@
-# # GetAllEvents200ResponseDataInnerEventServicesInner
+# GetAllEvents200ResponseDataInnerEventServicesInner
 
 ## Properties
 

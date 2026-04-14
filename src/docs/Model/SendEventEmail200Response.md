@@ -1,4 +1,4 @@
-# # SendEventEmail200Response
+# SendEventEmail200Response
 
 ## Properties
 

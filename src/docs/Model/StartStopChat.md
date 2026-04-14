@@ -1,4 +1,4 @@
-# # StartStopChat
+# StartStopChat
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetAllTemplates200Response
+# GetAllTemplates200Response
 
 ## Properties
 

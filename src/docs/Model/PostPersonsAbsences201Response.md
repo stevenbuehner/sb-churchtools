@@ -1,4 +1,4 @@
-# # PostPersonsAbsences201Response
+# PostPersonsAbsences201Response
 
 ## Properties
 

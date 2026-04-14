@@ -1,4 +1,4 @@
-# # PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner
+# PutSyncFieldMappingsRequestPropertyMappingsESToMasterInner
 
 ## Properties
 

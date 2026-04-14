@@ -1,4 +1,4 @@
-# # GetAllStatuses200Response
+# GetAllStatuses200Response
 
 ## Properties
 

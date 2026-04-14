@@ -1,4 +1,4 @@
-# # GetAllData200Response
+# GetAllData200Response
 
 ## Properties
 

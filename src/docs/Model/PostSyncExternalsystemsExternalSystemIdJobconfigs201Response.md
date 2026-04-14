@@ -1,4 +1,4 @@
-# # PostSyncExternalsystemsExternalSystemIdJobconfigs201Response
+# PostSyncExternalsystemsExternalSystemIdJobconfigs201Response
 
 ## Properties
 

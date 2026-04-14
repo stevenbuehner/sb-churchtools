@@ -1,4 +1,4 @@
-# # GetAllFields200ResponseMeta
+# GetAllFields200ResponseMeta
 
 ## Properties
 

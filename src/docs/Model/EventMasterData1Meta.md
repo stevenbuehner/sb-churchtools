@@ -1,4 +1,4 @@
-# # EventMasterData1Meta
+# EventMasterData1Meta
 
 ## Properties
 

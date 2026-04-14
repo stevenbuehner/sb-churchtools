@@ -1,4 +1,4 @@
-# # TaxType
+# TaxType
 
 ## Properties
 

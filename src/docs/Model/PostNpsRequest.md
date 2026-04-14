@@ -1,4 +1,4 @@
-# # PostNpsRequest
+# PostNpsRequest
 
 ## Properties
 

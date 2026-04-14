@@ -1,4 +1,4 @@
-# # GetAllMeetings200Response
+# GetAllMeetings200Response
 
 ## Properties
 

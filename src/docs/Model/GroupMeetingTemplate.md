@@ -1,4 +1,4 @@
-# # GroupMeetingTemplate
+# GroupMeetingTemplate
 
 ## Properties
 

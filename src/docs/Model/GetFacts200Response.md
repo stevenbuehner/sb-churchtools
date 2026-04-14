@@ -1,4 +1,4 @@
-# # GetFacts200Response
+# GetFacts200Response
 
 ## Properties
 

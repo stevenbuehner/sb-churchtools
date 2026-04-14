@@ -1,4 +1,4 @@
-# # AbsenceReason
+# AbsenceReason
 
 ## Properties
 

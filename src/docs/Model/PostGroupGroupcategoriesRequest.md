@@ -1,4 +1,4 @@
-# # PostGroupGroupcategoriesRequest
+# PostGroupGroupcategoriesRequest
 
 ## Properties
 

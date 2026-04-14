@@ -1,4 +1,4 @@
-# # WikiPage
+# WikiPage
 
 ## Properties
 

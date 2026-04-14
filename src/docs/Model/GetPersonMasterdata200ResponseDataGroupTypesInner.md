@@ -1,4 +1,4 @@
-# # GetPersonMasterdata200ResponseDataGroupTypesInner
+# GetPersonMasterdata200ResponseDataGroupTypesInner
 
 ## Properties
 

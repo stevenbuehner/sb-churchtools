@@ -1,4 +1,4 @@
-# # PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest
+# PutSyncExternalsystemsExternalSystemIdJobconfigsJobIdPropertiesRequest
 
 ## Properties
 

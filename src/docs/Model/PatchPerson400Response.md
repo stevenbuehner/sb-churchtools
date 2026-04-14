@@ -1,4 +1,4 @@
-# # PatchPerson400Response
+# PatchPerson400Response
 
 ## Properties
 

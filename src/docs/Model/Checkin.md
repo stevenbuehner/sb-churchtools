@@ -1,4 +1,4 @@
-# # Checkin
+# Checkin
 
 ## Properties
 

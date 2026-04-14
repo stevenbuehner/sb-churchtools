@@ -1,4 +1,4 @@
-# # GetGroups200ResponseDataInnerSettings
+# GetGroups200ResponseDataInnerSettings
 
 ## Properties
 

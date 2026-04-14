@@ -1,4 +1,4 @@
-# # Song
+# Song
 
 ## Properties
 

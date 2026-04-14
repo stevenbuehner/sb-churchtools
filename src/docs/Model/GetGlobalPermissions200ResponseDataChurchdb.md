@@ -1,4 +1,4 @@
-# # GetGlobalPermissions200ResponseDataChurchdb
+# GetGlobalPermissions200ResponseDataChurchdb
 
 ## Properties
 

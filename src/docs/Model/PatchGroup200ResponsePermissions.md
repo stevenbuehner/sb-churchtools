@@ -1,4 +1,4 @@
-# # PatchGroup200ResponsePermissions
+# PatchGroup200ResponsePermissions
 
 ## Properties
 

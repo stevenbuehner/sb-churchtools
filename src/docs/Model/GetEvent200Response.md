@@ -1,4 +1,4 @@
-# # GetEvent200Response
+# GetEvent200Response
 
 ## Properties
 

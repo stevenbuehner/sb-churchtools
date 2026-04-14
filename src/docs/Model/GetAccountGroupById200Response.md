@@ -1,4 +1,4 @@
-# # GetAccountGroupById200Response
+# GetAccountGroupById200Response
 
 ## Properties
 

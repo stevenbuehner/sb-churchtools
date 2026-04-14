@@ -1,4 +1,4 @@
-# # PersonUpdateable
+# PersonUpdateable
 
 ## Properties
 

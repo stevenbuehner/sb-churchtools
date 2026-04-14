@@ -1,4 +1,4 @@
-# # PostFinanceTurnoverReportRequest
+# PostFinanceTurnoverReportRequest
 
 ## Properties
 

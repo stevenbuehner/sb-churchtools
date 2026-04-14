@@ -1,4 +1,4 @@
-# # AgendaExportRequest
+# AgendaExportRequest
 
 ## Properties
 

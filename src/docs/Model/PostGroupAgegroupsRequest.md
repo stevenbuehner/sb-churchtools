@@ -1,4 +1,4 @@
-# # PostGroupAgegroupsRequest
+# PostGroupAgegroupsRequest
 
 ## Properties
 

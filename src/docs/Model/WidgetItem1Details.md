@@ -1,4 +1,4 @@
-# # WidgetItem1Details
+# WidgetItem1Details
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CreateCostCenterRequest
+# CreateCostCenterRequest
 
 ## Properties
 

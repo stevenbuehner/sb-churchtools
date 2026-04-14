@@ -1,4 +1,4 @@
-# # Campus
+# Campus
 
 ## Properties
 

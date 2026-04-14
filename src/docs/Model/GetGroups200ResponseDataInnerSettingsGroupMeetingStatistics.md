@@ -1,4 +1,4 @@
-# # GetGroups200ResponseDataInnerSettingsGroupMeetingStatistics
+# GetGroups200ResponseDataInnerSettingsGroupMeetingStatistics
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # AccountGroup
+# AccountGroup
 
 ## Properties
 

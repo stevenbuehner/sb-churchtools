@@ -1,4 +1,4 @@
-# # GetAllData200ResponseDataTaxTypesInner
+# GetAllData200ResponseDataTaxTypesInner
 
 ## Properties
 

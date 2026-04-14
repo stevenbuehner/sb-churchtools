@@ -1,4 +1,4 @@
-# # UpdateCampusRequestSignUpGroupDomainAttributes
+# UpdateCampusRequestSignUpGroupDomainAttributes
 
 ## Properties
 

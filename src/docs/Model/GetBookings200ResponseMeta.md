@@ -1,4 +1,4 @@
-# # GetBookings200ResponseMeta
+# GetBookings200ResponseMeta
 
 ## Properties
 

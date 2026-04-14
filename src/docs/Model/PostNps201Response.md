@@ -1,4 +1,4 @@
-# # PostNps201Response
+# PostNps201Response
 
 ## Properties
 

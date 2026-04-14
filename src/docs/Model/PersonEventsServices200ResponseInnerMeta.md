@@ -1,4 +1,4 @@
-# # PersonEventsServices200ResponseInnerMeta
+# PersonEventsServices200ResponseInnerMeta
 
 ## Properties
 

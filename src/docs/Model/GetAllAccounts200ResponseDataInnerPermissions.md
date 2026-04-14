@@ -1,4 +1,4 @@
-# # GetAllAccounts200ResponseDataInnerPermissions
+# GetAllAccounts200ResponseDataInnerPermissions
 
 ## Properties
 

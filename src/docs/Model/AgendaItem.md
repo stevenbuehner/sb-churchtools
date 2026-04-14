@@ -1,4 +1,4 @@
-# # AgendaItem
+# AgendaItem
 
 ## Properties
 

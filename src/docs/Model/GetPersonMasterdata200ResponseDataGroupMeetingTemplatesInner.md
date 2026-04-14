@@ -1,4 +1,4 @@
-# # GetPersonMasterdata200ResponseDataGroupMeetingTemplatesInner
+# GetPersonMasterdata200ResponseDataGroupMeetingTemplatesInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # TaxRate
+# TaxRate
 
 ## Properties
 

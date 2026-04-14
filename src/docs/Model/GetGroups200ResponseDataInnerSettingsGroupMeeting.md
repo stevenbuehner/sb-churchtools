@@ -1,4 +1,4 @@
-# # GetGroups200ResponseDataInnerSettingsGroupMeeting
+# GetGroups200ResponseDataInnerSettingsGroupMeeting
 
 ## Properties
 

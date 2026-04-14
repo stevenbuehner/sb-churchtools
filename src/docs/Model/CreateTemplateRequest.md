@@ -1,4 +1,4 @@
-# # CreateTemplateRequest
+# CreateTemplateRequest
 
 ## Properties
 

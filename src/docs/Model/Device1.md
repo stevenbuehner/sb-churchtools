@@ -1,4 +1,4 @@
-# # Device1
+# Device1
 
 ## Properties
 

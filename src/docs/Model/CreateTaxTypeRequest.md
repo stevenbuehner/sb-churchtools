@@ -1,4 +1,4 @@
-# # CreateTaxTypeRequest
+# CreateTaxTypeRequest
 
 ## Properties
 

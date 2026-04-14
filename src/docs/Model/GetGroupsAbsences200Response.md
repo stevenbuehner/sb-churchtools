@@ -1,4 +1,4 @@
-# # GetGroupsAbsences200Response
+# GetGroupsAbsences200Response
 
 ## Properties
 

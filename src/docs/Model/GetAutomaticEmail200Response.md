@@ -1,4 +1,4 @@
-# # GetAutomaticEmail200Response
+# GetAutomaticEmail200Response
 
 ## Properties
 

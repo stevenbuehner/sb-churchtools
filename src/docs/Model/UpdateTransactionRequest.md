@@ -1,4 +1,4 @@
-# # UpdateTransactionRequest
+# UpdateTransactionRequest
 
 ## Properties
 

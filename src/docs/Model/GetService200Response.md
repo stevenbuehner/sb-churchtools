@@ -1,4 +1,4 @@
-# # GetService200Response
+# GetService200Response
 
 ## Properties
 

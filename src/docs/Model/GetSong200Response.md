@@ -1,4 +1,4 @@
-# # GetSong200Response
+# GetSong200Response
 
 ## Properties
 

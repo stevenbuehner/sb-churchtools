@@ -1,4 +1,4 @@
-# # Department
+# Department
 
 ## Properties
 

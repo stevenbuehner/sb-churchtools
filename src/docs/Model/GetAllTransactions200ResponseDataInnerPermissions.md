@@ -1,4 +1,4 @@
-# # GetAllTransactions200ResponseDataInnerPermissions
+# GetAllTransactions200ResponseDataInnerPermissions
 
 ## Properties
 

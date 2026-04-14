@@ -1,4 +1,4 @@
-# # GetAllDonators200ResponseMeta
+# GetAllDonators200ResponseMeta
 
 ## Properties
 

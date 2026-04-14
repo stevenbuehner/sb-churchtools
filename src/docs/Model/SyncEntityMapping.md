@@ -1,4 +1,4 @@
-# # SyncEntityMapping
+# SyncEntityMapping
 
 ## Properties
 

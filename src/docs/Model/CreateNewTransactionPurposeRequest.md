@@ -1,4 +1,4 @@
-# # CreateNewTransactionPurposeRequest
+# CreateNewTransactionPurposeRequest
 
 ## Properties
 

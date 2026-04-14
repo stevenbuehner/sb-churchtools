@@ -1,4 +1,4 @@
-# # CreateTaxRate200Response
+# CreateTaxRate200Response
 
 ## Properties
 

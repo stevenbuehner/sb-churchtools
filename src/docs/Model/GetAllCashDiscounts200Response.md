@@ -1,4 +1,4 @@
-# # GetAllCashDiscounts200Response
+# GetAllCashDiscounts200Response
 
 ## Properties
 

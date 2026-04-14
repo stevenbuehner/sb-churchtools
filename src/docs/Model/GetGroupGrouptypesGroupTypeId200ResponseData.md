@@ -1,4 +1,4 @@
-# # GetGroupGrouptypesGroupTypeId200ResponseData
+# GetGroupGrouptypesGroupTypeId200ResponseData
 
 ## Properties
 

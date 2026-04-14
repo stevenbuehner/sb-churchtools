@@ -1,4 +1,4 @@
-# # PostSyncExternalsystemsIdTest400Response
+# PostSyncExternalsystemsIdTest400Response
 
 ## Properties
 

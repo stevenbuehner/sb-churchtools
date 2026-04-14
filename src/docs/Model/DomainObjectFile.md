@@ -1,4 +1,4 @@
-# # DomainObjectFile
+# DomainObjectFile
 
 ## Properties
 

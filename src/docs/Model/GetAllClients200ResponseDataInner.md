@@ -1,4 +1,4 @@
-# # GetAllClients200ResponseDataInner
+# GetAllClients200ResponseDataInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetGroupHomepages200ResponseDataInner
+# GetGroupHomepages200ResponseDataInner
 
 ## Properties
 

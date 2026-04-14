@@ -1,4 +1,4 @@
-# # GetInternalPermissionsForPerson200ResponseDataChurchdb
+# GetInternalPermissionsForPerson200ResponseDataChurchdb
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetFileWithDomainType200ResponseDataInner
+# GetFileWithDomainType200ResponseDataInner
 
 ## Properties
 

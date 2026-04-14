@@ -1,4 +1,4 @@
-# # PutGroupsGroupIdMeetingsMeetingIdRequest
+# PutGroupsGroupIdMeetingsMeetingIdRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetAllPersonSettings200ResponseDataInner
+# GetAllPersonSettings200ResponseDataInner
 
 ## Properties
 

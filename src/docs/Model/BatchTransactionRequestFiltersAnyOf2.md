@@ -1,4 +1,4 @@
-# # BatchTransactionRequestFiltersAnyOf2
+# BatchTransactionRequestFiltersAnyOf2
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EventMasterData1DataServiceGroupsInner
+# EventMasterData1DataServiceGroupsInner
 
 ## Properties
 

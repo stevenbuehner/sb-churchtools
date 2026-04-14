@@ -1,4 +1,4 @@
-# # GetGroups200ResponseDataInnerPermissions
+# GetGroups200ResponseDataInnerPermissions
 
 ## Properties
 

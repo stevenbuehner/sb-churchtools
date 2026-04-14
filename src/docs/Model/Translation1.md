@@ -1,4 +1,4 @@
-# # Translation1
+# Translation1
 
 ## Properties
 
