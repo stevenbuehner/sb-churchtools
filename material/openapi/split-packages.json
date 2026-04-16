@@ -1,5 +1,5 @@
 {
-  "defaultPackage": "churchtools-core",
+  "defaultPackage": "churchtools-unmapped",
   "packages": [
     {
       "name": "churchtools-auth",
