@@ -1,103 +1,35 @@
+# sb-churchtools-api
 
+## Projektstatus
 
-# Hinweise zum Repository
-1. ChurchTools verwendet die Datei openapi.json um ihre API v2 zu spezifizieren. Aus dieser lassen sich dann in verschiedenen Programmierspachen APIs generieren. Dieses Repository enthält eine generierte API-Version für PHP, die ich für meine Projekte einsetze.
-   
-2. Da die openapi.json von Churchtools immer wieder Abweichungen zur tatsächlichen API aufweist und der Support im Forum meist sehr langsam oder gar nicht reagiert, war ich gezwungen eine Kopie der openapi.json Datei anzulegen und daraus diese API zu generieren. Änderungen im Original pulle ich immer wieder mal rein und generiere eine aktualisierte Version der API.
+Dieses Projekt wurde von einem einzelnen, großen PHP-Client auf mehrere eigenständige Composer-Pakete umgestellt.
 
-3. Wenn dir Fehler in der Openapi.json auffallen, darfst du diese gerne korrigieren und mit einem Push-Request einreichen.  
+Die bisherige Nutzung als monolithisches Paket (`stevenbuehner/sb-churchtools-api`) ist damit abgelöst.
 
+## Neue Struktur
 
-# Install
-```bash
-composer require stevenbuehner/sb-churchtools-api dev-master
-```
+- Dieses Repository ist jetzt primär das **Generator-/Orchestrator-Repo**.
+- Die OpenAPI-Spezifikation liegt versioniert unter:
+  - `material/openapi/openapi.json`
+- Daraus werden segmentierte Pakete generiert (z. B. `churchtools-auth`, `churchtools-people`, `churchtools-events`, ...).
+- Zusätzlich gibt es ein separates Runtime-Paket mit den Client-Helfern:
+  - `packages/churchtools-runtime-client`
 
+## Geplanter Workflow
 
-# Examples:
-## Create Client with Username and Password
-```php
-require_once __DIR__ . '/../vendor/autoload.php';
+1. `openapi.json` lokal manuell aktualisieren.
+2. Änderungen in diesem Repository committen.
+3. Nach GitHub pushen.
+4. GitHub Actions generiert pro Segment ein eigenes Paket inkl. zugehöriger Tests.
 
-use GuzzleHttp\Cookie\CookieJar;
-use StevenBuehner\ChurchTools\Api\PersonApi;
-use StevenBuehner\ChurchTools\ApiException;
-use StevenBuehner\ChurchTools\Configuration;
-use StevenBuehner\ChurchToolsApi\ChurchToolsUserAuthenticatedClient;
+## Wichtige Pfade
 
-// Create Config
-$config = Configuration::getDefaultConfiguration();
-$config->setHost('https://slug.church.tools/api');
-$config->setUsername('username');
-$config->setPassword('password');
+- Split-Artefakte (temporär): `build-splits/`
+- Generierte Pakete: `build-packages/`
+- Test-Artefakte: `build-tests/`
+- Doku-Artefakte: `build-docs/`
 
-// Create Client with Autthentication
-$cookieJar = new CookieJar();
-$client    = new ChurchToolsUserAuthenticatedClient($config, $cookieJar);
-$success   = $client->login();
-// $client->logout();
+## Hinweis
 
-$personApi = new PersonApi($client, $config);
-try {
-	$test = $personApi->getAllPersons()->getData();
-} catch (ApiException $e) {
-}
-```
-
-## Create Client with Access-Token
-```php
-<?php
-
-require_once __DIR__ . '/../vendor/autoload.php';
-
-use GuzzleHttp\Cookie\CookieJar;
-use StevenBuehner\ChurchTools\Api\GroupApi;
-use StevenBuehner\ChurchTools\Api\PersonApi;
-use StevenBuehner\ChurchTools\ApiException;
-use StevenBuehner\ChurchTools\Configuration;
-use StevenBuehner\ChurchToolsApi\ChurchToolsTokenAuthenticatedClient;
-use StevenBuehner\ChurchToolsApi\ChurchToolsUserAuthenticatedClient;
-
-// Create Config
-$config = Configuration::getDefaultConfiguration();
-$config->setHost('https://slug.church.tools/api');
-$config->setAccessToken('token');
-
-// Create Client with Token
-$cookieJar = new CookieJar();
-$client  = new ChurchToolsTokenAuthenticatedClient($config, $cookieJar);
-$success = $client->login(); // Not neccessary with token
-// $client->logout(); // For cleanup
-
-
-// Create an api
-$groupApi  = new GroupApi($client, $config);
-$personApi = new PersonApi($client, $config);
-// ...
-```
-
-## Iteration Example
-```php
-// Iteration Example
-$hasMore = TRUE;
-$page    = 1;
-$limit   = 100;
-
-while ($hasMore === TRUE) {
-	try {
-		$response = $personApi
-			->getAllPersons(NULL, NULL, NULL, NULL, NULL, FALSE, $page, $limit);
-	} catch (ApiException $e) {
-	}
-
-	// do Something with persons ...
-
-	// get next batch of persons
-	$hasMore = $response->getMeta()->getPagination()->getLastPage() > $page;
-	$page++;
-}
-```
-
-
-Considerring to use:
-- https://github.com/liborm85/composer-vendor-cleaner
+Die eigentlichen API-Clients werden künftig als Einzelpakete verteilt.
+Dieses Repository dient der Pflege der OpenAPI-Datei, Split-Regeln und Build-/Release-Automation.

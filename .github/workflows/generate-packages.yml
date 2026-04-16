@@ -1,0 +1,125 @@
+name: Generate ChurchTools Packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Package version (e.g. 1.2.3). Leave empty for timestamp."
+        required: false
+        type: string
+      openapi_file:
+        description: "Path to OpenAPI spec file in repository"
+        required: false
+        default: "material/openapi/openapi.json"
+        type: string
+  push:
+    branches:
+      - master
+      - develop
+    tags:
+      - "*"
+    paths:
+      - "material/openapi/**"
+      - "update.sh"
+      - ".github/workflows/generate-packages.yml"
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: version
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"
+          elif [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+            TAG="${TAG#v}"
+            echo "version=${TAG}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=$(date +'%Y.%m.%d-%H%M')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build package matrix from split config
+        id: matrix
+        shell: bash
+        run: |
+          MATRIX="$(jq -c '{include: [.packages[] | {name: .name, composer: .composerName}]}' material/openapi/split-packages.json)"
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "$MATRIX"
+
+  package:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    env:
+      PACKAGE_NAME: ${{ matrix.name }}
+      PACKAGE_COMPOSER: ${{ matrix.composer }}
+      PACKAGE_VERSION: ${{ needs.prepare.outputs.version }}
+      OPENAPI_FILE: ${{ github.event.inputs.openapi_file || 'material/openapi/openapi.json' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: curl, json, mbstring
+          coverage: none
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Install openapi-generator CLI
+        shell: bash
+        run: |
+          curl -fsSL https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.21.0/openapi-generator-cli-7.21.0.jar -o /tmp/openapi-generator-cli.jar
+          cat > /usr/local/bin/openapi-generator <<'EOS'
+          #!/usr/bin/env bash
+          exec java -jar /tmp/openapi-generator-cli.jar "$@"
+          EOS
+          chmod +x /usr/local/bin/openapi-generator
+          openapi-generator version
+
+      - name: Generate selected package (with tests)
+        shell: bash
+        run: |
+          test -s "${OPENAPI_FILE}"
+          php ./material/openapi/generate-packages.php \
+            --input="${OPENAPI_FILE}" \
+            --version="${PACKAGE_VERSION}" \
+            --package="${PACKAGE_NAME}"
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-${{ env.PACKAGE_NAME }}
+          path: build-packages/${{ env.PACKAGE_NAME }}
+          if-no-files-found: error
+
+      - name: Upload package tests artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tests-${{ env.PACKAGE_NAME }}
+          path: build-tests/${{ env.PACKAGE_NAME }}
+          if-no-files-found: ignore
+
+      - name: Upload package docs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-${{ env.PACKAGE_NAME }}
+          path: build-docs/${{ env.PACKAGE_NAME }}
+          if-no-files-found: ignore

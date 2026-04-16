@@ -1,0 +1,138 @@
+{
+  "defaultPackage": "churchtools-core",
+  "packages": [
+    {
+      "name": "churchtools-auth",
+      "composerName": "stevenbuehner/churchtools-auth",
+      "description": "ChurchTools API - Authentication (minimal)",
+      "pathPrefixes": ["/login", "/whoami", "/csrftoken"],
+      "tags": []
+    },
+    {
+      "name": "churchtools-auth-advanced",
+      "composerName": "stevenbuehner/churchtools-auth-advanced",
+      "description": "ChurchTools API - Authentication advanced",
+      "pathPrefixes": [
+        "/twofactor",
+        "/saml",
+        "/oauthclients",
+        "/login/totp",
+        "/persons/{personId}/settings/twofactor",
+        "/persons/{personId}/settings/twofactor/force"
+      ],
+      "tags": []
+    },
+    {
+      "name": "churchtools-core",
+      "composerName": "stevenbuehner/churchtools-core",
+      "description": "ChurchTools API - Core endpoints",
+      "pathPrefixes": ["/search", "/info", "/masterdata"],
+      "tags": ["General", "MasterData"]
+    },
+    {
+      "name": "churchtools-finance",
+      "composerName": "stevenbuehner/churchtools-finance",
+      "description": "ChurchTools API - Finance",
+      "pathPrefixes": ["/finance"],
+      "tags": ["Finance"]
+    },
+    {
+      "name": "churchtools-groups",
+      "composerName": "stevenbuehner/churchtools-groups",
+      "description": "ChurchTools API - Groups",
+      "pathPrefixes": ["/groups", "/group", "/publicgroups", "/grouphomepages", "/dynamicgroups"],
+      "tags": ["Group", "GroupHomepage", "DynamicGroups", "Tag"]
+    },
+    {
+      "name": "churchtools-checkin",
+      "composerName": "stevenbuehner/churchtools-checkin",
+      "description": "ChurchTools API - Checkin",
+      "pathPrefixes": ["/checkin"],
+      "tags": [ "Checkin"]
+    },
+    {
+      "name": "churchtools-events",
+      "composerName": "stevenbuehner/churchtools-events",
+      "description": "ChurchTools API - Events",
+      "pathPrefixes": ["/events", "/event", "/agendas", "/services", "/servicegroups", "/songs", "/facts"],
+      "tags": ["Event", "Service & Service Groups", "Song", "Fact", "Absence"]
+    },
+    {
+      "name": "churchtools-calendars",
+      "composerName": "stevenbuehner/churchtools-calendars",
+      "description": "ChurchTools API - Calendars",
+      "pathPrefixes": ["/calendars"],
+      "tags": ["Calendar"]
+    },
+    {
+      "name": "churchtools-people",
+      "composerName": "stevenbuehner/churchtools-people",
+      "description": "ChurchTools API - People",
+      "pathPrefixes": ["/persons", "/person", "/contactlabels", "/statuses", "/campuses", "/departments", "/fields", "/dbfields"],
+      "tags": ["Person", "Campus", "Department", "Status", "Contact Label", "Field"]
+    },
+    {
+      "name": "churchtools-wiki",
+      "composerName": "stevenbuehner/churchtools-wiki",
+      "description": "ChurchTools API - Wiki",
+      "pathPrefixes": ["/wiki"],
+      "tags": ["Wiki"]
+    },
+    {
+      "name": "churchtools-files",
+      "composerName": "stevenbuehner/churchtools-files",
+      "description": "ChurchTools API - Files",
+      "pathPrefixes": [ "/files", "/images"],
+      "tags": [ "File"]
+    },
+    {
+      "name": "churchtools-widgets",
+      "composerName": "stevenbuehner/churchtools-widgets",
+      "description": "ChurchTools API - Widgets",
+      "pathPrefixes": [ "/widgets"],
+      "tags": [ "Widgets"]
+    },
+    {
+      "name": "churchtools-chat",
+      "composerName": "stevenbuehner/churchtools-chat",
+      "description": "ChurchTools API - Chat",
+      "pathPrefixes": ["/chat"],
+      "tags": [ "Chat"]
+    },
+    {
+      "name": "churchtools-posts",
+      "composerName": "stevenbuehner/churchtools-posts",
+      "description": "ChurchTools API - Posts",
+      "pathPrefixes": ["/post","/posts"],
+      "tags": ["Post"]
+    },
+    {
+      "name": "churchtools-resources",
+      "composerName": "stevenbuehner/churchtools-resources",
+      "description": "ChurchTools API - Resources",
+      "pathPrefixes": ["/resource","/resources"],
+      "tags": ["Resource"]
+    },
+    {
+      "name": "churchtools-registrations",
+      "composerName": "stevenbuehner/churchtools-registrations",
+      "description": "ChurchTools API - Registrations",
+      "pathPrefixes": ["/registration", "/registrationconfig"],
+      "tags": ["Registration"]
+    },
+    {
+      "name": "churchtools-followups",
+      "composerName": "stevenbuehner/churchtools-followups",
+      "description": "ChurchTools API - Followups",
+      "pathPrefixes": ["/followups"],
+      "tags": ["Followup"]
+    },
+    {
+      "name": "churchtools-permissions",
+      "composerName": "stevenbuehner/churchtools-permissions",
+      "description": "ChurchTools API - Permissions",
+      "pathPrefixes": ["/permissions"],
+      "tags": ["Permissions"]
+    }
+  ]
+}

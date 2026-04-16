@@ -1,3 +1,12 @@
 .idea
 vendor
 credentials.php
+
+/build-packages/*
+!/build-packages/.gitkeep
+/build-tests/*
+!/build-tests/.gitkeep
+/build-docs/*
+!/build-docs/.gitkeep
+/build-splits/*
+!/build-splits/.gitkeep
