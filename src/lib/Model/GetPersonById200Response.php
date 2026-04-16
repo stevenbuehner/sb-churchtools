@@ -57,7 +57,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $openAPITypes = [
-        '' => 'string',
         'data' => '\StevenBuehner\ChurchTools\Model\PutCheckinPersons200ResponseData'
     ];
 
@@ -69,7 +68,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        '' => null,
         'data' => null
     ];
 
@@ -79,7 +77,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        '' => false,
         'data' => false
     ];
 
@@ -169,7 +166,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        '' => '',
         'data' => 'data'
     ];
 
@@ -179,7 +175,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        '' => 'set',
         'data' => 'setData'
     ];
 
@@ -189,7 +184,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        '' => 'get',
         'data' => 'getData'
     ];
 
@@ -250,7 +244,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('', $data ?? [], null);
         $this->setIfExists('data', $data ?? [], null);
     }
 
@@ -295,33 +288,6 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets 
-     *
-     * @return string|null
-     */
-    public function get()
-    {
-        return $this->container[''];
-    }
-
-    /**
-     * Sets 
-     *
-     * @param string|null $ 
-     *
-     * @return self
-     */
-    public function set($)
-    {
-        if (is_null($)) {
-            throw new \InvalidArgumentException('non-nullable  cannot be null');
-        }
-        $this->container[''] = $;
-
-        return $this;
-    }
 
     /**
      * Gets data
@@ -439,5 +405,4 @@ class GetPersonById200Response implements ModelInterface, ArrayAccess, \JsonSeri
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
 
