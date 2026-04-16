@@ -10,3 +10,8 @@ credentials.php
 !/build-docs/.gitkeep
 /build-splits/*
 !/build-splits/.gitkeep
+domains.ext
+RootCA.crt
+RootCA.key
+RootCA.pem
+RootCA.srl
