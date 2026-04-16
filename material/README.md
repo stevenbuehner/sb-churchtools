@@ -1,94 +1,91 @@
+# Material / Generator-Doku
 
-```shell
-# See: https://github.com/OpenAPITools/openapi-generator
-wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.4.0/openapi-generator-cli-5.4.0.jar -O openapi-generator-cli.jar
-sudo apt-get install java
-sudo apt install default-jre
-sudo apt-get update
-sudo apt install default-jre
-sudo apt install openjdk-11-jre-headless
-sudo apt install openjdk-8-jre-headless
-```
+## Zweck
 
-Templates können hier gefunden werden:
-https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources/php
+Dieses Verzeichnis enthält die Build- und Generatorlogik, um aus der versionierten
+`material/openapi/openapi.json` mehrere ChurchTools-Composer-Pakete zu erzeugen.
 
-## Generiere neue API
-### Setup
-```shell
-brew intall java
-brew install openapi-generator
-```
+## Wichtige Dateien
 
-### Run
-```shell
-cd ~/Sites/sb-churchtools-api/material/openapi
-wget -c https://teambb.church.tools/system/runtime/swagger/openapi.json
-cd ~/Sites/sb-churchtools-api       
-# /opt/homebrew/Cellar/openjdk/19.0.1/bin/java -jar ./material/openapi/openapi-generator-cli-5.4.0.jar  generate -i ./material/openapi/openapi.json -g php -o ./src -c ./material/openapi/swagger.conf.json --skip-validate-spec 
-openapi-generator generate -i ./material/openapi/openapi.json -g php -o ./src -c ./material/openapi/swagger.conf.json -t ./material/openapi/templates --skip-validate-spec
- ```
+- `material/openapi/openapi.json`  
+  Versionierte OpenAPI-Spezifikation (Source of Truth).
+- `material/openapi/split-packages.json`  
+  Segmentierung der Endpunkte in Zielpakete.
+- `material/openapi/split-openapi.php`  
+  Erstellt Split-Spezifikationen pro Paket.
+- `material/openapi/generate-packages.php`  
+  Erzeugt die Composer-Pakete aus den Splits.
+- `update.sh` (Repo-Root)  
+  Orchestriert den lokalen End-to-End-Lauf.
 
-### OpenAPI in Subpakete splitten
-```shell
+## Voraussetzungen
+
+- PHP 8.2+
+- `openapi-generator` CLI im PATH
+- `jq`
+- `curl`
+- Java Runtime (für OpenAPI Generator)
+
+## Lokaler Ablauf
+
+### 1) OpenAPI-Datei aktualisieren (direkter Download)
+
+```bash
 cd ~/Sites/sb-churchtools-api
-php ./material/openapi/split-openapi.php
+curl -fsSL "https://teambb.church.tools/system/runtime/swagger/openapi.json" -o ./material/openapi/openapi.json
 ```
 
-Strict Check (CI-geeignet, bricht bei neuen unmappeden Pfaden ab):
-```shell
-php ./material/openapi/split-openapi.php --strict
+### 2) Testen, ob der Build laufen wird
+
+Schneller Dry-Run:
+
+```bash
+./update.sh --dry-run --version 1.2.3
 ```
 
-Konfiguration:
-- `material/openapi/split-packages.json` enthält die Paket-Regeln (`pathPrefixes`, `tags`, `defaultPackage`).
-- Bei Änderungen in `openapi.json` werden die Split-Dateien unter `build-splits/<paket>/openapi.json` neu erzeugt.
-- Der Drift-Report liegt unter `build-splits/split-report.json` (u. a. `unmappedPaths`, `unmappedAdded`, `unmappedRemoved`).
+Split prüfen:
 
-### Composer-Pakete für alle API-Segmente generieren
-```shell
-cd ~/Sites/sb-churchtools-api
-php ./material/openapi/generate-packages.php --version=1.2.3 --strict
+```bash
+php ./material/openapi/split-openapi.php --input=./material/openapi/openapi.json
 ```
 
-Optional ohne Testausführung:
-```shell
-php ./material/openapi/generate-packages.php --version=1.2.3 --strict --no-run-tests
+Generierung lokal prüfen (ohne Tests):
+
+```bash
+php ./material/openapi/generate-packages.php --version=1.2.3 --no-run-tests
 ```
 
-Ergebnis:
-- Generierte Pakete liegen unter `build-packages/<composer-project-name>`.
-- Jedes Paket erhält einen eigenen Namespace im Format `StevenBuehner\<ComposerProjectStudlyOhneClientSuffix>`.
-- Alle Pakete außer `stevenbuehner/churchtools-auth` erhalten eine harte Dependency auf `stevenbuehner/churchtools-auth` in derselben Major/Minor-Serie.
-- Pro Paket wird ein eigenes Git-Repo initialisiert (`git init` in jedem Paketordner), damit die Repos direkt separat gepusht werden können.
-- Tests werden automatisch ausgeführt, falls vorhanden (pro Paket).
-- `Incomplete`/`Deprecations` sind non-blocking; Abbruch erfolgt nur bei echten PHPUnit-Fehlern (`FAILURES`/`ERRORS`/`Fatal error`).
-- Test-Artefakte werden nach `build-tests/<composer-project-name>/...` ausgelagert.
-- Doku-Artefakte werden nach `build-docs/<composer-project-name>/...` ausgelagert.
-- Der veröffentlichbare Paketordner bleibt dadurch schlank (ohne `test`/`docs`).
+Optional mit Tests:
 
-Wichtige Dateien:
-- `material/openapi/split-packages.json`: Segmentierung, Composer-Namen, Beschreibung.
-- `material/openapi/split-openapi.php`: Robustes Splitten + Drift-Report.
-- `material/openapi/generate-packages.php`: End-to-end Generate für alle Composer-Bibliotheken.
-
-### Test (müssten erst händisch implementiert werden)
-Übernehme ggf. Änderungen aus der Datei /src/phpunit.xml.dist in /phpunit.xml.dist
-```shell
-php -d memory_limit=256M ./vendor/bin/phpunit 
- ```
-
-### Eigene Tests mit Debug laufen lassen
-```shell
-cd ~/Sites/sb-churchtools-api   
-php -dxdebug.idekey=PhpStorm1 -dxdebug.start_with_request=yes -dxdebug.mode=debug -dxdebug.client_port=9000 -dxdebug.client_host=192.168.3.28 material/cli-test/test.1.php   
+```bash
+php ./material/openapi/generate-packages.php --version=1.2.3
 ```
 
-## Alte Befehle gespeichert
-```shell
-java -jar swagger-codegen-cli.jar generate -i https://teambb.church.tools/system/runtime/swagger/openapi.json -l php -o /home/vagrant/sb-churchtools-api/src -c swagger.conf.json
+### 3) Push zu GitHub
+
+```bash
+git add .
+git commit -m "Update openapi.json and regenerate package setup"
+git push
 ```
 
-```shell
-java -jar openapi-generator-cli.jar generate -i https://teambb.church.tools/system/runtime/swagger/openapi.json -g php -o /home/vagrant/sb-churchtools-api/src -c swagger.conf.json --skip-validate-spec
-```
+## Ausgabe-Verzeichnisse
+
+- Split-Artefakte: `build-splits/`
+- Generierte Pakete: `build-packages/`
+- Test-Artefakte: `build-tests/`
+- Doku-Artefakte: `build-docs/`
+
+## Hinweise zu Tests
+
+- Tests werden pro generiertem Paket ausgeführt (wenn vorhanden).
+- Test-Warnungen sind non-blocking.
+- Test-/Doku-Dateien werden aus den veröffentlichbaren Paketordnern entfernt und separat abgelegt.
+
+## CI / GitHub Actions
+
+Der Workflow unter:
+
+- `.github/workflows/generate-packages.yml`
+
+arbeitet mit der im Repository gespeicherten OpenAPI-Datei (kein Live-Download) und baut Pakete je Segment als Matrix-Job.
