@@ -108,7 +108,9 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: package-${{ env.PACKAGE_NAME }}
-          path: build-packages/${{ env.PACKAGE_NAME }}
+          path: |
+            build-packages/${{ env.PACKAGE_NAME }}
+            !build-packages/${{ env.PACKAGE_NAME }}/vendor/**
           if-no-files-found: error
 
       - name: Upload package tests artifact

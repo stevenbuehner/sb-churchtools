@@ -156,6 +156,7 @@ function updateComposerJson(string $composerPath, array $package, string $versio
         'exclude' => [
             '/test',
             '/docs',
+            '/vendor',
             '/phpunit.xml.dist',
             '/.travis.yml',
         ],
@@ -174,7 +175,7 @@ function updateComposerJson(string $composerPath, array $package, string $versio
 
 function prunePublishArtifacts(string $targetDir): void
 {
-    $paths = ['/test', '/docs', '/phpunit.xml.dist', '/.travis.yml'];
+    $paths = ['/test', '/docs', '/vendor', '/phpunit.xml.dist', '/.travis.yml'];
     foreach ($paths as $suffix) {
         $path = $targetDir . $suffix;
         if (!file_exists($path)) {
