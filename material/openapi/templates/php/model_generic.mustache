@@ -15,8 +15,8 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
       * @var string[]
       */
     protected static $openAPITypes = [
-        {{#vars}}'{{name}}' => '{{{dataType}}}'{{^-last}},
-        {{/-last}}{{/vars}}
+        {{#vars}}{{#name}}'{{name}}' => '{{{dataType}}}',
+        {{/name}}{{/vars}}
     ];
 
     /**
@@ -27,8 +27,8 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        {{#vars}}'{{name}}' => {{#dataFormat}}'{{{.}}}'{{/dataFormat}}{{^dataFormat}}null{{/dataFormat}}{{^-last}},
-        {{/-last}}{{/vars}}
+        {{#vars}}{{#name}}'{{name}}' => {{#dataFormat}}'{{{.}}}'{{/dataFormat}}{{^dataFormat}}null{{/dataFormat}},
+        {{/name}}{{/vars}}
     ];
 
     /**
@@ -58,8 +58,8 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
      * @var string[]
      */
     protected static $attributeMap = [
-        {{#vars}}'{{name}}' => '{{baseName}}'{{^-last}},
-        {{/-last}}{{/vars}}
+        {{#vars}}{{#name}}'{{name}}' => '{{baseName}}',
+        {{/name}}{{/vars}}
     ];
 
     /**
@@ -68,8 +68,8 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
      * @var string[]
      */
     protected static $setters = [
-        {{#vars}}'{{name}}' => '{{setter}}'{{^-last}},
-        {{/-last}}{{/vars}}
+        {{#vars}}{{#name}}'{{name}}' => '{{setter}}',
+        {{/name}}{{/vars}}
     ];
 
     /**
@@ -78,8 +78,8 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
      * @var string[]
      */
     protected static $getters = [
-        {{#vars}}'{{name}}' => '{{getter}}'{{^-last}},
-        {{/-last}}{{/vars}}
+        {{#vars}}{{#name}}'{{name}}' => '{{getter}}',
+        {{/name}}{{/vars}}
     ];
 
     /**
@@ -123,7 +123,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
         return self::$openAPIModelName;
     }
 
-    {{#vars}}
+    {{#vars}}{{#name}}
     {{#isEnum}}
     {{#allowableValues}}
     {{#enumVars}}
@@ -131,9 +131,9 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
     {{/enumVars}}
     {{/allowableValues}}
     {{/isEnum}}
-    {{/vars}}
+    {{/name}}{{/vars}}
 
-    {{#vars}}
+    {{#vars}}{{#name}}
     {{#isEnum}}
     /**
      * Gets allowable values of the enum
@@ -149,7 +149,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
     }
 
     {{/isEnum}}
-    {{/vars}}
+    {{/name}}{{/vars}}
     {{^parentSchema}}
     /**
      * Associative array for storing property values
@@ -171,9 +171,9 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
         parent::__construct($data);
 
         {{/parentSchema}}
-        {{#vars}}
+        {{#vars}}{{#name}}
         $this->container['{{name}}'] = $data['{{name}}'] ?? {{#defaultValue}}({{{defaultValue}}} === 'null' ? null : {{{defaultValue}}}){{/defaultValue}}{{^defaultValue}}null{{/defaultValue}};
-        {{/vars}}
+        {{/name}}{{/vars}}
         {{#discriminator}}
 
         // Initialize discriminator property with the model name.
@@ -195,7 +195,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
         $invalidProperties = [];
         {{/parentSchema}}
 
-        {{#vars}}
+        {{#vars}}{{#name}}
         {{#required}}
         if ($this->container['{{name}}'] === null) {
             $invalidProperties[] = "'{{name}}' can't be null";
@@ -258,7 +258,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
 
         {{/minItems}}
         {{/hasValidation}}
-        {{/vars}}
+        {{/name}}{{/vars}}
         return $invalidProperties;
     }
 
@@ -273,7 +273,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
         return count($this->listInvalidProperties()) === 0;
     }
 
-    {{#vars}}
+    {{#vars}}{{#name}}
 
     /**
      * Gets {{name}}
@@ -363,7 +363,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
 
         return $this;
     }
-    {{/vars}}
+    {{/name}}{{/vars}}
     /**
      * Returns true if offset exists. False otherwise.
      *
